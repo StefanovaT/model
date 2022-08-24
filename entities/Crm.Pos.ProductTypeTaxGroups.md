@@ -130,6 +130,7 @@ _Allowed Values (Crm.Pos.ProductTypeTaxGroupsRepository.TaxGroup Enum Members)_
 
 | Value | Description |
 | ---- | --- |
+| Zero | Zero value. Stored as 0. <br /> _Database Value:_ 0 <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Zero' |
 | One | One value. Stored as 1. <br /> _Database Value:_ 1 <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'One' |
 | Two | Two value. Stored as 2. <br /> _Database Value:_ 2 <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Two' |
 | Three | Three value. Stored as 3. <br /> _Database Value:_ 3 <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Three' |

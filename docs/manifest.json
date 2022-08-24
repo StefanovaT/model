@@ -9942,7 +9942,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R32769-1.html",
-          "hash": "MTKszOEopQl05FpdPmvCPw=="
+          "hash": "q5f2a9V2J4ksodgA95YiYg=="
         }
       },
       "is_incremental": false,
@@ -9955,6 +9955,18 @@
         ".html": {
           "relative_path": "business-rules/R32769-2.html",
           "hash": "i2SanHclkYm3WiEF980YUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R32769-3.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R32769-3.html",
+          "hash": "Ve7Hu0sjpv/8cThlUCehMQ=="
         }
       },
       "is_incremental": false,
@@ -10819,6 +10831,18 @@
         ".html": {
           "relative_path": "business-rules/R33758.html",
           "hash": "UswUPgHYEpfzWq/gAPjtig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R33773.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R33773.html",
+          "hash": "OIfZ1LO9seEdOB7kyCATIw=="
         }
       },
       "is_incremental": false,
@@ -12640,7 +12664,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Pos.ProductTypeTaxGroups.html",
-          "hash": "5W/4KiPkTiZPZTnKC5P5Ig=="
+          "hash": "w50mmvaMkcZgBrlFG9kehA=="
         }
       },
       "is_incremental": false,
@@ -14044,7 +14068,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Payments.PaymentTransactions.html",
-          "hash": "EphtiJwxTo+LXpfLzA8AmA=="
+          "hash": "Ytgx2jvFbsQv5KxLXtnpSw=="
         }
       },
       "is_incremental": false,
@@ -14416,7 +14440,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Contacts.PartyContactMechanisms.html",
-          "hash": "acFkTdWckXvtBCaik5zDjQ=="
+          "hash": "DkEAf9ufJVXfarN0FXFdkQ=="
         }
       },
       "is_incremental": false,
@@ -15352,7 +15376,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.PropertyValues.html",
-          "hash": "dRg7fcY62s45sRmeCL7h8w=="
+          "hash": "qXxgIonRu0gf2Z4tcfhwHQ=="
         }
       },
       "is_incremental": false,
@@ -23538,7 +23562,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Pos_Product_Type_Tax_Groups.html",
-          "hash": "Bql3cE3fOjQL+9xMCWn/Zg=="
+          "hash": "VGk5KQ4vYI86Z23stAmdHg=="
         }
       },
       "is_incremental": false,

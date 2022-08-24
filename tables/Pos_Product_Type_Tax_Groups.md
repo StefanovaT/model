@@ -20,7 +20,7 @@ Contains the tax group codes for the product types. The tax group codes are used
 |[Product_Type_Id](#product_type_id)|`uniqueidentifier` |The product type for which the tax group is specified.|
 |[Product_Type_Tax_Group_Id](#product_type_tax_group_id)|`uniqueidentifier` `PK`||
 |[Row_Version](#row_version)|`timestamp` ||
-|[Tax_Group](#tax_group)|`int` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|The tax group of the product type within the specified applicable legislation.|
+|[Tax_Group](#tax_group)|`int` Allowed: `0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|The tax group of the product type within the specified applicable legislation.|
 
 ## Columns
 
@@ -200,7 +200,7 @@ The tax group of the product type within the specified applicable legislation.
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
+|Allowed Values|`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
