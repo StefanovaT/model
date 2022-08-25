@@ -77,100 +77,64 @@
 <tr>
 <th>Name</th>
 <th>Value</th>
-<th></th>
-<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Code</td>
 <td>R32769-2</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Entity</td>
 <td><a class="xref" href="../entities/General.Contacts.PartyContactMechanisms.html">General.Contacts.PartyContactMechanisms Entity</a></td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Name</td>
 <td>RemoveDefaultCheck</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Attribute</td>
 <td>IsDefault</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Layer</td>
 <td>Front-End</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Events</td>
 <td>AttributeChanged(IsDefault)</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Priority</td>
 <td>Normal</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Modify</td>
 <td>YES</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Applicable Legislations</td>
 <td>ALL // no condition needed</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Action</td>
-<td>if (ThruDate != null</td>
-<td></td>
-<td>(FromDate != null &amp;&amp; FromDate &gt; Today))</td>
-</tr>
-<tr>
-<td>throw Exception(&quot;A party contact mechanism can't be deafault if its '{From_Date.Name}' is greater than today or it has '{Thru_Date.Name}'.&quot;), else remove IsDefault from the previous default record (if any).</td>
-<td></td>
-<td></td>
-<td></td>
+<td>if (ThruDate != null || (FromDate != null &amp;&amp; FromDate &gt; Today))  <br>, then throw Exception(&quot;A party contact mechanism can't be deafault if its '{From_Date.Name}' is greater than today or it has '{Thru_Date.Name}'.&quot;) <br>, else remove IsDefault from the previous default record (if any).</td>
 </tr>
 <tr>
 <td>Description</td>
 <td>Remove previous Default check if new default selected and check new default for validity.</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Message</td>
-<td>IsDefault: A party contact mechanism can't be default if its 'ThruDate' is greater than today or ot has 'FromDate'</td>
-<td></td>
-<td></td>
+<td>A party contact mechanism can't be default if its 'ThruDate' is greater than today or ot has 'FromDate'</td>
 </tr>
 <tr>
 <td>Introduced In Version</td>
 <td>Introduced: 2022</td>
-<td></td>
-<td></td>
 </tr>
 <tr>
 <td>Revocable</td>
 <td>YES</td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
