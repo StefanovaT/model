@@ -114,15 +114,15 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If (PropertyValueField != null) <br> <br> Validate that: PropertyValueField.Length &lt;= PropertyValue.Property.MaskLength</td>
+<td>If (PropertyValue.Property.MaskLength != null) <br> <br> Validate that: PropertyValueField.Length &lt;= PropertyValue.Property.MaskLength</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>If the field 'PropertyValueField' is filled in, check if itslength is less than maximum length of property.</td>
+<td>If the field 'PropertyValueField' is filled in, check if its length is less than or equal to the maximum length of property.</td>
 </tr>
 <tr>
 <td>Message</td>
-<td>The maximum length of property '{PropertyValue.Property}' is {PropertyValue.Property.MaskLength}. The value '{PropertyValueField.Length}' exceeds the maximum allowed length of the property.</td>
+<td>The maximum length of property '{PropertyValue.Property}' is {PropertyValue.Property.MaskLength}. <br> The value '{PropertyValueField.Length}' exceeds the maximum allowed length of the property.</td>
 </tr>
 <tr>
 <td>Version</td>
