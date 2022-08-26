@@ -17,12 +17,12 @@ Hierarchical categorization of the products. Entity: Gen_Product_Groups
 |[Default_Measurement_Unit_Id](#default_measurement_unit_id)|`uniqueidentifier` |When not null, specifies default measurement unit, which should be assigned to new products in the group.|
 |[Default_Product_Type_Id](#default_product_type_id)|`uniqueidentifier` |When not null, specifies default product type, which should be assigned to new products in the group.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, specifies that the product group, its sub-groups and products are specific to a given enterprise company and may be used only in documents from this enterprise company.|
-|[Full_Path](#full_path)|`nvarchar(254)` |Full tree path in the form /parent/.../leaf/. Contains the group names.|
+|[Full_Path](#full_path)|`nvarchar(254)` |Full tree path in the form /parent/.../leaf/. Contains the group codes.|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique Id of the item group|
 |[Next_Part_Number](#next_part_number)|`nvarchar(16)` |Contains the next part number to be auto-assigned to parts, created in the group or sub-groups|
 |[Next_Serial_Number](#next_serial_number)|`nvarchar(40)` |When not NULL, specifies the next serial number, that should be assigned to new produced items.|
 |[Notes](#notes)|`nvarchar(254)` |User notes for the item group|
-|[Parent](#parent)|`nvarchar(254)` |Full tree path of the parent group in the form /parent/.../leaf/. Contains the group names.|
+|[Parent](#parent)|`nvarchar(254)` |Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes.|
 |[Parent_Group_Id](#parent_group_id)|`uniqueidentifier` |Parent product group. NULL if this is root group|
 |[Picture](#picture)|`varbinary` |The picture of the product group|
 |[Picture_Last_Update_Time](#picture_last_update_time)|`datetime` Readonly|Last update time of the Picture|
@@ -247,7 +247,7 @@ When not NULL, specifies that the product group, its sub-groups and products are
 ### Full_Path
 
 
-Full tree path in the form /parent/.../leaf/. Contains the group names.
+Full tree path in the form /parent/.../leaf/. Contains the group codes.
 
 | Property | Value |
 | - | - |
@@ -417,7 +417,7 @@ User notes for the item group
 ### Parent
 
 
-Full tree path of the parent group in the form /parent/.../leaf/. Contains the group names.
+Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes.
 
 | Property | Value |
 | - | - |

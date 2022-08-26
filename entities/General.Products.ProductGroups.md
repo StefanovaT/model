@@ -37,14 +37,14 @@ Aggregate Tree
 | [ConfiguratorCreatesRecipe](General.Products.ProductGroups.md#configuratorcreatesrecipe) | boolean | Whether the product configurator should create one default recipe. true=yes;false=no. `Required` `Default(false)` 
 | [ConfiguratorStatus](General.Products.ProductGroups.md#configuratorstatus) | [ConfiguratorStatus](General.Products.ProductGroups.md#configuratorstatus) | Usage of product configurator for new products. 0=Product configurator cannot be used to create products in this group;1=The configurator can be used;2=The configurator should be used and products cannot be created directly. `Required` `Default(0)` 
 | [DisplayText](General.Products.ProductGroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FullPath](General.Products.ProductGroups.md#fullpath) | string (254) | Full tree path in the form /parent/.../leaf/. Contains the group names. `Required` `Default("")` `Filter(eq;like)` `ORD` 
+| [FullPath](General.Products.ProductGroups.md#fullpath) | string (254) | Full tree path in the form /parent/.../leaf/. Contains the group codes. `Required` `Default("")` `Filter(eq;like)` `ORD` 
 | [Id](General.Products.ProductGroups.md#id) | guid |  
 | [Name](General.Products.ProductGroups.md#name) | [MultilanguageString (180)](../data-types.md#multilanguagestring) | Group name should be unique among the other groups within the same parent. `Required` `Filter(eq;like)` 
 | [NextPartNumber](General.Products.ProductGroups.md#nextpartnumber) | string (16) __nullable__ | Contains the next part number to be auto-assigned to parts, created in the group or sub-groups. 
 | [NextSerialNumber](General.Products.ProductGroups.md#nextserialnumber) | string (40) __nullable__ | When not null, specifies the next serial number, that should be assigned to new produced items. `Filter(eq;like)` 
 | [Notes](General.Products.ProductGroups.md#notes) | string (254) __nullable__ | User notes for the item group. 
 | [ObjectVersion](General.Products.ProductGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [<s>Parent</s>](General.Products.ProductGroups.md#parent) | string (254) | **OBSOLETE! Do not use!** Full tree path of the parent group in the form /parent/.../leaf/. Contains the group names. `Obsolete` `Required` `Default("/")` `Filter(eq)` `ORD` `Obsoleted in version 22.1.6.92` 
+| [<s>Parent</s>](General.Products.ProductGroups.md#parent) | string (254) | **OBSOLETE! Do not use!** Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes. `Obsolete` `Required` `Default("/")` `Filter(eq)` `ORD` `Obsoleted in version 22.1.6.92` 
 | [Picture](General.Products.ProductGroups.md#picture) | byte[] __nullable__ | The picture of the product group. 
 | [PictureLastUpdateTime](General.Products.ProductGroups.md#picturelastupdatetime) | datetime __nullable__ | Last update time of the Picture. `Filter(ge;le)` `ReadOnly` 
 | [ProductDescriptionMask](General.Products.ProductGroups.md#productdescriptionmask) | [MultilanguageString (1000)](../data-types.md#multilanguagestring) __nullable__ | When not null specifies mask for new product descriptions for this group and its sub-groups. The mask substitutes {0}..{n} with the appropriate custom attributes. 
@@ -133,7 +133,7 @@ _Supports Order By_: ****
 
 ### FullPath
 
-Full tree path in the form /parent/.../leaf/. Contains the group names. `Required` `Default("")` `Filter(eq;like)` `ORD`
+Full tree path in the form /parent/.../leaf/. Contains the group codes. `Required` `Default("")` `Filter(eq;like)` `ORD`
 
 _Type_: **string (254)**  
 _Indexed_: **True**  
@@ -203,7 +203,7 @@ _Supports Order By_: ****
 
 ### Parent
 
-**OBSOLETE! Do not use!** Full tree path of the parent group in the form /parent/.../leaf/. Contains the group names. `Obsolete` `Required` `Default("/")` `Filter(eq)` `ORD` `Obsoleted in version 22.1.6.92`
+**OBSOLETE! Do not use!** Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes. `Obsolete` `Required` `Default("/")` `Filter(eq)` `ORD` `Obsoleted in version 22.1.6.92`
 
 _Type_: **string (254)**  
 _Indexed_: **True**  
