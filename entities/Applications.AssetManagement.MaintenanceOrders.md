@@ -105,7 +105,7 @@ Aggregate Tree
 | [ReverseOfDocument](Applications.AssetManagement.MaintenanceOrders.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [Sequence](Applications.AssetManagement.MaintenanceOrders.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [ServiceCenter](Applications.AssetManagement.MaintenanceOrders.md#servicecenter) | [ServiceCenters](Applications.AssetManagement.ServiceCenters.md) | The service center, which will perform the maintenance. `Required` `Filter(multi eq)` |
-| [SocialGroup](Applications.AssetManagement.MaintenanceOrders.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | The social group to which this activity relates. null - a generic activity, not related to a specific social group. `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
+| [SocialGroup](Applications.AssetManagement.MaintenanceOrders.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [TargetParty](Applications.AssetManagement.MaintenanceOrders.md#targetparty) | [Parties](General.Contacts.Parties.md) (nullable) | External participant or target of the task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ToCompanyDivision](Applications.AssetManagement.MaintenanceOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Applications.AssetManagement.MaintenanceOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -727,7 +727,7 @@ _Supported Filters_: **Equals, EqualsIn**
 
 ### SocialGroup
 
-The social group to which this activity relates. null - a generic activity, not related to a specific social group. `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
+Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Groups](Communities.Social.Groups.md) (nullable)**  
 _Category_: **System**  

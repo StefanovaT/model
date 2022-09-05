@@ -113,7 +113,7 @@ Aggregate Tree
 | [Sequence](Applications.Service.ServiceActivities.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [ServiceAgreement](Applications.Service.ServiceActivities.md#serviceagreement) | [ServiceAgreements](Applications.Service.ServiceAgreements.md) (nullable) | The service agreement under which the work was done. `Filter(multi eq)` |
 | [ShipToCustomer](Applications.Service.ServiceActivities.md#shiptocustomer) | [Customers](Crm.Customers.md) (nullable) | Specific customer location of the main customer that receives the work. `Filter(multi eq)` |
-| [SocialGroup](Applications.Service.ServiceActivities.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | The social group to which this activity relates. null - a generic activity, not related to a specific social group. `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
+| [SocialGroup](Applications.Service.ServiceActivities.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [Store](Applications.Service.ServiceActivities.md#store) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The default store from which materials are taken. `Filter(multi eq)` |
 | [TargetParty](Applications.Service.ServiceActivities.md#targetparty) | [Parties](General.Contacts.Parties.md) (nullable) | External participant or target of the task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ToCompanyDivision](Applications.Service.ServiceActivities.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -790,7 +790,7 @@ _Front-End Recalc Expressions:_
 `obj.Customer.DetermineShipToCustomer( obj.EnterpriseCompany, obj.EnterpriseCompanyLocation, obj.ShipToCustomer)`
 ### SocialGroup
 
-The social group to which this activity relates. null - a generic activity, not related to a specific social group. `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
+Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Groups](Communities.Social.Groups.md) (nullable)**  
 _Category_: **System**  

@@ -105,7 +105,7 @@ Aggregate Tree
 | [ResponsiblePerson](Crm.Marketing.MarketingActivities.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Crm.Marketing.MarketingActivities.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [Sequence](Crm.Marketing.MarketingActivities.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [SocialGroup](Crm.Marketing.MarketingActivities.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | The social group to which this activity relates. null - a generic activity, not related to a specific social group. `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
+| [SocialGroup](Crm.Marketing.MarketingActivities.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [TargetGroup](Crm.Marketing.MarketingActivities.md#targetgroup) | [TargetGroups](Crm.Marketing.TargetGroups.md) (nullable) | The target group of parties to be treated by this activity. `Filter(multi eq)` |
 | [TargetParty](Crm.Marketing.MarketingActivities.md#targetparty) | [Parties](General.Contacts.Parties.md) (nullable) | External participant or target of the task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ToCompanyDivision](Crm.Marketing.MarketingActivities.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -731,7 +731,7 @@ _Supported Filters_: **Equals, EqualsIn**
 
 ### SocialGroup
 
-The social group to which this activity relates. null - a generic activity, not related to a specific social group. `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
+Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Groups](Communities.Social.Groups.md) (nullable)**  
 _Category_: **System**  
