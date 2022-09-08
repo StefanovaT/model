@@ -1,3 +1,10 @@
 - name: Common business rules
   href: common-business-rules//toc.yml
   topicHref: common-business-rules/index.md  
+- name: Discrepancy-system
+  href: discrepancy-system.md
+- name: Metrics
+  href: metrics.md
+- name: Standard-document-attributes
+  href: standard-document-attributes.md
+  
