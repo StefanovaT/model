@@ -229,8 +229,51 @@ SalesOrder.Notes = null
 <p>The attributes which are not specified here are filled in as described in <strong><a href="../reference/standard-document-attributes.html">Standard Document Attributes</a></strong></p>
 </div>
 <h2 id="fulfillments">Fulfillments</h2>
-<p>No fulfilments and metrics are used for the current generation procedure. Each time the procedure is started, it creates new sub-document no matter if there are documents already created from previous procedure executions.</p>
-<br>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th>MarketingActivityLineToSalesOrderLine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Parent Entity</td>
+<td>MarketingActivityLine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Child Entity</td>
+<td>SalesOrderLine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent / Child Relationship</td>
+<td>SalesOrderLine.ParentDocument = MarketingActivity; <br> SalesOrderLine.ParentLineNo = MarketingActivityLine.LineNo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics"><a href="../reference/metrics.html">Metrics</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fulfillment Name</th>
+<th style="text-align: center;">Metric Name</th>
+<th style="text-align: center;">Measurement Unit</th>
+<th style="text-align: left;">Parent Value</th>
+<th style="text-align: left;">Child Value</th>
+<th style="text-align: left;">New Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MarketingActivityLineToSalesOrderLine</td>
+<td style="text-align: center;">MQuantity</td>
+<td style="text-align: center;">MarketingActivityLine.QuantityUnit</td>
+<td style="text-align: left;">MarketingActivityLine.Quantity</td>
+<td style="text-align: left;">SalesOrderLine.Quantity</td>
+<td style="text-align: left;">NO</td>
+</tr>
+</tbody>
+</table>
 <p><strong>The new Sales Order Line is created as follows:</strong></p>
 <pre><code>SalesOrderLine.LineNo = MarketingActivity.LineNo 
 
@@ -250,7 +293,7 @@ SalesOrderLine.StandardUnitPrice = loaded by the 'Get Standard Unit Price' metho
 
 SalesOrderLine.RequestedQuantity = null
 
-SalesOrderLine.Quantity = MarketingActivityLine.OrderQuantity
+SalesOrderLine.Quantity = MarketingActivityLine.REMAINING(MQuantityUnit)
 
 SalesOrderLine.QuantityUnit = MarketingActivityLine.QuantityUnit
 
