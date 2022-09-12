@@ -917,10 +917,6 @@
   - name: Wms
     href: Logistics.Wms.md
     items:
-    - name: CompositeProductComponents
-      href: Logistics.Wms.CompositeProductComponents.md
-    - name: CompositeProducts
-      href: Logistics.Wms.CompositeProducts.md
     - name: WarehouseAvailabilityView
       href: Logistics.Wms.WarehouseAvailabilityView.md
     - name: WarehouseLocations

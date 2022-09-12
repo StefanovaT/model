@@ -31,7 +31,7 @@ Generic activity. Provides task management functionality. Activity can be one of
 |[Reminder_Time](#reminder_time)|`datetime` |When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity.|
 |[Responsible_Party_Id](#responsible_party_id)|`uniqueidentifier` |Who is responsible for executing the task. Initially this is the owner of the task|
 |[Row_Version](#row_version)|`timestamp` ||
-|[Social_Group_Id](#social_group_id)|`uniqueidentifier` |The social group to which this activity relates. NULL - a generic activity, not related to a specific social group.|
+|[Social_Group_Id](#social_group_id)|`uniqueidentifier` |Associates the activity with the specified social group. NULL means that this event is not related to a social group and might be publicly visible (can still be marked as private).|
 |[Start_Time](#start_time)|`datetime` |Currently planned starting time of the task|
 |[Subject](#subject)|`nvarchar(254)` |Task primary subject (required)|
 |[System_Type](#system_type)|`nvarchar(1)` Allowed: `C`, `M`, `T`|T=Task; C=Communication; M=Meeting|
@@ -589,7 +589,7 @@ Who is responsible for executing the task. Initially this is the owner of the ta
 ### Social_Group_Id
 
 
-The social group to which this activity relates. NULL - a generic activity, not related to a specific social group.
+Associates the activity with the specified social group. NULL means that this event is not related to a social group and might be publicly visible (can still be marked as private).
 
 | Property | Value |
 | - | - |

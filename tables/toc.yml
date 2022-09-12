@@ -1203,10 +1203,6 @@
 - name: Wms
   href: Wms.md
   items:
-  - name: Wms_Composite_Product_Components
-    href: Wms_Composite_Product_Components.md
-  - name: Wms_Composite_Products
-    href: Wms_Composite_Products.md
   - name: Wms_Warehouse_Availability_Indexed_View
     href: Wms_Warehouse_Availability_Indexed_View.md
   - name: Wms_Warehouse_Locations

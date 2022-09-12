@@ -656,8 +656,6 @@
 
 ## [Wms](Wms.md)
 
-* [Wms_Composite_Product_Components](Wms_Composite_Product_Components.md)
-* [Wms_Composite_Products](Wms_Composite_Products.md)
 * [Wms_Warehouse_Availability_Indexed_View](Wms_Warehouse_Availability_Indexed_View.md)
 * [Wms_Warehouse_Locations](Wms_Warehouse_Locations.md)
 * [Wms_Warehouse_Order_Lines](Wms_Warehouse_Order_Lines.md)

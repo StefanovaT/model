@@ -4,8 +4,6 @@ uid: Logistics.Wms
 # Logistics.Wms Namespace
 
 ## Entities
-- [CompositeProductComponents](Logistics.Wms.CompositeProductComponents.md)  
-- [CompositeProducts](Logistics.Wms.CompositeProducts.md)  
 - [WarehouseAvailabilityView](Logistics.Wms.WarehouseAvailabilityView.md)  
 - [WarehouseLocations](Logistics.Wms.WarehouseLocations.md)  
 - [WarehouseOrderLines](Logistics.Wms.WarehouseOrderLines.md)  
