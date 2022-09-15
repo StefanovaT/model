@@ -268,7 +268,7 @@ SalesOrder.Notes = null
 <td style="text-align: left;">MarketingActivityLineToSalesOrderLine</td>
 <td style="text-align: center;">MStandardQuantityBase</td>
 <td style="text-align: center;">MarketingActivityLine.Product.BaseMeasurementCategory.BaseUnit</td>
-<td style="text-align: left;">CONVERT(MarketingActivityLine.Quantity, MarketingActivityLine.Product.BaseMeasurementCategory.BaseUnit)</td>
+<td style="text-align: left;">CONVERT(MarketingActivityLine.OrderQuantity, MarketingActivityLine.Product.BaseMeasurementCategory.BaseUnit)</td>
 <td style="text-align: left;">SalesOrderLine.StandardQuantityBase</td>
 <td style="text-align: left;">YES</td>
 </tr>
@@ -293,9 +293,9 @@ SalesOrderLine.StandardUnitPrice = loaded by the 'Get Standard Unit Price' metho
 
 SalesOrderLine.RequestedQuantity = null
 
-SalesOrderLine.Quantity = CONVERT( REMAINING(MarketingActivityLine.MStandardQuantityBase), MarketingActivityLine.QuantityUnit)
+SalesOrderLine.Quantity = CONVERT( REMAINING(MarketingActivityLine.MStandardQuantityBase), MarketingActivityLine.OrderQuantityUnit)
 
-SalesOrderLine.QuantityUnit = MarketingActivityLine.QuantityUnit
+SalesOrderLine.QuantityUnit = MarketingActivityLine.OrderQuantityUnit
 
 SalesOrderLine.QuantityBase = REMAINING(MarketingActivityLine.MStandardQuantityBase)
 
