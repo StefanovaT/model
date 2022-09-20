@@ -10802,6 +10802,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R33718.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R33718.html",
+          "hash": "jXFzDJ+kJ7Qsd1/EjAwBTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R33756.md",
       "output": {
         ".html": {
@@ -14908,7 +14920,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Documents.html",
-          "hash": "sOdlij/8K2mC1k3YfpBu9w=="
+          "hash": "iYvVYe7yM2UBhxax61xD6Q=="
         }
       },
       "is_incremental": false,
@@ -18666,7 +18678,7 @@
       "output": {
         ".html": {
           "relative_path": "reference/common-business-rules/all-documents.html",
-          "hash": "TLqrAAcXsgF1Ri8MoUDlQA=="
+          "hash": "Nh0fi05BCfqMWqHxio1pQw=="
         }
       },
       "is_incremental": false,
