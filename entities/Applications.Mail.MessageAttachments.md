@@ -117,6 +117,7 @@ _Supports Order By_: ****
 The <see cref="Message"/> to which this MessageAttachment belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Messages](Applications.Mail.Messages.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
