@@ -259,6 +259,13 @@ Short code of the variant, that is unique within the Product. Usually used as a 
 |User Login|no|
 |Visible|yes|
 
+#### Short_Code - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
+
 ### Variant_Color_Id
 
 
