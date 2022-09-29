@@ -139,7 +139,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.Products.ProductVariants.html#shortcode">ShortCode</a></td>
 <td>string (32) <strong>nullable</strong></td>
-<td>Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). <code>ORD</code> <code>Introduced in version 23.1.1.19</code></td>
+<td>Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). <code>Filter(eq;like)</code> <code>ORD</code> <code>Introduced in version 23.1.1.19</code></td>
 </tr>
 </tbody>
 </table>
@@ -220,11 +220,11 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****</p>
 <h3 id="shortcode">ShortCode</h3>
-<p>Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). <code>ORD</code> <code>Introduced in version 23.1.1.19</code></p>
+<p>Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). <code>Filter(eq;like)</code> <code>ORD</code> <code>Introduced in version 23.1.1.19</code></p>
 <p><em>Type</em>: <strong>string (32) <strong>nullable</strong></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>32</strong></p>
 <h2 id="reference-details">Reference Details</h2>

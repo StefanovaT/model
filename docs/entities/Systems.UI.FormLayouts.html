@@ -110,6 +110,11 @@ Name Data Member:<br>
 <td>The application, which consumes the layout. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code></td>
 </tr>
 <tr>
+<td><a href="Systems.UI.FormLayouts.html#category">Category</a></td>
+<td>string (36) <strong>nullable</strong></td>
+<td>The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type. <code>Filter(eq)</code> <code>Introduced in version 23.1.1.25</code></td>
+</tr>
+<tr>
 <td><a href="Systems.UI.FormLayouts.html#displaytext">DisplayText</a></td>
 <td>string</td>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
@@ -197,6 +202,13 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
+<h3 id="category">Category</h3>
+<p>The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type. <code>Filter(eq)</code> <code>Introduced in version 23.1.1.25</code></p>
+<p><em>Type</em>: <strong>string (36) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>36</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>

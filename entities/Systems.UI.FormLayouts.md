@@ -26,6 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ApplicationName](Systems.UI.FormLayouts.md#applicationname) | string (64) | The application, which consumes the layout. `Required` `Filter(eq)` `ORD` 
+| [Category](Systems.UI.FormLayouts.md#category) | string (36) __nullable__ | The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type. `Filter(eq)` `Introduced in version 23.1.1.25` 
 | [DisplayText](Systems.UI.FormLayouts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FormName](Systems.UI.FormLayouts.md#formname) | string (64) | The form, for which the layout is applied. `Required` `Filter(eq;like)` 
 | [Id](Systems.UI.FormLayouts.md#id) | guid |  
@@ -58,6 +59,16 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+
+### Category
+
+The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type. `Filter(eq)` `Introduced in version 23.1.1.25`
+
+_Type_: **string (36) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Maximum Length_: **36**  
 
 ### DisplayText
 
