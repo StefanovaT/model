@@ -10862,11 +10862,23 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "business-rules/R33835.md",
+      "source_relative_path": "business-rules/R33835-1.md",
       "output": {
         ".html": {
-          "relative_path": "business-rules/R33835.html",
-          "hash": "Lmu2OFsV5UctfRufWLq/ow=="
+          "relative_path": "business-rules/R33835-1.html",
+          "hash": "418gA9bYCRS9Qx+MKqO3FQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R33860.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R33860.html",
+          "hash": "CaULBRcX6B/kBvZ4Q9it8g=="
         }
       },
       "is_incremental": false,
@@ -15304,7 +15316,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Products.ProductVariants.html",
-          "hash": "E5CcpeUI1gTFQMpydKi7bQ=="
+          "hash": "DoImgDljV2qJDGW25lu3Uw=="
         }
       },
       "is_incremental": false,
@@ -15400,7 +15412,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.PropertyValues.html",
-          "hash": "qXxgIonRu0gf2Z4tcfhwHQ=="
+          "hash": "6BOrf9N3asJLhJGkXC+Xdw=="
         }
       },
       "is_incremental": false,
