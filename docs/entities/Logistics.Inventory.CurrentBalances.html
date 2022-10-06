@@ -115,7 +115,7 @@ __</p>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#quantitybase">QuantityBase</a></td>
 <td><a href="../data-types.html#quantity">Quantity (38, 3)</a></td>
-<td>The quantity of the stock received/issued in base measurement unit. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
+<td>The quantity of the stock received/issued in base measurement unit. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#storecost">StoreCost</a></td>
@@ -185,10 +185,10 @@ __</p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="quantitybase">QuantityBase</h3>
-<p>The quantity of the stock received/issued in base measurement unit. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
+<p>The quantity of the stock received/issued in base measurement unit. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (38, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="storecost">StoreCost</h3>
 <p>The cost of the inventory in the stores currency. <code>Currency: Store.Currency</code> <code>Required</code></p>

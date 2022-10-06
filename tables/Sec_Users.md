@@ -13,6 +13,7 @@ User logins. Entity: Sec_Users
 | - | - | --- |
 |[Access_Failed_Count](#access_failed_count)|`int` |Indicates how many times the user has failed to login. May be used for locking out the user.|
 |[Active](#active)|`bit` |True when the login is currently active and the user can log in.|
+|[Basic_Authentication_Allowed](#basic_authentication_allowed)|`bit` |If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!|
 |[Company_Name](#company_name)|`nvarchar(64)` |Name of the company in which the user claims they are working.|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The date and time (in UTC), when the user was created.|
 |[Default_Culture](#default_culture)|`nvarchar(15)` |The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".|
@@ -111,6 +112,42 @@ True when the login is currently active and the user can log in.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|yes|
+
+### Basic_Authentication_Allowed
+
+
+If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|False|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Basic_Authentication_Allowed - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Company_Name
 

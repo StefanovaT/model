@@ -250,7 +250,7 @@ Short code of the variant, that is unique within the Product. Usually used as a 
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(32) (Allows NULL)|

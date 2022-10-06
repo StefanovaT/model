@@ -35,7 +35,7 @@ Aggregate Root:
 | [Id](General.Products.ProductVariants.md#id) | guid |  
 | [Name](General.Products.ProductVariants.md#name) | [MultilanguageString (512)](../data-types.md#multilanguagestring) __nullable__ | Product variant name. It is the concatenation of the names of the color, size and style. `ReadOnly` 
 | [ObjectVersion](General.Products.ProductVariants.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ShortCode](General.Products.ProductVariants.md#shortcode) | string (32) __nullable__ | Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). `Filter(eq;like)` `ORD` `Introduced in version 23.1.1.19` 
+| [ShortCode](General.Products.ProductVariants.md#shortcode) | string (32) __nullable__ | Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). `Filter(eq;like)` `Introduced in version 23.1.1.19` 
 
 ## References
 
@@ -112,13 +112,12 @@ _Supports Order By_: ****
 
 ### ShortCode
 
-Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). `Filter(eq;like)` `ORD` `Introduced in version 23.1.1.19`
+Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes). `Filter(eq;like)` `Introduced in version 23.1.1.19`
 
 _Type_: **string (32) __nullable__**  
-_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 _Maximum Length_: **32**  
 
 

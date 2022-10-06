@@ -124,6 +124,11 @@ Name Data Member:<br>
 <td>True when the login is currently active and the user can log in. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
+<td><a href="Systems.Security.Users.html#basicauthenticationallowed">BasicAuthenticationAllowed</a></td>
+<td>boolean</td>
+<td>If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.1.35</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Security.Users.html#companyname">CompanyName</a></td>
 <td>string (64) <strong>nullable</strong></td>
 <td>Name of the company in which the user claims they are working. <code>Introduced in version 22.1.6.61</code></td>
@@ -304,6 +309,13 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong></p>
+<h3 id="basicauthenticationallowed">BasicAuthenticationAllowed</h3>
+<p>If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.1.35</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>False</strong></p>
 <h3 id="companyname">CompanyName</h3>
 <p>Name of the company in which the user claims they are working. <code>Introduced in version 22.1.6.61</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
