@@ -28,10 +28,10 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DeclarerType](Finance.Vat.BGVATDeclaringPersons.md#declarertype) | [DeclarerType](Finance.Vat.BGVATDeclaringPersons.md#declarertype) | Type of the declaring person. A=Attorney, R=Representative. `Required` `Filter(eq)` 
-| [DeclaringPersonAddress](Finance.Vat.BGVATDeclaringPersons.md#declaringpersonaddress) | string (150) | Address for correspondation of the declaring person. `Required` 
-| [DeclaringPersonCity](Finance.Vat.BGVATDeclaringPersons.md#declaringpersoncity) | string (50) | City from the address for correspondation of the declaring person. `Required` 
+| [DeclaringPersonAddress](Finance.Vat.BGVATDeclaringPersons.md#declaringpersonaddress) | string (150) | Address for correspondence of the declaring person. `Required` 
+| [DeclaringPersonCity](Finance.Vat.BGVATDeclaringPersons.md#declaringpersoncity) | string (50) | City from the address for correspondence of the declaring person. `Required` 
 | [DeclaringPersonPosition](Finance.Vat.BGVATDeclaringPersons.md#declaringpersonposition) | string (50) __nullable__ | Position of the declaring person in the enterprise company. 
-| [DeclaringPersonPostcode](Finance.Vat.BGVATDeclaringPersons.md#declaringpersonpostcode) | string (4) | Postcode from the address for correspondation of the declaring person. `Required` 
+| [DeclaringPersonPostcode](Finance.Vat.BGVATDeclaringPersons.md#declaringpersonpostcode) | string (4) | Postcode from the address for correspondence of the declaring person. `Required` 
 | [DisplayText](Finance.Vat.BGVATDeclaringPersons.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Vat.BGVATDeclaringPersons.md#id) | guid |  
 | [IsDefault](Finance.Vat.BGVATDeclaringPersons.md#isdefault) | boolean | True if this is the default person, which issues VAT declarations for this Enterprise Company. `Required` `Default(true)` 
@@ -66,7 +66,7 @@ _Supports Order By_: **False**
 
 ### DeclaringPersonAddress
 
-Address for correspondation of the declaring person. `Required`
+Address for correspondence of the declaring person. `Required`
 
 _Type_: **string (150)**  
 _Category_: **System**  
@@ -78,7 +78,7 @@ _Front-End Recalc Expressions:_
 `obj.Person.GetValidAddress( ).Name`
 ### DeclaringPersonCity
 
-City from the address for correspondation of the declaring person. `Required`
+City from the address for correspondence of the declaring person. `Required`
 
 _Type_: **string (50)**  
 _Category_: **System**  
@@ -98,7 +98,7 @@ _Maximum Length_: **50**
 
 ### DeclaringPersonPostcode
 
-Postcode from the address for correspondation of the declaring person. `Required`
+Postcode from the address for correspondence of the declaring person. `Required`
 
 _Type_: **string (4)**  
 _Category_: **System**  

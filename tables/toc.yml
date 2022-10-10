@@ -630,6 +630,10 @@
     href: Gen_Sequences.md
   - name: Gen_Text_Translations
     href: Gen_Text_Translations.md
+  - name: Gen_ToDo_SubTasks
+    href: Gen_ToDo_SubTasks.md
+  - name: Gen_ToDo_Tasks
+    href: Gen_ToDo_Tasks.md
   - name: Gen_Variant_Colors
     href: Gen_Variant_Colors.md
   - name: Gen_Variant_Sizes

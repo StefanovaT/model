@@ -78,6 +78,8 @@
 * [Gen_Sequence_Generators](Gen_Sequence_Generators.md)
 * [Gen_Sequences](Gen_Sequences.md)
 * [Gen_Text_Translations](Gen_Text_Translations.md)
+* [Gen_ToDo_SubTasks](Gen_ToDo_SubTasks.md)
+* [Gen_ToDo_Tasks](Gen_ToDo_Tasks.md)
 * [Gen_Variant_Colors](Gen_Variant_Colors.md)
 * [Gen_Variant_Sizes](Gen_Variant_Sizes.md)
 * [Gen_Variant_Styles](Gen_Variant_Styles.md)

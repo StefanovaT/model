@@ -43,7 +43,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Document](General.DocumentPrints.md#document) | [Documents](General.Documents.md) | The document which was printed or exported. `Required` `Filter(multi eq)` `Owner` |
-| [DocumentPrintImage](General.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](General.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq)` |
+| [DocumentPrintImage](General.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](General.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq;like)` |
 
 
 ## Attribute Details
@@ -167,11 +167,11 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 
 ### DocumentPrintImage
 
-Points to the actual contents of the printed document. `Filter(multi eq)`
+Points to the actual contents of the printed document. `Filter(multi eq;like)`
 
 _Type_: **[DocumentPrintImages](General.DocumentPrintImages.md) (nullable)**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
 
 
 ## API Methods

@@ -174,7 +174,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.DocumentPrints.html#documentprintimage">DocumentPrintImage</a></td>
 <td><a href="General.DocumentPrintImages.html">DocumentPrintImages</a> (nullable)</td>
-<td>Points to the actual contents of the printed document. <code>Filter(multi eq)</code></td>
+<td>Points to the actual contents of the printed document. <code>Filter(multi eq;like)</code></td>
 </tr>
 </tbody>
 </table>
@@ -281,10 +281,10 @@ Allowed values for the <code>PrintoutType</code>(General.DocumentPrints.md#print
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
 <h3 id="documentprintimage">DocumentPrintImage</h3>
-<p>Points to the actual contents of the printed document. <code>Filter(multi eq)</code></p>
+<p>Points to the actual contents of the printed document. <code>Filter(multi eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentPrintImages.html">DocumentPrintImages</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

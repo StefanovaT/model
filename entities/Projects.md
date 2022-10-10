@@ -20,6 +20,8 @@ uid: Projects
 - [TemplateRisks](Projects.TemplateRisks.md)  
 - [Templates](Projects.Templates.md)  
 - [TemplateWorkElements](Projects.TemplateWorkElements.md)  
+- [ToDoSubTasks](Projects.ToDoSubTasks.md)  
+- [ToDoTasks](Projects.ToDoTasks.md)  
 - [TypeRoles](Projects.TypeRoles.md)  
 - [TypeWorkElements](Projects.TypeWorkElements.md)  
 - [TypeWorkTypes](Projects.TypeWorkTypes.md)  

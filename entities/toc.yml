@@ -1046,6 +1046,10 @@
     href: Projects.Templates.md
   - name: TemplateWorkElements
     href: Projects.TemplateWorkElements.md
+  - name: ToDoSubTasks
+    href: Projects.ToDoSubTasks.md
+  - name: ToDoTasks
+    href: Projects.ToDoTasks.md
   - name: TypeRoles
     href: Projects.TypeRoles.md
   - name: TypeWorkElements
