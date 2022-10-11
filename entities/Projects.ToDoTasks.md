@@ -1,7 +1,7 @@
 ---
-uid: Projects.ToDoTasks
+uid: Projects.TodoTasks
 ---
-# Projects.ToDoTasks Entity
+# Projects.TodoTasks Entity
 
 **Namespace:** [Projects](Projects.md)  
 
@@ -17,36 +17,36 @@ _Name_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Tree  
-* [Projects.ToDoTasks](Projects.ToDoTasks.md)  
-  * [Projects.ToDoSubTasks](Projects.ToDoSubTasks.md)  
+* [Projects.TodoTasks](Projects.TodoTasks.md)  
+  * [Projects.TodoTaskItems](Projects.TodoTaskItems.md)  
 
 ## Attributes
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CompletedDateTimeUtc](Projects.ToDoTasks.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task was completed. `ReadOnly` 
-| [DisplayText](Projects.ToDoTasks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [DueDate](Projects.ToDoTasks.md#duedate) | date __nullable__ | Indicates when the task should be finished. 
-| [Id](Projects.ToDoTasks.md#id) | guid |  
-| [Importance](Projects.ToDoTasks.md#importance) | [Importance](Projects.ToDoTasks.md#importance) | The importance of the task. `Required` `Default("N")` `Filter(eq)` 
-| [Name](Projects.ToDoTasks.md#name) | string (254) __nullable__ | A brief description of the task. 
-| [ObjectVersion](Projects.ToDoTasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [RemindTime](Projects.ToDoTasks.md#remindtime) | datetimeoffset __nullable__ | When to remind the assigned user for the task. 
-| [State](Projects.ToDoTasks.md#state) | [State](Projects.ToDoTasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(eq)` 
+| [CompletedDateTimeUtc](Projects.TodoTasks.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task was completed. `ReadOnly` 
+| [DisplayText](Projects.TodoTasks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [DueDate](Projects.TodoTasks.md#duedate) | date __nullable__ | Indicates when the task should be finished. 
+| [Id](Projects.TodoTasks.md#id) | guid |  
+| [Importance](Projects.TodoTasks.md#importance) | [Importance](Projects.TodoTasks.md#importance) | The importance of the task. `Required` `Default("N")` `Filter(eq)` 
+| [Name](Projects.TodoTasks.md#name) | string (254) __nullable__ | A brief description of the task. 
+| [ObjectVersion](Projects.TodoTasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [RemindTime](Projects.TodoTasks.md#remindtime) | datetimeoffset __nullable__ | When to remind the assigned user for the task. 
+| [State](Projects.TodoTasks.md#state) | [State](Projects.TodoTasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(eq)` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AssignedToUser](Projects.ToDoTasks.md#assignedtouser) | [Users](Systems.Security.Users.md) | The user, to whom the todo is assigned. `Required` `Filter(multi eq)` |
-| [OwnerUser](Projects.ToDoTasks.md#owneruser) | [Users](Systems.Security.Users.md) | The user, who created the todo and owns it. `Required` `Filter(multi eq)` |
-| [SocialGroup](Projects.ToDoTasks.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | When not null, indicates that the todo is contained in and managed by the specified social group. `Filter(multi eq)` |
+| [AssignedToUser](Projects.TodoTasks.md#assignedtouser) | [Users](Systems.Security.Users.md) | The user, to whom the todo is assigned. `Required` `Filter(multi eq)` |
+| [OwnerUser](Projects.TodoTasks.md#owneruser) | [Users](Systems.Security.Users.md) | The user, who created the todo and owns it. `Required` `Filter(multi eq)` |
+| [SocialGroup](Projects.TodoTasks.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | When not null, indicates that the todo is contained in and managed by the specified social group. `Filter(multi eq)` |
 
 ## Child Collections
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| ToDoSubTasks | [ToDoSubTasks](Projects.ToDoSubTasks.md) | List of `ToDoSubTask`(Projects.ToDoSubTasks.md) child objects, based on the `Projects.ToDoSubTask.ToDoTask`(Projects.ToDoSubTasks.md#todotask) back reference 
+| Items | [TodoTaskItems](Projects.TodoTaskItems.md) | List of `TodoTaskItem`(Projects.TodoTaskItems.md) child objects, based on the `Projects.TodoTaskItem.TodoTask`(Projects.TodoTaskItems.md#todotask) back reference 
 
 
 ## Attribute Details
@@ -89,10 +89,10 @@ _Supported Filters_: **Equals, EqualsIn**
 
 The importance of the task. `Required` `Default("N")` `Filter(eq)`
 
-_Type_: **[Importance](Projects.ToDoTasks.md#importance)**  
+_Type_: **[Importance](Projects.TodoTasks.md#importance)**  
 _Category_: **System**  
-Allowed values for the `Importance`(Projects.ToDoTasks.md#importance) data attribute  
-_Allowed Values (Projects.ToDoTasksRepository.Importance Enum Members)_  
+Allowed values for the `Importance`(Projects.TodoTasks.md#importance) data attribute  
+_Allowed Values (Projects.TodoTasksRepository.Importance Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -136,17 +136,17 @@ _Supports Order By_: **False**
 
 Indicates the current task state. `Required` `Default("N")` `Filter(eq)`
 
-_Type_: **[State](Projects.ToDoTasks.md#state)**  
+_Type_: **[State](Projects.TodoTasks.md#state)**  
 _Category_: **System**  
-Allowed values for the `State`(Projects.ToDoTasks.md#state) data attribute  
-_Allowed Values (Projects.ToDoTasksRepository.State Enum Members)_  
+Allowed values for the `State`(Projects.TodoTasks.md#state) data attribute  
+_Allowed Values (Projects.TodoTasksRepository.State Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
-| New | New value. Stored as 'N'. <br /> _Database Value:_ 'N' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'New' |
-| InProgress | InProgress value. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'InProgress' |
-| Waiting | Waiting value. Stored as 'W'. <br /> _Database Value:_ 'W' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Waiting' |
-| Completed | Completed value. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Completed' |
+| New | The task is new and its execution is pending. Stored as 'N'. <br /> _Database Value:_ 'N' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'New' |
+| InProgress | The task is in progress.. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'InProgress' |
+| Waiting | The task is pending.. Stored as 'W'. <br /> _Database Value:_ 'W' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Waiting' |
+| Completed | The task is done.. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Completed' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
@@ -163,6 +163,8 @@ _Type_: **[Users](Systems.Security.Users.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+_Front-End Recalc Expressions:_  
+`obj.Transaction.CurrentUser.ToSecurityUser( )`
 ### OwnerUser
 
 The user, who created the todo and owns it. `Required` `Filter(multi eq)`
@@ -171,6 +173,8 @@ _Type_: **[Users](Systems.Security.Users.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+_Front-End Recalc Expressions:_  
+`obj.Transaction.CurrentUser.ToSecurityUser( )`
 ### SocialGroup
 
 When not null, indicates that the todo is contained in and managed by the specified social group. `Filter(multi eq)`
@@ -258,17 +262,17 @@ _Domain API Request_: **POST**
 
 ## Business Rules
 
-[!list limit=1000 erp.entity=Projects.ToDoTasks erp.type=business-rule default-text="None"]
+[!list limit=1000 erp.entity=Projects.TodoTasks erp.type=business-rule default-text="None"]
 
 ## Front-End Business Rules
 
-[!list limit=1000 erp.entity=Projects.ToDoTasks erp.type=front-end-business-rule default-text="None"]
+[!list limit=1000 erp.entity=Projects.TodoTasks erp.type=front-end-business-rule default-text="None"]
 
 ## API
 
 Domain API Query:
-<https://demodb.my.erp.net/api/domain/odata/Projects_ToDoTasks?$top=10>
+<https://demodb.my.erp.net/api/domain/odata/Projects_TodoTasks?$top=10>
 
 Domain API Query Builder:
-<https://demodb.my.erp.net/api/domain/querybuilder#Projects_ToDoTasks?$top=10>
+<https://demodb.my.erp.net/api/domain/querybuilder#Projects_TodoTasks?$top=10>
 

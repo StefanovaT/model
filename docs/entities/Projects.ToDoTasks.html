@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Projects.ToDoTasks Entity | ERP.net Domain Model </title>
+    <title>Projects.TodoTasks Entity | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Projects.ToDoTasks Entity | ERP.net Domain Model ">
+    <meta name="title" content="Projects.TodoTasks Entity | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,8 +76,8 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Projects.ToDoTasks">
-<h1 id="projectstodotasks-entity">Projects.ToDoTasks Entity</h1>
+            <article class="content wrap" id="_content" data-uid="Projects.TodoTasks">
+<h1 id="projectstodotasks-entity">Projects.TodoTasks Entity</h1>
 
 <p><strong>Namespace:</strong> <a href="Projects.html">Projects</a></p>
 <h2 id="default-visualization">Default Visualization</h2>
@@ -91,9 +91,9 @@ Name Data Member:<br>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
 <ul>
-<li><a href="Projects.ToDoTasks.html">Projects.ToDoTasks</a>
+<li><a href="Projects.ToDoTasks.html">Projects.TodoTasks</a>
 <ul>
-<li><a href="Projects.ToDoSubTasks.html">Projects.ToDoSubTasks</a></li>
+<li><a href="Projects.TodoTaskItems.html">Projects.TodoTaskItems</a></li>
 </ul>
 </li>
 </ul>
@@ -192,9 +192,9 @@ Name Data Member:<br>
 </thead>
 <tbody>
 <tr>
-<td>ToDoSubTasks</td>
-<td><a href="Projects.ToDoSubTasks.html">ToDoSubTasks</a></td>
-<td>List of <code>ToDoSubTask</code>(Projects.ToDoSubTasks.md) child objects, based on the <code>Projects.ToDoSubTask.ToDoTask</code>(Projects.ToDoSubTasks.md#todotask) back reference</td>
+<td>Items</td>
+<td><a href="Projects.TodoTaskItems.html">TodoTaskItems</a></td>
+<td>List of <code>TodoTaskItem</code>(Projects.TodoTaskItems.md) child objects, based on the <code>Projects.TodoTaskItem.TodoTask</code>(Projects.TodoTaskItems.md#todotask) back reference</td>
 </tr>
 </tbody>
 </table>
@@ -226,8 +226,8 @@ Name Data Member:<br>
 <p>The importance of the task. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.ToDoTasks.html#importance">Importance</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-Allowed values for the <code>Importance</code>(Projects.ToDoTasks.md#importance) data attribute<br>
-<em>Allowed Values (Projects.ToDoTasksRepository.Importance Enum Members)</em></p>
+Allowed values for the <code>Importance</code>(Projects.TodoTasks.md#importance) data attribute<br>
+<em>Allowed Values (Projects.TodoTasksRepository.Importance Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -276,8 +276,8 @@ Allowed values for the <code>Importance</code>(Projects.ToDoTasks.md#importance)
 <p>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.ToDoTasks.html#state">State</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-Allowed values for the <code>State</code>(Projects.ToDoTasks.md#state) data attribute<br>
-<em>Allowed Values (Projects.ToDoTasksRepository.State Enum Members)</em></p>
+Allowed values for the <code>State</code>(Projects.TodoTasks.md#state) data attribute<br>
+<em>Allowed Values (Projects.TodoTasksRepository.State Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -288,19 +288,19 @@ Allowed values for the <code>State</code>(Projects.ToDoTasks.md#state) data attr
 <tbody>
 <tr>
 <td>New</td>
-<td>New value. Stored as 'N'. <br> <em>Database Value:</em> 'N' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'New'</td>
+<td>The task is new and its execution is pending. Stored as 'N'. <br> <em>Database Value:</em> 'N' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'New'</td>
 </tr>
 <tr>
 <td>InProgress</td>
-<td>InProgress value. Stored as 'P'. <br> <em>Database Value:</em> 'P' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'InProgress'</td>
+<td>The task is in progress.. Stored as 'P'. <br> <em>Database Value:</em> 'P' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'InProgress'</td>
 </tr>
 <tr>
 <td>Waiting</td>
-<td>Waiting value. Stored as 'W'. <br> <em>Database Value:</em> 'W' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Waiting'</td>
+<td>The task is pending.. Stored as 'W'. <br> <em>Database Value:</em> 'W' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Waiting'</td>
 </tr>
 <tr>
 <td>Completed</td>
-<td>Completed value. Stored as 'C'. <br> <em>Database Value:</em> 'C' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'Completed'</td>
+<td>The task is done.. Stored as 'C'. <br> <em>Database Value:</em> 'C' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'Completed'</td>
 </tr>
 </tbody>
 </table>
@@ -313,11 +313,15 @@ Allowed values for the <code>State</code>(Projects.ToDoTasks.md#state) data attr
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.Transaction.CurrentUser.ToSecurityUser( )</code></p>
 <h3 id="owneruser">OwnerUser</h3>
 <p>The user, who created the todo and owns it. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.Transaction.CurrentUser.ToSecurityUser( )</code></p>
 <h3 id="socialgroup">SocialGroup</h3>
 <p>When not null, indicates that the todo is contained in and managed by the specified social group. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Communities.Social.Groups.html">Groups</a> (nullable)</strong><br>
@@ -395,12 +399,15 @@ The subject.<br>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R33928-1.html">R33928-1 Todo Task - Set Owner User (Recalc)</a></li>
+<li><a href="../business-rules/R33928-2.html">R33928-2 Todo Task - Set Assigned To User (Recalc)</a></li>
+</ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
-<a href="https://demodb.my.erp.net/api/domain/odata/Projects_ToDoTasks?$top=10">https://demodb.my.erp.net/api/domain/odata/Projects_ToDoTasks?$top=10</a></p>
+<a href="https://demodb.my.erp.net/api/domain/odata/Projects_TodoTasks?$top=10">https://demodb.my.erp.net/api/domain/odata/Projects_TodoTasks?$top=10</a></p>
 <p>Domain API Query Builder:
-<a href="https://demodb.my.erp.net/api/domain/querybuilder#Projects_ToDoTasks?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Projects_ToDoTasks?$top=10</a></p>
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Projects_TodoTasks?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Projects_TodoTasks?$top=10</a></p>
 </article>
           </div>
           

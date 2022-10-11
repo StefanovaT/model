@@ -1612,8 +1612,11 @@ references:
 - uid: Projects.ToDoSubTasks
   name: Projects.ToDoSubTasks Entity
   href: entities/Projects.ToDoSubTasks.html
-- uid: Projects.ToDoTasks
-  name: Projects.ToDoTasks Entity
+- uid: Projects.TodoTaskItems
+  name: Projects.TodoTaskItems Entity
+  href: entities/Projects.TodoTaskItems.html
+- uid: Projects.TodoTasks
+  name: Projects.TodoTasks Entity
   href: entities/Projects.ToDoTasks.html
 - uid: Projects.TypeRoles
   name: Projects.TypeRoles Entity

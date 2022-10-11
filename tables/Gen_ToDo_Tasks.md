@@ -1,9 +1,9 @@
-# Table Gen_ToDo_Tasks
+# Table Gen_Todo_Tasks
 
 
 ## Entity
 
-Entity: [Projects.ToDoTasks](~/entities/Projects.ToDoTasks.md)
+Entity: [Projects.TodoTasks](~/entities/Projects.TodoTasks.md)
 
 
 ## Summary
@@ -20,7 +20,7 @@ Entity: [Projects.ToDoTasks](~/entities/Projects.ToDoTasks.md)
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |When not null, indicates that the todo is contained in and managed by the specified social group.|
 |[State](#state)|`nvarchar(1)` Allowed: `N`, `P`, `W`, `C`|Indicates the current task state.|
-|[ToDo_Task_Id](#todo_task_id)|`uniqueidentifier` `PK`||
+|[Todo_Task_Id](#todo_task_id)|`uniqueidentifier` `PK`||
 
 ## Columns
 
@@ -356,7 +356,7 @@ Indicates the current task state.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### ToDo_Task_Id
+### Todo_Task_Id
 
 | Property | Value |
 | - | - |
@@ -383,7 +383,7 @@ Indicates the current task state.
 |User Login|no|
 |Visible|yes|
 
-#### ToDo_Task_Id - Supported Filters
+#### Todo_Task_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
