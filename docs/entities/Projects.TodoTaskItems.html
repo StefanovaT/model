@@ -106,12 +106,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.TodoTaskItems.html#completeddatetimeutc">CompletedDateTimeUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Indicates (in UTC) when the task item was completed. <code>ReadOnly</code></td>
+<td>Indicates (in UTC) when the task item was completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.TodoTaskItems.html#createddatetimeutc">CreatedDateTimeUtc</a></td>
 <td>datetime</td>
-<td>Indicates (in UTC) when the task item was created. <code>Required</code> <code>Default(NowUtc)</code> <code>ReadOnly</code></td>
+<td>Indicates (in UTC) when the task item was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.TodoTaskItems.html#displaytext">DisplayText</a></td>
@@ -131,7 +131,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.TodoTaskItems.html#name">Name</a></td>
 <td>string (254)</td>
-<td>A brief description of the task. <code>Required</code></td>
+<td>A brief description of the task. <code>Required</code> <code>Filter(like)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.TodoTaskItems.html#objectversion">ObjectVersion</a></td>
@@ -159,16 +159,16 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="completeddatetimeutc">CompletedDateTimeUtc</h3>
-<p>Indicates (in UTC) when the task item was completed. <code>ReadOnly</code></p>
+<p>Indicates (in UTC) when the task item was completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="createddatetimeutc">CreatedDateTimeUtc</h3>
-<p>Indicates (in UTC) when the task item was created. <code>Required</code> <code>Default(NowUtc)</code> <code>ReadOnly</code></p>
+<p>Indicates (in UTC) when the task item was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTimeUtc</strong></p>
 <h3 id="displaytext">DisplayText</h3>
@@ -185,14 +185,15 @@ Aggregate Root:<br>
 <h3 id="iscompleted">IsCompleted</h3>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
 <h3 id="name">Name</h3>
-<p>A brief description of the task. <code>Required</code></p>
+<p>A brief description of the task. <code>Required</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
@@ -280,7 +281,9 @@ The subject.<br>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R33928-3.html">R33928-3 Todo Task Item - Set Completed Date Time (Recalc)</a></li>
+</ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Projects_TodoTaskItems?$top=10">https://demodb.my.erp.net/api/domain/odata/Projects_TodoTaskItems?$top=10</a></p>

@@ -37,6 +37,8 @@ Aggregate Tree
 | [ObjectVersion](Finance.Excise.MeasuringTransactions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Finance.Excise.MeasuringTransactions.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity of the product, measured with this transaction. `Unit: QuantityUnit` `Required` `Filter(eq;ge;le)` 
 | [StartTimeUtc](Finance.Excise.MeasuringTransactions.md#starttimeutc) | datetime | Starting time of the transaction (in UTC time). `Required` `Filter(eq;ge;le)` 
+| [TotalCounterEnd](Finance.Excise.MeasuringTransactions.md#totalcounterend) | decimal (12, 3) __nullable__ | Total counter value at the end of the transaction. `Introduced in version 23.1.1.42` 
+| [TotalCounterStart](Finance.Excise.MeasuringTransactions.md#totalcounterstart) | decimal (12, 3) __nullable__ | Total counter value at the start of the transaction. `Introduced in version 23.1.1.42` 
 | [TransactionNumber](Finance.Excise.MeasuringTransactions.md#transactionnumber) | string (32) | Transaction number, unique for the measuring device. `Required` `Filter(multi eq;like)` 
 
 ## References
@@ -166,6 +168,24 @@ Starting time of the transaction (in UTC time). `Required` `Filter(eq;ge;le)`
 _Type_: **datetime**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+
+### TotalCounterEnd
+
+Total counter value at the end of the transaction. `Introduced in version 23.1.1.42`
+
+_Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+
+### TotalCounterStart
+
+Total counter value at the start of the transaction. `Introduced in version 23.1.1.42`
+
+_Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 ### TransactionNumber

@@ -110,7 +110,7 @@ Name Data Member:<br>
 <tr>
 <td><a href="Projects.ToDoTasks.html#completeddatetimeutc">CompletedDateTimeUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Indicates (in UTC) when the task was completed. <code>ReadOnly</code></td>
+<td>Indicates (in UTC) when the task was completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.ToDoTasks.html#displaytext">DisplayText</a></td>
@@ -120,7 +120,7 @@ Name Data Member:<br>
 <tr>
 <td><a href="Projects.ToDoTasks.html#duedate">DueDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>Indicates when the task should be finished.</td>
+<td>Indicates when the task should be finished. <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.ToDoTasks.html#id">Id</a></td>
@@ -135,7 +135,7 @@ Name Data Member:<br>
 <tr>
 <td><a href="Projects.ToDoTasks.html#name">Name</a></td>
 <td>string (254) <strong>nullable</strong></td>
-<td>A brief description of the task.</td>
+<td>A brief description of the task. <code>Filter(like)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.ToDoTasks.html#objectversion">ObjectVersion</a></td>
@@ -200,10 +200,10 @@ Name Data Member:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="completeddatetimeutc">CompletedDateTimeUtc</h3>
-<p>Indicates (in UTC) when the task was completed. <code>ReadOnly</code></p>
+<p>Indicates (in UTC) when the task was completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
@@ -212,10 +212,10 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****</p>
 <h3 id="duedate">DueDate</h3>
-<p>Indicates when the task should be finished.</p>
+<p>Indicates when the task should be finished. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
@@ -254,10 +254,10 @@ Allowed values for the <code>Importance</code>(Projects.TodoTasks.md#importance)
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Normal</strong></p>
 <h3 id="name">Name</h3>
-<p>A brief description of the task.</p>
+<p>A brief description of the task. <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
@@ -313,15 +313,11 @@ Allowed values for the <code>State</code>(Projects.TodoTasks.md#state) data attr
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
-<p><em>Front-End Recalc Expressions:</em><br>
-<code>obj.Transaction.CurrentUser.ToSecurityUser( )</code></p>
 <h3 id="owneruser">OwnerUser</h3>
 <p>The user, who created the todo and owns it. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
-<p><em>Front-End Recalc Expressions:</em><br>
-<code>obj.Transaction.CurrentUser.ToSecurityUser( )</code></p>
 <h3 id="socialgroup">SocialGroup</h3>
 <p>When not null, indicates that the todo is contained in and managed by the specified social group. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Communities.Social.Groups.html">Groups</a> (nullable)</strong><br>

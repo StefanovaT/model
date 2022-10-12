@@ -54,6 +54,13 @@ Indicates (in UTC) when the task item was completed.
 |User Login|no|
 |Visible|yes|
 
+#### Completed_Date_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
+
 ### Created_Date_Time_Utc
 
 
@@ -84,6 +91,13 @@ Indicates (in UTC) when the task item was created.
 |User Login|no|
 |Visible|yes|
 
+#### Created_Date_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|yes|no|
+
 ### Is_Completed
 
 | Property | Value |
@@ -110,6 +124,12 @@ Indicates (in UTC) when the task item was created.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Is_Completed - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Name
 
@@ -140,6 +160,12 @@ A brief description of the task.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Name - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Row_Version
 

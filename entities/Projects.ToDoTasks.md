@@ -24,12 +24,12 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CompletedDateTimeUtc](Projects.TodoTasks.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task was completed. `ReadOnly` 
+| [CompletedDateTimeUtc](Projects.TodoTasks.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task was completed. `Filter(eq;ge;le)` `ReadOnly` 
 | [DisplayText](Projects.TodoTasks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [DueDate](Projects.TodoTasks.md#duedate) | date __nullable__ | Indicates when the task should be finished. 
+| [DueDate](Projects.TodoTasks.md#duedate) | date __nullable__ | Indicates when the task should be finished. `Filter(eq;ge;le)` 
 | [Id](Projects.TodoTasks.md#id) | guid |  
 | [Importance](Projects.TodoTasks.md#importance) | [Importance](Projects.TodoTasks.md#importance) | The importance of the task. `Required` `Default("N")` `Filter(eq)` 
-| [Name](Projects.TodoTasks.md#name) | string (254) __nullable__ | A brief description of the task. 
+| [Name](Projects.TodoTasks.md#name) | string (254) __nullable__ | A brief description of the task. `Filter(like)` 
 | [ObjectVersion](Projects.TodoTasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RemindTime](Projects.TodoTasks.md#remindtime) | datetimeoffset __nullable__ | When to remind the assigned user for the task. 
 | [State](Projects.TodoTasks.md#state) | [State](Projects.TodoTasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(eq)` 
@@ -53,11 +53,11 @@ Aggregate Tree
 
 ### CompletedDateTimeUtc
 
-Indicates (in UTC) when the task was completed. `ReadOnly`
+Indicates (in UTC) when the task was completed. `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
 ### DisplayText
@@ -71,11 +71,11 @@ _Supports Order By_: ****
 
 ### DueDate
 
-Indicates when the task should be finished.
+Indicates when the task should be finished. `Filter(eq;ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
 ### Id
@@ -106,11 +106,11 @@ _Default Value_: **Normal**
 
 ### Name
 
-A brief description of the task.
+A brief description of the task. `Filter(like)`
 
 _Type_: **string (254) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 
@@ -163,8 +163,6 @@ _Type_: **[Users](Systems.Security.Users.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
-_Front-End Recalc Expressions:_  
-`obj.Transaction.CurrentUser.ToSecurityUser( )`
 ### OwnerUser
 
 The user, who created the todo and owns it. `Required` `Filter(multi eq)`
@@ -173,8 +171,6 @@ _Type_: **[Users](Systems.Security.Users.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
-_Front-End Recalc Expressions:_  
-`obj.Transaction.CurrentUser.ToSecurityUser( )`
 ### SocialGroup
 
 When not null, indicates that the todo is contained in and managed by the specified social group. `Filter(multi eq)`

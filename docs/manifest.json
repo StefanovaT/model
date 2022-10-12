@@ -10934,6 +10934,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R33928-3.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R33928-3.html",
+          "hash": "idyROeyTos1YwemvMBwkyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -13912,7 +13924,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Excise.MeasuringTransactions.html",
-          "hash": "pOnqx4BD//fkbrPyby6d7g=="
+          "hash": "M0JJNRvhM3Gab+0+LAOw7g=="
         }
       },
       "is_incremental": false,
@@ -17332,7 +17344,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.ToDoTasks.html",
-          "hash": "L1rga9Y6Rvg386nswQvkWw=="
+          "hash": "RoDlGvhmWOIqeKcBgjz7vQ=="
         }
       },
       "is_incremental": false,
@@ -17344,7 +17356,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.TodoTaskItems.html",
-          "hash": "3fqxWl91S5CwT5r8UqyblA=="
+          "hash": "icbrR1k8e6Kf1473EvYEsw=="
         }
       },
       "is_incremental": false,
@@ -21450,7 +21462,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Exc_Measuring_Transactions.html",
-          "hash": "WjuZkyIBDLHm5VOy97tMuQ=="
+          "hash": "1Vdf3eUr1WyZvFS+A0v8pQ=="
         }
       },
       "is_incremental": false,
@@ -22662,7 +22674,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Todo_Task_Items.html",
-          "hash": "NW7LEhDI1BKaMfEZI4W9zg=="
+          "hash": "sotjywhk2reEQ4QkYPpyVA=="
         }
       },
       "is_incremental": false,
@@ -22674,7 +22686,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Todo_Tasks.html",
-          "hash": "Emjyz7VIwsmBs0Kmacdm7Q=="
+          "hash": "ky0BvrkXvG5DyV5BkO28ow=="
         }
       },
       "is_incremental": false,

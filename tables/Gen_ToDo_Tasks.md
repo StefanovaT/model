@@ -91,6 +91,13 @@ Indicates (in UTC) when the task was completed.
 |User Login|no|
 |Visible|yes|
 
+#### Completed_Date_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
+
 ### Due_Date
 
 
@@ -120,6 +127,13 @@ Indicates when the task should be finished.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
 
 ### Importance
 
@@ -187,6 +201,12 @@ A brief description of the task.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Name - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Owner_User_Id
 
@@ -348,7 +368,7 @@ Indicates the current task state.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### State - Supported Filters
 

@@ -165,6 +165,16 @@ Code Data Member:<br>
 <td>Starting time of the transaction (in UTC time). <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
+<td><a href="Finance.Excise.MeasuringTransactions.html#totalcounterend">TotalCounterEnd</a></td>
+<td>decimal (12, 3) <strong>nullable</strong></td>
+<td>Total counter value at the end of the transaction. <code>Introduced in version 23.1.1.42</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.MeasuringTransactions.html#totalcounterstart">TotalCounterStart</a></td>
+<td>decimal (12, 3) <strong>nullable</strong></td>
+<td>Total counter value at the start of the transaction. <code>Introduced in version 23.1.1.42</code></td>
+</tr>
+<tr>
 <td><a href="Finance.Excise.MeasuringTransactions.html#transactionnumber">TransactionNumber</a></td>
 <td>string (32)</td>
 <td>Transaction number, unique for the measuring device. <code>Required</code> <code>Filter(multi eq;like)</code></td>
@@ -293,6 +303,18 @@ Allowed values for the <code>Direction</code>(Finance.Excise.MeasuringTransactio
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="totalcounterend">TotalCounterEnd</h3>
+<p>Total counter value at the end of the transaction. <code>Introduced in version 23.1.1.42</code></p>
+<p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="totalcounterstart">TotalCounterStart</h3>
+<p>Total counter value at the start of the transaction. <code>Introduced in version 23.1.1.42</code></p>
+<p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="transactionnumber">TransactionNumber</h3>
 <p>Transaction number, unique for the measuring device. <code>Required</code> <code>Filter(multi eq;like)</code></p>

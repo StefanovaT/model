@@ -25,12 +25,12 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CompletedDateTimeUtc](Projects.TodoTaskItems.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task item was completed. `ReadOnly` 
-| [CreatedDateTimeUtc](Projects.TodoTaskItems.md#createddatetimeutc) | datetime | Indicates (in UTC) when the task item was created. `Required` `Default(NowUtc)` `ReadOnly` 
+| [CompletedDateTimeUtc](Projects.TodoTaskItems.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task item was completed. `Filter(eq;ge;le)` `ReadOnly` 
+| [CreatedDateTimeUtc](Projects.TodoTaskItems.md#createddatetimeutc) | datetime | Indicates (in UTC) when the task item was created. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly` 
 | [DisplayText](Projects.TodoTaskItems.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.TodoTaskItems.md#id) | guid |  
 | [IsCompleted](Projects.TodoTaskItems.md#iscompleted) | boolean |  
-| [Name](Projects.TodoTaskItems.md#name) | string (254) | A brief description of the task. `Required` 
+| [Name](Projects.TodoTaskItems.md#name) | string (254) | A brief description of the task. `Required` `Filter(like)` 
 | [ObjectVersion](Projects.TodoTaskItems.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
@@ -44,20 +44,20 @@ Aggregate Root:
 
 ### CompletedDateTimeUtc
 
-Indicates (in UTC) when the task item was completed. `ReadOnly`
+Indicates (in UTC) when the task item was completed. `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
 ### CreatedDateTimeUtc
 
-Indicates (in UTC) when the task item was created. `Required` `Default(NowUtc)` `ReadOnly`
+Indicates (in UTC) when the task item was created. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
 
@@ -81,17 +81,18 @@ _Supported Filters_: **Equals, EqualsIn**
 
 _Type_: **boolean**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 
 ### Name
 
-A brief description of the task. `Required`
+A brief description of the task. `Required` `Filter(like)`
 
 _Type_: **string (254)**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 
