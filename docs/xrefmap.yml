@@ -1609,6 +1609,15 @@ references:
 - uid: Projects.TemplateWorkElements
   name: Projects.TemplateWorkElements Entity
   href: entities/Projects.TemplateWorkElements.html
+- uid: Projects.Todo
+  name: Projects.Todo Namespace
+  href: entities/Projects.Todo.html
+- uid: Projects.Todo.TaskItems
+  name: Projects.Todo.TaskItems Entity
+  href: entities/Projects.Todo.TaskItems.html
+- uid: Projects.Todo.Tasks
+  name: Projects.Todo.Tasks Entity
+  href: entities/Projects.Todo.Tasks.html
 - uid: Projects.ToDoSubTasks
   name: Projects.ToDoSubTasks Entity
   href: entities/Projects.ToDoSubTasks.html

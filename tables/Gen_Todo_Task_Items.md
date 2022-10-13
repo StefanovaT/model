@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TodoTaskItems](~/entities/Projects.TodoTaskItems.md)
+Entity: [Projects.Todo.TaskItems](~/entities/Projects.Todo.TaskItems.md)
 
 
 ## Owner Tables Hierarchy

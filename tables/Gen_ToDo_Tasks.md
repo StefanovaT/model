@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TodoTasks](~/entities/Projects.TodoTasks.md)
+Entity: [Projects.Todo.Tasks](~/entities/Projects.Todo.Tasks.md)
 
 
 ## Summary

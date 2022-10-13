@@ -230,7 +230,7 @@
 <tr>
 <td><a href="#reference_date">Reference_Date</a></td>
 <td><code>datetime</code></td>
-<td>The date to which this document refers, i.e. when the action really occurred. If NULL, Document_Date is taken</td>
+<td>Indicates the date, when the event, described by the document, actually occurred.<br>Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system.<br>So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime.</td>
 </tr>
 <tr>
 <td><a href="#reference_document_no">Reference_Document_No</a></td>
@@ -3458,7 +3458,9 @@
 </tbody>
 </table>
 <h3 id="reference_date">Reference_Date</h3>
-<p>The date to which this document refers, i.e. when the action really occurred. If NULL, Document_Date is taken</p>
+<p>Indicates the date, when the event, described by the document, actually occurred.
+Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system.
+So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime.</p>
 <table>
 <thead>
 <tr>

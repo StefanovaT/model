@@ -226,7 +226,7 @@ Code Data Member:<br>
 <tr>
 <td><a href="Production.ShopFloor.OutputOrders.html#referencedate">ReferenceDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date to which this document refers, i.e. when the action really occurred. If null, Document_Date is taken. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.OutputOrders.html#referencedocumentno">ReferenceDocumentNo</a></td>
@@ -605,7 +605,7 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
 <h3 id="referencedate">ReferenceDate</h3>
-<p>The date to which this document refers, i.e. when the action really occurred. If null, Document_Date is taken. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>

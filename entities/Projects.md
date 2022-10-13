@@ -2,6 +2,8 @@
 uid: Projects
 ---
 # Projects Namespace
+## Namespaces
+- [Todo](Projects.Todo.md)  
 
 ## Entities
 - [ProjectParticipants](Projects.ProjectParticipants.md)  
@@ -20,8 +22,6 @@ uid: Projects
 - [TemplateRisks](Projects.TemplateRisks.md)  
 - [Templates](Projects.Templates.md)  
 - [TemplateWorkElements](Projects.TemplateWorkElements.md)  
-- [TodoTaskItems](Projects.TodoTaskItems.md)  
-- [TodoTasks](Projects.TodoTasks.md)  
 - [TypeRoles](Projects.TypeRoles.md)  
 - [TypeWorkElements](Projects.TypeWorkElements.md)  
 - [TypeWorkTypes](Projects.TypeWorkTypes.md)  
