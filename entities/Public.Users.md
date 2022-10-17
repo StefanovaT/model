@@ -27,12 +27,14 @@ Aggregate Tree
 | [IsAdmin](Public.Users.md#isadmin) | boolean | True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` `Inherited from Sec_Users_Table.Is_Admin` 
 | [Login](Public.Users.md#login) | string (64) | The login name of the user, which is usually the email. `Required` `Filter(multi eq;like)` `Inherited from Sec_Users_Table.Login` 
 | [Name](Public.Users.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The full name of the user. `Required` `Filter(like)` `Inherited from Sec_Users_Table.User_Name` 
+| [PhoneNumber](Public.Users.md#phonenumber) | string (64) __nullable__ | Used only for two-factor authentication. null when phone-based two-factor is not used. `Filter(eq;like)` `Inherited from Sec_Users_Table.Phone_Number` 
 | [UserId](Public.Users.md#userid) | guid | The Id of the security user. `Required` `Filter(multi eq)` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [Domain](Public.Users.md#domain) | [Domains](Systems.Security.Domains.md) (nullable) | The domain, to which the user belongs. `Filter(multi eq)` `Inherited from Sec_Users_Table.Domain_Id` |
 | [Person](Public.Users.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. `Filter(multi eq)` `Inherited from Sec_Users_Table.Person_Id` |
 
 
@@ -81,6 +83,17 @@ _Inherited From_: **Sec_Users_Table.User_Name**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
+### PhoneNumber
+
+Used only for two-factor authentication. null when phone-based two-factor is not used. `Filter(eq;like)` `Inherited from Sec_Users_Table.Phone_Number`
+
+_Type_: **string (64) __nullable__**  
+_Category_: **System**  
+_Inherited From_: **Sec_Users_Table.Phone_Number**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
+
 ### UserId
 
 The Id of the security user. `Required` `Filter(multi eq)`
@@ -91,6 +104,15 @@ _Supported Filters_: **Equals, EqualsIn**
 
 
 ## Reference Details
+
+### Domain
+
+The domain, to which the user belongs. `Filter(multi eq)` `Inherited from Sec_Users_Table.Domain_Id`
+
+_Type_: **[Domains](Systems.Security.Domains.md) (nullable)**  
+_Category_: **System**  
+_Inherited From_: **Sec_Users_Table.Domain_Id**  
+_Supported Filters_: **Equals, EqualsIn**  
 
 ### Person
 

@@ -123,6 +123,11 @@ Default Search Members:<br>
 <td>The full name of the user. <code>Required</code> <code>Filter(like)</code> <code>Inherited from Sec_Users_Table.User_Name</code></td>
 </tr>
 <tr>
+<td><a href="Public.Users.html#phonenumber">PhoneNumber</a></td>
+<td>string (64) <strong>nullable</strong></td>
+<td>Used only for two-factor authentication. null when phone-based two-factor is not used. <code>Filter(eq;like)</code> <code>Inherited from Sec_Users_Table.Phone_Number</code></td>
+</tr>
+<tr>
 <td><a href="Public.Users.html#userid">UserId</a></td>
 <td>guid</td>
 <td>The Id of the security user. <code>Required</code> <code>Filter(multi eq)</code></td>
@@ -139,6 +144,11 @@ Default Search Members:<br>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="Public.Users.html#domain">Domain</a></td>
+<td><a href="Systems.Security.Domains.html">Domains</a> (nullable)</td>
+<td>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Domain_Id</code></td>
+</tr>
 <tr>
 <td><a href="Public.Users.html#person">Person</a></td>
 <td><a href="General.Contacts.Persons.html">Persons</a> (nullable)</td>
@@ -178,12 +188,26 @@ Default Search Members:<br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.User_Name</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="phonenumber">PhoneNumber</h3>
+<p>Used only for two-factor authentication. null when phone-based two-factor is not used. <code>Filter(eq;like)</code> <code>Inherited from Sec_Users_Table.Phone_Number</code></p>
+<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Phone_Number</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="userid">UserId</h3>
 <p>The Id of the security user. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="domain">Domain</h3>
+<p>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Domain_Id</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.Domains.html">Domains</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Domain_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="person">Person</h3>
 <p>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Person_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
