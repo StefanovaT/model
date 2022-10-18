@@ -7,11 +7,11 @@ uid: Projects.Todo.TaskItems
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Task}_  
 Default Search Members:  
-_Name_  
+_Task_  
 Name Data Member:  
-_Name_  
+_Task_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -30,14 +30,15 @@ Aggregate Root:
 | [DisplayText](Projects.Todo.TaskItems.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Todo.TaskItems.md#id) | guid |  
 | [IsCompleted](Projects.Todo.TaskItems.md#iscompleted) | boolean |  
-| [Name](Projects.Todo.TaskItems.md#name) | string (254) | A brief description of the task. `Required` `Filter(like)` 
+| [Notes](Projects.Todo.TaskItems.md#notes) | string (max) __nullable__ | Notes for this TaskItem. `Introduced in version 23.1.1.48` 
 | [ObjectVersion](Projects.Todo.TaskItems.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [Title](Projects.Todo.TaskItems.md#title) | string (254) | A brief description of the task item. `Required` `Filter(like)` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [TodoTask](Projects.Todo.TaskItems.md#todotask) | [Tasks](Projects.Todo.Tasks.md) | The task to which this item is part of. `Required` `Filter(multi eq)` `Owner` |
+| [Task](Projects.Todo.TaskItems.md#task) | [Tasks](Projects.Todo.Tasks.md) | The task to which this item is part of. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -86,15 +87,15 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 
-### Name
+### Notes
 
-A brief description of the task. `Required` `Filter(like)`
+Notes for this TaskItem. `Introduced in version 23.1.1.48`
 
-_Type_: **string (254)**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
-_Maximum Length_: **254**  
+_Maximum Length_: **2147483647**  
 
 ### ObjectVersion
 
@@ -105,10 +106,20 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 
+### Title
+
+A brief description of the task item. `Required` `Filter(like)`
+
+_Type_: **string (254)**  
+_Category_: **System**  
+_Supported Filters_: **Like**  
+_Supports Order By_: **False**  
+_Maximum Length_: **254**  
+
 
 ## Reference Details
 
-### TodoTask
+### Task
 
 The task to which this item is part of. `Required` `Filter(multi eq)` `Owner`
 

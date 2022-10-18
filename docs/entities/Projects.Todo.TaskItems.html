@@ -82,11 +82,11 @@
 <p><strong>Namespace:</strong> <a href="Projects.Todo.html">Projects.Todo</a></p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Task}</em><br>
 Default Search Members:<br>
-<em>Name</em><br>
+<em>Task</em><br>
 Name Data Member:<br>
-<em>Name</em></p>
+<em>Task</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -129,14 +129,19 @@ Aggregate Root:<br>
 <td></td>
 </tr>
 <tr>
-<td><a href="Projects.Todo.TaskItems.html#name">Name</a></td>
-<td>string (254)</td>
-<td>A brief description of the task. <code>Required</code> <code>Filter(like)</code></td>
+<td><a href="Projects.Todo.TaskItems.html#notes">Notes</a></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>Notes for this TaskItem. <code>Introduced in version 23.1.1.48</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Todo.TaskItems.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
+<td><a href="Projects.Todo.TaskItems.html#title">Title</a></td>
+<td>string (254)</td>
+<td>A brief description of the task item. <code>Required</code> <code>Filter(like)</code></td>
 </tr>
 </tbody>
 </table>
@@ -151,7 +156,7 @@ Aggregate Root:<br>
 </thead>
 <tbody>
 <tr>
-<td><a href="Projects.Todo.TaskItems.html#todotask">TodoTask</a></td>
+<td><a href="Projects.Todo.TaskItems.html#task">Task</a></td>
 <td><a href="Projects.Todo.Tasks.html">Tasks</a></td>
 <td>The task to which this item is part of. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
@@ -189,21 +194,28 @@ Aggregate Root:<br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
-<h3 id="name">Name</h3>
-<p>A brief description of the task. <code>Required</code> <code>Filter(like)</code></p>
-<p><em>Type</em>: <strong>string (254)</strong><br>
+<h3 id="notes">Notes</h3>
+<p>Notes for this TaskItem. <code>Introduced in version 23.1.1.48</code></p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Like</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****</p>
+<h3 id="title">Title</h3>
+<p>A brief description of the task item. <code>Required</code> <code>Filter(like)</code></p>
+<p><em>Type</em>: <strong>string (254)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>254</strong></p>
 <h2 id="reference-details">Reference Details</h2>
-<h3 id="todotask">TodoTask</h3>
+<h3 id="task">Task</h3>
 <p>The task to which this item is part of. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Todo.Tasks.html">Tasks</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>

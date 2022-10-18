@@ -112,9 +112,9 @@
 <td>The importance of the task.</td>
 </tr>
 <tr>
-<td><a href="#name">Name</a></td>
-<td><code>nvarchar(254)</code></td>
-<td>A brief description of the task.</td>
+<td><a href="#notes">Notes</a></td>
+<td><code>nvarchar(max)</code></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#owner_user_id">Owner_User_Id</a></td>
@@ -140,6 +140,11 @@
 <td><a href="#state">State</a></td>
 <td><code>nvarchar(1)</code> Allowed: <code>N</code>, <code>P</code>, <code>W</code>, <code>C</code></td>
 <td>Indicates the current task state.</td>
+</tr>
+<tr>
+<td><a href="#title">Title</a></td>
+<td><code>nvarchar(254)</code></td>
+<td>A brief description of the task.</td>
 </tr>
 <tr>
 <td><a href="#todo_task_id">Todo_Task_Id</a></td>
@@ -645,8 +650,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="name">Name</h3>
-<p>A brief description of the task.</p>
+<h3 id="notes">Notes</h3>
 <table>
 <thead>
 <tr>
@@ -655,6 +659,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Attributes</td>
+<td>IsLongString</td>
+</tr>
 <tr>
 <td>Auto Complete</td>
 <td>no</td>
@@ -669,7 +677,7 @@
 </tr>
 <tr>
 <td>Enter Stop</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 <tr>
 <td>Ignore for Insert Order</td>
@@ -681,7 +689,7 @@
 </tr>
 <tr>
 <td>Max Length</td>
-<td>254</td>
+<td>2147483647</td>
 </tr>
 <tr>
 <td>Order</td>
@@ -725,7 +733,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>nvarchar(254) (Allows NULL)</td>
+<td>nvarchar(max) (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -742,25 +750,6 @@
 <tr>
 <td>Visible</td>
 <td>yes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="name---supported-filters">Name - Supported Filters</h4>
-<table>
-<thead>
-<tr>
-<th>Filter Type</th>
-<th>Default</th>
-<th>Include Nulls</th>
-<th>Hidden by Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Like</td>
-<td>None</td>
-<td>no</td>
-<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -1327,6 +1316,125 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="title">Title</h3>
+<p>A brief description of the task.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>254</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>nvarchar(254)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="title---supported-filters">Title - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Like</td>
+<td>None</td>
 <td>no</td>
 <td>no</td>
 </tr>

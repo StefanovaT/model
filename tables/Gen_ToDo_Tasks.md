@@ -14,12 +14,13 @@ Entity: [Projects.Todo.Tasks](~/entities/Projects.Todo.Tasks.md)
 |[Completed_Date_Time_Utc](#completed_date_time_utc)|`datetime` Readonly|Indicates (in UTC) when the task was completed.|
 |[Due_Date](#due_date)|`date` |Indicates when the task should be finished.|
 |[Importance](#importance)|`nvarchar(1)` Allowed: `L`, `N`, `H`|The importance of the task.|
-|[Name](#name)|`nvarchar(254)` |A brief description of the task.|
+|[Notes](#notes)|`nvarchar(max)` ||
 |[Owner_User_Id](#owner_user_id)|`uniqueidentifier` |The user, who created the todo and owns it.|
 |[Remind_Time](#remind_time)|`datetimeoffset` |When to remind the assigned user for the task.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |When not null, indicates that the todo is contained in and managed by the specified social group.|
 |[State](#state)|`nvarchar(1)` Allowed: `N`, `P`, `W`, `C`|Indicates the current task state.|
+|[Title](#title)|`nvarchar(254)` |A brief description of the task.|
 |[Todo_Task_Id](#todo_task_id)|`uniqueidentifier` `PK`||
 
 ## Columns
@@ -172,20 +173,18 @@ The importance of the task.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Name
-
-
-A brief description of the task.
+### Notes
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|254|
+|Max Length|2147483647|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -196,17 +195,11 @@ A brief description of the task.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254) (Allows NULL)|
+|Type|nvarchar(max) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
-
-#### Name - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Like|None|no|no|
 
 ### Owner_User_Id
 
@@ -375,6 +368,42 @@ Indicates the current task state.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Title
+
+
+A brief description of the task.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(254)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Title - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Todo_Task_Id
 

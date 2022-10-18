@@ -17,9 +17,10 @@ Entity: [Projects.Todo.TaskItems](~/entities/Projects.Todo.TaskItems.md)
 |[Completed_Date_Time_Utc](#completed_date_time_utc)|`datetime` Readonly|Indicates (in UTC) when the task item was completed.|
 |[Created_Date_Time_Utc](#created_date_time_utc)|`datetime` Readonly|Indicates (in UTC) when the task item was created.|
 |[Is_Completed](#is_completed)|`bit` ||
-|[Name](#name)|`nvarchar(254)` |A brief description of the task.|
+|[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
-|[Todo_Task_Id](#todo_task_id)|`uniqueidentifier` |The task to which this item is part of.|
+|[Task_Id](#task_id)|`uniqueidentifier` |The task to which this item is part of.|
+|[Title](#title)|`nvarchar(254)` |A brief description of the task.|
 |[Todo_Task_Item_Id](#todo_task_item_id)|`uniqueidentifier` `PK`||
 
 ## Columns
@@ -131,20 +132,18 @@ Indicates (in UTC) when the task item was created.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Name
-
-
-A brief description of the task.
+### Notes
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|254|
+|Max Length|2147483647|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -155,17 +154,11 @@ A brief description of the task.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254)|
+|Type|nvarchar(max) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
-
-#### Name - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Like|None|no|no|
 
 ### Row_Version
 
@@ -194,7 +187,7 @@ A brief description of the task.
 |User Login|no|
 |Visible|no|
 
-### Todo_Task_Id
+### Task_Id
 
 
 The task to which this item is part of.
@@ -225,11 +218,47 @@ The task to which this item is part of.
 |User Login|no|
 |Visible|yes|
 
-#### Todo_Task_Id - Supported Filters
+#### Task_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Title
+
+
+A brief description of the task.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(254)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Title - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Todo_Task_Item_Id
 

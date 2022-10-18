@@ -7,11 +7,9 @@ uid: Projects.Todo.Tasks
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Id}: {Title}_  
 Default Search Members:  
-_Name_  
-Name Data Member:  
-_Name_  
+__  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -29,10 +27,11 @@ Aggregate Tree
 | [DueDate](Projects.Todo.Tasks.md#duedate) | date __nullable__ | Indicates when the task should be finished. `Filter(eq;ge;le)` 
 | [Id](Projects.Todo.Tasks.md#id) | guid |  
 | [Importance](Projects.Todo.Tasks.md#importance) | [Importance](Projects.Todo.Tasks.md#importance) | The importance of the task. `Required` `Default("N")` `Filter(eq)` 
-| [Name](Projects.Todo.Tasks.md#name) | string (254) __nullable__ | A brief description of the task. `Filter(like)` 
+| [Notes](Projects.Todo.Tasks.md#notes) | string (max) __nullable__ | Notes for this Task. `Introduced in version 23.1.1.48` 
 | [ObjectVersion](Projects.Todo.Tasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [RemindTime](Projects.Todo.Tasks.md#remindtime) | datetimeoffset __nullable__ | When to remind the assigned user for the task. 
+| [RemindTime](Projects.Todo.Tasks.md#remindtime) | datetimeoffset __nullable__ | When to remind the assigned user for the task. `ReadOnly` 
 | [State](Projects.Todo.Tasks.md#state) | [State](Projects.Todo.Tasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(eq)` 
+| [Title](Projects.Todo.Tasks.md#title) | string (254) | A brief description of the task. `Required` `Filter(like)` 
 
 ## References
 
@@ -46,7 +45,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Items | [TaskItems](Projects.Todo.TaskItems.md) | List of `TaskItem`(Projects.Todo.TaskItems.md) child objects, based on the `Projects.Todo.TaskItem.TodoTask`(Projects.Todo.TaskItems.md#todotask) back reference 
+| Items | [TaskItems](Projects.Todo.TaskItems.md) | List of `TaskItem`(Projects.Todo.TaskItems.md) child objects, based on the `Projects.Todo.TaskItem.Task`(Projects.Todo.TaskItems.md#task) back reference 
 
 
 ## Attribute Details
@@ -104,15 +103,15 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **Normal**  
 
-### Name
+### Notes
 
-A brief description of the task. `Filter(like)`
+Notes for this Task. `Introduced in version 23.1.1.48`
 
-_Type_: **string (254) __nullable__**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
-_Maximum Length_: **254**  
+_Maximum Length_: **2147483647**  
 
 ### ObjectVersion
 
@@ -125,7 +124,7 @@ _Supports Order By_: ****
 
 ### RemindTime
 
-When to remind the assigned user for the task.
+When to remind the assigned user for the task. `ReadOnly`
 
 _Type_: **datetimeoffset __nullable__**  
 _Category_: **System**  
@@ -151,6 +150,16 @@ _Allowed Values (Projects.Todo.TasksRepository.State Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **New**  
+
+### Title
+
+A brief description of the task. `Required` `Filter(like)`
+
+_Type_: **string (254)**  
+_Category_: **System**  
+_Supported Filters_: **Like**  
+_Supports Order By_: **False**  
+_Maximum Length_: **254**  
 
 
 ## Reference Details

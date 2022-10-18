@@ -1,6 +1,12 @@
 # View Dmv_Web_Sites
 
 
+## Entity
+
+Entity: [Systems.Dmv.WebSites](~/entities/Systems.Dmv.WebSites.md)
+
+Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 23.1.1.43)
+
 ## Summary
 
 | Name | Type | Description |
