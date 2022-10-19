@@ -124,6 +124,7 @@ _Maximum Length_: **254**
 The task to which this item is part of. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Tasks](Projects.Todo.Tasks.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

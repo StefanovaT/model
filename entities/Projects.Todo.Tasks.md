@@ -169,6 +169,7 @@ _Maximum Length_: **254**
 The user, to whom the todo is assigned. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
@@ -177,6 +178,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The user, who created the todo and owns it. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
@@ -185,6 +187,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, indicates that the todo is contained in and managed by the specified social group. `Filter(multi eq)`
 
 _Type_: **[Groups](Communities.Social.Groups.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 

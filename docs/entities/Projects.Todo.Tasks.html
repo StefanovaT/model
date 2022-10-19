@@ -321,16 +321,19 @@ Allowed values for the <code>State</code>(Projects.Todo.Tasks.md#state) data att
 <h3 id="assignedtouser">AssignedToUser</h3>
 <p>The user, to whom the todo is assigned. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="owneruser">OwnerUser</h3>
 <p>The user, who created the todo and owns it. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="socialgroup">SocialGroup</h3>
 <p>When not null, indicates that the todo is contained in and managed by the specified social group. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Communities.Social.Groups.html">Groups</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h2 id="api-methods">API Methods</h2>
