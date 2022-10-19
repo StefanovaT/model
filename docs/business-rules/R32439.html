@@ -98,7 +98,7 @@
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>AttributeChanged(QuantityBase, ExciseAlcoholicStrength, ExciseAmountBase, ExciseProduct)</td>
+<td>AttributeChanged(ExciseQuantity, ExciseAlcoholicStrength, ExciseAmountBase, ExciseProduct)</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
@@ -115,9 +115,9 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Convert(IIF((CalculateExciseAmountBase(ExciseProduct, QuantityBase, ExciseAlcoholicStrength)
-== null), Convert(ExciseAmountBase, Nullable`1), CalculateExciseAmountBase(ExciseProduct,
-QuantityBase, ExciseAlcoholicStrength)), Object)</td>
+<td>Convert(IIF((CalculateExciseAmountBase(ExciseProduct, ExciseQuantity,
+ExciseAlcoholicStrength) == null), Convert(ExciseAmountBase, Nullable`1),
+CalculateExciseAmountBase(ExciseProduct, ExciseQuantity, ExciseAlcoholicStrength)), Object)</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>

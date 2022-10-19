@@ -12,6 +12,8 @@ Default Display Text Format:
 _{ProductType.Name:T}_  
 Default Search Members:  
 _ProductType.Name_  
+Name Data Member:  
+_ProductType.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,7 +27,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](General.Products.ProductTypePurchaseInvoiceLineProperties.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.Products.ProductTypePurchaseInvoiceLineProperties.md#id) | guid |  
+| [ObjectVersion](General.Products.ProductTypePurchaseInvoiceLineProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PropertyNo](General.Products.ProductTypePurchaseInvoiceLineProperties.md#propertyno) | int32 | The consecutive number (position) of the property within the current product type. `Required` 
 | [Required](General.Products.ProductTypePurchaseInvoiceLineProperties.md#required) | boolean | True when the property is required, when creating new purchase invoice lines. False when this only suggests the usage of the property. `Required` `Default(false)` 
 
@@ -33,37 +37,58 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ProductType](General.Products.ProductTypePurchaseInvoiceLineProperties.md#producttype) | [ProductTypes](General.Products.ProductTypes.md) | The `ProductType`(General.Products.ProductTypePurchase<br />InvoiceLineProperties.md#producttype) to which this ProductTypePurchase<br />InvoiceLineProperty belongs. `Required` `Filter(multi eq)` `Owner` |
+| [ProductType](General.Products.ProductTypePurchaseInvoiceLineProperties.md#producttype) | [ProductTypes](General.Products.ProductTypes.md) | The <see cref="ProductType"/> to which this ProductTypePurchase<br />InvoiceLineProperty belongs. `Required` `Filter(multi eq)` `Owner` |
 | [Property](General.Products.ProductTypePurchaseInvoiceLineProperties.md#property) | [CustomProperties](General.CustomProperties.md) | The user-defined property. It should be with Entity Type = 'Purchase Invoice Line'. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PropertyNo
 
 The consecutive number (position) of the property within the current product type. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.ProductType.PurchaseInvoiceLineProperties.Select( c => c.PropertyNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.ProductType.PurchaseInvoiceLineProperties.Select( c => c.PropertyNo).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.ProductType.PurchaseInvoiceLineProperties.Select( c => c.PropertyNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.ProductType.PurchaseInvoiceLineProperties.Select( c => c.PropertyNo).DefaultIfEmpty( 0).Max( ) + 1)`
 ### Required
 
 True when the property is required, when creating new purchase invoice lines. False when this only suggests the usage of the property. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -73,10 +98,11 @@ _Default Value_: **False**
 
 ### ProductType
 
-The `ProductType`(General.Products.ProductTypePurchaseInvoiceLineProperties.md#producttype) to which this ProductTypePurchaseInvoiceLineProperty belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="ProductType"/> to which this ProductTypePurchaseInvoiceLineProperty belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[ProductTypes](General.Products.ProductTypes.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -85,8 +111,84 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The user-defined property. It should be with Entity Type = 'Purchase Invoice Line'. `Required` `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

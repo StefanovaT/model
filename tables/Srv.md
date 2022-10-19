@@ -10,7 +10,6 @@
 * [Srv_Service_Agreement_Services](Srv_Service_Agreement_Services.md)
 * [Srv_Service_Agreements](Srv_Service_Agreements.md)
 * [Srv_Service_Invoicing](Srv_Service_Invoicing.md)
-* [Srv_Service_Object_Property_Values](Srv_Service_Object_Property_Values.md)
 * [Srv_Service_Object_Types](Srv_Service_Object_Types.md)
 * [Srv_Service_Objects](Srv_Service_Objects.md)
 * [Srv_Service_Order_Lines](Srv_Service_Order_Lines.md)

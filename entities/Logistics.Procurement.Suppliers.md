@@ -12,6 +12,10 @@ Default Display Text Format:
 _{Party.PartyName:T}_  
 Default Search Members:  
 _Number; Party.PartyName_  
+Code Data Member:  
+_Number_  
+Name Data Member:  
+_Party.PartyName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -28,10 +32,12 @@ Aggregate Tree
 | [DefaultDeliveryTermDays](Logistics.Procurement.Suppliers.md#defaultdeliverytermdays) | int32 | Default term in days for goods delivery, starting at the day of sending the purchase order. `Required` `Default(0)` 
 | [DefaultPaymentStartDays](Logistics.Procurement.Suppliers.md#defaultpaymentstartdays) | int32 | Default number of days until the payment becomes executable. 0 means that the payment is executable at all times. `Required` `Default(0)` 
 | [DefaultPaymentTermDays](Logistics.Procurement.Suppliers.md#defaultpaymenttermdays) | int32 | Default payment term in days, starting from the date of receiving the invoice. `Required` `Default(0)` 
+| [DisplayText](Logistics.Procurement.Suppliers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Logistics.Procurement.Suppliers.md#fromdate) | datetime __nullable__ | The date on which this party became a supplier or the date, when the supplier contract was signed. `Filter(ge;le)` 
 | [Id](Logistics.Procurement.Suppliers.md#id) | guid |  
 | [IsActive](Logistics.Procurement.Suppliers.md#isactive) | boolean | Indicates whether the current supplier is active. `Required` `Default(true)` `Filter(eq)` 
 | [Number](Logistics.Procurement.Suppliers.md#number) | string (16) __nullable__ | The unique supplier number. `Filter(eq)` `ORD` 
+| [ObjectVersion](Logistics.Procurement.Suppliers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ThruDate](Logistics.Procurement.Suppliers.md#thrudate) | datetime __nullable__ | The date (inclusive) on which this party ceased to be a supplier. `Filter(ge;le)` 
 | [UpdateTime](Logistics.Procurement.Suppliers.md#updatetime) | datetime __nullable__ | Date and time when the Supplier was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](Logistics.Procurement.Suppliers.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Supplier. `Filter(like)` `ReadOnly` 
@@ -56,6 +62,7 @@ Aggregate Tree
 Date and time when the Supplier was created. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -64,6 +71,7 @@ _Supports Order By_: **False**
 Login name of the user, who created the Supplier. `Filter(like)` `ReadOnly`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -73,6 +81,7 @@ _Maximum Length_: **64**
 Default term in days for goods delivery, starting at the day of sending the purchase order. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -82,6 +91,7 @@ _Default Value_: **0**
 Default number of days until the payment becomes executable. 0 means that the payment is executable at all times. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -91,15 +101,26 @@ _Default Value_: **0**
 Default payment term in days, starting from the date of receiving the invoice. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### FromDate
 
 The date on which this party became a supplier or the date, when the supplier contract was signed. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -107,6 +128,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -115,6 +137,7 @@ _Default Value_: **NewGuid**
 Indicates whether the current supplier is active. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -125,15 +148,26 @@ The unique supplier number. `Filter(eq)` `ORD`
 
 _Type_: **string (16) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ThruDate
 
 The date (inclusive) on which this party ceased to be a supplier. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -142,6 +176,7 @@ _Supports Order By_: **False**
 Date and time when the Supplier was last updated. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -150,6 +185,7 @@ _Supports Order By_: **False**
 Login name of the user, who last updated the Supplier. `Filter(like)` `ReadOnly`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -162,6 +198,7 @@ _Maximum Length_: **64**
 The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)`
 
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultPaymentAccount
@@ -169,6 +206,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies the default payment account which should be used for new purchase document for this supplier. `Filter(multi eq)`
 
 _Type_: **[PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultPaymentType
@@ -176,6 +214,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies the default payment type which should be used for new purchase document for this supplier. `Filter(multi eq)`
 
 _Type_: **[PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultPurchasePriceList
@@ -183,6 +222,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The default purchase price list, which shall be used for new purchase documents for this supplier. `Filter(multi eq)`
 
 _Type_: **[PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompany
@@ -190,12 +230,14 @@ _Supported Filters_: **Equals, EqualsIn**
 The Enterprise Company to which this Supplier applies, or null if it is for all enterprise companies. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Party
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -204,8 +246,84 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 When not null, specifies the type of this supplier. The type is primarily used for security access differentiation of the supplier records. `Filter(multi eq)`
 
 _Type_: **[SupplierTypes](Logistics.Procurement.SupplierTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

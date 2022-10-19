@@ -1,11 +1,15 @@
 # Table Cms_News_Web_Modules
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Applications.Cms.NewsWebModules](~/entities/Applications.Cms.NewsWebModules.md)
 
-Represents a web module, containing news. Entity: Cms_News_Web_Modules
+Represents a web module, containing news. Entity: Cms_News_Web_Modules (Obsoleted in version 22.1.6.73)
 
 ## Owner Tables Hierarchy
 

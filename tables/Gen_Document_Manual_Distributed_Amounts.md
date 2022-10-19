@@ -1,11 +1,15 @@
 # Table Gen_Document_Manual_Distributed_Amounts
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [General.DocumentManualDistributedAmounts](~/entities/General.DocumentManualDistributedAmounts.md)
 
-Obsolete. Not used. Entity: Gen_Document_Manual_Distributed_Amounts
+Obsolete. Not used. Entity: Gen_Document_Manual_Distributed_Amounts (Obsoleted in version 22.1.6.60)
 
 ## Summary
 

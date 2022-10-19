@@ -27,6 +27,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [BusinessReason](Crm.Invoicing.InvoiceLines.md#businessreason) | [InvoicingBusinessReason](Crm.Invoicing.InvoiceLines.md#businessreason) | Business reason for invoicing of this product or service. S=Shipment, P=Payment. `Required` `Default("S")` 
 | [DeliveryTermsCode](Crm.Invoicing.InvoiceLines.md#deliverytermscode) | [DeliveryTerms](Crm.Invoicing.InvoiceLines.md#deliverytermscode) __nullable__ | Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting. 
+| [DisplayText](Crm.Invoicing.InvoiceLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Invoicing.InvoiceLines.md#id) | guid |  
 | [IntrastatApplyDate](Crm.Invoicing.InvoiceLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83` 
 | [IntrastatTransaction<br />NatureCode](Crm.Invoicing.InvoiceLines.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Invoicing.InvoiceLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
@@ -36,8 +37,9 @@ Aggregate Root:
 | [LineNo](Crm.Invoicing.InvoiceLines.md#lineno) | int32 | Consecutive line number, unique within the invoice. Usually is increasing in steps of 10, like in 10, 20, 30, etc. `Required` `Filter(eq)` 
 | [LineStandardDiscount<br />Percent](Crm.Invoicing.InvoiceLines.md#linestandarddiscountpercent) | decimal (7, 6) | Standard discount for the line. This is automatically computed according to discount conditions. `Required` `Default(0)` 
 | [Notes](Crm.Invoicing.InvoiceLines.md#notes) | string (254) __nullable__ | Notes for this InvoiceLine. 
+| [ObjectVersion](Crm.Invoicing.InvoiceLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineNo](Crm.Invoicing.InvoiceLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute line. `Introduced in version 18.2` 
-| [ProductDescription](Crm.Invoicing.InvoiceLines.md#productdescription) | [MultilanguageString](../data-types.md#multilanguagestring) | The description of the invoiced product. Initially copied from the name of the invoiced Product or from the generating document. `Required` 
+| [ProductDescription](Crm.Invoicing.InvoiceLines.md#productdescription) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The description of the invoiced product. Initially copied from the name of the invoiced Product or from the generating document. `Required` 
 | [Quantity](Crm.Invoicing.InvoiceLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity of the invoiced product. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [QuantityBase](Crm.Invoicing.InvoiceLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The equivalent of Quantity in the base measurement unit of the Product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` 
 | [SalesOrderAmount](Crm.Invoicing.InvoiceLines.md#salesorderamount) | decimal (14, 2) __nullable__ | Specifies what portion of the amount of the sales order is invoiced with this line. The amount is calculated with respect to the trade conditions (prices, discounts, etc.) from the sales order. Can be different from the total amount of the line when the trade conditions from the sales order have changed before invoicing. 
@@ -48,9 +50,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Crm.Invoicing.InvoiceLines.md#document) | [Invoices](Crm.Invoicing.Invoices.md) | The `Invoice`(Crm.Invoicing.InvoiceLines.md#invoice) to which this InvoiceLine belongs. `Required` `Filter(multi eq)` |
+| [Document](Crm.Invoicing.InvoiceLines.md#document) | [Invoices](Crm.Invoicing.Invoices.md) | The <see cref="Invoice"/> to which this InvoiceLine belongs. `Required` `Filter(multi eq)` |
 | [IntrastatTransportCountry](Crm.Invoicing.InvoiceLines.md#intrastattransportcountry) | [Countries](General.Geography.Countries.md) (nullable) | Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)` |
-| [Invoice](Crm.Invoicing.InvoiceLines.md#invoice) | [Invoices](Crm.Invoicing.Invoices.md) | The `Invoice`(Crm.Invoicing.InvoiceLines.md#invoice) to which this InvoiceLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Invoice](Crm.Invoicing.InvoiceLines.md#invoice) | [Invoices](Crm.Invoicing.Invoices.md) | The <see cref="Invoice"/> to which this InvoiceLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [InvoiceOrderLine](Crm.Invoicing.InvoiceLines.md#invoiceorderline) | [InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md) (nullable) | Invoice order line which is invoiced by this line. `Filter(multi eq)` |
 | [LineDealType](Crm.Invoicing.InvoiceLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created. `Filter(multi eq)` |
 | [LineDiscount](Crm.Invoicing.InvoiceLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` |
@@ -71,6 +73,7 @@ Aggregate Root:
 Business reason for invoicing of this product or service. S=Shipment, P=Payment. `Required` `Default("S")`
 
 _Type_: **[InvoicingBusinessReason](Crm.Invoicing.InvoiceLines.md#businessreason)**  
+_Category_: **System**  
 Generic enum type for InvoicingBusinessReason properties  
 _Allowed Values (Crm.Invoicing.InvoicingBusinessReason Enum Members)_  
 
@@ -88,6 +91,7 @@ _Default Value_: **Shipment**
 Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting.
 
 _Type_: **[DeliveryTerms](Crm.Invoicing.InvoiceLines.md#deliverytermscode) __nullable__**  
+_Category_: **System**  
 Generic enum type for DeliveryTerms properties  
 _Allowed Values (Finance.Intrastat.DeliveryTerms Enum Members)_  
 
@@ -114,10 +118,20 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.Invoice.DeliveryTermsCode`
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -126,6 +140,7 @@ _Default Value_: **NewGuid**
 Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -134,6 +149,7 @@ _Supports Order By_: **False**
 Transaction nature; used for Intrastat reporting.
 
 _Type_: **[TransactionNature](Crm.Invoicing.InvoiceLines.md#intrastattransactionnaturecode) __nullable__**  
+_Category_: **System**  
 Generic enum type for TransactionNature properties  
 _Allowed Values (Finance.Intrastat.TransactionNature Enum Members)_  
 
@@ -172,6 +188,7 @@ _Front-End Recalc Expressions:_
 Transport mode; used for Intrastat reporting.
 
 _Type_: **[TransportMode](Crm.Invoicing.InvoiceLines.md#intrastattransportmodecode) __nullable__**  
+_Category_: **System**  
 Generic enum type for TransportMode properties  
 _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_  
 
@@ -182,9 +199,9 @@ _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_
 | RoadTransport | RoadTransport value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'RoadTransport' |
 | AirTransport | AirTransport value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AirTransport' |
 | Mail | Mail value. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Mail' |
-| FixedTransport<br />Installations | FixedTransport<br />Installations value. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'FixedTransport<br />Installations' |
-| RiverTransport | RiverTransport value. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'RiverTransport' |
-| SelfPropelled | SelfPropelled value. Stored as '8'. <br /> _Database Value:_ '8' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'SelfPropelled' |
+| FixedTransport<br />Installations | FixedTransport<br />Installations value. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'FixedTransport<br />Installations' |
+| RiverTransport | RiverTransport value. Stored as '8'. <br /> _Database Value:_ '8' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'RiverTransport' |
+| SelfPropelled | SelfPropelled value. Stored as '9'. <br /> _Database Value:_ '9' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'SelfPropelled' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -199,6 +216,7 @@ _Front-End Recalc Expressions:_
 Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount. `Currency: Invoice.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -210,6 +228,7 @@ _Front-End Recalc Expressions:_
 User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -219,6 +238,7 @@ _Default Value_: **0**
 Consecutive line number, unique within the invoice. Usually is increasing in steps of 10, like in 10, 20, 30, etc. `Required` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -232,6 +252,7 @@ _Front-End Recalc Expressions:_
 Standard discount for the line. This is automatically computed according to discount conditions. `Required` `Default(0)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -243,15 +264,26 @@ _Front-End Recalc Expressions:_
 Notes for this InvoiceLine.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentLineNo
 
 The number of the line within the parent document, which the current line executes. null when the current line does not execute line. `Introduced in version 18.2`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -259,7 +291,8 @@ _Supports Order By_: **False**
 
 The description of the invoiced product. Initially copied from the name of the invoiced Product or from the generating document. `Required`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -270,6 +303,7 @@ _Front-End Recalc Expressions:_
 The quantity of the invoiced product. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -279,6 +313,7 @@ _Default Value_: **Constant**
 The equivalent of Quantity in the base measurement unit of the Product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -292,6 +327,7 @@ _Front-End Recalc Expressions:_
 Specifies what portion of the amount of the sales order is invoiced with this line. The amount is calculated with respect to the trade conditions (prices, discounts, etc.) from the sales order. Can be different from the total amount of the line when the trade conditions from the sales order have changed before invoicing.
 
 _Type_: **decimal (14, 2) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -300,6 +336,7 @@ _Supports Order By_: **False**
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -313,6 +350,7 @@ _Front-End Recalc Expressions:_
 The unit selling price of Quantity. `Currency: Invoice.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -322,10 +360,11 @@ _Default Value_: **Constant**
 
 ### Document
 
-The `Invoice`(Crm.Invoicing.InvoiceLines.md#invoice) to which this InvoiceLine belongs. `Required` `Filter(multi eq)`
+The <see cref="Invoice"/> to which this InvoiceLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[Invoices](Crm.Invoicing.Invoices.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### IntrastatTransportCountry
@@ -333,6 +372,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -342,10 +382,11 @@ _Front-End Recalc Expressions:_
 `obj.Invoice.IntrastatTransportCountry`
 ### Invoice
 
-The `Invoice`(Crm.Invoicing.InvoiceLines.md#invoice) to which this InvoiceLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Invoice"/> to which this InvoiceLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Invoices](Crm.Invoicing.Invoices.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -355,6 +396,7 @@ Invoice order line which is invoiced by this line. `Filter(multi eq)`
 
 _Type_: **[InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### LineDealType
@@ -362,6 +404,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created. `Filter(multi eq)`
 
 _Type_: **[DealTypes](Finance.Vat.DealTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -374,6 +417,7 @@ _Front-End Recalc Expressions:_
 The line discount type used to form the Line_Standard_Discount_Percent. `Filter(multi eq)`
 
 _Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -384,6 +428,7 @@ The document, which the current line executes. null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentSalesOrderLine
@@ -392,6 +437,7 @@ When not null specifies the Sales Order line that is invoiced by this invoice li
 
 _Type_: **[SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PaymentTransaction
@@ -400,6 +446,7 @@ The payment transaction, which is invoiced by this line, when Business Reason = 
 
 _Type_: **[PaymentTransactions](Finance.Payments.PaymentTransactions.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -407,6 +454,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The invoiced product. When null, although rarely used, the invoice line is still valid and the Product Description contains the invoiced item. `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -414,6 +462,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -424,6 +473,7 @@ When not null specifies the Sales Order that is invoiced by this line. `Filter(m
 
 _Type_: **[SalesOrders](Crm.Sales.SalesOrders.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -433,6 +483,7 @@ _Front-End Recalc Expressions:_
 Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TransactionLine
@@ -441,8 +492,84 @@ The store transaction line that is invoiced by this line, for Business Reason = 
 
 _Type_: **[StoreTransactionLines](Logistics.Inventory.StoreTransactionLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.SocialGroups](~/entities/Communities.SocialGroups.md)
+Entity: [Communities.Social.Groups](~/entities/Communities.Social.Groups.md)
 
 Represents a group of users, sharing interest in the group topic. Entity: Cmm_Social_Groups (Introduced in version 20.1)
 
@@ -11,6 +11,7 @@ Represents a group of users, sharing interest in the group topic. Entity: Cmm_So
 
 | Name | Type | Description |
 | - | - | --- |
+|[Last_Interaction_Time_Utc](#last_interaction_time_utc)|`datetime` Readonly|The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. NULL means the group did not have any interactions yet.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Code](#social_group_code)|`nvarchar(32)` |Unique code of the group. Also used as group slug for Internet URL purposes.|
@@ -18,6 +19,36 @@ Represents a group of users, sharing interest in the group topic. Entity: Cmm_So
 |[Social_Group_Name](#social_group_name)|`nvarchar(256)` |Multilanguage name of the group.|
 
 ## Columns
+
+### Last_Interaction_Time_Utc
+
+
+The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. NULL means the group did not have any interactions yet.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|yes|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Notes
 

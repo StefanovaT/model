@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Workgroup.Name}_  
 Default Search Members:  
 _Workgroup.Name_  
+Name Data Member:  
+_Workgroup.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,9 +27,12 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [Active](Production.Resources.WorkgroupResources.md#active) | boolean | Indicates whether the current workgroup resource is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 22.1.5.26` 
 | [AvailableQuantity](Production.Resources.WorkgroupResources.md#availablequantity) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity available of the resource in this workgroup. The measurement unit is specified in Prd_Resources. `Unit: Resource.PrimaryUnit` `Required` `Default(0)` 
+| [DisplayText](Production.Resources.WorkgroupResources.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.Resources.WorkgroupResources.md#id) | guid |  
 | [Notes](Production.Resources.WorkgroupResources.md#notes) | string (254) __nullable__ | User notes for the workgroup resource. 
+| [ObjectVersion](Production.Resources.WorkgroupResources.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
 
@@ -45,19 +50,40 @@ Aggregate Root:
 
 ## Attribute Details
 
+### Active
+
+Indicates whether the current workgroup resource is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 22.1.5.26`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+
 ### AvailableQuantity
 
 Quantity available of the resource in this workgroup. The measurement unit is specified in Prd_Resources. `Unit: Resource.PrimaryUnit` `Required` `Default(0)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -66,9 +92,19 @@ _Default Value_: **NewGuid**
 User notes for the workgroup resource.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 
 ## Reference Details
@@ -78,6 +114,7 @@ _Maximum Length_: **254**
 The contained resource type. `Required` `Filter(multi eq)`
 
 _Type_: **[Resources](Production.Resources.Resources.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Workgroup
@@ -85,9 +122,85 @@ _Supported Filters_: **Equals, EqualsIn**
 Id of the workgroup, containing the resource. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Workgroups](Production.Resources.Workgroups.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -1,11 +1,15 @@
 # Table Cms_Product_Catalog_Web_Modules
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Applications.Cms.ProductCatalogWebModules](~/entities/Applications.Cms.ProductCatalogWebModules.md)
 
-A web module, which presents a whole product catalog. Entity: Cms_Product_Catalog_Web_Modules
+A web module, which presents a whole product catalog. Entity: Cms_Product_Catalog_Web_Modules (Obsoleted in version 22.1.6.73)
 
 ## Owner Tables Hierarchy
 

@@ -7,6 +7,10 @@ Entity: [Logistics.Procurement.PurchaseInvoicesOptions](~/entities/Logistics.Pro
 
 Contains purchase invoice specific options for the different document types. Entity: Scm_Purchase_Invoices_Options
 
+## Owner Tables Hierarchy
+
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -34,7 +38,7 @@ The document type, for which the options are specified.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

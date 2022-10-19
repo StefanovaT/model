@@ -12,6 +12,8 @@ Default Display Text Format:
 _{SentItemsFolderName}_  
 Default Search Members:  
 _SentItemsFolderName_  
+Name Data Member:  
+_SentItemsFolderName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -19,18 +21,18 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 Aggregate Tree  
 * [Applications.Mail.Boxes](Applications.Mail.Boxes.md)  
   * [Applications.Mail.BoxFolders](Applications.Mail.BoxFolders.md)  
-    * [Applications.Mail.Messages](Applications.Mail.Messages.md)  
-      * [Applications.Mail.MessageAttachments](Applications.Mail.MessageAttachments.md)  
 
 ## Attributes
 
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Active](Applications.Mail.Boxes.md#active) | boolean | True when the mail box is active for mail sinchronization, sending and receiving. `Required` `Default(true)` `Filter(eq)` 
+| [DisplayText](Applications.Mail.Boxes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EmailAddress](Applications.Mail.Boxes.md#emailaddress) | string (254) | The email address associated with this mail box. `Required` `Filter(eq)` 
 | [Id](Applications.Mail.Boxes.md#id) | guid |  
 | [IsDefault](Applications.Mail.Boxes.md#isdefault) | boolean | True when this is the default mailbox for the user. `Required` `Default(true)` `Filter(eq)` 
 | [IsEncrypted](Applications.Mail.Boxes.md#isencrypted) | boolean | True when the mailbox messages are stored in encrypted format. `Required` `Default(false)` `Filter(eq)` 
+| [ObjectVersion](Applications.Mail.Boxes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResetOnNextSync](Applications.Mail.Boxes.md#resetonnextsync) | boolean | Reset is pending: true = next sync should delete and retrieve again all messages; false = no pending reset. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [SendServerAddress](Applications.Mail.Boxes.md#sendserveraddress) | string (254) __nullable__ | The address of the server to use for sending mail. The same credentials as the sync server are used. When null, the mail will be sent using the default server, which is setup at the application server. 
 | [SentItemsFolderName](Applications.Mail.Boxes.md#sentitemsfoldername) | string (254) __nullable__ | The name of the SentItems folder. It is left empty, EnterpriseOne won't save the sent mail in any folder (but it is still possible that the actual mail server would nevertheless save the mail in a sent items folder, independently from EnterpriseOne). 
@@ -60,15 +62,26 @@ Aggregate Tree
 True when the mail box is active for mail sinchronization, sending and receiving. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### EmailAddress
 
 The email address associated with this mail box. `Required` `Filter(eq)`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -77,6 +90,7 @@ _Maximum Length_: **254**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -85,6 +99,7 @@ _Default Value_: **NewGuid**
 True when this is the default mailbox for the user. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -94,15 +109,26 @@ _Default Value_: **True**
 True when the mailbox messages are stored in encrypted format. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ResetOnNextSync
 
 Reset is pending: true = next sync should delete and retrieve again all messages; false = no pending reset. `Required` `Default(false)` `Filter(eq)` `ReadOnly`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -112,6 +138,7 @@ _Default Value_: **False**
 The address of the server to use for sending mail. The same credentials as the sync server are used. When null, the mail will be sent using the default server, which is setup at the application server.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -121,6 +148,7 @@ _Maximum Length_: **254**
 The name of the SentItems folder. It is left empty, EnterpriseOne won't save the sent mail in any folder (but it is still possible that the actual mail server would nevertheless save the mail in a sent items folder, independently from EnterpriseOne).
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -130,6 +158,7 @@ _Maximum Length_: **254**
 Html text of the default signature, when creating new emails from this mailbox. When is null, a default generic signature is attached.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -139,6 +168,7 @@ _Maximum Length_: **2147483647**
 The password to supply to the server when retrieving email. null when the connection is not setup or the server does not require user name.
 
 _Type_: **string (512) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **512**  
@@ -148,6 +178,7 @@ _Maximum Length_: **512**
 Synchronization protocol, 'POP3' or 'IMAP'. null means that syncrhonization is not setup.
 
 _Type_: **[SyncProtocol](Applications.Mail.Boxes.md#syncprotocol) __nullable__**  
+_Category_: **System**  
 Allowed values for the `SyncProtocol`(Applications.Mail.Boxes.md#syncprotocol) data attribute  
 _Allowed Values (Applications.Mail.BoxesRepository.SyncProtocol Enum Members)_  
 
@@ -165,6 +196,7 @@ _Supports Order By_: **False**
 Incoming and outgoing mail server internet address. null when synchronization is not setup.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -174,6 +206,7 @@ _Maximum Length_: **254**
 User name to supply to the server, when retrieving email. null when the connection is not setup or the server does not require user name.
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -187,8 +220,84 @@ The user, who owns the mailbox. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

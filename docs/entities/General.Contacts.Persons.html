@@ -81,12 +81,16 @@
 
 <p><strong>Namespace:</strong> <a href="General.Contacts.html">General.Contacts</a><br>
 <strong>Inherited From:</strong> <a href="General.Contacts.Parties.html">General.Contacts.Parties</a></p>
-<p>Personal records. Requires related party record. Entity: Cm_Persons</p>
+<p>Personal records. Requires related party record. Entity: Cm_Persons (Introduced in version 22.1.6.13)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
 <em>{PartyName:T}</em><br>
 Default Search Members:<br>
-<em>PartyCode; PartyName</em></p>
+<em>PartyCode; PartyName</em><br>
+Code Data Member:<br>
+<em>PartyCode</em><br>
+Name Data Member:<br>
+<em>PartyName</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -122,7 +126,7 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#city">City</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></td>
 <td>City from the legal registration address for the person. <code>Filter(like)</code></td>
 </tr>
 <tr>
@@ -136,14 +140,19 @@ Default Search Members:<br>
 <td>Login name of the user, who created the Person. <code>Filter(like)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
+<td><a href="General.Contacts.Persons.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="General.Contacts.Persons.html#firstname">FirstName</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></td>
 <td>First name of the person. <code>Filter(eq;like)</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#gender">Gender</a></td>
 <td><a href="General.Contacts.Persons.html#gender">Gender</a> <strong>nullable</strong></td>
-<td>Person gender. M=Male;F=Female;null=not known/not provided. <code>Filter(eq)</code></td>
+<td>Person gender. M=Male;F=Female;O=Other;N=Prefer not to say;null=not known/not provided. <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#gln">GLN</a></td>
@@ -162,12 +171,12 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#lastname">LastName</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></td>
 <td>Last name of the person. <code>Filter(eq;like)</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#middlename">MiddleName</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></td>
 <td>Middle name of the person. <code>Filter(eq;like)</code></td>
 </tr>
 <tr>
@@ -179,6 +188,11 @@ Default Search Members:<br>
 <td><a href="General.Contacts.Persons.html#notes">Notes</a></td>
 <td>string (254) <strong>nullable</strong></td>
 <td>Internal notes for the person.</td>
+</tr>
+<tr>
+<td><a href="General.Contacts.Persons.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#partycode">PartyCode</a></td>
@@ -197,7 +211,7 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#partyname">PartyName</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
 <td>The name of the party. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
 </tr>
 <tr>
@@ -237,7 +251,7 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="General.Contacts.Persons.html#title">Title</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (32)</a> <strong>nullable</strong></td>
 <td>The persons title. It may be one of the standard titles - Mr., Mrs., etc., but it can also contains professional or academic qualification.</td>
 </tr>
 <tr>
@@ -350,32 +364,44 @@ Default Search Members:<br>
 <h3 id="birthdate">BirthDate</h3>
 <p>Birth date. null means unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="city">City</h3>
 <p>City from the legal registration address for the person. <code>Filter(like)</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="creationtime">CreationTime</h3>
 <p>Date and time when the Person was created. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="creationuser">CreationUser</h3>
 <p>Login name of the user, who created the Person. <code>Filter(like)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="firstname">FirstName</h3>
 <p>First name of the person. <code>Filter(eq;like)</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="gender">Gender</h3>
-<p>Person gender. M=Male;F=Female;null=not known/not provided. <code>Filter(eq)</code></p>
+<p>Person gender. M=Male;F=Female;O=Other;N=Prefer not to say;null=not known/not provided. <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html#gender">Gender</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>Gender</code>(General.Contacts.Persons.md#gender) data attribute<br>
 <em>Allowed Values (General.Contacts.PersonsRepository.Gender Enum Members)</em></p>
 <table>
@@ -394,6 +420,14 @@ Allowed values for the <code>Gender</code>(General.Contacts.Persons.md#gender) d
 <td>Male</td>
 <td>Male value. Stored as 'M'. <br> <em>Database Value:</em> 'M' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Male'</td>
 </tr>
+<tr>
+<td>Other</td>
+<td>Other value. Stored as 'O'. <br> <em>Database Value:</em> 'O' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Other'</td>
+</tr>
+<tr>
+<td>PreferNotToSay</td>
+<td>PreferNotToSay value. Stored as 'N'. <br> <em>Database Value:</em> 'N' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'PreferNotToSay'</td>
+</tr>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
@@ -402,75 +436,94 @@ Allowed values for the <code>Gender</code>(General.Contacts.Persons.md#gender) d
 <p>Global Location Number used by EDI systems. <code>Filter(multi eq)</code> <code>ORD</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (13) <strong>nullable</strong></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>13</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="isactive">IsActive</h3>
 <p>Specifies whether the current party is active in the system or not. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong></p>
 <h3 id="lastname">LastName</h3>
 <p>Last name of the person. <code>Filter(eq;like)</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="middlename">MiddleName</h3>
 <p>Middle name of the person. <code>Filter(eq;like)</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="nationalnumber">NationalNumber</h3>
 <p>Government assigned unique personal number. null means unknown. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (14) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>14</strong></p>
 <h3 id="notes">Notes</h3>
 <p>Internal notes for the person.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="partycode">PartyCode</h3>
 <p>The unique code of the party. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (16)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>16</strong></p>
 <h3 id="partycreationtime">PartyCreationTime</h3>
 <p>Date and time when the Party was created. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="partycreationuser">PartyCreationUser</h3>
 <p>Login name of the user, who created the Party. <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="partyname">PartyName</h3>
 <p>The name of the party. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong></p>
 <h3 id="partynotes">PartyNotes</h3>
 <p>Notes for this Party. (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="partytype">PartyType</h3>
 <p>Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. <code>Required</code> <code>Default(&quot;P&quot;)</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html#partytype">PartyType</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the PartyType data attribute<br>
 <em>Allowed Values (General.Contacts.PartiesRepository.PartyType Enum Members)</em></p>
 <table>
@@ -509,44 +562,52 @@ Allowed values for the PartyType data attribute<br>
 <h3 id="partyuniquenumber">PartyUniqueNumber</h3>
 <p>Unique number of the party (National number for persons, Registration number for companies). <code>Filter(eq;like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (16) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>16</strong></p>
 <h3 id="partyupdatetime">PartyUpdateTime</h3>
 <p>Date and time when the Party was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="partyupdateuser">PartyUpdateUser</h3>
 <p>Login name of the user, who last updated the Party. <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="passportissuingdate">PassportIssuingDate</h3>
 <p>Date of issuing the passport. null means unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="passportnumber">PassportNumber</h3>
 <p>Current passport number. null means unknown. <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (14) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>14</strong></p>
 <h3 id="title">Title</h3>
 <p>The persons title. It may be one of the standard titles - Mr., Mrs., etc., but it can also contains professional or academic qualification.</p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (32)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
 <p>Date and time when the Person was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="updateuser">UpdateUser</h3>
 <p>Login name of the user, who last updated the Person. <code>Filter(like)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
@@ -554,24 +615,98 @@ Allowed values for the PartyType data attribute<br>
 <h3 id="administrativeregion">AdministrativeRegion</h3>
 <p>The administrative region in which the party is situated. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Geography.AdministrativeRegions.html">AdministrativeRegions</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="area">Area</h3>
 <p>The area in which the party is situated. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Geography.Areas.html">Areas</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="defaultproductcodingsystem">DefaultProductCodingSystem</h3>
 <p>When not null, specifies coding system for products, which is required by the party. The coding system is used primarily for document printouts and document import/exports. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Products.CodingSystems.html">CodingSystems</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="nationality">Nationality</h3>
 <p>Person's nationality. null means the default (same as enterprise) nationality. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.Countries.html">Countries</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="parentparty">ParentParty</h3>
 <p>Organizational unit (branch from the hierarchy of all parties) to which this party is referred to. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>

@@ -97,14 +97,19 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="#accrue_excise_duty">Accrue_Excise_Duty</a></td>
+<td><code>bit</code></td>
+<td>Accrue Excise Duty</td>
+</tr>
+<tr>
 <td><a href="#administrative_reference_code">Administrative_Reference_Code</a></td>
 <td><code>nvarchar(16)</code></td>
 <td>The reference code, returned the customs authorities, when the document is exported to them. NULL means the document is not yet exported to the authorities.</td>
 </tr>
 <tr>
-<td><a href="#document_currency_id">Document_Currency_Id</a></td>
-<td><code>uniqueidentifier</code></td>
-<td>Currency of the Excise deal.</td>
+<td><a href="#direction">Direction</a></td>
+<td><code>nvarchar(1)</code> Allowed: <code>I</code>, <code>R</code></td>
+<td>Indicates whether the document is Receipt('R') or Issue('I') of the Tax Warehouse</td>
 </tr>
 <tr>
 <td><a href="#document_id">Document_Id</a></td>
@@ -124,7 +129,7 @@
 <tr>
 <td><a href="#other_party_id">Other_Party_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>The other party, receiving the goods (Consignee).</td>
+<td>The other party, sending or receiving the goods.</td>
 </tr>
 <tr>
 <td><a href="#reporting_person_id">Reporting_Person_Id</a></td>
@@ -154,6 +159,125 @@
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
+<h3 id="accrue_excise_duty">Accrue_Excise_Duty</h3>
+<p>Accrue Excise Duty</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>bit</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="accrue_excise_duty---supported-filters">Accrue_Excise_Duty - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h3 id="administrative_reference_code">Administrative_Reference_Code</h3>
 <p>The reference code, returned the customs authorities, when the document is exported to them. NULL means the document is not yet exported to the authorities.</p>
 <table>
@@ -254,8 +378,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="document_currency_id">Document_Currency_Id</h3>
-<p>Currency of the Excise deal.</p>
+<h3 id="direction">Direction</h3>
+<p>Indicates whether the document is Receipt('R') or Issue('I') of the Tax Warehouse</p>
 <table>
 <thead>
 <tr>
@@ -265,12 +389,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Auto Complete</td>
-<td>no</td>
+<td>Allowed Values</td>
+<td><code>I</code>, <code>R</code></td>
 </tr>
 <tr>
-<td>Base Table.Column</td>
-<td><a href="Gen_Currencies.html">Gen_Currencies</a>.<a href="Gen_Currencies.html#currency_id">Currency_Id</a></td>
+<td>Auto Complete</td>
+<td>no</td>
 </tr>
 <tr>
 <td>Data Filter</td>
@@ -278,7 +402,7 @@
 </tr>
 <tr>
 <td>Default Value</td>
-<td>None</td>
+<td>I</td>
 </tr>
 <tr>
 <td>Enter Stop</td>
@@ -294,11 +418,11 @@
 </tr>
 <tr>
 <td>Max Length</td>
-<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>Order</td>
-<td>8</td>
+<td>10</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -321,10 +445,6 @@
 <td>no</td>
 </tr>
 <tr>
-<td>Referenced Table</td>
-<td><a href="Gen_Currencies.html">Gen_Currencies</a></td>
-</tr>
-<tr>
 <td>RTF</td>
 <td>no</td>
 </tr>
@@ -342,7 +462,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>uniqueidentifier</td>
+<td>nvarchar(1)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -362,7 +482,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="document_currency_id---supported-filters">Document_Currency_Id - Supported Filters</h4>
+<h4 id="direction---supported-filters">Direction - Supported Filters</h4>
 <table>
 <thead>
 <tr>
@@ -393,10 +513,6 @@
 <tr>
 <td>Auto Complete</td>
 <td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Gen_Documents.html">Gen_Documents</a>.<a href="Gen_Documents.html#id">Id</a></td>
 </tr>
 <tr>
 <td>Data Filter</td>
@@ -726,7 +842,7 @@
 </tbody>
 </table>
 <h3 id="other_party_id">Other_Party_Id</h3>
-<p>The other party, receiving the goods (Consignee).</p>
+<p>The other party, sending or receiving the goods.</p>
 <table>
 <thead>
 <tr>
@@ -738,10 +854,6 @@
 <tr>
 <td>Auto Complete</td>
 <td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Gen_Parties.html">Gen_Parties</a>.<a href="Gen_Parties.html#id">Id</a></td>
 </tr>
 <tr>
 <td>Data Filter</td>
@@ -865,10 +977,6 @@
 <tr>
 <td>Auto Complete</td>
 <td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Cm_Persons.html">Cm_Persons</a>.<a href="Cm_Persons.html#person_id">Person_Id</a></td>
 </tr>
 <tr>
 <td>Data Filter</td>
@@ -1214,10 +1322,6 @@
 <tr>
 <td>Auto Complete</td>
 <td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Log_Carriers.html">Log_Carriers</a>.<a href="Log_Carriers.html#carrier_id">Carrier_Id</a></td>
 </tr>
 <tr>
 <td>Data Filter</td>

@@ -25,11 +25,13 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Logistics.Inventory.TransferOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DueDateIn](Logistics.Inventory.TransferOrderLines.md#duedatein) | datetime | The date, when the goods are expected to be received in the destination warehouse. Initially copied from the transfer header. `Required` `Filter(ge;le)` 
 | [DueDateOut](Logistics.Inventory.TransferOrderLines.md#duedateout) | datetime | When this line of the transfer is scheduled to issue the goods from the source warehouse. Initially copied from the transfer header. `Required` `Filter(ge;le)` 
 | [Id](Logistics.Inventory.TransferOrderLines.md#id) | guid |  
 | [LineOrd](Logistics.Inventory.TransferOrderLines.md#lineord) | int32 | Line ordinal position within the transaction. Duplicates are allowed, but not advised. `Required` 
 | [Notes](Logistics.Inventory.TransferOrderLines.md#notes) | string (254) __nullable__ | Notes for this TransferOrderLine. 
+| [ObjectVersion](Logistics.Inventory.TransferOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Logistics.Inventory.TransferOrderLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity ordered for transfer. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [QuantityBase](Logistics.Inventory.TransferOrderLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity in the base (default) measurement unit of the Item (calculated at the time of last update of the current store order line). Should be updated in parallel with each Quantity update. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(ge;le)` 
 | [StandardQuantityBase](Logistics.Inventory.TransferOrderLines.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
@@ -44,7 +46,7 @@ Aggregate Root:
 | [Lot](Logistics.Inventory.TransferOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | If non-null, contains the specific lot to use for the movement. `Filter(multi eq)` |
 | [Product](Logistics.Inventory.TransferOrderLines.md#product) | [Products](General.Products.Products.md) | The product which will be transferred. `Required` `Filter(multi eq)` |
 | [ProductCode](Logistics.Inventory.TransferOrderLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Selects the product thru some of the product codes. `Filter(multi eq)` |
-| [ProductVariant](Logistics.Inventory.TransferOrderLines.md#productvariant) | [ProductVariants](General.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
+| [ProductVariant](Logistics.Inventory.TransferOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.TransferOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [SerialNumber](Logistics.Inventory.TransferOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)` |
 | [ToStoreBin](Logistics.Inventory.TransferOrderLines.md#tostorebin) | [StoreBins](Logistics.Inventory.StoreBins.md) (nullable) | To which store bin to issue/receive the products. null means that the store bin is unknown or not applicable. `Filter(multi eq)` |
@@ -53,11 +55,21 @@ Aggregate Root:
 
 ## Attribute Details
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### DueDateIn
 
 The date, when the goods are expected to be received in the destination warehouse. Initially copied from the transfer header. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -71,6 +83,7 @@ _Front-End Recalc Expressions:_
 When this line of the transfer is scheduled to issue the goods from the source warehouse. Initially copied from the transfer header. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -83,6 +96,7 @@ _Front-End Recalc Expressions:_
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -91,6 +105,7 @@ _Default Value_: **NewGuid**
 Line ordinal position within the transaction. Duplicates are allowed, but not advised. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -104,15 +119,26 @@ _Front-End Recalc Expressions:_
 Notes for this TransferOrderLine.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Quantity
 
 Quantity ordered for transfer. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -122,6 +148,7 @@ _Default Value_: **Constant**
 Quantity in the base (default) measurement unit of the Item (calculated at the time of last update of the current store order line). Should be updated in parallel with each Quantity update. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -135,6 +162,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -148,6 +176,7 @@ _Front-End Recalc Expressions:_
 Standard unit price of the product during the creation of the transfer order line. `Currency: TransferOrder.DocumentCurrency`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -162,6 +191,7 @@ The parent transfer order. `Required` `Filter(multi eq)`
 
 _Type_: **[TransferOrders](Logistics.Inventory.TransferOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### FromStoreBin
@@ -169,6 +199,7 @@ _Supported Filters_: **Equals, EqualsIn**
 From which store bin to issue/receive the products. null means that the store bin is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -176,6 +207,7 @@ _Supported Filters_: **Equals, EqualsIn**
 If non-null, contains the specific lot to use for the movement. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -184,6 +216,7 @@ The product which will be transferred. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -193,6 +226,7 @@ _Front-End Recalc Expressions:_
 Selects the product thru some of the product codes. `Filter(multi eq)`
 
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -201,7 +235,8 @@ _Front-End Recalc Expressions:_
 
 If specified determines which product variant of the current product in this line is used. `Filter(multi eq)`
 
-_Type_: **[ProductVariants](General.ProductVariants.md) (nullable)**  
+_Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -209,6 +244,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -218,6 +254,7 @@ _Front-End Recalc Expressions:_
 Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ToStoreBin
@@ -225,6 +262,7 @@ _Supported Filters_: **Equals, EqualsIn**
 To which store bin to issue/receive the products. null means that the store bin is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TransferOrder
@@ -233,9 +271,85 @@ The parent transfer order. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[TransferOrders](Logistics.Inventory.TransferOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

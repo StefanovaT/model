@@ -13,6 +13,7 @@ Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 | - | - | --- |
 |[Access_Key_Id](#access_key_id)|`uniqueidentifier` |The security access key which controls the access to the layout view|
 |[Application_Name](#application_name)|`nvarchar(64)` |The application, which consumes the layout.|
+|[Category](#category)|`nvarchar(36)` |The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type.|
 |[Form_Layout_Id](#form_layout_id)|`uniqueidentifier` `PK`||
 |[Form_Name](#form_name)|`nvarchar(64)` |The form, for which the layout is applied.|
 |[Layout](#layout)|`varbinary` |The byte storage of the layout.|
@@ -99,6 +100,42 @@ The application, which consumes the layout.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|yes|
+
+### Category
+
+
+The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|36|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(36) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Category - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Form_Layout_Id
 

@@ -23,13 +23,12 @@ Products are the different items in the enterprise, which can be purchased, stor
 |[Creation_User](#creation_user)|`nvarchar(64)` Readonly||
 |[Description](#description)|`nvarchar(max)` `ML`|The description of the product|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, specifies that the product is specific to a given enterprise company and may be used only in documents from this enterprise company.|
-|[Excise_Alcoholic_Strength](#excise_alcoholic_strength)|`decimal(5, 2)` |The alcoholic strength, which will be used for Excise reporting purposes. NULL if the product is not subject to alcoholic Excise reporting.|
-|[Excise_Product_Id](#excise_product_id)|`uniqueidentifier` |Specifies excise product code for this product. NULL means unspecified.|
+|[Excise_Product_Type_Id](#excise_product_type_id)|`uniqueidentifier` |Specifies the basic excise attributes of the product.|
 |[Expiry_Period_Days](#expiry_period_days)|`int` |Total default expiry period for the product (in days) from the date of production to the date of expiry|
 |[Flushing_Method](#flushing_method)|`nvarchar(1)` Allowed: `B`, `F`, `M`|Consumption method for work orders. M=Manual, using Consuption Journals, F=Forward (on release), B=Backward (on finish)|
 |[Guarantee_Period_Days](#guarantee_period_days)|`int` |Default guarantee period length in days. 0 means no guarantee. Should be non-NULL for serviced products and NULL for the others|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique id of the item|
-|[Intrastat_Commodity_Code_Id](#intrastat_commodity_code_id)|`uniqueidentifier` ||
+|[Intrastat_Commodity_Code_Id](#intrastat_commodity_code_id)|`uniqueidentifier` |Code from The Combined Nomenclature used within the European Union countries. Used when reporting Intrastat and Excise.|
 |[Intrastat_Supplementary_Unit_Id](#intrastat_supplementary_unit_id)|`uniqueidentifier` ||
 |[Is_Featured](#is_featured)|`bit` ||
 |[Is_Serialized](#is_serialized)|`bit` |1 if the parts use/require serial numbers|
@@ -476,40 +475,10 @@ When not NULL, specifies that the product is specific to a given enterprise comp
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
-### Excise_Alcoholic_Strength
+### Excise_Product_Type_Id
 
 
-The alcoholic strength, which will be used for Excise reporting purposes. NULL if the product is not subject to alcoholic Excise reporting.
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|-1|
-|Order|45|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|decimal(5, 2) (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Short|
-|User Login|no|
-|Visible|no|
-
-### Excise_Product_Id
-
-
-Specifies excise product code for this product. NULL means unspecified.
+Specifies the basic excise attributes of the product.
 
 | Property | Value |
 | - | - |
@@ -520,13 +489,13 @@ Specifies excise product code for this product. NULL means unspecified.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|46|
+|Order|48|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
-|Referenced Table|[Exc_Excise_Products](Exc_Excise_Products.md)|
+|Referenced Table|[Exc_Excise_Product_Types](Exc_Excise_Product_Types.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -537,7 +506,7 @@ Specifies excise product code for this product. NULL means unspecified.
 |User Login|no|
 |Visible|yes|
 
-#### Excise_Product_Id - Supported Filters
+#### Excise_Product_Type_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
@@ -671,6 +640,9 @@ Unique id of the item
 |Equals|`NULL`|no|no|
 
 ### Intrastat_Commodity_Code_Id
+
+
+Code from The Combined Nomenclature used within the European Union countries. Used when reporting Intrastat and Excise.
 
 | Property | Value |
 | - | - |

@@ -16,11 +16,11 @@ National data: Contains the persons, which are authorized to issue and sign VAT 
 | Name | Type | Description |
 | - | - | --- |
 |[Declarer_Type](#declarer_type)|`nvarchar(1)` Allowed: `A`, `R`|Type of the declaring person. A=Attorney, R=Representative.|
-|[Declaring_Person_Address](#declaring_person_address)|`nvarchar(150)` |Address for correspondation of the declaring person.|
-|[Declaring_Person_City](#declaring_person_city)|`nvarchar(50)` |City from the address for correspondation of the declaring person.|
+|[Declaring_Person_Address](#declaring_person_address)|`nvarchar(150)` |Address for correspondence of the declaring person.|
+|[Declaring_Person_City](#declaring_person_city)|`nvarchar(50)` |City from the address for correspondence of the declaring person.|
 |[Declaring_Person_Id](#declaring_person_id)|`uniqueidentifier` `PK`|Unique identification of the declaring person.|
 |[Declaring_Person_Position](#declaring_person_position)|`nvarchar(50)` |Position of the declaring person in the enterprise company.|
-|[Declaring_Person_Postcode](#declaring_person_postcode)|`nvarchar(4)` |Postcode from the address for correspondation of the declaring person.|
+|[Declaring_Person_Postcode](#declaring_person_postcode)|`nvarchar(4)` |Postcode from the address for correspondence of the declaring person.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |The enterprise company for which the person is presenting the declaration.|
 |[Is_Default](#is_default)|`bit` |True if this is the default person, which issues VAT declarations for this Enterprise Company.|
 |[Person_Id](#person_id)|`uniqueidentifier` |The person that is presenting the declaration.|
@@ -68,7 +68,7 @@ Type of the declaring person. A=Attorney, R=Representative.
 ### Declaring_Person_Address
 
 
-Address for correspondation of the declaring person.
+Address for correspondence of the declaring person.
 
 | Property | Value |
 | - | - |
@@ -98,7 +98,7 @@ Address for correspondation of the declaring person.
 ### Declaring_Person_City
 
 
-City from the address for correspondation of the declaring person.
+City from the address for correspondence of the declaring person.
 
 | Property | Value |
 | - | - |
@@ -194,7 +194,7 @@ Position of the declaring person in the enterprise company.
 ### Declaring_Person_Postcode
 
 
-Postcode from the address for correspondation of the declaring person.
+Postcode from the address for correspondence of the declaring person.
 
 | Property | Value |
 | - | - |

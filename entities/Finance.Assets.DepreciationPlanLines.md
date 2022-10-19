@@ -27,8 +27,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [DepreciationEndDate](Finance.Assets.DepreciationPlanLines.md#depreciationenddate) | datetime | End date of the depreciation plan for this asset. `Required` 
 | [DepreciationStartDate](Finance.Assets.DepreciationPlanLines.md#depreciationstartdate) | datetime | Start date of the depreciation plan for this asset. `Required` 
+| [DisplayText](Finance.Assets.DepreciationPlanLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Assets.DepreciationPlanLines.md#id) | guid |  
 | [LineNo](Finance.Assets.DepreciationPlanLines.md#lineno) | int32 | Consecutive number of the line within the depreciation plan. `Required` `Filter(eq)` 
+| [ObjectVersion](Finance.Assets.DepreciationPlanLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PlanDepreciationValue](Finance.Assets.DepreciationPlanLines.md#plandepreciationvalue) | [Amount (14, 2)](../data-types.md#amount) | The part of the total amount of the asset (in the currency of the asset), which is due for depreciation. `Currency: Asset.ValuationCurrency` `Required` `Default(0)` 
 
 ## References
@@ -37,8 +39,8 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Asset](Finance.Assets.DepreciationPlanLines.md#asset) | [Assets](Finance.Assets.Assets.md) | The asset that is planned for depreciation. `Required` `Filter(multi eq)` |
 | [DepreciationMethod](Finance.Assets.DepreciationPlanLines.md#depreciationmethod) | [DepreciationMethods](Finance.Assets.DepreciationMethods.md) | Depreciation method by which the asset will be depreciated. `Required` `Filter(multi eq)` |
-| [DepreciationPlan](Finance.Assets.DepreciationPlanLines.md#depreciationplan) | [DepreciationPlans](Finance.Assets.DepreciationPlans.md) | The `DepreciationPlan`(Finance.Assets.DepreciationPlanLines.md#depreciationplan) to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)` `Owner` |
-| [Document](Finance.Assets.DepreciationPlanLines.md#document) | [DepreciationPlans](Finance.Assets.DepreciationPlans.md) | The `DepreciationPlan`(Finance.Assets.DepreciationPlanLines.md#depreciationplan) to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)` |
+| [DepreciationPlan](Finance.Assets.DepreciationPlanLines.md#depreciationplan) | [DepreciationPlans](Finance.Assets.DepreciationPlans.md) | The <see cref="DepreciationPlan"/> to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](Finance.Assets.DepreciationPlanLines.md#document) | [DepreciationPlans](Finance.Assets.DepreciationPlans.md) | The <see cref="DepreciationPlan"/> to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)` |
 | [ValuationModel](Finance.Assets.DepreciationPlanLines.md#valuationmodel) | [ValuationModels](Finance.Assets.ValuationModels.md) | Valuation model in which the asset is accounted. `Required` `Filter(multi eq)` |
 
 ## Child Collections
@@ -55,6 +57,7 @@ Aggregate Root:
 End date of the depreciation plan for this asset. `Required`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -63,13 +66,24 @@ _Supports Order By_: **False**
 Start date of the depreciation plan for this asset. `Required`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -78,6 +92,7 @@ _Default Value_: **NewGuid**
 Consecutive number of the line within the depreciation plan. `Required` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -86,11 +101,21 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `( obj.DepreciationPlan.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### PlanDepreciationValue
 
 The part of the total amount of the asset (in the currency of the asset), which is due for depreciation. `Currency: Asset.ValuationCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -104,6 +129,7 @@ The asset that is planned for depreciation. `Required` `Filter(multi eq)`
 
 _Type_: **[Assets](Finance.Assets.Assets.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DepreciationMethod
@@ -111,23 +137,26 @@ _Supported Filters_: **Equals, EqualsIn**
 Depreciation method by which the asset will be depreciated. `Required` `Filter(multi eq)`
 
 _Type_: **[DepreciationMethods](Finance.Assets.DepreciationMethods.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DepreciationPlan
 
-The `DepreciationPlan`(Finance.Assets.DepreciationPlanLines.md#depreciationplan) to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="DepreciationPlan"/> to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[DepreciationPlans](Finance.Assets.DepreciationPlans.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
 ### Document
 
-The `DepreciationPlan`(Finance.Assets.DepreciationPlanLines.md#depreciationplan) to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)`
+The <see cref="DepreciationPlan"/> to which this DepreciationPlanLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[DepreciationPlans](Finance.Assets.DepreciationPlans.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ValuationModel
@@ -135,8 +164,84 @@ _Supported Filters_: **Equals, EqualsIn**
 Valuation model in which the asset is accounted. `Required` `Filter(multi eq)`
 
 _Type_: **[ValuationModels](Finance.Assets.ValuationModels.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

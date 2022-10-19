@@ -13,6 +13,10 @@ Default Display Text Format:
 _{PartyName:T}_  
 Default Search Members:  
 _Code; PartyName_  
+Code Data Member:  
+_Code_  
+Name Data Member:  
+_PartyName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -33,19 +37,22 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [<s>Active</s>](Logistics.Inventory.Stores.md#active) | boolean __nullable__ | **OBSOLETE! Do not use!** Obsolete - Use Gen_Parties.Is_Active. `Obsolete` `Obsoleted in version 22.1.6.61` 
 | [Code](Logistics.Inventory.Stores.md#code) | string (16) | The unique code of the Store. `Required` `Filter(eq;like)` `ORD` 
 | [CreationTime](Logistics.Inventory.Stores.md#creationtime) | datetime __nullable__ | Date and time when the Store was created. `Filter(ge;le)` `ReadOnly` 
 | [CreationUser](Logistics.Inventory.Stores.md#creationuser) | string (64) __nullable__ | Login name of the user, who created the Store. `Filter(like)` `ReadOnly` 
 | [DefaultSupplyStoreId](Logistics.Inventory.Stores.md#defaultsupplystoreid) | guid __nullable__ | The store from which goods are usually supplied to this store. `Filter(multi eq)` 
+| [DisplayText](Logistics.Inventory.Stores.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [GLN](Logistics.Inventory.Stores.md#gln) | string (13) __nullable__ | Global Location Number used by EDI systems. `Filter(multi eq)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [Id](Logistics.Inventory.Stores.md#id) | guid |  
 | [IsActive](Logistics.Inventory.Stores.md#isactive) | boolean | Specifies whether the current party is active in the system or not. `Required` `Default(true)` `Filter(eq)` (Inherited from [Parties](General.Contacts.Parties.md)) 
-| [Name](Logistics.Inventory.Stores.md#name) | [MultilanguageString](../data-types.md#multilanguagestring) | Name of the store. `Required` `Filter(like)` 
+| [Name](Logistics.Inventory.Stores.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the store. `Required` `Filter(like)` 
 | [NumberOfDimensions](Logistics.Inventory.Stores.md#numberofdimensions) | int32 | Number of dimensions in the coordinate system of the storage bins. 0 means single-bin store. Currently, this is only stored for information and is not used for automatical generation of store bins, as it was intended. `Required` `Default(0)` `Filter(eq)` 
+| [ObjectVersion](Logistics.Inventory.Stores.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PartyCode](Logistics.Inventory.Stores.md#partycode) | string (16) | The unique code of the party. `Required` `Filter(eq;like)` `ORD` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyCreationTime](Logistics.Inventory.Stores.md#partycreationtime) | datetime __nullable__ | Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyCreationUser](Logistics.Inventory.Stores.md#partycreationuser) | string (64) __nullable__ | Login name of the user, who created the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
-| [PartyName](Logistics.Inventory.Stores.md#partyname) | [MultilanguageString](../data-types.md#multilanguagestring) | The name of the party. `Required` `Filter(eq;like)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md)) 
+| [PartyName](Logistics.Inventory.Stores.md#partyname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the party. `Required` `Filter(eq;like)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyNotes](Logistics.Inventory.Stores.md#partynotes) | string (254) __nullable__ | Notes for this Party. (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyType](Logistics.Inventory.Stores.md#partytype) | [PartyType](Logistics.Inventory.Stores.md#partytype) | Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. `Required` `Default("P")` `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyUniqueNumber](Logistics.Inventory.Stores.md#partyuniquenumber) | string (16) __nullable__ | Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
@@ -92,12 +99,22 @@ Aggregate Tree
 
 ## Attribute Details
 
+### Active
+
+**OBSOLETE! Do not use!** Obsolete - Use Gen_Parties.Is_Active. `Obsolete` `Obsoleted in version 22.1.6.61`
+
+_Type_: **boolean __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+
 ### Code
 
 The unique code of the Store. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (16)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
@@ -107,6 +124,7 @@ _Maximum Length_: **16**
 Date and time when the Store was created. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -115,6 +133,7 @@ _Supports Order By_: **False**
 Login name of the user, who created the Store. `Filter(like)` `ReadOnly`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -124,7 +143,17 @@ _Maximum Length_: **64**
 The store from which goods are usually supplied to this store. `Filter(multi eq)`
 
 _Type_: **guid __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### GLN
 
@@ -132,6 +161,7 @@ Global Location Number used by EDI systems. `Filter(multi eq)` `ORD` (Inherited 
 
 _Type_: **string (13) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **13**  
@@ -140,6 +170,7 @@ _Maximum Length_: **13**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -148,6 +179,7 @@ _Default Value_: **NewGuid**
 Specifies whether the current party is active in the system or not. `Required` `Default(true)` `Filter(eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -156,7 +188,8 @@ _Default Value_: **True**
 
 Name of the store. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
@@ -165,9 +198,19 @@ _Supports Order By_: **False**
 Number of dimensions in the coordinate system of the storage bins. 0 means single-bin store. Currently, this is only stored for information and is not used for automatical generation of store bins, as it was intended. `Required` `Default(0)` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PartyCode
 
@@ -175,6 +218,7 @@ The unique code of the party. `Required` `Filter(eq;like)` `ORD` `ReadOnly` (Inh
 
 _Type_: **string (16)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
@@ -184,6 +228,7 @@ _Maximum Length_: **16**
 Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -192,6 +237,7 @@ _Supports Order By_: **False**
 Login name of the user, who created the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -200,8 +246,9 @@ _Maximum Length_: **64**
 
 The name of the party. `Required` `Filter(eq;like)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md))
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 
@@ -210,6 +257,7 @@ _Supports Order By_: **True**
 Notes for this Party. (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -219,6 +267,7 @@ _Maximum Length_: **254**
 Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. `Required` `Default("P")` `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[PartyType](Logistics.Inventory.Stores.md#partytype)**  
+_Category_: **System**  
 Allowed values for the PartyType data attribute  
 _Allowed Values (General.Contacts.PartiesRepository.PartyType Enum Members)_  
 
@@ -239,6 +288,7 @@ _Default Value_: **Person**
 Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (16) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
@@ -248,6 +298,7 @@ _Maximum Length_: **16**
 Date and time when the Party was last updated. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -256,6 +307,7 @@ _Supports Order By_: **False**
 Login name of the user, who last updated the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -265,6 +317,7 @@ _Maximum Length_: **64**
 Obsolete. Not used.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -274,6 +327,7 @@ _Maximum Length_: **2147483647**
 If false the system will expect the user to process the store transactions. If true the system will auto-generate them. `Required` `Default(true)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -283,6 +337,7 @@ _Default Value_: **True**
 Date and time when the Store was last updated. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -291,6 +346,7 @@ _Supports Order By_: **False**
 Login name of the user, who last updated the Store. `Filter(like)` `ReadOnly`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -303,6 +359,7 @@ _Maximum Length_: **64**
 The access key, containing the user permissions for this Store. Null means that all users have unlimited permissions. `Filter(multi eq)`
 
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AdministrativeRegion
@@ -310,6 +367,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The administrative region in which the party is situated. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Area
@@ -317,6 +375,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The area in which the party is situated. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[Areas](General.Geography.Areas.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Currency
@@ -324,6 +383,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The currency for the warehouse cost calculations. When null, the base currency for the enterprise company will be used. `Filter(multi eq)`
 
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -333,6 +393,7 @@ _Front-End Recalc Expressions:_
 When not null, specifies coding system for products, which is required by the party. The coding system is used primarily for document printouts and document import/exports. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[CodingSystems](General.Products.CodingSystems.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultStoreBin
@@ -340,6 +401,7 @@ _Supported Filters_: **Equals, EqualsIn**
 To be used when store bin is unknown. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompany
@@ -347,6 +409,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The Enterprise Company to which this Store applies, or null if it is for all enterprise companies. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompanyLocation
@@ -354,6 +417,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The Enterprise Company Location to which this Store applies, or null if it is for all enterprise company locations. `Filter(multi eq)`
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Parent
@@ -361,6 +425,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Obsolete. Not used. (Hierarchy of the stores is now represented by the Store Groups entity). `Filter(multi eq)`
 
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentParty
@@ -369,6 +434,7 @@ Organizational unit (branch from the hierarchy of all parties) to which this par
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ResponsibleParty
@@ -376,6 +442,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Primary responsible party (usually employee) for the stock in the store. `Filter(multi eq)`
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### StoreGroup
@@ -383,6 +450,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The store group, to which this store belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[StoreGroups](Logistics.Inventory.StoreGroups.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TaxWarehouse
@@ -390,6 +458,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Excise Tax Warehouse for this Store. null means that the Store is not an Excise Tax Warehouse. `Filter(multi eq)` `Introduced in version 21.1.3.93`
 
 _Type_: **[TaxWarehouses](Finance.Excise.TaxWarehouses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Warehouse
@@ -397,8 +466,84 @@ _Supported Filters_: **Equals, EqualsIn**
 Specifies, the warehouse, which manages the warehouse operations for the store. null for stores, which do not have managed operations. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[Warehouses](Logistics.Wms.Warehouses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -31,7 +31,7 @@ Invoice Orders can be created by different modules and order the creation of Inv
 |[Payment_Account_Id](#payment_account_id)|`uniqueidentifier` |When not NULL, specifies the default payment account for the payment order|
 |[Payment_Due_Date](#payment_due_date)|`datetime` |When not NULL specifies due date for the payment|
 |[Payment_Due_Start_Date](#payment_due_start_date)|`datetime` |The date when the payment becomes due for documents with one installment.|
-|[Payment_Type_Description](#payment_type_description)|`nvarchar(20)` `ML`|Description of the payment type. Initially copied from the name of the Payment Type|
+|[Payment_Type_Description](#payment_type_description)|`nvarchar(254)` `ML`|Description of the payment type. Initially copied from the name of the Payment Type|
 |[Payment_Type_Id](#payment_type_id)|`uniqueidentifier` |When not NULL specifies the payment type for the invoice|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Sales_Order_Id](#sales_order_id)|`uniqueidentifier` |Default value and filter for the lines. Used to differenciate the invoice order for each sales order.|
@@ -591,7 +591,7 @@ Description of the payment type. Initially copied from the name of the Payment T
 |Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|20|
+|Max Length|254|
 |Order|5|
 |Ownership Reference|no|
 |Pasword|no|
@@ -602,7 +602,7 @@ Description of the payment type. Initially copied from the name of the Payment T
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(20) (MultiLanguage)|
+|Type|nvarchar(254) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|

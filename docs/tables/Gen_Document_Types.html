@@ -103,13 +103,18 @@
 <td>Unique descriptive code of the document type</td>
 </tr>
 <tr>
+<td><a href="#create_fulfillments_on_completion">Create_Fulfillments_On_Completion</a></td>
+<td><code>bit</code></td>
+<td>When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents.</td>
+</tr>
+<tr>
 <td><a href="#create_manully">Create_Manully</a></td>
 <td><code>bit</code></td>
 <td>0 if documents with this document type only can be generated; 1 - the user can create documents with this type</td>
 </tr>
 <tr>
 <td><a href="#description">Description</a></td>
-<td><code>nvarchar(max)</code></td>
+<td><code>nvarchar(max)</code> <code>ML</code></td>
 <td></td>
 </tr>
 <tr>
@@ -412,6 +417,106 @@
 </tr>
 </tbody>
 </table>
+<h3 id="create_fulfillments_on_completion">Create_Fulfillments_On_Completion</h3>
+<p>When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>False</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>bit</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="create_manully">Create_Manully</h3>
 <p>0 if documents with this document type only can be generated; 1 - the user can create documents with this type</p>
 <table>
@@ -614,7 +719,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>nvarchar(max) (Allows NULL)</td>
+<td>nvarchar(max) (MultiLanguage) (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -766,7 +871,7 @@
 </tr>
 <tr>
 <td>Is Entity Name</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Max Length</td>

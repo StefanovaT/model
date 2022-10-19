@@ -113,6 +113,11 @@ __</p>
 <td>Date and time when the ScheduledDocumentEvent was created. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
+<td><a href="General.ScheduledDocumentEvents.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="General.ScheduledDocumentEvents.html#documentevent">DocumentEvent</a></td>
 <td>string (254)</td>
 <td>The type of the document event that is scheduled to be processed. <code>Required</code> <code>ReadOnly</code></td>
@@ -131,6 +136,11 @@ __</p>
 <td><a href="General.ScheduledDocumentEvents.html#lastprocesstime">LastProcessTime</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>The time of the last attempt to process the event. <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="General.ScheduledDocumentEvents.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="General.ScheduledDocumentEvents.html#processed">Processed</a></td>
@@ -170,46 +180,66 @@ __</p>
 <h3 id="cancelled">Cancelled</h3>
 <p>When true, specifies that this document event has been cancelled (either manually or in respect to another event) and will not be executed. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
 <h3 id="creationtime">CreationTime</h3>
 <p>Date and time when the ScheduledDocumentEvent was created. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="documentevent">DocumentEvent</h3>
 <p>The type of the document event that is scheduled to be processed. <code>Required</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="lastprocessstatus">LastProcessStatus</h3>
 <p>Status/information of the last attemp to process the event. Usually shows the cause in case of failure. <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong></p>
 <h3 id="lastprocesstime">LastProcessTime</h3>
 <p>The time of the last attempt to process the event. <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="processed">Processed</h3>
 <p>Indicates wheather the event is already processed or not. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
 <h3 id="state">State</h3>
 <p>The state of the document for which the event will be processed. <code>Required</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="General.ScheduledDocumentEvents.html#state">State</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>State</code>(General.ScheduledDocumentEvents.md#state) data attribute<br>
 <em>Allowed Values (General.ScheduledDocumentEventsRepository.State Enum Members)</em></p>
 <table>
@@ -256,11 +286,57 @@ Allowed values for the <code>State</code>(General.ScheduledDocumentEvents.md#sta
 <h3 id="document">Document</h3>
 <p>The document for which the event will be processed. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="sourcedocument">SourceDocument</h3>
 <p>The document that has caused this event to be scheduled. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>

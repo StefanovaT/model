@@ -7,6 +7,10 @@ Entity: [Logistics.Inventory.TransferOrdersOptions](~/entities/Logistics.Invento
 
 Options per document type for the transfer orders. Entity: Inv_Transfer_Orders_Options
 
+## Owner Tables Hierarchy
+
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -69,7 +73,7 @@ The document type, for which these options apply.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

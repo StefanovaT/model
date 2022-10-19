@@ -5,7 +5,7 @@
 
 Entity: [General.Contacts.Persons](~/entities/General.Contacts.Persons.md)
 
-Personal records. Requires related party record. Entity: Cm_Persons
+Personal records. Requires related party record. Entity: Cm_Persons (Introduced in version 22.1.6.13)
 
 ## Owner Tables Hierarchy
 
@@ -20,7 +20,7 @@ Personal records. Requires related party record. Entity: Cm_Persons
 |[Creation_Time](#creation_time)|`datetime` Readonly||
 |[Creation_User](#creation_user)|`nvarchar(64)` Readonly||
 |[First_Name](#first_name)|`nvarchar(64)` `ML`|First name of the person.|
-|[Gender](#gender)|`nvarchar(1)` Allowed: `F`, `M`|Person gender. M=Male;F=Female;NULL=not known/not provided|
+|[Gender](#gender)|`nvarchar(1)` Allowed: `F`, `M`, `O`, `N`|Person gender. M=Male;F=Female;O=Other;N=Prefer not to say;NULL=not known/not provided|
 |[Last_Name](#last_name)|`nvarchar(64)` `ML`|Last name of the person.|
 |[Middle_Name](#middle_name)|`nvarchar(64)` `ML`|Middle name of the person.|
 |[National_Number](#national_number)|`nvarchar(14)` |Government assigned unique personal number. NULL means unknown|
@@ -215,11 +215,11 @@ First name of the person.
 ### Gender
 
 
-Person gender. M=Male;F=Female;NULL=not known/not provided
+Person gender. M=Male;F=Female;O=Other;N=Prefer not to say;NULL=not known/not provided
 
 | Property | Value |
 | - | - |
-|Allowed Values|`F`, `M`|
+|Allowed Values|`F`, `M`, `O`, `N`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

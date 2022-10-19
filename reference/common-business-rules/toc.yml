@@ -1,6 +1,8 @@
 - name: All entities
   href: all-entities.md
-- name: Code validation
+- name: Hierarchical entities
+  href: hierarchical-entities.md
+- name: Code 
   href: code-validation.md
 - name: Code (strict)
   href: code-validation-strict.md
@@ -18,3 +20,5 @@
   href: serial-numbers.md
 - name: Conversion validation methods
   href: conversion-validation-methods.md
+- name: All documents
+  href: all-documents.md

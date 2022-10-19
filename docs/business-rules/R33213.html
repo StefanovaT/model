@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>R33213 ObjectFile - Check File Name Compatibility | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="R33213 ObjectFile - Check File Name Compatibility | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="r33213-objectfile---check-file-name-compatibility">R33213 ObjectFile - Check File Name Compatibility</h1>
+
+<table>
+<col style="width:18.8%">
+<col style="width:81.2%">
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>R33213</td>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td><a class="xref" href="../entities/Systems.Core.ObjectFiles.html">Systems.Core.ObjectFiles Entity</a></td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>CheckFileNameCompatibility</td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>FileName</td>
+</tr>
+<tr>
+<td><strong>Layer</strong></td>
+<td>Back-End</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>Commit</td>
+</tr>
+<tr>
+<td><strong>Modify</strong></td>
+<td>NO</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>Validate that:      <br><br>
+ObjectFiles.FileName can only contain
+Uppercase and Lowercase letters and Digits <bg>
+AND <br> the following symbols, but not at the beginnig of the name:    <br>
+Space ( ) <br> Dot (.) <br> Minus (-) <br> Underline (_)</bg></td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>When uploading an embedded file there are some restrictions on the file name <br>
+It can only contain Uppercase and Lowercase letters, Digits, and the following symbols: <br>
+Space (); Dot (.); Minus (-); Underline (_), but not at the beginnig of the name. <br> <br>
+For example valid codes are: <br>
+&quot;Abc1.23&quot; <br> &quot;Abc-123&quot; <br> &quot;Abc_123&quot; <br> &quot;Abc 123&quot; <br> <br>
+Invalid codes are as follows: <br>
+&quot;.Abc123&quot; <br> &quot;-Abc123&quot; <br> &quot;_Abc123&quot; <br> &quot; Abc123&quot; <br>
+and also all off the other symbols not included in the examples.</td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>File or folder name({NewName}) contains disallowed symbols!      <br>
+To improve compatibility, the use of certain characters in the name is not             <br>
+allowed. Also name can not start with space, period, hyphen, or underline!       <br>
+Please remove special characters from file name or forbidden chars from beginning!</td>
+</tr>
+<tr>
+<td><strong>Introduced In
+Version</strong></td>
+<td>2022</td>
+</tr>
+<tr>
+<td><strong>Revocable</strong></td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R33213.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

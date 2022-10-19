@@ -5,7 +5,7 @@
 
 Entity: [Crm.CustomerProducts](~/entities/Crm.CustomerProducts.md)
 
-Contains the products, that are contracted (listed) with a customer. Entity: Crm_Customer_Products
+Contains the products, that are contracted (listed) with a customer. Entity: Crm_Customer_Products (Introduced in version 22.1.6.42)
 
 ## Owner Tables Hierarchy
 
@@ -20,7 +20,13 @@ Contains the products, that are contracted (listed) with a customer. Entity: Crm
 |[Customer_Id](#customer_id)|`uniqueidentifier` |Customer, for which the product is listed|
 |[Customer_Product_Id](#customer_product_id)|`uniqueidentifier` `PK`|Customer Product listing|
 |[From_Date](#from_date)|`date` |The initial date of the listing. NULL when the initial date is unknown|
+|[In_Store_Location](#in_store_location)|`nvarchar(32)` ||
+|[In_Store_Max_Quantity](#in_store_max_quantity)|`decimal(10, 3)` ||
+|[In_Store_Min_Quantity](#in_store_min_quantity)|`decimal(10, 3)` ||
+|[In_Store_Quantity_Unit_Id](#in_store_quantity_unit_id)|`uniqueidentifier` ||
+|[Is_Active](#is_active)|`bit` |Indicates whether this customer product definition is active|
 |[Notes](#notes)|`nvarchar(254)` |Notes for the listing|
+|[OrderMultiple](#ordermultiple)|`decimal(10, 3)` ||
 |[Product_Id](#product_id)|`uniqueidentifier` |The product, which is listed for the customer|
 |[Row_Version](#row_version)|`timestamp` ||
 |[To_Date](#to_date)|`date` |The final date of the listing. NULL when the final date is unknown|
@@ -211,6 +217,171 @@ The initial date of the listing. NULL when the initial date is unknown
 |Equals|`NULL`|yes|yes|
 |GreaterThanOrLessThan|None|no|no|
 
+### In_Store_Location
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|32|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(32) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### In_Store_Max_Quantity
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(10, 3) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### In_Store_Max_Quantity - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|yes|
+|GreaterThanOrLessThan|None|yes|no|
+
+### In_Store_Min_Quantity
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(10, 3) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### In_Store_Min_Quantity - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|yes|
+|GreaterThanOrLessThan|None|yes|no|
+
+### In_Store_Quantity_Unit_Id
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Measurement_Units](Gen_Measurement_Units.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### In_Store_Quantity_Unit_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Is_Active
+
+
+Indicates whether this customer product definition is active
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`True`|no|no|
+
 ### Notes
 
 
@@ -241,6 +412,40 @@ Notes for the listing
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+### OrderMultiple
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(10, 3) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### OrderMultiple - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|yes|
+|GreaterThanOrLessThan|None|yes|no|
 
 ### Product_Id
 

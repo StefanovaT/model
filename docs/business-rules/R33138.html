@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>R33138 MarketingActivityLines - Set Order Quantity | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="R33138 MarketingActivityLines - Set Order Quantity | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="r33138-marketingactivitylines---set-order-quantity">R33138 MarketingActivityLines - Set Order Quantity</h1>
+
+<table>
+<col style="width:15.33%">
+<col style="width:84.67%">
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>R33138</td>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td>@Crm.Marketing.MarketingActivityLines </td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>SetOrderQuantity</td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>OrderQuantity</td>
+</tr>
+<tr>
+<td><strong>Layer</strong></td>
+<td>Front-End</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>AttributeChanged(InStoreAvalableQuantity)</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>Normal</td>
+</tr>
+<tr>
+<td><strong>Modify</strong></td>
+<td>YES</td>
+</tr>
+<tr>
+<td><strong>Applicable
+Legislations</strong></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">ALL // no condition
+needed</a></td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td><p><strong>!!!If any of the following conditions is not fulfilled - Nothing happens!!!</strong>
+<br><br>
+If (MarketingActivity.TargetParty != Null) <br>
+AND  <br>
+(InStoreAvailableQuantity != Null)<br>
+AND               <br>
+COUNT( applicableCustomerProducts* ) &gt; 0
+<br><br>
+Then Calculate MarketingActivityLine.OrderQuantity as follows:
+<br><br>
+OrderQuantity = <br>
+if ((FIRST(applicableCustomerProducts*).InStoreMaxQuantity - InStoreAvalableQuantity) % OrderMultiple) == 0 <br>
+, then FIRST(applicableCustomerProducts*).InStoreMaxQuantity - InStoreAvalableQuantity <br>
+, else floor  <br>
+((FIRST(applicableCustomerProducts*).InStoreMaxQuantity - InStoreAvalableQuantity)/OrderMultiple)*OrderMultiple + OrderMultiple
+<br><br>
+<em>applicableCustomerProducts are CustomerProducts where:<br></em>
+(<br></p>
+<ul>
+<li>Customer == MarketingActivity.TargetParty.Customer    <br></li>
+<li>Product ==  MarketingActivityLine.Product         <br></li>
+<li>IsActive == True    <br></li>
+<li>InStoreMinQuantity != Null AND != 0 AND &gt; MarketingActivityLine.InStoreAvailableQuantity  <br></li>
+<li>InStoreMaxQuantity != Null AND != 0              <br></li>
+<li>OrderMultiple != Null AND != 0 <br>
+) &gt; 0        <br> <br>
+<strong>!!! OrderQuantity.QuantityUnit == Product.QuantityUnit</strong></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>When InStoreAvailableQuantity is changed if the new value is not null and Target Party has a value, then <br>
+OrderQuantity is recalculated according the information set in the Customer Product <br>
+(if there is an active Customer Product for the current customer and product).
+<br><br>
+The OrderQuantity is calculated to supplement the new InStoreAvalableQuantity, which should be equal to <br>
+InstoreMaxQuantity and if necessary for to round UP with OrderMultiple.             <br>
+The QuantityUnit of the OrderQuantity is QuantityUnit from the Product definition.
+<br><br><br><br>
+<strong>Example 1:</strong>     <br>
+CustomerProduct:   <br>
+Product.QuantityUnit = pcs    <br>
+InStoreMinQuantity = 10 <br>
+InStoreMaxQuantity = 20     <br>
+OrderMultiple = 4
+<br><br>
+MarketingActivityLines:<br>
+Set InStoreAvalableQuantity = 0  =&gt;  OrderQuantity = 20 pcs <br>
+Set InStoreAvalableQuantity = 4  =&gt;  OrderQuantity = 16 pcs  <br>
+Set InStoreAvalableQuantity = 9  =&gt;  OrderQuantity = 12 pcs      <br>
+Set InStoreAvalableQuantity = 7  =&gt;  OrderQuantity = 16 pcs         <br>
+Set InStoreAvalableQuantity = 7.9  =&gt;  OrderQuantity = 16 pcs             <br>
+Set InStoreAvalableQuantity = 8.1  =&gt;  OrderQuantity = 12 pcs
+<br><br><br><br>
+<strong>Example 2:</strong>                                                            <br>
+CustomerProduct:                                                              <br>
+Product.QuantityUnit = kg                      <br>
+InStoreMinQuantity = 10                                                          <br>
+InStoreMaxQuantity = 11                                                               <br>
+OrderMultiple = 0.5
+<br><br>
+MarketingActivityLines:   <br>
+Set InStoreAvalableQuantity = 9.000  =&gt;  OrderQuantity = 2 kg   <br>
+Set InStoreAvalableQuantity = 9.400  =&gt;  OrderQuantity = 2 kg            <br>
+Set InStoreAvalableQuantity = 9.600  =&gt;  OrderQuantity = 1.5 kg</td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>Introduced: 2022</td>
+</tr>
+<tr>
+<td><strong>Revocable</strong></td>
+<td>YES</td>
+</tr>
+</tbody>
+</table>
+<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R33138.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

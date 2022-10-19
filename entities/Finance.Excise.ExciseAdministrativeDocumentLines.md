@@ -25,13 +25,16 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Finance.Excise.ExciseAdministrativeDocumentLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExciseAlcoholicStrength](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisealcoholicstrength) | decimal (5, 2) __nullable__ | The alcoholic strength, which will be used for Excise reporting purposes. null  if the product is not subject to alcoholic Excise reporting. `Introduced in version 21.1.3.97` 
-| [ExciseAmount](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamount) | [Amount (14, 2)](../data-types.md#amount) |  
-| [ExciseAmountBase](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamountbase) | decimal (14, 2) |  
+| [ExciseAmount](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamount) | [Amount (14, 2)](../data-types.md#amount) | The excise amount . `Currency: Document.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94` 
+| [ExciseAmountBase](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamountbase) | decimal (14, 2) | The excise amount in base currency. `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94` 
 | [ExciseDutyRateValue](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisedutyratevalue) | decimal (10, 6) __nullable__ | The rate which should be applied for the specified product and purpose. null means not assigned yet. `Introduced in version 21.1.3.97` 
+| [ExciseQuantity](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisequantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity, converted, for reporting purposes, in the measurement unit of the excise product type. `Unit: ExciseQuantityUnit` `Required` `Introduced in version 22.1.6.58` 
 | [Id](Finance.Excise.ExciseAdministrativeDocumentLines.md#id) | guid |  
 | [LineNo](Finance.Excise.ExciseAdministrativeDocumentLines.md#lineno) | int32 | Consecutive line number within the document. `Required` `Filter(multi eq)` 
 | [Notes](Finance.Excise.ExciseAdministrativeDocumentLines.md#notes) | string (max) __nullable__ | Notes for this ExciseAdministrative<br />DocumentLine. 
+| [ObjectVersion](Finance.Excise.ExciseAdministrativeDocumentLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineNo](Finance.Excise.ExciseAdministrativeDocumentLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. Null when the current line does not execute line. `Filter(multi eq)` `Introduced in version 22.1.4.9` 
 | [Quantity](Finance.Excise.ExciseAdministrativeDocumentLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity being sold, in the measurement unit, specified in Quantity Unit. `Unit: QuantityUnit` `Required` `Default(1)` 
 | [QuantityBase](Finance.Excise.ExciseAdministrativeDocumentLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity in base measurement category for the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` 
@@ -40,11 +43,12 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Finance.Excise.ExciseAdministrativeDocumentLines.md#document) | [ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md) | The `ExciseAdministrative<br />Document`(Finance.Excise.ExciseAdministrative<br />DocumentLines.md#exciseadministrativedocument) to which this ExciseAdministrative<br />DocumentLine belongs. `Required` `Filter(multi eq)` |
-| [ExciseAdministrative<br />Document](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseadministrativedocument) | [ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md) | The `ExciseAdministrative<br />Document`(Finance.Excise.ExciseAdministrative<br />DocumentLines.md#exciseadministrativedocument) to which this ExciseAdministrative<br />DocumentLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](Finance.Excise.ExciseAdministrativeDocumentLines.md#document) | [ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md) | The <see cref="ExciseAdministrative<br />Document"/> to which this ExciseAdministrative<br />DocumentLine belongs. `Required` `Filter(multi eq)` |
+| [ExciseAdministrative<br />Document](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseadministrativedocument) | [ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md) | The <see cref="ExciseAdministrative<br />Document"/> to which this ExciseAdministrative<br />DocumentLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [ExciseDutyRate](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisedutyrate) | [ExciseDutyRates](Finance.Excise.ExciseDutyRates.md) (nullable) | The Duty rate specified by the taxation and customs authorities. `Filter(multi eq)` `Introduced in version 21.1.3.97` |
 | [ExciseProduct](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseproduct) | [ExciseProducts](Finance.Excise.ExciseProducts.md) (nullable) | The Excise product code defined by the taxation and customs authorities. `Filter(multi eq)` `Introduced in version 21.1.3.97` |
 | [ExcisePurposeCode](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisepurposecode) | [ExcisePurposeCodes](Finance.Excise.ExcisePurposeCodes.md) (nullable) | The Purpose codes specify the different purposes recognized by the authorities for determining the excise rate. `Filter(multi eq)` `Introduced in version 21.1.3.97` |
+| [ExciseQuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisequantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Excise Quantity. Copied from the excise product type. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.58` |
 | [MeasuringTransaction](Finance.Excise.ExciseAdministrativeDocumentLines.md#measuringtransaction) | [MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable) | Transaction of product input or output, measured with specialized measuring device for excise purposes. `Filter(multi eq)` `Introduced in version 21.1.3.87` |
 | [ParentDocument](Finance.Excise.ExciseAdministrativeDocumentLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. Null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 22.1.4.9` |
 | [Product](Finance.Excise.ExciseAdministrativeDocumentLines.md#product) | [Products](General.Products.Products.md) | The product being sold. `Required` `Filter(multi eq)` |
@@ -53,48 +57,77 @@ Aggregate Root:
 
 ## Attribute Details
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### ExciseAlcoholicStrength
 
 The alcoholic strength, which will be used for Excise reporting purposes. null  if the product is not subject to alcoholic Excise reporting. `Introduced in version 21.1.3.97`
 
 _Type_: **decimal (5, 2) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Front-End Recalc Expressions:_  
-`obj.Product.ExciseAlcoholicStrength`
+`obj.GetNewAlcoholicStrength( obj.MeasuringTransaction, obj.Product)`
 ### ExciseAmount
 
+The excise amount . `Currency: Document.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94`
+
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 
 _Front-End Recalc Expressions:_  
-`new Amount( ( ( Convert( obj.ExciseAmountBase, Nullable`1) * obj.ExciseDutyRateValue) ?? 0), Convert( obj.GetAggregateParent( ), ExciseAdministrativeDocument).DocumentCurrency)`
+`new Amount( ( obj.ExciseAmountBase * ( obj.ExciseDutyRateValue ?? 0)), obj.Document.EnterpriseCompany.BaseCurrency)`
 ### ExciseAmountBase
 
+The excise amount in base currency. `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94`
+
 _Type_: **decimal (14, 2)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 
 _Front-End Recalc Expressions:_  
-`IIF( ( obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.QuantityBase, obj.ExciseAlcoholicStrength) == null), Convert( obj.ExciseAmountBase, Nullable`1), obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.QuantityBase, obj.ExciseAlcoholicStrength))`
+`IIF( ( obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength) == null), Convert( obj.ExciseAmountBase, Nullable`1), obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength))`
 ### ExciseDutyRateValue
 
 The rate which should be applied for the specified product and purpose. null means not assigned yet. `Introduced in version 21.1.3.97`
 
 _Type_: **decimal (10, 6) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Front-End Recalc Expressions:_  
 `obj.ExciseDutyRate.ExciseDutyRateField`
+### ExciseQuantity
+
+The quantity, converted, for reporting purposes, in the measurement unit of the excise product type. `Unit: ExciseQuantityUnit` `Required` `Introduced in version 22.1.6.58`
+
+_Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+
+_Front-End Recalc Expressions:_  
+`obj.QuantityBase.ConvertTo( obj.ExciseQuantityUnit, obj.Product)`
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -103,28 +136,40 @@ _Default Value_: **NewGuid**
 Consecutive line number within the document. `Required` `Filter(multi eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.ExciseAdministrativeDocument.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.ExciseAdministrativeDocument.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.ExciseAdministrativeDocument.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.ExciseAdministrativeDocument.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
 ### Notes
 
 Notes for this ExciseAdministrativeDocumentLine.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentLineNo
 
 The number of the line within the parent document, which the current line executes. Null when the current line does not execute line. `Filter(multi eq)` `Introduced in version 22.1.4.9`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 
@@ -133,6 +178,7 @@ _Supports Order By_: **False**
 The quantity being sold, in the measurement unit, specified in Quantity Unit. `Unit: QuantityUnit` `Required` `Default(1)`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -142,6 +188,7 @@ _Default Value_: **Constant**
 The quantity in base measurement category for the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -152,16 +199,18 @@ _Front-End Recalc Expressions:_
 
 ### Document
 
-The `ExciseAdministrativeDocument`(Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseadministrativedocument) to which this ExciseAdministrativeDocumentLine belongs. `Required` `Filter(multi eq)`
+The <see cref="ExciseAdministrativeDocument"/> to which this ExciseAdministrativeDocumentLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ExciseAdministrativeDocument
 
-The `ExciseAdministrativeDocument`(Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseadministrativedocument) to which this ExciseAdministrativeDocumentLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="ExciseAdministrativeDocument"/> to which this ExciseAdministrativeDocumentLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -170,6 +219,7 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The Duty rate specified by the taxation and customs authorities. `Filter(multi eq)` `Introduced in version 21.1.3.97`
 
 _Type_: **[ExciseDutyRates](Finance.Excise.ExciseDutyRates.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -179,24 +229,37 @@ _Front-End Recalc Expressions:_
 The Excise product code defined by the taxation and customs authorities. `Filter(multi eq)` `Introduced in version 21.1.3.97`
 
 _Type_: **[ExciseProducts](Finance.Excise.ExciseProducts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
-`obj.Product.ExciseProduct`
+`obj.Product.ExciseProductType.ExciseProduct`
 ### ExcisePurposeCode
 
 The Purpose codes specify the different purposes recognized by the authorities for determining the excise rate. `Filter(multi eq)` `Introduced in version 21.1.3.97`
 
 _Type_: **[ExcisePurposeCodes](Finance.Excise.ExcisePurposeCodes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.LineNo == obj.LineNo), obj.DefaultExcisePurposeCode( ), null)`
+### ExciseQuantityUnit
+
+The measurement unit of Excise Quantity. Copied from the excise product type. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.58`
+
+_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
+_Front-End Recalc Expressions:_  
+`obj.Product.ExciseProductType.MeasurementUnit`
 ### MeasuringTransaction
 
 Transaction of product input or output, measured with specialized measuring device for excise purposes. `Filter(multi eq)` `Introduced in version 21.1.3.87`
 
 _Type_: **[MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentDocument
@@ -205,6 +268,7 @@ The document, which the current line executes. Null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -212,6 +276,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The product being sold. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -219,10 +284,86 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.MeasurementUnit`
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

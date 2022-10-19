@@ -12,6 +12,8 @@ Default Display Text Format:
 _{WorkOrderItem.WorkOrder.EntityName}_  
 Default Search Members:  
 _WorkOrderItem.WorkOrder.EntityName_  
+Name Data Member:  
+_WorkOrderItem.WorkOrder.EntityName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -27,11 +29,13 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [ActualEndDateTime](Production.ShopFloor.WorkOrderItemOperations.md#actualenddatetime) | datetime __nullable__ | The date/time when the operation has completed. null means that the operation is not completed. 
 | [ActualStartDateTime](Production.ShopFloor.WorkOrderItemOperations.md#actualstartdatetime) | datetime __nullable__ | The date/time when the operation has started. null means that the has not started yet. 
+| [DisplayText](Production.ShopFloor.WorkOrderItemOperations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.ShopFloor.WorkOrderItemOperations.md#id) | guid |  
 | [LineOrd](Production.ShopFloor.WorkOrderItemOperations.md#lineord) | int32 | Order of the line within the work order routing. `Required` `Filter(eq;like)` 
 | [MinimumConcurrent<br />StartTimeMinutes](Production.ShopFloor.WorkOrderItemOperations.md#minimumconcurrentstarttimeminutes) | int32 __nullable__ | How many minutes after the start of this operation can the next operation start. null means that the next operation should wait this operation to finish before starting. 
 | [MoveTimeMinutes](Production.ShopFloor.WorkOrderItemOperations.md#movetimeminutes) | int32 | Time to move the lot to the next operation in minutes. `Required` `Default(0)` 
 | [Notes](Production.ShopFloor.WorkOrderItemOperations.md#notes) | string (254) __nullable__ | Notes for this WorkOrderItemOperation. 
+| [ObjectVersion](Production.ShopFloor.WorkOrderItemOperations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OperationDescription](Production.ShopFloor.WorkOrderItemOperations.md#operationdescription) | string (max) __nullable__ | The short description of the operation. 
 | [RunTimeMinutes](Production.ShopFloor.WorkOrderItemOperations.md#runtimeminutes) | int32 | Time for production of one lot of the produced item in minutes. `Required` `Default(0)` 
 | [ScheduledEndDateTime](Production.ShopFloor.WorkOrderItemOperations.md#scheduledenddatetime) | datetime __nullable__ | The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only). 
@@ -64,6 +68,7 @@ Aggregate Root:
 The date/time when the operation has completed. null means that the operation is not completed.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -72,13 +77,24 @@ _Supports Order By_: **False**
 The date/time when the operation has started. null means that the has not started yet.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -87,6 +103,7 @@ _Default Value_: **NewGuid**
 Order of the line within the work order routing. `Required` `Filter(eq;like)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 
@@ -100,6 +117,7 @@ _Front-End Recalc Expressions:_
 How many minutes after the start of this operation can the next operation start. null means that the next operation should wait this operation to finish before starting.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -108,6 +126,7 @@ _Supports Order By_: **False**
 Time to move the lot to the next operation in minutes. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -117,15 +136,26 @@ _Default Value_: **0**
 Notes for this WorkOrderItemOperation.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### OperationDescription
 
 The short description of the operation.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -137,6 +167,7 @@ _Front-End Recalc Expressions:_
 Time for production of one lot of the produced item in minutes. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -146,6 +177,7 @@ _Default Value_: **0**
 The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only).
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -154,6 +186,7 @@ _Supports Order By_: **False**
 The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders).
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -162,6 +195,7 @@ _Supports Order By_: **False**
 Projected scrap rate of the operation. `Required` `Default(0)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -171,6 +205,7 @@ _Default Value_: **0**
 Time needed to setup the equipment in minutes. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -180,6 +215,7 @@ _Default Value_: **0**
 The tools needed for the routing step.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -189,6 +225,7 @@ _Maximum Length_: **2147483647**
 Quantity of the resource, that should be allocated for the operation. `Unit: WorkgroupResource.Resource.PrimaryUnit` `Required` `Default(1)`
 
 _Type_: **[Quantity (9, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -198,6 +235,7 @@ _Default Value_: **Constant**
 Wait time (drying, cooling, etc.) after the operation in minutes. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -210,6 +248,7 @@ _Default Value_: **0**
 The performed operation. `Filter(multi eq)`
 
 _Type_: **[Operations](Production.Resources.Operations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### WorkgroupResource
@@ -217,6 +256,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The resource that will be used for the operation. null means that no resource will be locked for the operation. `Required` `Filter(multi eq)`
 
 _Type_: **[WorkgroupResources](Production.Resources.WorkgroupResources.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### WorkOrderItem
@@ -225,9 +265,85 @@ The work order item, containing the line. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[WorkOrderItems](Production.ShopFloor.WorkOrderItems.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

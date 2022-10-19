@@ -37,7 +37,7 @@ The printout layout, when the format requires binary storage. Alternative to Lay
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -67,7 +67,7 @@ The data source for the printout
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -102,9 +102,9 @@ The entity name of the document type e.g. Crm_Sales_Orders, Inv_Store_Orders etc
 |Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
-|Is Entity Name|no|
+|Is Entity Name|yes|
 |Max Length|64|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -140,7 +140,7 @@ The textual representation of the printout layout, when the format requires text
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -170,7 +170,7 @@ Format specifier of the layout. Recognized by the application
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|32|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -204,7 +204,7 @@ Format specifier of the layout. Recognized by the application
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -231,7 +231,7 @@ Format specifier of the layout. Recognized by the application
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -264,7 +264,7 @@ Format specifier of the layout. Recognized by the application
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -298,7 +298,7 @@ Format specifier of the layout. Recognized by the application
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

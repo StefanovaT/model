@@ -141,7 +141,7 @@ Unique code of the service.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(16)|

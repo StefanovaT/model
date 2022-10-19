@@ -11,6 +11,7 @@ Production workgroups. Entity: Prd_Workgroups
 
 | Name | Type | Description |
 | - | - | --- |
+|[Active](#active)|`bit` |Indicates whether the current workgroup is active.|
 |[Cost_Currency](#cost_currency)|`nvarchar(3)` ||
 |[Full_Path](#full_path)|`nvarchar(254)` |The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'.|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique workgroup auto-generated Id|
@@ -20,6 +21,42 @@ Production workgroups. Entity: Prd_Workgroups
 |[Workgroup_Name](#workgroup_name)|`nvarchar(64)` |Name of the workgroup|
 
 ## Columns
+
+### Active
+
+
+Indicates whether the current workgroup is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`True`|no|no|
 
 ### Cost_Currency
 
@@ -32,7 +69,7 @@ Production workgroups. Entity: Prd_Workgroups
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|3|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -61,7 +98,7 @@ The full path to the current node, represented with slash ('/') as leading, trai
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -91,7 +128,7 @@ Unique workgroup auto-generated Id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -128,7 +165,7 @@ User notes for the workgroup
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -158,7 +195,7 @@ Path-like parent workgroup name
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|255|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -191,7 +228,7 @@ Path-like parent workgroup name
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -221,7 +258,7 @@ Name of the workgroup
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

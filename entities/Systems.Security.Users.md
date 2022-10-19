@@ -12,6 +12,10 @@ Default Display Text Format:
 _{Login}_  
 Default Search Members:  
 _Login; Name_  
+Code Data Member:  
+_Login_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -29,20 +33,25 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [AccessFailedCount](Systems.Security.Users.md#accessfailedcount) | int32 | Indicates how many times the user has failed to login. May be used for locking out the user. `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 18.2` 
 | [Active](Systems.Security.Users.md#active) | boolean | True when the login is currently active and the user can log in. `Required` `Default(true)` `Filter(eq)` 
+| [BasicAuthenticationAllowed](Systems.Security.Users.md#basicauthenticationallowed) | boolean | If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.1.35` 
+| [CompanyName](Systems.Security.Users.md#companyname) | string (64) __nullable__ | Name of the company in which the user claims they are working. `Introduced in version 22.1.6.61` 
 | [CreationTimeUtc](Systems.Security.Users.md#creationtimeutc) | datetime | The date and time (in UTC), when the user was created. `Required` `Default(Now)` `ReadOnly` `Introduced in version 18.2` 
 | [DefaultCulture](Systems.Security.Users.md#defaultculture) | string (15) __nullable__ | The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1` 
+| [DisplayText](Systems.Security.Users.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Email](Systems.Security.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `ORD` `Introduced in version 18.2` 
 | [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2` 
 | [Id](Systems.Security.Users.md#id) | guid |  
 | [IsAdmin](Systems.Security.Users.md#isadmin) | boolean | True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` 
 | [LockoutEndUtc](Systems.Security.Users.md#lockoutendutc) | datetime __nullable__ | Contains the date and time (in UTC) until the user is locked. null when the user is not locked. `Filter(eq;ge;le;like)` `Introduced in version 18.2` 
 | [Login](Systems.Security.Users.md#login) | string (64) | The login name of the user, which is usually the email. `Required` `Filter(multi eq;like)` `ORD` 
-| [Name](Systems.Security.Users.md#name) | [MultilanguageString](../data-types.md#multilanguagestring) | The full name of the user. `Required` `Filter(like)` 
+| [Name](Systems.Security.Users.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The full name of the user. `Required` `Filter(like)` 
 | [Notes](Systems.Security.Users.md#notes) | string (254) __nullable__ | Notes for this User. 
+| [ObjectVersion](Systems.Security.Users.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Password](Systems.Security.Users.md#password) | string (64) __nullable__ | The password hash of the user, stored in the format, specified in Password Format. 
 | [PasswordFormat](Systems.Security.Users.md#passwordformat) | [PasswordFormat](Systems.Security.Users.md#passwordformat) | The format of the Password. MD5=MD5 format; AN3 = ASP.NET Core Identity v3. `Required` `Default("MD5")` `Filter(eq)` `Introduced in version 18.2` 
 | [PhoneNumber](Systems.Security.Users.md#phonenumber) | string (64) __nullable__ | Used only for two-factor authentication. null when phone-based two-factor is not used. `Filter(eq;like)` `Introduced in version 18.2` 
 | [PhoneNumberConfirmed](Systems.Security.Users.md#phonenumberconfirmed) | boolean | Indicates whether the Phone Number has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2` 
+| [RegistrationMessage](Systems.Security.Users.md#registrationmessage) | string (254) __nullable__ | Message from the user to the registration operator, regarding the desired permissions and assignment. `Introduced in version 22.1.6.61` 
 | [TwoFactorEnabled](Systems.Security.Users.md#twofactorenabled) | boolean | Indicates whether two-factor authentication has been enabled. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2` 
 | [UserType](Systems.Security.Users.md#usertype) | [UserType](Systems.Security.Users.md#usertype) | Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application. `Required` `Default("INT")` `Filter(multi eq)` `Introduced in version 18.2` 
 | [VoiceExtensionNumbers](Systems.Security.Users.md#voiceextensionnumbers) | string (254) __nullable__ | Comma separated list of internal extension numbers of the voice telephones of the user. Used for VOIP integration. 
@@ -72,6 +81,7 @@ Aggregate Tree
 Indicates how many times the user has failed to login. May be used for locking out the user. `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 18.2`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -81,15 +91,37 @@ _Default Value_: **0**
 True when the login is currently active and the user can log in. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+
+### BasicAuthenticationAllowed
+
+If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.1.35`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **False**  
+
+### CompanyName
+
+Name of the company in which the user claims they are working. `Introduced in version 22.1.6.61`
+
+_Type_: **string (64) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
 
 ### CreationTimeUtc
 
 The date and time (in UTC), when the user was created. `Required` `Default(Now)` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
@@ -99,9 +131,19 @@ _Default Value_: **CurrentDateTime**
 The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1`
 
 _Type_: **string (15) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **15**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Email
 
@@ -109,6 +151,7 @@ Unique email of the user. Can be null because there may be login providers that 
 
 _Type_: **string (254) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
@@ -118,6 +161,7 @@ _Maximum Length_: **254**
 Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -126,6 +170,7 @@ _Default Value_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -134,6 +179,7 @@ _Default Value_: **NewGuid**
 True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -143,6 +189,7 @@ _Default Value_: **False**
 Contains the date and time (in UTC) until the user is locked. null when the user is not locked. `Filter(eq;ge;le;like)` `Introduced in version 18.2`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, Like**  
 _Supports Order By_: **False**  
 
@@ -152,6 +199,7 @@ The login name of the user, which is usually the email. `Required` `Filter(multi
 
 _Type_: **string (64)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
@@ -160,7 +208,8 @@ _Maximum Length_: **64**
 
 The full name of the user. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
@@ -169,15 +218,26 @@ _Supports Order By_: **False**
 Notes for this User.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Password
 
 The password hash of the user, stored in the format, specified in Password Format.
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -187,6 +247,7 @@ _Maximum Length_: **64**
 The format of the Password. MD5=MD5 format; AN3 = ASP.NET Core Identity v3. `Required` `Default("MD5")` `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **[PasswordFormat](Systems.Security.Users.md#passwordformat)**  
+_Category_: **System**  
 Allowed values for the `PasswordFormat`(Systems.Security.Users.md#passwordformat) data attribute  
 _Allowed Values (Systems.Security.UsersRepository.PasswordFormat Enum Members)_  
 
@@ -204,6 +265,7 @@ _Default Value_: **MD5**
 Used only for two-factor authentication. null when phone-based two-factor is not used. `Filter(eq;like)` `Introduced in version 18.2`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -213,15 +275,27 @@ _Maximum Length_: **64**
 Indicates whether the Phone Number has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+
+### RegistrationMessage
+
+Message from the user to the registration operator, regarding the desired permissions and assignment. `Introduced in version 22.1.6.61`
+
+_Type_: **string (254) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **254**  
 
 ### TwoFactorEnabled
 
 Indicates whether two-factor authentication has been enabled. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -231,6 +305,7 @@ _Default Value_: **False**
 Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application. `Required` `Default("INT")` `Filter(multi eq)` `Introduced in version 18.2`
 
 _Type_: **[UserType](Systems.Security.Users.md#usertype)**  
+_Category_: **System**  
 Allowed values for the `UserType`(Systems.Security.Users.md#usertype) data attribute  
 _Allowed Values (Systems.Security.UsersRepository.UserType Enum Members)_  
 
@@ -251,6 +326,7 @@ _Default Value_: **InternalUser**
 Comma separated list of internal extension numbers of the voice telephones of the user. Used for VOIP integration.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -260,6 +336,7 @@ _Maximum Length_: **254**
 The Windows (Active Directory) user, to which this login is bound. The user will be allowed to login only when the client machine is logged in Active Directory with the specified user.
 
 _Type_: **string (128) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
@@ -272,6 +349,7 @@ _Maximum Length_: **128**
 The domain, to which the user belongs. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[Domains](Systems.Security.Domains.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Person
@@ -279,8 +357,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. `Filter(multi eq)`
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>R33300 ExciseAdministrativeDocument - New DocumentDate Is Not Part Of Released Excise Declaration Period | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="R33300 ExciseAdministrativeDocument - New DocumentDate Is Not Part Of Released Excise Declaration Period | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="r33300-exciseadministrativedocument---new-documentdate-is-not-part-of-released-excise-declaration-period">R33300 ExciseAdministrativeDocument - New DocumentDate Is Not Part Of Released Excise Declaration Period</h1>
+
+<table>
+<col style="width:18.8%">
+<col style="width:81.2%">
+<tbody>
+<tr>
+<td colspan="2"><strong>Code</strong>                 | R33300                                                                                                       |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Entity</strong>               | <a class="xref" href="../entities/Finance.Excise.ExciseAdministrativeDocuments.html">Finance.Excise.ExciseAdministrativeDocuments Entity</a>                             |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Name</strong>               | NewDocumentDateIsNotPartOfReleasedExciseDeclarationPeriod |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Attribute</strong>         | DocumentDate                                                                                         |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Layer</strong>                | Back-End                                                                                                    |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Events</strong>              | Releasing +                                                                                                |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Priority</strong>            | Normal                                                                                                       |</td>
+</tr>
+<tr>
+<td colspan="2"><strong>Modify</strong>             | NO                                                                                                               |</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td>Validate that:                                                                                                |
+<br><br>
+If (AdjustedDocument != null &amp;&amp; oldDocumentDate) != newDocumentDate)                                |
+<br><br>
+ExciseDeclaration[ToDate &gt;= newDocumentDate &amp;&amp; FromDate &lt;= newDocumentDate, Void ==  |
+false, DocumentState &gt;= 30, ExciseDeclaration.EnterpriseCompany ==                            |
+Entry.EnterpriseCompany].Count()== 0</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>If a ExciseDeclaration is released for a certain period, than the user cannot release entries  |
+which are part of the period of the declaration. The releasing of the declaration shows that
+this is the final version of the declaration and it is sent to the Customs.   |
+No entries must be added to such period.                                                  |</td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>The new DocumentDate attribute of ExciseAdministrativeDocument '{DocumentText}' can't be {DocumentDate} because     |
+there are released ExciseDeclarations for periods that include that date.                   |</td>
+</tr>
+<tr>
+<td><strong>Introduced In
+Version</strong></td>
+<td>2022                                                                                              |</td>
+</tr>
+<tr>
+<td><strong>Revocable</strong></td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R33300.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

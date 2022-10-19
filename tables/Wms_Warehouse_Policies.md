@@ -15,10 +15,11 @@ Warehouse Policies is a hierarchical system for applying policies to warehouse o
 
 | Name | Type | Description |
 | - | - | --- |
+|[Code](#code)|`nvarchar(16)` |The unique code of the warehouse policy.|
 |[From_Date](#from_date)|`date` |When set, specifies the activation date of the policy.|
 |[Importance](#importance)|`int` |The importance of the policy, relative to other applicable policies. Higher numbers indicate higher importance.|
 |[Note](#note)|`nvarchar(max)` ||
-|[Policy_Kind](#policy_kind)|`nvarchar(3)` Allowed: `APC`, `ATC`, `ALC`, `AUC`, `RSS`, `RDS`, `ALS`|The kind of policy, which is being applied.|
+|[Policy_Kind](#policy_kind)|`nvarchar(3)` Allowed: `APC`, `ATC`, `ALC`, `AUC`, `RSS`, `RDS`, `ALS`, `ZTY`, `KCL`, `DCL`|The kind of policy, which is being applied.|
 |[Product_Group_Id](#product_group_id)|`uniqueidentifier` |When set, specifies that the policy will apply to the specified product group only.|
 |[Product_Id](#product_id)|`uniqueidentifier` |When set, specifies that the policy will apply to the specified product only.|
 |[Product_Type_Id](#product_type_id)|`uniqueidentifier` |When set, specifies that the policy will apply to the specified product type only.|
@@ -30,6 +31,36 @@ Warehouse Policies is a hierarchical system for applying policies to warehouse o
 |[Zone_Id](#zone_id)|`uniqueidentifier` |When set, specifies that the policy will apply to the specified zone and its sub-zones.|
 
 ## Columns
+
+### Code
+
+
+The unique code of the warehouse policy.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|16|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(16)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### From_Date
 
@@ -139,7 +170,7 @@ The kind of policy, which is being applied.
 
 | Property | Value |
 | - | - |
-|Allowed Values|`APC`, `ATC`, `ALC`, `AUC`, `RSS`, `RDS`, `ALS`|
+|Allowed Values|`APC`, `ATC`, `ALC`, `AUC`, `RSS`, `RDS`, `ALS`, `ZTY`, `KCL`, `DCL`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -461,7 +492,6 @@ When set, specifies that the policy will apply to the specified zone and its sub
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Depends On|[Warehouse_Id](#warehouse_id)|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|

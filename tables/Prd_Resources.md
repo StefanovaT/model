@@ -15,6 +15,7 @@ Resource types available to production. Entity: Prd_Resources
 
 | Name | Type | Description |
 | - | - | --- |
+|[Active](#active)|`bit` |Indicates whether the current resource is active.|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique resource id|
 |[Notes](#notes)|`nvarchar(254)` |User notes for the resource|
 |[Primary_Unit_Id](#primary_unit_id)|`uniqueidentifier` |Primary measurement unit for quantities of the resource|
@@ -30,6 +31,42 @@ Resource types available to production. Entity: Prd_Resources
 
 ## Columns
 
+### Active
+
+
+Indicates whether the current resource is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|12|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`True`|no|no|
+
 ### Id
 
 
@@ -44,7 +81,7 @@ Unique resource id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -81,7 +118,7 @@ User notes for the resource
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -111,7 +148,7 @@ Primary measurement unit for quantities of the resource
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -148,7 +185,7 @@ Currency for this resource. This currency applies for the standard price and cos
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -185,7 +222,7 @@ The Id of the containing resource group
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -222,7 +259,7 @@ Name of the resource
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -255,7 +292,7 @@ Name of the resource
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -285,7 +322,7 @@ The usual duration of setup when changing production
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -315,7 +352,7 @@ The usual quantity of fixed scrap occurring when changing production.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -345,7 +382,7 @@ The measurement units of Setup_Scrap_Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -382,7 +419,7 @@ Standard cost per hour for this resource. It participates in the calculation of 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -412,7 +449,7 @@ Standard price per hour for this resource. It participates in the calculation of
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

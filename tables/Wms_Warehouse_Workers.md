@@ -5,7 +5,7 @@
 
 Entity: [Logistics.Wms.WarehouseWorkers](~/entities/Logistics.Wms.WarehouseWorkers.md)
 
-Human or robot worker, which can execute warehouse tasks. Entity: Wms_Warehouse_Workers (Introduced in version 20.1)
+Human or robot worker, which can execute warehouse tasks. Entity: Wms_Warehouse_Workers (Introduced in version 22.1.6.31)
 
 ## Owner Tables Hierarchy
 

@@ -17,12 +17,13 @@ Hierarchical categorization of the products. Entity: Gen_Product_Groups
 |[Default_Measurement_Unit_Id](#default_measurement_unit_id)|`uniqueidentifier` |When not null, specifies default measurement unit, which should be assigned to new products in the group.|
 |[Default_Product_Type_Id](#default_product_type_id)|`uniqueidentifier` |When not null, specifies default product type, which should be assigned to new products in the group.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, specifies that the product group, its sub-groups and products are specific to a given enterprise company and may be used only in documents from this enterprise company.|
-|[Full_Path](#full_path)|`nvarchar(254)` |Full tree path in the form /parent/.../leaf/. Contains the group names.|
+|[Full_Path](#full_path)|`nvarchar(254)` |Full tree path in the form /parent/.../leaf/. Contains the group codes.|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique Id of the item group|
 |[Next_Part_Number](#next_part_number)|`nvarchar(16)` |Contains the next part number to be auto-assigned to parts, created in the group or sub-groups|
 |[Next_Serial_Number](#next_serial_number)|`nvarchar(40)` |When not NULL, specifies the next serial number, that should be assigned to new produced items.|
 |[Notes](#notes)|`nvarchar(254)` |User notes for the item group|
-|[Parent](#parent)|`nvarchar(254)` |Full tree path of the parent group in the form /parent/.../leaf/. Contains the group names.|
+|[Parent](#parent)|`nvarchar(254)` |Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes.|
+|[Parent_Group_Id](#parent_group_id)|`uniqueidentifier` |Parent product group. NULL if this is root group|
 |[Picture](#picture)|`varbinary` |The picture of the product group|
 |[Picture_Last_Update_Time](#picture_last_update_time)|`datetime` Readonly|Last update time of the Picture|
 |[Pricing_Model_Id](#pricing_model_id)|`uniqueidentifier` |When not null, specifies the pricing model, for the products in this product group. The model is by default valid also for sub-groups, unless they have other models.|
@@ -246,7 +247,7 @@ When not NULL, specifies that the product group, its sub-groups and products are
 ### Full_Path
 
 
-Full tree path in the form /parent/.../leaf/. Contains the group names.
+Full tree path in the form /parent/.../leaf/. Contains the group codes.
 
 | Property | Value |
 | - | - |
@@ -416,7 +417,7 @@ User notes for the item group
 ### Parent
 
 
-Full tree path of the parent group in the form /parent/.../leaf/. Contains the group names.
+Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes.
 
 | Property | Value |
 | - | - |
@@ -448,6 +449,43 @@ Full tree path of the parent group in the form /parent/.../leaf/. Contains the g
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|yes|
+
+### Parent_Group_Id
+
+
+Parent product group. NULL if this is root group
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Product_Groups](Gen_Product_Groups.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Parent_Group_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Picture
 

@@ -45,6 +45,7 @@ Aggregate Root:
 The cost correction in Base currency. `Currency: TransactionObj.EnterpriseCompany.BaseCurrency` `Required` `Filter(eq;ge;le)`
 
 _Type_: **[Amount (38, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -53,6 +54,7 @@ _Supports Order By_: **False**
 The cost correction in the original currency of the store transaction. `Currency: TransactionObj.DocumentCurrency` `Required` `Filter(eq;ge;le)`
 
 _Type_: **[Amount (38, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -61,6 +63,7 @@ _Supports Order By_: **False**
 The cost correction in Products currency. `Currency: TransactionLine.Product.CostingCurrency` `Required` `Filter(eq;ge;le)`
 
 _Type_: **[Amount (38, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -69,6 +72,7 @@ _Supports Order By_: **False**
 The cost correction in Stores currency. `Currency: TransactionObj.Store.Currency` `Required` `Filter(eq;ge;le)`
 
 _Type_: **[Amount (38, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -80,6 +84,7 @@ _Supports Order By_: **False**
 Unique transaction line id. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Inv_Transaction_Lines_Table.Transaction_Line_Id`
 
 _Type_: **[StoreTransactionLines](Logistics.Inventory.StoreTransactionLines.md)**  
+_Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Transaction_Line_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
@@ -89,6 +94,7 @@ _Default Value_: **NewGuid**
 The transaction to which the transaction line belongs. `Required` `Filter(multi eq)` `Inherited from Inv_Transaction_Lines_Table.Transaction_Id` `Owner`
 
 _Type_: **[StoreTransactions](Logistics.Inventory.StoreTransactions.md)**  
+_Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Transaction_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

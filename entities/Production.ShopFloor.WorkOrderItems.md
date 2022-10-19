@@ -26,10 +26,12 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CompletionDate](Production.ShopFloor.WorkOrderItems.md#completiondate) | datetime __nullable__ | The date, when the item should be completed. null means that there is no constraint for completion date. 
+| [DisplayText](Production.ShopFloor.WorkOrderItems.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.ShopFloor.WorkOrderItems.md#id) | guid |  
 | [LineOrd](Production.ShopFloor.WorkOrderItems.md#lineord) | int32 | The order of the line within the work order. `Required` `Filter(eq;like)` 
 | [LotSize](Production.ShopFloor.WorkOrderItems.md#lotsize) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity produced in one production run. `Unit: ProducedQuantityUnit` `Required` `Default(1)` 
 | [Notes](Production.ShopFloor.WorkOrderItems.md#notes) | string (max) __nullable__ | Notes for this WorkOrderItem. 
+| [ObjectVersion](Production.ShopFloor.WorkOrderItems.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineId](Production.ShopFloor.WorkOrderItems.md#parentlineid) | guid __nullable__ | If not null contains the Id of the line of the parent document, that created the current row. `Filter(multi eq)` 
 | [ParentLineNo](Production.ShopFloor.WorkOrderItems.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute another line. `Filter(eq)` 
 | [Priority](Production.ShopFloor.WorkOrderItems.md#priority) | [Priority](Production.ShopFloor.WorkOrderItems.md#priority) | Priority of the production of the item. Initially inherits the priority of the work order. 1=Lowest ... 5=Highest. `Required` `Default(3)` 
@@ -70,6 +72,7 @@ Aggregate Root:
 The date, when the item should be completed. null means that there is no constraint for completion date.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -78,10 +81,20 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.WorkOrder.CompletionDate`
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -90,6 +103,7 @@ _Default Value_: **NewGuid**
 The order of the line within the work order. `Required` `Filter(eq;like)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 
@@ -103,26 +117,38 @@ _Front-End Recalc Expressions:_
 Quantity produced in one production run. `Unit: ProducedQuantityUnit` `Required` `Default(1)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 
 _Front-End Recalc Expressions:_  
-`IIF( ( ( obj.Recipe != null) AndAlso ( obj.ProducedQuantityUnit != null)), obj.Recipe.ProduceQuantity, obj.ProducedQuantity)`
+`new Quantity( obj.Recipe.ProduceQuantity.Value, obj.ProducedQuantity.Unit)`
 ### Notes
 
 Notes for this WorkOrderItem.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentLineId
 
 If not null contains the Id of the line of the parent document, that created the current row. `Filter(multi eq)`
 
 _Type_: **guid __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentLineNo
@@ -130,6 +156,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The number of the line within the parent document, which the current line executes. null when the current line does not execute another line. `Filter(eq)`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -138,6 +165,7 @@ _Supports Order By_: **False**
 Priority of the production of the item. Initially inherits the priority of the work order. 1=Lowest ... 5=Highest. `Required` `Default(3)`
 
 _Type_: **[Priority](Production.ShopFloor.WorkOrderItems.md#priority)**  
+_Category_: **System**  
 Allowed values for the `Priority`(Production.ShopFloor.WorkOrderItems.md#priority) data attribute  
 _Allowed Values (Production.ShopFloor.WorkOrderItemsRepository.Priority Enum Members)_  
 
@@ -158,17 +186,19 @@ _Default Value_: **3**
 The quantity produced in the operation. `Unit: ProducedQuantityUnit` `Required` `Default(1)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 
 _Front-End Recalc Expressions:_  
-`IIF( ( ( obj.Recipe != null) AndAlso ( obj.ProducedQuantityUnit != null)), obj.Recipe.ProduceQuantity, obj.ProducedQuantity)`
+`new Quantity( obj.Recipe.ProduceQuantity.Value, obj.ProducedQuantity.Unit)`
 ### ProducedQuantityBase
 
 The equivalence of Produced Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -182,6 +212,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions of the product. Used to measure the execution. null means to take the value from Produced Quantity Base. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -195,6 +226,7 @@ _Front-End Recalc Expressions:_
 The date, when the item is released to production. null means that still there is no plan when the item will be released to production.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -208,6 +240,7 @@ _Front-End Recalc Expressions:_
 Date and time when the production of this item is scheduled to end.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -216,6 +249,7 @@ _Supports Order By_: **False**
 Date and time when the production of this item is scheduled to begin.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -228,6 +262,7 @@ The Id of the work order, containing the item. `Required` `Filter(multi eq)`
 
 _Type_: **[WorkOrders](Production.ShopFloor.WorkOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -235,6 +270,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The lot of the produced product. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -247,6 +283,7 @@ _Front-End Recalc Expressions:_
 Output store for the production. `Filter(multi eq)`
 
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -260,6 +297,7 @@ The document, which the current line executes. null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProducedQuantityUnit
@@ -267,6 +305,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of the quantity produced in the operation. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -280,6 +319,7 @@ The Id of the produced product. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -292,6 +332,7 @@ _Front-End Recalc Expressions:_
 Selects the product thru some of the product codes. `Filter(multi eq)`
 
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -304,6 +345,7 @@ _Front-End Recalc Expressions:_
 The base recipe. null means that the item is produced without recipe. `Filter(multi eq)`
 
 _Type_: **[Recipes](Production.Technologies.Recipes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -313,6 +355,7 @@ _Front-End Recalc Expressions:_
 If not null, specifies that the product was (has to be) produced with specific serial number. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### StoreBin
@@ -320,6 +363,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The store bin in which to store the products. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### WorkOrder
@@ -328,9 +372,85 @@ The Id of the work order, containing the item. `Required` `Filter(multi eq)` `Ow
 
 _Type_: **[WorkOrders](Production.ShopFloor.WorkOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

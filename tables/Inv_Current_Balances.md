@@ -270,6 +270,7 @@ The quantity of the stock received/issued in base measurement unit
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |GreaterThanOrLessThan|None|yes|no|
 
 ### Serial_Number_Id

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.ProductCatalogs](~/entities/General.ProductCatalogs.md)
+Entity: [General.Products.ProductCatalogs](~/entities/General.Products.ProductCatalogs.md)
 
 Product catalogs serve to organize the products for display primarily in web pages. Entity: Gen_Product_Catalogs
 

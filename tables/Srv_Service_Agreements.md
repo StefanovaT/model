@@ -122,7 +122,7 @@ End date and time of the validity of the agreement.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|datetime (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|

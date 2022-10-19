@@ -271,6 +271,12 @@ references:
 - uid: Applications.Telephony.CallDetails
   name: Applications.Telephony.CallDetails Entity
   href: entities/Applications.Telephony.CallDetails.html
+- uid: code-validation
+  name: Code validation
+  href: reference/common-business-rules/code-validation.html
+- uid: code-validation-strict
+  name: Code validation (strict)
+  href: reference/common-business-rules/code-validation-strict.html
 - uid: Communities
   name: Communities Namespace
   href: entities/Communities.html
@@ -280,9 +286,42 @@ references:
 - uid: Communities.NotificationSettings
   name: Communities.NotificationSettings Entity
   href: entities/Communities.NotificationSettings.html
+- uid: Communities.Social
+  name: Communities.Social Namespace
+  href: entities/Communities.Social.html
+- uid: Communities.Social.Comments
+  name: Communities.Social.Comments Entity
+  href: entities/Communities.Social.Comments.html
+- uid: Communities.Social.FollowedEntities
+  name: Communities.Social.FollowedEntities View
+  href: entities/Communities.Social.FollowedEntities.html
+- uid: Communities.Social.Follows
+  name: Communities.Social.Follows Entity
+  href: entities/Communities.Social.Follows.html
+- uid: Communities.Social.GroupMembers
+  name: Communities.Social.GroupMembers Entity
+  href: entities/Communities.Social.GroupMembers.html
+- uid: Communities.Social.Groups
+  name: Communities.Social.Groups Entity
+  href: entities/Communities.Social.Groups.html
+- uid: Communities.Social.Posts
+  name: Communities.Social.Posts Entity
+  href: entities/Communities.Social.Posts.html
+- uid: Communities.Social.Reactions
+  name: Communities.Social.Reactions Entity
+  href: entities/Communities.Social.Reactions.html
+- uid: Communities.Social.ReactionsSummary
+  name: Communities.Social.ReactionsSummary View
+  href: entities/Communities.Social.ReactionsSummary.html
 - uid: Communities.SocialComments
   name: Communities.SocialComments Entity
   href: entities/Communities.SocialComments.html
+- uid: Communities.SocialFollowedEntities
+  name: Communities.SocialFollowedEntities View
+  href: entities/Communities.SocialFollowedEntities.html
+- uid: Communities.SocialFollows
+  name: Communities.SocialFollows Entity
+  href: entities/Communities.SocialFollows.html
 - uid: Communities.SocialGroupMembers
   name: Communities.SocialGroupMembers Entity
   href: entities/Communities.SocialGroupMembers.html
@@ -388,6 +427,12 @@ references:
 - uid: Crm.Marketing.MarketingActivities
   name: Crm.Marketing.MarketingActivities Entity
   href: entities/Crm.Marketing.MarketingActivities.html
+- uid: Crm.Marketing.MarketingActivityLines
+  name: Crm.Marketing.MarketingActivityLines Entity
+  href: entities/Crm.Marketing.MarketingActivityLines.html
+- uid: Crm.Marketing.MarketingActivityLineTypes
+  name: Crm.Marketing.MarketingActivityLineTypes Entity
+  href: entities/Crm.Marketing.MarketingActivityLineTypes.html
 - uid: Crm.Marketing.MarketingSolutions
   name: Crm.Marketing.MarketingSolutions Entity
   href: entities/Crm.Marketing.MarketingSolutions.html
@@ -511,6 +556,12 @@ references:
 - uid: data-types
   name: Data Types
   href: data-types.html
+- uid: Dmv
+  name: Dmv Namespace
+  href: entities/Dmv.html
+- uid: Dmv.ExecStats
+  name: Dmv.ExecStats View
+  href: entities/Dmv.ExecStats.html
 - uid: Finance
   name: Finance Namespace
   href: entities/Finance.html
@@ -664,6 +715,9 @@ references:
 - uid: Finance.Excise.ExciseAdministrativeDocuments
   name: Finance.Excise.ExciseAdministrativeDocuments Entity
   href: entities/Finance.Excise.ExciseAdministrativeDocuments.html
+- uid: Finance.Excise.ExciseDeclarations
+  name: Finance.Excise.ExciseDeclarations Entity
+  href: entities/Finance.Excise.ExciseDeclarations.html
 - uid: Finance.Excise.ExciseDutyRates
   name: Finance.Excise.ExciseDutyRates Entity
   href: entities/Finance.Excise.ExciseDutyRates.html
@@ -676,9 +730,27 @@ references:
 - uid: Finance.Excise.ExciseProducts
   name: Finance.Excise.ExciseProducts Entity
   href: entities/Finance.Excise.ExciseProducts.html
+- uid: Finance.Excise.ExciseProductTypes
+  name: Finance.Excise.ExciseProductTypes Entity
+  href: entities/Finance.Excise.ExciseProductTypes.html
 - uid: Finance.Excise.ExcisePurposeCodes
   name: Finance.Excise.ExcisePurposeCodes Entity
   href: entities/Finance.Excise.ExcisePurposeCodes.html
+- uid: Finance.Excise.ExciseStampLots
+  name: Finance.Excise.ExciseStampLots Entity
+  href: entities/Finance.Excise.ExciseStampLots.html
+- uid: Finance.Excise.ExciseStampOperationLines
+  name: Finance.Excise.ExciseStampOperationLines Entity
+  href: entities/Finance.Excise.ExciseStampOperationLines.html
+- uid: Finance.Excise.ExciseStampOperations
+  name: Finance.Excise.ExciseStampOperations Entity
+  href: entities/Finance.Excise.ExciseStampOperations.html
+- uid: Finance.Excise.ExciseStampOperationTypes
+  name: Finance.Excise.ExciseStampOperationTypes Entity
+  href: entities/Finance.Excise.ExciseStampOperationTypes.html
+- uid: Finance.Excise.ExciseStampTypes
+  name: Finance.Excise.ExciseStampTypes Entity
+  href: entities/Finance.Excise.ExciseStampTypes.html
 - uid: Finance.Excise.MeasuringTransactions
   name: Finance.Excise.MeasuringTransactions Entity
   href: entities/Finance.Excise.MeasuringTransactions.html
@@ -760,6 +832,9 @@ references:
 - uid: Finance.Vat.BGVATDocumentTypeVATCodes
   name: Finance.Vat.BGVATDocumentTypeVATCodes Entity
   href: entities/Finance.Vat.BGVATDocumentTypeVATCodes.html
+- uid: Finance.Vat.BoxTypeDealTypes
+  name: Finance.Vat.BoxTypeDealTypes Entity
+  href: entities/Finance.Vat.BoxTypeDealTypes.html
 - uid: Finance.Vat.BoxTypes
   name: Finance.Vat.BoxTypes Entity
   href: entities/Finance.Vat.BoxTypes.html
@@ -911,7 +986,7 @@ references:
   name: General.DocumentPrints Entity
   href: entities/General.DocumentPrints.html
 - uid: General.Documents
-  name: General.Documents Namespace
+  name: General.Documents Entity
   href: entities/General.Documents.html
 - uid: General.Documents.DocumentParties
   name: General.Documents.DocumentParties Entity
@@ -1003,6 +1078,9 @@ references:
 - uid: General.Products.CodingSystems
   name: General.Products.CodingSystems Entity
   href: entities/General.Products.CodingSystems.html
+- uid: General.Products.ProductCatalogs
+  name: General.Products.ProductCatalogs Entity
+  href: entities/General.Products.ProductCatalogs.html
 - uid: General.Products.ProductCodes
   name: General.Products.ProductCodes Entity
   href: entities/General.Products.ProductCodes.html
@@ -1036,6 +1114,9 @@ references:
 - uid: General.Products.ProductTypes
   name: General.Products.ProductTypes Entity
   href: entities/General.Products.ProductTypes.html
+- uid: General.Products.ProductVariants
+  name: General.Products.ProductVariants Entity
+  href: entities/General.Products.ProductVariants.html
 - uid: General.Products.VariantColors
   name: General.Products.VariantColors Entity
   href: entities/General.Products.VariantColors.html
@@ -1096,9 +1177,15 @@ references:
 - uid: General.Sequences
   name: General.Sequences Entity
   href: entities/General.Sequences.html
+- uid: hierarchical-entities
+  name: Hierarchical entities
+  href: reference/common-business-rules/hierarchical-entities.html
 - uid: Logistics
   name: Logistics Namespace
   href: entities/Logistics.html
+- uid: Logistics.CompositeProductComponents
+  name: Logistics.CompositeProductComponents Entity
+  href: entities/Logistics.CompositeProductComponents.html
 - uid: Logistics.Inventory
   name: Logistics.Inventory Namespace
   href: entities/Logistics.Inventory.html
@@ -1312,6 +1399,12 @@ references:
 - uid: Logistics.Wms
   name: Logistics.Wms Namespace
   href: entities/Logistics.Wms.html
+- uid: Logistics.Wms.CompositeProductComponents
+  name: Logistics.Wms.CompositeProductComponents Entity
+  href: entities/Logistics.Wms.CompositeProductComponents.html
+- uid: Logistics.Wms.CompositeProducts
+  name: Logistics.Wms.CompositeProducts Entity
+  href: entities/Logistics.Wms.CompositeProducts.html
 - uid: Logistics.Wms.WarehouseAvailabilityView
   name: Logistics.Wms.WarehouseAvailabilityView View
   href: entities/Logistics.Wms.WarehouseAvailabilityView.html
@@ -1516,6 +1609,24 @@ references:
 - uid: Projects.TemplateWorkElements
   name: Projects.TemplateWorkElements Entity
   href: entities/Projects.TemplateWorkElements.html
+- uid: Projects.Todo
+  name: Projects.Todo Namespace
+  href: entities/Projects.Todo.html
+- uid: Projects.Todo.TaskItems
+  name: Projects.Todo.TaskItems Entity
+  href: entities/Projects.Todo.TaskItems.html
+- uid: Projects.Todo.Tasks
+  name: Projects.Todo.Tasks Entity
+  href: entities/Projects.Todo.Tasks.html
+- uid: Projects.ToDoSubTasks
+  name: Projects.ToDoSubTasks Entity
+  href: entities/Projects.ToDoSubTasks.html
+- uid: Projects.TodoTaskItems
+  name: Projects.TodoTaskItems Entity
+  href: entities/Projects.TodoTaskItems.html
+- uid: Projects.TodoTasks
+  name: Projects.TodoTasks Entity
+  href: entities/Projects.ToDoTasks.html
 - uid: Projects.TypeRoles
   name: Projects.TypeRoles Entity
   href: entities/Projects.TypeRoles.html
@@ -1612,6 +1723,9 @@ references:
 - uid: Systems.Core.AuditLogEntries
   name: Systems.Core.AuditLogEntries Entity
   href: entities/Systems.Core.AuditLogEntries.html
+- uid: Systems.Core.Config
+  name: Systems.Core.Config Entity
+  href: entities/Systems.Core.Config.html
 - uid: Systems.Core.DataEntryDefaultValues
   name: Systems.Core.DataEntryDefaultValues Entity
   href: entities/Systems.Core.DataEntryDefaultValues.html
@@ -1645,6 +1759,12 @@ references:
 - uid: Systems.Core.ResolvedConflicts
   name: Systems.Core.ResolvedConflicts Entity
   href: entities/Systems.Core.ResolvedConflicts.html
+- uid: Systems.Core.ScheduledDocumentEvents
+  name: Systems.Core.ScheduledDocumentEvents Entity
+  href: entities/Systems.Core.ScheduledDocumentEvents.html
+- uid: Systems.Core.Sequences
+  name: Systems.Core.Sequences Entity
+  href: entities/Systems.Core.Sequences.html
 - uid: Systems.Core.TextTranslations
   name: Systems.Core.TextTranslations Entity
   href: entities/Systems.Core.TextTranslations.html
@@ -1654,12 +1774,24 @@ references:
 - uid: Systems.Core.UpdateProcedureExecutes
   name: Systems.Core.UpdateProcedureExecutes Entity
   href: entities/Systems.Core.UpdateProcedureExecutes.html
+- uid: Systems.Core.WebHooks
+  name: Systems.Core.WebHooks Entity
+  href: entities/Systems.Core.WebHooks.html
 - uid: Systems.Core.WebHosts
   name: Systems.Core.WebHosts Entity
   href: entities/Systems.Core.WebHosts.html
 - uid: Systems.Core.WebSites
   name: Systems.Core.WebSites Entity
   href: entities/Systems.Core.WebSites.html
+- uid: Systems.Dmv
+  name: Systems.Dmv Namespace
+  href: entities/Systems.Dmv.html
+- uid: Systems.Dmv.ExecStats
+  name: Systems.Dmv.ExecStats View
+  href: entities/Systems.Dmv.ExecStats.html
+- uid: Systems.Dmv.WebSites
+  name: Systems.Dmv.WebSites View
+  href: entities/Systems.Dmv.WebSites.html
 - uid: Systems.External
   name: Systems.External Namespace
   href: entities/Systems.External.html

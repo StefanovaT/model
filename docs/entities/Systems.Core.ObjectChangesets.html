@@ -83,8 +83,10 @@
 <p>A set of changes, performed in one request. Entity: Sys_Object_Changesets (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ApplicationName}</em><br>
+<em>{User} {TimeUtc}</em><br>
 Default Search Members:<br>
+<em>ApplicationName</em><br>
+Name Data Member:<br>
 <em>ApplicationName</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
@@ -116,9 +118,19 @@ Default Search Members:<br>
 <td>The application which requested the change. null when it is unknown. <code>Filter(eq)</code></td>
 </tr>
 <tr>
+<td><a href="Systems.Core.ObjectChangesets.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="Systems.Core.ObjectChangesets.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="Systems.Core.ObjectChangesets.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ObjectChangesets.html#serverversion">ServerVersion</a></td>
@@ -170,17 +182,32 @@ Default Search Members:<br>
 <h3 id="applicationname">ApplicationName</h3>
 <p>The application which requested the change. null when it is unknown. <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="serverversion">ServerVersion</h3>
 <p>The version of the application server at the time of the change. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (16)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>16</strong></p>
@@ -188,6 +215,7 @@ Default Search Members:<br>
 <p>Date and time (in Utc) when the changeset was processed by the server. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTimeUtc</strong></p>
@@ -196,7 +224,77 @@ Default Search Members:<br>
 <p>The user which initiated the change. null when it is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R30181.html">R30181 ObjectChangeset - Deleting Is Not Allowed</a></li>

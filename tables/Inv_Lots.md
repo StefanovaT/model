@@ -11,6 +11,7 @@ Warehouse lots. They contain one row for each specific product, status, producti
 
 | Name | Type | Description |
 | - | - | --- |
+|[Alcoholic_Strength](#alcoholic_strength)|`decimal(5, 2)` |Percentage of pure alcohol used in excise duty reporting.|
 |[Blocked_For_Document_Id](#blocked_for_document_id)|`uniqueidentifier` |If non-null, contains the document for which the lot is blocked|
 |[Blocked_For_Party_Id](#blocked_for_party_id)|`uniqueidentifier` |Non-NULL when the warehouse lot is blocked specifically for some party|
 |[Certificate_Document_Id](#certificate_document_id)|`uniqueidentifier` ||
@@ -29,6 +30,36 @@ Warehouse lots. They contain one row for each specific product, status, producti
 |[Status](#status)|`int` Allowed: `0`, `-1`, `-2`, `-3`|Status of the warehouse lot. Minus statuses describe blocked conditions.<br>-3 blocked for document (sales or service order)<br>-2 blocked for party<br>-1 blocked for inspection<br>0 free to use|
 
 ## Columns
+
+### Alcoholic_Strength
+
+
+Percentage of pure alcohol used in excise duty reporting.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|0|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(5, 2)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Blocked_For_Document_Id
 

@@ -5,12 +5,18 @@ uid: Applications.Cms.WebSites
 
 **Namespace:** [Applications.Cms](Applications.Cms.md)  
 
-Contains the public web sites. Entity: Cms_Web_Sites
+Contains the public web sites. Entity: Cms_Web_Sites (Obsoleted in version 22.1.6.73)
+
+> [!NOTE]  
+> **OBSOLETE! Do not use!**   
+
 
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  
 Default Search Members:  
+_Name_  
+Name Data Member:  
 _Name_  
 
 ## Aggregate
@@ -29,16 +35,18 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [BaseUrl](Applications.Cms.WebSites.md#baseurl) | string (256) __nullable__ | The base url (address) of the web site. `Filter(like)` 
+| [DisplayText](Applications.Cms.WebSites.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Cms.WebSites.md#id) | guid |  
 | [IsPublished](Applications.Cms.WebSites.md#ispublished) | boolean | Specifies whether the site is published for public Internet access. `Required` `Default(false)` `Filter(eq)` 
 | [Name](Applications.Cms.WebSites.md#name) | string (256) | Multilanguage web site name. `Required` `Filter(like)` 
+| [ObjectVersion](Applications.Cms.WebSites.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [EnterpriseCompany](Applications.Cms.WebSites.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company to which this web site belongs. `Required` `Filter(multi eq)` |
-| [PublicUserList](Applications.Cms.WebSites.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) (nullable) | The list of users used to authorize the users on the site. `Filter(multi eq)` |
+| [<s>PublicUserList</s>](Applications.Cms.WebSites.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) (nullable) | **OBSOLETE! Do not use!** The list of users used to authorize the users on the site. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.1.48` `Obsolete` |
 
 ## Child Collections
 
@@ -55,14 +63,25 @@ Aggregate Tree
 The base url (address) of the web site. `Filter(like)`
 
 _Type_: **string (256) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -71,6 +90,7 @@ _Default Value_: **NewGuid**
 Specifies whether the site is published for public Internet access. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -80,9 +100,19 @@ _Default Value_: **False**
 Multilanguage web site name. `Required` `Filter(like)`
 
 _Type_: **string (256)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 
 ## Reference Details
@@ -92,15 +122,92 @@ _Maximum Length_: **256**
 The enterprise company to which this web site belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PublicUserList
 
-The list of users used to authorize the users on the site. `Filter(multi eq)`
+**OBSOLETE! Do not use!** The list of users used to authorize the users on the site. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.1.48` `Obsolete`
 
 _Type_: **[PublicUserLists](Systems.External.PublicUserLists.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

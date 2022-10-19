@@ -31,6 +31,7 @@ Generic activity. Provides task management functionality. Activity can be one of
 |[Reminder_Time](#reminder_time)|`datetime` |When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity.|
 |[Responsible_Party_Id](#responsible_party_id)|`uniqueidentifier` |Who is responsible for executing the task. Initially this is the owner of the task|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Social_Group_Id](#social_group_id)|`uniqueidentifier` |Associates the activity with the specified social group. NULL means that this event is not related to a social group and might be publicly visible (can still be marked as private).|
 |[Start_Time](#start_time)|`datetime` |Currently planned starting time of the task|
 |[Subject](#subject)|`nvarchar(254)` |Task primary subject (required)|
 |[System_Type](#system_type)|`nvarchar(1)` Allowed: `C`, `M`, `T`|T=Task; C=Communication; M=Meeting|
@@ -584,6 +585,43 @@ Who is responsible for executing the task. Initially this is the owner of the ta
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### Social_Group_Id
+
+
+Associates the activity with the specified social group. NULL means that this event is not related to a social group and might be publicly visible (can still be marked as private).
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Cmm_Social_Groups](Cmm_Social_Groups.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Social_Group_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Start_Time
 

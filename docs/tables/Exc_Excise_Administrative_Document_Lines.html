@@ -115,12 +115,12 @@
 <tr>
 <td><a href="#excise_amount">Excise_Amount</a></td>
 <td><code>decimal(14, 2)</code></td>
-<td></td>
+<td>The excise amount</td>
 </tr>
 <tr>
 <td><a href="#excise_amount_base">Excise_Amount_Base</a></td>
 <td><code>decimal(14, 2)</code></td>
-<td></td>
+<td>The excise amount in base currency</td>
 </tr>
 <tr>
 <td><a href="#excise_duty_rate_id">Excise_Duty_Rate_Id</a></td>
@@ -141,6 +141,16 @@
 <td><a href="#excise_purpose_code_id">Excise_Purpose_Code_Id</a></td>
 <td><code>uniqueidentifier</code></td>
 <td>The Purpose codes specify the different purposes recognized by the authorities for determining the excise rate.</td>
+</tr>
+<tr>
+<td><a href="#excise_quantity">Excise_Quantity</a></td>
+<td><code>decimal(12, 3)</code></td>
+<td>The quantity, converted, for reporting purposes, in the measurement unit of the excise product type.</td>
+</tr>
+<tr>
+<td><a href="#excise_quantity_unit_id">Excise_Quantity_Unit_Id</a></td>
+<td><code>uniqueidentifier</code></td>
+<td>The measurement unit of Excise Quantity. Copied from the excise product type.</td>
 </tr>
 <tr>
 <td><a href="#line_no">Line_No</a></td>
@@ -536,6 +546,7 @@
 </tbody>
 </table>
 <h3 id="excise_amount">Excise_Amount</h3>
+<p>The excise amount</p>
 <table>
 <thead>
 <tr>
@@ -660,6 +671,7 @@
 </tbody>
 </table>
 <h3 id="excise_amount_base">Excise_Amount_Base</h3>
+<p>The excise amount in base currency</p>
 <table>
 <thead>
 <tr>
@@ -1248,6 +1260,229 @@
 <td>Equals</td>
 <td><code>NULL</code></td>
 <td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="excise_quantity">Excise_Quantity</h3>
+<p>The quantity, converted, for reporting purposes, in the measurement unit of the excise product type.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>decimal(12, 3)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="excise_quantity_unit_id">Excise_Quantity_Unit_Id</h3>
+<p>The measurement unit of Excise Quantity. Copied from the excise product type.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>19</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Referenced Table</td>
+<td><a href="Gen_Measurement_Units.html">Gen_Measurement_Units</a></td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>uniqueidentifier</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="excise_quantity_unit_id---supported-filters">Excise_Quantity_Unit_Id - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>no</td>
 <td>no</td>
 </tr>
 </tbody>

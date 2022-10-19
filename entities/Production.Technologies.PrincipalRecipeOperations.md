@@ -12,6 +12,8 @@ Default Display Text Format:
 _{PrincipalRecipe.Name}_  
 Default Search Members:  
 _PrincipalRecipe.Name_  
+Name Data Member:  
+_PrincipalRecipe.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,13 +27,15 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ConditionalProperty<br />Description](Production.Technologies.PrincipalRecipeOperations.md#conditionalpropertydescription) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The desired description of the Conditional Property. . 
+| [ConditionalProperty<br />Description](Production.Technologies.PrincipalRecipeOperations.md#conditionalpropertydescription) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The desired description of the Conditional Property. . 
 | [ConditionalPropertyValue](Production.Technologies.PrincipalRecipeOperations.md#conditionalpropertyvalue) | string (254) __nullable__ | The desired value of the Conditional Property. . 
+| [DisplayText](Production.Technologies.PrincipalRecipeOperations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.Technologies.PrincipalRecipeOperations.md#id) | guid |  
 | [LineOrd](Production.Technologies.PrincipalRecipeOperations.md#lineord) | int32 | Consecutive line number within the principal recipe. `Required` 
 | [MinimumConcurrent<br />StartTimeMinutes](Production.Technologies.PrincipalRecipeOperations.md#minimumconcurrentstarttimeminutes) | int32 __nullable__ | How many minutes after the start of the previous operation can this operation start. null means that this operation should wait the previous operation to finish before starting. 
 | [MoveTimeMinutes](Production.Technologies.PrincipalRecipeOperations.md#movetimeminutes) | int32 | Time to move the lot to the next operation in minutes. `Required` `Default(0)` `Filter(ge;le)` 
 | [Notes](Production.Technologies.PrincipalRecipeOperations.md#notes) | string (254) __nullable__ | Notes for this PrincipalRecipeOperation. 
+| [ObjectVersion](Production.Technologies.PrincipalRecipeOperations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OperationDescription](Production.Technologies.PrincipalRecipeOperations.md#operationdescription) | string (max) __nullable__ | The description of the operation. Initially copied from the generic operation definition. 
 | [RunTimeMinutes](Production.Technologies.PrincipalRecipeOperations.md#runtimeminutes) | int32 | Duration of the operation for one piece in the standard measurement unit of the product. `Required` `Default(0)` `Filter(ge;le)` 
 | [ScrapRate](Production.Technologies.PrincipalRecipeOperations.md#scraprate) | decimal (7, 6) | Standard rate of scrap during the operation. `Required` `Default(0)` 
@@ -47,7 +51,7 @@ Aggregate Root:
 | [ConditionalProperty](Production.Technologies.PrincipalRecipeOperations.md#conditionalproperty) | [CustomProperties](General.CustomProperties.md) (nullable) | When not null, specifies that, when creating recipe, the operation will be added only if this property is set for the main product. `Filter(multi eq)` |
 | [Operation](Production.Technologies.PrincipalRecipeOperations.md#operation) | [Operations](Production.Resources.Operations.md) (nullable) | The generic operation definition. The data is copied locally and can be modified for this specific record. `Filter(multi eq)` |
 | [OperationInstruction](Production.Technologies.PrincipalRecipeOperations.md#operationinstruction) | [OperationInstructions](Production.Resources.OperationInstructions.md) (nullable) | Link to additional data, containing instructions in external format. `Filter(multi eq)` |
-| [PrincipalRecipe](Production.Technologies.PrincipalRecipeOperations.md#principalrecipe) | [PrincipalRecipes](Production.Technologies.PrincipalRecipes.md) | The `PrincipalRecipe`(Production.Technologies.PrincipalRecipeOperations.md#principalrecipe) to which this PrincipalRecipeOperation belongs. `Required` `Filter(multi eq)` `Owner` |
+| [PrincipalRecipe](Production.Technologies.PrincipalRecipeOperations.md#principalrecipe) | [PrincipalRecipes](Production.Technologies.PrincipalRecipes.md) | The <see cref="PrincipalRecipe"/> to which this PrincipalRecipeOperation belongs. `Required` `Filter(multi eq)` `Owner` |
 | [UseQuantityUnit](Production.Technologies.PrincipalRecipeOperations.md#usequantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Use_Quantity. `Required` `Filter(multi eq)` |
 | [WorkgroupResource](Production.Technologies.PrincipalRecipeOperations.md#workgroupresource) | [WorkgroupResources](Production.Resources.WorkgroupResources.md) | Required workgroup resource for the operation. null means that no resource is required or the resource will be specified later. `Required` `Filter(multi eq)` |
 
@@ -58,7 +62,8 @@ Aggregate Root:
 
 The desired description of the Conditional Property. .
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -67,14 +72,25 @@ _Supports Order By_: **False**
 The desired value of the Conditional Property. .
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -83,19 +99,21 @@ _Default Value_: **NewGuid**
 Consecutive line number within the principal recipe. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.PrincipalRecipe.Operations.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PrincipalRecipe.Operations.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.PrincipalRecipe.Operations.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PrincipalRecipe.Operations.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
 ### MinimumConcurrentStartTimeMinutes
 
 How many minutes after the start of the previous operation can this operation start. null means that this operation should wait the previous operation to finish before starting.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -104,6 +122,7 @@ _Supports Order By_: **False**
 Time to move the lot to the next operation in minutes. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -115,15 +134,26 @@ _Front-End Recalc Expressions:_
 Notes for this PrincipalRecipeOperation.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### OperationDescription
 
 The description of the operation. Initially copied from the generic operation definition.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -135,6 +165,7 @@ _Front-End Recalc Expressions:_
 Duration of the operation for one piece in the standard measurement unit of the product. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -146,6 +177,7 @@ _Front-End Recalc Expressions:_
 Standard rate of scrap during the operation. `Required` `Default(0)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -155,6 +187,7 @@ _Default Value_: **0**
 Time needed to setup the equipment. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -166,6 +199,7 @@ _Front-End Recalc Expressions:_
 The tools needed for the routing step.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -175,6 +209,7 @@ _Maximum Length_: **254**
 Quantity of the workgroup resource that should be allocated for the operation. `Unit: UseQuantityUnit` `Required` `Default(1)` `Filter(ge;le)`
 
 _Type_: **[Quantity (9, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -186,6 +221,7 @@ _Front-End Recalc Expressions:_
 Wait time (drying, cooling, etc.) after the operation in minutes. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -200,6 +236,7 @@ _Front-End Recalc Expressions:_
 When not null, specifies that, when creating recipe, the operation will be added only if this property is set for the main product. `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Operation
@@ -207,6 +244,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The generic operation definition. The data is copied locally and can be modified for this specific record. `Filter(multi eq)`
 
 _Type_: **[Operations](Production.Resources.Operations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### OperationInstruction
@@ -214,13 +252,15 @@ _Supported Filters_: **Equals, EqualsIn**
 Link to additional data, containing instructions in external format. `Filter(multi eq)`
 
 _Type_: **[OperationInstructions](Production.Resources.OperationInstructions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PrincipalRecipe
 
-The `PrincipalRecipe`(Production.Technologies.PrincipalRecipeOperations.md#principalrecipe) to which this PrincipalRecipeOperation belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="PrincipalRecipe"/> to which this PrincipalRecipeOperation belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[PrincipalRecipes](Production.Technologies.PrincipalRecipes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -229,6 +269,7 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The measurement unit of Use_Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -238,10 +279,86 @@ _Front-End Recalc Expressions:_
 Required workgroup resource for the operation. null means that no resource is required or the resource will be specified later. `Required` `Filter(multi eq)`
 
 _Type_: **[WorkgroupResources](Production.Resources.WorkgroupResources.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `obj.Operation.WorkgroupResource`
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

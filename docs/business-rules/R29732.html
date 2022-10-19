@@ -112,8 +112,7 @@
 <td><strong>Applicable
 Legislations</strong></td>
 <td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">BG
-(PosLocation.Enterpris
-eCompany.Company)</a></td>
+(PosLocation.EnterpriseCompany.Company)</a></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
@@ -123,10 +122,8 @@ PosOperator.PosLocation)].Count() &lt;= 1*
 , then set a value: PosOperatorCode = '0001'
 <br><br>
 , else set a value: PosOperatorCode =
-<a href="https://confluence.erp.net/display/techdoc/INCNUM">INCNUM</a> (MAX
+<a class="xref" href="https://erpnetdocs.github.io/tech/advanced/calculated-attributes/operators/incnum.html">INCNUM</a> (MAX
 (PosOperator.PosOperatorCode[(PosLocation = PosOperator.PosLocation)]))
-<br><br>
-<br><br>
 <br><br>
 * Note: The count includes the current POS Operator</td>
 </tr>

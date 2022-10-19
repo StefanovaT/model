@@ -99,15 +99,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">Status</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/generation-procedures.html">NEW</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/generation-procedures.html">NEW</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">YES</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Transitional Documents</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">NO</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Single Execution</td>
@@ -156,7 +156,7 @@ WarehouseRequisition.ExpectedTime = null
 </code></pre>
 <div class="NOTE">
 <h5>Note</h5>
-<p>The attributes which are not specified here are filled in as described in <a href="../reference/standard-document-attributes.html">Standard Document Attributes</a></p>
+<p>The attributes which are not specified here are filled in as described in <strong><a href="../reference/standard-document-attributes.html">Standard Document Attributes</a></strong></p>
 </div>
 <p><strong>If StoreOrder.Store.ManagedWarehouse = NULL, throw an error:</strong></p>
 <pre><code>No Managed Warehouse is specified for store '{Store.StoreName}'.
@@ -218,7 +218,7 @@ Please check if the store is correct and if the field 'Managed Warehouse' in its
 <td style="text-align: left;">StoreOrderLineToWarehouseRequisitionLine</td>
 <td style="text-align: center;">MStandardQuantity</td>
 <td style="text-align: center;">StoreOrderLine.Product.BaseMeasurementUnit</td>
-<td style="text-align: left;">StoreOrderLine.StandardQuantity</td>
+<td style="text-align: left;">StoreOrderLine.StandardQuantityBase</td>
 <td style="text-align: left;">DocumentFulfillment.StandardQuantity</td>
 <td style="text-align: left;">YES</td>
 </tr>

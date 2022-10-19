@@ -108,6 +108,11 @@ Aggregate Root:<br>
 <td>Quantity found at the reconciliation, in the base measurement category of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
+<td><a href="Logistics.Inventory.ReconciliationLines.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="Logistics.Inventory.ReconciliationLines.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
@@ -121,6 +126,11 @@ Aggregate Root:<br>
 <td><a href="Logistics.Inventory.ReconciliationLines.html#notes">Notes</a></td>
 <td>string (254) <strong>nullable</strong></td>
 <td>Notes for this ReconciliationLine.</td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.ReconciliationLines.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationLines.html#quantity">Quantity</a></td>
@@ -175,6 +185,11 @@ Aggregate Root:<br>
 <td>Selects the product thru some of the product codes. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Logistics.Inventory.ReconciliationLines.html#productvariant">ProductVariant</a></td>
+<td><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</td>
+<td>The product variant, which was reconciled. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.15</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.Inventory.ReconciliationLines.html#quantityunit">QuantityUnit</a></td>
 <td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
 <td>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code></td>
@@ -199,22 +214,36 @@ Aggregate Root:<br>
 <td><a href="Logistics.Inventory.StoreBins.html">StoreBins</a> (nullable)</td>
 <td>The store bin, that was counted. <code>Filter(multi eq)</code></td>
 </tr>
+<tr>
+<td><a href="Logistics.Inventory.ReconciliationLines.html#warehousetransaction">WarehouseTransaction</a></td>
+<td><a href="Logistics.Wms.WarehouseTransactions.html">WarehouseTransactions</a> (nullable)</td>
+<td>The warehouse operation, whose result is reflected in the current line. Null when the reconciliation line is not a result of the counting warehouse operations in the Warehouse Management module. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.13</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="availablequantitybase">AvailableQuantityBase</h3>
 <p>Quantity found at the reconciliation, in the base measurement category of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="lineord">LineOrd</h3>
 <p>The ordinal position of the line within the document. Duplicates are allowed, but not suggested. <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
@@ -224,17 +253,26 @@ Aggregate Root:<br>
 <h3 id="notes">Notes</h3>
 <p>Notes for this ReconciliationLine.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="quantity">Quantity</h3>
 <p>Quantity found at the reconciliation, . <code>Unit: QuantityUnit</code> <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="quantitybase">QuantityBase</h3>
 <p>Quantity found at the reconciliation, expressed in base measurement units. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
@@ -244,6 +282,7 @@ Aggregate Root:<br>
 <h3 id="standardquantitybase">StandardQuantityBase</h3>
 <p>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>ReadOnly</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
@@ -253,6 +292,7 @@ Aggregate Root:<br>
 <h3 id="transactiontimestamp">TransactionTimestamp</h3>
 <p>Exact time when the transaction occurred.</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h2 id="reference-details">Reference Details</h2>
@@ -260,26 +300,36 @@ Aggregate Root:<br>
 <p>Parent reconciliation Id. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Reconciliations.html">Reconciliations</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="lot">Lot</h3>
 <p>The lot, which was reconciled. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="product">Product</h3>
 <p>The id of the reconciled product. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.ProductCode.Product.IfNullThen( obj.Product)</code></p>
 <h3 id="productcode">ProductCode</h3>
 <p>Selects the product thru some of the product codes. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductCodes.html">ProductCodes</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Product != null) AndAlso ( obj.ProductCode != null)) AndAlso ( obj.Product != obj.ProductCode.Product)), null, obj.ProductCode)</code></p>
+<h3 id="productvariant">ProductVariant</h3>
+<p>The product variant, which was reconciled. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.15</code></p>
+<p><em>Type</em>: <strong><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="quantityunit">QuantityUnit</h3>
 <p>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.ProductCode.CodingSystem.DefaultMeasurementUnit.IfNullThen( obj.Product.MeasurementUnit.IfNullThen( obj.QuantityUnit))</code></p>
@@ -287,28 +337,110 @@ Aggregate Root:<br>
 <p>Parent reconciliation Id. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Reconciliations.html">Reconciliations</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>
 <p>Item serial number for serialized items. null for non-serializable items. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( Not( obj.Product.IsSerialized) OrElse ( ( obj.SerialNumber != null) AndAlso ( obj.Product != obj.SerialNumber.Product))), null, obj.SerialNumber)</code></p>
 <h3 id="store">Store</h3>
 <p>The store, containing the reconciled product. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Stores.html">Stores</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Reconciliation.DefaultStore.IfNullThen( obj.Store)</code></p>
 <h3 id="storebin">StoreBin</h3>
 <p>The store bin, that was counted. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreBins.html">StoreBins</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Reconciliation.DefaultStoreBin.IfNullThen( obj.StoreBin)</code></p>
+<h3 id="warehousetransaction">WarehouseTransaction</h3>
+<p>The warehouse operation, whose result is reflected in the current line. Null when the reconciliation line is not a result of the counting warehouse operations in the Warehouse Management module. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.13</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Wms.WarehouseTransactions.html">WarehouseTransactions</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
+<li><a href="../business-rules/R30707-2.html">R30707-2 Reconciliation Line - Set Serial Number (Recalc)</a></li>
 <li><a href="../business-rules/R31387-1.html">R31387-1 Reconciliation Line - Set Quantity Base (Recalc)</a></li>
 <li><a href="../business-rules/R31387-2.html">R31387-2 Reconciliation Line - Set Standard Quantity Base (Recalc)</a></li>
 <li><a href="../business-rules/R31387-3.html">R31387-3 Reconciliation Line - Set Store (Recalc)</a></li>

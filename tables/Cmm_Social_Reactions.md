@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.SocialReactions](~/entities/Communities.SocialReactions.md)
+Entity: [Communities.Social.Reactions](~/entities/Communities.Social.Reactions.md)
 
 Reaction of a user to any social comment to an object of the system. Entity: Cmm_Social_Reactions (Introduced in version 20.1)
 

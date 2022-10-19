@@ -26,6 +26,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [BoxCount](Logistics.Shipment.ShipmentOrderLines.md#boxcount) | int32 __nullable__ | The count of boxes in which the goods are packaged. null means unknown. 
+| [DisplayText](Logistics.Shipment.ShipmentOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Finished](Logistics.Shipment.ShipmentOrderLines.md#finished) | boolean | True if this shipment should prohibit further shipments for the sales order line. `Required` `Default(false)` `Filter(eq)` 
 | [GrossWeightkg](Logistics.Shipment.ShipmentOrderLines.md#grossweightkg) | decimal (12, 3) __nullable__ | The gross weight of the whole line in kilogramms. null means unknown. 
 | [GuaranteePeriodDays](Logistics.Shipment.ShipmentOrderLines.md#guaranteeperioddays) | int32 __nullable__ | Guarantee period in days for the offered product. null for non-serviced products. 
@@ -35,6 +36,7 @@ Aggregate Root:
 | [LineNo](Logistics.Shipment.ShipmentOrderLines.md#lineno) | int32 | Line number, unique for the shipment. `Required` 
 | [NetWeightkg](Logistics.Shipment.ShipmentOrderLines.md#netweightkg) | decimal (12, 3) __nullable__ | The net weight of the entire batch of goods in kilograms. null means unknown. 
 | [Notes](Logistics.Shipment.ShipmentOrderLines.md#notes) | string (max) __nullable__ | Specific notes for this line. 
+| [ObjectVersion](Logistics.Shipment.ShipmentOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PalletNo](Logistics.Shipment.ShipmentOrderLines.md#palletno) | int32 __nullable__ | The number of the pallet in which the goods are packaged. null means unknown. 
 | [ParentLineNo](Logistics.Shipment.ShipmentOrderLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. 
 | [PersistLot](Logistics.Shipment.ShipmentOrderLines.md#persistlot) | boolean | If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. `Required` `Default(false)` `Filter(eq)` 
@@ -48,13 +50,13 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Logistics.Shipment.ShipmentOrderLines.md#document) | [ShipmentOrders](Logistics.Shipment.ShipmentOrders.md) | The `ShipmentOrder`(Logistics.Shipment.ShipmentOrderLines.md#shipmentorder) to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` |
+| [Document](Logistics.Shipment.ShipmentOrderLines.md#document) | [ShipmentOrders](Logistics.Shipment.ShipmentOrders.md) | The <see cref="ShipmentOrder"/> to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Shipment.ShipmentOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The store lot from which to take the goods. `Filter(multi eq)` |
 | [ParentDocument](Logistics.Shipment.ShipmentOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [ParentSalesOrderLine](Logistics.Shipment.ShipmentOrderLines.md#parentsalesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) | Sales order line which is shipped. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Shipment.ShipmentOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [SerialNumber](Logistics.Shipment.ShipmentOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | The serial number of the shipped product. null means that serial number is unknown or not applicable. `Filter(multi eq)` |
-| [ShipmentOrder](Logistics.Shipment.ShipmentOrderLines.md#shipmentorder) | [ShipmentOrders](Logistics.Shipment.ShipmentOrders.md) | The `ShipmentOrder`(Logistics.Shipment.ShipmentOrderLines.md#shipmentorder) to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [ShipmentOrder](Logistics.Shipment.ShipmentOrderLines.md#shipmentorder) | [ShipmentOrders](Logistics.Shipment.ShipmentOrders.md) | The <see cref="ShipmentOrder"/> to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [StoreBin](Logistics.Shipment.ShipmentOrderLines.md#storebin) | [StoreBins](Logistics.Inventory.StoreBins.md) (nullable) | The store bin from which to take the goods. `Filter(multi eq)` |
 
 
@@ -65,14 +67,25 @@ Aggregate Root:
 The count of boxes in which the goods are packaged. null means unknown.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Finished
 
 True if this shipment should prohibit further shipments for the sales order line. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -82,6 +95,7 @@ _Default Value_: **False**
 The gross weight of the whole line in kilogramms. null means unknown.
 
 _Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -90,6 +104,7 @@ _Supports Order By_: **False**
 Guarantee period in days for the offered product. null for non-serviced products.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -100,6 +115,7 @@ _Front-End Recalc Expressions:_
 The height of the package in meters. null means unknown.
 
 _Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -107,6 +123,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -115,6 +132,7 @@ _Default Value_: **NewGuid**
 The length of the package in meters. null means unknown.
 
 _Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -123,6 +141,7 @@ _Supports Order By_: **False**
 Line number, unique for the shipment. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -136,6 +155,7 @@ _Front-End Recalc Expressions:_
 The net weight of the entire batch of goods in kilograms. null means unknown.
 
 _Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -144,15 +164,26 @@ _Supports Order By_: **False**
 Specific notes for this line.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PalletNo
 
 The number of the pallet in which the goods are packaged. null means unknown.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -161,6 +192,7 @@ _Supports Order By_: **False**
 The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -169,6 +201,7 @@ _Supports Order By_: **False**
 If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -178,6 +211,7 @@ _Default Value_: **False**
 The quantity to be shipped. `Unit: QuantityUnit` `Required` `Default(1)`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -189,6 +223,7 @@ _Front-End Recalc Expressions:_
 The equivalence of Quantity in the base measurement category of the product. `Unit: ParentSalesOrderLine.Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -202,6 +237,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: ParentSalesOrderLine.Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -215,6 +251,7 @@ _Front-End Recalc Expressions:_
 The volume in litres of the whole batch. null means unknown.
 
 _Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -223,6 +260,7 @@ _Supports Order By_: **False**
 The width of the package in meters. null means unknown.
 
 _Type_: **decimal (12, 3) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -231,10 +269,11 @@ _Supports Order By_: **False**
 
 ### Document
 
-The `ShipmentOrder`(Logistics.Shipment.ShipmentOrderLines.md#shipmentorder) to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)`
+The <see cref="ShipmentOrder"/> to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[ShipmentOrders](Logistics.Shipment.ShipmentOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -242,6 +281,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The store lot from which to take the goods. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -252,6 +292,7 @@ The document, which the current line executes. null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentSalesOrderLine
@@ -260,6 +301,7 @@ Sales order line which is shipped. `Required` `Filter(multi eq)`
 
 _Type_: **[SalesOrderLines](Crm.Sales.SalesOrderLines.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -267,6 +309,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -276,14 +319,16 @@ _Front-End Recalc Expressions:_
 The serial number of the shipped product. null means that serial number is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ShipmentOrder
 
-The `ShipmentOrder`(Logistics.Shipment.ShipmentOrderLines.md#shipmentorder) to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="ShipmentOrder"/> to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[ShipmentOrders](Logistics.Shipment.ShipmentOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -292,8 +337,84 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The store bin from which to take the goods. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

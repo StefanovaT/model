@@ -14,6 +14,8 @@ uid: Crm.Marketing
 - [ForecastItems](Crm.Marketing.ForecastItems.md)  
 - [Industries](Crm.Marketing.Industries.md)  
 - [MarketingActivities](Crm.Marketing.MarketingActivities.md)  
+- [MarketingActivityLines](Crm.Marketing.MarketingActivityLines.md)  
+- [MarketingActivityLineTypes](Crm.Marketing.MarketingActivityLineTypes.md)  
 - [MarketingSolutions](Crm.Marketing.MarketingSolutions.md)  
 - [ProductDistributionChannels](Crm.Marketing.ProductDistributionChannels.md)  
 - [TargetGroupMembers](Crm.Marketing.TargetGroupMembers.md)  

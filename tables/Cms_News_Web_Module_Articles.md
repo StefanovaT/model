@@ -1,11 +1,15 @@
 # Table Cms_News_Web_Module_Articles
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Applications.Cms.NewsWebModuleArticles](~/entities/Applications.Cms.NewsWebModuleArticles.md)
 
-Represents an article in a news web module. Entity: Cms_News_Web_Module_Articles
+Represents an article in a news web module. Entity: Cms_News_Web_Module_Articles (Obsoleted in version 22.1.6.73)
 
 ## Summary
 

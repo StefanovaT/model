@@ -195,18 +195,25 @@
     href: Communities.Notifications.md
   - name: NotificationSettings
     href: Communities.NotificationSettings.md
-  - name: SocialComments
-    href: Communities.SocialComments.md
-  - name: SocialGroupMembers
-    href: Communities.SocialGroupMembers.md
-  - name: SocialGroups
-    href: Communities.SocialGroups.md
-  - name: SocialPosts
-    href: Communities.SocialPosts.md
-  - name: SocialReactions
-    href: Communities.SocialReactions.md
-  - name: SocialReactionsSummary
-    href: Communities.SocialReactionsSummary.md
+  - name: Social
+    href: Communities.Social.md
+    items:
+    - name: Comments
+      href: Communities.Social.Comments.md
+    - name: FollowedEntities
+      href: Communities.Social.FollowedEntities.md
+    - name: Follows
+      href: Communities.Social.Follows.md
+    - name: GroupMembers
+      href: Communities.Social.GroupMembers.md
+    - name: Groups
+      href: Communities.Social.Groups.md
+    - name: Posts
+      href: Communities.Social.Posts.md
+    - name: Reactions
+      href: Communities.Social.Reactions.md
+    - name: ReactionsSummary
+      href: Communities.Social.ReactionsSummary.md
 - name: Crm
   href: Crm.md
   items:
@@ -269,6 +276,10 @@
       href: Crm.Marketing.Industries.md
     - name: MarketingActivities
       href: Crm.Marketing.MarketingActivities.md
+    - name: MarketingActivityLines
+      href: Crm.Marketing.MarketingActivityLines.md
+    - name: MarketingActivityLineTypes
+      href: Crm.Marketing.MarketingActivityLineTypes.md
     - name: MarketingSolutions
       href: Crm.Marketing.MarketingSolutions.md
     - name: ProductDistributionChannels
@@ -460,6 +471,8 @@
       href: Finance.Excise.ExciseAdministrativeDocumentLines.md
     - name: ExciseAdministrativeDocuments
       href: Finance.Excise.ExciseAdministrativeDocuments.md
+    - name: ExciseDeclarations
+      href: Finance.Excise.ExciseDeclarations.md
     - name: ExciseDutyRates
       href: Finance.Excise.ExciseDutyRates.md
     - name: ExciseOperationTypes
@@ -468,8 +481,18 @@
       href: Finance.Excise.ExciseProductCategories.md
     - name: ExciseProducts
       href: Finance.Excise.ExciseProducts.md
+    - name: ExciseProductTypes
+      href: Finance.Excise.ExciseProductTypes.md
     - name: ExcisePurposeCodes
       href: Finance.Excise.ExcisePurposeCodes.md
+    - name: ExciseStampLots
+      href: Finance.Excise.ExciseStampLots.md
+    - name: ExciseStampOperationLines
+      href: Finance.Excise.ExciseStampOperationLines.md
+    - name: ExciseStampOperations
+      href: Finance.Excise.ExciseStampOperations.md
+    - name: ExciseStampOperationTypes
+      href: Finance.Excise.ExciseStampOperationTypes.md
     - name: MeasuringTransactions
       href: Finance.Excise.MeasuringTransactions.md
     - name: TaxWarehouses
@@ -525,6 +548,8 @@
       href: Finance.Vat.BGVATDeclaringPersons.md
     - name: BGVATDocumentTypeVATCodes
       href: Finance.Vat.BGVATDocumentTypeVATCodes.md
+    - name: BoxTypeDealTypes
+      href: Finance.Vat.BoxTypeDealTypes.md
     - name: BoxTypes
       href: Finance.Vat.BoxTypes.md
     - name: DealTypeDocumentAmounts
@@ -540,8 +565,6 @@
 - name: General
   href: General.md
   items:
-  - name: Config
-    href: General.Config.md
   - name: Contacts
     href: General.Contacts.md
     items:
@@ -619,17 +642,16 @@
     href: General.DocumentLinks.md
   - name: DocumentManualDistributedAmounts
     href: General.DocumentManualDistributedAmounts.md
+  - name: DocumentParties
+    href: General.DocumentParties.md
+  - name: DocumentPartyRoles
+    href: General.DocumentPartyRoles.md
   - name: DocumentPrintImages
     href: General.DocumentPrintImages.md
   - name: DocumentPrints
     href: General.DocumentPrints.md
   - name: Documents
     href: General.Documents.md
-    items:
-    - name: DocumentParties
-      href: General.Documents.DocumentParties.md
-    - name: DocumentPartyRoles
-      href: General.Documents.DocumentPartyRoles.md
   - name: DocumentStateChanges
     href: General.DocumentStateChanges.md
   - name: DocumentTypeAmounts
@@ -679,8 +701,6 @@
     href: General.PrintoutLayouts.md
   - name: Printouts
     href: General.Printouts.md
-  - name: ProductCatalogs
-    href: General.ProductCatalogs.md
   - name: ProductGroupsLevelNames
     href: General.ProductGroupsLevelNames.md
   - name: Products
@@ -688,6 +708,8 @@
     items:
     - name: CodingSystems
       href: General.Products.CodingSystems.md
+    - name: ProductCatalogs
+      href: General.Products.ProductCatalogs.md
     - name: ProductCodes
       href: General.Products.ProductCodes.md
     - name: ProductDimensions
@@ -710,14 +732,14 @@
       href: General.Products.ProductTypePurchaseInvoiceLineProperties.md
     - name: ProductTypes
       href: General.Products.ProductTypes.md
+    - name: ProductVariants
+      href: General.Products.ProductVariants.md
     - name: VariantColors
       href: General.Products.VariantColors.md
     - name: VariantSizes
       href: General.Products.VariantSizes.md
     - name: VariantStyles
       href: General.Products.VariantStyles.md
-  - name: ProductVariants
-    href: General.ProductVariants.md
   - name: PropertiesCategories
     href: General.PropertiesCategories.md
   - name: PropertyEnterpriseCompanyFilters
@@ -745,15 +767,13 @@
       href: General.Resources.WorkSchedules.md
     - name: WorkScheduleWorkingTime
       href: General.Resources.WorkScheduleWorkingTime.md
-  - name: ScheduledDocumentEvents
-    href: General.ScheduledDocumentEvents.md
   - name: SequenceGenerators
     href: General.SequenceGenerators.md
-  - name: Sequences
-    href: General.Sequences.md
 - name: Logistics
   href: Logistics.md
   items:
+  - name: CompositeProductComponents
+    href: Logistics.CompositeProductComponents.md
   - name: Inventory
     href: Logistics.Inventory.md
     items:
@@ -901,16 +921,12 @@
       href: Logistics.Wms.WarehouseAvailabilityView.md
     - name: WarehouseLocations
       href: Logistics.Wms.WarehouseLocations.md
-    - name: WarehouseOrderFulfillments
-      href: Logistics.Wms.WarehouseOrderFulfillments.md
     - name: WarehouseOrderLines
       href: Logistics.Wms.WarehouseOrderLines.md
     - name: WarehouseOrders
       href: Logistics.Wms.WarehouseOrders.md
     - name: WarehousePolicies
       href: Logistics.Wms.WarehousePolicies.md
-    - name: WarehouseRequisitionFulfillments
-      href: Logistics.Wms.WarehouseRequisitionFulfillments.md
     - name: WarehouseRequisitionLines
       href: Logistics.Wms.WarehouseRequisitionLines.md
     - name: WarehouseRequisitions
@@ -1030,6 +1046,13 @@
     href: Projects.Templates.md
   - name: TemplateWorkElements
     href: Projects.TemplateWorkElements.md
+  - name: Todo
+    href: Projects.Todo.md
+    items:
+    - name: TaskItems
+      href: Projects.Todo.TaskItems.md
+    - name: Tasks
+      href: Projects.Todo.Tasks.md
   - name: TypeRoles
     href: Projects.TypeRoles.md
   - name: TypeWorkElements
@@ -1074,6 +1097,8 @@
       href: Systems.Core.AttributeChangesHistory.md
     - name: AuditLogEntries
       href: Systems.Core.AuditLogEntries.md
+    - name: Config
+      href: Systems.Core.Config.md
     - name: DataEntryDefaultValues
       href: Systems.Core.DataEntryDefaultValues.md
     - name: EntitySettings
@@ -1096,16 +1121,27 @@
       href: Systems.Core.ObjectVersions.md
     - name: ResolvedConflicts
       href: Systems.Core.ResolvedConflicts.md
-    - name: TextTranslations
-      href: Systems.Core.TextTranslations.md
+    - name: ScheduledDocumentEvents
+      href: Systems.Core.ScheduledDocumentEvents.md
+    - name: Sequences
+      href: Systems.Core.Sequences.md
     - name: Translations
       href: Systems.Core.Translations.md
     - name: UpdateProcedureExecutes
       href: Systems.Core.UpdateProcedureExecutes.md
+    - name: WebHooks
+      href: Systems.Core.WebHooks.md
     - name: WebHosts
       href: Systems.Core.WebHosts.md
     - name: WebSites
       href: Systems.Core.WebSites.md
+  - name: Dmv
+    href: Systems.Dmv.md
+    items:
+    - name: ExecStats
+      href: Systems.Dmv.ExecStats.md
+    - name: WebSites
+      href: Systems.Dmv.WebSites.md
   - name: External
     href: Systems.External.md
     items:

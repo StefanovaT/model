@@ -24,7 +24,7 @@ Sales Orders detail records. Entity: Crm_Sales_Order_Lines
 |[Intrastat_Apply_Date](#intrastat_apply_date)|`datetime` |Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used.|
 |[Intrastat_Transaction_Nature_Code](#intrastat_transaction_nature_code)|`nvarchar(2)` Allowed: `11`, `12`, `13`, `14`, `19`, `21`, `22`, `23`, `29`, `60`, `70`, `80`, `91`, `99`, `30`, `41`, `42`, `51`, `52`|Transaction nature; used for Intrastat reporting|
 |[Intrastat_Transport_Country_Id](#intrastat_transport_country_id)|`uniqueidentifier` |Country of origin of the transport company; used for Intrastat reporting|
-|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|Transport mode; used for Intrastat reporting|
+|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|Transport mode; used for Intrastat reporting|
 |[Line_Amount](#line_amount)|`decimal(14, 2)` |The total amount for the line. Equals to Quantity * Unit_Price, less the discounts|
 |[Line_Custom_Discount_Percent](#line_custom_discount_percent)|`decimal(7, 6)` |User-defined discount for the line|
 |[Line_Deal_Type_Id](#line_deal_type_id)|`uniqueidentifier` |Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type.|
@@ -335,7 +335,7 @@ Transport mode; used for Intrastat reporting
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

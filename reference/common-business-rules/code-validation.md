@@ -1,3 +1,7 @@
+---
+uid: code-validation
+---
+
 # Code validation
 
 This validation is applied for data attributes containing code.
@@ -39,7 +43,6 @@ Invalid codes are as follows:
 - a4;
 
 The current validation is referred here:
-- [R27170 FinancialStatement - Check Code](R27170.md)
-- [R26759 FinancialStatementNode - Financial Statement Node Code](R26759.md)
-- [R32332 Accounting Voucher Lines - Item Key (Code)](R32332.md)
-
+- [R27170 FinancialStatement - Check Code](~/business-rules/R27170.md)
+- [R26759 FinancialStatementNode - Financial Statement Node Code](~/business-rules/R26759.md)
+- [R32332 Accounting Voucher Lines - Item Key (Code)](~/business-rules/R32332.md)

@@ -85,7 +85,11 @@
 <p>Default Display Text Format:<br>
 <em>{TypeName:T}</em><br>
 Default Search Members:<br>
-<em>Code; TypeName</em></p>
+<em>Code; TypeName</em><br>
+Code Data Member:<br>
+<em>Code</em><br>
+Name Data Member:<br>
+<em>TypeName</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -102,8 +106,13 @@ Default Search Members:<br>
 <li><a href="General.DocumentTypeEnterpriseCompanies.html">General.DocumentTypeEnterpriseCompanies</a></li>
 <li><a href="General.DocumentTypeNotifications.html">General.DocumentTypeNotifications</a></li>
 <li><a href="General.DocumentTypeProperties.html">General.DocumentTypeProperties</a></li>
+<li><a href="General.DocumentTypeSecurityConditions.html">General.DocumentTypeSecurityConditions</a></li>
 <li><a href="General.DocumentTypeUserStatuses.html">General.DocumentTypeUserStatuses</a></li>
 <li><a href="General.Printouts.html">General.Printouts</a></li>
+<li><a href="Logistics.Inventory.CostCorrectionsOptions.html">Logistics.Inventory.CostCorrectionsOptions</a></li>
+<li><a href="Logistics.Inventory.TransferOrdersOptions.html">Logistics.Inventory.TransferOrdersOptions</a></li>
+<li><a href="Production.WorkOrderDocumentTypesOptions.html">Production.WorkOrderDocumentTypesOptions</a></li>
+<li><a href="Logistics.Procurement.PurchaseInvoicesOptions.html">Logistics.Procurement.PurchaseInvoicesOptions</a></li>
 <li><a href="Systems.Workflow.Routes.html">Systems.Workflow.Routes</a>
 <ul>
 <li><a href="Finance.Accounting.TemplateRouteLinks.html">Finance.Accounting.TemplateRouteLinks</a></li>
@@ -116,7 +125,9 @@ Default Search Members:<br>
 </li>
 </ul>
 </li>
+<li><a href="Finance.Payments.PaymentSlipPaymentTransactionsTemplates.html">Finance.Payments.PaymentSlipPaymentTransactionsTemplates</a></li>
 <li><a href="Crm.Sales.SalesOrderPaymentOrdersTemplates.html">Crm.Sales.SalesOrderPaymentOrdersTemplates</a></li>
+<li><a href="Applications.Rental.TransactionTemplates.html">Applications.Rental.TransactionTemplates</a></li>
 </ul>
 </li>
 </ul>
@@ -138,19 +149,29 @@ Default Search Members:<br>
 <td>Unique descriptive code of the document type. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 <tr>
+<td><a href="General.DocumentTypes.html#createfulfillmentsoncompletion">CreateFulfillments<br>OnCompletion</a></td>
+<td>boolean</td>
+<td>When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents. <code>Required</code> <code>Default(false)</code></td>
+</tr>
+<tr>
 <td><a href="General.DocumentTypes.html#createmanully">CreateManully</a></td>
 <td>boolean</td>
 <td>False if documents with this document type only can be generated; true - the user can create documents with this type. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.DocumentTypes.html#description">Description</a></td>
-<td>string (max) <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (max)</a> <strong>nullable</strong></td>
 <td>The description of this DocumentType.</td>
 </tr>
 <tr>
 <td><a href="General.DocumentTypes.html#disallowoppositevaluesgeneration">DisallowOpposite<br>ValuesGeneration</a></td>
 <td>boolean</td>
 <td>Disallow the generation of decreasing scalar values (values with opposite directions than the original values determined by the parent document) through this document type. <code>Required</code> <code>Default(false)</code></td>
+</tr>
+<tr>
+<td><a href="General.DocumentTypes.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
 </tr>
 <tr>
 <td><a href="General.DocumentTypes.html#entityname">EntityName</a></td>
@@ -173,6 +194,11 @@ Default Search Members:<br>
 <td>Notes for this DocumentType.</td>
 </tr>
 <tr>
+<td><a href="General.DocumentTypes.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
 <td><a href="General.DocumentTypes.html#schemaxml">SchemaXML</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>Obsolete. Not used.</td>
@@ -184,7 +210,7 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="General.DocumentTypes.html#typename">TypeName</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
 <td>Description of the document type. <code>Required</code> <code>Filter(like)</code> <code>ORD</code></td>
 </tr>
 </tbody>
@@ -206,7 +232,7 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="General.DocumentTypes.html#sequence">Sequence</a></td>
-<td><a href="General.Sequences.html">Sequences</a> (nullable)</td>
+<td><a href="Systems.Core.Sequences.html">Sequences</a> (nullable)</td>
 <td>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code></td>
 </tr>
 </tbody>
@@ -225,6 +251,11 @@ Default Search Members:<br>
 <td>Amounts</td>
 <td><a href="General.DocumentTypeAmounts.html">DocumentTypeAmounts</a></td>
 <td>List of <code>DocumentTypeAmount</code>(General.DocumentTypeAmounts.md) child objects, based on the <code>General.DocumentTypeAmount.DocumentType</code>(General.DocumentTypeAmounts.md#documenttype) back reference</td>
+</tr>
+<tr>
+<td>CostCorrectionsOptions</td>
+<td><a href="Logistics.Inventory.CostCorrectionsOptions.html">CostCorrectionsOptions</a></td>
+<td>List of <code>CostCorrectionsOption</code>(Logistics.Inventory.CostCorrectionsOptions.md) child objects, based on the <code>Logistics.Inventory.CostCorrectionsOption.DocumentType</code>(Logistics.Inventory.CostCorrectionsOptions.md#documenttype) back reference</td>
 </tr>
 <tr>
 <td>DefaultSalesOrder<br>DocumentProperties</td>
@@ -272,6 +303,11 @@ Default Search Members:<br>
 <td>List of <code>Printout</code>(General.Printouts.md) child objects, based on the <code>General.Printout.DocumentType</code>(General.Printouts.md#documenttype) back reference</td>
 </tr>
 <tr>
+<td>PurchaseInvoicesOptions</td>
+<td><a href="Logistics.Procurement.PurchaseInvoicesOptions.html">PurchaseInvoicesOptions</a></td>
+<td>List of <code>PurchaseInvoicesOption</code>(Logistics.Procurement.PurchaseInvoicesOptions.md) child objects, based on the <code>Logistics.Procurement.PurchaseInvoicesOption.DocumentType</code>(Logistics.Procurement.PurchaseInvoicesOptions.md#documenttype) back reference</td>
+</tr>
+<tr>
 <td>Routes</td>
 <td><a href="Systems.Workflow.Routes.html">Routes</a></td>
 <td>List of <code>Route</code>(Systems.Workflow.Routes.md) child objects, based on the <code>Systems.Workflow.Route.DocumentType</code>(Systems.Workflow.Routes.md#documenttype) back reference</td>
@@ -282,9 +318,24 @@ Default Search Members:<br>
 <td>List of <code>SalesOrdersOption</code>(Crm.Sales.SalesOrdersOptions.md) child objects, based on the <code>Crm.Sales.SalesOrdersOption.DocumentType</code>(Crm.Sales.SalesOrdersOptions.md#documenttype) back reference</td>
 </tr>
 <tr>
+<td>SecurityConditions</td>
+<td><a href="General.DocumentTypeSecurityConditions.html">DocumentTypeSecurityConditions</a></td>
+<td>List of <code>DocumentTypeSecurity&lt;br /&gt;Condition</code>(General.DocumentTypeSecurity<br>Conditions.md) child objects, based on the <code>General.DocumentTypeSecurity&lt;br /&gt;Condition.DocumentType</code>(General.DocumentTypeSecurity<br>Conditions.md#documenttype) back reference</td>
+</tr>
+<tr>
+<td>TransferOrdersOptions</td>
+<td><a href="Logistics.Inventory.TransferOrdersOptions.html">TransferOrdersOptions</a></td>
+<td>List of <code>TransferOrdersOption</code>(Logistics.Inventory.TransferOrdersOptions.md) child objects, based on the <code>Logistics.Inventory.TransferOrdersOption.DocumentType</code>(Logistics.Inventory.TransferOrdersOptions.md#documenttype) back reference</td>
+</tr>
+<tr>
 <td>UserStatuses</td>
 <td><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a></td>
 <td>List of <code>DocumentTypeUserStatus</code>(General.DocumentTypeUserStatuses.md) child objects, based on the <code>General.DocumentTypeUserStatus.DocumentType</code>(General.DocumentTypeUserStatuses.md#documenttype) back reference</td>
+</tr>
+<tr>
+<td>WorkOrderDocument<br>TypesOptions</td>
+<td><a href="Production.WorkOrderDocumentTypesOptions.html">WorkOrderDocumentTypesOptions</a></td>
+<td>List of <code>WorkOrderDocument&lt;br /&gt;TypesOption</code>(Production.WorkOrderDocument<br>TypesOptions.md) child objects, based on the <code>Production.WorkOrderDocument&lt;br /&gt;TypesOption.DocumentType</code>(Production.WorkOrderDocument<br>TypesOptions.md#documenttype) back reference</td>
 </tr>
 </tbody>
 </table>
@@ -293,12 +344,21 @@ Default Search Members:<br>
 <p>Unique descriptive code of the document type. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (16)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>16</strong></p>
+<h3 id="createfulfillmentsoncompletion">CreateFulfillmentsOnCompletion</h3>
+<p>When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents. <code>Required</code> <code>Default(false)</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>False</strong></p>
 <h3 id="createmanully">CreateManully</h3>
 <p>False if documents with this document type only can be generated; true - the user can create documents with this type. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong></p>
@@ -306,49 +366,68 @@ Default Search Members:<br>
 <code>IIF( obj.TransitionalDocument, False, obj.CreateManully)</code></p>
 <h3 id="description">Description</h3>
 <p>The description of this DocumentType.</p>
-<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (max)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="disallowoppositevaluesgeneration">DisallowOppositeValuesGeneration</h3>
 <p>Disallow the generation of decreasing scalar values (values with opposite directions than the original values determined by the parent document) through this document type. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="entityname">EntityName</h3>
 <p>System entity, which contains the documents. <code>Required</code> <code>Filter(multi eq)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="generatesingledocument">GenerateSingleDocument</h3>
 <p>Create maximum one document when documents from this type are generated by parent documents (usually from another document type). <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="notes">Notes</h3>
 <p>Notes for this DocumentType.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="schemaxml">SchemaXML</h3>
 <p>Obsolete. Not used.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong></p>
 <h3 id="transitionaldocument">TransitionalDocument</h3>
 <p>If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
@@ -356,19 +435,91 @@ Default Search Members:<br>
 <code>IIF( obj.CreateManully, False, obj.TransitionalDocument)</code></p>
 <h3 id="typename">TypeName</h3>
 <p>Description of the document type. <code>Required</code> <code>Filter(like)</code> <code>ORD</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="accesskey">AccessKey</h3>
 <p>The access key, containing the user permissions for this DocumentType. Null means that all users have unlimited permissions. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.AccessKeys.html">AccessKeys</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="sequence">Sequence</h3>
 <p>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Sequences.html">Sequences</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Core.Sequences.html">Sequences</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R29337.html">R29337 DocumentType - No User Statuses If Transitional</a></li>

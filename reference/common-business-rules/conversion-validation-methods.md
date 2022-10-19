@@ -5,7 +5,7 @@ Conversion ratio providers like currency directories and products have methods *
 
 They are used by the system in order to determine whether the input unit is valid and could be converted during the calculations.
  
-1. **IsConvertibleToBase** checks if using a specified provider object one measurement unit or one currency unit can be converted to the base unit of the provider. If the provider is null, the unit cannot be converted to base and the method returns as false.
+1. **IsConvertibleToBase** checks if using a specified provider object one measurement unit or one currency unit can be converted to the base unit of the provider. If the provider is null, the unit cannot be converted to base and the method returns false.
  
 When the provider is a currency directory, the method uses the **GetRatioToBaseOrDefault** method for currency directories, which finds a ratio if one of the following requirements is fulfilled:
 

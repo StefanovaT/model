@@ -16,6 +16,7 @@ A planned task (operation) in a warehouse order. Entity: Wms_Warehouse_Order_Lin
 
 | Name | Type | Description |
 | - | - | --- |
+|[Line_Group_No](#line_group_no)|`int` |Line group number. Indicates which lines are part of the same group e.g. group of components of the same composite product.|
 |[Line_No](#line_no)|`int` |Unique consecutive line number within the order.|
 |[Logistic_Unit_Id](#logistic_unit_id)|`uniqueidentifier` |Logistic unit, which should be used in the operation.|
 |[Lot_Id](#lot_id)|`uniqueidentifier` |The lot of the product, which should be used. NULL for operations, which are not lot-specific, or when any lot can be used.|
@@ -30,7 +31,7 @@ A planned task (operation) in a warehouse order. Entity: Wms_Warehouse_Order_Lin
 |[Row_Version](#row_version)|`timestamp` ||
 |[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` |The serial number of the product, which should be used. NULL for operations, which are not serial number-specific, or when any serial number can be used.|
 |[Standard_Quantity](#standard_quantity)|`decimal(12, 3)` |The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.|
-|[Task_Type](#task_type)|`nvarchar(3)` Allowed: `REC`, `DES`, `MOV`, `LBL`, `INS`, `PCK`, `UPK`, `KIT`, `RKT`, `CNT`, `TSK`|The type of the task (operation), which should be performed. REC=Receive; DES=Despatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Assemble kit; RKT=Reverse kitting; CNT=Count; TSK=Task.|
+|[Task_Type](#task_type)|`nvarchar(3)` Allowed: `REC`, `DIS`, `MOV`, `LBL`, `INS`, `PCK`, `UPK`, `KIT`, `DKT`, `CNT`, `TSK`, `CDP`, `CRC`, `ASM`, `DSM`|The type of the task (operation), which should be performed. REC=Receive; DIS=Dispatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Kit; DKT=Dekit; CNT=Count; TSK=User task; CDP=Component dispatch; CRC=Component receive; ASM=Assemble; DSM=Disassemble.|
 |[To_Warehouse_Location_Id](#to_warehouse_location_id)|`uniqueidentifier` |Destination warehouse location. NULL for operations, which do not specify destination location.|
 |[Warehouse_Location_Id](#warehouse_location_id)|`uniqueidentifier` |Location, where the opeartion should be performed. NULL for operations, which do not require location.|
 |[Warehouse_Order_Id](#warehouse_order_id)|`uniqueidentifier` ||
@@ -40,6 +41,43 @@ A planned task (operation) in a warehouse order. Entity: Wms_Warehouse_Order_Lin
 
 ## Columns
 
+### Line_Group_No
+
+
+Line group number. Indicates which lines are part of the same group e.g. group of components of the same composite product.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|1|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Line_Group_No - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
+
 ### Line_No
 
 
@@ -48,7 +86,7 @@ Unique consecutive line number within the order.
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Autoincrement|1|
+|Autoincrement|10|
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
@@ -534,11 +572,11 @@ The theoretical quantity in base measurement unit according to the current measu
 ### Task_Type
 
 
-The type of the task (operation), which should be performed. REC=Receive; DES=Despatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Assemble kit; RKT=Reverse kitting; CNT=Count; TSK=Task.
+The type of the task (operation), which should be performed. REC=Receive; DIS=Dispatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Kit; DKT=Dekit; CNT=Count; TSK=User task; CDP=Component dispatch; CRC=Component receive; ASM=Assemble; DSM=Disassemble.
 
 | Property | Value |
 | - | - |
-|Allowed Values|`REC`, `DES`, `MOV`, `LBL`, `INS`, `PCK`, `UPK`, `KIT`, `RKT`, `CNT`, `TSK`|
+|Allowed Values|`REC`, `DIS`, `MOV`, `LBL`, `INS`, `PCK`, `UPK`, `KIT`, `DKT`, `CNT`, `TSK`, `CDP`, `CRC`, `ASM`, `DSM`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

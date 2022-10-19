@@ -12,6 +12,8 @@ Default Display Text Format:
 _{PartyName:T}_  
 Default Search Members:  
 _PartyName_  
+Name Data Member:  
+_PartyName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -27,10 +29,12 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Description](Finance.Payments.PaymentSlipAmounts.md#description) | string (254) __nullable__ | Description of the payed amount. The numbers of the documents which are payed for example. 
 | [Direction](Finance.Payments.PaymentSlipAmounts.md#direction) | [Direction](Finance.Payments.PaymentSlipAmounts.md#direction) | 'I' for Payment issue, 'R' for payment receipt. `Required` `Filter(eq)` 
+| [DisplayText](Finance.Payments.PaymentSlipAmounts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Payments.PaymentSlipAmounts.md#id) | guid |  
 | [IsPartyPayment](Finance.Payments.PaymentSlipAmounts.md#ispartypayment) | boolean | Indicates whether the amount is payed or received by party or not (i.e. the amount is for fee, tax, etc.). `Required` `Default(true)` 
 | [LineNo](Finance.Payments.PaymentSlipAmounts.md#lineno) | int32 | The number of the line within the payment. `Required` 
-| [PartyName](Finance.Payments.PaymentSlipAmounts.md#partyname) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The name of the party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee). 
+| [ObjectVersion](Finance.Payments.PaymentSlipAmounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [PartyName](Finance.Payments.PaymentSlipAmounts.md#partyname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The name of the party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee). 
 | [PaymentDate](Finance.Payments.PaymentSlipAmounts.md#paymentdate) | datetime | The date on which the payment is done. `Required` `Filter(ge;le)` 
 | [TotalAmount](Finance.Payments.PaymentSlipAmounts.md#totalamount) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | The total amount payed. The distribution of the amount amongst the payment orders for this party is specified with payment slip lines. If null the total amount is calculated as sum of the amounts in the payment slip lines. `Currency: PaymentSlip.DocumentCurrency` 
 
@@ -40,7 +44,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Party](Finance.Payments.PaymentSlipAmounts.md#party) | [Parties](General.Contacts.Parties.md) (nullable) | The party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee) or the party isn't present in the database yet. `Filter(multi eq)` |
 | [PaymentReason](Finance.Payments.PaymentSlipAmounts.md#paymentreason) | [PaymentReasons](Finance.Payments.PaymentReasons.md) (nullable) | The reason for the payment, as defined in Payment Reasons. `Filter(multi eq)` |
-| [PaymentSlip](Finance.Payments.PaymentSlipAmounts.md#paymentslip) | [PaymentSlips](Finance.Payments.PaymentSlips.md) | The `PaymentSlip`(Finance.Payments.PaymentSlipAmounts.md#paymentslip) to which this PaymentSlipAmount belongs. `Required` `Filter(multi eq)` `Owner` |
+| [PaymentSlip](Finance.Payments.PaymentSlipAmounts.md#paymentslip) | [PaymentSlips](Finance.Payments.PaymentSlips.md) | The <see cref="PaymentSlip"/> to which this PaymentSlipAmount belongs. `Required` `Filter(multi eq)` `Owner` |
 
 ## Child Collections
 
@@ -56,6 +60,7 @@ Aggregate Root:
 Description of the payed amount. The numbers of the documents which are payed for example.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -65,6 +70,7 @@ _Maximum Length_: **254**
 'I' for Payment issue, 'R' for payment receipt. `Required` `Filter(eq)`
 
 _Type_: **[Direction](Finance.Payments.PaymentSlipAmounts.md#direction)**  
+_Category_: **System**  
 Allowed values for the `Direction`(Finance.Payments.PaymentOrders.md#direction) data attribute  
 _Allowed Values (Finance.Payments.PaymentOrdersRepository.Direction Enum Members)_  
 
@@ -76,10 +82,20 @@ _Allowed Values (Finance.Payments.PaymentOrdersRepository.Direction Enum Members
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -88,6 +104,7 @@ _Default Value_: **NewGuid**
 Indicates whether the amount is payed or received by party or not (i.e. the amount is for fee, tax, etc.). `Required` `Default(true)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -97,19 +114,30 @@ _Default Value_: **True**
 The number of the line within the payment. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.PaymentSlip.Amounts.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PaymentSlip.Amounts.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.PaymentSlip.Amounts.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PaymentSlip.Amounts.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### PartyName
 
 The name of the party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee).
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -120,6 +148,7 @@ _Front-End Recalc Expressions:_
 The date on which the payment is done. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -130,6 +159,7 @@ _Front-End Recalc Expressions:_
 The total amount payed. The distribution of the amount amongst the payment orders for this party is specified with payment slip lines. If null the total amount is calculated as sum of the amounts in the payment slip lines. `Currency: PaymentSlip.DocumentCurrency`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -141,6 +171,7 @@ _Supports Order By_: **False**
 The party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee) or the party isn't present in the database yet. `Filter(multi eq)`
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PaymentReason
@@ -148,17 +179,94 @@ _Supported Filters_: **Equals, EqualsIn**
 The reason for the payment, as defined in Payment Reasons. `Filter(multi eq)`
 
 _Type_: **[PaymentReasons](Finance.Payments.PaymentReasons.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PaymentSlip
 
-The `PaymentSlip`(Finance.Payments.PaymentSlipAmounts.md#paymentslip) to which this PaymentSlipAmount belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="PaymentSlip"/> to which this PaymentSlipAmount belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[PaymentSlips](Finance.Payments.PaymentSlips.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

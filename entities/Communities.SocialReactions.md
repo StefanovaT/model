@@ -24,7 +24,9 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CreationTimeUtc](Communities.SocialReactions.md#creationtimeutc) | datetime | The exact server time (in UTC), when the reaction was created. `Required` `Default(NowUtc)` 
+| [DisplayText](Communities.SocialReactions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.SocialReactions.md#id) | guid |  
+| [ObjectVersion](Communities.SocialReactions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ReactionType](Communities.SocialReactions.md#reactiontype) | [ReactionType](Communities.SocialReactions.md#reactiontype) | The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. `Required` `Filter(multi eq)` 
 
 ## References
@@ -43,22 +45,43 @@ Aggregate Tree
 The exact server time (in UTC), when the reaction was created. `Required` `Default(NowUtc)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ReactionType
 
 The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. `Required` `Filter(multi eq)`
 
 _Type_: **[ReactionType](Communities.SocialReactions.md#reactiontype)**  
+_Category_: **System**  
 Allowed values for the `ReactionType`(Communities.SocialReactions.md#reactiontype) data attribute  
 _Allowed Values (Communities.SocialReactionsRepository.ReactionType Enum Members)_  
 
@@ -82,6 +105,7 @@ _Supports Order By_: **False**
 The root data object (post, marketplace product, document, etc), for which the reaction is. `Required` `Filter(multi eq)`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### SocialComment
@@ -89,6 +113,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies that the reaction is for the specified comment within the data object. `Filter(multi eq)`
 
 _Type_: **[SocialComments](Communities.SocialComments.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### User
@@ -96,7 +121,55 @@ _Supported Filters_: **Equals, EqualsIn**
 The user, who reacted. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
 
 
 

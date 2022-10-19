@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.ProductVariants](~/entities/General.ProductVariants.md)
+Entity: [General.Products.ProductVariants](~/entities/General.Products.ProductVariants.md)
 
 Contains definitions of different variants of a product. The variants are differentiated by color, size and style. Entity: Gen_Product_Variants
 
@@ -21,6 +21,7 @@ Contains definitions of different variants of a product. The variants are differ
 |[Product_Variant_Id](#product_variant_id)|`uniqueidentifier` `PK`||
 |[Product_Variant_Name](#product_variant_name)|`nvarchar(512)` `ML`, Readonly|Product variant name. It is the concatenation of the names of the color, size and style.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Short_Code](#short_code)|`nvarchar(32)` |Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes).|
 |[Variant_Color_Id](#variant_color_id)|`uniqueidentifier` |The color of the variant. NULL means that the variant does not have a specific color.|
 |[Variant_Size_Id](#variant_size_id)|`uniqueidentifier` |The size of the variant. NULL means that the variant does not have a specific size.|
 |[Variant_Style_Id](#variant_style_id)|`uniqueidentifier` |The style of the variant. NULL means that the variant does not have a specific style.|
@@ -227,6 +228,43 @@ Product variant name. It is the concatenation of the names of the color, size an
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### Short_Code
+
+
+Short code of the variant, that is unique within the Product. Usually used as a data element in data encoded barcodes (e.g., GS1-128 barcodes).
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|32|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(32) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Short_Code - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Variant_Color_Id
 

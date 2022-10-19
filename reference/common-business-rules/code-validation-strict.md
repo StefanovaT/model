@@ -1,3 +1,7 @@
+---
+uid: code-validation-strict
+---
+
 # Code validation (strict)
 
 This code validation is stricter than the standard **[code validation](https://docs.erp.net/model/reference/common-business-rules/code-validation.html)**.

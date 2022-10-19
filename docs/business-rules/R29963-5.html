@@ -116,7 +116,8 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>IF(ProductGroup!=null &amp;&amp; ProductGroup.ConfiguratorStatus==Obligatory )
+<td>IF(ProductGroup!=null &amp;&amp; ProductGroup.ConfiguratorStatus==Obligatory &amp;&amp;
+Transaction.TransactionName != &quot;ProductConfiguratorForm&quot;)
 <br><br>
 THEN Throw</td>
 </tr>

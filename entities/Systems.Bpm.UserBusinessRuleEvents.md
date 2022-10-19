@@ -12,6 +12,8 @@ Default Display Text Format:
 _{UserBusinessRule.Name:T}_  
 Default Search Members:  
 _UserBusinessRule.Name_  
+Name Data Member:  
+_UserBusinessRule.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,11 +27,13 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Systems.Bpm.UserBusinessRuleEvents.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EventParameter](Systems.Bpm.UserBusinessRuleEvents.md#eventparameter) | string (128) __nullable__ | Registration parameter. The meaning is determined by the event. Usually - attribute name, document state, etc. 
 | [EventType](Systems.Bpm.UserBusinessRuleEvents.md#eventtype) | [EventType](Systems.Bpm.UserBusinessRuleEvents.md#eventtype) | The event for which to register the business rule. `Required` 
 | [ExecutionPriority](Systems.Bpm.UserBusinessRuleEvents.md#executionpriority) | [RuleExecutionPriority](Systems.Bpm.UserBusinessRuleEvents.md#executionpriority) | Execution priority. Lower values indicate earlier priorities. Possible values - 30-Early, 50-Normal, 70-Late. `Required` `Default(50)` 
 | [Id](Systems.Bpm.UserBusinessRuleEvents.md#id) | guid |  
 | [Layer](Systems.Bpm.UserBusinessRuleEvents.md#layer) | [Layer](Systems.Bpm.UserBusinessRuleEvents.md#layer) | Specifies the layer on which to register the event. Allowed values = FTE-FrontEnd, BKE-BackEnd. `Required` `Default("BKE")` 
+| [ObjectVersion](Systems.Bpm.UserBusinessRuleEvents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
 
@@ -40,11 +44,21 @@ Aggregate Root:
 
 ## Attribute Details
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### EventParameter
 
 Registration parameter. The meaning is determined by the event. Usually - attribute name, document state, etc.
 
 _Type_: **string (128) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
@@ -54,6 +68,7 @@ _Maximum Length_: **128**
 The event for which to register the business rule. `Required`
 
 _Type_: **[EventType](Systems.Bpm.UserBusinessRuleEvents.md#eventtype)**  
+_Category_: **System**  
 Allowed values for the `EventType`(Systems.Bpm.UserBusinessRuleEvents.md#eventtype) data attribute  
 _Allowed Values (Systems.Bpm.UserBusinessRuleEventsRepository.EventType Enum Members)_  
 
@@ -67,6 +82,7 @@ _Allowed Values (Systems.Bpm.UserBusinessRuleEventsRepository.EventType Enum Mem
 | STATECHANGED | Occurs when the document state is changed. The state is specified in the 'Event Parameter' field. Possible parameter values are 'PLANNED', 'FIRMPLANNED', 'RELEASED', 'COMPLETED' and 'CLOSED'.. Stored as 'STATECHANGED'. <br /> _Database Value:_ 'STATECHANGED' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'STATECHANGED' |
 | STATECHANGING | Occurs during the document state change. The state is specified in the 'Event Parameter' field. Possible parameter values are 'PLANNING', 'FIRMPLANNING', 'RELEASING', 'COMPLETING' and 'CLOSING'.. Stored as 'STATECHANGING'. <br /> _Database Value:_ 'STATECHANGING' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'STATECHANGING' |
 | VOIDING | Occurs during the voiding of a document.. Stored as 'VOIDING'. <br /> _Database Value:_ 'VOIDING' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'VOIDING' |
+| CREATENEW | Occurs when a new object is created. Used to fill custom defaults.. Stored as 'CREATENEW'. <br /> _Database Value:_ 'CREATENEW' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'CREATENEW' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -76,6 +92,7 @@ _Supports Order By_: **False**
 Execution priority. Lower values indicate earlier priorities. Possible values - 30-Early, 50-Normal, 70-Late. `Required` `Default(50)`
 
 _Type_: **[RuleExecutionPriority](Systems.Bpm.UserBusinessRuleEvents.md#executionpriority)**  
+_Category_: **System**  
 _Allowed Values (Aloe.SystemFrameworks.Domain.BusinessLogic.RuleExecutionPriority Enum Members)_  
 
 | Value | Description |
@@ -94,6 +111,7 @@ _Default Value_: **50**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -102,6 +120,7 @@ _Default Value_: **NewGuid**
 Specifies the layer on which to register the event. Allowed values = FTE-FrontEnd, BKE-BackEnd. `Required` `Default("BKE")`
 
 _Type_: **[Layer](Systems.Bpm.UserBusinessRuleEvents.md#layer)**  
+_Category_: **System**  
 Allowed values for the `Layer`(Systems.Bpm.UserBusinessRuleEvents.md#layer) data attribute  
 _Allowed Values (Systems.Bpm.UserBusinessRuleEventsRepository.Layer Enum Members)_  
 
@@ -114,6 +133,15 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **BackEnd**  
 
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 
 ## Reference Details
 
@@ -122,9 +150,85 @@ _Default Value_: **BackEnd**
 The rule, which will be registered for the event. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[UserBusinessRules](Systems.Bpm.UserBusinessRules.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

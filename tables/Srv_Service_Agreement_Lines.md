@@ -20,6 +20,8 @@ Service agreement lines represent the individual serviced objects that are cover
 |[Line_No](#line_no)|`int` |Consecutive line number, unique within the document. Usually is increasing in steps of 10, like in 10, 20, 30, etc.|
 |[Line_Start_Date_Time](#line_start_date_time)|`datetime` |The starting date and time of the agreement coverage for the current line.|
 |[Notes](#notes)|`nvarchar(254)` ||
+|[Parent_Document_Id](#parent_document_id)|`uniqueidentifier` |The document, which the current line executes. NULL when the current line does not execute another line.|
+|[Parent_Line_No](#parent_line_no)|`int` |The number of the line within the parent document, which the current line executes. NULL when the current line does not execute another line.|
 |[Quantity](#quantity)|`decimal(14, 3)` |The quantity of the service object that is included in the agreement|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Service_Agreement_Id](#service_agreement_id)|`uniqueidentifier` ||
@@ -44,7 +46,7 @@ The ending date and time of the agreement coverage for the current line.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -118,7 +120,7 @@ The starting date and time of the agreement coverage for the current line.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -152,7 +154,7 @@ The starting date and time of the agreement coverage for the current line.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|10|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -165,6 +167,73 @@ The starting date and time of the agreement coverage for the current line.
 |Type|nvarchar(254) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|100|
+|User Login|no|
+|Visible|yes|
+
+### Parent_Document_Id
+
+
+The document, which the current line executes. NULL when the current line does not execute another line.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|11|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Documents](Gen_Documents.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Parent_Document_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Parent_Line_No
+
+
+The number of the line within the parent document, which the current line executes. NULL when the current line does not execute another line.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|10|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
 |User Login|no|
 |Visible|yes|
 
@@ -182,7 +251,7 @@ The quantity of the service object that is included in the agreement
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -215,7 +284,7 @@ The quantity of the service object that is included in the agreement
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -349,7 +418,7 @@ The type (level) of service that is agreed
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

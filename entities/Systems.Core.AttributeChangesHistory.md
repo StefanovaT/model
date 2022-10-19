@@ -42,6 +42,7 @@ Aggregate Tree
 ### AttributeName
 
 _Type_: **string (64)**  
+_Category_: **System**  
 _Inherited From_: **Sys_Attribute_Changes_Table.Attribute_Name**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
@@ -52,12 +53,14 @@ _Maximum Length_: **64**
 The id of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. `Required` `Filter(multi eq)` `Inherited from Sys_Object_Changes_Table.Entity_Item_Id`
 
 _Type_: **guid**  
+_Category_: **System**  
 _Inherited From_: **Sys_Object_Changes_Table.Entity_Item_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### NewValue
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Inherited From_: **Sys_Attribute_Changes_Table.New_Value**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
@@ -68,6 +71,7 @@ _Maximum Length_: **2147483647**
 The previous value. `Required` `Filter(eq)`
 
 _Type_: **string (max)**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -77,6 +81,7 @@ _Maximum Length_: **2147483647**
 The repository of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. `Required` `Filter(multi eq;like)` `Inherited from Sys_Object_Changes_Table.Repository_Name`
 
 _Type_: **string (64)**  
+_Category_: **System**  
 _Inherited From_: **Sys_Object_Changes_Table.Repository_Name**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
@@ -87,6 +92,7 @@ _Maximum Length_: **64**
 Date and time (in Utc) when the changeset was processed by the server. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ORD` `Inherited from Sys_Object_Changesets_Table.Time_Utc`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Inherited From_: **Sys_Object_Changesets_Table.Time_Utc**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
@@ -100,6 +106,7 @@ _Default Value_: **CurrentDateTimeUtc**
 The user which initiated the change. null when it is unknown. `Filter(multi eq)` `Inherited from Sys_Object_Changesets_Table.User_Id`
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Category_: **System**  
 _Inherited From_: **Sys_Object_Changesets_Table.User_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 

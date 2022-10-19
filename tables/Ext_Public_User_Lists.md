@@ -1,11 +1,15 @@
 # Table Ext_Public_User_Lists
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Systems.External.PublicUserLists](~/entities/Systems.External.PublicUserLists.md)
 
-Each list represents a unique collection of public users. Entity: Ext_Public_User_Lists
+Each list represents a unique collection of public users. Entity: Ext_Public_User_Lists (Obsoleted in version 22.1.6.73)
 
 ## Summary
 

@@ -85,6 +85,8 @@
 <p>Default Display Text Format:<br>
 <em>{DocumentType.EntityName}</em><br>
 Default Search Members:<br>
+<em>DocumentType.EntityName</em><br>
+Name Data Member:<br>
 <em>DocumentType.EntityName</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
@@ -108,6 +110,11 @@ Aggregate Root:<br>
 <td>Percent of the sales order amount to be payed.</td>
 </tr>
 <tr>
+<td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#duedateformmethod">DueDateFormMethod</a></td>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#duedateformmethod">PaymentPlanDueDateSource</a></td>
 <td>Method to determine the payment due date. SLS = Use sales order date, INV = Use invoice date, EXP = Specify the date explicitly, SDD = Sales order due date, IDD = Invoice due date. <code>Required</code></td>
@@ -121,6 +128,11 @@ Aggregate Root:<br>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#installmentnumber">InstallmentNumber</a></td>
 <td>int32</td>
 <td>Consequtive installment number. Used for identifying different payments generated according this payment plan. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#paymenttermdays">PaymentTermDays</a></td>
@@ -147,7 +159,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#documenttype">DocumentType</a></td>
 <td><a href="General.DocumentTypes.html">DocumentTypes</a></td>
-<td>The <code>DocumentType</code>(General.DocumentTypes.md) to which this DefaultSalesOrder<br>PaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
+<td>The <see cref="General.DocumentType"></see> to which this DefaultSalesOrder<br>PaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#enterprisecompany">EnterpriseCompany</a></td>
@@ -175,13 +187,21 @@ Aggregate Root:<br>
 <h3 id="amountpercent">AmountPercent</h3>
 <p>Percent of the sales order amount to be payed.</p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( obj.Remainder, null, obj.AmountPercent)</code></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="duedateformmethod">DueDateFormMethod</h3>
 <p>Method to determine the payment due date. SLS = Use sales order date, INV = Use invoice date, EXP = Specify the date explicitly, SDD = Sales order due date, IDD = Invoice due date. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#duedateformmethod">PaymentPlanDueDateSource</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Generic enum type for PaymentPlanDueDateSource properties<br>
 <em>Allowed Values (Crm.PaymentPlanDueDateSource Enum Members)</em></p>
 <table>
@@ -219,20 +239,29 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="installmentnumber">InstallmentNumber</h3>
 <p>Consequtive installment number. Used for identifying different payments generated according this payment plan. <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c =&gt; c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
+<code>( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c =&gt; c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c =&gt; c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
+<code>( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c =&gt; c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="paymenttermdays">PaymentTermDays</h3>
 <p>Payment term in days, which are to be added to form the payment due date. 0 means that the date determined by Due_Date_Form_Method and Explicit_Payment_Due_Date is taken as due date. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong></p>
@@ -243,6 +272,7 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <h3 id="remainder">Remainder</h3>
 <p>Indicates wheather this amount is the remainder of the document. Amount = Total amount of the sales order - explicitly specified amounts in the plan (by Amount_Percent). <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
@@ -250,30 +280,104 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <code>IIF( ( obj.AmountPercent != null), False, obj.Remainder)</code></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
-<p>The <code>DocumentType</code>(General.DocumentTypes.md) to which this DefaultSalesOrderPaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p>The <see cref="General.DocumentType"></see> to which this DefaultSalesOrderPaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>Enterprise company for which the current default installment template is valid. If enterprise company is not set then the installment template is valid for all enterprise companies. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="enterprisecompanylocation">EnterpriseCompanyLocation</h3>
 <p>Enterprise company location (within the chosen enterprise company) for which the current default installment template is valid. If enterprise company location is not set then the installment template is valid for all enterprise company locations. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.EnterpriseCompany.Company != obj.EnterpriseCompanyLocation.Company), null, obj.EnterpriseCompanyLocation)</code></p>
 <h3 id="paymentaccount">PaymentAccount</h3>
 <p>Default payment account for the current installment. null means that there is no default account. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentAccounts.html">PaymentAccounts</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PaymentType.GetDefaultPaymentAccount( ).IfNullThen( obj.PaymentAccount)</code></p>
 <h3 id="paymenttype">PaymentType</h3>
 <p>Default payment type for the current installment. null means that there is no default payment type. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentTypes.html">PaymentTypes</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R27162.html">R27162 DefaultSalesOrderPaymentPlan - Check Document Type</a></li>

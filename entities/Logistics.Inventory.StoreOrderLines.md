@@ -25,6 +25,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Logistics.Inventory.StoreOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ForOrdering](Logistics.Inventory.StoreOrderLines.md#forordering) | boolean | Specifies that the quantity of the product can be less than free to use quantity, because the product will be supplied . `Required` `Default(false)` 
 | [GuaranteePeriodDays](Logistics.Inventory.StoreOrderLines.md#guaranteeperioddays) | int32 __nullable__ | Guarantee period in days for the offered product. null for non-serviced products. 
 | [Id](Logistics.Inventory.StoreOrderLines.md#id) | guid |  
@@ -32,6 +33,7 @@ Aggregate Root:
 | [LineNo](Logistics.Inventory.StoreOrderLines.md#lineno) | int32 | Line number within the store order. `Required` `Filter(eq)` 
 | [LotNumber](Logistics.Inventory.StoreOrderLines.md#lotnumber) | string (16) __nullable__ | Obsolete. Not used. 
 | [Notes](Logistics.Inventory.StoreOrderLines.md#notes) | string (254) __nullable__ | Notes for this StoreOrderLine. 
+| [ObjectVersion](Logistics.Inventory.StoreOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineId](Logistics.Inventory.StoreOrderLines.md#parentlineid) | guid __nullable__ | Id of the line of the parent document, which generated the store order. null for user-entered store orders or if not applicable. `Filter(multi eq)` 
 | [ParentLineNo](Logistics.Inventory.StoreOrderLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. `Filter(eq)` 
 | [PersistLot](Logistics.Inventory.StoreOrderLines.md#persistlot) | boolean | If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. `Required` `Default(false)` `Filter(eq)` 
@@ -45,25 +47,35 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Logistics.Inventory.StoreOrderLines.md#document) | [StoreOrders](Logistics.Inventory.StoreOrders.md) | The `StoreOrder`(Logistics.Inventory.StoreOrderLines.md#storeorder) to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` |
+| [Document](Logistics.Inventory.StoreOrderLines.md#document) | [StoreOrders](Logistics.Inventory.StoreOrders.md) | The <see cref="StoreOrder"/> to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Inventory.StoreOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | If non-null, contains the specific lot to use for the movement. `Filter(multi eq)` |
 | [ParentDocument](Logistics.Inventory.StoreOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [Product](Logistics.Inventory.StoreOrderLines.md#product) | [Products](General.Products.Products.md) | The product which should be received/issued. `Required` `Filter(multi eq)` |
-| [ProductVariant](Logistics.Inventory.StoreOrderLines.md#productvariant) | [ProductVariants](General.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
+| [ProductVariant](Logistics.Inventory.StoreOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.StoreOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [SalesOrderLine](Logistics.Inventory.StoreOrderLines.md#salesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable) | Sales order line which is managed by this store order line. When specified sales order line is used to make the margin analysis. `Filter(multi eq)` |
 | [SerialNumber](Logistics.Inventory.StoreOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)` |
 | [StoreBin](Logistics.Inventory.StoreOrderLines.md#storebin) | [StoreBins](Logistics.Inventory.StoreBins.md) (nullable) | From/to which store bin to issue/receive the products. null means that the store bin is unknown or not applicable. `Filter(multi eq)` |
-| [StoreOrder](Logistics.Inventory.StoreOrderLines.md#storeorder) | [StoreOrders](Logistics.Inventory.StoreOrders.md) | The `StoreOrder`(Logistics.Inventory.StoreOrderLines.md#storeorder) to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [StoreOrder](Logistics.Inventory.StoreOrderLines.md#storeorder) | [StoreOrders](Logistics.Inventory.StoreOrders.md) | The <see cref="StoreOrder"/> to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ForOrdering
 
 Specifies that the quantity of the product can be less than free to use quantity, because the product will be supplied . `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -73,6 +85,7 @@ _Default Value_: **False**
 Guarantee period in days for the offered product. null for non-serviced products.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -82,6 +95,7 @@ _Front-End Recalc Expressions:_
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -90,6 +104,7 @@ _Default Value_: **NewGuid**
 Total cost for the line in the currency of the document. Equals Quantity * Unit_Cost. `Currency: StoreOrder.DocumentCurrency`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -98,6 +113,7 @@ _Supports Order By_: **False**
 Line number within the store order. `Required` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -111,6 +127,7 @@ _Front-End Recalc Expressions:_
 Obsolete. Not used.
 
 _Type_: **string (16) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
@@ -120,9 +137,19 @@ _Maximum Length_: **16**
 Notes for this StoreOrderLine.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentLineId
 
@@ -130,6 +157,7 @@ Id of the line of the parent document, which generated the store order. null for
 
 _Type_: **guid __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentLineNo
@@ -137,6 +165,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. `Filter(eq)`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -145,6 +174,7 @@ _Supports Order By_: **False**
 If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -154,6 +184,7 @@ _Default Value_: **False**
 Quantity ordered for receipt/issue. `Unit: QuantityUnit` `Required` `Default(0)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -163,6 +194,7 @@ _Default Value_: **Constant**
 Quantity in the base (default) measurement unit of the Item (calculated at the time of last update of the current store order line). Should be updated in parallel with each Quantity update. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -177,6 +209,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -190,6 +223,7 @@ _Front-End Recalc Expressions:_
 Exact time when the transaction for this store order line changes the cost of the product. `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -198,6 +232,7 @@ _Supports Order By_: **False**
 Cost for 1 unit of measure in the currency of the document. `Currency: StoreOrder.DocumentCurrency`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -206,10 +241,11 @@ _Supports Order By_: **False**
 
 ### Document
 
-The `StoreOrder`(Logistics.Inventory.StoreOrderLines.md#storeorder) to which this StoreOrderLine belongs. `Required` `Filter(multi eq)`
+The <see cref="StoreOrder"/> to which this StoreOrderLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[StoreOrders](Logistics.Inventory.StoreOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -217,6 +253,7 @@ _Supported Filters_: **Equals, EqualsIn**
 If non-null, contains the specific lot to use for the movement. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentDocument
@@ -225,6 +262,7 @@ The document, which the current line executes. null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -232,13 +270,15 @@ _Supported Filters_: **Equals, EqualsIn**
 The product which should be received/issued. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProductVariant
 
 If specified determines which product variant of the current product in this line is used. `Filter(multi eq)`
 
-_Type_: **[ProductVariants](General.ProductVariants.md) (nullable)**  
+_Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -246,6 +286,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -256,6 +297,7 @@ Sales order line which is managed by this store order line. When specified sales
 
 _Type_: **[SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### SerialNumber
@@ -263,6 +305,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### StoreBin
@@ -270,17 +313,94 @@ _Supported Filters_: **Equals, EqualsIn**
 From/to which store bin to issue/receive the products. null means that the store bin is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### StoreOrder
 
-The `StoreOrder`(Logistics.Inventory.StoreOrderLines.md#storeorder) to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="StoreOrder"/> to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[StoreOrders](Logistics.Inventory.StoreOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

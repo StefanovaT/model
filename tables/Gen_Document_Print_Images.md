@@ -7,10 +7,6 @@ Entity: [General.DocumentPrintImages](~/entities/General.DocumentPrintImages.md)
 
 Contains the data of a printout of a document as it was obtained from the data source in the moment of printing. Entity: Gen_Document_Print_Images
 
-## Owner Tables Hierarchy
-
-* [Gen_Printout_Layouts](Gen_Printout_Layouts.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -131,7 +127,7 @@ The print layout, which was used for the current printout.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

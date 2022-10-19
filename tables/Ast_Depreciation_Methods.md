@@ -13,7 +13,7 @@ Depreciation methods. Contains both system-defined and user-defined methods. Ent
 | - | - | --- |
 |[Depreciation_Function](#depreciation_function)|`nvarchar(3)` Allowed: `FAC`, `STL`, `SYD`, `TAB`|Basic mathematical depreciation function used to calculate asset depreciation. STL=Straight Line, SYD=Sum of Years Digits, FAC=Depreciation change by factor, TAB=User defined with table|
 |[Depreciation_Method_Id](#depreciation_method_id)|`uniqueidentifier` `PK`||
-|[Depreciation_Method_Name](#depreciation_method_name)|`nvarchar(254)` ||
+|[Depreciation_Method_Name](#depreciation_method_name)|`nvarchar(254)` `ML`|Multilanguage string|
 |[Factor](#factor)|`decimal(5, 3)` |Factor used in factor depreciation function. Factor < 1 means declining depreciation; >1 - increasing. The depreciation is multiplied for each period by the factor|
 |[Is_System](#is_system)|`bit` Readonly|Is_System is True for those depreciation methods that are managed by the system via update procedures and cannot be edited by the user.|
 |[Months_In_A_Period](#months_in_a_period)|`int` |Number of equal valued months calculated with single application of the function|
@@ -89,6 +89,9 @@ Basic mathematical depreciation function used to calculate asset depreciation. S
 
 ### Depreciation_Method_Name
 
+
+Multilanguage string
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -108,7 +111,7 @@ Basic mathematical depreciation function used to calculate asset depreciation. S
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254)|
+|Type|nvarchar(254) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|

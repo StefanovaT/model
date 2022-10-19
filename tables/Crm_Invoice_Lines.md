@@ -21,7 +21,7 @@ Detail records (lines) of the invoices. Entity: Crm_Invoice_Lines
 |[Intrastat_Apply_Date](#intrastat_apply_date)|`datetime` |Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used.|
 |[Intrastat_Transaction_Nature_Code](#intrastat_transaction_nature_code)|`nvarchar(2)` Allowed: `11`, `12`, `13`, `14`, `19`, `21`, `22`, `23`, `29`, `60`, `70`, `80`, `91`, `99`, `30`, `41`, `42`, `51`, `52`|Transaction nature; used for Intrastat reporting|
 |[Intrastat_Transport_Country_Id](#intrastat_transport_country_id)|`uniqueidentifier` |Country of origin of the transport company; used for Intrastat reporting|
-|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|Transport mode; used for Intrastat reporting|
+|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|Transport mode; used for Intrastat reporting|
 |[Invoice_Id](#invoice_id)|`uniqueidentifier` ||
 |[Invoice_Line_Id](#invoice_line_id)|`uniqueidentifier` `PK`||
 |[Invoice_Order_Line_Id](#invoice_order_line_id)|`uniqueidentifier` |Invoice order line which is invoiced by this line|
@@ -218,7 +218,7 @@ Transport mode; used for Intrastat reporting
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

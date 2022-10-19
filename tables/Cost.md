@@ -12,6 +12,5 @@
 * [Cost_Template_Cost_Types](Cost_Template_Cost_Types.md)
 * [Cost_Template_Levels](Cost_Template_Levels.md)
 * [Cost_Templates](Cost_Templates.md)
-* [Cost_Type_Property_Values](Cost_Type_Property_Values.md)
 * [Cost_Types](Cost_Types.md)
 

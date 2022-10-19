@@ -15,6 +15,7 @@ The different steps performed to create products. Entity: Prd_Operations
 
 | Name | Type | Description |
 | - | - | --- |
+|[Active](#active)|`bit` |Indicates whether the current operation is active.|
 |[Description](#description)|`nvarchar(max)` ||
 |[Id](#id)|`uniqueidentifier` `PK`||
 |[Minimum_Concurrent_Start_Time_Minutes](#minimum_concurrent_start_time_minutes)|`int` |How many minutes after the start of this operation can the next operation start. NULL means that the next operation should wait this operation to finish before starting|
@@ -34,6 +35,42 @@ The different steps performed to create products. Entity: Prd_Operations
 
 ## Columns
 
+### Active
+
+
+Indicates whether the current operation is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|16|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`True`|no|no|
+
 ### Description
 
 | Property | Value |
@@ -46,7 +83,7 @@ The different steps performed to create products. Entity: Prd_Operations
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -73,7 +110,7 @@ The different steps performed to create products. Entity: Prd_Operations
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -109,7 +146,7 @@ How many minutes after the start of this operation can the next operation start.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -139,7 +176,7 @@ The time required for the product to move to the next operation. During this tim
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -166,7 +203,7 @@ The time required for the product to move to the next operation. During this tim
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -203,7 +240,7 @@ Full instructions for the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -237,7 +274,7 @@ Full instructions for the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|50|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -270,7 +307,7 @@ Full instructions for the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -300,7 +337,7 @@ The time required to process one product lot. The run time is calculated for eac
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -331,7 +368,7 @@ The percentage (0..1) of scrap usually occurring during the production operation
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -361,7 +398,7 @@ The time required to setup the operation. The setup is incurred only once, regar
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -391,7 +428,7 @@ Standard price for 1 hour work for this operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -422,7 +459,7 @@ Short description of the needed instruments for the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -452,7 +489,7 @@ Quantity of the resource that need to be allocated for the operation, in base me
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -482,7 +519,7 @@ The time required to wait after completing the operation. During this time, the 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -512,7 +549,7 @@ When not NULL, specifies the Workgroup Resource, which is required by the operat
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

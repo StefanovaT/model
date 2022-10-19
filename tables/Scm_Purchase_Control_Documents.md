@@ -1,11 +1,15 @@
 # Table Scm_Purchase_Control_Documents
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Logistics.Procurement.PurchaseControlDocuments](~/entities/Logistics.Procurement.PurchaseControlDocuments.md)
 
-The main document for purchase control data. The purchase control is used to tally all orders and execuctions in the purchasing module. Entity: Scm_Purchase_Control_Documents (Introduced in version 18.2)
+The main document for purchase control data. The purchase control is used to tally all orders and execuctions in the purchasing module. Entity: Scm_Purchase_Control_Documents (Introduced in version 18.2) (Obsoleted in version 22.1.6.73)
 
 ## Owner Tables Hierarchy
 

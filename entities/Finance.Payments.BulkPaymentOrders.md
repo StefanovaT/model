@@ -13,6 +13,8 @@ Default Display Text Format:
 _{DocumentType.TypeName:T} {DocumentNo}_  
 Default Search Members:  
 _DocumentNo_  
+Code Data Member:  
+_DocumentNo_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,11 +27,12 @@ Aggregate Tree
   * [General.DocumentComments](General.DocumentComments.md)  
   * [General.DocumentDistributedAmounts](General.DocumentDistributedAmounts.md)  
   * [General.DocumentFileAttachments](General.DocumentFileAttachments.md)  
+  * [General.DocumentFulfillments](General.DocumentFulfillments.md)  
   * [General.DocumentLineAmounts](General.DocumentLineAmounts.md)  
+  * [General.DocumentParties](General.DocumentParties.md)  
   * [General.DocumentPrints](General.DocumentPrints.md)  
   * [General.DocumentStateChanges](General.DocumentStateChanges.md)  
   * [General.DocumentVersions](General.DocumentVersions.md)  
-  * [General.Documents.DocumentParties](General.Documents.DocumentParties.md)  
 
 ## Attributes
 
@@ -41,17 +44,20 @@ Aggregate Tree
 | [CompleteTime](Finance.Payments.BulkPaymentOrders.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Finance.Payments.BulkPaymentOrders.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationUser](Finance.Payments.BulkPaymentOrders.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [DisplayText](Finance.Payments.BulkPaymentOrders.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DocumentDate](Finance.Payments.BulkPaymentOrders.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md)) 
 | [DocumentNo](Finance.Payments.BulkPaymentOrders.md#documentno) | string (20) | Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.md)) 
 | [DocumentNotes](Finance.Payments.BulkPaymentOrders.md#documentnotes) | string (max) __nullable__ | Notes for this Document. (Inherited from [Documents](General.Documents.md)) 
 | [DocumentVersion](Finance.Payments.BulkPaymentOrders.md#documentversion) | int32 | Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [EntityName](Finance.Payments.BulkPaymentOrders.md#entityname) | string (64) | The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [Id](Finance.Payments.BulkPaymentOrders.md#id) | guid |  
+| [<s>IsReleased</s>](Finance.Payments.BulkPaymentOrders.md#isreleased) | boolean | **OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` 
 | [IsSingleExecution](Finance.Payments.BulkPaymentOrders.md#issingleexecution) | boolean | Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
+| [ObjectVersion](Finance.Payments.BulkPaymentOrders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Finance.Payments.BulkPaymentOrders.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Finance.Payments.BulkPaymentOrders.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [PlanningOnly](Finance.Payments.BulkPaymentOrders.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReadOnly](Finance.Payments.BulkPaymentOrders.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ReferenceDate](Finance.Payments.BulkPaymentOrders.md#referencedate) | datetime __nullable__ | The date to which this document refers, i.e. when the action really occurred. If null, Document_Date is taken. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
+| [ReferenceDate](Finance.Payments.BulkPaymentOrders.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDocumentNo](Finance.Payments.BulkPaymentOrders.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
 | [ReleaseTime](Finance.Payments.BulkPaymentOrders.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [State](Finance.Payments.BulkPaymentOrders.md#state) | [DocumentState](Finance.Payments.BulkPaymentOrders.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -78,7 +84,7 @@ Aggregate Tree
 | [PrimeCauseDocument](Finance.Payments.BulkPaymentOrders.md#primecausedocument) | [Documents](General.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ResponsiblePerson](Finance.Payments.BulkPaymentOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Finance.Payments.BulkPaymentOrders.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [Sequence](Finance.Payments.BulkPaymentOrders.md#sequence) | [Sequences](General.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [Sequence](Finance.Payments.BulkPaymentOrders.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [ToCompanyDivision](Finance.Payments.BulkPaymentOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Finance.Payments.BulkPaymentOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [UserStatus](Finance.Payments.BulkPaymentOrders.md#userstatus) | [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
@@ -91,9 +97,10 @@ Aggregate Tree
 | DistributedAmounts | [DocumentDistributedAmounts](General.DocumentDistributedAmounts.md) | List of `DocumentDistributed<br />Amount`(General.DocumentDistributedAmounts.md) child objects, based on the `General.DocumentDistributedAmount.Document`(General.DocumentDistributedAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | DocumentAmounts | [DocumentAmounts](General.DocumentAmounts.md) | List of `DocumentAmount`(General.DocumentAmounts.md) child objects, based on the `General.DocumentAmount.Document`(General.DocumentAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | FileAttachments | [DocumentFileAttachments](General.DocumentFileAttachments.md) | List of `DocumentFileAttachment`(General.DocumentFileAttachments.md) child objects, based on the `General.DocumentFileAttachment.Document`(General.DocumentFileAttachments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Fulfillments | [DocumentFulfillments](General.DocumentFulfillments.md) | List of `DocumentFulfillment`(General.DocumentFulfillments.md) child objects, based on the `General.DocumentFulfillment.Document`(General.DocumentFulfillments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | LineAmounts | [DocumentLineAmounts](General.DocumentLineAmounts.md) | List of `DocumentLineAmount`(General.DocumentLineAmounts.md) child objects, based on the `General.DocumentLineAmount.Document`(General.DocumentLineAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | Lines | [BulkPaymentOrderLines](Finance.Payments.BulkPaymentOrderLines.md) | List of `BulkPaymentOrderLine`(Finance.Payments.BulkPaymentOrderLines.md) child objects, based on the `Finance.Payments.BulkPaymentOrderLine.BulkPaymentOrder`(Finance.Payments.BulkPaymentOrderLines.md#bulkpaymentorder) back reference 
-| Parties | [DocumentParties](General.Documents.DocumentParties.md) | List of `DocumentParty`(General.Documents.DocumentParties.md) child objects, based on the `General.Documents.DocumentParty.Document`(General.Documents.DocumentParties.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Parties | [DocumentParties](General.DocumentParties.md) | List of `DocumentParty`(General.DocumentParties.md) child objects, based on the `General.DocumentParty.Document`(General.DocumentParties.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | Prints | [DocumentPrints](General.DocumentPrints.md) | List of `DocumentPrint`(General.DocumentPrints.md) child objects, based on the `General.DocumentPrint.Document`(General.DocumentPrints.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | StateChanges | [DocumentStateChanges](General.DocumentStateChanges.md) | List of `DocumentStateChange`(General.DocumentStateChanges.md) child objects, based on the `General.DocumentStateChange.Document`(General.DocumentStateChanges.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | Versions | [DocumentVersions](General.DocumentVersions.md) | List of `DocumentVersion`(General.DocumentVersions.md) child objects, based on the `General.DocumentVersion.Document`(General.DocumentVersions.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
@@ -106,6 +113,7 @@ Aggregate Tree
 Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -115,6 +123,7 @@ _Default Value_: **0**
 Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -123,6 +132,7 @@ _Supports Order By_: **False**
 The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -132,6 +142,7 @@ _Maximum Length_: **64**
 Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -140,6 +151,7 @@ _Supports Order By_: **False**
 Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
@@ -149,9 +161,19 @@ _Default Value_: **CurrentDateTime**
 The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (64)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### DocumentDate
 
@@ -159,6 +181,7 @@ The date on which the document was issued. `Required` `Default(Today)` `Filter(e
 
 _Type_: **date**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Default Value_: **CurrentDate**  
@@ -169,6 +192,7 @@ Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `O
 
 _Type_: **string (20)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **20**  
@@ -178,6 +202,7 @@ _Maximum Length_: **20**
 Notes for this Document. (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -187,6 +212,7 @@ _Maximum Length_: **2147483647**
 Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
@@ -197,6 +223,7 @@ The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly`
 
 _Type_: **string (64)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
@@ -205,23 +232,45 @@ _Maximum Length_: **64**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### IsReleased
+
+**OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **False**  
 
 ### IsSingleExecution
 
 Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentDocumentRelationshipType
 
 Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[ParentDocument<br />RelationshipType](Finance.Payments.BulkPaymentOrders.md#parentdocumentrelationshiptype) __nullable__**  
+_Category_: **System**  
 Relationship between parent and child documents  
 _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_  
 
@@ -229,6 +278,7 @@ _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_
 | ---- | --- |
 | Subtask | The child document is a sub-task of the parent document. (Complete child to complete parent) <br /> _Database Value:_ 'S' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Subtask' |
 | NextTask | The child document is next task of the parent document. (Complete parent to complete child) <br /> _Database Value:_ 'N' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'NextTask' |
+| IndependentTask | The document is not dependent of neither child nor parent document. <br /> _Database Value:_ 'I' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'IndependentTask' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -238,6 +288,7 @@ _Supports Order By_: **False**
 Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -247,15 +298,17 @@ _Default Value_: **False**
 True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 
 ### ReferenceDate
 
-The date to which this document refers, i.e. when the action really occurred. If null, Document_Date is taken. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md))
+Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
@@ -265,6 +318,7 @@ _Default Value_: **CurrentDate**
 The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (20) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
@@ -274,6 +328,7 @@ _Maximum Length_: **20**
 Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -282,6 +337,7 @@ _Supports Order By_: **False**
 The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[DocumentState](Finance.Payments.BulkPaymentOrders.md#state)**  
+_Category_: **System**  
 Enumeration of document system states  
 _Allowed Values (General.DocumentState Enum Members)_  
 
@@ -305,6 +361,7 @@ True if the document is null and void. `Required` `Default(false)` `Filter(eq)` 
 
 _Type_: **boolean**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -314,6 +371,7 @@ _Default Value_: **False**
 Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -323,6 +381,7 @@ _Maximum Length_: **254**
 Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -331,6 +390,7 @@ _Supports Order By_: **False**
 The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -343,6 +403,7 @@ _Maximum Length_: **64**
 The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AdjustedDocument
@@ -351,6 +412,7 @@ The primary document, which the current document adjusts. null when this is not 
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AssignedToUser
@@ -358,6 +420,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### CurrencyDirectory
@@ -365,6 +428,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DocumentType
@@ -373,6 +437,7 @@ The user defined type of the document. Determines document behaviour, properties
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompany
@@ -381,6 +446,7 @@ The enterprise company which issued the document. `Required` `Filter(multi eq)` 
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompanyLocation
@@ -388,6 +454,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### FromCompanyDivision
@@ -395,6 +462,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### FromParty
@@ -402,6 +470,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### MasterDocument
@@ -410,6 +479,7 @@ In a multi-document tree, this is the root document, that created the whole tree
 
 _Type_: **[Documents](General.Documents.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Parent
@@ -418,6 +488,7 @@ In a multi-document tree, this is the direct parent document. If this is the roo
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PrimeCauseDocument
@@ -426,6 +497,7 @@ The document that is the prime cause for creation of the current document. `Filt
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ResponsiblePerson
@@ -433,6 +505,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ReverseOfDocument
@@ -440,13 +513,15 @@ _Supported Filters_: **Equals, EqualsIn**
 The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Sequence
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[Sequences](General.Sequences.md) (nullable)**  
+_Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ToCompanyDivision
@@ -454,6 +529,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ToParty
@@ -461,6 +537,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -471,6 +548,7 @@ _Back-End Default Expression:_
 The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 
@@ -511,6 +589,23 @@ _Domain API Request_: **POST**
 
 
 The process of changing the document state is very labor intensive and includes              validation, generation of sub-documents and some other document-specific tasks.                          The state changing process might be very time-consuming, usually ranging              from 500 to 5000 milliseconds.                          Document states usually can only be advanced to higher states, but there are              exceptions from this rule. Database settings and configuration options might affect             the allowed state changes.                          Numerous kinds of document-specific and generic exceptions can be thrown during the             process.
+
+### ProcessSingleRoute
+
+Processes the document route.               (Inherited from [Documents](General.Documents.md))  
+_Return Type_: **void**  
+_Declaring Type_: **[Documents](General.Documents.md)**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **route**  
+      
+    _Type_: [Routes](Systems.Workflow.Routes.md)  
+
+  * **processForLowerDocumentStates**  
+      
+    _Type_: boolean  
+
 
 ### Complete
 
@@ -563,6 +658,12 @@ _Domain API Request_: **POST**
      _Optional_: True  
     _Default Value_: VoidDocument  
 
+  * **resetParentState**  
+    Resets the parent state of document.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: True  
+
 
 ### GetPrintout
 
@@ -608,6 +709,77 @@ _Domain API Request_: **GET**
      _Optional_: True  
     _Default Value_: False  
 
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

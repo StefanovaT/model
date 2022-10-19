@@ -39,6 +39,7 @@ Aggregate Tree
 ### Cnt
 
 _Type_: **int64**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -47,6 +48,7 @@ _Supports Order By_: **False**
 The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. `Required`
 
 _Type_: **[ReactionType](Communities.SocialReactionsSummary.md#reactiontype)**  
+_Category_: **System**  
 Allowed values for the `ReactionType`(Communities.SocialReactionsSummary.md#reactiontype) data attribute  
 _Allowed Values (Communities.SocialReactionsSummaryRepository.ReactionType Enum Members)_  
 
@@ -70,6 +72,8 @@ _Supports Order By_: **False**
 . `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
+_Indexed_: **True**  
+_Category_: **System**  
 _Inherited From_: **Sys_Objects_Table.Object_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
@@ -77,6 +81,7 @@ _Default Value_: **NewGuid**
 ### SocialComment
 
 _Type_: **[SocialComments](Communities.SocialComments.md)**  
+_Category_: **System**  
 _Inherited From_: **Cmm_Social_Comments_Table.Social_Comment_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  

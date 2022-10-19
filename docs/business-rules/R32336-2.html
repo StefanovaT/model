@@ -73,8 +73,8 @@
 <h1 id="r32336-2-templateline---set-line-values">R32336-2 TemplateLine - Set Line Values</h1>
 
 <table>
-<col style="width:18.8%">
-<col style="width:81.2%">
+<col style="width:18.03%">
+<col style="width:81.97%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
@@ -119,17 +119,17 @@ Legislations</strong></td>
 <td><strong>Action</strong></td>
 <td><p>The rule sets AmountRowId, AmountSourceFilter, AmountColumnName, AmountRowName in NULL, and
 TemplateLineProperty.PropertyValueSourceType, TemplateLineProperty.PropertyValueSource
-according to the following conditions:
-if (AmountSourceName != NULL) &amp;&amp;
-(AmountSourceName == ExchangeDifferenceAmountSource ||
-AmountSourceName == AccountBalanceAmountSource) &amp;&amp;
-(TemplateLineProperty.PropertyValueSourceType == NULL)
+according to the following conditions:    <br>
+if (AmountSourceName != NULL) &amp;&amp;    <br>
+(AmountSourceName == ExchangeDifferenceAmountSource ||  <br>
+AmountSourceName == AccountBalanceAmountSource) &amp;&amp;    <br>
+(TemplateLineProperty.PropertyValueSourceType == NULL)   <br>
 then TemplateLineProperty.PropertyValueSourceType = &quot;AccountItemKey&quot;</p>
-<p>if (TemplateLineProperty.PropertyValueSourceType != NULL) &amp;&amp;
-(TemplateLineProperty.PropertyValueSourceType == &quot;System properties for cycle source&quot; ||
-TemplateLineProperty.PropertyValueSourceType == &quot;User defined properties for amount source&quot; ||
-TemplateLineProperty.PropertyValueSourceType == &quot;User defined properties for amount
-source and referenced records&quot;)
+<p>if (TemplateLineProperty.PropertyValueSourceType != NULL) &amp;&amp; <br>
+(TemplateLineProperty.PropertyValueSourceType == &quot;System properties for cycle source&quot; || <br>
+TemplateLineProperty.PropertyValueSourceType == &quot;User defined properties for amount source&quot; || <br>
+TemplateLineProperty.PropertyValueSourceType == &quot;User defined properties for amount     <br>
+source and referenced records&quot;)                      <br>
 then TemplateLineProperty.PropertyValueSourceType = NULL</p>
 </td>
 </tr>

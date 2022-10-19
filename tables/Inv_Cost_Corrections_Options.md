@@ -7,6 +7,10 @@ Entity: [Logistics.Inventory.CostCorrectionsOptions](~/entities/Logistics.Invent
 
 Options per document type for the cost corrections. Entity: Inv_Cost_Corrections_Options
 
+## Owner Tables Hierarchy
+
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -67,7 +71,7 @@ The document type for which we specify the options.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

@@ -26,7 +26,7 @@ Contains purchase invoice headers. Entity: Scm_Purchase_Invoices
 |[Intrastat_Destination_Region_Id](#intrastat_destination_region_id)|`uniqueidentifier` |Region, which is the final destination of the goods. Used for Intrastat reporting. When this is non-NULL, it applies to the whole document.|
 |[Intrastat_Transaction_Nature_Code](#intrastat_transaction_nature_code)|`nvarchar(2)` Allowed: `11`, `12`, `13`, `14`, `19`, `21`, `22`, `23`, `29`, `60`, `70`, `80`, `91`, `99`, `30`, `41`, `42`, `51`, `52`|Transaction nature; used for Intrastat reporting|
 |[Intrastat_Transport_Country_Id](#intrastat_transport_country_id)|`uniqueidentifier` |Country of origin of the transport company; used for Intrastat reporting|
-|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|Transport mode; used for Intrastat reporting|
+|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|Transport mode; used for Intrastat reporting|
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
 |[Is_Single_Execution](#is_single_execution)|`bit` Readonly|Specifies whether the document is a single execution of its order document.|
 |[Payment_Account_Id](#payment_account_id)|`uniqueidentifier` |When not NULL, specifies the default payment account for the payment order|
@@ -435,7 +435,7 @@ Transport mode; used for Intrastat reporting
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

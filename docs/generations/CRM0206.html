@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CRM0206 Create VAT Entry | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="CRM0206 Create VAT Entry | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="crm0206-create-vat-entry">CRM0206 Create VAT Entry</h1>
+
+<h2 id="basic-information">Basic Information</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Module</th>
+<th>Crm.Invoices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Code</td>
+<td>CRM0206</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent Document</td>
+<td>Invoice</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sub-document</td>
+<td>VAT.Entries</td>
+</tr>
+<tr>
+<td style="text-align: left;">Full Name</td>
+<td>Create VAT sales ledger entries</td>
+</tr>
+<tr>
+<td style="text-align: left;">Status</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/generation-procedures.html">ACTIVE</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Deterministic</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Supports Transitional Documents</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Replaces</td>
+<td>GenerateEntry; GenerateEntrySkipNote</td>
+</tr>
+<tr>
+<td style="text-align: left;">Orphan Rows</td>
+<td>Forbid</td>
+</tr>
+<tr>
+<td style="text-align: left;">Split Function</td>
+<td>InvoiceLine.LineDealType</td>
+</tr>
+<tr>
+<td style="text-align: left;">Introduced In Version</td>
+<td>2022</td>
+</tr>
+<tr>
+<td style="text-align: left;">Date of Suspension</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-logic">Business Logic</h2>
+<p>The generation is used for creating sales VAT entries from Invoices. These records contain VAT Amount and VAT Base Amount from current Invoice and are used for collecting data  for the creating of the VAT Declaration for the reporting period.</p>
+<p>Different lines in the Invoice may have different Line Deal Types. For each of these Line Deal Type have to be created a separate VAT Entry. Therefore, at the beginning of the generation procedure, the lines of the invoice have to be divided into sets by their Deal Type.</p>
+<p>For each set of lines is calculated the sum of the distributed VAT amounts. The algorithm of this calculation is described below:
+<br><em>Тo make the algorithm more understandable, we will introduce several auxiliary variables. The values of these variables will be used in the descriptions of the Metrics and the creation of the new document.</em></p>
+<pre><code>VATDealType = the LineDealType of the current set of invoice lines
+
+VATDocumentAmountType = Invoice.EnterpriseCompany.VATDocumentAmountType
+ 
+VATDocumentAmountCurrency = IIF(Invoice.DocumentAmounts.InputAmountCurrency is not Null, Invoice.DocumentAmounts.InputAmountCurrency Where Invoice.DocumentAmounts.DocumentAmountType = VATDocumentAmountType, Invoice.DocumentCurrency)
+
+DealTypeAmount = SUM (Invoice.DocumentDistributedAmount/Amount) WHERE DocumentLineId = InvoiceLine DocumentAmountType=VATDocumentAmountType Group By LineDealType
+
+DealTypeBaseAmount = SUM (Invoice.DocumentDistributedAmount/BaseAmount) WHERE DocumentLineId = InvoiceLine DocumentAmountType=VATDocumentAmountType Group By LineDealType
+
+VATDealType = InvoiceLine.LineDealType Group By LineDealType - it is same which is used for grouping in DealTypeAmount and DealTypeBaseAmount.
+</code></pre>
+<p>The Document table attributes are filled in as described in <a href="../reference/standard-document-attributes.html">Standard Document Attributes</a>.</p>
+<h2 id="fulfillments">Fulfillments</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th>InvoiceLineToVATEnrty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Parent Entity</td>
+<td>InvoiceLine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Child Entity</td>
+<td>VAT.Entry</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent / Child Relations</td>
+<td>Entry.ParentDocument = Invoice; Entry.DealType = DealType; Entry.RegistrationVATNumber = Invoice.Customer.RegistrationVATNumber, Entry.RegistrationNumber = Invoice.Customer.RegistrationNumber, VATEntry.ApplyDate = Invoice.ApplyDate</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics"><a href="../reference/metrics.html">Metrics</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fulfillment Name</th>
+<th style="text-align: center;">Metric Name</th>
+<th style="text-align: center;">Measurement Unit</th>
+<th style="text-align: left;">Parent Value</th>
+<th style="text-align: left;">Child Value</th>
+<th style="text-align: left;">New Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">InvoiceLineToVATEnrty</td>
+<td style="text-align: center;">AmountBase</td>
+<td style="text-align: center;">VATDocumentAmountCurrency</td>
+<td style="text-align: left;">DealTypeAmount</td>
+<td style="text-align: left;">Entry.AmountBase</td>
+<td style="text-align: left;">YES</td>
+</tr>
+<tr>
+<td style="text-align: left;">InvoiceLineToVATEnrty</td>
+<td style="text-align: center;">VATAmountBase</td>
+<td style="text-align: center;">VATDocumentAmountCurrency</td>
+<td style="text-align: left;">DealTypeBaseAmount</td>
+<td style="text-align: left;">Entry.VATAmountBase</td>
+<td style="text-align: left;">YES</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The new VAT Entries are created as follows:</strong></p>
+<pre><code> 
+Entry.EntryType = Sales
+
+Entry.DealType = VATDealType
+
+Entry.Party = Invoice.Customer.Party
+
+Entry.RegistrationNumber = 
+       if Invoice.Customer.Party.PartyType = Company, then Entry.RegistrationVATNumber = Invoice.Customer.RegistrationVATNumber
+           
+       if (Invoice.Customer.RegistrationNumber.HasValue and Invoice.Customer.Party.PartyType = Company), then Entry.RegistrationNumber = Invoice.Customer.RegistrationNumber
+        
+       if Invoice.Customer.Party.PartyType = Person, then Entry.RegistrationNumber = Invoice.Customer.Party.Person.NationalNumber
+
+Entry.ReferencedDocumentType = Invoice.DocumentType
+
+Entry.ReferencedDocumentNo = Invoice.DocumentNo
+
+Entry.AmountBase = CONVERT( Remaining(AmountBase), BaseCurrency)
+
+Entry.VATAmountBase = CONVERT( Remaining(VATAmountBase), BaseCurrency)
+
+Entry.ApplyDate = Invoice.ApplyDate
+
+Entry.CashReportingMode = Invoice.VATCashReportingMode
+
+VATEntry.Notes =
+       if Invoice.VATNotes.HasValue, then VATEntry.Notes = Invoice.VATNotes
+       else if  Entry.EnterpriseCompany is Bulgaria, then VATEntry.Notes = &quot;Продажба на стоки/услуги.&quot;
+
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>RegistrationVATNumber, RegistrationNumber And VATNotes <strong>can</strong> be null if there is no value for them.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/CRM0206.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

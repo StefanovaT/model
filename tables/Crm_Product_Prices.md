@@ -397,6 +397,12 @@ Minimal quantity required to use this price (in the Price_Quantity_Measurement_U
 |User Login|no|
 |Visible|no|
 
+#### Notes - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
+
 ### Price
 
 

@@ -1,11 +1,15 @@
 # Table Cms_Web_Sites
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Applications.Cms.WebSites](~/entities/Applications.Cms.WebSites.md)
 
-Contains the public web sites. Entity: Cms_Web_Sites
+Contains the public web sites. Entity: Cms_Web_Sites (Obsoleted in version 22.1.6.73)
 
 ## Summary
 

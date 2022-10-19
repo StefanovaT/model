@@ -12,13 +12,16 @@ Default Display Text Format:
 _{Company.PartyName:T}_  
 Default Search Members:  
 _Company.RegistrationNumber; Company.PartyName_  
+Code Data Member:  
+_Company.RegistrationNumber_  
+Name Data Member:  
+_Company.PartyName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Tree  
 * [General.EnterpriseCompanies](General.EnterpriseCompanies.md)  
-  * [Finance.Assets.Assets](Finance.Assets.Assets.md)  
   * [Applications.Fleet.Crews](Applications.Fleet.Crews.md)  
     * [Applications.Fleet.CrewMembers](Applications.Fleet.CrewMembers.md)  
   * [Applications.Fleet.VehicleSets](Applications.Fleet.VehicleSets.md)  
@@ -35,9 +38,11 @@ Aggregate Tree
 | [DefaultCostingMethod](General.EnterpriseCompanies.md#defaultcostingmethod) | [DefaultCostingMethod](General.EnterpriseCompanies.md#defaultcostingmethod) | Default method for cost evaluation (if not specified in the product). Currently supported: EXP - Explicit lot specifying; AVG - Average cost. `Required` `Default("AVG")` 
 | [DefaultCustomer<br />CreditLimitBase](General.EnterpriseCompanies.md#defaultcustomercreditlimitbase) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | Customer credit limit, which is used by default when creating new customers. It is specified in the base currency of the enterprise company. `Currency: BaseCurrency` `Filter(eq;like)` 
 | [DefaultLanguage](General.EnterpriseCompanies.md#defaultlanguage) | [DefaultLanguage](General.EnterpriseCompanies.md#defaultlanguage) __nullable__ | The default language for multi-language names in the definitions (like Customer_Name, Product_Name, ...). `Default("en")` 
+| [DisplayText](General.EnterpriseCompanies.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EditPeriodStartDate](General.EnterpriseCompanies.md#editperiodstartdate) | datetime __nullable__ | Start date of the priod when the documents can be edited. 
 | [Id](General.EnterpriseCompanies.md#id) | guid |  
 | [IsActive](General.EnterpriseCompanies.md#isactive) | boolean | Indicates whether the current Enterprise company  is active. `Required` `Default(true)` `Filter(multi eq)` `Introduced in version 20.1` 
+| [ObjectVersion](General.EnterpriseCompanies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PrintImagesRetentionMonths](General.EnterpriseCompanies.md#printimagesretentionmonths) | int32 | A period of months for which the printed images of the documents will be kept. `Required` `Default(60)` `Filter(multi eq;ge;le)` `Introduced in version 20.1` 
 | [UIBaseColor](General.EnterpriseCompanies.md#uibasecolor) | int32 __nullable__ | When not null, specifies the background color to use for visualization of the UI when the current enterprise company is selected. The color is in RGBA color format. `Introduced in version 18.2` 
 
@@ -57,7 +62,6 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Assets | [Assets](Finance.Assets.Assets.md) | List of `Asset`(Finance.Assets.Assets.md) child objects, based on the `Finance.Assets.Asset.EnterpriseCompany`(Finance.Assets.Assets.md#enterprisecompany) back reference 
 | BGVATDeclaringPersons | [BGVATDeclaringPersons](Finance.Vat.BGVATDeclaringPersons.md) | List of `BGVATDeclaringPerson`(Finance.Vat.BGVATDeclaringPersons.md) child objects, based on the `Finance.Vat.BGVATDeclaringPerson.EnterpriseCompany`(Finance.Vat.BGVATDeclaringPersons.md#enterprisecompany) back reference 
 | Crews | [Crews](Applications.Fleet.Crews.md) | List of `Crew`(Applications.Fleet.Crews.md) child objects, based on the `Applications.Fleet.Crew.EnterpriseCompany`(Applications.Fleet.Crews.md#enterprisecompany) back reference 
 | MapPoints | [MapPoints](General.Geography.MapPoints.md) | List of `MapPoint`(General.Geography.MapPoints.md) child objects, based on the `General.Geography.MapPoint.EnterpriseCompany`(General.Geography.MapPoints.md#enterprisecompany) back reference 
@@ -72,6 +76,7 @@ Aggregate Tree
 Defines the period for which BI extracts data. BI includes documents with "Document Date" greater than or equal to "BI Start Date". `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -80,6 +85,7 @@ _Supports Order By_: **False**
 Default method for cost evaluation (if not specified in the product). Currently supported: EXP - Explicit lot specifying; AVG - Average cost. `Required` `Default("AVG")`
 
 _Type_: **[DefaultCostingMethod](General.EnterpriseCompanies.md#defaultcostingmethod)**  
+_Category_: **System**  
 Allowed values for the `DefaultCostingMethod`(General.EnterpriseCompanies.md#defaultcostingmethod) data attribute  
 _Allowed Values (General.EnterpriseCompaniesRepository.DefaultCostingMethod Enum Members)_  
 
@@ -98,6 +104,7 @@ _Default Value_: **AverageCost**
 Customer credit limit, which is used by default when creating new customers. It is specified in the base currency of the enterprise company. `Currency: BaseCurrency` `Filter(eq;like)`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 
@@ -106,6 +113,7 @@ _Supports Order By_: **False**
 The default language for multi-language names in the definitions (like Customer_Name, Product_Name, ...). `Default("en")`
 
 _Type_: **[DefaultLanguage](General.EnterpriseCompanies.md#defaultlanguage) __nullable__**  
+_Category_: **System**  
 Allowed values for the `DefaultLanguage`(General.EnterpriseCompanies.md#defaultlanguage) data attribute  
 _Allowed Values (General.EnterpriseCompaniesRepository.DefaultLanguage Enum Members)_  
 
@@ -118,11 +126,21 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **English**  
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### EditPeriodStartDate
 
 Start date of the priod when the documents can be edited.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -130,6 +148,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -138,15 +157,26 @@ _Default Value_: **NewGuid**
 Indicates whether the current Enterprise company  is active. `Required` `Default(true)` `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PrintImagesRetentionMonths
 
 A period of months for which the printed images of the documents will be kept. `Required` `Default(60)` `Filter(multi eq;ge;le)` `Introduced in version 20.1`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **60**  
@@ -156,6 +186,7 @@ _Default Value_: **60**
 When not null, specifies the background color to use for visualization of the UI when the current enterprise company is selected. The color is in RGBA color format. `Introduced in version 18.2`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -167,6 +198,7 @@ _Supports Order By_: **False**
 The access key, containing the user permissions for this EnterpriseCompany. Null means that all users have unlimited permissions. `Filter(multi eq)`
 
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AdvanceProduct
@@ -174,6 +206,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Product that is used for handling advances in trade documents. `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### BaseCurrency
@@ -181,6 +214,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The base currency for summary reporting for this company. `Required` `Filter(multi eq)`
 
 _Type_: **[Currencies](General.Currencies.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Company
@@ -189,6 +223,7 @@ Contains the base company data on which this enterprise company is based. `Requi
 
 _Type_: **[Companies](General.Contacts.Companies.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ExchangeDifferenceCreditAccount
@@ -196,6 +231,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Account for balancing accounting vouchers with credit difference due to currency exchanges. `Filter(multi eq)`
 
 _Type_: **[Accounts](Finance.Accounting.Accounts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ExchangeDifferenceDebitAccount
@@ -203,6 +239,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Account for balancing accounting vouchers with debit difference due to currency exchanges. `Filter(multi eq)`
 
 _Type_: **[Accounts](Finance.Accounting.Accounts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### VATDocumentAmountType
@@ -210,8 +247,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The document amount that is used to determine the amount of the VAT entries when they are generated. `Filter(multi eq)`
 
 _Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

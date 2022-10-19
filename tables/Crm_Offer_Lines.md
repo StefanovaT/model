@@ -328,6 +328,12 @@ The end customer is the customer of the dealer. It is stored for information pur
 |User Login|no|
 |Visible|yes|
 
+#### Line_No - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Line_Standard_Discount_Percent
 
 

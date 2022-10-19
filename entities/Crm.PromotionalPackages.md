@@ -12,6 +12,10 @@ Default Display Text Format:
 _{Name}_  
 Default Search Members:  
 _Code; Name_  
+Code Data Member:  
+_Code_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -26,8 +30,10 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Active](Crm.PromotionalPackages.md#active) | boolean | Package status: true = the offer is available for new documents; false = otherwise. `Required` `Default(true)` `Filter(eq)` 
 | [Code](Crm.PromotionalPackages.md#code) | string (20) | Unique code of the promotional package. `Required` `Filter(eq;like)` `ORD` 
+| [DisplayText](Crm.PromotionalPackages.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.PromotionalPackages.md#id) | guid |  
 | [Name](Crm.PromotionalPackages.md#name) | string (254) | The name of this PromotionalPackage. `Required` `Filter(eq;like)` `ORD` 
+| [ObjectVersion](Crm.PromotionalPackages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ValidForCustomerFilterXML](Crm.PromotionalPackages.md#validforcustomerfilterxml) | dataaccessfilter __nullable__ | When not null, the package is valid only for the customers, that match the filter. 
 | [ValidForDistribution<br />ChannelFilterX<br />ML](Crm.PromotionalPackages.md#validfordistributionchannelfilterxml) | dataaccessfilter __nullable__ | When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria. 
 | [ValidForShipTo<br />CustomerFilter<br />XML](Crm.PromotionalPackages.md#validforshiptocustomerfilterxml) | dataaccessfilter __nullable__ | When not null, specifies validity condition for the Ship To Customer of the sales document. 
@@ -61,6 +67,7 @@ Aggregate Tree
 Package status: true = the offer is available for new documents; false = otherwise. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -71,14 +78,25 @@ Unique code of the promotional package. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (20)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **20**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -88,15 +106,26 @@ The name of this PromotionalPackage. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (254)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ValidForCustomerFilterXML
 
 When not null, the package is valid only for the customers, that match the filter.
 
 _Type_: **dataaccessfilter __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -105,6 +134,7 @@ _Supports Order By_: **False**
 When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria.
 
 _Type_: **dataaccessfilter __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -113,6 +143,7 @@ _Supports Order By_: **False**
 When not null, specifies validity condition for the Ship To Customer of the sales document.
 
 _Type_: **dataaccessfilter __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -121,6 +152,7 @@ _Supports Order By_: **False**
 When not null specifies the first date when the package is valid for offering. The date is compared against the document date. `Filter(eq;ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -129,6 +161,7 @@ _Supports Order By_: **False**
 When not null specifies the last date (inclusive) when the package is valid. The date is compared against the document date. `Filter(eq;ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -140,6 +173,7 @@ _Supports Order By_: **False**
 Тhe marketing campaign to which the current definition belongs. `Filter(multi eq)` `Introduced in version 22.1.4.67`
 
 _Type_: **[Campaigns](Crm.Marketing.Campaigns.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompany
@@ -147,6 +181,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, indicates that the package is valid only for the specified enterprise company. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompanyLocation
@@ -154,6 +189,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The Enterprise Company Location to which this PromotionalPackage applies, or null if it is for all enterprise company locations. `Filter(multi eq)`
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ValidForCustomer
@@ -161,6 +197,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, the package is valid only for the specified customer. `Filter(multi eq)`
 
 _Type_: **[Customers](Crm.Customers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ValidForDistributionChannel
@@ -168,6 +205,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, the package is valid only for the specified distribution channel of the sales order. `Filter(multi eq)`
 
 _Type_: **[DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ValidForPriceList
@@ -175,6 +213,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, the package is valid only for the specified price list. `Filter(multi eq)`
 
 _Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ValidForShipToCustomer
@@ -182,6 +221,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies that the package is valid only when the sales document is for the specified Ship To Customer. `Filter(multi eq)`
 
 _Type_: **[Customers](Crm.Customers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ValidForTargetGroup
@@ -189,8 +229,84 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, the package is valid only for the specified customer target group. `Filter(multi eq)`
 
 _Type_: **[TargetGroups](Crm.Marketing.TargetGroups.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

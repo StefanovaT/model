@@ -5,7 +5,7 @@
 
 Entity: [Crm.Marketing.MarketingActivities](~/entities/Crm.Marketing.MarketingActivities.md)
 
-Marketing activity, part of a marketing campaign. Entity: Crm_Activities
+Marketing activity, part of a marketing campaign. Entity: Crm_Activities (Introduced in version 22.1.5.60)
 
 ## Owner Tables Hierarchy
 

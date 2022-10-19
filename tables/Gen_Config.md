@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Config](~/entities/General.Config.md)
+Entity: [Systems.Core.Config](~/entities/Systems.Core.Config.md)
 
 Hierarchical repository of configuration options. Entity: Gen_Config
 

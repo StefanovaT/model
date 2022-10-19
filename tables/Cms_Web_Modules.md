@@ -1,11 +1,15 @@
 # Table Cms_Web_Modules
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Applications.Cms.WebModules](~/entities/Applications.Cms.WebModules.md)
 
-The abstract basic building block of web sites. Each module can render multiple web pages. Entity: Cms_Web_Modules
+The abstract basic building block of web sites. Each module can render multiple web pages. Entity: Cms_Web_Modules (Obsoleted in version 22.1.6.73)
 
 ## Owner Tables Hierarchy
 

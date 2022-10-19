@@ -12,6 +12,8 @@ Default Display Text Format:
 _{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
+Name Data Member:  
+_DocumentType.EntityName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -26,9 +28,11 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AmountPercent](Crm.Sales.DefaultSalesOrderPaymentPlans.md#amountpercent) | decimal (7, 6) __nullable__ | Percent of the sales order amount to be payed. 
+| [DisplayText](Crm.Sales.DefaultSalesOrderPaymentPlans.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DueDateFormMethod](Crm.Sales.DefaultSalesOrderPaymentPlans.md#duedateformmethod) | [PaymentPlanDueDateSource](Crm.Sales.DefaultSalesOrderPaymentPlans.md#duedateformmethod) | Method to determine the payment due date. SLS = Use sales order date, INV = Use invoice date, EXP = Specify the date explicitly, SDD = Sales order due date, IDD = Invoice due date. `Required` 
 | [Id](Crm.Sales.DefaultSalesOrderPaymentPlans.md#id) | guid |  
 | [InstallmentNumber](Crm.Sales.DefaultSalesOrderPaymentPlans.md#installmentnumber) | int32 | Consequtive installment number. Used for identifying different payments generated according this payment plan. `Required` 
+| [ObjectVersion](Crm.Sales.DefaultSalesOrderPaymentPlans.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PaymentTermDays](Crm.Sales.DefaultSalesOrderPaymentPlans.md#paymenttermdays) | int32 | Payment term in days, which are to be added to form the payment due date. 0 means that the date determined by Due_Date_Form_Method and Explicit_Payment_Due_Date is taken as due date. `Required` `Default(0)` 
 | [Remainder](Crm.Sales.DefaultSalesOrderPaymentPlans.md#remainder) | boolean | Indicates wheather this amount is the remainder of the document. Amount = Total amount of the sales order - explicitly specified amounts in the plan (by Amount_Percent). `Required` `Default(false)` 
 
@@ -36,7 +40,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentType](Crm.Sales.DefaultSalesOrderPaymentPlans.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The `DocumentType`(General.DocumentTypes.md) to which this DefaultSalesOrder<br />PaymentPlan belongs. `Required` `Filter(multi eq)` `Owner` |
+| [DocumentType](Crm.Sales.DefaultSalesOrderPaymentPlans.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The <see cref="General.DocumentType"/> to which this DefaultSalesOrder<br />PaymentPlan belongs. `Required` `Filter(multi eq)` `Owner` |
 | [EnterpriseCompany](Crm.Sales.DefaultSalesOrderPaymentPlans.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | Enterprise company for which the current default installment template is valid. If enterprise company is not set then the installment template is valid for all enterprise companies. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Crm.Sales.DefaultSalesOrderPaymentPlans.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | Enterprise company location (within the chosen enterprise company) for which the current default installment template is valid. If enterprise company location is not set then the installment template is valid for all enterprise company locations. `Filter(multi eq)` |
 | [PaymentAccount](Crm.Sales.DefaultSalesOrderPaymentPlans.md#paymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | Default payment account for the current installment. null means that there is no default account. `Filter(multi eq)` |
@@ -50,16 +54,27 @@ Aggregate Root:
 Percent of the sales order amount to be payed.
 
 _Type_: **decimal (7, 6) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Front-End Recalc Expressions:_  
 `IIF( obj.Remainder, null, obj.AmountPercent)`
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### DueDateFormMethod
 
 Method to determine the payment due date. SLS = Use sales order date, INV = Use invoice date, EXP = Specify the date explicitly, SDD = Sales order due date, IDD = Invoice due date. `Required`
 
 _Type_: **[PaymentPlanDueDateSource](Crm.Sales.DefaultSalesOrderPaymentPlans.md#duedateformmethod)**  
+_Category_: **System**  
 Generic enum type for PaymentPlanDueDateSource properties  
 _Allowed Values (Crm.PaymentPlanDueDateSource Enum Members)_  
 
@@ -78,6 +93,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -86,19 +102,30 @@ _Default Value_: **NewGuid**
 Consequtive installment number. Used for identifying different payments generated according this payment plan. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c => c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c => c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c => c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c => c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 1)`
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### PaymentTermDays
 
 Payment term in days, which are to be added to form the payment due date. 0 means that the date determined by Due_Date_Form_Method and Explicit_Payment_Due_Date is taken as due date. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -113,6 +140,7 @@ _Front-End Recalc Expressions:_
 Indicates wheather this amount is the remainder of the document. Amount = Total amount of the sales order - explicitly specified amounts in the plan (by Amount_Percent). `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -124,9 +152,10 @@ _Front-End Recalc Expressions:_
 
 ### DocumentType
 
-The `DocumentType`(General.DocumentTypes.md) to which this DefaultSalesOrderPaymentPlan belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="General.DocumentType"/> to which this DefaultSalesOrderPaymentPlan belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -135,6 +164,7 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 Enterprise company for which the current default installment template is valid. If enterprise company is not set then the installment template is valid for all enterprise companies. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompanyLocation
@@ -142,6 +172,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Enterprise company location (within the chosen enterprise company) for which the current default installment template is valid. If enterprise company location is not set then the installment template is valid for all enterprise company locations. `Filter(multi eq)`
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -151,6 +182,7 @@ _Front-End Recalc Expressions:_
 Default payment account for the current installment. null means that there is no default account. `Filter(multi eq)`
 
 _Type_: **[PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -160,8 +192,84 @@ _Front-End Recalc Expressions:_
 Default payment type for the current installment. null means that there is no default payment type. `Filter(multi eq)`
 
 _Type_: **[PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

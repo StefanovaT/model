@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Finance.Excise.ExciseStampTypes Entity | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Finance.Excise.ExciseStampTypes Entity | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Finance.Excise.ExciseStampTypes">
+<h1 id="financeexciseexcisestamptypes-entity">Finance.Excise.ExciseStampTypes Entity</h1>
+
+<p><strong>Namespace:</strong> <a href="Finance.Excise.html">Finance.Excise</a></p>
+<p>The different types of tax stamps (aka Excise Labels) which are applied to the excise products. Tax stamps denote paid or due excise. The types of tax stamps are differentiated by product, capacity, alcoholic strength and other criteria. Entity: Exc_Excise_Stamp_Types (Introduced in version 22.1.5.83)</p>
+<h2 id="default-visualization">Default Visualization</h2>
+<p>Default Display Text Format:<br>
+<em>{Code}: {Name}</em><br>
+Default Search Members:<br>
+<em>Code; Name</em><br>
+Code Data Member:<br>
+<em>Code</em><br>
+Name Data Member:<br>
+<em>Name</em></p>
+<h2 id="aggregate">Aggregate</h2>
+<p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="Finance.Excise.ExciseStampTypes.html">Finance.Excise.ExciseStampTypes</a></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#alcoholicstrength">AlcoholicStrength</a></td>
+<td>decimal (5, 2) <strong>nullable</strong></td>
+<td>Percentage of pure alcohol used in excise duty reporting. <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#capacity">Capacity</a></td>
+<td>decimal (6, 4) <strong>nullable</strong></td>
+<td>Package capacity - number of cigarettes or volume of alcohol in liters. <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#category">Category</a></td>
+<td><a href="Finance.Excise.ExciseStampTypes.html#category">Category</a></td>
+<td>Specifies the excise product category of the excise stamp - alcohol, tobacco, and others. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#code">Code</a></td>
+<td>string (32)</td>
+<td>The unique code of the ExciseStampType. <code>Required</code> <code>Filter(multi eq;like)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#exciseamountperstamp">ExciseAmountPerStamp</a></td>
+<td>decimal (5, 2) <strong>nullable</strong></td>
+<td>The excise duty, which is charged with one excise label. <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#id">Id</a></td>
+<td>guid</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#isactive">IsActive</a></td>
+<td>boolean</td>
+<td>Indicates whether this excise stamp type is active and usable for choosing in new documents. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#name">Name</a></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
+<td>The name of this ExciseStampType. <code>Required</code> <code>Filter(like)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#notes">Notes</a></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>Notes for this ExciseStampType.</td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#commoditycode">CommodityCode</a></td>
+<td><a href="Finance.Intrastat.CommodityCodes.html">CommodityCodes</a></td>
+<td>Harmonized commodity code of the products, as defined by EU and/or the applicable authority. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#exciseproduct">ExciseProduct</a></td>
+<td><a href="Finance.Excise.ExciseProducts.html">ExciseProducts</a></td>
+<td>The excise product, defined by the taxation and customs authorities. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampTypes.html#measurementunit">MeasurementUnit</a></td>
+<td><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</td>
+<td>The unit of measure in which the product is reported. <code>Filter(multi eq)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-details">Attribute Details</h2>
+<h3 id="alcoholicstrength">AlcoholicStrength</h3>
+<p>Percentage of pure alcohol used in excise duty reporting. <code>Default(0)</code></p>
+<p><em>Type</em>: <strong>decimal (5, 2) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>0</strong></p>
+<h3 id="capacity">Capacity</h3>
+<p>Package capacity - number of cigarettes or volume of alcohol in liters. <code>Default(0)</code></p>
+<p><em>Type</em>: <strong>decimal (6, 4) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>0</strong></p>
+<h3 id="category">Category</h3>
+<p>Specifies the excise product category of the excise stamp - alcohol, tobacco, and others. <code>Required</code></p>
+<p><em>Type</em>: <strong><a href="Finance.Excise.ExciseStampTypes.html#category">Category</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>Category</code>(Finance.Excise.ExciseStampTypes.md#category) data attribute<br>
+<em>Allowed Values (Finance.Excise.ExciseStampTypesRepository.Category Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExciseStampFor<br>TobaccoProducts</td>
+<td>Excise Stamp for Tobacco Products. Stored as 'TT'. <br> <em>Database Value:</em> 'TT' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'ExciseStampFor<br>TobaccoProducts'</td>
+</tr>
+<tr>
+<td>ExciseStampFor<br>AlcoholProducts</td>
+<td>Excise Stamp for Alcohol Products . Stored as 'AA'. <br> <em>Database Value:</em> 'AA' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'ExciseStampFor<br>AlcoholProducts'</td>
+</tr>
+<tr>
+<td>DutyFree</td>
+<td>Duty Free. Stored as 'DF'. <br> <em>Database Value:</em> 'DF' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'DutyFree'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="code">Code</h3>
+<p>The unique code of the ExciseStampType. <code>Required</code> <code>Filter(multi eq;like)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>string (32)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Maximum Length</em>: <strong>32</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
+<h3 id="exciseamountperstamp">ExciseAmountPerStamp</h3>
+<p>The excise duty, which is charged with one excise label. <code>Default(0)</code></p>
+<p><em>Type</em>: <strong>decimal (5, 2) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>0</strong></p>
+<h3 id="id">Id</h3>
+<p><em>Type</em>: <strong>guid</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong></p>
+<h3 id="isactive">IsActive</h3>
+<p>Indicates whether this excise stamp type is active and usable for choosing in new documents. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>True</strong></p>
+<h3 id="name">Name</h3>
+<p>The name of this ExciseStampType. <code>Required</code> <code>Filter(like)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="notes">Notes</h3>
+<p>Notes for this ExciseStampType.</p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
+<h2 id="reference-details">Reference Details</h2>
+<h3 id="commoditycode">CommodityCode</h3>
+<p>Harmonized commodity code of the products, as defined by EU and/or the applicable authority. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Finance.Intrastat.CommodityCodes.html">CommodityCodes</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="exciseproduct">ExciseProduct</h3>
+<p>The excise product, defined by the taxation and customs authorities. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Finance.Excise.ExciseProducts.html">ExciseProducts</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="measurementunit">MeasurementUnit</h3>
+<p>The unit of measure in which the product is reported. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h2 id="business-rules">Business Rules</h2>
+<p>None</p>
+<h2 id="front-end-business-rules">Front-End Business Rules</h2>
+<p>None</p>
+<h2 id="api">API</h2>
+<p>Domain API Query:
+<a href="https://demodb.my.erp.net/api/domain/odata/Finance_Excise_ExciseStampTypes?$top=10">https://demodb.my.erp.net/api/domain/odata/Finance_Excise_ExciseStampTypes?$top=10</a></p>
+<p>Domain API Query Builder:
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Finance_Excise_ExciseStampTypes?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Finance_Excise_ExciseStampTypes?$top=10</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Finance.Excise.ExciseStampTypes.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

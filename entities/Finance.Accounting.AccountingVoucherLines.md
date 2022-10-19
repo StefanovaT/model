@@ -31,9 +31,11 @@ Aggregate Root:
 | [CreditBase](Finance.Accounting.AccountingVoucherLines.md#creditbase) | [Amount (18, 2)](../data-types.md#amount) | The amount of credit in base currency. `Currency: Voucher.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` 
 | [Debit](Finance.Accounting.AccountingVoucherLines.md#debit) | [Amount (18, 2)](../data-types.md#amount) | The amount of the debit in the currency of the account. 0 means that the account is not debited. `Currency: Currency` `Required` `Default(0)` 
 | [DebitBase](Finance.Accounting.AccountingVoucherLines.md#debitbase) | [Amount (18, 2)](../data-types.md#amount) | The amount of debit in base currency. `Currency: Voucher.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` 
+| [DisplayText](Finance.Accounting.AccountingVoucherLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Accounting.AccountingVoucherLines.md#id) | guid |  
 | [ItemKey](Finance.Accounting.AccountingVoucherLines.md#itemkey) | string (64) __nullable__ | The item (grouping) key for the account in the line. Account_Id + Item_Key - the smallest unit of calculation for account balance. `Filter(eq;like)` 
 | [LineNo](Finance.Accounting.AccountingVoucherLines.md#lineno) | int32 | Consecutive number of the line within the voucher. `Required` 
+| [ObjectVersion](Finance.Accounting.AccountingVoucherLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RateDivisor](Finance.Accounting.AccountingVoucherLines.md#ratedivisor) | decimal (18, 6) | The divisor for conversion from Debit/Credit to base currency. `Required` `Default(1)` 
 | [RateMultiplier](Finance.Accounting.AccountingVoucherLines.md#ratemultiplier) | decimal (18, 6) | The multiplier for conversion from Debit/Credit to base currency. `Required` `Default(1)` 
 
@@ -57,6 +59,7 @@ Aggregate Root:
 The number of the correspondance group within the accounting voucher. For each correspondance group, the debits are equal to the credits. `Required` `Default(0)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -66,6 +69,7 @@ _Default Value_: **0**
 The amount (in the currency of the correspondant line) to which the amount in this line is corresponding. This field has value only when the current line is corresponding to only one line (e.g. null means that the current line is corresponding to many lines). `ReadOnly`
 
 _Type_: **decimal (18, 2) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -74,6 +78,7 @@ _Supports Order By_: **False**
 The amount of the credit in the currency of the account. 0 means that the account is not credited. `Currency: Currency` `Required` `Default(0)`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -83,6 +88,7 @@ _Default Value_: **Constant**
 The amount of credit in base currency. `Currency: Voucher.EnterpriseCompany.BaseCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -92,6 +98,7 @@ _Default Value_: **Constant**
 The amount of the debit in the currency of the account. 0 means that the account is not debited. `Currency: Currency` `Required` `Default(0)`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -101,14 +108,25 @@ _Default Value_: **Constant**
 The amount of debit in base currency. `Currency: Voucher.EnterpriseCompany.BaseCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -117,6 +135,7 @@ _Default Value_: **NewGuid**
 The item (grouping) key for the account in the line. Account_Id + Item_Key - the smallest unit of calculation for account balance. `Filter(eq;like)`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -126,6 +145,7 @@ _Maximum Length_: **64**
 Consecutive number of the line within the voucher. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -134,11 +154,21 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `( obj.Voucher.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### RateDivisor
 
 The divisor for conversion from Debit/Credit to base currency. `Required` `Default(1)`
 
 _Type_: **decimal (18, 6)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
@@ -148,6 +178,7 @@ _Default Value_: **1**
 The multiplier for conversion from Debit/Credit to base currency. `Required` `Default(1)`
 
 _Type_: **decimal (18, 6)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
@@ -161,6 +192,7 @@ The account being debited or credited. `Required` `Filter(multi eq)`
 
 _Type_: **[Accounts](Finance.Accounting.Accounts.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### CostCenter
@@ -168,6 +200,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The cost center to which this cost is related. `Filter(multi eq)`
 
 _Type_: **[CostCenters](Finance.Accounting.CostCenters.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Currency
@@ -175,6 +208,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)`
 
 _Type_: **[Currencies](General.Currencies.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Document
@@ -183,6 +217,7 @@ The voucher to which this line is attached. `Required` `Filter(multi eq)`
 
 _Type_: **[AccountingVouchers](Finance.Accounting.AccountingVouchers.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProfitCenter
@@ -190,6 +225,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The profit center to which this revenue is related. `Filter(multi eq)`
 
 _Type_: **[ProfitCenters](Finance.Accounting.ProfitCenters.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ReferencedDocument
@@ -198,6 +234,7 @@ The document which is referenced by the line. By default, this is the document o
 
 _Type_: **[Documents](General.Documents.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -209,9 +246,85 @@ The voucher to which this line is attached. `Required` `Filter(multi eq)` `Owner
 
 _Type_: **[AccountingVouchers](Finance.Accounting.AccountingVouchers.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

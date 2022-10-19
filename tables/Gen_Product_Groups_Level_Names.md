@@ -5,22 +5,26 @@
 
 Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelNames.md)
 
+Provides the names of the product groups in the same branch from level 1 to 6. Entity: Gen_Product_Groups_Level_Names (Introduced in version 21.1.2.26)
 
 ## Summary
 
 | Name | Type | Description |
 | - | - | --- |
-|[Id](#id)|`uniqueidentifier` ||
-|[L1_Name](#l1_name)|`nvarchar(180)` ||
-|[L2_Name](#l2_name)|`nvarchar(180)` ||
-|[L3_Name](#l3_name)|`nvarchar(180)` ||
-|[L4_Name](#l4_name)|`nvarchar(180)` ||
-|[L5_Name](#l5_name)|`nvarchar(180)` ||
-|[L6_Name](#l6_name)|`nvarchar(180)` ||
+|[Id](#id)|`uniqueidentifier` |The product group Id|
+|[L1_Name](#l1_name)|`nvarchar(180)` |The name of the level 1 parent group|
+|[L2_Name](#l2_name)|`nvarchar(180)` |The name of the level 2 parent group|
+|[L3_Name](#l3_name)|`nvarchar(180)` |The name of the level 3 parent group|
+|[L4_Name](#l4_name)|`nvarchar(180)` |The name of the level 4 parent group|
+|[L5_Name](#l5_name)|`nvarchar(180)` |The name of the level 5 parent group|
+|[L6_Name](#l6_name)|`nvarchar(180)` |The name of the level 6 parent group|
 
 ## Columns
 
 ### Id
+
+
+The product group Id
 
 | Property | Value |
 | - | - |
@@ -55,6 +59,9 @@ Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelN
 
 ### L1_Name
 
+
+The name of the level 1 parent group
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -81,6 +88,9 @@ Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelN
 |Visible|yes|
 
 ### L2_Name
+
+
+The name of the level 2 parent group
 
 | Property | Value |
 | - | - |
@@ -109,6 +119,9 @@ Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelN
 
 ### L3_Name
 
+
+The name of the level 3 parent group
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -135,6 +148,9 @@ Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelN
 |Visible|yes|
 
 ### L4_Name
+
+
+The name of the level 4 parent group
 
 | Property | Value |
 | - | - |
@@ -163,6 +179,9 @@ Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelN
 
 ### L5_Name
 
+
+The name of the level 5 parent group
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -189,6 +208,9 @@ Entity: [General.ProductGroupsLevelNames](~/entities/General.ProductGroupsLevelN
 |Visible|yes|
 
 ### L6_Name
+
+
+The name of the level 6 parent group
 
 | Property | Value |
 | - | - |

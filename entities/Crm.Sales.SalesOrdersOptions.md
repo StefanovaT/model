@@ -12,6 +12,8 @@ Default Display Text Format:
 _{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
+Name Data Member:  
+_DocumentType.EntityName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -27,8 +29,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [AllowedDirections](Crm.Sales.SalesOrdersOptions.md#alloweddirections) | [AllowedDirections](Crm.Sales.SalesOrdersOptions.md#alloweddirections) | Allowed directions (return or normal sale) for the sales orders of this document type. 'S' = Normal sale, 'R' = Sales return, '*' = No limit, 'A' = Allow any, but not both (default). `Required` `Default("A")` `Filter(multi eq)` 
 | [AvailableQuantityOnly](Crm.Sales.SalesOrdersOptions.md#availablequantityonly) | boolean | When true indicates that the sales order can be released only if there is sufficient available quantity (by ATP). `Required` `Default(false)` `Filter(eq)` 
+| [DisplayText](Crm.Sales.SalesOrdersOptions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Sales.SalesOrdersOptions.md#id) | guid |  
 | [MinimumAmount](Crm.Sales.SalesOrdersOptions.md#minimumamount) | [Amount (14, 2)](../data-types.md#amount) __nullable__ | When not null, specifies minimal total amount of the sales order, which is required for order releasing. `Currency: MinimumAmountCurrency` 
+| [ObjectVersion](Crm.Sales.SalesOrdersOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ShipmentAllowance](Crm.Sales.SalesOrdersOptions.md#shipmentallowance) | [ShipmentAllowance](Crm.Sales.SalesOrdersOptions.md#shipmentallowance) | Terms on which the shipment of the products in the sales order is allowed. `Required` `Default("A")` 
 
 ## References
@@ -48,6 +52,7 @@ Aggregate Root:
 Allowed directions (return or normal sale) for the sales orders of this document type. 'S' = Normal sale, 'R' = Sales return, '*' = No limit, 'A' = Allow any, but not both (default). `Required` `Default("A")` `Filter(multi eq)`
 
 _Type_: **[AllowedDirections](Crm.Sales.SalesOrdersOptions.md#alloweddirections)**  
+_Category_: **System**  
 Allowed values for the `AllowedDirections`(Crm.Sales.SalesOrdersOptions.md#alloweddirections) data attribute  
 _Allowed Values (Crm.Sales.SalesOrdersOptionsRepository.AllowedDirections Enum Members)_  
 
@@ -67,14 +72,25 @@ _Default Value_: **AllowAnyButNotBoth**
 When true indicates that the sales order can be released only if there is sufficient available quantity (by ATP). `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -83,14 +99,25 @@ _Default Value_: **NewGuid**
 When not null, specifies minimal total amount of the sales order, which is required for order releasing. `Currency: MinimumAmountCurrency`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ShipmentAllowance
 
 Terms on which the shipment of the products in the sales order is allowed. `Required` `Default("A")`
 
 _Type_: **[ShipmentAllowance](Crm.Sales.SalesOrdersOptions.md#shipmentallowance)**  
+_Category_: **System**  
 Allowed values for the `ShipmentAllowance`(Crm.Sales.SalesOrdersOptions.md#shipmentallowance) data attribute  
 _Allowed Values (Crm.Sales.SalesOrdersOptionsRepository.ShipmentAllowance Enum Members)_  
 
@@ -112,6 +139,7 @@ _Default Value_: **AlwaysAllow**
 If filled then new opportunities (deals) from the specified type are created automatically by the sales orders that aren't assigned to existing opportunities. `Filter(multi eq)`
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DocumentType
@@ -119,6 +147,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The document type for which the sales order option applies. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -127,6 +156,7 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The currency of Minimal Amount. `Filter(multi eq)`
 
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### VATDeviationDocumentAmountType
@@ -134,8 +164,84 @@ _Supported Filters_: **Equals, EqualsIn**
 Document amount that contains the difference between the total amount of the sales order formed by unit prices with VAT and the amount formed by unit prices without VAT. `Filter(multi eq)`
 
 _Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

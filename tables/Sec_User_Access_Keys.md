@@ -1,11 +1,15 @@
 # Table Sec_User_Access_Keys
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Systems.Security.UserAccessKeys](~/entities/Systems.Security.UserAccessKeys.md)
 
-Obsolete. Not used. Entity: Sec_User_Access_Keys
+Obsolete. Not used. Entity: Sec_User_Access_Keys (Obsoleted in version 22.1.6.60)
 
 ## Owner Tables Hierarchy
 

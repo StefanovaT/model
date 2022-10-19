@@ -5,6 +5,7 @@ uid: General.Products
 
 ## Entities
 - [CodingSystems](General.Products.CodingSystems.md)  
+- [ProductCatalogs](General.Products.ProductCatalogs.md)  
 - [ProductCodes](General.Products.ProductCodes.md)  
 - [ProductDimensions](General.Products.ProductDimensions.md)  
 - [ProductDocumentAmounts](General.Products.ProductDocumentAmounts.md)  
@@ -16,6 +17,7 @@ uid: General.Products
 - [ProductSupply](General.Products.ProductSupply.md)  
 - [ProductTypePurchaseInvoiceLineProperties](General.Products.ProductTypePurchaseInvoiceLineProperties.md)  
 - [ProductTypes](General.Products.ProductTypes.md)  
+- [ProductVariants](General.Products.ProductVariants.md)  
 - [VariantColors](General.Products.VariantColors.md)  
 - [VariantSizes](General.Products.VariantSizes.md)  
 - [VariantStyles](General.Products.VariantStyles.md)  

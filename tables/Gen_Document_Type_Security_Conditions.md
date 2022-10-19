@@ -7,6 +7,10 @@ Entity: [General.DocumentTypeSecurityConditions](~/entities/General.DocumentType
 
 Provides rules to conditionally secure new documents. Entity: Gen_Document_Type_Security_Conditions
 
+## Owner Tables Hierarchy
+
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -137,7 +141,7 @@ The document type, whose documents will be secured by the current rule.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

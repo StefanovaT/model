@@ -5,7 +5,7 @@
 
 Entity: [Finance.Intrastat.CommodityCodes](~/entities/Finance.Intrastat.CommodityCodes.md)
 
-Contains the approved Intrastat commodity codes for each period. Entity: Its_Commodity_Codes
+Contains the approved commodity codes for each period from The Combined Nomenclature used within the European Union countries. They are used for reporting Intrastat and Excise. Entity: Its_Commodity_Codes
 
 ## Summary
 
@@ -13,8 +13,6 @@ Contains the approved Intrastat commodity codes for each period. Entity: Its_Com
 | - | - | --- |
 |[Commodity_Code](#commodity_code)|`nvarchar(8)` |Product code from the Intrastat Combined nomenclature|
 |[Description](#description)|`nvarchar(4000)` `ML`|Description of the product code from the Intrastat Combined nomenclature|
-|[Excise_Alcoholic_Strength](#excise_alcoholic_strength)|`decimal(5, 2)` |Specifies the alcoholic strength for excise products (if applicable).|
-|[Excise_Product_Code](#excise_product_code)|`nvarchar(20)` |The code of the product for excise purposes (if applicable). A.k.a. APCode.|
 |[Intrastat_Commodity_Code_Id](#intrastat_commodity_code_id)|`uniqueidentifier` `PK`||
 |[Row_Version](#row_version)|`timestamp` ||
 |[Supplementary_Unit](#supplementary_unit)|`nvarchar(16)` |If not null, the related product should have additional measurement unit with the same code as specified in this field. The additional unit will be used for the purposes of the Intrastat declarations|
@@ -95,66 +93,6 @@ Description of the product code from the Intrastat Combined nomenclature
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Like|None|no|no|
-
-### Excise_Alcoholic_Strength
-
-
-Specifies the alcoholic strength for excise products (if applicable).
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|-1|
-|Order|2147483647|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|decimal(5, 2) (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
-### Excise_Product_Code
-
-
-The code of the product for excise purposes (if applicable). A.k.a. APCode.
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|20|
-|Order|2147483647|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|nvarchar(20) (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
 
 ### Intrastat_Commodity_Code_Id
 

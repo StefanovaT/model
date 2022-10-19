@@ -3,9 +3,9 @@
 
 ## Entity
 
-Entity: [Communities.SocialReactionsSummary](~/entities/Communities.SocialReactionsSummary.md)
+Entity: [Communities.Social.ReactionsSummary](~/entities/Communities.Social.ReactionsSummary.md)
 
-Summary with the social reactions per comment and dataobject. Entity: Cmm_Social_Reactions_Summary_Indexed_View
+Summary with the social reactions per comment and dataobject. Entity: Cmm_Social_Reactions_Summary_Indexed_View (Introduced in version 22.1.6.73)
 
 ## Summary
 

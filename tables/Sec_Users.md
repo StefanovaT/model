@@ -13,6 +13,8 @@ User logins. Entity: Sec_Users
 | - | - | --- |
 |[Access_Failed_Count](#access_failed_count)|`int` |Indicates how many times the user has failed to login. May be used for locking out the user.|
 |[Active](#active)|`bit` |True when the login is currently active and the user can log in.|
+|[Basic_Authentication_Allowed](#basic_authentication_allowed)|`bit` |If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!|
+|[Company_Name](#company_name)|`nvarchar(64)` |Name of the company in which the user claims they are working.|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The date and time (in UTC), when the user was created.|
 |[Default_Culture](#default_culture)|`nvarchar(15)` |The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".|
 |[Domain_Id](#domain_id)|`uniqueidentifier` |The domain, to which the user belongs.|
@@ -27,6 +29,7 @@ User logins. Entity: Sec_Users
 |[Person_Id](#person_id)|`uniqueidentifier` |The person from within the system, which is authenticated with this login. NULL means that this user is not associated with a person record in the database.|
 |[Phone_Number](#phone_number)|`nvarchar(64)` |Used only for two-factor authentication. NULL when phone-based two-factor is not used.|
 |[Phone_Number_Confirmed](#phone_number_confirmed)|`bit` |Indicates whether the Phone Number has been verified.|
+|[Registration_Message](#registration_message)|`nvarchar(254)` |Message from the user to the registration operator, regarding the desired permissions and assignment.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Two_Factor_Enabled](#two_factor_enabled)|`bit` |Indicates whether two-factor authentication has been enabled.|
 |[User_Id](#user_id)|`uniqueidentifier` `PK`||
@@ -109,6 +112,72 @@ True when the login is currently active and the user can log in.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|yes|
+
+### Basic_Authentication_Allowed
+
+
+If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|False|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Basic_Authentication_Allowed - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Company_Name
+
+
+Name of the company in which the user claims they are working.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|64|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(64) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Creation_Time_Utc
 
@@ -595,6 +664,36 @@ Indicates whether the Phone Number has been verified.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Registration_Message
+
+
+Message from the user to the registration operator, regarding the desired permissions and assignment.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(254) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Row_Version
 

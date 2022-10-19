@@ -139,11 +139,13 @@ __</p>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="cnt">Cnt</h3>
 <p><em>Type</em>: <strong>int64</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="reactiontype">ReactionType</h3>
 <p>The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Communities.SocialReactionsSummary.html#reactiontype">ReactionType</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>ReactionType</code>(Communities.SocialReactionsSummary.md#reactiontype) data attribute<br>
 <em>Allowed Values (Communities.SocialReactionsSummaryRepository.ReactionType Enum Members)</em></p>
 <table>
@@ -186,11 +188,14 @@ Allowed values for the <code>ReactionType</code>(Communities.SocialReactionsSumm
 <h3 id="dataobject">DataObject</h3>
 <p>. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Objects_Table.Object_Id</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.ExtensibleDataObjects.html">ExtensibleDataObjects</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Objects_Table.Object_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="socialcomment">SocialComment</h3>
 <p><em>Type</em>: <strong><a href="Communities.SocialComments.html">SocialComments</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Cmm_Social_Comments_Table.Social_Comment_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>

@@ -12,6 +12,8 @@ The types of boxes in a VAT declaration. . Entity: VAT_Box_Types (Introduced in 
 | Name | Type | Description |
 | - | - | --- |
 |[Box_Type_Id](#box_type_id)|`uniqueidentifier` `PK`|The type of box in a VAT declaration.|
+|[Calculated_Attribute_Id](#calculated_attribute_id)|`uniqueidentifier` |The calculated attribute which will be used in the calculation of the amount of the current Box Type. Used when the value of the "Calculation Type" field is "Calculated Attribute".|
+|[Calculation_Type](#calculation_type)|`nvarchar(2)` Allowed: `DT`, `CA`|Determines the source of amounts of the current Box Type. Sources can be the Vat Entries or the Calculated attribute from the VAT Declaration which is specified in the "Calculated Attribute Name" field.|
 |[Code](#code)|`nvarchar(32)` ||
 |[Country_Id](#country_id)|`uniqueidentifier` |The Country for which this type of box is declared.|
 |[Name](#name)|`nvarchar(254)` `ML`|The name for this box type. (Miltilanguage string)|
@@ -51,6 +53,80 @@ The type of box in a VAT declaration.
 |Visible|no|
 
 #### Box_Type_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Calculated_Attribute_Id
+
+
+The calculated attribute which will be used in the calculation of the amount of the current Box Type. Used when the value of the "Calculation Type" field is "Calculated Attribute".
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|6|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Sys_Calculated_Attributes](Sys_Calculated_Attributes.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Calculated_Attribute_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Calculation_Type
+
+
+Determines the source of amounts of the current Box Type. Sources can be the Vat Entries or the Calculated attribute from the VAT Declaration which is specified in the "Calculated Attribute Name" field.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`DT`, `CA`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|DT|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|2|
+|Order|5|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|nvarchar(2)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Calculation_Type - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

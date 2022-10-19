@@ -12,6 +12,8 @@ Default Display Text Format:
 _{FolderName:T}_  
 Default Search Members:  
 _FolderName_  
+Name Data Member:  
+_FolderName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,8 +27,10 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [FolderName](Applications.Mail.BoxFolders.md#foldername) | [MultilanguageString](../data-types.md#multilanguagestring) | Multi-language folder name. `Required` `Filter(eq;like)` 
+| [DisplayText](Applications.Mail.BoxFolders.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [FolderName](Applications.Mail.BoxFolders.md#foldername) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language folder name. `Required` `Filter(eq;like)` 
 | [Id](Applications.Mail.BoxFolders.md#id) | guid |  
+| [ObjectVersion](Applications.Mail.BoxFolders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ServerFolderID](Applications.Mail.BoxFolders.md#serverfolderid) | string (256) __nullable__ | ID of the folder on the mail server in the format of the mail server. `Filter(eq)` 
 | [SyncState](Applications.Mail.BoxFolders.md#syncstate) | string (max) __nullable__ | The synchronization state for the folder. The format of the contents is dependant on the server type. For IMAP, this is last message Id, for Exchange - this is SyncState. 
 | [SystemPurpose](Applications.Mail.BoxFolders.md#systempurpose) | [SystemPurpose](Applications.Mail.BoxFolders.md#systempurpose) __nullable__ | When not null means that the folder has special system designation. Designations are: M=Mailbox(root folder), I=Inbox, D=Drafts, O=Outbox, S=Sent, T=Trash. `Filter(eq)` `ReadOnly` 
@@ -35,23 +39,27 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [MailBox](Applications.Mail.BoxFolders.md#mailbox) | [Boxes](Applications.Mail.Boxes.md) | The `Box`(Applications.Mail.Boxes.md) to which this BoxFolder belongs. `Required` `Filter(multi eq)` `ReadOnly` `Owner` |
+| [MailBox](Applications.Mail.BoxFolders.md#mailbox) | [Boxes](Applications.Mail.Boxes.md) | The <see cref="Box"/> to which this BoxFolder belongs. `Required` `Filter(multi eq)` `ReadOnly` `Owner` |
 | [ParentFolder](Applications.Mail.BoxFolders.md#parentfolder) | [BoxFolders](Applications.Mail.BoxFolders.md) (nullable) | The parent folder in the folder hierarchy. Null when the folder is a root folder. `Filter(multi eq)` |
-
-## Child Collections
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| Messages | [Messages](Applications.Mail.Messages.md) | List of `Message`(Applications.Mail.Messages.md) child objects, based on the `Applications.Mail.Message.MailBoxFolder`(Applications.Mail.Messages.md#mailboxfolder) back reference 
 
 
 ## Attribute Details
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### FolderName
 
 Multi-language folder name. `Required` `Filter(eq;like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 
@@ -59,14 +67,25 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ServerFolderID
 
 ID of the folder on the mail server in the format of the mail server. `Filter(eq)`
 
 _Type_: **string (256) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
@@ -76,6 +95,7 @@ _Maximum Length_: **256**
 The synchronization state for the folder. The format of the contents is dependant on the server type. For IMAP, this is last message Id, for Exchange - this is SyncState.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -85,6 +105,7 @@ _Maximum Length_: **2147483647**
 When not null means that the folder has special system designation. Designations are: M=Mailbox(root folder), I=Inbox, D=Drafts, O=Outbox, S=Sent, T=Trash. `Filter(eq)` `ReadOnly`
 
 _Type_: **[SystemPurpose](Applications.Mail.BoxFolders.md#systempurpose) __nullable__**  
+_Category_: **System**  
 Allowed values for the `SystemPurpose`(Applications.Mail.BoxFolders.md#systempurpose) data attribute  
 _Allowed Values (Applications.Mail.BoxFoldersRepository.SystemPurpose Enum Members)_  
 
@@ -105,10 +126,11 @@ _Supports Order By_: **False**
 
 ### MailBox
 
-The `Box`(Applications.Mail.Boxes.md) to which this BoxFolder belongs. `Required` `Filter(multi eq)` `ReadOnly` `Owner`
+The <see cref="Box"/> to which this BoxFolder belongs. `Required` `Filter(multi eq)` `ReadOnly` `Owner`
 
 _Type_: **[Boxes](Applications.Mail.Boxes.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -117,8 +139,84 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The parent folder in the folder hierarchy. Null when the folder is a root folder. `Filter(multi eq)`
 
 _Type_: **[BoxFolders](Applications.Mail.BoxFolders.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

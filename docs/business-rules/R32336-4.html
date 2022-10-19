@@ -116,14 +116,14 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td><p>The rule sets CreditAccount and DebitAccount according to the following conditions:
-if (AmountColumnName != NULL &amp;&amp;
-AmountColumnName == &quot;Credit_Exchange_Difference&quot; &amp;&amp;
-CurrentEnterpriseCompany != NULL)
+<td><p>The rule sets CreditAccount and DebitAccount according to the following conditions:   <br>
+if (AmountColumnName != NULL &amp;&amp;                                                        <br>
+AmountColumnName == &quot;Credit_Exchange_Difference&quot; &amp;&amp;                            <br>
+CurrentEnterpriseCompany != NULL)                                             <br>
 then CreditAccount = CurrentEnterpriseCompany.ExchangeDifferenceCreditAccount</p>
-<p>if (AmountColumnName != NULL &amp;&amp;
-AmountColumnName == &quot;Debit_Exchange_Difference&quot; &amp;&amp;
-CurrentEnterpriseCompany != NULL)
+<p>if (AmountColumnName != NULL &amp;&amp;                                                <br>
+AmountColumnName == &quot;Debit_Exchange_Difference&quot; &amp;&amp;                             <br>
+CurrentEnterpriseCompany != NULL)                                                  <br>
 then DebitAccount = CurrentEnterpriseCompany.ExchangeDifferenceDebitAccount</p>
 </td>
 </tr>

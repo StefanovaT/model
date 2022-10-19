@@ -9,7 +9,7 @@ Discount policies for sales documents. Entity: Crm_Line_Discounts
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {MaxQuantityValue}_  
+_{DiscountPercent:P} {Description}_  
 Default Search Members:  
 __  
 
@@ -25,10 +25,12 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Description](Crm.LineDiscounts.md#description) | string (50) __nullable__ | The description of the discount that is shown to the operator when he/she should choose between different discounts. `Filter(like)` 
 | [DiscountPercent](Crm.LineDiscounts.md#discountpercent) | decimal (7, 6) | The discount percent that should be applied if all the matching criteria are met. `Required` `Default(0)` `Filter(ge;le)` 
+| [DisplayText](Crm.LineDiscounts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Crm.LineDiscounts.md#fromdate) | datetime __nullable__ | Starting date of validity of the discount. null means no from date restriction. `Filter(eq;ge;le)` 
 | [Id](Crm.LineDiscounts.md#id) | guid |  
 | [MaxQuantity](Crm.LineDiscounts.md#maxquantity) | [Quantity (18, 3)](../data-types.md#quantity) __nullable__ | Apply the discount only if the quantity sold is equal to or less than the specified here. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Filter(eq;ge;le)` 
 | [MinQuantity](Crm.LineDiscounts.md#minquantity) | [Quantity (18, 3)](../data-types.md#quantity) __nullable__ | Apply the discount only if the quantity sold is equal to or more than the specified here. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Filter(eq;ge;le)` 
+| [ObjectVersion](Crm.LineDiscounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](Crm.LineDiscounts.md#priority) | [Priority](Crm.LineDiscounts.md#priority) | The priority of this discount policy. When selecting a discount for a sales document line, only the highest priority policy, matching the criteria is applied. `Required` `Default(3)` 
 | [ThruDate](Crm.LineDiscounts.md#thrudate) | datetime __nullable__ | Ending date (inclusive) of validity of the discount. If null, the discount is valid forever. `Filter(eq;ge;le)` 
 
@@ -55,6 +57,7 @@ Aggregate Tree
 The description of the discount that is shown to the operator when he/she should choose between different discounts. `Filter(like)`
 
 _Type_: **string (50) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
@@ -64,15 +67,26 @@ _Maximum Length_: **50**
 The discount percent that should be applied if all the matching criteria are met. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### FromDate
 
 Starting date of validity of the discount. null means no from date restriction. `Filter(eq;ge;le)`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -80,6 +94,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -88,6 +103,7 @@ _Default Value_: **NewGuid**
 Apply the discount only if the quantity sold is equal to or less than the specified here. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Filter(eq;ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -96,14 +112,25 @@ _Supports Order By_: **False**
 Apply the discount only if the quantity sold is equal to or more than the specified here. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Filter(eq;ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Priority
 
 The priority of this discount policy. When selecting a discount for a sales document line, only the highest priority policy, matching the criteria is applied. `Required` `Default(3)`
 
 _Type_: **[Priority](Crm.LineDiscounts.md#priority)**  
+_Category_: **System**  
 Generic enum type for Priority properties  
 _Allowed Values (General.Priority Enum Members)_  
 
@@ -124,6 +151,7 @@ _Default Value_: **3**
 Ending date (inclusive) of validity of the discount. If null, the discount is valid forever. `Filter(eq;ge;le)`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -135,6 +163,7 @@ _Supports Order By_: **False**
 Тhe marketing campaign to which the current definition belongs. `Filter(multi eq)` `Introduced in version 22.1.4.67`
 
 _Type_: **[Campaigns](Crm.Marketing.Campaigns.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Customer
@@ -143,6 +172,7 @@ Apply the discount only if this is the customer. `Filter(multi eq)`
 
 _Type_: **[Customers](Crm.Customers.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### CustomerType
@@ -150,6 +180,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Apply the discount only if the customer is of this customer type. `Filter(multi eq)`
 
 _Type_: **[CustomerTypes](Crm.CustomerTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DistributionChannel
@@ -158,6 +189,7 @@ Apply the discount only when the sales document is on the specified channel. `Fi
 
 _Type_: **[DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompany
@@ -165,6 +197,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, the policy is applied only for documents of the specified enterprise company . `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompanyLocation
@@ -172,6 +205,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When set, the policy is applied only for documents of the specified enterprise company location. `Filter(multi eq)`
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -181,6 +215,7 @@ _Front-End Recalc Expressions:_
 Apply the discount only if this price list is used. `Filter(multi eq)`
 
 _Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -189,6 +224,7 @@ Apply the discount only when this specific product is sold. `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProductGroup
@@ -196,6 +232,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Apply the discount only if the product sold is contained in this product group or any of its sub-groups. `Filter(multi eq)`
 
 _Type_: **[ProductGroups](General.Products.ProductGroups.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TargetGroup
@@ -203,8 +240,84 @@ _Supported Filters_: **Equals, EqualsIn**
 Apply the discount only if the customer is included in this target group. `Filter(multi eq)`
 
 _Type_: **[TargetGroups](Crm.Marketing.TargetGroups.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

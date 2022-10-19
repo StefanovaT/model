@@ -12,6 +12,8 @@ Default Display Text Format:
 _{CalculatedAttribute.Name}_  
 Default Search Members:  
 _CalculatedAttribute.Name_  
+Name Data Member:  
+_CalculatedAttribute.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,9 +27,11 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Systems.Bpm.CalculatedAttributeExpressions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExpressionNo](Systems.Bpm.CalculatedAttributeExpressions.md#expressionno) | int32 | Unique number of the expression within the attribute. Expression No 0 is the default expression, which provides the result value of the attribute. `Required` 
 | [Id](Systems.Bpm.CalculatedAttributeExpressions.md#id) | guid |  
 | [Notes](Systems.Bpm.CalculatedAttributeExpressions.md#notes) | string (max) __nullable__ | Notes for this CalculatedAttribute<br />Expression. 
+| [ObjectVersion](Systems.Bpm.CalculatedAttributeExpressions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Operator](Systems.Bpm.CalculatedAttributeExpressions.md#operator) | [ExpressionOperator](Systems.Bpm.CalculatedAttributeExpressions.md#operator) | The exprssion operator. Available operators are limited to a pre-selected list of operators. `Required` 
 | [Parameter1Type](Systems.Bpm.CalculatedAttributeExpressions.md#parameter1type) | [ExpressionParameterType](Systems.Bpm.CalculatedAttributeExpressions.md#parameter1type) __nullable__ | The type of the parameter specifies how to obtain the parameter value. 
 | [Parameter1Value](Systems.Bpm.CalculatedAttributeExpressions.md#parameter1value) | string (256) __nullable__ | The actual value of parameter 1. 
@@ -40,16 +44,26 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CalculatedAttribute](Systems.Bpm.CalculatedAttributeExpressions.md#calculatedattribute) | [CalculatedAttributes](Systems.Bpm.CalculatedAttributes.md) | The `CalculatedAttribute`(Systems.Bpm.CalculatedAttribute<br />Expressions.md#calculatedattribute) to which this CalculatedAttribute<br />Expression belongs. `Required` `Filter(multi eq)` `Owner` |
+| [CalculatedAttribute](Systems.Bpm.CalculatedAttributeExpressions.md#calculatedattribute) | [CalculatedAttributes](Systems.Bpm.CalculatedAttributes.md) | The <see cref="Calculated<br />Attribute"/> to which this CalculatedAttribute<br />Expression belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ExpressionNo
 
 Unique number of the expression within the attribute. Expression No 0 is the default expression, which provides the result value of the attribute. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -62,6 +76,7 @@ _Front-End Recalc Expressions:_
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -70,15 +85,26 @@ _Default Value_: **NewGuid**
 Notes for this CalculatedAttributeExpression.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Operator
 
 The exprssion operator. Available operators are limited to a pre-selected list of operators. `Required`
 
 _Type_: **[ExpressionOperator](Systems.Bpm.CalculatedAttributeExpressions.md#operator)**  
+_Category_: **System**  
 Generic enum type for ExpressionOperator properties  
 _Allowed Values (Systems.Bpm.ExpressionOperator Enum Members)_  
 
@@ -109,8 +135,8 @@ _Allowed Values (Systems.Bpm.ExpressionOperator Enum Members)_
 | LIST | LIST(List, Attribute, Separator) => Returns list with the string values of the specified attribute of the list of objects. The values are separated by the specified separator. Stored as 'LIST'. <br /> _Database Value:_ 'LIST' <br /> _Model Value:_ 22 <br /> _Domain API Value:_ 'LIST' |
 | LEFT | LEFT(String, NumChars) => Gets the first characters of a string.. Stored as 'LEFT'. <br /> _Database Value:_ 'LEFT' <br /> _Model Value:_ 23 <br /> _Domain API Value:_ 'LEFT' |
 | LEN | LEN(String) => Returns the length of the string.. Stored as 'LEN'. <br /> _Database Value:_ 'LEN' <br /> _Model Value:_ 24 <br /> _Domain API Value:_ 'LEN' |
-| LT | _Database Value:_ 'LT' <br /> _Model Value:_ 25 <br /> _Domain API Value:_ 'LT' |
-| LTE | _Database Value:_ 'LTE' <br /> _Model Value:_ 26 <br /> _Domain API Value:_ 'LTE' |
+| LT | LT(Value1, Value2) => Value1 < Value2.. Stored as 'LT'. <br /> _Database Value:_ 'LT' <br /> _Model Value:_ 25 <br /> _Domain API Value:_ 'LT' |
+| LTE | LTE(Value1, Value2) => Value1 <= Value2.. Stored as 'LTE'. <br /> _Database Value:_ 'LTE' <br /> _Model Value:_ 26 <br /> _Domain API Value:_ 'LTE' |
 | MULTIPLY | MULTIPLY(Number1, Number2) => Numer1 * Number2.. Stored as 'MULTIPLY'. <br /> _Database Value:_ 'MULTIPLY' <br /> _Model Value:_ 27 <br /> _Domain API Value:_ 'MULTIPLY' |
 | NOT | NOT(Condition) => NOT Condition.. Stored as 'NOT'. <br /> _Database Value:_ 'NOT' <br /> _Model Value:_ 28 <br /> _Domain API Value:_ 'NOT' |
 | OR | OR(Condition1, Condition2) => Condition1 OR Condition2.. Stored as 'OR'. <br /> _Database Value:_ 'OR' <br /> _Model Value:_ 29 <br /> _Domain API Value:_ 'OR' |
@@ -138,6 +164,7 @@ _Supports Order By_: **False**
 The type of the parameter specifies how to obtain the parameter value.
 
 _Type_: **[ExpressionParameterType](Systems.Bpm.CalculatedAttributeExpressions.md#parameter1type) __nullable__**  
+_Category_: **System**  
 Generic enum type for ExpressionParameterType properties  
 _Allowed Values (Systems.Bpm.ExpressionParameterType Enum Members)_  
 
@@ -160,6 +187,7 @@ _Supports Order By_: **False**
 The actual value of parameter 1.
 
 _Type_: **string (256) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
@@ -169,6 +197,7 @@ _Maximum Length_: **256**
 The type of the parameter specifies how to obtain the parameter value.
 
 _Type_: **[ExpressionParameterType](Systems.Bpm.CalculatedAttributeExpressions.md#parameter2type) __nullable__**  
+_Category_: **System**  
 Generic enum type for ExpressionParameterType properties  
 _Allowed Values (Systems.Bpm.ExpressionParameterType Enum Members)_  
 
@@ -191,6 +220,7 @@ _Supports Order By_: **False**
 The actual value of the parameter.
 
 _Type_: **string (256) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
@@ -200,6 +230,7 @@ _Maximum Length_: **256**
 The type of the parameter specifies how to obtain the parameter value.
 
 _Type_: **[ExpressionParameterType](Systems.Bpm.CalculatedAttributeExpressions.md#parameter3type) __nullable__**  
+_Category_: **System**  
 Generic enum type for ExpressionParameterType properties  
 _Allowed Values (Systems.Bpm.ExpressionParameterType Enum Members)_  
 
@@ -222,6 +253,7 @@ _Supports Order By_: **False**
 The actual value of the parameter.
 
 _Type_: **string (256) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
@@ -231,13 +263,89 @@ _Maximum Length_: **256**
 
 ### CalculatedAttribute
 
-The `CalculatedAttribute`(Systems.Bpm.CalculatedAttributeExpressions.md#calculatedattribute) to which this CalculatedAttributeExpression belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="CalculatedAttribute"/> to which this CalculatedAttributeExpression belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[CalculatedAttributes](Systems.Bpm.CalculatedAttributes.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -29,9 +29,11 @@ Aggregate Root:
 | [ConsumedQuantityBase](Production.ShopFloor.ConsumptionOrderLines.md#consumedquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The requested quantity equivalence in the base measurement category of the requested material. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` 
 | [ConsumedStandard<br />QuantityBase](Production.ShopFloor.ConsumptionOrderLines.md#consumedstandardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. null means to convert the value from Quantity using the measurement ratios. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
 | [ConsumptionType](Production.ShopFloor.ConsumptionOrderLines.md#consumptiontype) | [ConsumptionType](Production.ShopFloor.ConsumptionOrderLines.md#consumptiontype) | Determines whether the material cost is distributed among all produced products, or only one (specified in the Work Order Item Ingredient). `Required` `Filter(eq)` `ReadOnly` 
+| [DisplayText](Production.ShopFloor.ConsumptionOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.ShopFloor.ConsumptionOrderLines.md#id) | guid |  
 | [LineOrd](Production.ShopFloor.ConsumptionOrderLines.md#lineord) | int32 | Non-unique line number within the order. `Required` 
 | [Notes](Production.ShopFloor.ConsumptionOrderLines.md#notes) | string (max) __nullable__ | Notes for this ConsumptionOrderLine. 
+| [ObjectVersion](Production.ShopFloor.ConsumptionOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ScheduledDateTime](Production.ShopFloor.ConsumptionOrderLines.md#scheduleddatetime) | datetime __nullable__ | The scheduled date, when the material is needed. `Filter(ge;le)` 
 
 ## References
@@ -39,8 +41,8 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ConsumedQuantityUnit](Production.ShopFloor.ConsumptionOrderLines.md#consumedquantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | Measurement unit of the requested quantity. `Required` `Filter(multi eq)` |
-| [ConsumptionOrder](Production.ShopFloor.ConsumptionOrderLines.md#consumptionorder) | [ConsumptionOrders](Production.ShopFloor.ConsumptionOrders.md) | The `ConsumptionOrder`(Production.ShopFloor.ConsumptionOrderLines.md#consumptionorder) to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
-| [Document](Production.ShopFloor.ConsumptionOrderLines.md#document) | [ConsumptionOrders](Production.ShopFloor.ConsumptionOrders.md) | The `ConsumptionOrder`(Production.ShopFloor.ConsumptionOrderLines.md#consumptionorder) to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)` |
+| [ConsumptionOrder](Production.ShopFloor.ConsumptionOrderLines.md#consumptionorder) | [ConsumptionOrders](Production.ShopFloor.ConsumptionOrders.md) | The <see cref="ConsumptionOrder"/> to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](Production.ShopFloor.ConsumptionOrderLines.md#document) | [ConsumptionOrders](Production.ShopFloor.ConsumptionOrders.md) | The <see cref="ConsumptionOrder"/> to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Production.ShopFloor.ConsumptionOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | If not null, specifies that the material has to be consumed from specific lot. `Filter(multi eq)` |
 | [Product](Production.ShopFloor.ConsumptionOrderLines.md#product) | [Products](General.Products.Products.md) | The requested material. `Required` `Filter(multi eq)` |
 | [SerialNumber](Production.ShopFloor.ConsumptionOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | If not null, specifies that the material has to be consumed with specific serial number. `Filter(multi eq)` |
@@ -56,6 +58,7 @@ Aggregate Root:
 Requested quantity of the material. `Unit: ConsumedQuantityUnit` `Required` `Filter(ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -66,6 +69,7 @@ _Front-End Recalc Expressions:_
 The requested quantity equivalence in the base measurement category of the requested material. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -79,6 +83,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. null means to convert the value from Quantity using the measurement ratios. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -92,6 +97,7 @@ _Front-End Recalc Expressions:_
 Determines whether the material cost is distributed among all produced products, or only one (specified in the Work Order Item Ingredient). `Required` `Filter(eq)` `ReadOnly`
 
 _Type_: **[ConsumptionType](Production.ShopFloor.ConsumptionOrderLines.md#consumptiontype)**  
+_Category_: **System**  
 Allowed values for the `ConsumptionType`(Production.ShopFloor.ConsumptionOrderLines.md#consumptiontype) data attribute  
 _Allowed Values (Production.ShopFloor.ConsumptionOrderLinesRepository.ConsumptionType Enum Members)_  
 
@@ -105,10 +111,20 @@ _Supports Order By_: **False**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.WorkOrderItemIngredient != null) AndAlso ( obj.WorkOrderItemIngredient.WorkOrderItem != null)), ForSpecifiedItem, ForAllItems)`
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -117,6 +133,7 @@ _Default Value_: **NewGuid**
 Non-unique line number within the order. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -130,15 +147,26 @@ _Front-End Recalc Expressions:_
 Notes for this ConsumptionOrderLine.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ScheduledDateTime
 
 The scheduled date, when the material is needed. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -150,25 +178,28 @@ _Supports Order By_: **False**
 Measurement unit of the requested quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.MeasurementUnit`
 ### ConsumptionOrder
 
-The `ConsumptionOrder`(Production.ShopFloor.ConsumptionOrderLines.md#consumptionorder) to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="ConsumptionOrder"/> to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[ConsumptionOrders](Production.ShopFloor.ConsumptionOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
 ### Document
 
-The `ConsumptionOrder`(Production.ShopFloor.ConsumptionOrderLines.md#consumptionorder) to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)`
+The <see cref="ConsumptionOrder"/> to which this ConsumptionOrderLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[ConsumptionOrders](Production.ShopFloor.ConsumptionOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -176,6 +207,7 @@ _Supported Filters_: **Equals, EqualsIn**
 If not null, specifies that the material has to be consumed from specific lot. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -183,6 +215,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The requested material. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -192,6 +225,7 @@ _Front-End Recalc Expressions:_
 If not null, specifies that the material has to be consumed with specific serial number. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Store
@@ -199,6 +233,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The store, from which the material is requested. `Filter(multi eq)`
 
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -211,6 +246,7 @@ _Front-End Recalc Expressions:_
 If not null, specifies that the material has to be consumed from specific store bin. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### WorkOrderItemIngredient
@@ -219,8 +255,84 @@ The Work Order Item Ingredient for which we are ordering materials. `Required` `
 
 _Type_: **[WorkOrderItemIngredients](Production.ShopFloor.WorkOrderItemIngredients.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -15,12 +15,13 @@ Represents the data, sent to the customs authorities for the movements of excise
 
 | Name | Type | Description |
 | - | - | --- |
+|[Accrue_Excise_Duty](#accrue_excise_duty)|`bit` |Accrue Excise Duty|
 |[Administrative_Reference_Code](#administrative_reference_code)|`nvarchar(16)` |The reference code, returned the customs authorities, when the document is exported to them. NULL means the document is not yet exported to the authorities.|
-|[Document_Currency_Id](#document_currency_id)|`uniqueidentifier` |Currency of the Excise deal.|
+|[Direction](#direction)|`nvarchar(1)` Allowed: `I`, `R`|Indicates whether the document is Receipt('R') or Issue('I') of the Tax Warehouse|
 |[Document_Id](#document_id)|`uniqueidentifier` ||
 |[Excise_Administrative_Document_Id](#excise_administrative_document_id)|`uniqueidentifier` `PK`||
 |[Is_Deferred_Submission](#is_deferred_submission)|`bit` |Indicates whether the movement has begun under the cover of a paper administrative document.|
-|[Other_Party_Id](#other_party_id)|`uniqueidentifier` |The other party, receiving the goods (Consignee).|
+|[Other_Party_Id](#other_party_id)|`uniqueidentifier` |The other party, sending or receiving the goods.|
 |[Reporting_Person_Id](#reporting_person_id)|`uniqueidentifier` |This is the person submitting the declaration.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Tax_Warehouse_Id](#tax_warehouse_id)|`uniqueidentifier` |Our warehouse, dispatching the goods (Consignor).|
@@ -28,6 +29,42 @@ Represents the data, sent to the customs authorities for the movements of excise
 |[Transportation_Vehicle_Id](#transportation_vehicle_id)|`uniqueidentifier` |The vehicle, used for the transportation of the goods.|
 
 ## Columns
+
+### Accrue_Excise_Duty
+
+
+Accrue Excise Duty
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|False|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|11|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Short|
+|User Login|no|
+|Visible|yes|
+
+#### Accrue_Excise_Duty - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Administrative_Reference_Code
 
@@ -59,39 +96,38 @@ The reference code, returned the customs authorities, when the document is expor
 |User Login|no|
 |Visible|yes|
 
-### Document_Currency_Id
+### Direction
 
 
-Currency of the Excise deal.
+Indicates whether the document is Receipt('R') or Issue('I') of the Tax Warehouse
 
 | Property | Value |
 | - | - |
+|Allowed Values|`I`, `R`|
 |Auto Complete|no|
-|Base Table.Column|[Gen_Currencies](Gen_Currencies.md).[Currency_Id](Gen_Currencies.md#currency_id)|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|I|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|-1|
-|Order|8|
+|Max Length|1|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
-|Referenced Table|[Gen_Currencies](Gen_Currencies.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|nvarchar(1)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
 
-#### Document_Currency_Id - Supported Filters
+#### Direction - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
@@ -102,7 +138,6 @@ Currency of the Excise deal.
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Base Table.Column|[Gen_Documents](Gen_Documents.md).[Id](Gen_Documents.md#id)|
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
@@ -198,12 +233,11 @@ Indicates whether the movement has begun under the cover of a paper administrati
 ### Other_Party_Id
 
 
-The other party, receiving the goods (Consignee).
+The other party, sending or receiving the goods.
 
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Base Table.Column|[Gen_Parties](Gen_Parties.md).[Id](Gen_Parties.md#id)|
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
@@ -241,7 +275,6 @@ This is the person submitting the declaration.
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Base Table.Column|[Cm_Persons](Cm_Persons.md).[Person_Id](Cm_Persons.md#person_id)|
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
@@ -343,7 +376,6 @@ The carrier used for the transportation of the goods.
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Base Table.Column|[Log_Carriers](Log_Carriers.md).[Carrier_Id](Log_Carriers.md#carrier_id)|
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|

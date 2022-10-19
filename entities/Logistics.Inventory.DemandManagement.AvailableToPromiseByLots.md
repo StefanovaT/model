@@ -47,6 +47,7 @@ Aggregate Tree
 Indicates the quantity available to promise (in a base unit). It is valid from this date on. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -55,6 +56,7 @@ _Supports Order By_: **False**
 The current availability in а base measurement unit. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -63,6 +65,7 @@ _Supports Order By_: **False**
 Тhe date from which the available to promise quantity is valid. `Required` `Filter(eq;ge;le)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -71,6 +74,7 @@ _Supports Order By_: **False**
 The sum of the quantity of all planned stock movements on this date in а base measurement unit. . `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -79,6 +83,7 @@ _Supports Order By_: **False**
 The sum of the quantity of all planned stock movements until this date (inclusive) in а base measurement unit. The value is cumulative. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -87,6 +92,7 @@ _Supports Order By_: **False**
 Projected Availability in а base measurement unit on the particular date. The value is cumulative and includes the sum of all planned stock movements until this date (inclusive) and the current availability. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -98,6 +104,7 @@ _Supports Order By_: **False**
 The enterprise company which issued the document. `Required` `Filter(multi eq)` `Inherited from Gen_Documents_Table.Enterprise_Company_Id`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
+_Category_: **System**  
 _Inherited From_: **Gen_Documents_Table.Enterprise_Company_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 
@@ -106,6 +113,7 @@ _Supported Filters_: **Equals, EqualsIn**
 If non-null, contains the specific lot to use for the movement. `Filter(multi eq)` `Inherited from Inv_Store_Order_Lines_Table.Lot_Id`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Lot_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 
@@ -114,6 +122,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The product which should be received/issued. `Required` `Filter(multi eq)` `Inherited from Inv_Store_Order_Lines_Table.Product_Id`
 
 _Type_: **[Products](General.Products.Products.md)**  
+_Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Product_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 
@@ -122,6 +131,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The designated warehouse for the operation. `Required` `Filter(multi eq)` `Inherited from Inv_Store_Orders_Table.Store_Id`
 
 _Type_: **[Stores](Logistics.Inventory.Stores.md)**  
+_Category_: **System**  
 _Inherited From_: **Inv_Store_Orders_Table.Store_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 

@@ -12,6 +12,10 @@ Default Display Text Format:
 _{Name:T}_  
 Default Search Members:  
 _Code; Name_  
+Code Data Member:  
+_Code_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -30,6 +34,7 @@ Aggregate Tree
 | [DataSubjectCategory](Applications.PersonalData.PersonalDataProcesses.md#datasubjectcategory) | [DataSubjectCategory](Applications.PersonalData.PersonalDataProcesses.md#datasubjectcategory) | The category of data subjects (persons), whose data is processed. EMP=Employees; JOB=Job Candidates; CON=Contractors; CUS=Customers; SUP=Suppliers; PAR=Partners; OTH=Other. `Required` 
 | [Description](Applications.PersonalData.PersonalDataProcesses.md#description) | string (max) __nullable__ | Description of the process. 
 | [DiscontinuationDate](Applications.PersonalData.PersonalDataProcesses.md#discontinuationdate) | date __nullable__ | The date on which the process was discontinued. Null if the process is still active. `Filter(eq;ge;le)` 
+| [DisplayText](Applications.PersonalData.PersonalDataProcesses.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EstablishDate](Applications.PersonalData.PersonalDataProcesses.md#establishdate) | date | The data on which the process was established and started functioning. `Required` `Default(Now)` `Filter(eq;ge;le)` 
 | [Id](Applications.PersonalData.PersonalDataProcesses.md#id) | guid |  
 | [LegalBasisForProcessing](Applications.PersonalData.PersonalDataProcesses.md#legalbasisforprocessing) | [LegalBasisForProcessing](Applications.PersonalData.PersonalDataProcesses.md#legalbasisforprocessing) | The basis on which the data is processed. INT=Legitimate Interest; CST=Consent; CTR=Contract; LEG=Legal Compliance; VIT=Vital Interests; PUB=Public Interest;. `Required` `Filter(eq)` 
@@ -39,8 +44,9 @@ Aggregate Tree
 | [ListOfTechnicalMeasures](Applications.PersonalData.PersonalDataProcesses.md#listoftechnicalmeasures) | string (254) __nullable__ | Comma-separated list of technical measures taken to keep the data privacy. Common measures include Pseudonymisation, Encryption, Data Access Audit, etc. `Filter(eq)` 
 | [ListOfTransfers<br />ToThirdCountries](Applications.PersonalData.PersonalDataProcesses.md#listoftransferstothirdcountries) | string (254) __nullable__ | Comma-separated list of third countries, to which data is sent. `Filter(eq;like)` 
 | [ListOfUsedSoftware](Applications.PersonalData.PersonalDataProcesses.md#listofusedsoftware) | string (254) __nullable__ | Comma-separated list of the names of the software products used to process the data. `Filter(eq;like)` 
-| [Name](Applications.PersonalData.PersonalDataProcesses.md#name) | [MultilanguageString](../data-types.md#multilanguagestring) | Name of the process (Multilanguage). `Required` `Filter(eq;like)` 
+| [Name](Applications.PersonalData.PersonalDataProcesses.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the process (Multilanguage). `Required` `Filter(eq;like)` 
 | [Notes](Applications.PersonalData.PersonalDataProcesses.md#notes) | string (max) __nullable__ | Notes for this PersonalDataProcess. 
+| [ObjectVersion](Applications.PersonalData.PersonalDataProcesses.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProcessingRole](Applications.PersonalData.PersonalDataProcesses.md#processingrole) | [ProcessingRole](Applications.PersonalData.PersonalDataProcesses.md#processingrole) | The role of the enterprise company in the process - Controller or Processor. The controller owns the personal data process. The processor operates on behalf of the controller. C=Controller; P=Processor. . `Required` `Default("C")` `Filter(eq)` 
 | [RetentionPeriodMonths](Applications.PersonalData.PersonalDataProcesses.md#retentionperiodmonths) | int32 __nullable__ | The period in months, for which the data is kept. Null when the period is unknown or N/A. `Filter(eq)` 
 | [ThirdCountryTransfers<br />Safeguards](Applications.PersonalData.PersonalDataProcesses.md#thirdcountrytransferssafeguards) | string (254) __nullable__ | Description of safeguards, taken to protect personal data in case of third country transfers. `Filter(eq;like)` 
@@ -67,6 +73,7 @@ Aggregate Tree
 Unique process code. `Required` `Filter(eq;like)`
 
 _Type_: **string (16)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
@@ -76,6 +83,7 @@ _Maximum Length_: **16**
 True if sensitive personal data is processed (racial, political, criminal, biometric, etc). `Required` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -84,6 +92,7 @@ _Supports Order By_: **False**
 The category of data subjects (persons), whose data is processed. EMP=Employees; JOB=Job Candidates; CON=Contractors; CUS=Customers; SUP=Suppliers; PAR=Partners; OTH=Other. `Required`
 
 _Type_: **[DataSubjectCategory](Applications.PersonalData.PersonalDataProcesses.md#datasubjectcategory)**  
+_Category_: **System**  
 Allowed values for the `DataSubjectCategory`(Applications.PersonalData.PersonalDataProcesses.md#datasubjectcategory) data attribute  
 _Allowed Values (Applications.PersonalData.PersonalDataProcessesRepository.DataSubjectCategory Enum Members)_  
 
@@ -105,6 +114,7 @@ _Supports Order By_: **False**
 Description of the process.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -114,14 +124,25 @@ _Maximum Length_: **2147483647**
 The date on which the process was discontinued. Null if the process is still active. `Filter(eq;ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### EstablishDate
 
 The data on which the process was established and started functioning. `Required` `Default(Now)` `Filter(eq;ge;le)`
 
 _Type_: **date**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
@@ -130,6 +151,7 @@ _Default Value_: **CurrentDateTime**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -138,6 +160,7 @@ _Default Value_: **NewGuid**
 The basis on which the data is processed. INT=Legitimate Interest; CST=Consent; CTR=Contract; LEG=Legal Compliance; VIT=Vital Interests; PUB=Public Interest;. `Required` `Filter(eq)`
 
 _Type_: **[LegalBasisForProcessing](Applications.PersonalData.PersonalDataProcesses.md#legalbasisforprocessing)**  
+_Category_: **System**  
 Allowed values for the `LegalBasisForProcessing`(Applications.PersonalData.PersonalDataProcesses.md#legalbasisforprocessing) data attribute  
 _Allowed Values (Applications.PersonalData.PersonalDataProcessesRepository.LegalBasisForProcessing Enum Members)_  
 
@@ -158,6 +181,7 @@ _Supports Order By_: **False**
 Comma-separated list of categories of personal data (both sensitive and non-sensitive) processed by this process. Common sensitive types of data include racial, political views, religion, trade union membership, sex life, criminal records, etc. `Required` `Filter(eq)`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -167,6 +191,7 @@ _Maximum Length_: **254**
 Comma-separated list of types of data users. Usual categories include Staff, Public Authority, Contractor, etc. `Filter(eq;like)`
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -176,6 +201,7 @@ _Maximum Length_: **254**
 Comma-separated list of processing purposes. Common purposes include Invoicing, Newsletter, Notifications, Repeatable Orders, etc. `Filter(eq;like)`
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -185,6 +211,7 @@ _Maximum Length_: **254**
 Comma-separated list of technical measures taken to keep the data privacy. Common measures include Pseudonymisation, Encryption, Data Access Audit, etc. `Filter(eq)`
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -194,6 +221,7 @@ _Maximum Length_: **254**
 Comma-separated list of third countries, to which data is sent. `Filter(eq;like)`
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -203,6 +231,7 @@ _Maximum Length_: **254**
 Comma-separated list of the names of the software products used to process the data. `Filter(eq;like)`
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -211,7 +240,8 @@ _Maximum Length_: **254**
 
 Name of the process (Multilanguage). `Required` `Filter(eq;like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 
@@ -220,15 +250,26 @@ _Supports Order By_: **False**
 Notes for this PersonalDataProcess.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ProcessingRole
 
 The role of the enterprise company in the process - Controller or Processor. The controller owns the personal data process. The processor operates on behalf of the controller. C=Controller; P=Processor. . `Required` `Default("C")` `Filter(eq)`
 
 _Type_: **[ProcessingRole](Applications.PersonalData.PersonalDataProcesses.md#processingrole)**  
+_Category_: **System**  
 Allowed values for the `ProcessingRole`(Applications.PersonalData.PersonalDataProcesses.md#processingrole) data attribute  
 _Allowed Values (Applications.PersonalData.PersonalDataProcessesRepository.ProcessingRole Enum Members)_  
 
@@ -246,6 +287,7 @@ _Default Value_: **Controller**
 The period in months, for which the data is kept. Null when the period is unknown or N/A. `Filter(eq)`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -254,6 +296,7 @@ _Supports Order By_: **False**
 Description of safeguards, taken to protect personal data in case of third country transfers. `Filter(eq;like)`
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -266,6 +309,7 @@ _Maximum Length_: **254**
 The enterprise company, which owns the process. `Required` `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProcessOwnerPerson
@@ -273,8 +317,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The owner and responsible person for the process. `Required` `Filter(multi eq)`
 
 _Type_: **[Persons](General.Contacts.Persons.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

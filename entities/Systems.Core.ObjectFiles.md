@@ -11,7 +11,7 @@ Contains files attached to objects. Entity: Sys_Object_Files
 Default Display Text Format:  
 _{FileName}_  
 Default Search Members:  
-_PurposeCode; FileName_  
+_FileName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -27,8 +27,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [ContentLocation](Systems.Core.ObjectFiles.md#contentlocation) | [ContentLocation](Systems.Core.ObjectFiles.md#contentlocation) | The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link. `Required` `Default("EMB")` `Filter(multi eq)` `Introduced in version 20.1` 
 | [CreationTimeUtc](Systems.Core.ObjectFiles.md#creationtimeutc) | datetime | Time (in UTC), when the file was created. `Required` `Default(NowUtc)` `Introduced in version 20.1` 
+| [DisplayText](Systems.Core.ObjectFiles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EmbeddedFileContents](Systems.Core.ObjectFiles.md#embeddedfilecontents) | byte[] __nullable__ | Contains the contents of the file, when it is embedded in the database. null for linked files. 
 | [FileName](Systems.Core.ObjectFiles.md#filename) | string (254) | The file name of the linked or embedded file. `Required` `Filter(eq;like)` 
+| [FileSizeBytes](Systems.Core.ObjectFiles.md#filesizebytes) | int32 __nullable__ | The file size in bytes. If empty the file size is unknown. `Introduced in version 22.1.5.46` 
 | [Id](Systems.Core.ObjectFiles.md#id) | guid |  
 | [LastUpdateTimeUtc](Systems.Core.ObjectFiles.md#lastupdatetimeutc) | datetime | Time (in UTC), when the file was last updated. `Required` `Default(NowUtc)` `Introduced in version 20.1` 
 | [LinkedFilePath](Systems.Core.ObjectFiles.md#linkedfilepath) | string (1024) __nullable__ | When the file is linked, contains the full path (including the file name) to the linked file. null for embedded files. `Filter(eq;like)` 
@@ -36,6 +38,7 @@ Aggregate Root:
 | [MediaType](Systems.Core.ObjectFiles.md#mediatype) | string (128) __nullable__ | For media files, contains the Media Type as per the IANA registry (formerly known as the MIME Type). null for non-media files. `Introduced in version 20.1` 
 | [MediaWidth](Systems.Core.ObjectFiles.md#mediawidth) | int32 __nullable__ | Used (non-null) only for media files. Specifies the width for displaying the media. `Introduced in version 20.1` 
 | [Notes](Systems.Core.ObjectFiles.md#notes) | string (max) __nullable__ | User notes for the file attachment. 
+| [ObjectVersion](Systems.Core.ObjectFiles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PurposeCode](Systems.Core.ObjectFiles.md#purposecode) | string (32) __nullable__ | Code, designating the usage purpose of the file. The meaning of each code is up to the application with the exception of 'default/image', which is standartised as the default image for many types of objects. `Filter(eq)` 
 | [Section](Systems.Core.ObjectFiles.md#section) | string (64) __nullable__ | A section name used to group files. `Introduced in version 21.1.1.84` 
 
@@ -55,6 +58,7 @@ Aggregate Root:
 The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link. `Required` `Default("EMB")` `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[ContentLocation](Systems.Core.ObjectFiles.md#contentlocation)**  
+_Category_: **System**  
 Allowed values for the `ContentLocation`(Systems.Core.ObjectFiles.md#contentlocation) data attribute  
 _Allowed Values (Systems.Core.ObjectFilesRepository.ContentLocation Enum Members)_  
 
@@ -73,15 +77,26 @@ _Default Value_: **Embedded**
 Time (in UTC), when the file was created. `Required` `Default(NowUtc)` `Introduced in version 20.1`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### EmbeddedFileContents
 
 Contains the contents of the file, when it is embedded in the database. null for linked files.
 
 _Type_: **byte[] __nullable__**  
+_Category_: **Delay Loaded Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -90,14 +105,25 @@ _Supports Order By_: **False**
 The file name of the linked or embedded file. `Required` `Filter(eq;like)`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### FileSizeBytes
+
+The file size in bytes. If empty the file size is unknown. `Introduced in version 22.1.5.46`
+
+_Type_: **int32 __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -106,6 +132,7 @@ _Default Value_: **NewGuid**
 Time (in UTC), when the file was last updated. `Required` `Default(NowUtc)` `Introduced in version 20.1`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
@@ -115,6 +142,7 @@ _Default Value_: **CurrentDateTimeUtc**
 When the file is linked, contains the full path (including the file name) to the linked file. null for embedded files. `Filter(eq;like)`
 
 _Type_: **string (1024) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **1024**  
@@ -124,6 +152,7 @@ _Maximum Length_: **1024**
 Used (non-null) only for media files. Specifies the width for displaying the media. `Introduced in version 20.1`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -132,6 +161,7 @@ _Supports Order By_: **False**
 For media files, contains the Media Type as per the IANA registry (formerly known as the MIME Type). null for non-media files. `Introduced in version 20.1`
 
 _Type_: **string (128) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
@@ -141,6 +171,7 @@ _Maximum Length_: **128**
 Used (non-null) only for media files. Specifies the width for displaying the media. `Introduced in version 20.1`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -149,15 +180,26 @@ _Supports Order By_: **False**
 User notes for the file attachment.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PurposeCode
 
 Code, designating the usage purpose of the file. The meaning of each code is up to the application with the exception of 'default/image', which is standartised as the default image for many types of objects. `Filter(eq)`
 
 _Type_: **string (32) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
@@ -167,6 +209,7 @@ _Maximum Length_: **32**
 A section name used to group files. `Introduced in version 21.1.1.84`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -179,6 +222,7 @@ _Maximum Length_: **64**
 The user, who created the file record. null if it is unknown. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### LastUpdateUser
@@ -186,6 +230,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The user, who performed the last update to the file record. null if it is unknown. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Object
@@ -194,9 +239,85 @@ The object to which the file is attached. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

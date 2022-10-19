@@ -25,10 +25,12 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Logistics.Procurement.RequisitionLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Procurement.RequisitionLines.md#id) | guid |  
 | [LineNo](Logistics.Procurement.RequisitionLines.md#lineno) | int32 | Line number, unique within the Requisition. Usually is increasing number like 10, 20, 30, ... when initially entering the Requisition (in order to allow insertions with adjustment documents). `Required` 
 | [Notes](Logistics.Procurement.RequisitionLines.md#notes) | string (254) __nullable__ | Notes for this RequisitionLine. 
-| [ProductDescription](Logistics.Procurement.RequisitionLines.md#productdescription) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The description of the required product. When Product is set, this is copied initially from the product name. When Product is null, this contains the manually entered description of the desired product. 
+| [ObjectVersion](Logistics.Procurement.RequisitionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [ProductDescription](Logistics.Procurement.RequisitionLines.md#productdescription) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The description of the required product. When Product is set, this is copied initially from the product name. When Product is null, this contains the manually entered description of the desired product. 
 | [Quantity](Logistics.Procurement.RequisitionLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The required quantity of the product. `Unit: QuantityUnit` `Required` `Default(0)` `Filter(ge;le)` 
 | [QuantityBase](Logistics.Procurement.RequisitionLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` 
 | [RequiredDeliveryDate](Logistics.Procurement.RequisitionLines.md#requireddeliverydate) | datetime | The desired delivery date. Initially set to the required delivery date in the requisition header or if it is empty - to the document date plus the products lead time. `Required` `Filter(ge;le)` 
@@ -38,20 +40,30 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Logistics.Procurement.RequisitionLines.md#document) | [Requisitions](Logistics.Procurement.Requisitions.md) | The `Requisition`(Logistics.Procurement.RequisitionLines.md#requisition) to which this RequisitionLine belongs. `Required` `Filter(multi eq)` |
+| [Document](Logistics.Procurement.RequisitionLines.md#document) | [Requisitions](Logistics.Procurement.Requisitions.md) | The <see cref="Requisition"/> to which this RequisitionLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Procurement.RequisitionLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | When not null, indicates a specific lot should be purchased. `Filter(multi eq)` |
 | [Product](Logistics.Procurement.RequisitionLines.md#product) | [Products](General.Products.Products.md) (nullable) | The required product. When null, the product is unknown to the requisitor and only a description is supplied to the purchase department. `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Procurement.RequisitionLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
-| [Requisition](Logistics.Procurement.RequisitionLines.md#requisition) | [Requisitions](Logistics.Procurement.Requisitions.md) | The `Requisition`(Logistics.Procurement.RequisitionLines.md#requisition) to which this RequisitionLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Requisition](Logistics.Procurement.RequisitionLines.md#requisition) | [Requisitions](Logistics.Procurement.Requisitions.md) | The <see cref="Requisition"/> to which this RequisitionLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [SuggestedSupplier](Logistics.Procurement.RequisitionLines.md#suggestedsupplier) | [Suppliers](Logistics.Procurement.Suppliers.md) (nullable) | When the requisitor knows the supplier or has a supplier preference it is denoted in this field. `Filter(multi eq)` |
 
 
 ## Attribute Details
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -60,6 +72,7 @@ _Default Value_: **NewGuid**
 Line number, unique within the Requisition. Usually is increasing number like 10, 20, 30, ... when initially entering the Requisition (in order to allow insertions with adjustment documents). `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -73,15 +86,26 @@ _Front-End Recalc Expressions:_
 Notes for this RequisitionLine.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ProductDescription
 
 The description of the required product. When Product is set, this is copied initially from the product name. When Product is null, this contains the manually entered description of the desired product.
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -92,6 +116,7 @@ _Front-End Recalc Expressions:_
 The required quantity of the product. `Unit: QuantityUnit` `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -101,6 +126,7 @@ _Default Value_: **Constant**
 The equivalence of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -115,6 +141,7 @@ _Front-End Recalc Expressions:_
 The desired delivery date. Initially set to the required delivery date in the requisition header or if it is empty - to the document date plus the products lead time. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -123,6 +150,7 @@ _Supports Order By_: **False**
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -136,10 +164,11 @@ _Front-End Recalc Expressions:_
 
 ### Document
 
-The `Requisition`(Logistics.Procurement.RequisitionLines.md#requisition) to which this RequisitionLine belongs. `Required` `Filter(multi eq)`
+The <see cref="Requisition"/> to which this RequisitionLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[Requisitions](Logistics.Procurement.Requisitions.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -147,6 +176,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, indicates a specific lot should be purchased. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -154,6 +184,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The required product. When null, the product is unknown to the requisitor and only a description is supplied to the purchase department. `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -161,14 +192,16 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Requisition
 
-The `Requisition`(Logistics.Procurement.RequisitionLines.md#requisition) to which this RequisitionLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Requisition"/> to which this RequisitionLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Requisitions](Logistics.Procurement.Requisitions.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -177,8 +210,84 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 When the requisitor knows the supplier or has a supplier preference it is denoted in this field. `Filter(multi eq)`
 
 _Type_: **[Suppliers](Logistics.Procurement.Suppliers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

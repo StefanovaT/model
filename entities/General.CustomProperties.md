@@ -12,6 +12,10 @@ Default Display Text Format:
 _{Name:T}_  
 Default Search Members:  
 _Code; Name_  
+Code Data Member:  
+_Code_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -28,14 +32,16 @@ Aggregate Tree
 | [AllowedValuesEntityName](General.CustomProperties.md#allowedvaluesentityname) | string (64) __nullable__ | When not null, specifies that the allowed values are retrieved from the specified entity. `Filter(eq)` 
 | [AllowedValuesFilterXML](General.CustomProperties.md#allowedvaluesfilterxml) | dataaccessfilter __nullable__ | When not null specifies the filter to apply when extracting allowed values from entity. 
 | [Code](General.CustomProperties.md#code) | string (40) | Unique property code. `Required` `Filter(multi eq;like)` `ORD` 
+| [DisplayText](General.CustomProperties.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityName](General.CustomProperties.md#entityname) | string (64) | The entity for which the property is applicable. `Required` `Filter(eq)` `ORD` 
-| [Hint](General.CustomProperties.md#hint) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The hint, which is displayed alongside the property. `Filter(multi eq;like)` `Introduced in version 20.1` 
+| [Hint](General.CustomProperties.md#hint) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | The hint, which is displayed alongside the property. `Filter(multi eq;like)` `Introduced in version 20.1` 
 | [Id](General.CustomProperties.md#id) | guid |  
 | [KeyOrder](General.CustomProperties.md#keyorder) | byte __nullable__ | When not null, indicates, that the property is a key property and contains the property consequtive position withing the entity. Used for BI and other analysis. 
 | [LimitToAllowedValues](General.CustomProperties.md#limittoallowedvalues) | boolean | When true, allows the property to be set only to allowed value. When false, the property can have any value. `Required` `Default(false)` `Filter(eq)` 
 | [MaskLength](General.CustomProperties.md#masklength) | int16 __nullable__ | Limits te length of the property value to the specified number of characters. Null means no limitation. 
-| [Name](General.CustomProperties.md#name) | [MultilanguageString](../data-types.md#multilanguagestring) | The name of this CustomProperty. `Required` `Filter(like)` `ORD` 
+| [Name](General.CustomProperties.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this CustomProperty. `Required` `Filter(like)` `ORD` 
 | [Notes](General.CustomProperties.md#notes) | string (max) __nullable__ | Notes for this CustomProperty. `Introduced in version 20.1` 
+| [ObjectVersion](General.CustomProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PropertyType](General.CustomProperties.md#propertytype) | [PropertyType](General.CustomProperties.md#propertytype) | Type of property values. 'T' - text; 'P' - picture; 'N' - number; 'D' - date. `Required` `Default("T")` 
 
 ## References
@@ -61,6 +67,7 @@ Aggregate Tree
 When not null, specifies that the allowed values are retrieved from the specified entity. `Filter(eq)`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -70,6 +77,7 @@ _Maximum Length_: **64**
 When not null specifies the filter to apply when extracting allowed values from entity.
 
 _Type_: **dataaccessfilter __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -79,9 +87,19 @@ Unique property code. `Required` `Filter(multi eq;like)` `ORD`
 
 _Type_: **string (40)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **40**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### EntityName
 
@@ -89,6 +107,7 @@ The entity for which the property is applicable. `Required` `Filter(eq)` `ORD`
 
 _Type_: **string (64)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
@@ -97,7 +116,8 @@ _Maximum Length_: **64**
 
 The hint, which is displayed alongside the property. `Filter(multi eq;like)` `Introduced in version 20.1`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 
@@ -105,6 +125,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -113,6 +134,7 @@ _Default Value_: **NewGuid**
 When not null, indicates, that the property is a key property and contains the property consequtive position withing the entity. Used for BI and other analysis.
 
 _Type_: **byte __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -121,6 +143,7 @@ _Supports Order By_: **False**
 When true, allows the property to be set only to allowed value. When false, the property can have any value. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -130,6 +153,7 @@ _Default Value_: **False**
 Limits te length of the property value to the specified number of characters. Null means no limitation.
 
 _Type_: **int16 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -137,8 +161,9 @@ _Supports Order By_: **False**
 
 The name of this CustomProperty. `Required` `Filter(like)` `ORD`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **True**  
 
@@ -147,15 +172,26 @@ _Supports Order By_: **True**
 Notes for this CustomProperty. `Introduced in version 20.1`
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PropertyType
 
 Type of property values. 'T' - text; 'P' - picture; 'N' - number; 'D' - date. `Required` `Default("T")`
 
 _Type_: **[PropertyType](General.CustomProperties.md#propertytype)**  
+_Category_: **System**  
 Allowed values for the `PropertyType`(General.CustomProperties.md#propertytype) data attribute  
 _Allowed Values (General.CustomPropertiesRepository.PropertyType Enum Members)_  
 
@@ -178,6 +214,7 @@ _Default Value_: **Text**
 Specifies the user defined property, which is used for filtering the allowed values by value of the parent property. `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AllowedValuesProperty
@@ -185,6 +222,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies that the current property can have the same allowed values as the specified property. Also, this makes the current and the specified property copy-compatible. `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PropertiesCategory
@@ -192,8 +230,84 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, categorizes the property under a category. `Filter(multi eq)`
 
 _Type_: **[PropertiesCategories](General.PropertiesCategories.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

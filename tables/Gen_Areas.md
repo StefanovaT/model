@@ -11,9 +11,9 @@ Areas are user-defined division of the sales territories. Entity: Gen_Areas
 
 | Name | Type | Description |
 | - | - | --- |
-|[Area_Code](#area_code)|`nvarchar(16)` ||
+|[Area_Code](#area_code)|`nvarchar(16)` |The area code.|
 |[Area_Id](#area_id)|`uniqueidentifier` `PK`||
-|[Area_Name](#area_name)|`nvarchar(254)` `ML`||
+|[Area_Name](#area_name)|`nvarchar(254)` `ML`|The area name.|
 |[Full_Path](#full_path)|`nvarchar(254)` Readonly|Full path to the area, starting with '/' and containing the area codes of all parent areas using '/' as separator and terminator. For example root area with code 'BG' would have full path = '/BG/'|
 |[Parent_Area_Id](#parent_area_id)|`uniqueidentifier` |Parent area in the hierarchy.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -21,6 +21,9 @@ Areas are user-defined division of the sales territories. Entity: Gen_Areas
 ## Columns
 
 ### Area_Code
+
+
+The area code.
 
 | Property | Value |
 | - | - |
@@ -88,6 +91,9 @@ Areas are user-defined division of the sales territories. Entity: Gen_Areas
 |Equals|`NULL`|no|no|
 
 ### Area_Name
+
+
+The area name.
 
 | Property | Value |
 | - | - |

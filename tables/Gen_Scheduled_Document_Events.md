@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.ScheduledDocumentEvents](~/entities/General.ScheduledDocumentEvents.md)
+Entity: [Systems.Core.ScheduledDocumentEvents](~/entities/Systems.Core.ScheduledDocumentEvents.md)
 
 Contains postponed events, which will be executed later. Usually these are large number of recalculation events, resulting from other events. For example, releasing a cost correction, publishes postponed events for all affected documents. Entity: Gen_Scheduled_Document_Events
 

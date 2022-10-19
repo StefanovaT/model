@@ -73,8 +73,8 @@
 <h1 id="r27070-declaration---line-statistical-value-amount-base-is-null">R27070 Declaration - Line Statistical Value Amount Base Is Null</h1>
 
 <table>
-<col style="width:9.4%">
-<col style="width:90.6%">
+<col style="width:15.2%">
+<col style="width:84.8%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
@@ -85,12 +85,7 @@
 <td><a class="xref" href="../entities/Finance.Intrastat.Declarations.html">Finance.Intrastat.Declarations Entity</a></td>
 </tr>
 <tr>
-<td>
-<ul>
-<li></li>
-</ul>
-<p><em>Entity</em>*</p>
-</td>
+<td><strong>Entity</strong></td>
 <td>Declaration</td>
 </tr>
 <tr>
@@ -98,35 +93,19 @@
 <td>Back-End</td>
 </tr>
 <tr>
-<td><strong>At
-tribute</strong></td>
+<td><strong>Attribute</strong></td>
 <td>Line.StatisticalValueAmountBase</td>
 </tr>
 <tr>
-<td>
-<ul>
-<li></li>
-</ul>
-<p><em>Events</em>*</p>
-</td>
+<td><strong>Events</strong></td>
 <td>Releasing +</td>
 </tr>
 <tr>
-<td>
-<ul>
-<li></li>
-</ul>
-<p><em>Modify</em>*</p>
-</td>
+<td><strong>Modify</strong></td>
 <td>NO</td>
 </tr>
 <tr>
-<td>
-<ul>
-<li></li>
-</ul>
-<p><em>Action</em>*</p>
-</td>
+<td><strong>Action</strong></td>
 <td><p>Validate that:</p>
 <p>If DeclareStatisticalValues = false, then all Intrastat Declaration rows must have null value in
 StatisticalValueAmountBase field.</p>
@@ -140,22 +119,20 @@ DecalareStatisticalValues to false and the statistical value in all rows of the 
 null values.</td>
 </tr>
 <tr>
-<td>**
-Message**</td>
+<td><strong>Message</strong></td>
 <td><p>&quot;Declaration {DocumentText} is not declaring statistical values but it has lines with Statistical
 values filled in. </p>
 <p>Please empty all statistical value fields.&quot;</p>
 </td>
 </tr>
 <tr>
-<td><strong>I
-ntroduced
-In
-Version</strong></td>
-<td>2017</td>
+<td><strong>Introduced
+In Version</strong></td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2"><strong>Revocable</strong>     | NO</td>
+<td><strong>Revocable</strong></td>
+<td>NO</td>
 </tr>
 </tbody>
 </table>

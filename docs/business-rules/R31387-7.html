@@ -120,7 +120,11 @@ IfNullThen(QuantityUnit))</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td></td>
+<td>When Product Code is changed or Product is changed, Produced Quantity Unit is changed. If
+Product Code is not null and there is a Default Measurement Unit specified in the Coding
+System, Used Quantity Unit should be equal to the Default Measurement Unit. Otherwise, if
+Product is not null, Produced Quantity Unit should be equal to the Product's Measurement
+Unit.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>

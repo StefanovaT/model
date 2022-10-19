@@ -32,7 +32,7 @@ Sales order document headers. Entity: Crm_Sales_Orders
 |[From_Date](#from_date)|`date` |When selling a service valid only for a period, denotes the beginning of the period. NULL means that it is unknown or N/A.|
 |[Intrastat_Transaction_Nature_Code](#intrastat_transaction_nature_code)|`nvarchar(2)` Allowed: `11`, `12`, `13`, `14`, `19`, `21`, `22`, `23`, `29`, `60`, `70`, `80`, `91`, `99`, `30`, `41`, `42`, `51`, `52`|Transaction nature; used for Intrastat reporting|
 |[Intrastat_Transport_Country_Id](#intrastat_transport_country_id)|`uniqueidentifier` |Country of origin of the transport company; used for Intrastat reporting|
-|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|Transport mode; used for Intrastat reporting|
+|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|Transport mode; used for Intrastat reporting|
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
 |[Is_Single_Execution](#is_single_execution)|`bit` Readonly|Specifies whether the document is a single execution of its order document.|
 |[IsValid](#isvalid)|`bit` |1 when the order is valid (e.g. released and not void). Used for internal processing.|
@@ -72,7 +72,7 @@ Allows the sales order to be released even in the case of violations of credit l
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|14|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -145,7 +145,7 @@ Issue date of the referent customer purchase order
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|27|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -181,7 +181,7 @@ Reference number of the customer's purchase order
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|20|
-|Order|10|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -218,7 +218,7 @@ The opportunity (deal) on which this order is based
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|24|
+|Order|26|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -255,7 +255,7 @@ Deal type to be passed to the invoice. If deal type in entered then the invoice 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|22|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -292,7 +292,7 @@ The external dealer, associated with the sales order
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|17|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -330,7 +330,7 @@ Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|3|
-|Order|13|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -360,7 +360,7 @@ The distribution channel, that is used to deliver the products
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|28|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -397,7 +397,7 @@ The currency of the document; e.g. the currency of the amounts in the document
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|21|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -431,7 +431,7 @@ The currency of the document; e.g. the currency of the amounts in the document
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|20|
+|Order|23|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -468,7 +468,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|37|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -505,7 +505,7 @@ For POS sales, specifies the fiscal printer. NULL when the sales is not a POS sa
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|35|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -542,7 +542,7 @@ Unique number of the sale, assigned for fiscal reporting purposes. The format is
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|32|
-|Order|2147483647|
+|Order|36|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -579,7 +579,7 @@ When selling a service valid only for a period, denotes the beginning of the per
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|38|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -610,7 +610,7 @@ Transaction nature; used for Intrastat reporting
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2|
-|Order|11|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -640,7 +640,7 @@ Country of origin of the transport company; used for Intrastat reporting
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -670,7 +670,7 @@ Transport mode; used for Intrastat reporting
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -678,7 +678,7 @@ Transport mode; used for Intrastat reporting
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|1|
-|Order|12|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -708,7 +708,7 @@ True if the document is not void and its state is released or greater. Deprecate
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|30|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -744,7 +744,7 @@ Specifies whether the document is a single execution of its order document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|29|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -780,7 +780,7 @@ Specifies whether the document is a single execution of its order document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|15|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -808,7 +808,7 @@ Specifies whether the document is a single execution of its order document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|23|
+|Order|25|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -838,7 +838,7 @@ When not NULL, the payment account, where the payment is expected. NULL=no expec
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|25|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -911,7 +911,7 @@ The date when the payment becomes due for documents with one installment. NULL w
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -978,7 +978,7 @@ For POS sales, specifies the POS location, in which the sale is performed. NULL 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|32|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1015,7 +1015,7 @@ For POS sales, specifies the POS operator, who created the sale. NULL when the s
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|34|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1052,7 +1052,7 @@ For POS sales, specifies the POS terminal, on which the sale is entered. NULL wh
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|33|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1162,7 +1162,7 @@ When specified indicates that some of the goods sold in the sales orders invoice
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1199,7 +1199,7 @@ When specified indicates that some of the goods sold in Return_For_Sales_Order_I
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1234,7 +1234,7 @@ When specified indicates that some of the goods sold in Return_For_Sales_Order_I
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|31|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1261,7 +1261,7 @@ When specified indicates that some of the goods sold in Return_For_Sales_Order_I
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|19|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1297,7 +1297,7 @@ Internal company sales person
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|16|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1371,7 +1371,7 @@ The contact mechanism (address) to whih to ship the sales order
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|18|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1408,7 +1408,7 @@ The store from which to issue the sales order. NULL means that there is no store
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1445,7 +1445,7 @@ When selling a service valid only for a period, denotes the end of the period. N
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|39|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

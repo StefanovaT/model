@@ -7,10 +7,6 @@ Entity: [Finance.Assets.Assets](~/entities/Finance.Assets.Assets.md)
 
 The fixed assets. Entity: Ast_Assets
 
-## Owner Tables Hierarchy
-
-* [Gen_Enterprise_Companies](Gen_Enterprise_Companies.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -248,7 +244,7 @@ Date, when the asset is first deployed. Null if the asset is not deployed yet
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

@@ -120,7 +120,10 @@ IfNullThen(Product.MeasurementUnit).IfNullThen(QuantityUnit)</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td></td>
+<td>When Product Code or Product is changed, Quantity Unit should be updated. A new Quantity
+Unit is selected either from Product Code's Coding System Default MU, or if not specified,
+Purchase MU of the Product is selected, or if not specified, Product's MU is selected. If
+all of them are null, Quantity Unit is unchanged.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>

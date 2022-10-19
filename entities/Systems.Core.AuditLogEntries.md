@@ -12,6 +12,8 @@ Default Display Text Format:
 _{ApplicationName}_  
 Default Search Members:  
 _ApplicationName_  
+Name Data Member:  
+_ApplicationName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,6 +27,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [ApplicationName](Systems.Core.AuditLogEntries.md#applicationname) | string (64) __nullable__ | The client application that triggered the event. Null when unknown or N/A. `Filter(eq;like)` 
 | [Details](Systems.Core.AuditLogEntries.md#details) | string (max) __nullable__ | Detailed contents of the event. Contents depend on the Event Type and Event Name. 
+| [DisplayText](Systems.Core.AuditLogEntries.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityItemId](Systems.Core.AuditLogEntries.md#entityitemid) | guid __nullable__ | The Id of the record, which is referenced by the event. Null when unknown or N/A. `Filter(multi eq)` 
 | [EntityName](Systems.Core.AuditLogEntries.md#entityname) | string (64) __nullable__ | The entity, which is being referenced by the event. Null when unknown or N/A. `Filter(eq;like)` 
 | [EventClass](Systems.Core.AuditLogEntries.md#eventclass) | [EventClass](Systems.Core.AuditLogEntries.md#eventclass) | The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events. `Required` `Filter(multi eq)` 
@@ -32,6 +35,7 @@ Aggregate Tree
 | [EventTimeUtc](Systems.Core.AuditLogEntries.md#eventtimeutc) | datetime | The exact date and time (in Utc) when the event occurred. `Required` `Default(Now)` `Filter(ge;le)` `ORD` 
 | [EventType](Systems.Core.AuditLogEntries.md#eventtype) | [EventType](Systems.Core.AuditLogEntries.md#eventtype) | Detailed action type. EID=Read one record by Id; ELD=Load many records; EUP=Update data; EDE=Delete record; EMT=Call method; ETH=Other entity event; AIN=Login; AOU=Log out; AUP=Sign Up; AFL=Login failed; APW=Change password; ATH=Other auth event; STH=Other server event. `Required` `Filter(multi eq)` 
 | [Id](Systems.Core.AuditLogEntries.md#id) | guid |  
+| [ObjectVersion](Systems.Core.AuditLogEntries.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
 
@@ -48,6 +52,7 @@ Aggregate Tree
 The client application that triggered the event. Null when unknown or N/A. `Filter(eq;like)`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -57,15 +62,26 @@ _Maximum Length_: **64**
 Detailed contents of the event. Contents depend on the Event Type and Event Name.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### EntityItemId
 
 The Id of the record, which is referenced by the event. Null when unknown or N/A. `Filter(multi eq)`
 
 _Type_: **guid __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EntityName
@@ -73,6 +89,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The entity, which is being referenced by the event. Null when unknown or N/A. `Filter(eq;like)`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -82,6 +99,7 @@ _Maximum Length_: **64**
 The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events. `Required` `Filter(multi eq)`
 
 _Type_: **[EventClass](Systems.Core.AuditLogEntries.md#eventclass)**  
+_Category_: **System**  
 Allowed values for the `EventClass`(Systems.Core.AuditLogEntries.md#eventclass) data attribute  
 _Allowed Values (Systems.Core.AuditLogEntriesRepository.EventClass Enum Members)_  
 
@@ -99,6 +117,7 @@ _Supports Order By_: **False**
 Specific event or method name. Contents depend on the Event Type. Null when N/A. `Filter(eq;like)`
 
 _Type_: **string (128) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
@@ -109,6 +128,7 @@ The exact date and time (in Utc) when the event occurred. `Required` `Default(No
 
 _Type_: **datetime**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Default Value_: **CurrentDateTime**  
@@ -118,6 +138,7 @@ _Default Value_: **CurrentDateTime**
 Detailed action type. EID=Read one record by Id; ELD=Load many records; EUP=Update data; EDE=Delete record; EMT=Call method; ETH=Other entity event; AIN=Login; AOU=Log out; AUP=Sign Up; AFL=Login failed; APW=Change password; ATH=Other auth event; STH=Other server event. `Required` `Filter(multi eq)`
 
 _Type_: **[EventType](Systems.Core.AuditLogEntries.md#eventtype)**  
+_Category_: **System**  
 Allowed values for the `EventType`(Systems.Core.AuditLogEntries.md#eventtype) data attribute  
 _Allowed Values (Systems.Core.AuditLogEntriesRepository.EventType Enum Members)_  
 
@@ -145,8 +166,18 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 
 ## Reference Details
@@ -156,6 +187,7 @@ _Default Value_: **NewGuid**
 The personal data process, which was used to process the data, referenced by the event. Null when unknown or N/A. `Filter(multi eq)`
 
 _Type_: **[PersonalDataProcesses](Applications.PersonalData.PersonalDataProcesses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### User
@@ -163,8 +195,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The user account under which the event has occurred. Null only for events which are not user-specific. `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

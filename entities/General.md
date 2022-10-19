@@ -4,13 +4,11 @@ uid: General
 # General Namespace
 ## Namespaces
 - [Contacts](General.Contacts.md)  
-- [Documents](General.Documents.md)  
 - [Geography](General.Geography.md)  
 - [Products](General.Products.md)  
 - [Resources](General.Resources.md)  
 
 ## Entities
-- [Config](General.Config.md)  
 - [Currencies](General.Currencies.md)  
 - [CurrencyDirectories](General.CurrencyDirectories.md)  
 - [CurrencyDirectoryLines](General.CurrencyDirectoryLines.md)  
@@ -28,8 +26,11 @@ uid: General
 - [DocumentLineAmounts](General.DocumentLineAmounts.md)  
 - [DocumentLinks](General.DocumentLinks.md)  
 - [DocumentManualDistributedAmounts](General.DocumentManualDistributedAmounts.md)  
+- [DocumentParties](General.DocumentParties.md)  
+- [DocumentPartyRoles](General.DocumentPartyRoles.md)  
 - [DocumentPrintImages](General.DocumentPrintImages.md)  
 - [DocumentPrints](General.DocumentPrints.md)  
+- [Documents](General.Documents.md)  
 - [DocumentStateChanges](General.DocumentStateChanges.md)  
 - [DocumentTypeAmounts](General.DocumentTypeAmounts.md)  
 - [DocumentTypeEnterpriseCompanies](General.DocumentTypeEnterpriseCompanies.md)  
@@ -48,15 +49,11 @@ uid: General
 - [PartyLocationNumbers](General.PartyLocationNumbers.md)  
 - [PrintoutLayouts](General.PrintoutLayouts.md)  
 - [Printouts](General.Printouts.md)  
-- [ProductCatalogs](General.ProductCatalogs.md)  
 - [ProductGroupsLevelNames](General.ProductGroupsLevelNames.md)  
-- [ProductVariants](General.ProductVariants.md)  
 - [PropertiesCategories](General.PropertiesCategories.md)  
 - [PropertyEnterpriseCompanyFilters](General.PropertyEnterpriseCompanyFilters.md)  
 - [PropertyValues](General.PropertyValues.md)  
 - [ReportQueries](General.ReportQueries.md)  
 - [Reports](General.Reports.md)  
-- [ScheduledDocumentEvents](General.ScheduledDocumentEvents.md)  
 - [SequenceGenerators](General.SequenceGenerators.md)  
-- [Sequences](General.Sequences.md)  
 

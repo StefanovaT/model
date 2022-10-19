@@ -98,7 +98,7 @@
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>AttributeChanged(ExciseAmountBase, ExciseDutyRateValue, DocumentCurrency)</td>
+<td>AttributeChanged(ExciseAmountBase, ExciseDutyRateValue, Document, EnterpriseCompany)</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
@@ -115,12 +115,12 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>new Amount(((Convert(ExciseAmountBase, Nullable`1) * ExciseDutyRateValue) ?? 0),
-Convert(GetAggregateParent(), ExciseAdministrativeDocument).DocumentCurrency)</td>
+<td>new Amount((ExciseAmountBase * (ExciseDutyRateValue ?? 0)), Document.EnterpriseCompany.
+BaseCurrency)</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td></td>
+<td>Calculate ExciseAmount based on QuantityBase and ExciseDutyRateValue</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>

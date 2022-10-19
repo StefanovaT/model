@@ -6,12 +6,14 @@ uid: Crm.Marketing.MarketingActivities
 **Namespace:** [Crm.Marketing](Crm.Marketing.md)  
 **Inherited From:** [General.Contacts.Activities](General.Contacts.Activities.md)  
 
-Marketing activity, part of a marketing campaign. Entity: Crm_Activities
+Marketing activity, part of a marketing campaign. Entity: Crm_Activities (Introduced in version 22.1.5.60)
 
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.TypeName:T} {DocumentNo}_  
 Default Search Members:  
+_DocumentNo_  
+Code Data Member:  
 _DocumentNo_  
 
 ## Aggregate
@@ -19,6 +21,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Crm.Marketing.MarketingActivities](Crm.Marketing.MarketingActivities.md)  
+  * [Crm.Marketing.MarketingActivityLines](Crm.Marketing.MarketingActivityLines.md)  
   * [General.Contacts.ActivityParticipants](General.Contacts.ActivityParticipants.md)  
   * [General.Contacts.ActivityResources](General.Contacts.ActivityResources.md)  
   * [General.Contacts.Reminders](General.Contacts.Reminders.md)  
@@ -27,11 +30,12 @@ Aggregate Tree
   * [General.DocumentComments](General.DocumentComments.md)  
   * [General.DocumentDistributedAmounts](General.DocumentDistributedAmounts.md)  
   * [General.DocumentFileAttachments](General.DocumentFileAttachments.md)  
+  * [General.DocumentFulfillments](General.DocumentFulfillments.md)  
   * [General.DocumentLineAmounts](General.DocumentLineAmounts.md)  
+  * [General.DocumentParties](General.DocumentParties.md)  
   * [General.DocumentPrints](General.DocumentPrints.md)  
   * [General.DocumentStateChanges](General.DocumentStateChanges.md)  
   * [General.DocumentVersions](General.DocumentVersions.md)  
-  * [General.Documents.DocumentParties](General.Documents.DocumentParties.md)  
 
 ## Attributes
 
@@ -45,6 +49,7 @@ Aggregate Tree
 | [CreationTime](Crm.Marketing.MarketingActivities.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationUser](Crm.Marketing.MarketingActivities.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [DeadlineTime](Crm.Marketing.MarketingActivities.md#deadlinetime) | datetime __nullable__ | The deadline for the task. null if there is no deadline. `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md)) 
+| [DisplayText](Crm.Marketing.MarketingActivities.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DocumentDate](Crm.Marketing.MarketingActivities.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md)) 
 | [DocumentNo](Crm.Marketing.MarketingActivities.md#documentno) | string (20) | Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.md)) 
 | [DocumentNotes](Crm.Marketing.MarketingActivities.md#documentnotes) | string (max) __nullable__ | Notes for this Document. (Inherited from [Documents](General.Documents.md)) 
@@ -53,15 +58,17 @@ Aggregate Tree
 | [EntityName](Crm.Marketing.MarketingActivities.md#entityname) | string (64) | The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ForecastedCost](Crm.Marketing.MarketingActivities.md#forecastedcost) | [Amount (18, 0)](../data-types.md#amount) | Forecasted cost of the activity in base currency. `Currency: EnterpriseCompany.BaseCurrency` `Required` `Default(0)` 
 | [Id](Crm.Marketing.MarketingActivities.md#id) | guid |  
+| [<s>IsReleased</s>](Crm.Marketing.MarketingActivities.md#isreleased) | boolean | **OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [IsSingleExecution](Crm.Marketing.MarketingActivities.md#issingleexecution) | boolean | Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [Notes](Crm.Marketing.MarketingActivities.md#notes) | string (254) __nullable__ | Notes for this Activity. (Inherited from [Activities](General.Contacts.Activities.md)) 
+| [ObjectVersion](Crm.Marketing.MarketingActivities.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Crm.Marketing.MarketingActivities.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Crm.Marketing.MarketingActivities.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [PlannedDurationMinutes](Crm.Marketing.MarketingActivities.md#planneddurationminutes) | int32 __nullable__ | Total planned duration of the activity, regardless of the current execution status. `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [PlanningOnly](Crm.Marketing.MarketingActivities.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [Priority](Crm.Marketing.MarketingActivities.md#priority) | [Priority](Crm.Marketing.MarketingActivities.md#priority) | Priority on the scale from 1 (least important) to 5 (very important). `Required` `Default(3)` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [Private](Crm.Marketing.MarketingActivities.md#private) | boolean | True if the task is visible only to its owner; false if this is publicly visible task. `Required` `Default(false)` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [ReadOnly](Crm.Marketing.MarketingActivities.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ReferenceDate](Crm.Marketing.MarketingActivities.md#referencedate) | datetime __nullable__ | The date to which this document refers, i.e. when the action really occurred. If null, Document_Date is taken. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
+| [ReferenceDate](Crm.Marketing.MarketingActivities.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDocumentNo](Crm.Marketing.MarketingActivities.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
 | [ReleaseTime](Crm.Marketing.MarketingActivities.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReminderTime](Crm.Marketing.MarketingActivities.md#remindertime) | datetime __nullable__ | When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. (Inherited from [Activities](General.Contacts.Activities.md)) 
@@ -97,7 +104,8 @@ Aggregate Tree
 | [ResponsibleParty](Crm.Marketing.MarketingActivities.md#responsibleparty) | [Parties](General.Contacts.Parties.md) | Who is responsible for executing the task. Initially this is the owner of the task. `Required` `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ResponsiblePerson](Crm.Marketing.MarketingActivities.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Crm.Marketing.MarketingActivities.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [Sequence](Crm.Marketing.MarketingActivities.md#sequence) | [Sequences](General.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [Sequence](Crm.Marketing.MarketingActivities.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [SocialGroup](Crm.Marketing.MarketingActivities.md#socialgroup) | [Groups](Communities.Social.Groups.md) (nullable) | Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [TargetGroup](Crm.Marketing.MarketingActivities.md#targetgroup) | [TargetGroups](Crm.Marketing.TargetGroups.md) (nullable) | The target group of parties to be treated by this activity. `Filter(multi eq)` |
 | [TargetParty](Crm.Marketing.MarketingActivities.md#targetparty) | [Parties](General.Contacts.Parties.md) (nullable) | External participant or target of the task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ToCompanyDivision](Crm.Marketing.MarketingActivities.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -112,9 +120,11 @@ Aggregate Tree
 | DistributedAmounts | [DocumentDistributedAmounts](General.DocumentDistributedAmounts.md) | List of `DocumentDistributed<br />Amount`(General.DocumentDistributedAmounts.md) child objects, based on the `General.DocumentDistributedAmount.Document`(General.DocumentDistributedAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | DocumentAmounts | [DocumentAmounts](General.DocumentAmounts.md) | List of `DocumentAmount`(General.DocumentAmounts.md) child objects, based on the `General.DocumentAmount.Document`(General.DocumentAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | FileAttachments | [DocumentFileAttachments](General.DocumentFileAttachments.md) | List of `DocumentFileAttachment`(General.DocumentFileAttachments.md) child objects, based on the `General.DocumentFileAttachment.Document`(General.DocumentFileAttachments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Fulfillments | [DocumentFulfillments](General.DocumentFulfillments.md) | List of `DocumentFulfillment`(General.DocumentFulfillments.md) child objects, based on the `General.DocumentFulfillment.Document`(General.DocumentFulfillments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | LineAmounts | [DocumentLineAmounts](General.DocumentLineAmounts.md) | List of `DocumentLineAmount`(General.DocumentLineAmounts.md) child objects, based on the `General.DocumentLineAmount.Document`(General.DocumentLineAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Lines | [MarketingActivityLines](Crm.Marketing.MarketingActivityLines.md) | List of `MarketingActivityLine`(Crm.Marketing.MarketingActivityLines.md) child objects, based on the `Crm.Marketing.MarketingActivityLine.MarketingActivity`(Crm.Marketing.MarketingActivityLines.md#marketingactivity) back reference 
 | Participants | [ActivityParticipants](General.Contacts.ActivityParticipants.md) | List of `ActivityParticipant`(General.Contacts.ActivityParticipants.md) child objects, based on the `General.Contacts.ActivityParticipant.Activity`(General.Contacts.ActivityParticipants.md#activity) back reference (Inherited from [Activities](General.Contacts.Activities.md)) 
-| Parties | [DocumentParties](General.Documents.DocumentParties.md) | List of `DocumentParty`(General.Documents.DocumentParties.md) child objects, based on the `General.Documents.DocumentParty.Document`(General.Documents.DocumentParties.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Parties | [DocumentParties](General.DocumentParties.md) | List of `DocumentParty`(General.DocumentParties.md) child objects, based on the `General.DocumentParty.Document`(General.DocumentParties.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | Prints | [DocumentPrints](General.DocumentPrints.md) | List of `DocumentPrint`(General.DocumentPrints.md) child objects, based on the `General.DocumentPrint.Document`(General.DocumentPrints.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | Reminders | [Reminders](General.Contacts.Reminders.md) | List of `Reminder`(General.Contacts.Reminders.md) child objects, based on the `General.Contacts.Reminder.Activity`(General.Contacts.Reminders.md#activity) back reference (Inherited from [Activities](General.Contacts.Activities.md)) 
 | Resources | [ActivityResources](General.Contacts.ActivityResources.md) | List of `ActivityResource`(General.Contacts.ActivityResources.md) child objects, based on the `General.Contacts.ActivityResource.Activity`(General.Contacts.ActivityResources.md#activity) back reference (Inherited from [Activities](General.Contacts.Activities.md)) 
@@ -129,6 +139,7 @@ Aggregate Tree
 True if the related activites are already created. Related activity can be created for each member of the target group. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -138,6 +149,7 @@ _Default Value_: **False**
 Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -147,6 +159,7 @@ _Default Value_: **0**
 Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -155,6 +168,7 @@ _Supports Order By_: **False**
 The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -164,6 +178,7 @@ _Maximum Length_: **64**
 Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -172,6 +187,7 @@ _Supports Order By_: **False**
 Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
@@ -181,6 +197,7 @@ _Default Value_: **CurrentDateTime**
 The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (64)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -190,8 +207,18 @@ _Maximum Length_: **64**
 The deadline for the task. null if there is no deadline. `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### DocumentDate
 
@@ -199,6 +226,7 @@ The date on which the document was issued. `Required` `Default(Today)` `Filter(e
 
 _Type_: **date**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Default Value_: **CurrentDate**  
@@ -209,6 +237,7 @@ Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `O
 
 _Type_: **string (20)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **20**  
@@ -218,6 +247,7 @@ _Maximum Length_: **20**
 Notes for this Document. (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -227,6 +257,7 @@ _Maximum Length_: **2147483647**
 Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
@@ -236,6 +267,7 @@ _Default Value_: **1**
 Currently planned ending time of the task. `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -245,6 +277,7 @@ The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly`
 
 _Type_: **string (64)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
@@ -254,6 +287,7 @@ _Maximum Length_: **64**
 Forecasted cost of the activity in base currency. `Currency: EnterpriseCompany.BaseCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (18, 0)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -262,14 +296,26 @@ _Default Value_: **Constant**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### IsReleased
+
+**OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` (Inherited from [Activities](General.Contacts.Activities.md))
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **False**  
 
 ### IsSingleExecution
 
 Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -279,15 +325,26 @@ _Default Value_: **False**
 Notes for this Activity. (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentDocumentRelationshipType
 
 Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[ParentDocument<br />RelationshipType](Crm.Marketing.MarketingActivities.md#parentdocumentrelationshiptype) __nullable__**  
+_Category_: **System**  
 Relationship between parent and child documents  
 _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_  
 
@@ -295,6 +352,7 @@ _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_
 | ---- | --- |
 | Subtask | The child document is a sub-task of the parent document. (Complete child to complete parent) <br /> _Database Value:_ 'S' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Subtask' |
 | NextTask | The child document is next task of the parent document. (Complete parent to complete child) <br /> _Database Value:_ 'N' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'NextTask' |
+| IndependentTask | The document is not dependent of neither child nor parent document. <br /> _Database Value:_ 'I' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'IndependentTask' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -304,6 +362,7 @@ _Supports Order By_: **False**
 Total planned duration of the activity, regardless of the current execution status. `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -312,6 +371,7 @@ _Supports Order By_: **False**
 Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -321,6 +381,7 @@ _Default Value_: **False**
 Priority on the scale from 1 (least important) to 5 (very important). `Required` `Default(3)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Priority](Crm.Marketing.MarketingActivities.md#priority)**  
+_Category_: **System**  
 Generic enum type for Priority properties  
 _Allowed Values (General.Priority Enum Members)_  
 
@@ -341,6 +402,7 @@ _Default Value_: **3**
 True if the task is visible only to its owner; false if this is publicly visible task. `Required` `Default(false)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -350,15 +412,17 @@ _Default Value_: **False**
 True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 
 ### ReferenceDate
 
-The date to which this document refers, i.e. when the action really occurred. If null, Document_Date is taken. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md))
+Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
@@ -368,6 +432,7 @@ _Default Value_: **CurrentDate**
 The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (20) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
@@ -377,6 +442,7 @@ _Maximum Length_: **20**
 Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -385,6 +451,7 @@ _Supports Order By_: **False**
 When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -393,6 +460,7 @@ _Supports Order By_: **False**
 Currently planned starting time of the task. `Required` `Default(Now)` `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
@@ -402,6 +470,7 @@ _Default Value_: **CurrentDateTime**
 The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[DocumentState](Crm.Marketing.MarketingActivities.md#state)**  
+_Category_: **System**  
 Enumeration of document system states  
 _Allowed Values (General.DocumentState Enum Members)_  
 
@@ -424,6 +493,7 @@ _Default Value_: **0**
 Task primary subject (required). `Required` `Filter(eq;like)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -436,6 +506,7 @@ _Back-End Default Expression:_
 T=Task; C=Communication; M=Meeting. `Required` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[SystemType](Crm.Marketing.MarketingActivities.md#systemtype)**  
+_Category_: **System**  
 Allowed values for the `SystemType`(General.Contacts.Activities.md#systemtype) data attribute  
 _Allowed Values (General.Contacts.ActivitiesRepository.SystemType Enum Members)_  
 
@@ -454,6 +525,7 @@ True if the document is null and void. `Required` `Default(false)` `Filter(eq)` 
 
 _Type_: **boolean**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -463,6 +535,7 @@ _Default Value_: **False**
 Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -472,6 +545,7 @@ _Maximum Length_: **254**
 Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -480,6 +554,7 @@ _Supports Order By_: **False**
 The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -492,6 +567,7 @@ _Maximum Length_: **64**
 The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AdjustedDocument
@@ -500,6 +576,7 @@ The primary document, which the current document adjusts. null when this is not 
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### AssignedToUser
@@ -507,6 +584,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Campaign
@@ -514,6 +592,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The marketing campaing, to which this activity belongs. `Filter(multi eq)`
 
 _Type_: **[Campaigns](Crm.Marketing.Campaigns.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ContactPerson
@@ -521,6 +600,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The contact person, from the side of the Target Party. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### CurrencyDirectory
@@ -528,6 +608,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DocumentType
@@ -536,6 +617,7 @@ The user defined type of the document. Determines document behaviour, properties
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompany
@@ -544,6 +626,7 @@ The enterprise company which issued the document. `Required` `Filter(multi eq)` 
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### EnterpriseCompanyLocation
@@ -551,6 +634,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### FromCompanyDivision
@@ -558,6 +642,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### FromParty
@@ -565,6 +650,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### MasterDocument
@@ -573,6 +659,7 @@ In a multi-document tree, this is the root document, that created the whole tree
 
 _Type_: **[Documents](General.Documents.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### OwnerParty
@@ -580,6 +667,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The party that owns the task. Initially this is the party that has created the task. `Required` `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Parent
@@ -588,6 +676,7 @@ In a multi-document tree, this is the direct parent document. If this is the roo
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PrimeCauseDocument
@@ -596,6 +685,7 @@ The document that is the prime cause for creation of the current document. `Filt
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProjectTask
@@ -603,6 +693,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The project task for which the work is performed. null when the activity is not related to a project task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[ProjectTasks](Projects.ProjectTasks.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ResponsibleParty
@@ -611,6 +702,7 @@ Who is responsible for executing the task. Initially this is the owner of the ta
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ResponsiblePerson
@@ -618,6 +710,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ReverseOfDocument
@@ -625,13 +718,23 @@ _Supported Filters_: **Equals, EqualsIn**
 The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Sequence
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[Sequences](General.Sequences.md) (nullable)**  
+_Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
+### SocialGroup
+
+Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). `Filter(multi eq)` `Introduced in version 23.1.1.3` (Inherited from [Activities](General.Contacts.Activities.md))
+
+_Type_: **[Groups](Communities.Social.Groups.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TargetGroup
@@ -639,6 +742,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The target group of parties to be treated by this activity. `Filter(multi eq)`
 
 _Type_: **[TargetGroups](Crm.Marketing.TargetGroups.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TargetParty
@@ -646,6 +750,7 @@ _Supported Filters_: **Equals, EqualsIn**
 External participant or target of the task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ToCompanyDivision
@@ -653,6 +758,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ToParty
@@ -660,6 +766,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -670,6 +777,7 @@ _Back-End Default Expression:_
 The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 
@@ -710,6 +818,23 @@ _Domain API Request_: **POST**
 
 
 The process of changing the document state is very labor intensive and includes              validation, generation of sub-documents and some other document-specific tasks.                          The state changing process might be very time-consuming, usually ranging              from 500 to 5000 milliseconds.                          Document states usually can only be advanced to higher states, but there are              exceptions from this rule. Database settings and configuration options might affect             the allowed state changes.                          Numerous kinds of document-specific and generic exceptions can be thrown during the             process.
+
+### ProcessSingleRoute
+
+Processes the document route.               (Inherited from [Documents](General.Documents.md))  
+_Return Type_: **void**  
+_Declaring Type_: **[Documents](General.Documents.md)**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **route**  
+      
+    _Type_: [Routes](Systems.Workflow.Routes.md)  
+
+  * **processForLowerDocumentStates**  
+      
+    _Type_: boolean  
+
 
 ### Complete
 
@@ -762,6 +887,12 @@ _Domain API Request_: **POST**
      _Optional_: True  
     _Default Value_: VoidDocument  
 
+  * **resetParentState**  
+    Resets the parent state of document.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: True  
+
 
 ### GetPrintout
 
@@ -807,6 +938,77 @@ _Domain API Request_: **GET**
      _Optional_: True  
     _Default Value_: False  
 
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

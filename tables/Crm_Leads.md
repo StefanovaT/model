@@ -16,6 +16,8 @@ Leads are potential customers for your products. Because leads are usually proce
 |[Company_Name](#company_name)|`nvarchar(64)` |The name of the company, which the person works for (in relation to the current lead).|
 |[Converted_To_Deal_Id](#converted_to_deal_id)|`uniqueidentifier` |Filled when the lead is converted to opportunity (deal).|
 |[Creation_Timestamp_Utc](#creation_timestamp_utc)|`datetime` Readonly|System assigned date and time (in UTC), when the lead was initially created.|
+|[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |The enterprise company to which this lead belongs.|
+|[Enterprise_Company_Location_Id](#enterprise_company_location_id)|`uniqueidentifier` |The enterprise company location to which this lead belongs.|
 |[Identified_Company_Id](#identified_company_id)|`uniqueidentifier` |Filled when the company is identified within our database.|
 |[Identified_Person_Id](#identified_person_id)|`uniqueidentifier` |Filled when the person is identified and recorded in our master records.|
 |[Lead_Id](#lead_id)|`uniqueidentifier` `PK`||
@@ -223,6 +225,80 @@ System assigned date and time (in UTC), when the lead was initially created.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |GreaterThanOrLessThan|None|no|no|
+
+### Enterprise_Company_Id
+
+
+The enterprise company to which this lead belongs.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Enterprise_Companies](Gen_Enterprise_Companies.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Enterprise_Company_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Enterprise_Company_Location_Id
+
+
+The enterprise company location to which this lead belongs.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Cm_Company_Locations](Cm_Company_Locations.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Enterprise_Company_Location_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Identified_Company_Id
 

@@ -116,22 +116,22 @@ PurchaseProductPrice</td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>if (PurchaseOrderLine != null)
+<td>if (PurchaseOrderLine != null) <br><br>
 {
-Product = PurchaseOrderLine.Product;
-ProductDescription = PurchaseOrderLine.ProductDescription;
-QuantityUnit = PurchaseOrderLine.QuantityUnit;
-Quantity = PurchaseOrderLine.ConfirmedQuantity ?? PurchaseOrderLine.Quantity;
+Product = PurchaseOrderLine.Product;<br>
+ProductDescription = PurchaseOrderLine.ProductDescription;<br>
+QuantityUnit = PurchaseOrderLine.QuantityUnit;<br>
+Quantity = PurchaseOrderLine.ConfirmedQuantity ?? PurchaseOrderLine.Quantity;<br>
 PricePerUnit = PurchaseOrderLine.ConfirmedPricePerUnit ??
-PurchaseOrderLine.PricePerUnit;
-PurchaseProductPrice = PurchaseOrderLine.PurchaseProductPrice;
-}
-else
-{
+PurchaseOrderLine.PricePerUnit;<br>
+PurchaseProductPrice = PurchaseOrderLine.PurchaseProductPrice;<br>
+}<br>
+else<br>
+{<br>
 PurchaseProductPrice = DeterminePurchaseProductPrice(
 ReceivingOrder.DocumentDate, ReceivingOrder.Supplier, Product,
 (ConfirmedQuantity ?? Quantity), ReceivingOrder.EnterpriseCompany,
-ReceivingOrder.PurchasePriceList);
+ReceivingOrder.PurchasePriceList);<br>
 }</td>
 </tr>
 <tr>

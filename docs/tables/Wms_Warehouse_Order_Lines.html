@@ -98,6 +98,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="#line_group_no">Line_Group_No</a></td>
+<td><code>int</code></td>
+<td>Line group number. Indicates which lines are part of the same group e.g. group of components of the same composite product.</td>
+</tr>
+<tr>
 <td><a href="#line_no">Line_No</a></td>
 <td><code>int</code></td>
 <td>Unique consecutive line number within the order.</td>
@@ -169,8 +174,8 @@
 </tr>
 <tr>
 <td><a href="#task_type">Task_Type</a></td>
-<td><code>nvarchar(3)</code> Allowed: <code>REC</code>, <code>DES</code>, <code>MOV</code>, <code>LBL</code>, <code>INS</code>, <code>PCK</code>, <code>UPK</code>, <code>KIT</code>, <code>RKT</code>, <code>CNT</code>, <code>TSK</code></td>
-<td>The type of the task (operation), which should be performed. REC=Receive; DES=Despatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Assemble kit; RKT=Reverse kitting; CNT=Count; TSK=Task.</td>
+<td><code>nvarchar(3)</code> Allowed: <code>REC</code>, <code>DIS</code>, <code>MOV</code>, <code>LBL</code>, <code>INS</code>, <code>PCK</code>, <code>UPK</code>, <code>KIT</code>, <code>DKT</code>, <code>CNT</code>, <code>TSK</code>, <code>CDP</code>, <code>CRC</code>, <code>ASM</code>, <code>DSM</code></td>
+<td>The type of the task (operation), which should be performed. REC=Receive; DIS=Dispatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Kit; DKT=Dekit; CNT=Count; TSK=User task; CDP=Component dispatch; CRC=Component receive; ASM=Assemble; DSM=Disassemble.</td>
 </tr>
 <tr>
 <td><a href="#to_warehouse_location_id">To_Warehouse_Location_Id</a></td>
@@ -205,6 +210,131 @@
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
+<h3 id="line_group_no">Line_Group_No</h3>
+<p>Line group number. Indicates which lines are part of the same group e.g. group of components of the same composite product.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>int</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="line_group_no---supported-filters">Line_Group_No - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td>GreaterThanOrLessThan</td>
+<td>None</td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h3 id="line_no">Line_No</h3>
 <p>Unique consecutive line number within the order.</p>
 <table>
@@ -221,7 +351,7 @@
 </tr>
 <tr>
 <td>Autoincrement</td>
-<td>1</td>
+<td>10</td>
 </tr>
 <tr>
 <td>Data Filter</td>
@@ -1861,7 +1991,7 @@
 </tbody>
 </table>
 <h3 id="task_type">Task_Type</h3>
-<p>The type of the task (operation), which should be performed. REC=Receive; DES=Despatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Assemble kit; RKT=Reverse kitting; CNT=Count; TSK=Task.</p>
+<p>The type of the task (operation), which should be performed. REC=Receive; DIS=Dispatch; MOV=Move; LBL=Label; INS=Inspect; PCK=Pack; UPK=Unpack; KIT=Kit; DKT=Dekit; CNT=Count; TSK=User task; CDP=Component dispatch; CRC=Component receive; ASM=Assemble; DSM=Disassemble.</p>
 <table>
 <thead>
 <tr>
@@ -1872,7 +2002,7 @@
 <tbody>
 <tr>
 <td>Allowed Values</td>
-<td><code>REC</code>, <code>DES</code>, <code>MOV</code>, <code>LBL</code>, <code>INS</code>, <code>PCK</code>, <code>UPK</code>, <code>KIT</code>, <code>RKT</code>, <code>CNT</code>, <code>TSK</code></td>
+<td><code>REC</code>, <code>DIS</code>, <code>MOV</code>, <code>LBL</code>, <code>INS</code>, <code>PCK</code>, <code>UPK</code>, <code>KIT</code>, <code>DKT</code>, <code>CNT</code>, <code>TSK</code>, <code>CDP</code>, <code>CRC</code>, <code>ASM</code>, <code>DSM</code></td>
 </tr>
 <tr>
 <td>Auto Complete</td>

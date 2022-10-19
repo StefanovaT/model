@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Document.EntityName}_  
 Default Search Members:  
 _Document.EntityName_  
+Name Data Member:  
+_Document.EntityName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -27,8 +29,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [AdditionalData](General.DocumentPrints.md#additionaldata) | string (max) __nullable__ | Contains additional data about the printout. The format of the data is dependent on the Printout Type. `Introduced in version 19.1` 
 | [Description](General.DocumentPrints.md#description) | string (254) __nullable__ | The description of this DocumentPrint. 
+| [DisplayText](General.DocumentPrints.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.DocumentPrints.md#id) | guid |  
 | [IsOriginal](General.DocumentPrints.md#isoriginal) | boolean | True when the printout is the first printout (the original printout). `Required` `Filter(eq)` 
+| [ObjectVersion](General.DocumentPrints.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PrintoutType](General.DocumentPrints.md#printouttype) | [PrintoutType](General.DocumentPrints.md#printouttype) __nullable__ | Specifies the type of the printout: PPP - Phisycal Printer Printout; FPP - Fiscal Printer Printout; EXP - Export. `Filter(multi eq)` `Introduced in version 19.1` 
 | [PrintTime](General.DocumentPrints.md#printtime) | datetime | The time when the document was printed or exported. `Required` `Default(Now)` `Filter(ge;le)` 
 | [PrintUser](General.DocumentPrints.md#printuser) | string (64) | The user, which printed or exported the document. `Required` 
@@ -39,7 +43,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Document](General.DocumentPrints.md#document) | [Documents](General.Documents.md) | The document which was printed or exported. `Required` `Filter(multi eq)` `Owner` |
-| [DocumentPrintImage](General.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](General.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq)` |
+| [DocumentPrintImage](General.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](General.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq;like)` |
 
 
 ## Attribute Details
@@ -49,6 +53,7 @@ Aggregate Root:
 Contains additional data about the printout. The format of the data is dependent on the Printout Type. `Introduced in version 19.1`
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -58,14 +63,25 @@ _Maximum Length_: **2147483647**
 The description of this DocumentPrint.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -74,14 +90,25 @@ _Default Value_: **NewGuid**
 True when the printout is the first printout (the original printout). `Required` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PrintoutType
 
 Specifies the type of the printout: PPP - Phisycal Printer Printout; FPP - Fiscal Printer Printout; EXP - Export. `Filter(multi eq)` `Introduced in version 19.1`
 
 _Type_: **[PrintoutType](General.DocumentPrints.md#printouttype) __nullable__**  
+_Category_: **System**  
 Allowed values for the `PrintoutType`(General.DocumentPrints.md#printouttype) data attribute  
 _Allowed Values (General.DocumentPrintsRepository.PrintoutType Enum Members)_  
 
@@ -100,6 +127,7 @@ _Supports Order By_: **False**
 The time when the document was printed or exported. `Required` `Default(Now)` `Filter(ge;le)`
 
 _Type_: **datetime**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
@@ -109,6 +137,7 @@ _Default Value_: **CurrentDateTime**
 The user, which printed or exported the document. `Required`
 
 _Type_: **string (64)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -118,6 +147,7 @@ _Maximum Length_: **64**
 Used only when the printout reflects export to external system/device. In this case, it can store the reference number, generated by the other system/device. `Filter(multi eq)` `Introduced in version 19.1`
 
 _Type_: **string (32) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
@@ -131,16 +161,93 @@ The document which was printed or exported. `Required` `Filter(multi eq)` `Owner
 
 _Type_: **[Documents](General.Documents.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
 ### DocumentPrintImage
 
-Points to the actual contents of the printed document. `Filter(multi eq)`
+Points to the actual contents of the printed document. `Filter(multi eq;like)`
 
 _Type_: **[DocumentPrintImages](General.DocumentPrintImages.md) (nullable)**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

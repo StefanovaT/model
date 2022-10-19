@@ -1,11 +1,15 @@
 # Table Inv_Supply_Schema_Routes
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Logistics.Inventory.SupplySchemaRoutes](~/entities/Logistics.Inventory.SupplySchemaRoutes.md)
 
-Obsolete. Not used. Entity: Inv_Supply_Schema_Routes
+Obsolete. Not used. Entity: Inv_Supply_Schema_Routes (Obsoleted in version 22.1.6.60)
 
 ## Owner Tables Hierarchy
 

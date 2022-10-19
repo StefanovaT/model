@@ -25,7 +25,9 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [CommentText](Communities.SocialComments.md#commenttext) | string (max) | The comment contents in clear text. `Required` 
 | [CreationTimeUtc](Communities.SocialComments.md#creationtimeutc) | datetime | The exact server time (in UTC), when the comment was created. `Required` `ORD` 
+| [DisplayText](Communities.SocialComments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.SocialComments.md#id) | guid |  
+| [ObjectVersion](Communities.SocialComments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
 
@@ -43,6 +45,7 @@ Aggregate Tree
 The comment contents in clear text. `Required`
 
 _Type_: **string (max)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -53,15 +56,35 @@ The exact server time (in UTC), when the comment was created. `Required` `ORD`
 
 _Type_: **datetime**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **True**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 
 ## Reference Details
@@ -71,6 +94,7 @@ _Default Value_: **NewGuid**
 The root data object (post, marketplace product, document, etc), for which the comment is made. `Required` `Filter(multi eq)`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ReplyToComment
@@ -78,6 +102,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, means that the comment is a reply to the specified comment. The comment and the reply should be for the same data object. `Filter(multi eq)`
 
 _Type_: **[SocialComments](Communities.SocialComments.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### User
@@ -85,7 +110,55 @@ _Supported Filters_: **Equals, EqualsIn**
 The user, who made the comment. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
 
 
 

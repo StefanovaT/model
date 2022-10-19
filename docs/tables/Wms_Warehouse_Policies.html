@@ -97,6 +97,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="#code">Code</a></td>
+<td><code>nvarchar(16)</code></td>
+<td>The unique code of the warehouse policy.</td>
+</tr>
+<tr>
 <td><a href="#from_date">From_Date</a></td>
 <td><code>date</code></td>
 <td>When set, specifies the activation date of the policy.</td>
@@ -113,7 +118,7 @@
 </tr>
 <tr>
 <td><a href="#policy_kind">Policy_Kind</a></td>
-<td><code>nvarchar(3)</code> Allowed: <code>APC</code>, <code>ATC</code>, <code>ALC</code>, <code>AUC</code>, <code>RSS</code>, <code>RDS</code>, <code>ALS</code></td>
+<td><code>nvarchar(3)</code> Allowed: <code>APC</code>, <code>ATC</code>, <code>ALC</code>, <code>AUC</code>, <code>RSS</code>, <code>RDS</code>, <code>ALS</code>, <code>ZTY</code>, <code>KCL</code>, <code>DCL</code></td>
 <td>The kind of policy, which is being applied.</td>
 </tr>
 <tr>
@@ -164,6 +169,106 @@
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
+<h3 id="code">Code</h3>
+<p>The unique code of the warehouse policy.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>nvarchar(16)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="from_date">From_Date</h3>
 <p>When set, specifies the activation date of the policy.</p>
 <table>
@@ -525,7 +630,7 @@
 <tbody>
 <tr>
 <td>Allowed Values</td>
-<td><code>APC</code>, <code>ATC</code>, <code>ALC</code>, <code>AUC</code>, <code>RSS</code>, <code>RDS</code>, <code>ALS</code></td>
+<td><code>APC</code>, <code>ATC</code>, <code>ALC</code>, <code>AUC</code>, <code>RSS</code>, <code>RDS</code>, <code>ALS</code>, <code>ZTY</code>, <code>KCL</code>, <code>DCL</code></td>
 </tr>
 <tr>
 <td>Auto Complete</td>
@@ -1616,10 +1721,6 @@
 <tr>
 <td>Default Value</td>
 <td>None</td>
-</tr>
-<tr>
-<td>Depends On</td>
-<td><a href="#warehouse_id">Warehouse_Id</a></td>
 </tr>
 <tr>
 <td>Enter Stop</td>

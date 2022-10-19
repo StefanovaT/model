@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Communities.Social.Comments Entity | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Communities.Social.Comments Entity | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Communities.Social.Comments">
+<h1 id="communitiessocialcomments-entity">Communities.Social.Comments Entity</h1>
+
+<p><strong>Namespace:</strong> <a href="Communities.Social.html">Communities.Social</a></p>
+<p>User comment to any object in the system. Entity: Cmm_Social_Comments (Introduced in version 20.1)</p>
+<h2 id="default-visualization">Default Visualization</h2>
+<p>Default Display Text Format:<br>
+<em>{Id}: {DataObjectId}</em><br>
+Default Search Members:<br>
+__</p>
+<h2 id="aggregate">Aggregate</h2>
+<p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="Communities.Social.Comments.html">Communities.Social.Comments</a></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Communities.Social.Comments.html#commenttext">CommentText</a></td>
+<td>string (max)</td>
+<td>The comment contents in clear text. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Communities.Social.Comments.html#creationtimeutc">CreationTimeUtc</a></td>
+<td>datetime</td>
+<td>The exact server time (in UTC), when the comment was created. <code>Required</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Communities.Social.Comments.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
+<td><a href="Communities.Social.Comments.html#id">Id</a></td>
+<td>guid</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Communities.Social.Comments.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Communities.Social.Comments.html#dataobject">DataObject</a></td>
+<td><a href="Systems.Core.ExtensibleDataObjects.html">ExtensibleDataObjects</a></td>
+<td>The root data object (post, marketplace product, document, etc), for which the comment is made. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Communities.Social.Comments.html#replytocomment">ReplyToComment</a></td>
+<td><a href="Communities.Social.Comments.html">Comments</a> (nullable)</td>
+<td>When not null, means that the comment is a reply to the specified comment. The comment and the reply should be for the same data object. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Communities.Social.Comments.html#user">User</a></td>
+<td><a href="Systems.Security.Users.html">Users</a></td>
+<td>The user, who made the comment. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-details">Attribute Details</h2>
+<h3 id="commenttext">CommentText</h3>
+<p>The comment contents in clear text. <code>Required</code></p>
+<p><em>Type</em>: <strong>string (max)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<h3 id="creationtimeutc">CreationTimeUtc</h3>
+<p>The exact server time (in UTC), when the comment was created. <code>Required</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>datetime</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>True</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
+<h3 id="id">Id</h3>
+<p><em>Type</em>: <strong>guid</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
+<h2 id="reference-details">Reference Details</h2>
+<h3 id="dataobject">DataObject</h3>
+<p>The root data object (post, marketplace product, document, etc), for which the comment is made. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Core.ExtensibleDataObjects.html">ExtensibleDataObjects</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="replytocomment">ReplyToComment</h3>
+<p>When not null, means that the comment is a reply to the specified comment. The comment and the reply should be for the same data object. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Communities.Social.Comments.html">Comments</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="user">User</h3>
+<p>The user, who made the comment. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<h2 id="business-rules">Business Rules</h2>
+<ul>
+<li><a href="../business-rules/R32943.html">R32943 SocialComment - Notify The Mentioned User</a></li>
+<li><a href="../business-rules/R32946.html">R32946 SocialComment - Create Mentioned User Follow</a></li>
+<li><a href="../business-rules/R33417.html">R33417 SocialComment - Notify All Object Followers</a></li>
+<li><a href="../business-rules/R33428.html">R33428 SocialComment - Notify User Comment Replied</a></li>
+<li><a href="../business-rules/R33430.html">R33430 SocialComment - Create Follow When User Commented Object</a></li>
+</ul>
+<h2 id="front-end-business-rules">Front-End Business Rules</h2>
+<p>None</p>
+<h2 id="api">API</h2>
+<p>Domain API Query:
+<a href="https://demodb.my.erp.net/api/domain/odata/Communities_Social_Comments?$top=10">https://demodb.my.erp.net/api/domain/odata/Communities_Social_Comments?$top=10</a></p>
+<p>Domain API Query Builder:
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Communities_Social_Comments?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Communities_Social_Comments?$top=10</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Communities.Social.Comments.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

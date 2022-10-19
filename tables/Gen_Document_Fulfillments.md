@@ -7,6 +7,10 @@ Entity: [General.DocumentFulfillments](~/entities/General.DocumentFulfillments.m
 
 Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced in version 20.1)
 
+## Owner Tables Hierarchy
+
+* [Gen_Documents](Gen_Documents.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -15,13 +19,14 @@ Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced 
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` |The user, who created the record.|
 |[Destination_Entity_Name](#destination_entity_name)|`nvarchar(64)` |The name of the entity which fulfills the line. Used to differentiate between different fulfillment types. For example, sales order line can be fulfilled, for different purposes, by store order line and invoice order line.|
 |[Document_Fulfillment_Id](#document_fulfillment_id)|`uniqueidentifier` `PK`||
-|[Document_Id](#document_id)|`uniqueidentifier` |The Document, which is fulfilled.|
+|[Document_Id](#document_id)|`uniqueidentifier` Readonly|The Document, which is fulfilled.|
 |[Document_Line_Id](#document_line_id)|`uniqueidentifier` |The Id of the fulfilled line within the document. The attribute contains the Id and is not a reference, because it references different entities depending on document entity type and line type.|
 |[Fulfillment_Type](#fulfillment_type)|`nvarchar(1)` Allowed: `P`, `C`|Type of fulfillment: P=Planned; C=Completed.|
 |[Is_Final](#is_final)|`bit` |Specifies whether this fulfillment finalizes the line, regardless of any remaining quantities.|
 |[Line_No](#line_no)|`int` |Line number. Used for human-readability of the fulfillment. NULL if the lines do not support line numbers or the line number is unknown.|
 |[Line_Type](#line_type)|`nvarchar(1)` |Detail (line) type, for example materials, services, etc. L=Line. Other values are defined by the document entity type.|
 |[Lot_Id](#lot_id)|`uniqueidentifier` |The lot, which was fulfilled. NULL when the fulfillment was not for a specific lot.|
+|[Parent_Fulfillment_Id](#parent_fulfillment_id)|`uniqueidentifier` |The parent document fulfillment. Used when the information of the current fulfillment is inherited by another document fulfillment, usually created by another module.|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product, which is fulfilled.|
 |[Product_Variant_Id](#product_variant_id)|`uniqueidentifier` |The product variant, which was fulfilled. NULL when the fulfillment was not for a product variant.|
 |[Quantity_Base](#quantity_base)|`decimal(12, 3)` |Fulfilled quantity in the base measurement unit of the product.|
@@ -188,11 +193,11 @@ The Document, which is fulfilled.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[Gen_Documents](Gen_Documents.md)|
 |RTF|no|
 |Sortable|no|
@@ -425,6 +430,43 @@ The lot, which was fulfilled. NULL when the fulfillment was not for a specific l
 |Visible|yes|
 
 #### Lot_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Parent_Fulfillment_Id
+
+
+The parent document fulfillment. Used when the information of the current fulfillment is inherited by another document fulfillment, usually created by another module.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Document_Fulfillments](Gen_Document_Fulfillments.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Parent_Fulfillment_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

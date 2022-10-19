@@ -21,7 +21,7 @@ Contains detail lines for purchase invoice documents. Entity: Scm_Purchase_Invoi
 |[Intrastat_Destination_Region_Id](#intrastat_destination_region_id)|`uniqueidentifier` |Region, which is the final destination of the goods. Used for Intrastat reporting.|
 |[Intrastat_Transaction_Nature_Code](#intrastat_transaction_nature_code)|`nvarchar(2)` Allowed: `11`, `12`, `13`, `14`, `19`, `21`, `22`, `23`, `29`, `60`, `70`, `80`, `91`, `99`, `30`, `41`, `42`, `51`, `52`|Transaction nature; used for Intrastat reporting|
 |[Intrastat_Transport_Country_Id](#intrastat_transport_country_id)|`uniqueidentifier` |Country of origin of the transport company; used for Intrastat reporting|
-|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|Transport mode; used for Intrastat reporting|
+|[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|Transport mode; used for Intrastat reporting|
 |[Line_Amount](#line_amount)|`decimal(14, 2)` |The total invoiced amount for this line in the document currency of the invoice.|
 |[Line_Cost_Center_Id](#line_cost_center_id)|`uniqueidentifier` |Cost center for which the amount from this row will be accounted.|
 |[Line_Deal_Type_Id](#line_deal_type_id)|`uniqueidentifier` |Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created.|
@@ -216,7 +216,7 @@ Transport mode; used for Intrastat reporting
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

@@ -12,6 +12,8 @@ Default Display Text Format:
 _{TemplateLine.AmountColumnName}_  
 Default Search Members:  
 _TemplateLine.AmountColumnName_  
+Name Data Member:  
+_TemplateLine.AmountColumnName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -26,9 +28,11 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ConstantValueId](Finance.Accounting.TemplateLineProperties.md#constantvalueid) | guid __nullable__ | The internal Id of a property value, selected as constant value. Applicable only when Property Value Source Type = Constant. `Filter(multi eq)` 
+| [DisplayText](Finance.Accounting.TemplateLineProperties.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Accounting.TemplateLineProperties.md#id) | guid |  
 | [IsDebit](Finance.Accounting.TemplateLineProperties.md#isdebit) | boolean | If Is_Debit=true then this property is for the debit account in the template line for which is this record. If Is_Debit=false then the property is for the credit account. `Required` `Default(true)` `Filter(eq)` 
-| [PropertyDescription](Finance.Accounting.TemplateLineProperties.md#propertydescription) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | Description for the property value that should be used when the description can't be determined by the source (e.g. when the source type is constant). 
+| [ObjectVersion](Finance.Accounting.TemplateLineProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [PropertyDescription](Finance.Accounting.TemplateLineProperties.md#propertydescription) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | Description for the property value that should be used when the description can't be determined by the source (e.g. when the source type is constant). 
 | [PropertyNo](Finance.Accounting.TemplateLineProperties.md#propertyno) | int32 | The ordinal position of the property value in the item key of the account. `Required` `Filter(eq)` 
 | [PropertyValueSource](Finance.Accounting.TemplateLineProperties.md#propertyvaluesource) | string (2000) | Source for the property value according to the chosen source type. `Required` 
 | [PropertyValueSourceType](Finance.Accounting.TemplateLineProperties.md#propertyvaluesourcetype) | string (64) | Type of source for the property value. For example: System properties, User properties for document, Constant, ... `Required` 
@@ -38,7 +42,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Property](Finance.Accounting.TemplateLineProperties.md#property) | [CustomProperties](General.CustomProperties.md) | The property which value will be included in the item key of the account. `Required` `Filter(multi eq)` |
-| [TemplateLine](Finance.Accounting.TemplateLineProperties.md#templateline) | [TemplateLines](Finance.Accounting.TemplateLines.md) | The `TemplateLine`(Finance.Accounting.TemplateLineProperties.md#templateline) to which this TemplateLineProperty belongs. `Required` `Filter(multi eq)` `Owner` |
+| [TemplateLine](Finance.Accounting.TemplateLineProperties.md#templateline) | [TemplateLines](Finance.Accounting.TemplateLines.md) | The <see cref="TemplateLine"/> to which this TemplateLineProperty belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -48,12 +52,23 @@ Aggregate Root:
 The internal Id of a property value, selected as constant value. Applicable only when Property Value Source Type = Constant. `Filter(multi eq)`
 
 _Type_: **guid __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -62,15 +77,26 @@ _Default Value_: **NewGuid**
 If Is_Debit=true then this property is for the debit account in the template line for which is this record. If Is_Debit=false then the property is for the credit account. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PropertyDescription
 
 Description for the property value that should be used when the description can't be determined by the source (e.g. when the source type is constant).
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -79,6 +105,7 @@ _Supports Order By_: **False**
 The ordinal position of the property value in the item key of the account. `Required` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -87,6 +114,7 @@ _Supports Order By_: **False**
 Source for the property value according to the chosen source type. `Required`
 
 _Type_: **string (2000)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2000**  
@@ -96,6 +124,7 @@ _Maximum Length_: **2000**
 Type of source for the property value. For example: System properties, User properties for document, Constant, ... `Required`
 
 _Type_: **string (64)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -108,17 +137,94 @@ _Maximum Length_: **64**
 The property which value will be included in the item key of the account. `Required` `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TemplateLine
 
-The `TemplateLine`(Finance.Accounting.TemplateLineProperties.md#templateline) to which this TemplateLineProperty belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="TemplateLine"/> to which this TemplateLineProperty belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[TemplateLines](Finance.Accounting.TemplateLines.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

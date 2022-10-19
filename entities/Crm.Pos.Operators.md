@@ -12,6 +12,8 @@ Default Display Text Format:
 _{PosOperatorCode}_  
 Default Search Members:  
 _PosOperatorCode_  
+Code Data Member:  
+_PosOperatorCode_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -23,8 +25,10 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [DisplayText](Crm.Pos.Operators.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Pos.Operators.md#id) | guid |  
 | [IsActive](Crm.Pos.Operators.md#isactive) | boolean | Indicates whether this operator is active and can be chosen for new records. `Required` `Default(true)` `Filter(multi eq)` 
+| [ObjectVersion](Crm.Pos.Operators.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PosOperatorCode](Crm.Pos.Operators.md#posoperatorcode) | string (16) | Operator code. Unique within the Pos Location. `Required` `Filter(multi eq;like)` `ORD` 
 | [StartingDate](Crm.Pos.Operators.md#startingdate) | date | The first date, when the operator has started working for this POS location. `Required` `Filter(multi eq;ge;le)` 
 | [TerminationDate](Crm.Pos.Operators.md#terminationdate) | date __nullable__ | The date, when the operator has ceased working in this POS location. null means, that the operator is still working or the termination date is still unknown. `Filter(multi eq;ge;le)` 
@@ -41,10 +45,20 @@ Aggregate Tree
 
 ## Attribute Details
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -53,15 +67,26 @@ _Default Value_: **NewGuid**
 Indicates whether this operator is active and can be chosen for new records. `Required` `Default(true)` `Filter(multi eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PosOperatorCode
 
 Operator code. Unique within the Pos Location. `Required` `Filter(multi eq;like)` `ORD`
 
 _Type_: **string (16)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
@@ -71,6 +96,7 @@ _Maximum Length_: **16**
 The first date, when the operator has started working for this POS location. `Required` `Filter(multi eq;ge;le)`
 
 _Type_: **date**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 
@@ -79,6 +105,7 @@ _Supports Order By_: **False**
 The date, when the operator has ceased working in this POS location. null means, that the operator is still working or the termination date is still unknown. `Filter(multi eq;ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 
@@ -90,6 +117,7 @@ _Supports Order By_: **False**
 The default POS terminal for this opertor. null when there is no default. `Filter(multi eq)`
 
 _Type_: **[Terminals](Crm.Pos.Terminals.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PosLocation
@@ -98,6 +126,7 @@ The POS location where this operator works. `Required` `Filter(multi eq)`
 
 _Type_: **[Locations](Crm.Pos.Locations.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PosRole
@@ -105,6 +134,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The role, assigned to the operator. The role indicates the permissions of the operator for this POS location. `Required` `Filter(multi eq)`
 
 _Type_: **[Roles](Crm.Pos.Roles.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### User
@@ -112,8 +142,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The login user for this POS operator. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

@@ -83,8 +83,10 @@
 <p>Depreciation methods. Contains both system-defined and user-defined methods. Entity: Ast_Depreciation_Methods</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name:T}</em><br>
 Default Search Members:<br>
+<em>Name</em><br>
+Name Data Member:<br>
 <em>Name</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
@@ -108,6 +110,11 @@ Default Search Members:<br>
 <td>Basic mathematical depreciation function used to calculate asset depreciation. STL=Straight Line, SYD=Sum of Years Digits, FAC=Depreciation change by factor, TAB=User defined with table. <code>Required</code> <code>Default(&quot;STL&quot;)</code></td>
 </tr>
 <tr>
+<td><a href="Finance.Assets.DepreciationMethods.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="Finance.Assets.DepreciationMethods.html#factor">Factor</a></td>
 <td>decimal (5, 3)</td>
 <td>Factor used in factor depreciation function. Factor &lt; 1 means declining depreciation; &gt;1 - increasing. The depreciation is multiplied for each period by the factor. <code>Required</code> <code>Default(1)</code></td>
@@ -129,8 +136,13 @@ Default Search Members:<br>
 </tr>
 <tr>
 <td><a href="Finance.Assets.DepreciationMethods.html#name">Name</a></td>
-<td>string (254)</td>
-<td>The name of this DepreciationMethod. <code>Required</code> <code>Filter(like)</code></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
+<td>Multilanguage string. <code>Required</code> <code>Filter(like)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Assets.DepreciationMethods.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="Finance.Assets.DepreciationMethods.html#perioddeterminationmethod">PeriodDeterminationMethod</a></td>
@@ -148,6 +160,7 @@ Default Search Members:<br>
 <h3 id="depreciationfunction">DepreciationFunction</h3>
 <p>Basic mathematical depreciation function used to calculate asset depreciation. STL=Straight Line, SYD=Sum of Years Digits, FAC=Depreciation change by factor, TAB=User defined with table. <code>Required</code> <code>Default(&quot;STL&quot;)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Assets.DepreciationMethods.html#depreciationfunction">DepreciationFunction</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>DepreciationFunction</code>(Finance.Assets.DepreciationMethods.md#depreciationfunction) data attribute<br>
 <em>Allowed Values (Finance.Assets.DepreciationMethodsRepository.DepreciationFunction Enum Members)</em></p>
 <table>
@@ -179,38 +192,55 @@ Allowed values for the <code>DepreciationFunction</code>(Finance.Assets.Deprecia
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>StraightLine</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="factor">Factor</h3>
 <p>Factor used in factor depreciation function. Factor &lt; 1 means declining depreciation; &gt;1 - increasing. The depreciation is multiplied for each period by the factor. <code>Required</code> <code>Default(1)</code></p>
 <p><em>Type</em>: <strong>decimal (5, 3)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>1</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="issystem">IsSystem</h3>
 <p>Is_System is True for those depreciation methods that are managed by the system via update procedures and cannot be edited by the user. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong></p>
 <h3 id="monthsinaperiod">MonthsInAPeriod</h3>
 <p>Number of equal valued months calculated with single application of the function. <code>Required</code> <code>Default(12)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>12</strong></p>
 <h3 id="name">Name</h3>
-<p>The name of this DepreciationMethod. <code>Required</code> <code>Filter(like)</code></p>
-<p><em>Type</em>: <strong>string (254)</strong><br>
+<p>Multilanguage string. <code>Required</code> <code>Filter(like)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="perioddeterminationmethod">PeriodDeterminationMethod</h3>
 <p>Determines when the depreciation starts and when it ends. NM=Next_Month, CM=Current_Month, BD=By_Days. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Assets.DepreciationMethods.html#perioddeterminationmethod">PeriodDeterminationMethod</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>PeriodDeterminationMethod</code>(Finance.Assets.DepreciationMethods.md#perioddeterminationmethod) data attribute<br>
 <em>Allowed Values (Finance.Assets.DepreciationMethodsRepository.PeriodDeterminationMethod Enum Members)</em></p>
 <table>
@@ -240,9 +270,79 @@ Allowed values for the <code>PeriodDeterminationMethod</code>(Finance.Assets.Dep
 <h3 id="startfromnextmonth">StartFromNextMonth</h3>
 <p>When true, denotes that the depreciation starts from the month, following the month of deployment. When false, the depreciation starts from the same month. <code>Required</code> <code>Default(true)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R26764.html">R26764 DepreciationMethod - Check System Method</a></li>

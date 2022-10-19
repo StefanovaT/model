@@ -19,12 +19,14 @@ The details of the movement of each excise product for each excise document. Ent
 |[Excise_Administrative_Document_Id](#excise_administrative_document_id)|`uniqueidentifier` ||
 |[Excise_Administrative_Document_Line_Id](#excise_administrative_document_line_id)|`uniqueidentifier` `PK`||
 |[Excise_Alcoholic_Strength](#excise_alcoholic_strength)|`decimal(5, 2)` |The alcoholic strength, which will be used for Excise reporting purposes. NULL  if the product is not subject to alcoholic Excise reporting.|
-|[Excise_Amount](#excise_amount)|`decimal(14, 2)` ||
-|[Excise_Amount_Base](#excise_amount_base)|`decimal(14, 2)` ||
+|[Excise_Amount](#excise_amount)|`decimal(14, 2)` |The excise amount |
+|[Excise_Amount_Base](#excise_amount_base)|`decimal(14, 2)` |The excise amount in base currency|
 |[Excise_Duty_Rate_Id](#excise_duty_rate_id)|`uniqueidentifier` |The Duty rate specified by the taxation and customs authorities.|
 |[Excise_Duty_Rate_Value](#excise_duty_rate_value)|`decimal(10, 6)` |The rate which should be applied for the specified product and purpose. NULL means not assigned yet.|
 |[Excise_Product_Id](#excise_product_id)|`uniqueidentifier` |The Excise product code defined by the taxation and customs authorities.|
 |[Excise_Purpose_Code_Id](#excise_purpose_code_id)|`uniqueidentifier` |The Purpose codes specify the different purposes recognized by the authorities for determining the excise rate.|
+|[Excise_Quantity](#excise_quantity)|`decimal(12, 3)` |The quantity, converted, for reporting purposes, in the measurement unit of the excise product type.|
+|[Excise_Quantity_Unit_Id](#excise_quantity_unit_id)|`uniqueidentifier` |The measurement unit of Excise Quantity. Copied from the excise product type.|
 |[Line_No](#line_no)|`int` |Consecutive line number within the document.|
 |[Measuring_Transaction_Id](#measuring_transaction_id)|`uniqueidentifier` |Transaction of product input or output, measured with specialized measuring device for excise purposes.|
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -137,6 +139,9 @@ The alcoholic strength, which will be used for Excise reporting purposes. NULL  
 
 ### Excise_Amount
 
+
+The excise amount 
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -170,6 +175,9 @@ The alcoholic strength, which will be used for Excise reporting purposes. NULL  
 |GreaterThanOrLessThan|None|no|no|
 
 ### Excise_Amount_Base
+
+
+The excise amount in base currency
 
 | Property | Value |
 | - | - |
@@ -343,6 +351,73 @@ The Purpose codes specify the different purposes recognized by the authorities f
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Excise_Quantity
+
+
+The quantity, converted, for reporting purposes, in the measurement unit of the excise product type.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|18|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(12, 3)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### Excise_Quantity_Unit_Id
+
+
+The measurement unit of Excise Quantity. Copied from the excise product type.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|19|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Measurement_Units](Gen_Measurement_Units.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Excise_Quantity_Unit_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Line_No
 

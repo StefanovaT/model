@@ -93,16 +93,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="#catch_balance">Catch_Balance</a></td>
-<td><code>decimal(38, 3)</code></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#catch_quantity_unit_id">Catch_Quantity_Unit_Id</a></td>
-<td><code>uniqueidentifier</code></td>
-<td>The measurement unit of the catch quantity. NULL when catch measurement is not configured for the product.</td>
-</tr>
-<tr>
 <td><a href="#cnt">Cnt</a></td>
 <td><code>bigint</code></td>
 <td></td>
@@ -128,14 +118,9 @@
 <td>The product variant, which was transacted. NULL when the transaction was not for a product variant.</td>
 </tr>
 <tr>
-<td><a href="#quantity_available">Quantity_Available</a></td>
+<td><a href="#quantity_base_available">Quantity_Base_Available</a></td>
 <td><code>decimal(38, 3)</code></td>
 <td></td>
-</tr>
-<tr>
-<td><a href="#quantity_unit_id">Quantity_Unit_Id</a></td>
-<td><code>uniqueidentifier</code></td>
-<td>The measurement unit of quantity.</td>
 </tr>
 <tr>
 <td><a href="#serial_number_id">Serial_Number_Id</a></td>
@@ -143,9 +128,14 @@
 <td>The serial number which was transacted. NULL when the transaction was not for a specific serial number.</td>
 </tr>
 <tr>
+<td><a href="#standard_quantity_available">Standard_Quantity_Available</a></td>
+<td><code>decimal(38, 3)</code></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#warehouse_id">Warehouse_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td></td>
+<td>The warehouse in which the transaction occurred.</td>
 </tr>
 <tr>
 <td><a href="#warehouse_location_id">Warehouse_Location_Id</a></td>
@@ -155,257 +145,6 @@
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
-<h3 id="catch_balance">Catch_Balance</h3>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auto Complete</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Wms_Warehouse_Transactions.html">Wms_Warehouse_Transactions</a>.<a href="Wms_Warehouse_Transactions.html#catch_quantity">Catch_Quantity</a></td>
-</tr>
-<tr>
-<td>Data Filter</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Default Value</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Enter Stop</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Ignore for Insert Order</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Is Entity Name</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Max Length</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>2147483647</td>
-</tr>
-<tr>
-<td>Ownership Reference</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Pasword</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Picture</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Primary Key</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Readonly</td>
-<td>no</td>
-</tr>
-<tr>
-<td>RTF</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Sortable</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Summary Type</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Supports EQUALS_IN</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>decimal(38, 3) (Allows NULL)</td>
-</tr>
-<tr>
-<td>UI Memo Editor</td>
-<td>no</td>
-</tr>
-<tr>
-<td>UI Width</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>User Login</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Visible</td>
-<td>yes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="catch_balance---supported-filters">Catch_Balance - Supported Filters</h4>
-<table>
-<thead>
-<tr>
-<th>Filter Type</th>
-<th>Default</th>
-<th>Include Nulls</th>
-<th>Hidden by Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Equals</td>
-<td><code>NULL</code></td>
-<td>yes</td>
-<td>no</td>
-</tr>
-<tr>
-<td>GreaterThanOrLessThan</td>
-<td>None</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h3 id="catch_quantity_unit_id">Catch_Quantity_Unit_Id</h3>
-<p>The measurement unit of the catch quantity. NULL when catch measurement is not configured for the product.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auto Complete</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Gen_Measurement_Units.html">Gen_Measurement_Units</a>.<a href="Gen_Measurement_Units.html#id">Id</a></td>
-</tr>
-<tr>
-<td>Data Filter</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Default Value</td>
-<td>NewGuid</td>
-</tr>
-<tr>
-<td>Enter Stop</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Ignore for Insert Order</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Is Entity Name</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Max Length</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>2147483647</td>
-</tr>
-<tr>
-<td>Ownership Reference</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Pasword</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Picture</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Primary Key</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Readonly</td>
-<td>no</td>
-</tr>
-<tr>
-<td>RTF</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Sortable</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Summary Type</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Supports EQUALS_IN</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>uniqueidentifier</td>
-</tr>
-<tr>
-<td>UI Memo Editor</td>
-<td>no</td>
-</tr>
-<tr>
-<td>UI Width</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>User Login</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Visible</td>
-<td>yes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="catch_quantity_unit_id---supported-filters">Catch_Quantity_Unit_Id - Supported Filters</h4>
-<table>
-<thead>
-<tr>
-<th>Filter Type</th>
-<th>Default</th>
-<th>Include Nulls</th>
-<th>Hidden by Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Equals</td>
-<td><code>NULL</code></td>
-<td>no</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
 <h3 id="cnt">Cnt</h3>
 <table>
 <thead>
@@ -985,7 +724,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="quantity_available">Quantity_Available</h3>
+<h3 id="quantity_base_available">Quantity_Base_Available</h3>
 <table>
 <thead>
 <tr>
@@ -999,16 +738,12 @@
 <td>no</td>
 </tr>
 <tr>
-<td>Base Table.Column</td>
-<td><a href="Wms_Warehouse_Transactions.html">Wms_Warehouse_Transactions</a>.<a href="Wms_Warehouse_Transactions.html#quantity">Quantity</a></td>
-</tr>
-<tr>
 <td>Data Filter</td>
 <td>no</td>
 </tr>
 <tr>
 <td>Default Value</td>
-<td>0</td>
+<td>None</td>
 </tr>
 <tr>
 <td>Enter Stop</td>
@@ -1064,7 +799,7 @@
 </tr>
 <tr>
 <td>Supports EQUALS_IN</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 <tr>
 <td>Type</td>
@@ -1088,7 +823,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="quantity_available---supported-filters">Quantity_Available - Supported Filters</h4>
+<h4 id="quantity_base_available---supported-filters">Quantity_Base_Available - Supported Filters</h4>
 <table>
 <thead>
 <tr>
@@ -1108,129 +843,6 @@
 <tr>
 <td>GreaterThanOrLessThan</td>
 <td>None</td>
-<td>no</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h3 id="quantity_unit_id">Quantity_Unit_Id</h3>
-<p>The measurement unit of quantity.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auto Complete</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Base Table.Column</td>
-<td><a href="Gen_Measurement_Units.html">Gen_Measurement_Units</a>.<a href="Gen_Measurement_Units.html#id">Id</a></td>
-</tr>
-<tr>
-<td>Data Filter</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Default Value</td>
-<td>NewGuid</td>
-</tr>
-<tr>
-<td>Enter Stop</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Ignore for Insert Order</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Is Entity Name</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Max Length</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>2147483647</td>
-</tr>
-<tr>
-<td>Ownership Reference</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Pasword</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Picture</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Primary Key</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Readonly</td>
-<td>no</td>
-</tr>
-<tr>
-<td>RTF</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Sortable</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Summary Type</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Supports EQUALS_IN</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>uniqueidentifier</td>
-</tr>
-<tr>
-<td>UI Memo Editor</td>
-<td>no</td>
-</tr>
-<tr>
-<td>UI Width</td>
-<td>Medium</td>
-</tr>
-<tr>
-<td>User Login</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Visible</td>
-<td>yes</td>
-</tr>
-</tbody>
-</table>
-<h4 id="quantity_unit_id---supported-filters">Quantity_Unit_Id - Supported Filters</h4>
-<table>
-<thead>
-<tr>
-<th>Filter Type</th>
-<th>Default</th>
-<th>Include Nulls</th>
-<th>Hidden by Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Equals</td>
-<td><code>NULL</code></td>
 <td>no</td>
 <td>no</td>
 </tr>
@@ -1359,7 +971,107 @@
 </tr>
 </tbody>
 </table>
+<h3 id="standard_quantity_available">Standard_Quantity_Available</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>decimal(38, 3)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="warehouse_id">Warehouse_Id</h3>
+<p>The warehouse in which the transaction occurred.</p>
 <table>
 <thead>
 <tr>

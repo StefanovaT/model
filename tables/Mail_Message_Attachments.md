@@ -10,8 +10,6 @@ Represents attachments to mail messages. Entity: Mail_Message_Attachments
 ## Owner Tables Hierarchy
 
 * [Mail_Messages](Mail_Messages.md)
-* [Mail_Box_Folders](Mail_Box_Folders.md)
-* [Mail_Boxes](Mail_Boxes.md)
 
 ## Summary
 

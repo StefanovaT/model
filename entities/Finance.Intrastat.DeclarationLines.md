@@ -12,6 +12,8 @@ Default Display Text Format:
 _{IntrastatDeclaration.EntityName}_  
 Default Search Members:  
 _IntrastatDeclaration.EntityName_  
+Name Data Member:  
+_IntrastatDeclaration.EntityName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -26,11 +28,13 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DeliveryTerms](Finance.Intrastat.DeclarationLines.md#deliveryterms) | [DeliveryTerms](Finance.Intrastat.DeclarationLines.md#deliveryterms) | Delivery terms - classification according to Intrastat (which uses the common abbreviations). `Required` 
+| [DisplayText](Finance.Intrastat.DeclarationLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Intrastat.DeclarationLines.md#id) | guid |  
 | [InvoicedValueAmountBase](Finance.Intrastat.DeclarationLines.md#invoicedvalueamountbase) | [Amount (10, 0)](../data-types.md#amount) | Invoiced value of the goods in the base currency. `Currency: IntrastatDeclaration.EnterpriseCompany.BaseCurrency` `Required` 
 | [LineAction](Finance.Intrastat.DeclarationLines.md#lineaction) | [LineAction](Finance.Intrastat.DeclarationLines.md#lineaction) | Line action - 'NEW' = New, 'EDN' = Edited-New, 'EDO' = Edited-Old, 'DEL' = Deleted. `Required` `Default("NEW")` 
 | [LineNo](Finance.Intrastat.DeclarationLines.md#lineno) | int32 | Consequtive line number within the intrastat declaration. `Required` `Filter(eq)` 
 | [NetMassKg](Finance.Intrastat.DeclarationLines.md#netmasskg) | decimal (14, 3) | Net mass of the goods in kg. `Required` `Filter(multi eq)` 
+| [ObjectVersion](Finance.Intrastat.DeclarationLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [QuantitySupplementaryUnit](Finance.Intrastat.DeclarationLines.md#quantitysupplementaryunit) | decimal (10, 0) __nullable__ | Quantity of the goods in the supplementary unit. null when no supplementary unit is specified. 
 | [StatisticalValueAmountBase](Finance.Intrastat.DeclarationLines.md#statisticalvalueamountbase) | [Amount (10, 0)](../data-types.md#amount) __nullable__ | Statistical value of the goods in the base currency. `Currency: IntrastatDeclaration.EnterpriseCompany.BaseCurrency` 
 | [TransactionNature](Finance.Intrastat.DeclarationLines.md#transactionnature) | [TransactionNature](Finance.Intrastat.DeclarationLines.md#transactionnature) | Transaction nature, according to the Intrastat classification. `Required` 
@@ -44,6 +48,7 @@ Aggregate Root:
 | [IntrastatCommodityCode](Finance.Intrastat.DeclarationLines.md#intrastatcommoditycode) | [CommodityCodes](Finance.Intrastat.CommodityCodes.md) | The commodity code of the goods, according to the Intrastat commodity classification. `Required` `Filter(multi eq)` |
 | [IntrastatDeclaration](Finance.Intrastat.DeclarationLines.md#intrastatdeclaration) | [Declarations](Finance.Intrastat.Declarations.md) | The intrastat declaration, to which this line belongs. `Required` `Filter(multi eq)` `Owner` |
 | [OriginCountry](Finance.Intrastat.DeclarationLines.md#origincountry) | [Countries](General.Geography.Countries.md) (nullable) | The country of origin of the goods. null for outbound declarations. `Filter(multi eq)` |
+| [Party](Finance.Intrastat.DeclarationLines.md#party) | [Parties](General.Contacts.Parties.md) (nullable) | Partner to whom the goods are dispatched, or partner from whom the goods are received. `Filter(multi eq)` `Introduced in version 22.1.5.58` |
 | [PartyCountry](Finance.Intrastat.DeclarationLines.md#partycountry) | [Countries](General.Geography.Countries.md) | The country of the partner. `Required` `Filter(multi eq)` |
 | [TransportCountry](Finance.Intrastat.DeclarationLines.md#transportcountry) | [Countries](General.Geography.Countries.md) | The country of the transportation company. `Required` `Filter(multi eq)` |
 
@@ -55,8 +60,9 @@ Aggregate Root:
 Delivery terms - classification according to Intrastat (which uses the common abbreviations). `Required`
 
 _Type_: **[DeliveryTerms](Finance.Intrastat.DeclarationLines.md#deliveryterms)**  
-Allowed values for the `DeliveryTerms`(Finance.Intrastat.DeclarationLines.md#deliveryterms) data attribute  
-_Allowed Values (Finance.Intrastat.DeclarationLinesRepository.DeliveryTerms Enum Members)_  
+_Category_: **System**  
+Generic enum type for DeliveryTerms properties  
+_Allowed Values (Finance.Intrastat.DeliveryTerms Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -76,10 +82,20 @@ _Allowed Values (Finance.Intrastat.DeclarationLinesRepository.DeliveryTerms Enum
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -88,6 +104,7 @@ _Default Value_: **NewGuid**
 Invoiced value of the goods in the base currency. `Currency: IntrastatDeclaration.EnterpriseCompany.BaseCurrency` `Required`
 
 _Type_: **[Amount (10, 0)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -96,6 +113,7 @@ _Supports Order By_: **False**
 Line action - 'NEW' = New, 'EDN' = Edited-New, 'EDO' = Edited-Old, 'DEL' = Deleted. `Required` `Default("NEW")`
 
 _Type_: **[LineAction](Finance.Intrastat.DeclarationLines.md#lineaction)**  
+_Category_: **System**  
 Allowed values for the `LineAction`(Finance.Intrastat.DeclarationLines.md#lineaction) data attribute  
 _Allowed Values (Finance.Intrastat.DeclarationLinesRepository.LineAction Enum Members)_  
 
@@ -115,6 +133,7 @@ _Default Value_: **New**
 Consequtive line number within the intrastat declaration. `Required` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -128,14 +147,25 @@ _Front-End Recalc Expressions:_
 Net mass of the goods in kg. `Required` `Filter(multi eq)`
 
 _Type_: **decimal (14, 3)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### QuantitySupplementaryUnit
 
 Quantity of the goods in the supplementary unit. null when no supplementary unit is specified.
 
 _Type_: **decimal (10, 0) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -144,6 +174,7 @@ _Supports Order By_: **False**
 Statistical value of the goods in the base currency. `Currency: IntrastatDeclaration.EnterpriseCompany.BaseCurrency`
 
 _Type_: **[Amount (10, 0)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -152,8 +183,9 @@ _Supports Order By_: **False**
 Transaction nature, according to the Intrastat classification. `Required`
 
 _Type_: **[TransactionNature](Finance.Intrastat.DeclarationLines.md#transactionnature)**  
-Allowed values for the `TransactionNature`(Finance.Intrastat.DeclarationLines.md#transactionnature) data attribute  
-_Allowed Values (Finance.Intrastat.DeclarationLinesRepository.TransactionNature Enum Members)_  
+_Category_: **System**  
+Generic enum type for TransactionNature properties  
+_Allowed Values (Finance.Intrastat.TransactionNature Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -185,8 +217,9 @@ _Supports Order By_: **False**
 Transportation mode - type of transportation used. `Required`
 
 _Type_: **[TransportMode](Finance.Intrastat.DeclarationLines.md#transportmode)**  
-Allowed values for the `TransportMode`(Finance.Intrastat.DeclarationLines.md#transportmode) data attribute  
-_Allowed Values (Finance.Intrastat.DeclarationLinesRepository.TransportMode Enum Members)_  
+_Category_: **System**  
+Generic enum type for TransportMode properties  
+_Allowed Values (Finance.Intrastat.TransportMode Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -210,6 +243,7 @@ _Supports Order By_: **False**
 Administrative region of the enterprise company at the time of the declaration. `Required` `Filter(multi eq)`
 
 _Type_: **[AdministrativeRegions](General.Geography.AdministrativeRegions.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### IntrastatCommodityCode
@@ -217,6 +251,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The commodity code of the goods, according to the Intrastat commodity classification. `Required` `Filter(multi eq)`
 
 _Type_: **[CommodityCodes](Finance.Intrastat.CommodityCodes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### IntrastatDeclaration
@@ -224,6 +259,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The intrastat declaration, to which this line belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Declarations](Finance.Intrastat.Declarations.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -232,6 +268,15 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The country of origin of the goods. null for outbound declarations. `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
+### Party
+
+Partner to whom the goods are dispatched, or partner from whom the goods are received. `Filter(multi eq)` `Introduced in version 22.1.5.58`
+
+_Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PartyCountry
@@ -239,6 +284,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The country of the partner. `Required` `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TransportCountry
@@ -246,8 +292,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The country of the transportation company. `Required` `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

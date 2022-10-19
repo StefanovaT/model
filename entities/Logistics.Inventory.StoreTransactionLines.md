@@ -26,6 +26,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AllowOverExecution](Logistics.Inventory.StoreTransactionLines.md#allowoverexecution) | boolean | When true, specifies, that we explicitly allow over-execution. Over-execution is when the quantity in all execution lines exceed the quantity in the parent store order line. `Required` `Default(false)` 
+| [DisplayText](Logistics.Inventory.StoreTransactionLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Finished](Logistics.Inventory.StoreTransactionLines.md#finished) | boolean __nullable__ | True if this transaction entry completes the operation. false if there might be more entries. `Default(false)` `Filter(eq)` 
 | [GuaranteePeriodDays](Logistics.Inventory.StoreTransactionLines.md#guaranteeperioddays) | int32 __nullable__ | Guarantee period in days for the offered product. null for non-serviced products. 
 | [Id](Logistics.Inventory.StoreTransactionLines.md#id) | guid |  
@@ -36,6 +37,7 @@ Aggregate Root:
 | [LineProductCost](Logistics.Inventory.StoreTransactionLines.md#lineproductcost) | [Amount (14, 2)](../data-types.md#amount) | The cost of the transaction in the currency of the product. `Currency: Product.CostingCurrency` `Required` `Default(0)` `ReadOnly` 
 | [LineStoreCost](Logistics.Inventory.StoreTransactionLines.md#linestorecost) | [Amount (14, 2)](../data-types.md#amount) | The cost of the transaction in the currency of the warehouse. `Currency: TransactionObj.Store.Currency` `Required` `Default(0)` `ReadOnly` 
 | [Notes](Logistics.Inventory.StoreTransactionLines.md#notes) | string (254) __nullable__ | Notes for this StoreTransactionLine. 
+| [ObjectVersion](Logistics.Inventory.StoreTransactionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineId](Logistics.Inventory.StoreTransactionLines.md#parentlineid) | guid __nullable__ | Used, when transaction lines are generated directly from other entities (different from Store Order). Denotes the Id of the parent document line, which generated the transaction line. `Filter(multi eq)` 
 | [ParentLineNo](Logistics.Inventory.StoreTransactionLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute line. 
 | [Quantity](Logistics.Inventory.StoreTransactionLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity received/issued in the measurement unit, specified in Quantity_Unit_Id. null means that the quantity is specified only in base measurement unit. `Unit: QuantityUnit` `Required` `Default(0)` 
@@ -56,7 +58,7 @@ Aggregate Root:
 | [ParentStoreOrderLine](Logistics.Inventory.StoreTransactionLines.md#parentstoreorderline) | [StoreOrderLines](Logistics.Inventory.StoreOrderLines.md) (nullable) | The line, containing the ordered quantity, which this execution line executes. `Filter(multi eq)` |
 | [Product](Logistics.Inventory.StoreTransactionLines.md#product) | [Products](General.Products.Products.md) | The item that was received/issued. `Required` `Filter(multi eq)` |
 | [ProductCode](Logistics.Inventory.StoreTransactionLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Used to set the Product_Id thru the coding systems. `Filter(multi eq)` |
-| [ProductVariant](Logistics.Inventory.StoreTransactionLines.md#productvariant) | [ProductVariants](General.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
+| [ProductVariant](Logistics.Inventory.StoreTransactionLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.StoreTransactionLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. null means that the quantity is specified only in base measurement unit. `Required` `Filter(multi eq)` |
 | [SerialNumber](Logistics.Inventory.StoreTransactionLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Item serial number for serialized items. null for non-serialized items. `Filter(multi eq)` |
 | [StoreBin](Logistics.Inventory.StoreTransactionLines.md#storebin) | [StoreBins](Logistics.Inventory.StoreBins.md) (nullable) | Store bin, from/to which the transaction was performed. `Filter(multi eq)` |
@@ -70,15 +72,26 @@ Aggregate Root:
 When true, specifies, that we explicitly allow over-execution. Over-execution is when the quantity in all execution lines exceed the quantity in the parent store order line. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Finished
 
 True if this transaction entry completes the operation. false if there might be more entries. `Default(false)` `Filter(eq)`
 
 _Type_: **boolean __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -88,6 +101,7 @@ _Default Value_: **False**
 Guarantee period in days for the offered product. null for non-serviced products.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -97,6 +111,7 @@ _Front-End Recalc Expressions:_
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -105,6 +120,7 @@ _Default Value_: **NewGuid**
 The cost of the transaction in the currency of the enterprise company. `Currency: TransactionObj.EnterpriseCompany.BaseCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -114,6 +130,7 @@ _Default Value_: **Constant**
 Total cost for the line. `Currency: TransactionObj.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -123,6 +140,7 @@ _Default Value_: **Constant**
 The cost of the transaction in the currency of the document. `Currency: TransactionObj.DocumentCurrency` `Required` `Default(0)` `ReadOnly`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -132,6 +150,7 @@ _Default Value_: **Constant**
 Line number, unique within the store transaction. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -145,6 +164,7 @@ _Front-End Recalc Expressions:_
 The cost of the transaction in the currency of the product. `Currency: Product.CostingCurrency` `Required` `Default(0)` `ReadOnly`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -154,6 +174,7 @@ _Default Value_: **Constant**
 The cost of the transaction in the currency of the warehouse. `Currency: TransactionObj.Store.Currency` `Required` `Default(0)` `ReadOnly`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -163,9 +184,19 @@ _Default Value_: **Constant**
 Notes for this StoreTransactionLine.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentLineId
 
@@ -173,6 +204,7 @@ Used, when transaction lines are generated directly from other entities (differe
 
 _Type_: **guid __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentLineNo
@@ -180,6 +212,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The number of the line within the parent document, which the current line executes. null when the current line does not execute line.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -188,6 +221,7 @@ _Supports Order By_: **False**
 The quantity received/issued in the measurement unit, specified in Quantity_Unit_Id. null means that the quantity is specified only in base measurement unit. `Unit: QuantityUnit` `Required` `Default(0)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -197,6 +231,7 @@ _Default Value_: **Constant**
 The quantity of the stock received/issued in base measurement unit. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -211,6 +246,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -224,6 +260,7 @@ _Front-End Recalc Expressions:_
 Obsolete. Not used. `Filter(eq)`
 
 _Type_: **string (50) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
@@ -234,6 +271,7 @@ Exact time when the transaction changes the cost of the product. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 
@@ -242,6 +280,7 @@ _Supports Order By_: **True**
 Cost for 1 of the specified quantity. `Currency: TransactionObj.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -255,6 +294,7 @@ The transaction to which the transaction line belongs. `Required` `Filter(multi 
 
 _Type_: **[StoreTransactions](Logistics.Inventory.StoreTransactions.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Lot
@@ -263,6 +303,7 @@ If non-null, contains the specific lot to use for the movement. `Filter(multi eq
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### OriginalProduct
@@ -270,6 +311,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When specified, contains the original product, which was ordered to be received or issued. The actual product is recorded in the Product field. Deprecated. Use Parent Store Order Line.Product instead. `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -280,6 +322,7 @@ The document, which the current line executes. null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentStoreOrderLine
@@ -288,6 +331,7 @@ The line, containing the ordered quantity, which this execution line executes. `
 
 _Type_: **[StoreOrderLines](Logistics.Inventory.StoreOrderLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -296,6 +340,7 @@ The item that was received/issued. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -305,13 +350,15 @@ _Front-End Recalc Expressions:_
 Used to set the Product_Id thru the coding systems. `Filter(multi eq)`
 
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProductVariant
 
 If specified determines which product variant of the current product in this line is used. `Filter(multi eq)`
 
-_Type_: **[ProductVariants](General.ProductVariants.md) (nullable)**  
+_Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### QuantityUnit
@@ -319,6 +366,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit of Quantity. null means that the quantity is specified only in base measurement unit. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### SerialNumber
@@ -326,6 +374,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Item serial number for serialized items. null for non-serialized items. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### StoreBin
@@ -334,6 +383,7 @@ Store bin, from/to which the transaction was performed. `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### TransactionObj
@@ -342,9 +392,85 @@ The transaction to which the transaction line belongs. `Required` `Filter(multi 
 
 _Type_: **[StoreTransactions](Logistics.Inventory.StoreTransactions.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

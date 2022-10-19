@@ -153,14 +153,9 @@
 <td>When not NULL, specifies that the product is specific to a given enterprise company and may be used only in documents from this enterprise company.</td>
 </tr>
 <tr>
-<td><a href="#excise_alcoholic_strength">Excise_Alcoholic_Strength</a></td>
-<td><code>decimal(5, 2)</code></td>
-<td>The alcoholic strength, which will be used for Excise reporting purposes. NULL if the product is not subject to alcoholic Excise reporting.</td>
-</tr>
-<tr>
-<td><a href="#excise_product_id">Excise_Product_Id</a></td>
+<td><a href="#excise_product_type_id">Excise_Product_Type_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>Specifies excise product code for this product. NULL means unspecified.</td>
+<td>Specifies the basic excise attributes of the product.</td>
 </tr>
 <tr>
 <td><a href="#expiry_period_days">Expiry_Period_Days</a></td>
@@ -185,7 +180,7 @@
 <tr>
 <td><a href="#intrastat_commodity_code_id">Intrastat_Commodity_Code_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td></td>
+<td>Code from The Combined Nomenclature used within the European Union countries. Used when reporting Intrastat and Excise.</td>
 </tr>
 <tr>
 <td><a href="#intrastat_supplementary_unit_id">Intrastat_Supplementary_Unit_Id</a></td>
@@ -1728,8 +1723,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="excise_alcoholic_strength">Excise_Alcoholic_Strength</h3>
-<p>The alcoholic strength, which will be used for Excise reporting purposes. NULL if the product is not subject to alcoholic Excise reporting.</p>
+<h3 id="excise_product_type_id">Excise_Product_Type_Id</h3>
+<p>Specifies the basic excise attributes of the product.</p>
 <table>
 <thead>
 <tr>
@@ -1768,107 +1763,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>45</td>
-</tr>
-<tr>
-<td>Ownership Reference</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Pasword</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Picture</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Primary Key</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Readonly</td>
-<td>no</td>
-</tr>
-<tr>
-<td>RTF</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Sortable</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Summary Type</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Supports EQUALS_IN</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Type</td>
-<td>decimal(5, 2) (Allows NULL)</td>
-</tr>
-<tr>
-<td>UI Memo Editor</td>
-<td>no</td>
-</tr>
-<tr>
-<td>UI Width</td>
-<td>Short</td>
-</tr>
-<tr>
-<td>User Login</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Visible</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<h3 id="excise_product_id">Excise_Product_Id</h3>
-<p>Specifies excise product code for this product. NULL means unspecified.</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Auto Complete</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Data Filter</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Default Value</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Enter Stop</td>
-<td>yes</td>
-</tr>
-<tr>
-<td>Ignore for Insert Order</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Is Entity Name</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Max Length</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>Order</td>
-<td>46</td>
+<td>48</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -1892,7 +1787,7 @@
 </tr>
 <tr>
 <td>Referenced Table</td>
-<td><a href="Exc_Excise_Products.html">Exc_Excise_Products</a></td>
+<td><a href="Exc_Excise_Product_Types.html">Exc_Excise_Product_Types</a></td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -1932,7 +1827,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="excise_product_id---supported-filters">Excise_Product_Id - Supported Filters</h4>
+<h4 id="excise_product_type_id---supported-filters">Excise_Product_Type_Id - Supported Filters</h4>
 <table>
 <thead>
 <tr>
@@ -2375,6 +2270,7 @@
 </tbody>
 </table>
 <h3 id="intrastat_commodity_code_id">Intrastat_Commodity_Code_Id</h3>
+<p>Code from The Combined Nomenclature used within the European Union countries. Used when reporting Intrastat and Excise.</p>
 <table>
 <thead>
 <tr>

@@ -26,6 +26,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DeliveryTermsCode](Crm.Sales.SalesOrderLines.md#deliverytermscode) | [DeliveryTerms](Crm.Sales.SalesOrderLines.md#deliverytermscode) __nullable__ | Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting. 
+| [DisplayText](Crm.Sales.SalesOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [GuaranteePeriodDays](Crm.Sales.SalesOrderLines.md#guaranteeperioddays) | int32 __nullable__ | Guarantee period in days for the offered product. null for non-serviced products. 
 | [HistoricalDataJson](Crm.Sales.SalesOrderLines.md#historicaldatajson) | string (max) __nullable__ | Used only for lines, which are returns. It is a JSON-formatted string, containing data from the original sale. `Introduced in version 19.1` 
 | [HistoricalUnitCost](Crm.Sales.SalesOrderLines.md#historicalunitcost) | [Amount (14, 5)](../data-types.md#amount) __nullable__ | Used for returning of goods that are sold before the exploitation of the system. `Currency: SalesOrder.DocumentCurrency` `Filter(eq;ge;le)` 
@@ -40,9 +41,10 @@ Aggregate Root:
 | [LineStandardDiscount<br />Percent](Crm.Sales.SalesOrderLines.md#linestandarddiscountpercent) | decimal (7, 6) | Standard discount for the line. This is automatically computed according to discount conditions. `Required` `Default(0)` `ReadOnly` 
 | [LineToDate](Crm.Sales.SalesOrderLines.md#linetodate) | date __nullable__ | When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
 | [Notes](Crm.Sales.SalesOrderLines.md#notes) | string (max) __nullable__ | Notes for this SalesOrderLine. 
+| [ObjectVersion](Crm.Sales.SalesOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineNo](Crm.Sales.SalesOrderLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. `Filter(eq)` 
 | [PersistLot](Crm.Sales.SalesOrderLines.md#persistlot) | boolean | If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. `Required` `Default(false)` `Filter(eq)` 
-| [ProductDescription](Crm.Sales.SalesOrderLines.md#productdescription) | [MultilanguageString](../data-types.md#multilanguagestring) | The name of the sold product at the time the sale was made. `Required` `Filter(like)` 
+| [ProductDescription](Crm.Sales.SalesOrderLines.md#productdescription) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the sold product at the time the sale was made. `Required` `Filter(like)` 
 | [Quantity](Crm.Sales.SalesOrderLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity sold. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [QuantityBase](Crm.Sales.SalesOrderLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The equivalent of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` 
 | [RequestedQuantity](Crm.Sales.SalesOrderLines.md#requestedquantity) | [Quantity (12, 3)](../data-types.md#quantity) __nullable__ | Quantity requested by customer. `Unit: QuantityUnit` 
@@ -56,7 +58,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [BonusProgram](Crm.Sales.SalesOrderLines.md#bonusprogram) | [BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable) | The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)` |
-| [Document](Crm.Sales.SalesOrderLines.md#document) | [SalesOrders](Crm.Sales.SalesOrders.md) | The `SalesOrder`(Crm.Sales.SalesOrderLines.md#salesorder) to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` |
+| [Document](Crm.Sales.SalesOrderLines.md#document) | [SalesOrders](Crm.Sales.SalesOrders.md) | The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` |
 | [IntrastatTransportCountry](Crm.Sales.SalesOrderLines.md#intrastattransportcountry) | [Countries](General.Geography.Countries.md) (nullable) | Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)` |
 | [LineDealType](Crm.Sales.SalesOrderLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)` |
 | [LineDiscount](Crm.Sales.SalesOrderLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` |
@@ -67,12 +69,12 @@ Aggregate Root:
 | [Product](Crm.Sales.SalesOrderLines.md#product) | [Products](General.Products.Products.md) | The product sold. `Required` `Filter(multi eq)` |
 | [ProductCode](Crm.Sales.SalesOrderLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Used to set the Product_Id thru the coding systems. `Filter(multi eq)` |
 | [ProductPrice](Crm.Sales.SalesOrderLines.md#productprice) | [ProductPrices](Crm.ProductPrices.md) (nullable) | Not null when the price has been selected from the list of valid standard prices. `Filter(multi eq)` |
-| [ProductVariant](Crm.Sales.SalesOrderLines.md#productvariant) | [ProductVariants](General.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
+| [ProductVariant](Crm.Sales.SalesOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
 | [PromotionalPackage](Crm.Sales.SalesOrderLines.md#promotionalpackage) | [PromotionalPackages](Crm.PromotionalPackages.md) (nullable) | The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. `Filter(multi eq)` `ReadOnly` |
 | [QuantityUnit](Crm.Sales.SalesOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [ReturnForInvoiceLine](Crm.Sales.SalesOrderLines.md#returnforinvoiceline) | [InvoiceLines](Crm.Invoicing.InvoiceLines.md) (nullable) | When specified, indicates that the current line is a return for products, invoiced with the specified invoice line. `Filter(multi eq)` |
 | [ReturnForSalesOrderLine](Crm.Sales.SalesOrderLines.md#returnforsalesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable) | When specified indicates that the goods sold in Return_For_Sales_<br />Order_Line_Id are returned with the current line. `Filter(multi eq)` |
-| [SalesOrder](Crm.Sales.SalesOrderLines.md#salesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) | The `SalesOrder`(Crm.Sales.SalesOrderLines.md#salesorder) to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [SalesOrder](Crm.Sales.SalesOrderLines.md#salesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) | The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [SerialNumber](Crm.Sales.SalesOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)` |
 | [StoreBin](Crm.Sales.SalesOrderLines.md#storebin) | [StoreBins](Logistics.Inventory.StoreBins.md) (nullable) | The bin from which the goods should be withdrawn. null means that the bin will be specified at a later stage (store order, etc.). `Filter(multi eq)` |
 
@@ -84,6 +86,7 @@ Aggregate Root:
 Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting.
 
 _Type_: **[DeliveryTerms](Crm.Sales.SalesOrderLines.md#deliverytermscode) __nullable__**  
+_Category_: **System**  
 Generic enum type for DeliveryTerms properties  
 _Allowed Values (Finance.Intrastat.DeliveryTerms Enum Members)_  
 
@@ -110,11 +113,21 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.DeliveryTermsCode`
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### GuaranteePeriodDays
 
 Guarantee period in days for the offered product. null for non-serviced products.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -125,6 +138,7 @@ _Front-End Recalc Expressions:_
 Used only for lines, which are returns. It is a JSON-formatted string, containing data from the original sale. `Introduced in version 19.1`
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -134,6 +148,7 @@ _Maximum Length_: **2147483647**
 Used for returning of goods that are sold before the exploitation of the system. `Currency: SalesOrder.DocumentCurrency` `Filter(eq;ge;le)`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -141,6 +156,7 @@ _Supports Order By_: **False**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -149,6 +165,7 @@ _Default Value_: **NewGuid**
 Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -157,6 +174,7 @@ _Supports Order By_: **False**
 Transaction nature; used for Intrastat reporting.
 
 _Type_: **[TransactionNature](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) __nullable__**  
+_Category_: **System**  
 Generic enum type for TransactionNature properties  
 _Allowed Values (Finance.Intrastat.TransactionNature Enum Members)_  
 
@@ -195,6 +213,7 @@ _Front-End Recalc Expressions:_
 Transport mode; used for Intrastat reporting.
 
 _Type_: **[TransportMode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) __nullable__**  
+_Category_: **System**  
 Generic enum type for TransportMode properties  
 _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_  
 
@@ -205,9 +224,9 @@ _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_
 | RoadTransport | RoadTransport value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'RoadTransport' |
 | AirTransport | AirTransport value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AirTransport' |
 | Mail | Mail value. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Mail' |
-| FixedTransport<br />Installations | FixedTransport<br />Installations value. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'FixedTransport<br />Installations' |
-| RiverTransport | RiverTransport value. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'RiverTransport' |
-| SelfPropelled | SelfPropelled value. Stored as '8'. <br /> _Database Value:_ '8' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'SelfPropelled' |
+| FixedTransport<br />Installations | FixedTransport<br />Installations value. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'FixedTransport<br />Installations' |
+| RiverTransport | RiverTransport value. Stored as '8'. <br /> _Database Value:_ '8' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'RiverTransport' |
+| SelfPropelled | SelfPropelled value. Stored as '9'. <br /> _Database Value:_ '9' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'SelfPropelled' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -222,6 +241,7 @@ _Front-End Recalc Expressions:_
 The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -236,6 +256,7 @@ _Front-End Recalc Expressions:_
 User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -245,6 +266,7 @@ _Default Value_: **0**
 When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -258,6 +280,7 @@ _Front-End Recalc Expressions:_
 Consecutive number of the line within the sales order. `Required` `Filter(eq)` `ORD`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 
@@ -271,6 +294,7 @@ _Front-End Recalc Expressions:_
 Standard discount for the line. This is automatically computed according to discount conditions. `Required` `Default(0)` `ReadOnly`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -285,6 +309,7 @@ _Front-End Recalc Expressions:_
 When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -298,15 +323,26 @@ _Front-End Recalc Expressions:_
 Notes for this SalesOrderLine.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentLineNo
 
 The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. `Filter(eq)`
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -315,6 +351,7 @@ _Supports Order By_: **False**
 If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -328,7 +365,8 @@ _Front-End Recalc Expressions:_
 
 The name of the sold product at the time the sale was made. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
@@ -342,6 +380,7 @@ _Front-End Recalc Expressions:_
 The quantity sold. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -351,6 +390,7 @@ _Default Value_: **Constant**
 The equivalent of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -364,6 +404,7 @@ _Front-End Recalc Expressions:_
 Quantity requested by customer. `Unit: QuantityUnit`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -372,6 +413,7 @@ _Supports Order By_: **False**
 The required (contracted) delivery date for the line. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -385,6 +427,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -398,6 +441,7 @@ _Front-End Recalc Expressions:_
 Standard unit price of the product during the creation of the sales order line. `Currency: SalesOrder.DocumentCurrency` `ReadOnly`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -411,6 +455,7 @@ _Front-End Recalc Expressions:_
 Unit price of the product in the currency of the sales order and in the unit of measure, as specified by QuantityUnitId. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -428,16 +473,18 @@ _Front-End Recalc Expressions:_
 The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)`
 
 _Type_: **[BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ReturnForSalesOrderLine != null), null, obj.BonusProgram)`
 ### Document
 
-The `SalesOrder`(Crm.Sales.SalesOrderLines.md#salesorder) to which this SalesOrderLine belongs. `Required` `Filter(multi eq)`
+The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[SalesOrders](Crm.Sales.SalesOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### IntrastatTransportCountry
@@ -445,6 +492,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -457,6 +505,7 @@ _Front-End Recalc Expressions:_
 Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)`
 
 _Type_: **[DealTypes](Finance.Vat.DealTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -469,6 +518,7 @@ _Front-End Recalc Expressions:_
 The line discount type used to form the Line_Standard_Discount_Percent. `Filter(multi eq)`
 
 _Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -478,6 +528,7 @@ _Front-End Recalc Expressions:_
 The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -490,6 +541,7 @@ _Front-End Recalc Expressions:_
 The store which should be used to issue the goods for the line. null means to use the store from the header. `Filter(multi eq;like)`
 
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -502,6 +554,7 @@ _Front-End Recalc Expressions:_
 Specifies the lot from which the goods should be issued. null means that the lot will be specified at a later stage (store order, etc.). `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentDocument
@@ -510,6 +563,7 @@ The document, which the current line executes. null when the current line does n
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -518,18 +572,20 @@ The product sold. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
-`IIF( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)), obj.BonusProgram.BonusProduct, obj.ProductCode.Product.IfNullThen( obj.Product))`
+`IIF( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)), obj.BonusProgram.BonusProduct, IIF( ( ( obj.ProductCode.Product != null) AndAlso ( obj.ProductCode.Product.Active == True)), obj.ProductCode.Product, obj.Product))`
 
 _Front-End Recalc Expressions:_  
-`IIF( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)), obj.BonusProgram.BonusProduct, obj.ProductCode.Product.IfNullThen( obj.Product))`
+`IIF( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)), obj.BonusProgram.BonusProduct, IIF( ( ( obj.ProductCode.Product != null) AndAlso ( obj.ProductCode.Product.Active == True)), obj.ProductCode.Product, obj.Product))`
 ### ProductCode
 
 Used to set the Product_Id thru the coding systems. `Filter(multi eq)`
 
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ProductPrice
@@ -537,6 +593,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Not null when the price has been selected from the list of valid standard prices. `Filter(multi eq)`
 
 _Type_: **[ProductPrices](Crm.ProductPrices.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -545,7 +602,8 @@ _Front-End Recalc Expressions:_
 
 If specified determines which product variant of the current product in this line is used. `Filter(multi eq)`
 
-_Type_: **[ProductVariants](General.ProductVariants.md) (nullable)**  
+_Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PromotionalPackage
@@ -553,6 +611,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[PromotionalPackages](Crm.PromotionalPackages.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -562,6 +621,7 @@ _Front-End Recalc Expressions:_
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -575,6 +635,7 @@ When specified, indicates that the current line is a return for products, invoic
 
 _Type_: **[InvoiceLines](Crm.Invoicing.InvoiceLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ReturnForSalesOrderLine
@@ -583,14 +644,16 @@ When specified indicates that the goods sold in Return_For_Sales_Order_Line_Id a
 
 _Type_: **[SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### SalesOrder
 
-The `SalesOrder`(Crm.Sales.SalesOrderLines.md#salesorder) to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[SalesOrders](Crm.Sales.SalesOrders.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -599,6 +662,7 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)`
 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### StoreBin
@@ -606,8 +670,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The bin from which the goods should be withdrawn. null means that the bin will be specified at a later stage (store order, etc.). `Filter(multi eq)`
 
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

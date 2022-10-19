@@ -7,10 +7,6 @@ Entity: [Applications.Rental.Assets](~/entities/Applications.Rental.Assets.md)
 
 Contains the rentable assets. Entity: Rent_Assets
 
-## Owner Tables Hierarchy
-
-* [Rent_Asset_Groups](Rent_Asset_Groups.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -253,7 +249,7 @@ The logical group of the rental asset.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

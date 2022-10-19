@@ -99,15 +99,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">YES</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Status</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/generation-procedures.html">NEW</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/generation-procedures.html">ACTIVE</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Transitional Documents</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">NO</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Supports Single Execution</td>
+<td>YES</td>
 </tr>
 <tr>
 <td style="text-align: left;">Replaces</td>
@@ -128,30 +132,83 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>The current generation procedure is meant to create template offers from a Deal. The generated Offers contain data only in their header and have no lines. The lines are filled in later by the user.</p>
-<p>To create an offer, the customer has to be specified. The customer is extracted from the party, selected in the Deal - Deal.Party - and the up to date customer definition of this party in the enterprise company of the offer - Offer.EnterpriseCompany(so Customer.Party = Deal.Party &amp;&amp; Customer.EnterpriseCompany == Offer.EnterpriseCompany). If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
-<blockquote>
-<p>Party '{Deal.Party.PartyName}' is not defined as customer for enterprise company '{Deal.EnterpriseCompany.Party.PartyName}'. In order to create an offer the party has to be defined as customer for enterprise company '{Deal.EnterpriseCompany.Party.PartyName}'.</p>
-</blockquote>
-<p>The rest of the offer attributes are filled as follows:</p>
-<pre><code>Offer.Customer = Customer 
+<p>The current generation procedure is meant to create template offers from a Deal.</p>
+<p>To create an offer, the customer has to be specified. The customer is extracted from the party, selected in the Deal - Deal.Party - and the up to date customer definition of this party in the enterprise company of the offer - Offer.EnterpriseCompany(so Customer.Party = Deal.Party &amp;&amp; Customer.EnterpriseCompany == Offer.EnterpriseCompany).
+If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
+<pre><code> Party '{Deal.Party.PartyName}' is not defined as customer for enterprise company '{Deal.EnterpriseCompany.Party.PartyName}'. 
+ In order to create an offer the party has to be defined as customer for enterprise company '{Deal.EnterpriseCompany.Party.PartyName}'.
+</code></pre>
+<p><strong>The fields in the Offer’s header are filled as follows:</strong></p>
+<pre><code>Offer.DocumentDate = Deal.DocumentDate
+Offer.Customer = the determined Customer for the Deal.Party
 Offer.DocumentCurrency = Offer.EnterpriseCompany.BaseCurrency 
 Offer.Deal = Deal 
 Offer.SalesPerson = Deal.LeadingSalesPerson
+Offer.RequiredDeliveryDate = DocumentDate + Customer.DefaultDeliveryTermDays
+Offer.PaymentDueDate = DocumentDate + Customer.DefaultPaymentTermDays
+Offer.PriceList = Customer.DefaultPriceList
+Offer.PaymentType = Customer.DefaultPaymentType
 </code></pre>
-<p>The offer attributes RequiredDeliveryDate and PaymentDueDate are calculated by the data in the customer definition compared to the DocumentDate as follows:</p>
-<ul>
-<li>RequiredDeliveryDate = DocumentDate + Customer.DefaultDeliveryTermDays</li>
-<li>PaymentDueDate = DocumentDate + Customer.DefaultPaymentTermDays</li>
-</ul>
-<p>The attributes PriceList and PaymentType are copied from the customer definition. If in the customer definition they are empty, they are empty in the offer too.</p>
-<p>The Document table attributes:</p>
-<pre><code>Offer.DocumentDate = Deal.DocumentDate
-* the attributes which are not specified here are filled in as described in Standard Document Attributes
-</code></pre>
-<p>The custom properties are copied to the offer only if they are defined in the offer document type.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The attributes which are not specified here are filled in as described in <strong><a href="../reference/standard-document-attributes.html">Standard Document Attributes</a></strong></p>
+</div>
 <h2 id="fulfillments">Fulfillments</h2>
 <p>No fulfilments and metrics are used for the current generation procedure. Each time the procedure is started, it creates new sub-document no matter if there are documents already created from previous procedure executions.</p>
+<br>
+<p><strong>The new Offer Line is created as follows:</strong></p>
+<pre><code>OfferLine.LineNo = DealLine.LineNo
+
+OfferLine.Product = DealLine.Product
+
+OfferLine.ProductDescription = OfferLine.Product.Name
+
+OfferLine.GuaranteePeriodDays = OfferLine.Product.GuaranteePeriodDays
+
+OfferLine.ProductCode = NULL
+
+OfferLine.ProductPrice = loaded by the 'Determine product price'* method
+
+OfferLine.UnitPrice = loaded by the 'Calculate Unit Price' method
+
+OfferLine.Quantity = DealLine.Quantity
+
+OfferLine.QuantityUnit = DealLine.QuantityUnit
+
+OfferLine.QuantityBase = CONVERT(OfferLine.Quantity, OfferLine.Product.BaseMeasurementCategory.BaseUnit)
+
+OfferLine.StandardQuantityBase = CONVERT(OfferLine.Quantity, OfferLine.Product.BaseMeasurementCategory.BaseUnit)
+
+OfferLine.LineDiscount = loaded by the 'Determine line discount'* method
+
+OfferLine.LineStandardDiscountPercent = if (OfferLine.LineDiscount != null)
+                                        , then OfferLine.LineStandardDiscountPercent = OfferLine.LineDiscount.DiscountPercent
+                                        , else OfferLine.LineStandardDiscountPercent = 0.00%   
+
+OfferLine.LineCustomDiscountPercent = 0.00%
+
+OfferLine.LineAmount = loaded by the 'Determine line amount in sales orders'* method
+
+OfferLine.LineEndCustomerParty = NULL
+
+OfferLine.RequiredDeliveryDate = Offer.RequiredDeliveryDate
+
+OfferLine.DeliveryTermDays = 0
+
+OfferLine.Variant = NULL
+
+OfferLine.ChoiceGroupName = NULL
+
+OfferLine.Notes = DealLine.Notes
+
+OfferLine.IsSelected = true
+</code></pre>
+<br>
+<p>*<a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/crm-common/crm-common-concepts/determine-product-price.html">Determine product price</a>
+<br></p>
+<p>*<a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/crm-common/crm-common-concepts/determine-line-discount.html">Determine line discount</a>
+<br></p>
+<p>*<a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-concepts/determine-line-amount-in-sales-orders.html">Determine line amount in sales orders</a></p>
 </article>
           </div>
           

@@ -19,7 +19,7 @@ The solutions offered by a competitor. Entity: Crm_Competitor_Solutions (Introdu
 |[Competitor_Id](#competitor_id)|`uniqueidentifier` |Competitor to our marketing solutions.|
 |[Competitor_Solution_Id](#competitor_solution_id)|`uniqueidentifier` `PK`|The solutions offered by a competitor.|
 |[Industry_Id](#industry_id)|`uniqueidentifier` |When not null, specifies the industry, for which the solution is targeted.|
-|[Name](#name)|`nvarchar(254)` `ML`|Multi-language string|
+|[Name](#name)|`nvarchar(254)` `ML`|Name of solution|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Our_Marketing_Solution_Id](#our_marketing_solution_id)|`uniqueidentifier` |Our marketing solution, which is competing with the competitor solution.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -176,7 +176,7 @@ When not null, specifies the industry, for which the solution is targeted.
 ### Name
 
 
-Multi-language string
+Name of solution
 
 | Property | Value |
 | - | - |

@@ -83,9 +83,9 @@
 <p>Public users profile data. Entity: Public_Users (Introduced in version 22.1.4.22)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{UserId}: {Email}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
-__</p>
+<em>Name</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -104,18 +104,33 @@ __</p>
 <tbody>
 <tr>
 <td><a href="Public.Users.html#email">Email</a></td>
-<td>string (254)</td>
-<td>Unique email of the user. Can be null because there may be login providers that don't use emails. <code>Required</code></td>
+<td>string (254) <strong>nullable</strong></td>
+<td>Unique email of the user. Can be null because there may be login providers that don't use emails. <code>Filter(multi eq;like)</code> <code>Inherited from Sec_Users_Table.Email</code></td>
+</tr>
+<tr>
+<td><a href="Public.Users.html#isadmin">IsAdmin</a></td>
+<td>boolean</td>
+<td>True if the user is administrator, otherwise false. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Inherited from Sec_Users_Table.Is_Admin</code></td>
+</tr>
+<tr>
+<td><a href="Public.Users.html#login">Login</a></td>
+<td>string (64)</td>
+<td>The login name of the user, which is usually the email. <code>Required</code> <code>Filter(multi eq;like)</code> <code>Inherited from Sec_Users_Table.Login</code></td>
 </tr>
 <tr>
 <td><a href="Public.Users.html#name">Name</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a></td>
-<td>The full name of the user. <code>Required</code></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
+<td>The full name of the user. <code>Required</code> <code>Filter(like)</code> <code>Inherited from Sec_Users_Table.User_Name</code></td>
+</tr>
+<tr>
+<td><a href="Public.Users.html#phonenumber">PhoneNumber</a></td>
+<td>string (64) <strong>nullable</strong></td>
+<td>Used only for two-factor authentication. null when phone-based two-factor is not used. <code>Filter(eq;like)</code> <code>Inherited from Sec_Users_Table.Phone_Number</code></td>
 </tr>
 <tr>
 <td><a href="Public.Users.html#userid">UserId</a></td>
 <td>guid</td>
-<td></td>
+<td>The Id of the security user. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 </tbody>
 </table>
@@ -130,34 +145,95 @@ __</p>
 </thead>
 <tbody>
 <tr>
+<td><a href="Public.Users.html#domain">Domain</a></td>
+<td><a href="Systems.Security.Domains.html">Domains</a> (nullable)</td>
+<td>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Domain_Id</code></td>
+</tr>
+<tr>
 <td><a href="Public.Users.html#person">Person</a></td>
-<td><a href="General.Contacts.Persons.html">Persons</a></td>
-<td>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Cm_Persons_Table.Person_Id</code></td>
+<td><a href="General.Contacts.Persons.html">Persons</a> (nullable)</td>
+<td>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Person_Id</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="email">Email</h3>
-<p>Unique email of the user. Can be null because there may be login providers that don't use emails. <code>Required</code></p>
-<p><em>Type</em>: <strong>string (254)</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p>Unique email of the user. Can be null because there may be login providers that don't use emails. <code>Filter(multi eq;like)</code> <code>Inherited from Sec_Users_Table.Email</code></p>
+<p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Email</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
+<h3 id="isadmin">IsAdmin</h3>
+<p>True if the user is administrator, otherwise false. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Inherited from Sec_Users_Table.Is_Admin</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Is_Admin</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>False</strong></p>
+<h3 id="login">Login</h3>
+<p>The login name of the user, which is usually the email. <code>Required</code> <code>Filter(multi eq;like)</code> <code>Inherited from Sec_Users_Table.Login</code></p>
+<p><em>Type</em>: <strong>string (64)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Login</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="name">Name</h3>
-<p>The full name of the user. <code>Required</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a></strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p>The full name of the user. <code>Required</code> <code>Filter(like)</code> <code>Inherited from Sec_Users_Table.User_Name</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.User_Name</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="phonenumber">PhoneNumber</h3>
+<p>Used only for two-factor authentication. null when phone-based two-factor is not used. <code>Filter(eq;like)</code> <code>Inherited from Sec_Users_Table.Phone_Number</code></p>
+<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Phone_Number</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="userid">UserId</h3>
+<p>The Id of the security user. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="domain">Domain</h3>
+<p>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Domain_Id</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.Domains.html">Domains</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Domain_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="person">Person</h3>
-<p>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Cm_Persons_Table.Person_Id</code></p>
-<p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a></strong><br>
-<em>Inherited From</em>: <strong>Cm_Persons_Table.Person_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<p>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Person_Id</code></p>
+<p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sec_Users_Table.Person_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getaccesskeypermissions">GetAccessKeyPermissions</h3>
+<p>Gets the permissions this user has to access resources protected by the provided access key.<br>
+<em>Return Type</em>: <strong><a href="../data-types.html#systems.security.securitypermissions">SecurityPermissions</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="Public.Users.html">Users</a></strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>accessKeyId</strong><br>
+The access key id<br>
+<em>Type</em>: guid</p>
+</li>
+<li><p><strong>idToken</strong><br>
+The identity token of the logged in user. Required when the currently logged user is different from the public user.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+</ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Public_Users?$top=10">https://demodb.my.erp.net/api/domain/odata/Public_Users?$top=10</a></p>

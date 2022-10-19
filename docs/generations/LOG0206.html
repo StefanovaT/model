@@ -99,15 +99,15 @@
 </tr>
 <tr>
 <td style="text-align: left;">Status</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/generation-procedures.html">PLANNED</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/generation-procedures.html">NEW</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">NO</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">NO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Transitional Documents</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">NO</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Single Execution</td>
@@ -132,13 +132,11 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This Generation is used to create Excise Administrative Documents from Store Transactions.</p>
-<p>The Excise Administrative Document's header is created based on the Store Transaction's header as follows:</p>
+<p>This Generation is used to create Excise Administrative Documents for the products of the current Store Transactions that have value for the field ExciseProductsType.
+The Excise Administrative Document's header is created based on the Store Transaction's header as follows:</p>
 <pre><code>ExciseAdministrativeDocument.TaxWarehouse = StoreTransaction.Store.TaxWarehouse
 
 ExciseAdministrativeDocument.OtherParty = StoreTransaction.ToParty
-
-ExciseAdministrativeDocument.DocumentCurrency = StoreTransaction.DocumentCurrency
 
 ExciseAdministrativeDocument.CurrencyDirectory = StoreTransaction.CurrencyDirectory
 </code></pre>
@@ -219,19 +217,26 @@ ExciseAdministrativeDocumentLine.QuantityUnit = StoreTransactionLine.QuantityUni
 
 ExciseAdministrativeDocumentLine.QuantityBase = StoreTransactionLine.REMAINING(MQuantityBase)
 
+ExciseAdministrativeDocumentLine.ExciseQuantityUnit = StoreTransactionLine.Product.ExciseProductType.MeasurementUnit
+
+ExciseAdministrativeDocumentLine.ExciseQuantity = Convert(QuantityBase, ExciseQuantityUnit)
+
 ExciseAdministrativeDocumentLine.MeasuringTransaction = StoreTransactionLine.Lot.ExciseMeasuringTransaction
 
-ExciseAdministrativeDocumentLine.ExciseAlcoholicStrength = StoreTransactionLine.Product.ExciseAlcoholicStrength
 
-ExciseAdministrativeDocumentLine.ExciseProduct = StoreTransactionLine.Product.ExciseProduct
+ExciseAdministrativeDocumentLine.ExciseAlcoholicStrength = 
+IF MeasuringTransaction is not Null THEN MeasuringTransaction.AlcoholDegree
+IF MeasuringTransaction is Null THEN Product.ExciseProductType.AlcoholicStrength
+
+ExciseAdministrativeDocumentLine.ExciseProduct = StoreTransactionLine.Product.ExciseProductsType.ExciseProduct
 
 ExciseAdministrativeDocumentLine.ExcisePurposeCode = DefaultExcisePurposeCode
 
-ExciseAdministrativeDocumentLine.ExciseDutyRate = DetermineExciseDutyRate(ExciseProduct, ExcisePurposeCode, Currency)
+ExciseAdministrativeDocumentLine.ExciseDutyRate = DetermineExciseDutyRate(ExciseProduct, ExcisePurposeCode, ExciseAdministrativeDocument.EnterpriseCompany.BaseCurrency)
 
 ExciseAdministrativeDocumentLine.ExciseDutyRateValue = ExciseDutyRate.ExciseDutyRateField
 
-ExciseAdministrativeDocumentLine.ExciseAmountBase = CalculateExciseAmountBase(ExciseProduct, QuantityBase, ExciseAlcoholicStrength)
+ExciseAdministrativeDocumentLine.ExciseAmountBase = CalculateExciseAmountBase(ExciseProduct, ExciseQuantity, ExciseAlcoholicStrength)
 
 ExciseAdministrativeDocumentLine.ExciseAmount = ExciseAmountBase * ExciseDutyRateValue
 </code></pre>

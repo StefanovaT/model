@@ -12,6 +12,8 @@ Default Display Text Format:
 _{IngredientName}_  
 Default Search Members:  
 _IngredientName_  
+Name Data Member:  
+_IngredientName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,15 +27,18 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ConditionalProperty<br />Description](Production.Technologies.PrincipalRecipeIngredients.md#conditionalpropertydescription) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The desired description of Conditional Property in order for the template line to match. 
+| [ConditionalProperty<br />Description](Production.Technologies.PrincipalRecipeIngredients.md#conditionalpropertydescription) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The desired description of Conditional Property in order for the template line to match. 
 | [ConditionalPropertyValue](Production.Technologies.PrincipalRecipeIngredients.md#conditionalpropertyvalue) | string (254) __nullable__ | The desired value of Conditional Property in order for the template line to match. 
+| [DisplayText](Production.Technologies.PrincipalRecipeIngredients.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FixedScrapQuantity](Production.Technologies.PrincipalRecipeIngredients.md#fixedscrapquantity) | [Quantity (18, 3)](../data-types.md#quantity) | Fixed scrap quantity for setup. `Unit: UsageUnit` `Required` `Default(0)` 
 | [Id](Production.Technologies.PrincipalRecipeIngredients.md#id) | guid |  
+| [<s>IngredientId</s>](Production.Technologies.PrincipalRecipeIngredients.md#ingredientid) | guid | **OBSOLETE! Do not use!** The Id of the ingredient. When copying principal recipes, this Id remains the same for the new principal recipe to provide upgrade path for old recipes. `Obsolete` `Required` `Default(New Guid)` `Filter(multi eq)` `Obsoleted in version 22.1.6.61` 
 | [IngredientName](Production.Technologies.PrincipalRecipeIngredients.md#ingredientname) | string (254) | The principal name of the ingredient. `Required` `Filter(like)` 
 | [LineOrd](Production.Technologies.PrincipalRecipeIngredients.md#lineord) | int32 | The position of the line in the recipe model. `Required` 
+| [ObjectVersion](Production.Technologies.PrincipalRecipeIngredients.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ScrapRate](Production.Technologies.PrincipalRecipeIngredients.md#scraprate) | decimal (7, 6) | The usual percentage (0..1) of scrap of the raw material; inflates the requirements of this material for this recipe. `Required` `Default(0)` `Filter(ge;le)` 
 | [UsageQuantity](Production.Technologies.PrincipalRecipeIngredients.md#usagequantity) | [Quantity (18, 6)](../data-types.md#quantity) __nullable__ | Quantity to be consumed from the material. null means that the quantity is specified with formula. `Unit: UsageUnit` `Default(1)` `Filter(ge;le)` 
-| [UsageQuantityFormula](Production.Technologies.PrincipalRecipeIngredients.md#usagequantityformula) | string (max) __nullable__ | Specifies formula for the usage quantity. The formula can reference properties in `<Prop_Name>` style, just like products name and description mask. The formula can contain *, /, + and - operators. The formula can also be simple number, directly specifying quantity. 
+| [UsageQuantityFormula](Production.Technologies.PrincipalRecipeIngredients.md#usagequantityformula) | string (max) __nullable__ | Specifies formula for the usage quantity. The formula can reference properties in `&lt;Prop_Name&gt;` style, just like products name and description mask. The formula can contain *, /, + and - operators. The formula can also be simple number, directly specifying quantity. 
 
 ## References
 
@@ -46,7 +51,7 @@ Aggregate Root:
 | [MaterialFromProperty](Production.Technologies.PrincipalRecipeIngredients.md#materialfromproperty) | [CustomProperties](General.CustomProperties.md) (nullable) | When not null, specifies that the material will be obtained from the value of the specified property. The property must have allowed values in the Products domain. `Filter(multi eq)` |
 | [MaterialGroup](Production.Technologies.PrincipalRecipeIngredients.md#materialgroup) | [ProductGroups](General.Products.ProductGroups.md) | Filter for choosing specific material in the recipe (Gen_Product_Groups_Table). `Required` `Filter(multi eq)` |
 | [Operation](Production.Technologies.PrincipalRecipeIngredients.md#operation) | [Operations](Production.Resources.Operations.md) (nullable) | Specifies for which operation this ingredient will be used. `Filter(multi eq)` |
-| [PrincipalRecipe](Production.Technologies.PrincipalRecipeIngredients.md#principalrecipe) | [PrincipalRecipes](Production.Technologies.PrincipalRecipes.md) | The `PrincipalRecipe`(Production.Technologies.PrincipalRecipeIngredients.md#principalrecipe) to which this PrincipalRecipeIngredient belongs. `Required` `Filter(multi eq)` `Owner` |
+| [PrincipalRecipe](Production.Technologies.PrincipalRecipeIngredients.md#principalrecipe) | [PrincipalRecipes](Production.Technologies.PrincipalRecipes.md) | The <see cref="PrincipalRecipe"/> to which this PrincipalRecipeIngredient belongs. `Required` `Filter(multi eq)` `Owner` |
 | [UsageUnit](Production.Technologies.PrincipalRecipeIngredients.md#usageunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Usage_Quantity. The selected item must support the specified unit. `Required` `Filter(multi eq)` |
 
 
@@ -56,7 +61,8 @@ Aggregate Root:
 
 The desired description of Conditional Property in order for the template line to match.
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -65,15 +71,26 @@ _Supports Order By_: **False**
 The desired value of Conditional Property in order for the template line to match.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### FixedScrapQuantity
 
 Fixed scrap quantity for setup. `Unit: UsageUnit` `Required` `Default(0)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -82,6 +99,16 @@ _Default Value_: **Constant**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Default Value_: **NewGuid**  
+
+### IngredientId
+
+**OBSOLETE! Do not use!** The Id of the ingredient. When copying principal recipes, this Id remains the same for the new principal recipe to provide upgrade path for old recipes. `Obsolete` `Required` `Default(New Guid)` `Filter(multi eq)` `Obsoleted in version 22.1.6.61`
+
+_Type_: **guid**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -90,6 +117,7 @@ _Default Value_: **NewGuid**
 The principal name of the ingredient. `Required` `Filter(like)`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -101,19 +129,30 @@ _Front-End Recalc Expressions:_
 The position of the line in the recipe model. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.PrincipalRecipe.Ingredients.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PrincipalRecipe.Ingredients.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.PrincipalRecipe.Ingredients.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PrincipalRecipe.Ingredients.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### ScrapRate
 
 The usual percentage (0..1) of scrap of the raw material; inflates the requirements of this material for this recipe. `Required` `Default(0)` `Filter(ge;le)`
 
 _Type_: **decimal (7, 6)**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -123,6 +162,7 @@ _Default Value_: **0**
 Quantity to be consumed from the material. null means that the quantity is specified with formula. `Unit: UsageUnit` `Default(1)` `Filter(ge;le)`
 
 _Type_: **[Quantity (18, 6)](../data-types.md#quantity) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -131,9 +171,10 @@ _Front-End Recalc Expressions:_
 `IIF( ( obj.UsageQuantityFormula != null), null, obj.UsageQuantity)`
 ### UsageQuantityFormula
 
-Specifies formula for the usage quantity. The formula can reference properties in `<Prop_Name>` style, just like products name and description mask. The formula can contain *, /, + and - operators. The formula can also be simple number, directly specifying quantity.
+Specifies formula for the usage quantity. The formula can reference properties in `&lt;Prop_Name&gt;` style, just like products name and description mask. The formula can contain *, /, + and - operators. The formula can also be simple number, directly specifying quantity.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -148,6 +189,7 @@ _Front-End Recalc Expressions:_
 When not null, specifies that, when creating recipe, the ingredient will be added only if this property is set for the main product. `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ConditionalPropertyAllowedValue
@@ -155,6 +197,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies that, when creating recipe, the ingredient will be added only if the main product property, specified in Conditional_Property_Id equals the specified value. `Filter(multi eq)`
 
 _Type_: **[CustomPropertyAllowedValues](General.CustomPropertyAllowedValues.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultMaterial
@@ -162,6 +205,7 @@ _Supported Filters_: **Equals, EqualsIn**
 If not null, points to default product for this ingredient. `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultStore
@@ -169,6 +213,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The default store from which to retrieve the material. `Filter(multi eq)`
 
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### MaterialFromProperty
@@ -176,6 +221,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies that the material will be obtained from the value of the specified property. The property must have allowed values in the Products domain. `Filter(multi eq)`
 
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### MaterialGroup
@@ -183,6 +229,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Filter for choosing specific material in the recipe (Gen_Product_Groups_Table). `Required` `Filter(multi eq)`
 
 _Type_: **[ProductGroups](General.Products.ProductGroups.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Operation
@@ -190,13 +237,15 @@ _Supported Filters_: **Equals, EqualsIn**
 Specifies for which operation this ingredient will be used. `Filter(multi eq)`
 
 _Type_: **[Operations](Production.Resources.Operations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PrincipalRecipe
 
-The `PrincipalRecipe`(Production.Technologies.PrincipalRecipeIngredients.md#principalrecipe) to which this PrincipalRecipeIngredient belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="PrincipalRecipe"/> to which this PrincipalRecipeIngredient belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[PrincipalRecipes](Production.Technologies.PrincipalRecipes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -205,10 +254,86 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The measurement unit of Usage_Quantity. The selected item must support the specified unit. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `obj.DefaultMaterial.BaseUnit`
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

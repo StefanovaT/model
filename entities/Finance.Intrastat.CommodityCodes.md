@@ -5,13 +5,13 @@ uid: Finance.Intrastat.CommodityCodes
 
 **Namespace:** [Finance.Intrastat](Finance.Intrastat.md)  
 
-Contains the approved Intrastat commodity codes for each period. Entity: Its_Commodity_Codes
+Contains the approved commodity codes for each period from The Combined Nomenclature used within the European Union countries. They are used for reporting Intrastat and Excise. Entity: Its_Commodity_Codes
 
 ## Default Visualization
 Default Display Text Format:  
-_{ExciseProductCode}_  
+_{CommodityCodeField}_  
 Default Search Members:  
-_ExciseProductCode_  
+_CommodityCodeField_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -24,10 +24,10 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CommodityCodeField](Finance.Intrastat.CommodityCodes.md#commoditycodefield) | string (8) | Product code from the Intrastat Combined nomenclature. `Required` `Filter(eq;like)` `ORD` 
-| [Description](Finance.Intrastat.CommodityCodes.md#description) | [MultilanguageString](../data-types.md#multilanguagestring) | Description of the product code from the Intrastat Combined nomenclature. `Required` `Filter(like)` 
-| [ExciseAlcoholicStrength](Finance.Intrastat.CommodityCodes.md#excisealcoholicstrength) | decimal (5, 2) __nullable__ | Specifies the alcoholic strength for excise products (if applicable). `Introduced in version 21.1.3.44` 
-| [ExciseProductCode](Finance.Intrastat.CommodityCodes.md#exciseproductcode) | string (20) __nullable__ | The code of the product for excise purposes (if applicable). A.k.a. APCode. `Introduced in version 21.1.3.44` 
+| [Description](Finance.Intrastat.CommodityCodes.md#description) | [MultilanguageString (4000)](../data-types.md#multilanguagestring) | Description of the product code from the Intrastat Combined nomenclature. `Required` `Filter(like)` 
+| [DisplayText](Finance.Intrastat.CommodityCodes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Intrastat.CommodityCodes.md#id) | guid |  
+| [ObjectVersion](Finance.Intrastat.CommodityCodes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SupplementaryUnit](Finance.Intrastat.CommodityCodes.md#supplementaryunit) | string (16) | If not null, the related product should have additional measurement unit with the same code as specified in this field. The additional unit will be used for the purposes of the Intrastat declarations. `Required` 
 | [ValidFrom](Finance.Intrastat.CommodityCodes.md#validfrom) | date __nullable__ | The starting date of validity of this code. `Filter(ge;le)` 
 | [ValidTo](Finance.Intrastat.CommodityCodes.md#validto) | date __nullable__ | The ending date of validity of this code. `Filter(ge;le)` 
@@ -41,6 +41,7 @@ Product code from the Intrastat Combined nomenclature. `Required` `Filter(eq;lik
 
 _Type_: **string (8)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **8**  
@@ -49,39 +50,43 @@ _Maximum Length_: **8**
 
 Description of the product code from the Intrastat Combined nomenclature. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (4000)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
-### ExciseAlcoholicStrength
+### DisplayText
 
-Specifies the alcoholic strength for excise products (if applicable). `Introduced in version 21.1.3.44`
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
 
-_Type_: **decimal (5, 2) __nullable__**  
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
-_Supports Order By_: **False**  
-
-### ExciseProductCode
-
-The code of the product for excise purposes (if applicable). A.k.a. APCode. `Introduced in version 21.1.3.44`
-
-_Type_: **string (20) __nullable__**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: **False**  
-_Maximum Length_: **20**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### SupplementaryUnit
 
 If not null, the related product should have additional measurement unit with the same code as specified in this field. The additional unit will be used for the purposes of the Intrastat declarations. `Required`
 
 _Type_: **string (16)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
@@ -91,6 +96,7 @@ _Maximum Length_: **16**
 The starting date of validity of this code. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -99,9 +105,85 @@ _Supports Order By_: **False**
 The ending date of validity of this code. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

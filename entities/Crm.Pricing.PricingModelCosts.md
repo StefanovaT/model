@@ -12,6 +12,8 @@ Default Display Text Format:
 _{PricingModel.Name}_  
 Default Search Members:  
 _PricingModel.Name_  
+Name Data Member:  
+_PricingModel.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -27,8 +29,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [AmountPercent](Crm.Pricing.PricingModelCosts.md#amountpercent) | decimal (6, 5) __nullable__ | Used when the cost is calculated as percent of the amount. null when the cost is calculated in a different way. 
 | [AmountPerUnit](Crm.Pricing.PricingModelCosts.md#amountperunit) | [Amount (9, 2)](../data-types.md#amount) __nullable__ | Used when the cost is calculated as amount per unit of the product. The unit is defined in Measurement_Unit_Id. null when the cost is calculated in a different way. `Currency: PricingModel.Currency` 
+| [DisplayText](Crm.Pricing.PricingModelCosts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Pricing.PricingModelCosts.md#id) | guid |  
 | [LineNo](Crm.Pricing.PricingModelCosts.md#lineno) | int32 | The consequtive number of the cost within the pricing model. `Required` 
+| [ObjectVersion](Crm.Pricing.PricingModelCosts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
 
@@ -46,6 +50,7 @@ Aggregate Root:
 Used when the cost is calculated as percent of the amount. null when the cost is calculated in a different way.
 
 _Type_: **decimal (6, 5) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -54,13 +59,24 @@ _Supports Order By_: **False**
 Used when the cost is calculated as amount per unit of the product. The unit is defined in Measurement_Unit_Id. null when the cost is calculated in a different way. `Currency: PricingModel.Currency`
 
 _Type_: **[Amount (9, 2)](../data-types.md#amount) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -69,14 +85,24 @@ _Default Value_: **NewGuid**
 The consequtive number of the cost within the pricing model. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
 _Back-End Default Expression:_  
-`( obj.PricingModel.Costs.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PricingModel.Costs.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
 
 _Front-End Recalc Expressions:_  
-`( obj.PricingModel.Costs.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
+`( obj.PricingModel.Costs.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 
 ## Reference Details
 
@@ -85,6 +111,7 @@ _Front-End Recalc Expressions:_
 The cost type, which is listed for the pricing model. `Required` `Filter(multi eq)`
 
 _Type_: **[CostTypes](Finance.Cost.CostTypes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### MeasurementUnit
@@ -92,6 +119,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The measurement unit for which the Amount_Per_Unit is defined. null when the cost is calculated in a different way. `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### PricingModel
@@ -100,9 +128,85 @@ Pricing model, for which the cost is defined. `Required` `Filter(multi eq)` `Own
 
 _Type_: **[PricingModels](Crm.Pricing.PricingModels.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

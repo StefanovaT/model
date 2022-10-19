@@ -1,12 +1,6 @@
 # Table Gen_Text_Translations
 
 
-## Entity
-
-Entity: [Systems.Core.TextTranslations](~/entities/Systems.Core.TextTranslations.md)
-
-Obsolete. Not used. Entity: Gen_Text_Translations
-
 ## Summary
 
 | Name | Type | Description |

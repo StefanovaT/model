@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Name:T}_  
 Default Search Members:  
 _Name_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,12 +27,14 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Address](Systems.Core.ExternalApplications.md#address) | string (max) | The address (path) to the application. The address is platform-dependant. `Required` 
 | [AvailableInMode](Systems.Core.ExternalApplications.md#availableinmode) | [AvailableInMode](Systems.Core.ExternalApplications.md#availableinmode) | Whether the application will be displayed to the end users when a single object is opened or when multiple objects are listed. `Required` `Default("SINGLE")` `Filter(eq)` 
+| [DisplayText](Systems.Core.ExternalApplications.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityName](Systems.Core.ExternalApplications.md#entityname) | string (64) | The entity, for which the application is defined. `Required` `Filter(eq)` `ORD` 
 | [ExecuteForAllObjects](Systems.Core.ExternalApplications.md#executeforallobjects) | boolean | Whether to execute the application for all selected objects at once or to execute the application for each object, one by one. `Required` `Default(true)` `Filter(eq)` 
 | [Id](Systems.Core.ExternalApplications.md#id) | guid |  
 | [IsActive](Systems.Core.ExternalApplications.md#isactive) | boolean __nullable__ | Specifies whether the external application is currently used. `Default(true)` `Filter(eq)` 
-| [Name](Systems.Core.ExternalApplications.md#name) | [MultilanguageString](../data-types.md#multilanguagestring) | The name of the external application. `Required` `Filter(eq;like)` 
+| [Name](Systems.Core.ExternalApplications.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the external application. `Required` `Filter(eq;like)` 
 | [Notes](Systems.Core.ExternalApplications.md#notes) | string (max) __nullable__ | Notes for this ExternalApplication. 
+| [ObjectVersion](Systems.Core.ExternalApplications.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Platform](Systems.Core.ExternalApplications.md#platform) | [Platform](Systems.Core.ExternalApplications.md#platform) | The execution platform of the application. `Required` `Filter(eq)` 
 | [RefreshAfterFinish](Systems.Core.ExternalApplications.md#refreshafterfinish) | boolean | Whether to refresh the data, displayed to the user, after the execution finishes. Not all platforms and/or applications support finish notification. `Required` `Default(true)` `Filter(eq)` 
 | [SaveBeforeStart](Systems.Core.ExternalApplications.md#savebeforestart) | boolean | Whether to save the form data to the server before starting the application. `Required` `Default(true)` `Filter(eq)` 
@@ -49,6 +53,7 @@ Aggregate Tree
 The address (path) to the application. The address is platform-dependant. `Required`
 
 _Type_: **string (max)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
@@ -58,6 +63,7 @@ _Maximum Length_: **2147483647**
 Whether the application will be displayed to the end users when a single object is opened or when multiple objects are listed. `Required` `Default("SINGLE")` `Filter(eq)`
 
 _Type_: **[AvailableInMode](Systems.Core.ExternalApplications.md#availableinmode)**  
+_Category_: **System**  
 Allowed values for the `AvailableInMode`(Systems.Core.ExternalApplications.md#availableinmode) data attribute  
 _Allowed Values (Systems.Core.ExternalApplicationsRepository.AvailableInMode Enum Members)_  
 
@@ -71,12 +77,22 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **SINGLE**  
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### EntityName
 
 The entity, for which the application is defined. `Required` `Filter(eq)` `ORD`
 
 _Type_: **string (64)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
@@ -86,6 +102,7 @@ _Maximum Length_: **64**
 Whether to execute the application for all selected objects at once or to execute the application for each object, one by one. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -94,6 +111,7 @@ _Default Value_: **True**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -102,6 +120,7 @@ _Default Value_: **NewGuid**
 Specifies whether the external application is currently used. `Default(true)` `Filter(eq)`
 
 _Type_: **boolean __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -110,7 +129,8 @@ _Default Value_: **True**
 
 The name of the external application. `Required` `Filter(eq;like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 
@@ -119,15 +139,26 @@ _Supports Order By_: **False**
 Notes for this ExternalApplication.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Platform
 
 The execution platform of the application. `Required` `Filter(eq)`
 
 _Type_: **[Platform](Systems.Core.ExternalApplications.md#platform)**  
+_Category_: **System**  
 Allowed values for the `Platform`(Systems.Core.ExternalApplications.md#platform) data attribute  
 _Allowed Values (Systems.Core.ExternalApplicationsRepository.Platform Enum Members)_  
 
@@ -147,6 +178,7 @@ _Supports Order By_: **False**
 Whether to refresh the data, displayed to the user, after the execution finishes. Not all platforms and/or applications support finish notification. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -156,6 +188,7 @@ _Default Value_: **True**
 Whether to save the form data to the server before starting the application. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -168,8 +201,84 @@ _Default Value_: **True**
 The access key, containing the user permissions for this ExternalApplication. Null means that all users have unlimited permissions. `Filter(multi eq)`
 
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

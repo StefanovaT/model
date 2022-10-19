@@ -12,6 +12,8 @@ Default Display Text Format:
 _{ProcedureName}_  
 Default Search Members:  
 _ProcedureName_  
+Name Data Member:  
+_ProcedureName_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -34,13 +36,16 @@ Aggregate Root:
 | [ConnectedPartyCondition](Systems.Workflow.Routes.md#connectedpartycondition) | [ConnectedPartyCondition](Systems.Workflow.Routes.md#connectedpartycondition) | A - any party; C - connected party: to_party is enterprise company; U - unconnected party - not enterprise company;. `Required` `Default("A")` 
 | [DeactivationDate](Systems.Workflow.Routes.md#deactivationdate) | date __nullable__ | The date until (including) the route is active. The date is matched against the document date of the generating document. Null means the route does not have a deactivation date. `Filter(ge;le)` 
 | [DestinationState](Systems.Workflow.Routes.md#destinationstate) | [DocumentState](Systems.Workflow.Routes.md#destinationstate) | 0=New;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` 
+| [DisplayText](Systems.Workflow.Routes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Workflow.Routes.md#id) | guid |  
 | [NegativeConditionFilterXml](Systems.Workflow.Routes.md#negativeconditionfilterxml) | dataaccessfilter __nullable__ | The negative condition should NOT be matched by the document in order to execute the route. 
 | [Notes](Systems.Workflow.Routes.md#notes) | string (254) __nullable__ | Notes for this Route. 
+| [ObjectVersion](Systems.Workflow.Routes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Systems.Workflow.Routes.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Systems.Workflow.Routes.md#parentdocumentrelationshiptype) | Determines the default relationship type between the generated document and the parent document. `Required` `Default("S")` 
 | [ProcedureName](Systems.Workflow.Routes.md#procedurename) | string (254) | The system name of the generation procedure, which must be executed by the route. `Required` 
 | [ProcessEvent](Systems.Workflow.Routes.md#processevent) | string (254) | Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required` 
 | [ReadOnly](Systems.Workflow.Routes.md#readonly) | boolean | Indicates wheather the destination document shoul be read only. true - the destination document is read only. `Required` `Default(false)` 
+| [<s>SchemaXML</s>](Systems.Workflow.Routes.md#schemaxml) | string (max) __nullable__ | **OBSOLETE! Do not use!**  
 
 ## References
 
@@ -58,9 +63,11 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| PaymentSlipPayment<br />TransactionsTemplates | [PaymentSlipPaymentTransactionsTemplates](Finance.Payments.PaymentSlipPaymentTransactionsTemplates.md) | List of `PaymentSlipPayment<br />TransactionsTemplate`(Finance.Payments.PaymentSlipPayment<br />TransactionsTemplates.md) child objects, based on the `Finance.Payments.PaymentSlipPayment<br />TransactionsTemplate.Route`(Finance.Payments.PaymentSlipPayment<br />TransactionsTemplates.md#route) back reference 
 | SalesOrderPayment<br />OrdersTemplates | [SalesOrderPaymentOrdersTemplates](Crm.Sales.SalesOrderPaymentOrdersTemplates.md) | List of `SalesOrderPayment<br />OrdersTemplate`(Crm.Sales.SalesOrderPayment<br />OrdersTemplates.md) child objects, based on the `Crm.Sales.SalesOrderPayment<br />OrdersTemplate.Route`(Crm.Sales.SalesOrderPayment<br />OrdersTemplates.md#route) back reference 
 | TemplateRouteLinks | [TemplateRouteLinks](Finance.Accounting.TemplateRouteLinks.md) | List of `TemplateRouteLink`(Finance.Accounting.TemplateRouteLinks.md) child objects, based on the `Finance.Accounting.TemplateRouteLink.Route`(Finance.Accounting.TemplateRouteLinks.md#route) back reference 
 | Templates | [Templates](Finance.Accounting.Templates.md) | List of `Template`(Finance.Accounting.Templates.md) child objects, based on the `Finance.Accounting.Template.Route`(Finance.Accounting.Templates.md#route) back reference 
+| TransactionTemplates | [TransactionTemplates](Applications.Rental.TransactionTemplates.md) | List of `TransactionTemplate`(Applications.Rental.TransactionTemplates.md) child objects, based on the `Applications.Rental.TransactionTemplate.Route`(Applications.Rental.TransactionTemplates.md#route) back reference 
 
 
 ## Attribute Details
@@ -70,6 +77,7 @@ Aggregate Root:
 The date from which (including) the route is active. The date is matched against the document date of the generating document. `Required` `Default(Today)` `Filter(ge;le)`
 
 _Type_: **date**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
@@ -79,6 +87,7 @@ _Default Value_: **CurrentDate**
 True if the route is active, otherwise false. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -88,6 +97,7 @@ _Default Value_: **True**
 Determines the possible types of the generation of the destination document: A=Auto, M=Manual, B=Both (Auto and Manual). `Required` `Default("B")` `Filter(multi eq)`
 
 _Type_: **[AllowedGenerationTypes](Systems.Workflow.Routes.md#allowedgenerationtypes)**  
+_Category_: **System**  
 Allowed values for the `AllowedGenerationTypes`(Systems.Workflow.Routes.md#allowedgenerationtypes) data attribute  
 _Allowed Values (Systems.Workflow.RoutesRepository.AllowedGenerationTypes Enum Members)_  
 
@@ -106,6 +116,7 @@ _Default Value_: **BothAutoAndManually**
 Allows the usage of unsupported generation procedures (marked as obsolete). This is a user override of the system prohibition of the usage of obsolete procedures. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -115,6 +126,7 @@ _Default Value_: **False**
 Contains filter condition, which the document must match in order to execute the route.
 
 _Type_: **dataaccessfilter __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -123,6 +135,7 @@ _Supports Order By_: **False**
 The system states for which to execute the specified route. `Required` `Default(0)`
 
 _Type_: **[DocumentStateFlags](Systems.Workflow.Routes.md#conditionstatesbitmask)**  
+_Category_: **System**  
 Enumeration of document system states that can be combined in bit mask  
 _Allowed Values (General.DocumentStateFlags Enum Members)_  
 
@@ -145,6 +158,7 @@ _Default Value_: **0**
 A - any party; C - connected party: to_party is enterprise company; U - unconnected party - not enterprise company;. `Required` `Default("A")`
 
 _Type_: **[ConnectedPartyCondition](Systems.Workflow.Routes.md#connectedpartycondition)**  
+_Category_: **System**  
 Allowed values for the `ConnectedPartyCondition`(Systems.Workflow.Routes.md#connectedpartycondition) data attribute  
 _Allowed Values (Systems.Workflow.RoutesRepository.ConnectedPartyCondition Enum Members)_  
 
@@ -163,6 +177,7 @@ _Default Value_: **AnyParty**
 The date until (including) the route is active. The date is matched against the document date of the generating document. Null means the route does not have a deactivation date. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -171,6 +186,7 @@ _Supports Order By_: **False**
 0=New;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required`
 
 _Type_: **[DocumentState](Systems.Workflow.Routes.md#destinationstate)**  
+_Category_: **System**  
 Enumeration of document system states  
 _Allowed Values (General.DocumentState Enum Members)_  
 
@@ -187,10 +203,20 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -199,6 +225,7 @@ _Default Value_: **NewGuid**
 The negative condition should NOT be matched by the document in order to execute the route.
 
 _Type_: **dataaccessfilter __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -207,15 +234,26 @@ _Supports Order By_: **False**
 Notes for this Route.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ParentDocumentRelationshipType
 
 Determines the default relationship type between the generated document and the parent document. `Required` `Default("S")`
 
 _Type_: **[ParentDocument<br />RelationshipType](Systems.Workflow.Routes.md#parentdocumentrelationshiptype)**  
+_Category_: **System**  
 Relationship between parent and child documents  
 _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_  
 
@@ -223,6 +261,7 @@ _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_
 | ---- | --- |
 | Subtask | The child document is a sub-task of the parent document. (Complete child to complete parent) <br /> _Database Value:_ 'S' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Subtask' |
 | NextTask | The child document is next task of the parent document. (Complete parent to complete child) <br /> _Database Value:_ 'N' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'NextTask' |
+| IndependentTask | The document is not dependent of neither child nor parent document. <br /> _Database Value:_ 'I' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'IndependentTask' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -233,6 +272,7 @@ _Default Value_: **Subtask**
 The system name of the generation procedure, which must be executed by the route. `Required`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -242,6 +282,7 @@ _Maximum Length_: **254**
 Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -251,9 +292,20 @@ _Maximum Length_: **254**
 Indicates wheather the destination document shoul be read only. true - the destination document is read only. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+
+### SchemaXML
+
+**OBSOLETE! Do not use!**
+
+_Type_: **string (max) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
 
 
 ## Reference Details
@@ -263,6 +315,7 @@ _Default Value_: **False**
 The enterprise company for which this route is activated. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ConditionUserStatus
@@ -270,6 +323,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The user-defined status, for which the document route is activated. `Filter(multi eq)`
 
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DestinationDocumentType
@@ -277,6 +331,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The type of the document, that will be generated by executing the route. `Filter(multi eq)`
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DestinationEnterpriseCompany
@@ -284,6 +339,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The enterprise company in which to generate the target document. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DestinationEnterpriseCompanyLocation
@@ -291,6 +347,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The enterprise company location in which to generate the target document. `Filter(multi eq)`
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DestinationUserStatus
@@ -298,6 +355,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The user defined status to set to the generated document. `Filter(multi eq)`
 
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DocumentType
@@ -305,9 +363,85 @@ _Supported Filters_: **Equals, EqualsIn**
 The document type from which this route originates. Documents from this type generate sub-documents using this route. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

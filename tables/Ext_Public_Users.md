@@ -1,11 +1,15 @@
 # Table Ext_Public_Users
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Systems.External.PublicUsers](~/entities/Systems.External.PublicUsers.md)
 
-/Users of the publicly offered services. This includes Internet, external and employee users. Entity: Ext_Public_Users
+/Users of the publicly offered services. This includes Internet, external and employee users. Entity: Ext_Public_Users (Obsoleted in version 22.1.6.73)
 
 ## Summary
 

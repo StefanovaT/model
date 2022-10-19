@@ -1,11 +1,15 @@
 # Table Cms_Web_Site_Languages
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Applications.Cms.WebSiteLanguages](~/entities/Applications.Cms.WebSiteLanguages.md)
 
-Specifies a language, supported by the web site. Entity: Cms_Web_Site_Languages
+Specifies a language, supported by the web site. Entity: Cms_Web_Site_Languages (Obsoleted in version 22.1.6.73)
 
 ## Owner Tables Hierarchy
 

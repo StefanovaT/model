@@ -349,7 +349,7 @@ The sales person, responsible for the opportunity
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Long|
+|UI Width|Medium|
 |User Login|no|
 |Visible|yes|
 
@@ -498,7 +498,7 @@ The prospect customers party. The party might not yet have a customer record.
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Long|
+|UI Width|Medium|
 |User Login|no|
 |Visible|yes|
 

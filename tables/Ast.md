@@ -4,7 +4,6 @@
 * [Ast_Asset_Groups](Ast_Asset_Groups.md)
 * [Ast_Asset_Order_Lines](Ast_Asset_Order_Lines.md)
 * [Ast_Asset_Orders](Ast_Asset_Orders.md)
-* [Ast_Asset_Property_Values](Ast_Asset_Property_Values.md)
 * [Ast_Asset_Transaction_Lines](Ast_Asset_Transaction_Lines.md)
 * [Ast_Asset_Transactions](Ast_Asset_Transactions.md)
 * [Ast_Assets](Ast_Assets.md)

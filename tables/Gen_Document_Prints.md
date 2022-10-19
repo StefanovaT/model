@@ -192,6 +192,7 @@ Points to the actual contents of the printed document.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Is_Original
 

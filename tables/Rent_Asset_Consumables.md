@@ -10,7 +10,6 @@ Consumables are products, which are usually sold accompanying an asset rental. E
 ## Owner Tables Hierarchy
 
 * [Rent_Assets](Rent_Assets.md)
-* [Rent_Asset_Groups](Rent_Asset_Groups.md)
 
 ## Summary
 

@@ -82,6 +82,10 @@
 <h2 id="entity">Entity</h2>
 <p>Entity: <a href="../entities/General.DocumentFulfillments.html">General.DocumentFulfillments</a></p>
 <p>Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced in version 20.1)</p>
+<h2 id="owner-tables-hierarchy">Owner Tables Hierarchy</h2>
+<ul>
+<li><a href="Gen_Documents.html">Gen_Documents</a></li>
+</ul>
 <h2 id="summary">Summary</h2>
 <table>
 <thead>
@@ -114,7 +118,7 @@
 </tr>
 <tr>
 <td><a href="#document_id">Document_Id</a></td>
-<td><code>uniqueidentifier</code></td>
+<td><code>uniqueidentifier</code> Readonly</td>
 <td>The Document, which is fulfilled.</td>
 </tr>
 <tr>
@@ -146,6 +150,11 @@
 <td><a href="#lot_id">Lot_Id</a></td>
 <td><code>uniqueidentifier</code></td>
 <td>The lot, which was fulfilled. NULL when the fulfillment was not for a specific lot.</td>
+</tr>
+<tr>
+<td><a href="#parent_fulfillment_id">Parent_Fulfillment_Id</a></td>
+<td><code>uniqueidentifier</code></td>
+<td>The parent document fulfillment. Used when the information of the current fulfillment is inherited by another document fulfillment, usually created by another module.</td>
 </tr>
 <tr>
 <td><a href="#product_id">Product_Id</a></td>
@@ -705,7 +714,7 @@
 </tr>
 <tr>
 <td>Ownership Reference</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Pasword</td>
@@ -721,7 +730,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Referenced Table</td>
@@ -1498,6 +1507,129 @@
 </tbody>
 </table>
 <h4 id="lot_id---supported-filters">Lot_Id - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="parent_fulfillment_id">Parent_Fulfillment_Id</h3>
+<p>The parent document fulfillment. Used when the information of the current fulfillment is inherited by another document fulfillment, usually created by another module.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Referenced Table</td>
+<td><a href="Gen_Document_Fulfillments.html">Gen_Document_Fulfillments</a></td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>uniqueidentifier (Allows NULL)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parent_fulfillment_id---supported-filters">Parent_Fulfillment_Id - Supported Filters</h4>
 <table>
 <thead>
 <tr>

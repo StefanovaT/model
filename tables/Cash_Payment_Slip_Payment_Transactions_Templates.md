@@ -7,6 +7,11 @@ Entity: [Finance.Payments.PaymentSlipPaymentTransactionsTemplates](~/entities/Fi
 
 Contains options for generation of payment transactions. Each option set is assigned to specific generation route. Entity: Cash_Payment_Slip_Payment_Transactions_Templates (Introduced in version 19.1)
 
+## Owner Tables Hierarchy
+
+* [Wf_Routes](Wf_Routes.md)
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -139,7 +144,7 @@ The route to which the current option set is assigned.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

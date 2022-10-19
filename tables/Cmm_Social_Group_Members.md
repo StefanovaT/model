@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.SocialGroupMembers](~/entities/Communities.SocialGroupMembers.md)
+Entity: [Communities.Social.GroupMembers](~/entities/Communities.Social.GroupMembers.md)
 
 Represents the membership of a user in a social group. Entity: Cmm_Social_Group_Members (Introduced in version 20.1)
 

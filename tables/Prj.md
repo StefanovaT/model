@@ -1,13 +1,11 @@
 # Prj
 
 * [Prj_Project_Participants](Prj_Project_Participants.md)
-* [Prj_Project_Property_Values](Prj_Project_Property_Values.md)
 * [Prj_Project_Risk_Discussion](Prj_Project_Risk_Discussion.md)
 * [Prj_Project_Risks](Prj_Project_Risks.md)
 * [Prj_Project_Task_Dependancies](Prj_Project_Task_Dependancies.md)
 * [Prj_Project_Task_Materials](Prj_Project_Task_Materials.md)
 * [Prj_Project_Task_Participants](Prj_Project_Task_Participants.md)
-* [Prj_Project_Task_Property_Values](Prj_Project_Task_Property_Values.md)
 * [Prj_Project_Task_Resources](Prj_Project_Task_Resources.md)
 * [Prj_Project_Tasks](Prj_Project_Tasks.md)
 * [Prj_Project_Work_Elements](Prj_Project_Work_Elements.md)

@@ -1,11 +1,15 @@
 # Table Acc_Voucher_Correspondances
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [Finance.Accounting.VoucherCorrespondances](~/entities/Finance.Accounting.VoucherCorrespondances.md)
 
-Obsolete. Not used. Entity: Acc_Voucher_Correspondances
+Obsolete. Not used. Entity: Acc_Voucher_Correspondances (Obsoleted in version 22.1.6.60)
 
 ## Owner Tables Hierarchy
 

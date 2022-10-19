@@ -12,6 +12,10 @@ Default Display Text Format:
 _{Name}_  
 Default Search Members:  
 _Code; Name_  
+Code Data Member:  
+_Code_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -26,11 +30,13 @@ Aggregate Tree
 | [CheckDays](Applications.Fleet.MaintenancePlans.md#checkdays) | int32 __nullable__ | When not null, specifies the number of days between maintenances. 
 | [CheckMonths](Applications.Fleet.MaintenancePlans.md#checkmonths) | int32 __nullable__ | When not null, specifies the number of months between maintenances. 
 | [Code](Applications.Fleet.MaintenancePlans.md#code) | string (16) | The unique code of the MaintenancePlan. `Required` 
+| [DisplayText](Applications.Fleet.MaintenancePlans.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Fleet.MaintenancePlans.md#id) | guid |  
 | [IsActive](Applications.Fleet.MaintenancePlans.md#isactive) | boolean | True if the plan is active and can be selected from drop-downs. `Required` `Default(true)` `Introduced in version 18.2` 
 | [MileageKm](Applications.Fleet.MaintenancePlans.md#mileagekm) | int32 __nullable__ | When not null, specifies the number of kilometers that must have passed since the last maintenance, for the next maintenance to occur. 
 | [Name](Applications.Fleet.MaintenancePlans.md#name) | string (254) | Maintenance plan name (Multilanguage). `Required` 
 | [Notes](Applications.Fleet.MaintenancePlans.md#notes) | string (max) __nullable__ | Notes for this MaintenancePlan. 
+| [ObjectVersion](Applications.Fleet.MaintenancePlans.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [TripCount](Applications.Fleet.MaintenancePlans.md#tripcount) | int32 __nullable__ | When not null, specifies the number of trips that must be performed since the last maintenance, for the next maintenance to occur. 
 
 
@@ -41,6 +47,7 @@ Aggregate Tree
 When not null, specifies the number of days between maintenances.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -49,6 +56,7 @@ _Supports Order By_: **False**
 When not null, specifies the number of months between maintenances.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -57,14 +65,25 @@ _Supports Order By_: **False**
 The unique code of the MaintenancePlan. `Required`
 
 _Type_: **string (16)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -73,6 +92,7 @@ _Default Value_: **NewGuid**
 True if the plan is active and can be selected from drop-downs. `Required` `Default(true)` `Introduced in version 18.2`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -82,6 +102,7 @@ _Default Value_: **True**
 When not null, specifies the number of kilometers that must have passed since the last maintenance, for the next maintenance to occur.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -90,6 +111,7 @@ _Supports Order By_: **False**
 Maintenance plan name (Multilanguage). `Required`
 
 _Type_: **string (254)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -99,18 +121,104 @@ _Maximum Length_: **254**
 Notes for this MaintenancePlan.
 
 _Type_: **string (max) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### TripCount
 
 When not null, specifies the number of trips that must be performed since the last maintenance, for the next maintenance to occur.
 
 _Type_: **int32 __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

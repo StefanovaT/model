@@ -117,12 +117,12 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Calls TemplateLine.UpdateLineProperties(bool isDebit, Account account,
-EnterpriseOneTransaction tr)
-and then for each TemplateLineProperty
-if (AmountSourceName != NULL &amp;&amp;
-TemplateLineProperty.PropertyValueSourceType == NULL &amp;&amp;
-(AmountSourceName == &quot;Exchange_Difference&quot; || AmountSourceName == &quot;Account_Balance&quot;))
+<td>Calls TemplateLine.UpdateLineProperties    <br>
+(bool isDebit, Account account, EnterpriseOneTransaction tr)      <br>
+and then for each TemplateLineProperty                       <br>
+if (AmountSourceName != NULL &amp;&amp;                <br>
+TemplateLineProperty.PropertyValueSourceType == NULL &amp;&amp;              <br>
+(AmountSourceName == &quot;Exchange_Difference&quot; || AmountSourceName == &quot;Account_Balance&quot;)) <br>
 then TemplateLineProperty.PropertyValueSourceType = &quot;Account item key&quot;</td>
 </tr>
 <tr>

@@ -33,7 +33,7 @@ Contains document routes, which specify which document generation procedures wil
 |[Document_Type_Id](#document_type_id)|`uniqueidentifier` |The document type from which this route originates. Documents from this type generate sub-documents using this route.|
 |[Negative_Condition_Filter_Xml](#negative_condition_filter_xml)|`nvarchar(max)` |The negative condition should NOT be matched by the document in order to execute the route.|
 |[Notes](#notes)|`nvarchar(254)` ||
-|[Parent_Document_Relationship_Type](#parent_document_relationship_type)|`nvarchar(1)` Allowed: `S`, `N`|Determines the default relationship type between the generated document and the parent document.|
+|[Parent_Document_Relationship_Type](#parent_document_relationship_type)|`nvarchar(1)` Allowed: `S`, `N`, `I`|Determines the default relationship type between the generated document and the parent document.|
 |[Procedure_Name](#procedure_name)|`nvarchar(254)` |The system name of the generation procedure, which must be executed by the route.|
 |[Process_Event](#process_event)|`nvarchar(254)` |Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events.|
 |[Read_Only](#read_only)|`bit` |Indicates wheather the destination document shoul be read only. 1 - the destination document is read only|
@@ -667,7 +667,7 @@ Determines the default relationship type between the generated document and the 
 
 | Property | Value |
 | - | - |
-|Allowed Values|`S`, `N`|
+|Allowed Values|`S`, `N`, `I`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|S|

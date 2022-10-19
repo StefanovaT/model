@@ -27,6 +27,7 @@ Contains the details of the Intrastat declarations, issued by the enterprise com
 |[Net_Mass_Kg](#net_mass_kg)|`decimal(14, 3)` |Net mass of the goods in kg|
 |[Origin_Country_Id](#origin_country_id)|`uniqueidentifier` |The country of origin of the goods. NULL for outbound declarations|
 |[Party_Country_Id](#party_country_id)|`uniqueidentifier` |The country of the partner|
+|[Party_Id](#party_id)|`uniqueidentifier` |Partner to whom the goods are dispatched, or partner from whom the goods are received.|
 |[Quantity_Supplementary_Unit](#quantity_supplementary_unit)|`decimal(10, 0)` |Quantity of the goods in the supplementary unit. NULL when no supplementary unit is specified|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Statistical_Value_Amount_Base](#statistical_value_amount_base)|`decimal(10, 0)` |Statistical value of the goods in the base currency|
@@ -50,7 +51,7 @@ Administrative region of the enterprise company at the time of the declaration
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -88,7 +89,7 @@ Delivery terms - classification according to Intrastat (which uses the common ab
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|3|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -118,7 +119,7 @@ The commodity code of the goods, according to the Intrastat commodity classifica
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -155,7 +156,7 @@ The intrastat declaration, to which this line belongs
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -192,7 +193,7 @@ The unique id of the line
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -228,7 +229,7 @@ Invoiced value of the goods in the base currency
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -259,7 +260,7 @@ Line action - 'NEW' = New, 'EDN' = Edited-New, 'EDO' = Edited-Old, 'DEL' = Delet
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|3|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -290,7 +291,7 @@ Consequtive line number within the intrastat declaration
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -326,7 +327,7 @@ Net mass of the goods in kg
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -362,7 +363,7 @@ The country of origin of the goods. NULL for outbound declarations
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -399,7 +400,7 @@ The country of the partner
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -422,6 +423,43 @@ The country of the partner
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Party_Id
+
+
+Partner to whom the goods are dispatched, or partner from whom the goods are received.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|16|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Parties](Gen_Parties.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Party_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Quantity_Supplementary_Unit
 
 
@@ -436,7 +474,7 @@ Quantity of the goods in the supplementary unit. NULL when no supplementary unit
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -493,7 +531,7 @@ Statistical value of the goods in the base currency
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -524,7 +562,7 @@ Transaction nature, according to the Intrastat classification
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -554,7 +592,7 @@ The country of the transportation company
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -592,7 +630,7 @@ Transportation mode - type of transportation used
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

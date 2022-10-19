@@ -7,6 +7,10 @@ Entity: [Production.WorkOrderDocumentTypesOptions](~/entities/Production.WorkOrd
 
 Options for user-defined Work Order document types. Entity: Prd_Work_Order_Document_Types_Options
 
+## Owner Tables Hierarchy
+
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -70,7 +74,7 @@ User-defined Work Order document type
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

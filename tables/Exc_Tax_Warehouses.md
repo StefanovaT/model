@@ -11,6 +11,7 @@ Contains excise-related data for warehouses (stores), which are defined as tax w
 
 | Name | Type | Description |
 | - | - | --- |
+|[Customs_Office](#customs_office)|`nvarchar(32)` |The customs office to which the warehouse is headed.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |The Enterprise company to which the tax warehouse belongs.|
 |[Name](#name)|`nvarchar(254)` `ML`|Tax Warehouse Name (Multilanguage)|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -19,6 +20,42 @@ Contains excise-related data for warehouses (stores), which are defined as tax w
 |[Trader_Excise_Number](#trader_excise_number)|`nvarchar(32)` |The excise identification number of the owner of the Tax Warehouse.|
 
 ## Columns
+
+### Customs_Office
+
+
+The customs office to which the warehouse is headed.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|32|
+|Order|5|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(32) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Customs_Office - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Enterprise_Company_Id
 

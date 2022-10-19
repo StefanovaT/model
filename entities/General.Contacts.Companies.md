@@ -13,6 +13,10 @@ Default Display Text Format:
 _{Name:T}_  
 Default Search Members:  
 _PartyCode; Name_  
+Code Data Member:  
+_PartyCode_  
+Name Data Member:  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -33,29 +37,31 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [BranchNumber](General.Contacts.Companies.md#branchnumber) | int32 | Branch number of the company. Companies with equal names and/or registration numbers can be inserted only if their branch numbers are different. `Required` `Default(0)` `Filter(eq)` 
-| [City](General.Contacts.Companies.md#city) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The city in which the company is registered. `Filter(like)` 
+| [City](General.Contacts.Companies.md#city) | [MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__ | The city in which the company is registered. `Filter(like)` 
 | [CreationTime](General.Contacts.Companies.md#creationtime) | datetime __nullable__ | Date and time when the Company was created. `Filter(ge;le)` `ReadOnly` 
 | [CreationUser](General.Contacts.Companies.md#creationuser) | string (64) __nullable__ | Login name of the user, who created the Company. `Filter(like)` `ReadOnly` 
+| [DisplayText](General.Contacts.Companies.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [GLN](General.Contacts.Companies.md#gln) | string (13) __nullable__ | Global Location Number used by EDI systems. `Filter(multi eq)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [Id](General.Contacts.Companies.md#id) | guid |  
 | [IsActive](General.Contacts.Companies.md#isactive) | boolean | Specifies whether the current party is active in the system or not. `Required` `Default(true)` `Filter(eq)` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [IsVATCashReporting<br />Registered](General.Contacts.Companies.md#isvatcashreportingregistered) | boolean | When true, specifies that the company uses the special VAT Cash Reporting Mode. `Required` `Default(false)` 
 | [IsVATRegistered](General.Contacts.Companies.md#isvatregistered) | boolean | Determines wheather the company is included in VAT registers. `Required` `Default(false)` 
-| [Name](General.Contacts.Companies.md#name) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The name of this Company. `Filter(eq;like)` `ORD` 
+| [Name](General.Contacts.Companies.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The name of this Company. `Filter(eq;like)` `ORD` 
+| [ObjectVersion](General.Contacts.Companies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PartyCode](General.Contacts.Companies.md#partycode) | string (16) | The unique code of the party. `Required` `Filter(eq;like)` `ORD` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyCreationTime](General.Contacts.Companies.md#partycreationtime) | datetime __nullable__ | Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyCreationUser](General.Contacts.Companies.md#partycreationuser) | string (64) __nullable__ | Login name of the user, who created the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
-| [PartyName](General.Contacts.Companies.md#partyname) | [MultilanguageString](../data-types.md#multilanguagestring) | The name of the party. `Required` `Filter(eq;like)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md)) 
+| [PartyName](General.Contacts.Companies.md#partyname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the party. `Required` `Filter(eq;like)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyNotes](General.Contacts.Companies.md#partynotes) | string (254) __nullable__ | Notes for this Party. (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyType](General.Contacts.Companies.md#partytype) | [PartyType](General.Contacts.Companies.md#partytype) | Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. `Required` `Default("P")` `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyUniqueNumber](General.Contacts.Companies.md#partyuniquenumber) | string (16) __nullable__ | Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyUpdateTime](General.Contacts.Companies.md#partyupdatetime) | datetime __nullable__ | Date and time when the Party was last updated. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyUpdateUser](General.Contacts.Companies.md#partyupdateuser) | string (64) __nullable__ | Login name of the user, who last updated the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [RegistrationNumber](General.Contacts.Companies.md#registrationnumber) | string (16) __nullable__ | Unique, government-assigned registration number. null means unknown. `Filter(eq;like)` `ORD` 
-| [RegistrationPrimaryAddress](General.Contacts.Companies.md#registrationprimaryaddress) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | The primary registration address of the company. `Filter(like)` 
-| [RegistrationType](General.Contacts.Companies.md#registrationtype) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | Legal registration type - like LTD., PLC, etc. null means unknown. `Filter(eq)` 
+| [RegistrationPrimaryAddress](General.Contacts.Companies.md#registrationprimaryaddress) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The primary registration address of the company. `Filter(like)` 
+| [RegistrationType](General.Contacts.Companies.md#registrationtype) | [MultilanguageString (16)](../data-types.md#multilanguagestring) __nullable__ | Legal registration type - like LTD., PLC, etc. null means unknown. `Filter(eq)` 
 | [RegistrationVATNumber](General.Contacts.Companies.md#registrationvatnumber) | string (16) __nullable__ | VAT registration number where applicable. null means that VAT number is not applicable or unknown. `Filter(eq)` `ORD` 
-| [ResponsiblePersonName](General.Contacts.Companies.md#responsiblepersonname) | [MultilanguageString](../data-types.md#multilanguagestring) __nullable__ | Primary responsible person of the company. null means unknown. `Filter(like)` 
+| [ResponsiblePersonName](General.Contacts.Companies.md#responsiblepersonname) | [MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__ | Primary responsible person of the company. null means unknown. `Filter(like)` 
 | [UpdateTime](General.Contacts.Companies.md#updatetime) | datetime __nullable__ | Date and time when the Company was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](General.Contacts.Companies.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Company. `Filter(like)` `ReadOnly` 
 
@@ -91,6 +97,7 @@ Aggregate Tree
 Branch number of the company. Companies with equal names and/or registration numbers can be inserted only if their branch numbers are different. `Required` `Default(0)` `Filter(eq)`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
@@ -99,7 +106,8 @@ _Default Value_: **0**
 
 The city in which the company is registered. `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
@@ -108,6 +116,7 @@ _Supports Order By_: **False**
 Date and time when the Company was created. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -116,9 +125,19 @@ _Supports Order By_: **False**
 Login name of the user, who created the Company. `Filter(like)` `ReadOnly`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### GLN
 
@@ -126,6 +145,7 @@ Global Location Number used by EDI systems. `Filter(multi eq)` `ORD` (Inherited 
 
 _Type_: **string (13) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **13**  
@@ -134,6 +154,7 @@ _Maximum Length_: **13**
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -142,6 +163,7 @@ _Default Value_: **NewGuid**
 Specifies whether the current party is active in the system or not. `Required` `Default(true)` `Filter(eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
@@ -151,6 +173,7 @@ _Default Value_: **True**
 When true, specifies that the company uses the special VAT Cash Reporting Mode. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -160,6 +183,7 @@ _Default Value_: **False**
 Determines wheather the company is included in VAT registers. `Required` `Default(false)`
 
 _Type_: **boolean**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
@@ -168,10 +192,20 @@ _Default Value_: **False**
 
 The name of this Company. `Filter(eq;like)` `ORD`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### PartyCode
 
@@ -179,6 +213,7 @@ The unique code of the party. `Required` `Filter(eq;like)` `ORD` `ReadOnly` (Inh
 
 _Type_: **string (16)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
@@ -188,6 +223,7 @@ _Maximum Length_: **16**
 Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -196,6 +232,7 @@ _Supports Order By_: **False**
 Login name of the user, who created the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -204,8 +241,9 @@ _Maximum Length_: **64**
 
 The name of the party. `Required` `Filter(eq;like)` `ORD` (Inherited from [Parties](General.Contacts.Parties.md))
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 
@@ -214,6 +252,7 @@ _Supports Order By_: **True**
 Notes for this Party. (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
@@ -223,6 +262,7 @@ _Maximum Length_: **254**
 Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. `Required` `Default("P")` `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[PartyType](General.Contacts.Companies.md#partytype)**  
+_Category_: **System**  
 Allowed values for the PartyType data attribute  
 _Allowed Values (General.Contacts.PartiesRepository.PartyType Enum Members)_  
 
@@ -243,6 +283,7 @@ _Default Value_: **Person**
 Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (16) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
@@ -252,6 +293,7 @@ _Maximum Length_: **16**
 Date and time when the Party was last updated. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -260,6 +302,7 @@ _Supports Order By_: **False**
 Login name of the user, who last updated the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -270,6 +313,7 @@ Unique, government-assigned registration number. null means unknown. `Filter(eq;
 
 _Type_: **string (16) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
@@ -278,7 +322,8 @@ _Maximum Length_: **16**
 
 The primary registration address of the company. `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
@@ -286,7 +331,8 @@ _Supports Order By_: **False**
 
 Legal registration type - like LTD., PLC, etc. null means unknown. `Filter(eq)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (16)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 
@@ -296,6 +342,7 @@ VAT registration number where applicable. null means that VAT number is not appl
 
 _Type_: **string (16) __nullable__**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
@@ -304,7 +351,8 @@ _Maximum Length_: **16**
 
 Primary responsible person of the company. null means unknown. `Filter(like)`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 
@@ -313,6 +361,7 @@ _Supports Order By_: **False**
 Date and time when the Company was last updated. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
@@ -321,6 +370,7 @@ _Supports Order By_: **False**
 Login name of the user, who last updated the Company. `Filter(like)` `ReadOnly`
 
 _Type_: **string (64) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
@@ -333,6 +383,7 @@ _Maximum Length_: **64**
 The administrative region in which the party is situated. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Area
@@ -340,6 +391,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The area in which the party is situated. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[Areas](General.Geography.Areas.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Country
@@ -347,6 +399,7 @@ _Supported Filters_: **Equals, EqualsIn**
 The country, where the company is registered. `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### DefaultProductCodingSystem
@@ -354,6 +407,7 @@ _Supported Filters_: **Equals, EqualsIn**
 When not null, specifies coding system for products, which is required by the party. The coding system is used primarily for document printouts and document import/exports. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md))
 
 _Type_: **[CodingSystems](General.Products.CodingSystems.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### ParentParty
@@ -362,6 +416,7 @@ Organizational unit (branch from the hierarchy of all parties) to which this par
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### RegistrationResponsiblePerson
@@ -369,8 +424,84 @@ _Supported Filters_: **Equals, EqualsIn**
 The personal record of the primary responsible person as per registration. null means unknown. `Filter(multi eq)`
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

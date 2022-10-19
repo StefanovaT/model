@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>LOGxxxxx Create Store Transaction for fulfilled .. | ERP.net Domain Model </title>
+    <title>LOGXXXXX Create Simple Warehouse Orders (with separate lines for the composite product components) | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="LOGxxxxx Create Store Transaction for fulfilled .. | ERP.net Domain Model ">
+    <meta name="title" content="LOGXXXXX Create Simple Warehouse Orders (with separate lines for the composite product components) | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,40 +70,36 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
+<h1 id="logxxxxx-create-simple-warehouse-orders-with-separate-lines-for-the-composite-product-components">LOGXXXXX Create Simple Warehouse Orders (with separate lines for the composite product components)</h1>
 
-<p>// ---
-// erp.entity: Logistics.Inventory.StoreOrders
-// erp.type: generation
-// ---</p>
-<h1 id="logxxxxx-create-store-transaction-for-fulfilled-">LOGxxxxx Create Store Transaction for fulfilled ..</h1>
 <h2 id="basic-information">Basic Information</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Module</th>
-<th>Logistics.Inventory</th>
+<th>Logistics.WMS</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Code</td>
-<td>LOGxxxxx</td>
+<td>LOGXXXXX</td>
 </tr>
 <tr>
 <td style="text-align: left;">Parent Document</td>
-<td>StoreOrder</td>
+<td>Warehouse Requisition</td>
 </tr>
 <tr>
 <td style="text-align: left;">Sub-document</td>
-<td>StoreTransaction</td>
+<td>Warehouse Order</td>
 </tr>
 <tr>
 <td style="text-align: left;">Full Name</td>
-<td>Create Store transactions (with waiting for warehouse operations)</td>
+<td>Create Simple Warehouse Orders (with separate lines for the composite product components)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Status</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/generation-procedures.html">ACTIVE</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/generation-procedures.html">NEW</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
@@ -114,6 +110,10 @@
 <td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/documents/document-generation-and-transitional-documents.html">NO</a></td>
 </tr>
 <tr>
+<td style="text-align: left;">Supports Single Execution</td>
+<td>YES</td>
+</tr>
+<tr>
 <td style="text-align: left;">Replaces</td>
 <td>-</td>
 </tr>
@@ -122,8 +122,12 @@
 <td>Ignore</td>
 </tr>
 <tr>
-<td style="text-align: left;">Introduced In Version</td>
-<td>2018.2</td>
+<td style="text-align: left;">Split Function</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Version</td>
+<td>Introduced: 2023 Updated: -</td>
 </tr>
 <tr>
 <td style="text-align: left;">Date of Suspension</td>
@@ -132,16 +136,13 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This generation creates Store Transaction based on the fulfillment of the Store Order, regardless of which module executed the order.
-It is often used when the Store Order is executed by another module (eg WMS) or an external application.</p>
-<p>The Store Transaction’s header is created based on the Store Order’s header as follows:</p>
-<pre><code>Transaction.ParentStoreOrder = StoreOrder
+<p>This generation is used to create Warehouse Orders from Warehouse Requisitions when the company is using Composite Products. Thе generation creates warehouse orders for both composite and noncomposite products. What is special about this generation is that it creates two kinds of lines for the execution of the composite products. One line for the composite product and one line for each of its components.</p>
+<p><strong>The Warehouse Order’s header is created based on the Warehouse Requisition’s header as follows:</strong></p>
+<pre><code>WarehouseOrder.DocumentDate = WarehouseRequisition.DocumentDate
 
-Transaction.Store = StoreOrder.Store
+WarehouseOrder.Warehouse = WarehouseRequisition.Warehouse
 
-Transaction.MovementType = StoreOrder.MovementType
-
-Transaction.DocumentCurrency = StoreOrder.DocumentCurrency
+WarehouseOrder.WarehouseWorker = NULL
 </code></pre>
 <div class="NOTE">
 <h5>Note</h5>
@@ -149,28 +150,32 @@ Transaction.DocumentCurrency = StoreOrder.DocumentCurrency
 </div>
 <div class="NOTE">
 <h5>Note</h5>
-<p>The new store transaction is saved then and only when there is at least one line in it.</p>
+<p>The new Warehouse Order is saved then and only when there is at least one line in it.</p>
 </div>
 <h2 id="fulfillments">Fulfillments</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Name</th>
-<th>StoreOrderLineToStoreTransactionLine</th>
+<th style="text-align: left;">Fulfilment Name</th>
+<th>WarehouseRequisitionLineToWarehouseOrderLine</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;">Fulfilment Tracking Type</td>
+<td>Fulfilment Table</td>
+</tr>
+<tr>
 <td style="text-align: left;">Parent Entity</td>
-<td>StoreOrderLine</td>
+<td>WarehouseRequisitionLine</td>
 </tr>
 <tr>
-<td style="text-align: left;">Child Entity</td>
-<td>StoreTransactionLine</td>
+<td style="text-align: left;">Fulfilment Table</td>
+<td>DocumentFulfillment</td>
 </tr>
 <tr>
-<td style="text-align: left;">Parent / Child Relationship</td>
-<td>StoreTransactionLine.ParentDocument = StoreOrder;StoreTransactionLine.ParentLineNo = StoreOrderLine.LineNo</td>
+<td style="text-align: left;">Parent Entity/ Fulfilment Table Relationship</td>
+<td>WarehouseRequisitionLineId = DocumentFulfillment.DocumentLineId</td>
 </tr>
 </tbody>
 </table>
@@ -178,87 +183,217 @@ Transaction.DocumentCurrency = StoreOrder.DocumentCurrency
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Fulfillment Name</th>
+<th style="text-align: left;">Fulfilment Name</th>
 <th style="text-align: center;">Metric Name</th>
 <th style="text-align: center;">Measurement Unit</th>
 <th style="text-align: left;">Parent Value</th>
-<th style="text-align: left;">Child Value</th>
+<th style="text-align: left;">Fulfilment Table Value</th>
 <th style="text-align: left;">New Record</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">StoreOrderLineToStoreTransactionLine</td>
-<td style="text-align: center;">MStandardQuantityBase</td>
-<td style="text-align: center;">StoreOrderLine.Product.BaseMeasurementUnit</td>
-<td style="text-align: left;">StoreOrderLine.StandardQuantityBase</td>
-<td style="text-align: left;">StoreTransactionLine.StandardQuantityBase</td>
-<td style="text-align: left;">YES</td>
-</tr>
-<tr>
-<td style="text-align: left;">StoreOrderLineToStoreTransactionLine</td>
-<td style="text-align: center;">MQuantity</td>
-<td style="text-align: center;">StoreOrderLine.QuantityUnit</td>
-<td style="text-align: left;">StoreOrderLine.Quantity</td>
-<td style="text-align: left;">StoreTransactionLine.Quantity</td>
-<td style="text-align: left;">NO</td>
-</tr>
-<tr>
-<td style="text-align: left;">StoreOrderLineToStoreTransactionLine</td>
+<td style="text-align: left;">WarehouseRequisitionLineToWarehouseOrderLine</td>
 <td style="text-align: center;">MQuantityBase</td>
-<td style="text-align: center;">StoreOrderLine.Product.BaseMeasurementUnit</td>
-<td style="text-align: left;">StoreOrderLine.QuantityBase</td>
-<td style="text-align: left;">StoreTransactionLine.QuantityBase</td>
+<td style="text-align: center;">WarehouseRequisitionLine.Product.BaseMeasurementUnit</td>
+<td style="text-align: left;">WarehouseRequisitionLineLine.QuantityBase</td>
+<td style="text-align: left;">DocumentFulfillment.QuantityBase</td>
 <td style="text-align: left;">NO</td>
 </tr>
 <tr>
-<td style="text-align: left;">StoreOrderLineToStoreTransactionLine</td>
-<td style="text-align: center;">MLineCost</td>
-<td style="text-align: center;">StoreOrder.DocumentCurrency</td>
-<td style="text-align: left;">StoreOrderLine.LineCost</td>
-<td style="text-align: left;">StoreTransactionLine.LineCost</td>
-<td style="text-align: left;">if (StoreOrder.MovementType== Receipt) {New Record = YES},else {New Record = NO}</td>
+<td style="text-align: left;">WarehouseRequisitionLineToWarehouseOrderLine</td>
+<td style="text-align: center;">MStandardQuantity</td>
+<td style="text-align: center;">WarehouseRequisitionLine.Product.BaseMeasurementUnit</td>
+<td style="text-align: left;">WarehouseRequisitionLineLine.StandardQuantity</td>
+<td style="text-align: left;">DocumentFulfillment.StandardQuantity</td>
+<td style="text-align: left;">YES</td>
 </tr>
 </tbody>
 </table>
-<p>The lines of the new document are created based on the data for the Fulfilled Part of quantities by Store Transactions that are already created (for more information, see topic <a href="../reference/discrepancy-system.html">Discrepancy System</a>). The new StoreTransactionLine is created as follows:</p>
-<pre><code>StoreTransactionLine.LineNo = StoreOrderLine.LineNo
+<p><strong>The Warehouse Order Lines creation</strong>
+<br><br>
+The lines of the new document are created based on the data of the Planned records in the Document Fulfillments table.
+The table contains the information for the Fulfilled Part of quantities by the Warehouse Oders which have already been created.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Note that for the calculation of the Fulfilled Part are taken into account only the recods whoose Fulfillment Type is Planned.</p>
+</div>
+<br>
+<p>The creation starts with determining the kind of the product (composite or not) and the direction of movement.</p>
+<p><em>Is the product a composite product?</em>
+<br> A product is considered as composite when it has atleast one valid component.
+Valid composite product components are those for which:</p>
+<ul>
+<li>FromDate == null OR &lt;= WarehouseOrder.DocumentDate</li>
+<li>ToDate == null OR &gt;= WarehouseOrder.DocumentDate</li>
+<li>IsActive == true</li>
+</ul>
+<p><em>What is the direction on the movement?</em>
+<br> It depends on the parent requisition's Requisition Type which can be &quot;Inbound&quot; or &quot;Outbound&quot;.</p>
+<p>Depending on the answers on both questions system may create three types of warehouse order lines:</p>
+<ul>
+<li>a line executing a non-composite product;</li>
+<li>a line executing a composite product;</li>
+<li>a line/s executing the composite product's components.</li>
+</ul>
+<p><strong>Non-composite products</strong></p>
+<p>If the parent requsition line's products is non-composite, the system will create a &quot;traditional&quot; warehouse order line with Receive or Dispatch task type.</p>
+<p><strong>Warehouse Order Lines for the non-composite product are created as follows</strong></p>
+<pre><code>WarehouseOrderLine.TaskType = If (WarehouseRequisition.RequisitionType = Inbound )
 
-StoreTransactionLine.ParentStoreOrderLine = StoreOrderLine
+                            , then WarehouseOrderLine.TaskType = Receive
 
-StoreTransactionLine.StoreBin = IFF (StoreOrderLine.StoreBin != NULL, StoreOrderLine.StoreBin, IFF(ProductDefaultStoreBin(Product == StoreTransactionLine.Product &amp;&amp; Store = StoreOrder.Store).Count() == 1, ProductDefaultStoreBin.DefaultBin, StoreOrder.Store.DefaultStoreBin))
+                            , else WarehouseOrderLine.TaskType = Dispatch
 
-StoreTransactionLine.OriginalProduct = StoreOrderLine.Product
+WarehouseOrderLine.Product = WarehouseRequisitionLine.Product
 
-StoreTransactionLine.Product = StoreOrderLine.Product
+WarehouseOrderLine.Lot = WarehouseRequisitionLine.Lot
 
-StoreTransactionLine.Lot = StoreOrderLine.Lot
+WarehouseOrderLine.SerialNumber = WarehouseRequisitionLine.SerialNumber
 
-StoreTransactionLine.SerialNumber = StoreOrderLine.SerialNumber
+WarehouseOrderLine.ProductVariant = WarehouseRequisitionLine.ProductVariant
 
-StoreTransactionLine.Quantity = StoreOrderLine.REMAINING(MQuantity)
+WarehouseOrderLine.QuantityUnit = WarehouseRequisitionLine.QuantityUnit
 
-StoreTransactionLine.QuantityUnit = StoreOrderLine.QuantityUnit
+WarehouseOrderLine.Quantity =  CONVERT(WarehouseOrderLine.StandardQuantity, WarehouseOrderLine.QuantityUnit)
 
-StoreTransactionLine.QuantityBase = StoreOrderLine.REMAINING(MQuantityBase)
+WarehouseOrderLine.QuantityBase = WarehouseRequisitionLine.REMAINING(MQuantityBase)
 
-StoreTransactionLine.StandardQuantityBase = StoreOrderLine.REMAINING(MStandardQuantityBase)
+WarehouseOrderLine.StandardQuantity = WarehouseRequisitionLine.REMAINING(MStandardQuantity)
 
-StoreTransactionLine.Notes = StoreOrderLine.Notes
+WarehouseOrderLine.LogisticUnit = NULL
 
-StoreTransactionLine.UnitCost = StoreOrderLine.UnitCost
+WarehouseOrderLine.WarehouseZone = NULL
 
-StoreTransactionLine.LineCost = if (StoreOrder.MovementType == Receipt) {StoreTransactionLine.LineCost = StoreOrderLine.REMAINING(MLineCost)}, else {StoreTransactionLine.LineCost = 0.00}
+WarehouseOrderLine.WarehouseLocation =NULL
 
-StoreTransactionLine.GuaranteePeriodDays = StoreOrderLine.GuaranteePeriodDays
+WarehouseOrderLine.ToWarehouseLocation = NULL
 
-StoreTransactionLine.ParentLineId = StoreOrderLine.ParentLineId
+WarehouseOrderLine.WarehouseWorker = NULL
 
-StoreTransactionLine.ProductVariant = StoreOrderLine.ProductVariant
+WarehouseOrderLine.Notes = WarehouseRequisitionLine.Notes
 
-StoreTransactionLine.ParentLineNo = StoreOrderLine.LineNo
+WarehouseOrderLine.ParentDocument = WarehouseRequisition
 
-StoreTransactionLine.TransactionTimestamp = StoreOrderLine.TransactionTimestamp
+WarehouseOrderLine.ParentLineNo = WarehouseRequisitionLine.LineNo
+</code></pre>
+<p><strong>Composite products</strong></p>
+<p>If the parent requsition line contains a composite product are created two sets of Warehouse Order Lines - one for the composite product and one for each of its components.</p>
+<p>If the movement type is &quot;Inbound&quot;, then the composite product line is created first and then the lines for its components are created. The composite product line is with &quot;Dekit&quot; task type, because it respresents the &quot;disassembly&quot; of the product. On the other hand, the components lines have &quot;Component receive' task type because they are the ones need to be physically received in the warehouse and put away in the warehouse locations.</p>
+<p>This is the opposite of when the movement type is &quot;Outbound&quot; - we first create the lines for the components and then the line for the composite product. The composite product line is with &quot;Kit&quot; task type, because it respresents the &quot;assembly&quot; of the product. On the other hand, the components lines have &quot;Component dispatch' task type because they are the ones that need to be physically dispatched from the warehouse.</p>
+<p><strong>The Warehouse Order Lines for composite products are created as follows</strong></p>
+<pre><code>WarehouseOrderLine.TaskType = If (WarehouseRequisition.RequisitionType = Inbound )
+
+                            , then WarehouseOrderLine.TaskType = Dekit
+
+                            , else WarehouseOrderLine.TaskType = Kit
+
+WarehouseOrderLine.Product = WarehouseRequisitionLine.Product
+
+WarehouseOrderLine.Lot = WarehouseRequisitionLine.Lot
+
+WarehouseOrderLine.SerialNumber = WarehouseRequisitionLine.SerialNumber
+
+WarehouseOrderLine.ProductVariant = WarehouseRequisitionLine.ProductVariant
+
+WarehouseOrderLine.QuantityUnit = WarehouseRequisitionLine.QuantityUnit
+
+WarehouseOrderLine.Quantity =  CONVERT(WarehouseOrderLine.StandardQuantity, WarehouseOrderLine.QuantityUnit)
+
+WarehouseOrderLine.QuantityBase = WarehouseRequisitionLine.REMAINING(MQuantityBase)
+
+WarehouseOrderLine.StandardQuantity = WarehouseRequisitionLine.REMAINING(MStandardQuantity)
+
+WarehouseOrderLine.LogisticUnit = NULL
+
+WarehouseOrderLine.WarehouseZone = NULL
+
+WarehouseOrderLine.WarehouseLocation =NULL
+
+WarehouseOrderLine.ToWarehouseLocation = NULL
+
+WarehouseOrderLine.WarehouseWorker = NULL
+
+WarehouseOrderLine.Notes = WarehouseRequisitionLine.Notes
+
+WarehouseOrderLine.ParentDocument = WarehouseRequisition
+
+WarehouseOrderLine.ParentLineNo = WarehouseRequisitionLine.LineNo
+</code></pre>
+<br>
+**The Warehouse Order Lines for the the composite product's components are created as follows**
+<p>First we are getting all valid Composite Product's Components, then we are creating new Warehouse Order Line for each of them:</p>
+<pre><code>WarehouseOrderLine.TaskType = If (WarehouseRequisition.RequisitionType = Inbound )
+
+                            , then WarehouseOrderLine.TaskType = ComponentReceive
+
+                            , else WarehouseOrderLine.TaskType = ComponentDispatch
+
+WarehouseOrderLine.Product = CompositeProductComponent.ComponentProductId	
+
+WarehouseOrderLine.Lot = NULL
+
+WarehouseOrderLine.SerialNumber = NULL
+
+WarehouseOrderLine.ProductVariant = NULL
+
+WarehouseOrderLine.QuantityUnit = FIRST(MeasurementUnits where SystemUnit = Pieces)
+
+WarehouseOrderLine.Quantity = WarehouseRequisitionLine.StandardQuantity * Component.Quantity
+
+WarehouseOrderLine.QuantityBase = WarehouseRequisitionLine.StandardQuantity * Component.Quantity
+
+WarehouseOrderLine.StandardQuantity = WarehouseRequisitionLine.StandardQuantity * Component.Quantity
+
+WarehouseOrderLine.LogisticUnit = NULL
+
+WarehouseOrderLine.WarehouseZone = NULL
+
+WarehouseOrderLine.WarehouseLocation = NULL
+
+WarehouseOrderLine.ToWarehouseLocation = NULL
+
+WarehouseOrderLine.WarehouseWorker = NULL
+
+WarehouseOrderLine.Notes = WarehouseRequisitionLine.Notes
+
+WarehouseOrderLine.ParentDocument = WarehouseRequisition
+
+WarehouseOrderLine.ParentLineNo = WarehouseRequisitionLine.LineNo
+</code></pre>
+<p>Once all of the Warehouse Order Lines are created and before the document is saved, the generation generates records in the Document Fulfillment table.
+These records reflect the quantities fulfilled by the current iteration of the generation procedure and are needed to determine the quantities for subsequent generation iterations.</p>
+<p><strong>The new Document Fulfillment is created as follows:</strong></p>
+<p><strong>Important:</strong> Note that document fulfillments are NOT created for the warehouse order lines with the product's components.</p>
+<pre><code>DocumentFulfillment.Document = WarehouseRequisition
+
+DocumentFulfillment.DocumentLineId = WarehouseRequisitionLineId
+
+DocumentFulfillment.LineNo = WarehouseRequisitionLine.LineNo
+
+DocumentFulfillment.FulfillmentType = Planned
+
+DocumentFulfillment.IsFinal = If (WarehouseOrder.DocumentType.GenerateSingleDocument = true)
+
+                          , then DocumentFulfillment.IsFinal = true
+
+                          , else DocumentFulfillment.IsFinal = false
+
+DocumentFulfillment.LineType = Line
+
+DocumentFulfillment.QuantityBase = WarehouseOrderLine.QuantityBase
+
+DocumentFulfillment.StandardQuantity = WarehouseOrderLine.StandardQuantity
+
+DocumentFulfillment.Product = WarehouseOrderLine.Product
+
+DocumentFulfillment.Lot = WarehouseOrderLine.Lot
+
+DocumentFulfillment.SerialNumber = WarehouseOrderLine.SerialNumber
+
+DocumentFulfillment.ProductVariant = WarehouseOrderLine.ProductVariant
+
+DocumentFulfillment.DestinationEntityName = Wms_Warehouse_Order_Lines
 </code></pre>
 </article>
           </div>
@@ -268,7 +403,7 @@ StoreTransactionLine.TransactionTimestamp = StoreOrderLine.TransactionTimestamp
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/LOGxxxxx.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/LOGXXXXX.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

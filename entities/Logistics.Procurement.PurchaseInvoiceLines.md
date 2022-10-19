@@ -26,6 +26,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DeliveryTermsCode](Logistics.Procurement.PurchaseInvoiceLines.md#deliverytermscode) | [DeliveryTerms](Logistics.Procurement.PurchaseInvoiceLines.md#deliverytermscode) __nullable__ | Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting. 
+| [DisplayText](Logistics.Procurement.PurchaseInvoiceLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Procurement.PurchaseInvoiceLines.md#id) | guid |  
 | [IntrastatApplyDate](Logistics.Procurement.PurchaseInvoiceLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. 
 | [IntrastatTransaction<br />NatureCode](Logistics.Procurement.PurchaseInvoiceLines.md#intrastattransactionnaturecode) | [TransactionNature](Logistics.Procurement.PurchaseInvoiceLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
@@ -33,7 +34,8 @@ Aggregate Root:
 | [LineAmount](Logistics.Procurement.PurchaseInvoiceLines.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | The total invoiced amount for this line in the document currency of the invoice. `Currency: PurchaseInvoice.DocumentCurrency` `Required` `Default(0)` 
 | [LineNo](Logistics.Procurement.PurchaseInvoiceLines.md#lineno) | int32 | Consecutive line number within the invoice. `Required` 
 | [Notes](Logistics.Procurement.PurchaseInvoiceLines.md#notes) | string (254) __nullable__ | Notes for this PurchaseInvoiceLine. 
-| [ProductName](Logistics.Procurement.PurchaseInvoiceLines.md#productname) | [MultilanguageString](../data-types.md#multilanguagestring) | The name of the invoiced product, initially copied from the name in the product definition. The field can be edited by the user. `Required` 
+| [ObjectVersion](Logistics.Procurement.PurchaseInvoiceLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [ProductName](Logistics.Procurement.PurchaseInvoiceLines.md#productname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the invoiced product, initially copied from the name in the product definition. The field can be edited by the user. `Required` 
 | [Quantity](Logistics.Procurement.PurchaseInvoiceLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The invoiced quantity. `Unit: QuantityUnit` `Required` `Default(1)` 
 | [QuantityBase](Logistics.Procurement.PurchaseInvoiceLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The equivalence of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` 
 | [StandardQuantityBase](Logistics.Procurement.PurchaseInvoiceLines.md#standardquantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
@@ -43,14 +45,14 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Logistics.Procurement.PurchaseInvoiceLines.md#document) | [PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) | The `PurchaseInvoice`(Logistics.Procurement.PurchaseInvoiceLines.md#purchaseinvoice) to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)` |
+| [Document](Logistics.Procurement.PurchaseInvoiceLines.md#document) | [PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) | The <see cref="PurchaseInvoice"/> to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)` |
 | [IntrastatDestinationRegion](Logistics.Procurement.PurchaseInvoiceLines.md#intrastatdestinationregion) | [AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable) | Region, which is the final destination of the goods. Used for Intrastat reporting. `Filter(multi eq)` |
 | [IntrastatTransportCountry](Logistics.Procurement.PurchaseInvoiceLines.md#intrastattransportcountry) | [Countries](General.Geography.Countries.md) (nullable) | Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)` |
 | [LineCostCenter](Logistics.Procurement.PurchaseInvoiceLines.md#linecostcenter) | [CostCenters](Finance.Accounting.CostCenters.md) (nullable) | Cost center for which the amount from this row will be accounted. `Filter(multi eq)` |
 | [LineDealType](Logistics.Procurement.PurchaseInvoiceLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created. `Filter(multi eq)` |
 | [OriginCountry](Logistics.Procurement.PurchaseInvoiceLines.md#origincountry) | [Countries](General.Geography.Countries.md) (nullable) | The country of origin of the invoiced product. Should be non-null only when this is different from the country of origin from the product definition. `Filter(multi eq)` |
 | [Product](Logistics.Procurement.PurchaseInvoiceLines.md#product) | [Products](General.Products.Products.md) | The invoiced product. `Required` `Filter(multi eq)` |
-| [PurchaseInvoice](Logistics.Procurement.PurchaseInvoiceLines.md#purchaseinvoice) | [PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) | The `PurchaseInvoice`(Logistics.Procurement.PurchaseInvoiceLines.md#purchaseinvoice) to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)` `Owner` |
+| [PurchaseInvoice](Logistics.Procurement.PurchaseInvoiceLines.md#purchaseinvoice) | [PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) | The <see cref="PurchaseInvoice"/> to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [QuantityUnit](Logistics.Procurement.PurchaseInvoiceLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [ReceivingOrderLine](Logistics.Procurement.PurchaseInvoiceLines.md#receivingorderline) | [ReceivingOrderLines](Logistics.Procurement.ReceivingOrderLines.md) (nullable) | The receiving order line, which is invoiced by the current line. null means that this line is not directly related to receiving order line. `Filter(multi eq)` |
 | [SaleLineDealType](Logistics.Procurement.PurchaseInvoiceLines.md#salelinedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Sale deal type for this line. If sale deal type in the line is different from sale deal type in the header another Sales VAT entry is created. `Filter(multi eq)` |
@@ -63,6 +65,7 @@ Aggregate Root:
 Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting.
 
 _Type_: **[DeliveryTerms](Logistics.Procurement.PurchaseInvoiceLines.md#deliverytermscode) __nullable__**  
+_Category_: **System**  
 Generic enum type for DeliveryTerms properties  
 _Allowed Values (Finance.Intrastat.DeliveryTerms Enum Members)_  
 
@@ -89,10 +92,20 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.PurchaseInvoice.DeliveryTermsCode`
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
@@ -101,6 +114,7 @@ _Default Value_: **NewGuid**
 Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used.
 
 _Type_: **datetime __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -109,6 +123,7 @@ _Supports Order By_: **False**
 Transaction nature; used for Intrastat reporting.
 
 _Type_: **[TransactionNature](Logistics.Procurement.PurchaseInvoiceLines.md#intrastattransactionnaturecode) __nullable__**  
+_Category_: **System**  
 Generic enum type for TransactionNature properties  
 _Allowed Values (Finance.Intrastat.TransactionNature Enum Members)_  
 
@@ -147,6 +162,7 @@ _Front-End Recalc Expressions:_
 Transport mode; used for Intrastat reporting.
 
 _Type_: **[TransportMode](Logistics.Procurement.PurchaseInvoiceLines.md#intrastattransportmodecode) __nullable__**  
+_Category_: **System**  
 Generic enum type for TransportMode properties  
 _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_  
 
@@ -157,9 +173,9 @@ _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_
 | RoadTransport | RoadTransport value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'RoadTransport' |
 | AirTransport | AirTransport value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AirTransport' |
 | Mail | Mail value. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Mail' |
-| FixedTransport<br />Installations | FixedTransport<br />Installations value. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'FixedTransport<br />Installations' |
-| RiverTransport | RiverTransport value. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'RiverTransport' |
-| SelfPropelled | SelfPropelled value. Stored as '8'. <br /> _Database Value:_ '8' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'SelfPropelled' |
+| FixedTransport<br />Installations | FixedTransport<br />Installations value. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'FixedTransport<br />Installations' |
+| RiverTransport | RiverTransport value. Stored as '8'. <br /> _Database Value:_ '8' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'RiverTransport' |
+| SelfPropelled | SelfPropelled value. Stored as '9'. <br /> _Database Value:_ '9' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'SelfPropelled' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -174,17 +190,17 @@ _Front-End Recalc Expressions:_
 The total invoiced amount for this line in the document currency of the invoice. `Currency: PurchaseInvoice.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 2)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 
-_Front-End Recalc Expressions:_  
-`( obj.UnitPrice * obj.Quantity.Value).Round( )`
 ### LineNo
 
 Consecutive line number within the invoice. `Required`
 
 _Type_: **int32**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -198,15 +214,26 @@ _Front-End Recalc Expressions:_
 Notes for this PurchaseInvoiceLine.
 
 _Type_: **string (254) __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+
+### ObjectVersion
+
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 
 ### ProductName
 
 The name of the invoiced product, initially copied from the name in the product definition. The field can be edited by the user. `Required`
 
-_Type_: **[MultilanguageString](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -220,6 +247,7 @@ _Front-End Recalc Expressions:_
 The invoiced quantity. `Unit: QuantityUnit` `Required` `Default(1)`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -231,6 +259,7 @@ _Front-End Recalc Expressions:_
 The equivalence of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -244,6 +273,7 @@ _Front-End Recalc Expressions:_
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 
@@ -257,6 +287,7 @@ _Front-End Recalc Expressions:_
 The unit price of the invoiced item in the document currency of the invoice. `Currency: PurchaseInvoice.DocumentCurrency` `Required` `Default(0)`
 
 _Type_: **[Amount (14, 5)](../data-types.md#amount)**  
+_Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
@@ -268,10 +299,11 @@ _Front-End Recalc Expressions:_
 
 ### Document
 
-The `PurchaseInvoice`(Logistics.Procurement.PurchaseInvoiceLines.md#purchaseinvoice) to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)`
+The <see cref="PurchaseInvoice"/> to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)`
 
 _Type_: **[PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### IntrastatDestinationRegion
@@ -279,6 +311,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Region, which is the final destination of the goods. Used for Intrastat reporting. `Filter(multi eq)`
 
 _Type_: **[AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -291,6 +324,7 @@ _Front-End Recalc Expressions:_
 Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -303,6 +337,7 @@ _Front-End Recalc Expressions:_
 Cost center for which the amount from this row will be accounted. `Filter(multi eq)`
 
 _Type_: **[CostCenters](Finance.Accounting.CostCenters.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### LineDealType
@@ -310,6 +345,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created. `Filter(multi eq)`
 
 _Type_: **[DealTypes](Finance.Vat.DealTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -322,6 +358,7 @@ _Front-End Recalc Expressions:_
 The country of origin of the invoiced product. Should be non-null only when this is different from the country of origin from the product definition. `Filter(multi eq)`
 
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### Product
@@ -330,16 +367,18 @@ The invoiced product. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ReceivingOrderLine != null), obj.ReceivingOrderLine.Product, obj.Product)`
 ### PurchaseInvoice
 
-The `PurchaseInvoice`(Logistics.Procurement.PurchaseInvoiceLines.md#purchaseinvoice) to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="PurchaseInvoice"/> to which this PurchaseInvoiceLine belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
@@ -348,6 +387,7 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Front-End Recalc Expressions:_  
@@ -358,6 +398,7 @@ The receiving order line, which is invoiced by the current line. null means that
 
 _Type_: **[ReceivingOrderLines](Logistics.Procurement.ReceivingOrderLines.md) (nullable)**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 ### SaleLineDealType
@@ -365,6 +406,7 @@ _Supported Filters_: **Equals, EqualsIn**
 Sale deal type for this line. If sale deal type in the line is different from sale deal type in the header another Sales VAT entry is created. `Filter(multi eq)`
 
 _Type_: **[DealTypes](Finance.Vat.DealTypes.md) (nullable)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
 _Back-End Default Expression:_  
@@ -372,6 +414,81 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.PurchaseInvoice.SaleDealType`
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Creates a notification a sends a real time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

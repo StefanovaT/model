@@ -85,6 +85,8 @@
 <p>Default Display Text Format:<br>
 <em>{PartyName:T}</em><br>
 Default Search Members:<br>
+<em>PartyName</em><br>
+Name Data Member:<br>
 <em>PartyName</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
@@ -113,6 +115,11 @@ Aggregate Root:<br>
 <td>'I' for Payment issue, 'R' for payment receipt. <code>Required</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
+<td><a href="Finance.Payments.PaymentSlipAmounts.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="Finance.Payments.PaymentSlipAmounts.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
@@ -128,8 +135,13 @@ Aggregate Root:<br>
 <td>The number of the line within the payment. <code>Required</code></td>
 </tr>
 <tr>
+<td><a href="Finance.Payments.PaymentSlipAmounts.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
 <td><a href="Finance.Payments.PaymentSlipAmounts.html#partyname">PartyName</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a> <strong>nullable</strong></td>
 <td>The name of the party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee).</td>
 </tr>
 <tr>
@@ -167,7 +179,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Payments.PaymentSlipAmounts.html#paymentslip">PaymentSlip</a></td>
 <td><a href="Finance.Payments.PaymentSlips.html">PaymentSlips</a></td>
-<td>The <code>PaymentSlip</code>(Finance.Payments.PaymentSlipAmounts.md#paymentslip) to which this PaymentSlipAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
+<td>The <see cref="PaymentSlip"></see> to which this PaymentSlipAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
@@ -192,12 +204,14 @@ Aggregate Root:<br>
 <h3 id="description">Description</h3>
 <p>Description of the payed amount. The numbers of the documents which are payed for example.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="direction">Direction</h3>
 <p>'I' for Payment issue, 'R' for payment receipt. <code>Required</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentSlipAmounts.html#direction">Direction</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>Direction</code>(Finance.Payments.PaymentOrders.md#direction) data attribute<br>
 <em>Allowed Values (Finance.Payments.PaymentOrdersRepository.Direction Enum Members)</em></p>
 <table>
@@ -220,29 +234,45 @@ Allowed values for the <code>Direction</code>(Finance.Payments.PaymentOrders.md#
 </table>
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="ispartypayment">IsPartyPayment</h3>
 <p>Indicates whether the amount is payed or received by party or not (i.e. the amount is for fee, tax, etc.). <code>Required</code> <code>Default(true)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong></p>
 <h3 id="lineno">LineNo</h3>
 <p>The number of the line within the payment. <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>( obj.PaymentSlip.Amounts.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
+<code>( obj.PaymentSlip.Amounts.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>( obj.PaymentSlip.Amounts.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
+<code>( obj.PaymentSlip.Amounts.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="partyname">PartyName</h3>
 <p>The name of the party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee).</p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString</a> <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -250,6 +280,7 @@ Allowed values for the <code>Direction</code>(Finance.Payments.PaymentOrders.md#
 <h3 id="paymentdate">PaymentDate</h3>
 <p>The date on which the payment is done. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -257,23 +288,96 @@ Allowed values for the <code>Direction</code>(Finance.Payments.PaymentOrders.md#
 <h3 id="totalamount">TotalAmount</h3>
 <p>The total amount payed. The distribution of the amount amongst the payment orders for this party is specified with payment slip lines. If null the total amount is calculated as sum of the amounts in the payment slip lines. <code>Currency: PaymentSlip.DocumentCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="party">Party</h3>
 <p>The party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee) or the party isn't present in the database yet. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="paymentreason">PaymentReason</h3>
 <p>The reason for the payment, as defined in Payment Reasons. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentReasons.html">PaymentReasons</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="paymentslip">PaymentSlip</h3>
-<p>The <code>PaymentSlip</code>(Finance.Payments.PaymentSlipAmounts.md#paymentslip) to which this PaymentSlipAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p>The <see cref="PaymentSlip"></see> to which this PaymentSlipAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentSlips.html">PaymentSlips</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>

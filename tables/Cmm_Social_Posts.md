@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.SocialPosts](~/entities/Communities.SocialPosts.md)
+Entity: [Communities.Social.Posts](~/entities/Communities.Social.Posts.md)
 
 User post in a social group. Entity: Cmm_Social_Posts (Introduced in version 20.1)
 

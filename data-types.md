@@ -62,7 +62,7 @@ Domain API Example:
 ```json
 {
   "LineAmount": {
-    "Value": "3.55",
+    "Value": 3.55,
     "Currency": "USD"
   }
 }
@@ -86,7 +86,7 @@ Domain API Example:
 ```json
 {
   "Quantity": {
-    "Value": "5.555",
+    "Value": 5.555,
     "Unit": "PCS"
   }
 }

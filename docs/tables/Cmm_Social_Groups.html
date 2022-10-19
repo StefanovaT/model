@@ -80,7 +80,7 @@
 <h1 id="table-cmm_social_groups">Table Cmm_Social_Groups</h1>
 
 <h2 id="entity">Entity</h2>
-<p>Entity: <a href="../entities/Communities.SocialGroups.html">Communities.SocialGroups</a></p>
+<p>Entity: <a href="../entities/Communities.Social.Groups.html">Communities.Social.Groups</a></p>
 <p>Represents a group of users, sharing interest in the group topic. Entity: Cmm_Social_Groups (Introduced in version 20.1)</p>
 <h2 id="summary">Summary</h2>
 <table>
@@ -92,6 +92,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="#last_interaction_time_utc">Last_Interaction_Time_Utc</a></td>
+<td><code>datetime</code> Readonly</td>
+<td>The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. NULL means the group did not have any interactions yet.</td>
+</tr>
 <tr>
 <td><a href="#notes">Notes</a></td>
 <td><code>nvarchar(max)</code></td>
@@ -120,6 +125,106 @@
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
+<h3 id="last_interaction_time_utc">Last_Interaction_Time_Utc</h3>
+<p>The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. NULL means the group did not have any interactions yet.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>2147483647</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>datetime (Allows NULL)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="notes">Notes</h3>
 <table>
 <thead>

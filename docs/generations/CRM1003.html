@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CRM1003 Create Sales Orders | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="CRM1003 Create Sales Orders | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="crm1003-create-sales-orders">CRM1003 Create Sales Orders</h1>
+
+<h2 id="general-information">General Information</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Module</th>
+<th>Crm.Presales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Code</td>
+<td>CRM1003</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent Document</td>
+<td>Deals</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sub-document</td>
+<td>Sales Orders</td>
+</tr>
+<tr>
+<td style="text-align: left;">Full Name</td>
+<td>Create Sales Orders</td>
+</tr>
+<tr>
+<td style="text-align: left;">Deterministic</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Status</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/generation-procedures.html">NEW</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Supports Transitional Documents</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Supports Single Execution</td>
+<td>YES</td>
+</tr>
+<tr>
+<td style="text-align: left;">Replaces</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Orphan Rows</td>
+<td>Ignore</td>
+</tr>
+<tr>
+<td style="text-align: left;">Split Function</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Version</td>
+<td>Introduced: 2022</td>
+</tr>
+<tr>
+<td style="text-align: left;">Date of Suspension</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-logic">Business Logic</h2>
+<p>This generation is used to create Sales Orders from Deals.</p>
+<p>To create a sales order, the customer has to be specified. The customer is extracted from the party, selected in the Deal (Deal.Party) and the up-to-date, and active customer definition of this party in the enterprise company of the sales order (SalesOrder.EnterpriseCompany) or which is without enterprise company.
+(so Customer.Party = Deal.Party &amp;&amp; (Customer.EnterpriseCompany == SalesOrder.EnterpriseCompany || Customer.EnterpriseCompany == null) &amp;&amp; Customer.Active == true &amp;&amp; (Customer.FromDate &lt;= SalesOrder.DocumentDate || Customer.FromDate == null) &amp;&amp; (Customer.ThruDate &gt;= SalesOrder.DocumentDate || Customer.ThruDate == null).</p>
+<p>If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
+<pre><code> No valid client is found for '{Deal.Party.PartyName}' party. 
+ In order to create a sales order, there must be an active customer for '{Deal.Party.PartyName}' party, applicable to the current enterprise company.
+</code></pre>
+<p><strong>The fields in the Sales Order’s header are filled as follows:</strong></p>
+<pre><code>SalesOrder.Customer = the determined Customer for the Deal.Party
+
+SalesOrder.DocumentDate = Today
+
+SalesOrder.ShipToPartyContactMechanism = 
+if (Count(PartyContactMechanisms, where Party == SalesOrder.Customer.Party &amp;&amp; IsDefault == true) == 1)
+, then ShipToPartyContactMechanism = First(PartyContactMechanisms, where Party == SalesOrder.Customer.Party &amp;&amp; IsDefault == true)
+, else SalesOrder.ShipToPartyContactMechanism = null
+                                         
+SalesOrder.DocumentCurrency = SalesOrder.EnterpriseCompany.BaseCurrency
+
+SalesOrder.PaymentDueDate = DocumentDate + Customer.DefaultPaymentTermDays
+
+SalesOrder.PaymentDueStartDate = DocumentDate + Customer.DefaultPaymentStartDays
+
+SalesOrder.RequiredDeliveryDate = DocumentDate + Customer.DefaultDeliveryTermDays
+
+SalesOrder.DistributionChannel = Customer.DefaultDistributionChannel
+
+SalesOrder.PaymentAccount = Customer.DefaultPaymentAccount
+
+SalesOrder.PaymentType = Customer.DefaultPaymentType
+
+SalesOrder.PriceList = Customer.DefaultPriceList
+
+SalesOrder.CreditLimitOverride = false
+
+SalesOrder.Deal = Deal
+
+SalesOrder.SalesPerson = Deal.LeadingSalesPerson
+
+SalesOrder.Dealer = Deal.Dealer
+
+SalesOrder.Store = null
+
+SalesOrder.ShipToCustomer = null
+
+SalesOrder.DealType = null
+
+SalesOrder.CustomerPurchaseOrderDate = null
+
+SalesOrder.CustomerPurchaseOrderNo = null
+
+SalesOrder.PosLocation = null
+
+SalesOrder.PosOperator = null
+
+SalesOrder.PosTerminal = null
+
+SalesOrder.FiscalSalesNumber = null
+
+SalesOrder.FiscalPrinterPosDevice = null
+
+SalesOrder.EndCustomerParty = null
+
+SalesOrder.DeliveryTermsCode = null
+
+SalesOrder.IntrastatTransactionNatureCode = null
+
+SalesOrder.IntrastatTransportModeCode = null
+
+SalesOrder.IntrastatTransportCountry = null
+
+SalesOrder.ReturnForInvoice = null
+
+SalesOrder.ReturnForSalesOrder = null
+
+SalesOrder.FromDate = null
+
+SalesOrder.ToDate = null
+
+SalesOrder.Notes = null
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The attributes which are not specified here are filled in as described in <strong><a href="../reference/standard-document-attributes.html">Standard Document Attributes</a></strong></p>
+</div>
+<h2 id="fulfillments">Fulfillments</h2>
+<p>No fulfilments and metrics are used for the current generation procedure. Each time the procedure is started, it creates new sub-document no matter if there are documents already created from previous procedure executions.</p>
+<br>
+<p><strong>The new Sales Order Line is created as follows:</strong></p>
+<pre><code>SalesOrderLine.LineNo = DealLine.LineNo 
+
+SalesOrderLine.Product = DealLine.Product
+
+SalesOrderLine.ProductDescription = SalesOrderLine.Product.Name
+
+SalesOrderLine.GuaranteePeriodDays = SalesOrderLine.Product.GuaranteePeriodDays
+
+SalesOrderLine.ProductCode = null
+
+SalesOrderLine.ProductPrice = loaded by the 'Determine product price'* method
+
+SalesOrderLine.UnitPrice = loaded by the 'Calculate Unit Price' method
+                      
+SalesOrderLine.StandardUnitPrice = loaded by the 'Get Standard Unit Price' method
+
+SalesOrderLine.RequestedQuantity = null
+
+SalesOrderLine.Quantity = DealLine.Quantity
+
+SalesOrderLine.QuantityUnit = DealLine.QuantityUnit
+
+SalesOrderLine.QuantityBase = CONVERT(SalesOrderLine.Quantity, SalesOrderLine.Product.BaseMeasurementCategory.BaseUnit)
+
+SalesOrderLine.StandardQuantityBase = CONVERT(SalesOrderLine.Quantity, SalesOrderLine.Product.BaseMeasurementCategory.BaseUnit)
+
+SalesOrderLine.LineDiscount = loaded by the 'Determine line discount'* method
+
+SalesOrderLine.LineStandardDiscountPercent = 
+    if (SalesOrderLine.LineDiscount != null)
+    , then SalesOrderLine.LineStandardDiscountPercent = SalesOrderLine.LineDiscount.DiscountPercent
+    , else SalesOrderLine.LineStandardDiscountPercent = 0.00% 
+                                             
+SalesOrderLine.LineCustomDiscountPercent = 0.00%
+
+SalesOrderLine.LineAmount = loaded by the 'Determine line amount in sales orders'* method
+
+SalesOrderLine.LineEndCustomerParty = null
+
+SalesOrderLine.RequiredDeliveryDate = SalesOrder.RequiredDeliveryDate
+
+PersistLot = false
+
+SalesOrderLine.Notes = DealLine.Notes
+
+SalesOrderLine.ParentDocument = Deal
+
+SalesOrderLine.ParentLineNo = DealLine.LineNo
+
+SalesOrderLine.Lot = null
+
+SalesOrderLine.SerialNumber = null
+
+SalesOrderLine.ProductVariant = null
+
+SalesOrderLine.LineStore = null
+
+SalesOrderLine.StoreBin = null
+
+SalesOrderLine.LineDealType = null
+
+SalesOrderLine.BonusProgram = null
+
+SalesOrderLine.PromotionalPackage = null
+
+SalesOrderLine.IntrastatApplyDate = null
+
+SalesOrderLine.DeliveryTermsCode = null
+
+SalesOrderLine.IntrastatTransactionNatureCode = null
+
+SalesOrderLine.IntrastatTransportModeCode = null
+
+SalesOrderLine.IntrastatTransportCountry = null
+
+SalesOrderLine.ReturnForInvoiceLine = null
+
+SalesOrderLine.ReturnForSalesOrderLine = null
+
+SalesOrderLine.HistoricalDataJson = null
+
+SalesOrderLine.HistoricalUnitCost = null
+
+SalesOrderLine.LineFromDate = null
+
+SalesOrderLine.LineToDate = null
+</code></pre>
+<br>
+<p>*<a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/crm-common/crm-common-concepts/determine-product-price.html">Determine product price</a>
+<br></p>
+<p>*<a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/crm-common/crm-common-concepts/determine-line-discount.html">Determine line discount</a>
+<br></p>
+<p>*<a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-concepts/determine-line-amount-in-sales-orders.html">Determine line amount in sales orders</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/CRM1003.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

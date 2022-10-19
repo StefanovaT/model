@@ -1,11 +1,15 @@
 # Table Gen_Reports
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [General.Reports](~/entities/General.Reports.md)
 
-Contains user-defined data-sources. The data sources is a user-defined way (similar to query designer) to extract, filter, join and transform data for presentation purposes. Entity: Gen_Reports
+Contains user-defined data-sources. The data sources is a user-defined way (similar to query designer) to extract, filter, join and transform data for presentation purposes. Entity: Gen_Reports (Obsoleted in version 22.1.6.73)
 
 ## Summary
 

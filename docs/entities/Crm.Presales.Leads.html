@@ -83,8 +83,10 @@
 <p>Leads are potential customers for your products. Because leads are usually processed in a hurry or imported from external lists, personal and company information is saved in a less structured way. With the advancement of the qualification process (including deduplication), the information is structured in the usual Person and Company entities. When successfully processed, leads can be converted to Opportunities. Entity: Crm_Leads (Introduced in version 21.1.3.78)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{CompanyName}</em><br>
+<em>{PersonFirstName} {PersonLastName}</em><br>
 Default Search Members:<br>
+<em>CompanyName</em><br>
+Name Data Member:<br>
 <em>CompanyName</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
@@ -113,6 +115,11 @@ Default Search Members:<br>
 <td>System assigned date and time (in UTC), when the lead was initially created. <code>Required</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
+<td><a href="Crm.Presales.Leads.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
 <td><a href="Crm.Presales.Leads.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
@@ -121,6 +128,11 @@ Default Search Members:<br>
 <td><a href="Crm.Presales.Leads.html#mqltimestamputc">MQLTimestampUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>System assigned date and time (in UTC), when the lead was first promoted to Marketing Qualified Lead (MQL). <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Presales.Leads.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Leads.html#personemail">PersonEmail</a></td>
@@ -200,6 +212,16 @@ Default Search Members:<br>
 <td>Filled when the lead is converted to opportunity (deal). <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Crm.Presales.Leads.html#enterprisecompany">EnterpriseCompany</a></td>
+<td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></td>
+<td>The enterprise company to which this lead belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 22.1.5.23</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Presales.Leads.html#enterprisecompanylocation">EnterpriseCompanyLocation</a></td>
+<td><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</td>
+<td>The enterprise company location to which this lead belongs. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.41</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Presales.Leads.html#identifiedcompany">IdentifiedCompany</a></td>
 <td><a href="General.Contacts.Companies.html">Companies</a> (nullable)</td>
 <td>Filled when the company is identified within our database. <code>Filter(multi eq)</code></td>
@@ -245,82 +267,108 @@ Default Search Members:<br>
 <h3 id="companyname">CompanyName</h3>
 <p>The name of the company, which the person works for (in relation to the current lead). <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="creationtimestamputc">CreationTimestampUtc</h3>
 <p>System assigned date and time (in UTC), when the lead was initially created. <code>Required</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( obj.MQLTimestampUtc == null), Convert( DateTime.UtcNow, Nullable</code>1), obj.MQLTimestampUtc)`</p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
 <h3 id="mqltimestamputc">MQLTimestampUtc</h3>
 <p>System assigned date and time (in UTC), when the lead was first promoted to Marketing Qualified Lead (MQL). <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****</p>
 <h3 id="personemail">PersonEmail</h3>
 <p>The email address of the sales lead person. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="personfirstname">PersonFirstName</h3>
 <p>The first name of the person, representing the sales lead. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="personlastname">PersonLastName</h3>
 <p>The last name of the person, representing the sales lead. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="personmobilephone">PersonMobilePhone</h3>
 <p>The mobile phone of the sales lead person. <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong>string (32) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>32</strong></p>
 <h3 id="personsalutation">PersonSalutation</h3>
 <p>Salutation for the sales lead person. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (16) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>16</strong></p>
 <h3 id="personwebprofile">PersonWebProfile</h3>
 <p>Web address (including protocol like https) of the personal profile in a social or professional network. The address itself, as it is full valid Internet address, contains also the network name. <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
 <h3 id="personworkphone">PersonWorkPhone</h3>
 <p>The work phone of the sales lead person. <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong>string (32) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>32</strong></p>
 <h3 id="roleincompany">RoleInCompany</h3>
 <p>The role of the person in the company. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (32) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>32</strong></p>
 <h3 id="sqltimestamputc">SQLTimestampUtc</h3>
 <p>System assigned date and time (in UTC), when the lead was first promoted to Sales Qualified Lead. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="systemstage">SystemStage</h3>
 <p>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). <code>Required</code> <code>Default(&quot;NEW&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Presales.Leads.html#systemstage">SystemStage</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>SystemStage</code>(Crm.Presales.Leads.md#systemstage) data attribute<br>
 <em>Allowed Values (Crm.Presales.LeadsRepository.SystemStage Enum Members)</em></p>
 <table>
@@ -360,58 +408,153 @@ Allowed values for the <code>SystemStage</code>(Crm.Presales.Leads.md#systemstag
 <h3 id="assignedtosalesperson">AssignedToSalesPerson</h3>
 <p>Sales rep to whom this lead is assigned for further processing. null - not yet assigned. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.SalesPersons.html">SalesPersons</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="campaign">Campaign</h3>
 <p>The marketing campaign under which the lead was generated. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.Campaigns.html">Campaigns</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="convertedtodeal">ConvertedToDeal</h3>
 <p>Filled when the lead is converted to opportunity (deal). <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Presales.Deals.html">Deals</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="enterprisecompany">EnterpriseCompany</h3>
+<p>The enterprise company to which this lead belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 22.1.5.23</code></p>
+<p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="enterprisecompanylocation">EnterpriseCompanyLocation</h3>
+<p>The enterprise company location to which this lead belongs. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.41</code></p>
+<p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="identifiedcompany">IdentifiedCompany</h3>
 <p>Filled when the company is identified within our database. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Companies.html">Companies</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="identifiedperson">IdentifiedPerson</h3>
 <p>Filled when the person is identified and recorded in our master records. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="leaduserstage">LeadUserStage</h3>
 <p>The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Presales.LeadUserStages.html">LeadUserStages</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="marketingcompanysize">MarketingCompanySize</h3>
 <p>The size class of the company. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.CompanySizeClasses.html">CompanySizeClasses</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="marketingindustry">MarketingIndustry</h3>
 <p>The industry (for marketing purposes) of the lead. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.Industries.html">Industries</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="marketingsolution">MarketingSolution</h3>
 <p>The marketing solution, in which the lead is interested or which generated the lead. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.MarketingSolutions.html">MarketingSolutions</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="owneruser">OwnerUser</h3>
 <p>The user, responsible for this record. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="salesarea">SalesArea</h3>
 <p>The sales area, where the lead is located, when it is identified. This should also indicate the Time Zone. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.Areas.html">Areas</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification a sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R32346.html">R32346 Lead - Set MQL Timestamp Utc</a></li>
 <li><a href="../business-rules/R32347.html">R32347 Lead - Check User Stage</a></li>
 <li><a href="../business-rules/R32350.html">R32350 Lead - Set SQL Timestamp Utc</a></li>
 <li><a href="../business-rules/R32359.html">R32359 Lead - Set Creation Timestamp Utc</a></li>
+<li><a href="../business-rules/R32864.html">R32864 Lead - Update On Closed Not Allowed</a></li>
 </ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R33117.html">R33117 Lead - Set Owner User</a></li>
+<li><a href="../business-rules/R33119.html">R33119 Lead - Set Enterprise Company</a></li>
+<li><a href="../business-rules/R33125.html">R33125 Lead - Set Enterprise Company Location</a></li>
+</ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Crm_Presales_Leads?$top=10">https://demodb.my.erp.net/api/domain/odata/Crm_Presales_Leads?$top=10</a></p>

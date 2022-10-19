@@ -153,6 +153,12 @@ True if the attribute is activated and added to the repository.
 |User Login|no|
 |Visible|yes|
 
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Name
 
 

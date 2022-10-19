@@ -7,6 +7,11 @@ Entity: [Applications.Rental.TransactionTemplates](~/entities/Applications.Renta
 
 Specifies additional options for document routes, generating Rental Transactions. Entity: Rent_Transaction_Templates
 
+## Owner Tables Hierarchy
+
+* [Wf_Routes](Wf_Routes.md)
+* [Gen_Document_Types](Gen_Document_Types.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -66,7 +71,7 @@ The route for which the transaction template is defined.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

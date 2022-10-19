@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Documents.DocumentPartyRoles](~/entities/General.Documents.DocumentPartyRoles.md)
+Entity: [General.DocumentPartyRoles](~/entities/General.DocumentPartyRoles.md)
 
 Represents the different possible roles of a party associated to a document. Entity: Gen_Document_Party_Roles (Introduced in version 22.1.4.45)
 
@@ -11,8 +11,8 @@ Represents the different possible roles of a party associated to a document. Ent
 
 | Name | Type | Description |
 | - | - | --- |
-|[Code](#code)|`nvarchar(32)` ||
-|[Document_Party_Role_Id](#document_party_role_id)|`uniqueidentifier` `PK`||
+|[Code](#code)|`nvarchar(32)` |Code|
+|[Document_Party_Role_Id](#document_party_role_id)|`uniqueidentifier` `PK`|Document Party Role|
 |[Name](#name)|`nvarchar(254)` `ML`|Party role name (multi-language).|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
@@ -20,6 +20,9 @@ Represents the different possible roles of a party associated to a document. Ent
 ## Columns
 
 ### Code
+
+
+Code
 
 | Property | Value |
 | - | - |
@@ -54,6 +57,9 @@ Represents the different possible roles of a party associated to a document. Ent
 |Like|None|no|no|
 
 ### Document_Party_Role_Id
+
+
+Document Party Role
 
 | Property | Value |
 | - | - |
