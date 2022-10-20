@@ -59,8 +59,6 @@ _Supports Order By_: **False**
 _Back-End Default Expression:_  
 `( ( obj.DestQuantity.Value * obj.DestQuantityUnit.Multiplier) * obj.SourceQuantityUnit.Divisor)`
 
-_Front-End Recalc Expressions:_  
-`( ( obj.DestQuantity.Value * obj.DestQuantityUnit.Multiplier) * obj.SourceQuantityUnit.Divisor)`
 ### ConvertToBaseMultiplier
 
 This was intended to be the multiplier, but due to a historical bug actually contains the divisor of the convertion ratio from the non-base measurement category to the base measurement category. This should be automatically calculated by the system. `Required`
@@ -73,8 +71,6 @@ _Supports Order By_: **False**
 _Back-End Default Expression:_  
 `( ( obj.SourceQuantity.Value * obj.SourceQuantityUnit.Multiplier) * obj.DestQuantityUnit.Divisor)`
 
-_Front-End Recalc Expressions:_  
-`( ( obj.SourceQuantity.Value * obj.SourceQuantityUnit.Multiplier) * obj.DestQuantityUnit.Divisor)`
 ### DestQuantity
 
 Quantity in some of the base units, that equals Source_Quantity. `Unit: DestQuantityUnit` `Required` `Default(1)`

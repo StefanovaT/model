@@ -16,7 +16,7 @@ Entity: [Projects.Todo.Tasks](~/entities/Projects.Todo.Tasks.md)
 |[Importance](#importance)|`nvarchar(1)` Allowed: `L`, `N`, `H`|The importance of the task.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Owner_User_Id](#owner_user_id)|`uniqueidentifier` |The user, who created the todo and owns it.|
-|[Remind_Time](#remind_time)|`datetimeoffset` |When to remind the assigned user for the task.|
+|[Remind_Time](#remind_time)|`datetimeoffset` Readonly|When to remind the assigned user for the task.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |When not null, indicates that the todo is contained in and managed by the specified social group.|
 |[State](#state)|`nvarchar(1)` Allowed: `N`, `P`, `W`, `C`|Indicates the current task state.|
@@ -257,7 +257,7 @@ When to remind the assigned user for the task.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|

@@ -64,6 +64,31 @@ _Supports Order By_: **False**
 _Maximum Length_: **64**  
 
 
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### Start
+
+Start web site  
+_Return Type_: **void**  
+_Declaring Type_: **[WebSites](Systems.Dmv.WebSites.md)**  
+_Domain API Request_: **POST**  
+
+### Stop
+
+Stop web site  
+_Return Type_: **void**  
+_Declaring Type_: **[WebSites](Systems.Dmv.WebSites.md)**  
+_Domain API Request_: **POST**  
+
+### Restart
+
+Restart web site  
+_Return Type_: **void**  
+_Declaring Type_: **[WebSites](Systems.Dmv.WebSites.md)**  
+_Domain API Request_: **POST**  
+
 ## API
 
 Domain API Query:

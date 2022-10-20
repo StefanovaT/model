@@ -182,8 +182,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( ( obj.DestQuantity.Value * obj.DestQuantityUnit.Multiplier) * obj.SourceQuantityUnit.Divisor)</code></p>
-<p><em>Front-End Recalc Expressions:</em><br>
-<code>( ( obj.DestQuantity.Value * obj.DestQuantityUnit.Multiplier) * obj.SourceQuantityUnit.Divisor)</code></p>
 <h3 id="converttobasemultiplier">ConvertToBaseMultiplier</h3>
 <p>This was intended to be the multiplier, but due to a historical bug actually contains the divisor of the convertion ratio from the non-base measurement category to the base measurement category. This should be automatically calculated by the system. <code>Required</code></p>
 <p><em>Type</em>: <strong>decimal (9, 3)</strong><br>
@@ -191,8 +189,6 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>( ( obj.SourceQuantity.Value * obj.SourceQuantityUnit.Multiplier) * obj.DestQuantityUnit.Divisor)</code></p>
-<p><em>Front-End Recalc Expressions:</em><br>
 <code>( ( obj.SourceQuantity.Value * obj.SourceQuantityUnit.Multiplier) * obj.DestQuantityUnit.Divisor)</code></p>
 <h3 id="destquantity">DestQuantity</h3>
 <p>Quantity in some of the base units, that equals Source_Quantity. <code>Unit: DestQuantityUnit</code> <code>Required</code> <code>Default(1)</code></p>

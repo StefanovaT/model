@@ -20,7 +20,7 @@ Entity: [Projects.Todo.TaskItems](~/entities/Projects.Todo.TaskItems.md)
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
 |[Task_Id](#task_id)|`uniqueidentifier` |The task to which this item is part of.|
-|[Title](#title)|`nvarchar(254)` |A brief description of the task.|
+|[Title](#title)|`nvarchar(254)` |A brief description of the task item.|
 |[Todo_Task_Item_Id](#todo_task_item_id)|`uniqueidentifier` `PK`||
 
 ## Columns
@@ -227,7 +227,7 @@ The task to which this item is part of.
 ### Title
 
 
-A brief description of the task.
+A brief description of the task item.
 
 | Property | Value |
 | - | - |

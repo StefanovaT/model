@@ -394,7 +394,7 @@ The currency directory, containing all the convertion rates, used by the documen
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Currency_Directory_Id - Supported Filters
 
@@ -416,7 +416,7 @@ The date on which the document was issued
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|-100|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -453,7 +453,7 @@ Document number, unique within Document_Type_Id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|20|
-|Order|4|
+|Order|-80|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -490,7 +490,7 @@ The user defined type of the document. Determines document behaviour, properties
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|-90|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -579,7 +579,7 @@ The enterprise company which issued the document
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 
@@ -689,7 +689,7 @@ The division of the company, issuing the document. NULL when the document is not
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### From_Company_Division_Id - Supported Filters
 
@@ -1100,7 +1100,7 @@ Date and time when the document was released (State set to Released).
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Release_Time - Supported Filters
 
@@ -1275,7 +1275,7 @@ The current system state of the document. Allowed values: 0=New;5=Corrective;10=
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### State - Supported Filters
 
@@ -1313,7 +1313,7 @@ The division of the company, receiving the document. NULL when the document is n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### To_Company_Division_Id - Supported Filters
 
@@ -1387,7 +1387,7 @@ The user status of this document if applicable for this document type. NULL mean
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### User_Status_Id - Supported Filters
 
