@@ -49,7 +49,7 @@ The unique, consecutive line number within the requisition.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -79,7 +79,7 @@ The requested lot. NULL means that any lot can be used or the product does not u
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -94,7 +94,7 @@ The requested lot. NULL means that any lot can be used or the product does not u
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -113,7 +113,7 @@ The requested lot. NULL means that any lot can be used or the product does not u
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -127,7 +127,7 @@ The requested lot. NULL means that any lot can be used or the product does not u
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Parent_Document_Id
 
@@ -143,7 +143,7 @@ The document, which the current line executes. NULL when the current line does n
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -158,7 +158,7 @@ The document, which the current line executes. NULL when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -180,7 +180,7 @@ The number of the line within the parent document, which the current line execut
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -194,7 +194,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Id
 
@@ -210,7 +210,7 @@ The requested product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -247,7 +247,7 @@ The requested product variant
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -262,7 +262,7 @@ The requested product variant
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -284,7 +284,7 @@ The requested quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -321,7 +321,7 @@ Quantity in the base measurement unit of the product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -335,7 +335,7 @@ Quantity in the base measurement unit of the product.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Quantity_Base - Supported Filters
 
@@ -358,7 +358,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -392,7 +392,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -422,7 +422,7 @@ The requested serial number. NULL means that any serial number can be used or th
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -437,7 +437,7 @@ The requested serial number. NULL means that any serial number can be used or th
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Serial_Number_Id - Supported Filters
 
@@ -459,7 +459,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -473,7 +473,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Warehouse_Requisition_Id
 
@@ -486,7 +486,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -520,7 +520,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

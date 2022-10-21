@@ -58,7 +58,7 @@ Not used.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -89,7 +89,7 @@ Date and time when the operation has ended
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -103,7 +103,7 @@ Date and time when the operation has ended
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### End_Time - Supported Filters
 
@@ -125,7 +125,7 @@ Date and time when the operation has ended
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -139,7 +139,7 @@ Date and time when the operation has ended
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Finished - Supported Filters
 
@@ -158,7 +158,7 @@ Date and time when the operation has ended
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -195,7 +195,7 @@ Line number within the order
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -225,7 +225,7 @@ The work order for which work is being accounted
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -240,7 +240,7 @@ The work order for which work is being accounted
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_Work_Order_Id - Supported Filters
 
@@ -262,7 +262,7 @@ The lot of the produced product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -277,7 +277,7 @@ The lot of the produced product.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -297,7 +297,7 @@ The lot of the produced product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -311,7 +311,7 @@ The lot of the produced product.
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Output_Order_Id
 
@@ -324,7 +324,7 @@ The lot of the produced product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|6|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -361,7 +361,7 @@ The processed quantity of the end product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -397,7 +397,7 @@ The equivalence of Produced Quantity in the base measurement unit of the product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -427,7 +427,7 @@ The measurement unit of Produced Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -464,7 +464,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -478,7 +478,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Code_Id
 
@@ -494,7 +494,7 @@ Selects the product thru some of the product codes.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -509,7 +509,7 @@ Selects the product thru some of the product codes.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -531,7 +531,7 @@ The actually produced product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -565,7 +565,7 @@ The actually produced product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -595,7 +595,7 @@ If not NULL, specifies that the product was (has to be) stored with specific ser
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -633,7 +633,7 @@ Date and time when the operation has began
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -647,7 +647,7 @@ Date and time when the operation has began
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Start_Time - Supported Filters
 
@@ -669,7 +669,7 @@ If not NULL, specifies that the product was (has to be) stored to specific store
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -684,7 +684,7 @@ If not NULL, specifies that the product was (has to be) stored to specific store
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Bin_Id - Supported Filters
 
@@ -706,7 +706,7 @@ Where to output the produced quantity. Can be NULL only if Produced_Quantity = 0
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -721,7 +721,7 @@ Where to output the produced quantity. Can be NULL only if Produced_Quantity = 0
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Id - Supported Filters
 
@@ -743,7 +743,7 @@ Sets the timestamp of the receipt store operations for this output order line. U
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -757,7 +757,7 @@ Sets the timestamp of the receipt store operations for this output order line. U
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Work_Done_By_Party_Id
 
@@ -773,7 +773,7 @@ The party (usually employee worker) who has accomplished the work. NULL if unkno
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -788,7 +788,7 @@ The party (usually employee worker) who has accomplished the work. NULL if unkno
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Work_Done_By_Party_Id - Supported Filters
 
@@ -810,7 +810,7 @@ The work order item for which this output is recorded.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -825,7 +825,7 @@ The work order item for which this output is recorded.
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Work_Order_Item_Id - Supported Filters
 
@@ -847,7 +847,7 @@ The operation for which this output is recorded.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -862,7 +862,7 @@ The operation for which this output is recorded.
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Work_Order_Item_Operation_Id - Supported Filters
 
@@ -884,7 +884,7 @@ The resource, which was used to perform the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -899,7 +899,7 @@ The resource, which was used to perform the operation.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Workgroup_Resource_Id - Supported Filters
 

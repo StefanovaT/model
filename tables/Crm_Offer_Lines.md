@@ -58,7 +58,7 @@ Name of a group of alternative lines, only one of which can be selected for orde
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|60|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -88,7 +88,7 @@ Delivery term in days. When Required Delivery Date is specified (not NULL), it t
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -102,7 +102,7 @@ Delivery term in days. When Required Delivery Date is specified (not NULL), it t
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Guarantee_Period_Days
 
@@ -118,7 +118,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -132,7 +132,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Is_Selected
 
@@ -148,7 +148,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -162,7 +162,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_Amount
 
@@ -179,7 +179,7 @@ Amount for the line in the currency of the parent document. Usually equals Quant
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -210,7 +210,7 @@ Operator defined discount percentage, specified for this line.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -240,7 +240,7 @@ When not NULL, contains the discount policy selected for this line.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -255,7 +255,7 @@ When not NULL, contains the discount policy selected for this line.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_Discount_Id - Supported Filters
 
@@ -277,7 +277,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -292,7 +292,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_End_Customer_Party_Id - Supported Filters
 
@@ -349,7 +349,7 @@ The discount percentage, applied through the standard discount policy.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -363,7 +363,7 @@ The discount percentage, applied through the standard discount policy.
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Notes
 
@@ -377,7 +377,7 @@ The discount percentage, applied through the standard discount policy.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -391,7 +391,7 @@ The discount percentage, applied through the standard discount policy.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Offer_Id
 
@@ -404,7 +404,7 @@ The discount percentage, applied through the standard discount policy.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -438,7 +438,7 @@ The discount percentage, applied through the standard discount policy.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -474,7 +474,7 @@ Not NULL, when the product is selected using a coding system code.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -489,7 +489,7 @@ Not NULL, when the product is selected using a coding system code.
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -511,7 +511,7 @@ The description of the offered product. Initially copied from the name of the of
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|4|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -525,7 +525,7 @@ The description of the offered product. Initially copied from the name of the of
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Description - Supported Filters
 
@@ -547,7 +547,7 @@ The offered product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -584,7 +584,7 @@ Not NULL when the price has been selected from the list of valid standard prices
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -599,7 +599,7 @@ Not NULL when the price has been selected from the list of valid standard prices
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Price_Id - Supported Filters
 
@@ -622,7 +622,7 @@ Quantity offered.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -652,7 +652,7 @@ The equivalent of Quantity in the base measurement unit of the Product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -682,7 +682,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -719,7 +719,7 @@ Date, when the delivery is required. Alternative to Delivery Term Days. When NUL
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -746,7 +746,7 @@ Date, when the delivery is required. Alternative to Delivery Term Days. When NUL
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -776,7 +776,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -790,7 +790,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Unit_Price
 
@@ -807,7 +807,7 @@ The unit price of the offered product. It is specified in the measurement unit o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -837,7 +837,7 @@ Name or number of variant of the whole offer. When multiple lines have the same 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|60|
-|Order|2|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

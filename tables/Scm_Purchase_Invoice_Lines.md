@@ -72,7 +72,7 @@ Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Intrastat_Apply_Date
 
@@ -88,7 +88,7 @@ Specifies in which period for Intrastat declaration must be included the current
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -102,7 +102,7 @@ Specifies in which period for Intrastat declaration must be included the current
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Intrastat_Destination_Region_Id
 
@@ -118,7 +118,7 @@ Region, which is the final destination of the goods. Used for Intrastat reportin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -133,7 +133,7 @@ Region, which is the final destination of the goods. Used for Intrastat reportin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Intrastat_Destination_Region_Id - Supported Filters
 
@@ -170,7 +170,7 @@ Transaction nature; used for Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Intrastat_Transport_Country_Id
 
@@ -201,7 +201,7 @@ Country of origin of the transport company; used for Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Intrastat_Transport_Country_Id - Supported Filters
 
@@ -238,7 +238,7 @@ Transport mode; used for Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_Amount
 
@@ -254,7 +254,7 @@ The total invoiced amount for this line in the document currency of the invoice.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -359,7 +359,7 @@ Consecutive line number within the invoice.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -401,7 +401,7 @@ Consecutive line number within the invoice.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Origin_Country_Id
 
@@ -417,7 +417,7 @@ The country of origin of the invoiced product. Should be non-NULL only when this
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -432,7 +432,7 @@ The country of origin of the invoiced product. Should be non-NULL only when this
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Origin_Country_Id - Supported Filters
 
@@ -454,7 +454,7 @@ The invoiced product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -491,7 +491,7 @@ The name of the invoiced product, initially copied from the name in the product 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|4|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -505,7 +505,7 @@ The name of the invoiced product, initially copied from the name in the product 
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Purchase_Invoice_Id
 
@@ -518,7 +518,7 @@ The name of the invoiced product, initially copied from the name in the product 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|7|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -552,7 +552,7 @@ The name of the invoiced product, initially copied from the name in the product 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -589,7 +589,7 @@ The invoiced quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -649,7 +649,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -720,7 +720,7 @@ The receiving order line, which is invoiced by the current line. NULL means that
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -787,7 +787,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -801,7 +801,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Unit_Price
 
@@ -817,7 +817,7 @@ The unit price of the invoiced item in the document currency of the invoice.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

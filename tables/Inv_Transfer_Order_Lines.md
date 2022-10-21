@@ -66,7 +66,7 @@ The date, when the goods are expected to be received in the destination warehous
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Due_Date_In - Supported Filters
 
@@ -102,7 +102,7 @@ When this line of the transfer is scheduled to issue the goods from the source w
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Due_Date_Out - Supported Filters
 
@@ -124,7 +124,7 @@ From which store bin to issue/receive the products. NULL means that the store bi
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -139,7 +139,7 @@ From which store bin to issue/receive the products. NULL means that the store bi
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### From_Store_Bin_Id - Supported Filters
 
@@ -193,7 +193,7 @@ If non-null, contains the specific lot to use for the movement
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -208,7 +208,7 @@ If non-null, contains the specific lot to use for the movement
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -241,7 +241,7 @@ If non-null, contains the specific lot to use for the movement
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Code_Id
 
@@ -272,7 +272,7 @@ Selects the product thru some of the product codes.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -332,7 +332,7 @@ If specified determines which product variant of the current product in this lin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -347,7 +347,7 @@ If specified determines which product variant of the current product in this lin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -369,7 +369,7 @@ Quantity ordered for transfer
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -441,7 +441,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -475,7 +475,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -505,7 +505,7 @@ Which serial number to receive/issue. NULL means that serial number is unknown o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -542,7 +542,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -556,7 +556,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Standard_Unit_Price
 
@@ -586,7 +586,7 @@ Standard unit price of the product during the creation of the transfer order lin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### To_Store_Bin_Id
 
@@ -602,7 +602,7 @@ To which store bin to issue/receive the products. NULL means that the store bin 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -617,7 +617,7 @@ To which store bin to issue/receive the products. NULL means that the store bin 
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### To_Store_Bin_Id - Supported Filters
 
@@ -687,7 +687,7 @@ The parent transfer order
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Transfer_Order_Line_Id - Supported Filters
 

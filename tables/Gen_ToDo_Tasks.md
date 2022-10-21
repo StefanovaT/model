@@ -16,7 +16,7 @@ Entity: [Projects.Todo.Tasks](~/entities/Projects.Todo.Tasks.md)
 |[Importance](#importance)|`nvarchar(1)` Allowed: `L`, `N`, `H`|The importance of the task.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Owner_User_Id](#owner_user_id)|`uniqueidentifier` |The user, who created the todo and owns it.|
-|[Remind_Time](#remind_time)|`datetimeoffset` Readonly|When to remind the assigned user for the task.|
+|[Remind_Time_Utc](#remind_time_utc)|`datetime` |When to remind the assigned user for the task (in UTC).|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |When not null, indicates that the todo is contained in and managed by the specified social group.|
 |[State](#state)|`nvarchar(1)` Allowed: `N`, `P`, `W`, `C`|Indicates the current task state.|
@@ -238,10 +238,10 @@ The user, who created the todo and owns it.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Remind_Time
+### Remind_Time_Utc
 
 
-When to remind the assigned user for the task.
+When to remind the assigned user for the task (in UTC).
 
 | Property | Value |
 | - | - |
@@ -257,16 +257,23 @@ When to remind the assigned user for the task.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|yes|
+|Readonly|no|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetimeoffset (Allows NULL)|
+|Type|datetime (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Remind_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
 
 ### Row_Version
 

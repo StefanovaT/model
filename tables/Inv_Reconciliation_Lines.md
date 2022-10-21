@@ -66,7 +66,7 @@ Quantity found at the reconciliation, in the base measurement category of the pr
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_Ord
 
@@ -128,7 +128,7 @@ The lot, which was reconciled.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -161,7 +161,7 @@ The lot, which was reconciled.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Code_Id
 
@@ -177,7 +177,7 @@ Selects the product thru some of the product codes.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -192,7 +192,7 @@ Selects the product thru some of the product codes.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -214,7 +214,7 @@ The id of the reconciled product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -252,7 +252,7 @@ The product variant, which was reconciled.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -267,7 +267,7 @@ The product variant, which was reconciled.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -289,7 +289,7 @@ Quantity found at the reconciliation,
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -361,7 +361,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -468,7 +468,7 @@ Unique line Id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -535,7 +535,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -549,7 +549,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Store_Bin_Id
 
@@ -565,7 +565,7 @@ The store bin, that was counted
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -580,7 +580,7 @@ The store bin, that was counted
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Bin_Id - Supported Filters
 
@@ -602,7 +602,7 @@ The store, containing the reconciled product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -617,7 +617,7 @@ The store, containing the reconciled product
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Id - Supported Filters
 
@@ -669,7 +669,7 @@ The warehouse operation, whose result is reflected in the current line. Null whe
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -684,7 +684,7 @@ The warehouse operation, whose result is reflected in the current line. Null whe
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Warehouse_Transaction_Id - Supported Filters
 

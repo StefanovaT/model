@@ -58,7 +58,7 @@ The date, when the item should be completed. NULL means that there is no constra
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -72,7 +72,7 @@ The date, when the item should be completed. NULL means that there is no constra
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Id
 
@@ -85,7 +85,7 @@ The date, when the item should be completed. NULL means that there is no constra
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -159,7 +159,7 @@ The lot of the produced product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -174,7 +174,7 @@ The lot of the produced product.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -196,7 +196,7 @@ Quantity produced in one production run
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -210,7 +210,7 @@ Quantity produced in one production run
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Notes
 
@@ -223,7 +223,7 @@ Quantity produced in one production run
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -237,7 +237,7 @@ Quantity produced in one production run
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Output_Store_Id
 
@@ -253,7 +253,7 @@ Output store for the production
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -268,7 +268,7 @@ Output store for the production
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Output_Store_Id - Supported Filters
 
@@ -290,7 +290,7 @@ The document, which the current line executes. NULL when the current line does n
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -305,7 +305,7 @@ The document, which the current line executes. NULL when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -327,7 +327,7 @@ If not NULL contains the Id of the line of the parent document, that created the
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -363,7 +363,7 @@ The number of the line within the parent document, which the current line execut
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -377,7 +377,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Line_No - Supported Filters
 
@@ -400,7 +400,7 @@ Priority of the production of the item. Initially inherits the priority of the w
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -414,7 +414,7 @@ Priority of the production of the item. Initially inherits the priority of the w
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Produced_Quantity
 
@@ -430,7 +430,7 @@ The quantity produced in the operation
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -460,7 +460,7 @@ The equivalence of Produced Quantity in the base measurement category of the pro
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -490,7 +490,7 @@ The measurement unit of the quantity produced in the operation
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -527,7 +527,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -541,7 +541,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Code_Id
 
@@ -557,7 +557,7 @@ Selects the product thru some of the product codes.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -572,7 +572,7 @@ Selects the product thru some of the product codes.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -631,7 +631,7 @@ The base recipe. NULL means that the item is produced without recipe.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -668,7 +668,7 @@ The date, when the item is released to production. NULL means that still there i
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -682,7 +682,7 @@ The date, when the item is released to production. NULL means that still there i
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Row_Version
 
@@ -695,7 +695,7 @@ The date, when the item is released to production. NULL means that still there i
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -725,7 +725,7 @@ Date and time when the production of this item is scheduled to end
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -739,7 +739,7 @@ Date and time when the production of this item is scheduled to end
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Scheduled_Start_Date_Time
 
@@ -755,7 +755,7 @@ Date and time when the production of this item is scheduled to begin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -769,7 +769,7 @@ Date and time when the production of this item is scheduled to begin
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Serial_Number_Id
 
@@ -785,7 +785,7 @@ If not NULL, specifies that the product was (has to be) produced with specific s
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -800,7 +800,7 @@ If not NULL, specifies that the product was (has to be) produced with specific s
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Serial_Number_Id - Supported Filters
 
@@ -822,7 +822,7 @@ The store bin in which to store the products
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -837,7 +837,7 @@ The store bin in which to store the products
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Bin_Id - Supported Filters
 
@@ -859,7 +859,7 @@ The Id of the work order, containing the item
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|

@@ -45,7 +45,7 @@ Detail lines of Requistions. Entity: Scm_Requisition_Lines
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -75,7 +75,7 @@ When not null, indicates a specific lot should be purchased.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -90,7 +90,7 @@ When not null, indicates a specific lot should be purchased.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -110,7 +110,7 @@ When not null, indicates a specific lot should be purchased.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -124,7 +124,7 @@ When not null, indicates a specific lot should be purchased.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Description
 
@@ -140,7 +140,7 @@ The description of the required product. When Product is set, this is copied ini
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -154,7 +154,7 @@ The description of the required product. When Product is set, this is copied ini
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Id
 
@@ -170,7 +170,7 @@ The required product. When null, the product is unknown to the requisitor and on
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -207,7 +207,7 @@ The required quantity of the product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -243,7 +243,7 @@ The equivalence of Quantity in the base measurement category of the product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -273,7 +273,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -310,7 +310,7 @@ The desired delivery date. Initially set to the required delivery date in the re
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -324,7 +324,7 @@ The desired delivery date. Initially set to the required delivery date in the re
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Required_Delivery_Date - Supported Filters
 
@@ -343,7 +343,7 @@ The desired delivery date. Initially set to the required delivery date in the re
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -377,7 +377,7 @@ The desired delivery date. Initially set to the required delivery date in the re
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -410,7 +410,7 @@ The desired delivery date. Initially set to the required delivery date in the re
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -440,7 +440,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -454,7 +454,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Suggested_Supplier_Id
 
@@ -470,7 +470,7 @@ When the requisitor knows the supplier or has a supplier preference it is denote
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -485,7 +485,7 @@ When the requisitor knows the supplier or has a supplier preference it is denote
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Suggested_Supplier_Id - Supported Filters
 

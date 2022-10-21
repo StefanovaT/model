@@ -55,7 +55,7 @@ Line group number. Indicates which lines are part of the same group e.g. group o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -69,7 +69,7 @@ Line group number. Indicates which lines are part of the same group e.g. group o
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_Group_No - Supported Filters
 
@@ -93,7 +93,7 @@ Unique consecutive line number within the order.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -129,7 +129,7 @@ Logistic unit, which should be used in the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|11|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -144,7 +144,7 @@ Logistic unit, which should be used in the operation.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Logistic_Unit_Id - Supported Filters
 
@@ -166,7 +166,7 @@ The lot of the product, which should be used. NULL for operations, which are not
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -181,7 +181,7 @@ The lot of the product, which should be used. NULL for operations, which are not
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -214,7 +214,7 @@ The lot of the product, which should be used. NULL for operations, which are not
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Parent_Document_Id
 
@@ -245,7 +245,7 @@ The document, which the current line executes. null when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -281,7 +281,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Line_No - Supported Filters
 
@@ -303,7 +303,7 @@ The product, which should be used for the operation.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -340,7 +340,7 @@ The product variant, which should be used.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -355,7 +355,7 @@ The product variant, which should be used.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -378,7 +378,7 @@ The quantity of the product, which should be processed.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|12|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -415,7 +415,7 @@ Quantity in the base measurement unit of the product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -429,7 +429,7 @@ Quantity in the base measurement unit of the product.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Quantity_Base - Supported Filters
 
@@ -452,7 +452,7 @@ The measurement unit of Quantity. NULL for operations, which are not quantity-re
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|13|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -486,7 +486,7 @@ The measurement unit of Quantity. NULL for operations, which are not quantity-re
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -516,7 +516,7 @@ The serial number of the product, which should be used. NULL for operations, whi
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|10|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -531,7 +531,7 @@ The serial number of the product, which should be used. NULL for operations, whi
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Serial_Number_Id - Supported Filters
 
@@ -553,7 +553,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -567,7 +567,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Task_Type
 
@@ -584,7 +584,7 @@ The type of the task (operation), which should be performed. REC=Receive; DIS=Di
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|3|
-|Order|4|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -598,7 +598,7 @@ The type of the task (operation), which should be performed. REC=Receive; DIS=Di
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Task_Type - Supported Filters
 
@@ -635,7 +635,7 @@ Destination warehouse location. NULL for operations, which do not specify destin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### To_Warehouse_Location_Id - Supported Filters
 
@@ -657,7 +657,7 @@ Location, where the opeartion should be performed. NULL for operations, which do
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -672,7 +672,7 @@ Location, where the opeartion should be performed. NULL for operations, which do
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Warehouse_Location_Id - Supported Filters
 
@@ -691,7 +691,7 @@ Location, where the opeartion should be performed. NULL for operations, which do
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|5|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -725,7 +725,7 @@ Location, where the opeartion should be performed. NULL for operations, which do
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -761,7 +761,7 @@ Human or robot worker, which should execute the operation. NULL means that the l
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -776,7 +776,7 @@ Human or robot worker, which should execute the operation. NULL means that the l
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Warehouse_Worker_Id - Supported Filters
 
@@ -798,7 +798,7 @@ The warehouse zone, in which the operation should be performed. NULL for operati
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -813,7 +813,7 @@ The warehouse zone, in which the operation should be performed. NULL for operati
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Warehouse_Zone_Id - Supported Filters
 

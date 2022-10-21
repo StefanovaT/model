@@ -7,7 +7,7 @@ uid: Projects.Todo.Tasks
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {Title}_  
+_{Title}_  
 Default Search Members:  
 __  
 
@@ -29,7 +29,7 @@ Aggregate Tree
 | [Importance](Projects.Todo.Tasks.md#importance) | [Importance](Projects.Todo.Tasks.md#importance) | The importance of the task. `Required` `Default("N")` `Filter(eq)` 
 | [Notes](Projects.Todo.Tasks.md#notes) | string (max) __nullable__ | Notes for this Task. `Introduced in version 23.1.1.48` 
 | [ObjectVersion](Projects.Todo.Tasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [RemindTime](Projects.Todo.Tasks.md#remindtime) | datetimeoffset __nullable__ | When to remind the assigned user for the task. `ReadOnly` 
+| [RemindTimeUtc](Projects.Todo.Tasks.md#remindtimeutc) | datetime __nullable__ | When to remind the assigned user for the task (in UTC). `Filter(eq;ge;le)` `Introduced in version 23.1.1.51` 
 | [State](Projects.Todo.Tasks.md#state) | [State](Projects.Todo.Tasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(eq)` 
 | [Title](Projects.Todo.Tasks.md#title) | string (254) | A brief description of the task. `Required` `Filter(like)` 
 
@@ -122,13 +122,13 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 
-### RemindTime
+### RemindTimeUtc
 
-When to remind the assigned user for the task. `ReadOnly`
+When to remind the assigned user for the task (in UTC). `Filter(eq;ge;le)` `Introduced in version 23.1.1.51`
 
-_Type_: **datetimeoffset __nullable__**  
+_Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 
 ### State

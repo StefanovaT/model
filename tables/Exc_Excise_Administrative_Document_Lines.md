@@ -51,7 +51,7 @@ The details of the movement of each excise product for each excise document. Ent
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|5|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -85,7 +85,7 @@ The details of the movement of each excise product for each excise document. Ent
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -135,7 +135,7 @@ The alcoholic strength, which will be used for Excise reporting purposes. NULL  
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Excise_Amount
 
@@ -165,7 +165,7 @@ The excise amount
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Excise_Amount - Supported Filters
 
@@ -202,7 +202,7 @@ The excise amount in base currency
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Excise_Amount_Base - Supported Filters
 
@@ -240,7 +240,7 @@ The Duty rate specified by the taxation and customs authorities.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Excise_Duty_Rate_Id - Supported Filters
 
@@ -276,7 +276,7 @@ The rate which should be applied for the specified product and purpose. NULL mea
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Excise_Product_Id
 
@@ -307,7 +307,7 @@ The Excise product code defined by the taxation and customs authorities.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Excise_Product_Id - Supported Filters
 
@@ -344,7 +344,7 @@ The Purpose codes specify the different purposes recognized by the authorities f
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Excise_Purpose_Code_Id - Supported Filters
 
@@ -380,7 +380,7 @@ The quantity, converted, for reporting purposes, in the measurement unit of the 
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Excise_Quantity_Unit_Id
 
@@ -411,7 +411,7 @@ The measurement unit of Excise Quantity. Copied from the excise product type.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Excise_Quantity_Unit_Id - Supported Filters
 
@@ -434,7 +434,7 @@ Consecutive line number within the document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -485,7 +485,7 @@ Transaction of product input or output, measured with specialized measuring devi
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Measuring_Transaction_Id - Supported Filters
 
@@ -519,7 +519,7 @@ Transaction of product input or output, measured with specialized measuring devi
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Parent_Document_Id
 
@@ -550,7 +550,7 @@ The document, which the current line executes. Null when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -586,7 +586,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Line_No - Supported Filters
 
@@ -608,7 +608,7 @@ The product being sold.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -646,7 +646,7 @@ The quantity being sold, in the measurement unit, specified in Quantity Unit.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -690,7 +690,7 @@ The quantity in base measurement category for the product.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Quantity_Unit_Id
 
@@ -706,7 +706,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -740,7 +740,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

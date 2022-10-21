@@ -93,7 +93,7 @@ The bonus program, based on which the line was automatically added. NULL when th
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Bonus_Program_Id - Supported Filters
 
@@ -130,7 +130,7 @@ Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Guarantee_Period_Days
 
@@ -160,7 +160,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Historical_Data_Json
 
@@ -177,7 +177,7 @@ Used only for lines, which are returns. It is a JSON-formatted string, containin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|40|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -191,7 +191,7 @@ Used only for lines, which are returns. It is a JSON-formatted string, containin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Historical_Unit_Cost
 
@@ -221,7 +221,7 @@ Used for returning of goods that are sold before the exploitation of the system
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Historical_Unit_Cost - Supported Filters
 
@@ -244,7 +244,7 @@ Specifies in which period for Intrastat declaration must be included the current
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|44|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -258,7 +258,7 @@ Specifies in which period for Intrastat declaration must be included the current
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Intrastat_Transaction_Nature_Code
 
@@ -289,7 +289,7 @@ Transaction nature; used for Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Intrastat_Transport_Country_Id
 
@@ -320,7 +320,7 @@ Country of origin of the transport company; used for Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Intrastat_Transport_Country_Id - Supported Filters
 
@@ -357,7 +357,7 @@ Transport mode; used for Intrastat reporting
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_Amount
 
@@ -374,7 +374,7 @@ The total amount for the line. Equals to Quantity * Unit_Price, less the discoun
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -405,7 +405,7 @@ User-defined discount for the line
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|10|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -493,7 +493,7 @@ The line discount type used to form the Line_Standard_Discount_Percent
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_Discount_Id - Supported Filters
 
@@ -515,7 +515,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|41|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -530,7 +530,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_End_Customer_Party_Id - Supported Filters
 
@@ -552,7 +552,7 @@ When selling a service valid only for a period, denotes the beginning of the per
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|42|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -566,7 +566,7 @@ When selling a service valid only for a period, denotes the beginning of the per
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_No
 
@@ -634,7 +634,7 @@ Standard discount for the line. This is automatically computed according to disc
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_Store_Id
 
@@ -688,7 +688,7 @@ When selling a service valid only for a period, denotes the end of the period. N
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|43|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -702,7 +702,7 @@ When selling a service valid only for a period, denotes the end of the period. N
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Lot_Id
 
@@ -767,7 +767,7 @@ Specifies the lot from which the goods should be issued. NULL means that the lot
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Parent_Document_Id
 
@@ -783,7 +783,7 @@ The document, which the current line executes. NULL when the current line does n
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|36|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -798,7 +798,7 @@ The document, which the current line executes. NULL when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -820,7 +820,7 @@ The number of the line within the parent document, which the current line execut
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|35|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -834,7 +834,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Line_No - Supported Filters
 
@@ -870,7 +870,7 @@ If checked specifies that the lot in the line cannot be changed in the sub-docum
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Persist_Lot - Supported Filters
 
@@ -907,7 +907,7 @@ Used to set the Product_Id thru the coding systems
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -929,7 +929,7 @@ The name of the sold product at the time the sale was made
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -943,7 +943,7 @@ The name of the sold product at the time the sale was made
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Description - Supported Filters
 
@@ -1017,7 +1017,7 @@ Not NULL when the price has been selected from the list of valid standard prices
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Price_Id - Supported Filters
 
@@ -1040,7 +1040,7 @@ If specified determines which product variant of the current product in this lin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|34|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1055,7 +1055,7 @@ If specified determines which product variant of the current product in this lin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -1092,7 +1092,7 @@ The promotional package, based on which the line was added. NULL when the line w
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Promotional_Package_Id - Supported Filters
 
@@ -1115,7 +1115,7 @@ The quantity sold
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1151,7 +1151,7 @@ The equivalent of Quantity in the base measurement category of the product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1181,7 +1181,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1219,7 +1219,7 @@ Quantity requested by customer
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1285,7 +1285,7 @@ When specified, indicates that the current line is a return for products, invoic
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|37|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1300,7 +1300,7 @@ When specified, indicates that the current line is a return for products, invoic
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Return_For_Invoice_Line_Id - Supported Filters
 
@@ -1356,7 +1356,7 @@ When specified indicates that the goods sold in Return_For_Sales_Order_Line_Id a
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|38|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1490,7 +1490,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|39|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1504,7 +1504,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Standard_Unit_Price
 
@@ -1521,7 +1521,7 @@ Standard unit price of the product during the creation of the sales order line
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1535,7 +1535,7 @@ Standard unit price of the product during the creation of the sales order line
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Store_Bin_Id
 
@@ -1589,7 +1589,7 @@ Unit price of the product in the currency of the sales order and in the unit of 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

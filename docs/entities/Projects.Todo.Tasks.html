@@ -82,7 +82,7 @@
 <p><strong>Namespace:</strong> <a href="Projects.Todo.html">Projects.Todo</a></p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {Title}</em><br>
+<em>{Title}</em><br>
 Default Search Members:<br>
 __</p>
 <h2 id="aggregate">Aggregate</h2>
@@ -141,9 +141,9 @@ __</p>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
-<td><a href="Projects.Todo.Tasks.html#remindtime">RemindTime</a></td>
-<td>datetimeoffset <strong>nullable</strong></td>
-<td>When to remind the assigned user for the task. <code>ReadOnly</code></td>
+<td><a href="Projects.Todo.Tasks.html#remindtimeutc">RemindTimeUtc</a></td>
+<td>datetime <strong>nullable</strong></td>
+<td>When to remind the assigned user for the task (in UTC). <code>Filter(eq;ge;le)</code> <code>Introduced in version 23.1.1.51</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Todo.Tasks.html#state">State</a></td>
@@ -269,11 +269,11 @@ Allowed values for the <code>Importance</code>(Projects.Todo.Tasks.md#importance
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****</p>
-<h3 id="remindtime">RemindTime</h3>
-<p>When to remind the assigned user for the task. <code>ReadOnly</code></p>
-<p><em>Type</em>: <strong>datetimeoffset <strong>nullable</strong></strong><br>
+<h3 id="remindtimeutc">RemindTimeUtc</h3>
+<p>When to remind the assigned user for the task (in UTC). <code>Filter(eq;ge;le)</code> <code>Introduced in version 23.1.1.51</code></p>
+<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h3 id="state">State</h3>
 <p>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(eq)</code></p>

@@ -58,7 +58,7 @@ The final confirmed received quantity, after adjustments. It is used in all calc
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|10|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -72,7 +72,7 @@ The final confirmed received quantity, after adjustments. It is used in all calc
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Confirmed_Quantity_Base
 
@@ -88,7 +88,7 @@ The theoretical equivalence of Confirmed Quantity in base measurement unit accor
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -102,7 +102,7 @@ The theoretical equivalence of Confirmed Quantity in base measurement unit accor
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Confirmed_Standard_Quantity_Base
 
@@ -118,7 +118,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -132,7 +132,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Finished
 
@@ -148,7 +148,7 @@ When true, denotes that this is the last receivement for this purchase order lin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|12|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -179,7 +179,7 @@ The total amount for the line. Equals to Quantity * Price_Per_Unit
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|20|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -237,7 +237,7 @@ The store in which the goods are received.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|19|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -252,7 +252,7 @@ The store in which the goods are received.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_Store_Id - Supported Filters
 
@@ -274,7 +274,7 @@ The lot of the received goods.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -289,7 +289,7 @@ The lot of the received goods.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -309,7 +309,7 @@ The lot of the received goods.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|6|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -323,7 +323,7 @@ The lot of the received goods.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Price_Per_Unit
 
@@ -339,7 +339,7 @@ The unit price of the received products, in the documents currency.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|17|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -369,7 +369,7 @@ When not NULL, specifies that the product was selected using the specified produ
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|13|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -384,7 +384,7 @@ When not NULL, specifies that the product was selected using the specified produ
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Code_Id - Supported Filters
 
@@ -406,7 +406,7 @@ The name of the received product, initially copied from the name in the product 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|14|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -420,7 +420,7 @@ The name of the received product, initially copied from the name in the product 
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Id
 
@@ -474,7 +474,7 @@ If specified determines which product variant of the current product in this lin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -489,7 +489,7 @@ If specified determines which product variant of the current product in this lin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -511,7 +511,7 @@ The purchase order line for which we are receiving quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|16|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -548,7 +548,7 @@ When not NULL, specifies that the purchase unit price is loaded automatically fr
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|18|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -563,7 +563,7 @@ When not NULL, specifies that the purchase unit price is loaded automatically fr
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Purchase_Product_Price_Id - Supported Filters
 
@@ -622,7 +622,7 @@ The equivalence of Quantity, in the base measurement category of the product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -686,7 +686,7 @@ The measurement unit of Quantity. Initially copied from the Default Measurement 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|15|
+|Order|17|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -720,7 +720,7 @@ The measurement unit of Quantity. Initially copied from the Default Measurement 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|11|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -753,7 +753,7 @@ The measurement unit of Quantity. Initially copied from the Default Measurement 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -783,7 +783,7 @@ Which serial number to receive/issue. NULL means that serial number is unknown o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -820,7 +820,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -834,7 +834,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Store_Bin_Id
 
@@ -850,7 +850,7 @@ The store bin in which to receive the goods.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -865,7 +865,7 @@ The store bin in which to receive the goods.
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Bin_Id - Supported Filters
 

@@ -70,7 +70,7 @@ Business reason for invoicing of this product or service. S=Shipment, P=Payment
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Invoice_Order_Id
 
@@ -83,7 +83,7 @@ Business reason for invoicing of this product or service. S=Shipment, P=Payment
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|8|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -117,7 +117,7 @@ Business reason for invoicing of this product or service. S=Shipment, P=Payment
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -153,7 +153,7 @@ Amount for the line in the currency of the parent document. Usually equals Quant
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -184,7 +184,7 @@ User-defined discount for the line
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|10|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -266,7 +266,7 @@ The line discount type used to form the Line_Standard_Discount_Percent
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Line_Discount_Id - Supported Filters
 
@@ -286,7 +286,7 @@ The line discount type used to form the Line_Standard_Discount_Percent
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -331,7 +331,7 @@ Standard discount for the line. This is automatically computed according to disc
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Payment_Transaction_Id
 
@@ -384,7 +384,7 @@ The description of Product. Initially copied from the name of the Product or fro
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|4|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -398,7 +398,7 @@ The description of Product. Initially copied from the name of the Product or fro
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Product_Id
 
@@ -414,7 +414,7 @@ The product, which is ordered for invoicing
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -451,7 +451,7 @@ The quantity of the product to invoice
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -517,7 +517,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -551,7 +551,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -596,7 +596,7 @@ When not NULL specifies the Sales Order that is ordered to be invoiced by this l
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Sales_Order_Id - Supported Filters
 
@@ -633,7 +633,7 @@ When not NULL specifies the Sales Order line that is ordered to be invoiced by t
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Sales_Order_Line_Id - Supported Filters
 
@@ -655,7 +655,7 @@ Which serial number to receive/issue. NULL means that serial number is unknown o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -692,7 +692,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -706,7 +706,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Transaction_Line_Id
 
@@ -759,7 +759,7 @@ Unit selling price in the unit of measure, specified in Quantity Unit
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

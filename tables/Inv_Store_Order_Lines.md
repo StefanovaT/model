@@ -58,7 +58,7 @@ Specifies that the quantity of the product can be less than free to use quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|12|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -72,7 +72,7 @@ Specifies that the quantity of the product can be less than free to use quantity
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Guarantee_Period_Days
 
@@ -88,7 +88,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -102,7 +102,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_Cost
 
@@ -118,7 +118,7 @@ Total cost for the line in the currency of the document. Equals Quantity * Unit_
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|18|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -186,7 +186,7 @@ If non-null, contains the specific lot to use for the movement
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|17|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -201,7 +201,7 @@ If non-null, contains the specific lot to use for the movement
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -223,7 +223,7 @@ Obsolete. Not used.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|16|
-|Order|7|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -237,7 +237,7 @@ Obsolete. Not used.
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Notes
 
@@ -251,7 +251,7 @@ Obsolete. Not used.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|10|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -265,7 +265,7 @@ Obsolete. Not used.
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Parent_Document_Id
 
@@ -281,7 +281,7 @@ The document, which the current line executes. NULL when the current line does n
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -296,7 +296,7 @@ The document, which the current line executes. NULL when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -318,7 +318,7 @@ Id of the line of the parent document, which generated the store order. NULL for
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|15|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -354,7 +354,7 @@ The number of the line within the parent document, which the current line execut
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -368,7 +368,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Line_No - Supported Filters
 
@@ -390,7 +390,7 @@ If checked specifies that the lot in the line cannot be changed in the sub-docum
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|13|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -404,7 +404,7 @@ If checked specifies that the lot in the line cannot be changed in the sub-docum
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Persist_Lot - Supported Filters
 
@@ -464,7 +464,7 @@ If specified determines which product variant of the current product in this lin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -479,7 +479,7 @@ If specified determines which product variant of the current product in this lin
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Product_Variant_Id - Supported Filters
 
@@ -531,7 +531,7 @@ Quantity in the base (default) measurement unit of the Item (calculated at the t
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -595,7 +595,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -625,7 +625,7 @@ Sales order line which is managed by this store order line. When specified sales
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|9|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -662,7 +662,7 @@ Which serial number to receive/issue. NULL means that serial number is unknown o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|8|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -699,7 +699,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -713,7 +713,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Store_Bin_Id
 
@@ -729,7 +729,7 @@ From/to which store bin to issue/receive the products. NULL means that the store
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -744,7 +744,7 @@ From/to which store bin to issue/receive the products. NULL means that the store
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Bin_Id - Supported Filters
 
@@ -763,7 +763,7 @@ From/to which store bin to issue/receive the products. NULL means that the store
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|16|
+|Order|18|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -800,7 +800,7 @@ Store order line Id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|14|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -836,7 +836,7 @@ Exact time when the transaction for this store order line changes the cost of th
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|11|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -866,7 +866,7 @@ Cost for 1 unit of measure in the currency of the document
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|19|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

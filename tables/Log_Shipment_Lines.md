@@ -61,7 +61,7 @@ The count of boxes in which the goods are packaged. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -75,7 +75,7 @@ The count of boxes in which the goods are packaged. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Finished
 
@@ -127,7 +127,7 @@ The gross weight of the whole line in kilogramms. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -141,7 +141,7 @@ The gross weight of the whole line in kilogramms. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Guarantee_Period_Days
 
@@ -171,7 +171,7 @@ Guarantee period in days for the offered product. NULL for non-serviced products
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Height_m
 
@@ -187,7 +187,7 @@ The height of the package in meters. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -201,7 +201,7 @@ The height of the package in meters. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Length_m
 
@@ -217,7 +217,7 @@ The length of the package in meters. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -231,7 +231,7 @@ The length of the package in meters. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Line_No
 
@@ -248,7 +248,7 @@ Line number, unique for the shipment
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -278,7 +278,7 @@ Required delivery date for this lines. Depending on the shipment route travel ti
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -292,7 +292,7 @@ Required delivery date for this lines. Depending on the shipment route travel ti
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Lot_Id
 
@@ -323,7 +323,7 @@ The store lot from which to take the goods
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Lot_Id - Supported Filters
 
@@ -345,7 +345,7 @@ The net weight of the entire batch of goods in kilograms. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -359,7 +359,7 @@ The net weight of the entire batch of goods in kilograms. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Notes
 
@@ -372,7 +372,7 @@ The net weight of the entire batch of goods in kilograms. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -386,7 +386,7 @@ The net weight of the entire batch of goods in kilograms. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Pallet_No
 
@@ -402,7 +402,7 @@ The number of the pallet in which the goods are packaged. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -416,7 +416,7 @@ The number of the pallet in which the goods are packaged. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Parent_Document_Id
 
@@ -432,7 +432,7 @@ The document, which the current line executes. NULL when the current line does n
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -447,7 +447,7 @@ The document, which the current line executes. NULL when the current line does n
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Document_Id - Supported Filters
 
@@ -469,7 +469,7 @@ The number of the line within the parent document, which the current line execut
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|25|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -483,7 +483,7 @@ The number of the line within the parent document, which the current line execut
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Line_No - Supported Filters
 
@@ -505,7 +505,7 @@ Sales order line which is shipped
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|4|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -520,7 +520,7 @@ Sales order line which is shipped
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Sales_Order_Line_Id - Supported Filters
 
@@ -542,7 +542,7 @@ The quantity to be shipped
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -572,7 +572,7 @@ The equivalence of Quantity in the base measurement category of the product.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -602,7 +602,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -636,7 +636,7 @@ The measurement unit of Quantity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|26|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -700,7 +700,7 @@ The serial number of the shipped product. NULL means that serial number is unkno
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|1|
+|Order|4|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -734,7 +734,7 @@ The serial number of the shipped product. NULL means that serial number is unkno
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|0|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -770,7 +770,7 @@ Shipment order line for which this quantity is shipped
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|3|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -785,7 +785,7 @@ Shipment order line for which this quantity is shipped
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Shipment_Order_Line_Id - Supported Filters
 
@@ -807,7 +807,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|27|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -821,7 +821,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Store_Bin_Id
 
@@ -852,7 +852,7 @@ The store bin from which to take the goods
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Store_Bin_Id - Supported Filters
 
@@ -874,7 +874,7 @@ The Transaction Line, based on which this shipment line was created. The transac
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -911,7 +911,7 @@ The volume in litres of the whole batch. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -925,7 +925,7 @@ The volume in litres of the whole batch. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Width_m
 
@@ -941,7 +941,7 @@ The width of the package in meters. NULL means unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -955,6 +955,6 @@ The width of the package in meters. NULL means unknown
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 

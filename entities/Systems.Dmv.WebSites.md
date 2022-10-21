@@ -23,21 +23,12 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Database](Systems.Dmv.WebSites.md#database) | string (64) |  
 | [RootUrl](Systems.Dmv.WebSites.md#rooturl) | string (256) |  
 | [Status](Systems.Dmv.WebSites.md#status) | string (10) |  
 | [Type](Systems.Dmv.WebSites.md#type) | string (64) |  
 
 
 ## Attribute Details
-
-### Database
-
-_Type_: **string (64)**  
-_Category_: **System**  
-_Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
-_Maximum Length_: **64**  
 
 ### RootUrl
 

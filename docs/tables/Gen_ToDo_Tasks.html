@@ -122,9 +122,9 @@
 <td>The user, who created the todo and owns it.</td>
 </tr>
 <tr>
-<td><a href="#remind_time">Remind_Time</a></td>
-<td><code>datetimeoffset</code> Readonly</td>
-<td>When to remind the assigned user for the task.</td>
+<td><a href="#remind_time_utc">Remind_Time_Utc</a></td>
+<td><code>datetime</code></td>
+<td>When to remind the assigned user for the task (in UTC).</td>
 </tr>
 <tr>
 <td><a href="#row_version">Row_Version</a></td>
@@ -876,8 +876,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="remind_time">Remind_Time</h3>
-<p>When to remind the assigned user for the task.</p>
+<h3 id="remind_time_utc">Remind_Time_Utc</h3>
+<p>When to remind the assigned user for the task (in UTC).</p>
 <table>
 <thead>
 <tr>
@@ -936,7 +936,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -956,7 +956,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>datetimeoffset (Allows NULL)</td>
+<td>datetime (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -973,6 +973,31 @@
 <tr>
 <td>Visible</td>
 <td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="remind_time_utc---supported-filters">Remind_Time_Utc - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>GreaterThanOrLessThan</td>
+<td>None</td>
+<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
