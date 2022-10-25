@@ -352,6 +352,8 @@
 - name: Dmv
   href: Dmv.md
   items:
+  - name: Dmv_Current_Sessions
+    href: Dmv_Current_Sessions.md
   - name: Dmv_Exec_Stats
     href: Dmv_Exec_Stats.md
   - name: Dmv_Web_Sites
