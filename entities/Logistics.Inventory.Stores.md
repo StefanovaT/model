@@ -519,7 +519,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification a sends a real time event to the user.  
+Creates a notification and sends a real time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  

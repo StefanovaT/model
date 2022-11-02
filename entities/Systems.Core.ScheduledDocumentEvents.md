@@ -176,6 +176,13 @@ _Supported Filters_: **Equals, EqualsIn**
 
 Methods that can be invoked in public APIs.
 
+### Process
+
+Processes this `ScheduledDocumentEvent`(Systems.Core.ScheduledDocumentEvents.md).             The method returns true if the event is processed successfully and false if there is an error.             In case of failure the error message is saved in LastProcessStatus attribute of the event object.             The already processed or canceled events are not processed again but still the result value is true.  
+_Return Type_: **boolean**  
+_Declaring Type_: **[ScheduledDocumentEvents](Systems.Core.ScheduledDocumentEvents.md)**  
+_Domain API Request_: **POST**  
+
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
@@ -221,7 +228,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification a sends a real time event to the user.  
+Creates a notification and sends a real time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
