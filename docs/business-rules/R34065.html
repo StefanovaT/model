@@ -110,13 +110,13 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>IF DataObject.ExtensibleDataObject.EntityType == Cmm_Social_Groups
-, then SET Group.LastInteractionTimeUtc = NOW(UTC)
+<td>IF DataObject.ExtensibleDataObject.EntityType == Cmm_Social_Groups <br>
+, then SET Group.LastInteractionTimeUtc = NOW(UTC)<br>
 WHERE Group.Id = DataObject.ExtensibleDataObject.EntityItemId</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>When a user comments or edit a comment in a Social Group, the current time in UTC
+<td>When a user comments or edits a comment in a Social Group, the current time in UTC
 is set in the LastInteractionTimeUtc field of that Group.</td>
 </tr>
 <tr>
