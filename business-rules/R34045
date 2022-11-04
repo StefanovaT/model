@@ -21,3 +21,6 @@ erp.type:  front-end-business-rule
 | Message | - |
 | Introduced In Version | Introduced: 2023 |
 | Revocable | YES |
+
+*\* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic [System Business Rules](../templates/template-description-system-business-rules.md).*
