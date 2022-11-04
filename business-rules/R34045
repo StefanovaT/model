@@ -1,0 +1,23 @@
+---
+erp.entity: Crm.Presales.Leads
+erp.type:  front-end-business-rule
+---
+# R34045 Leads - Set Company Name
+
+
+| Name | Value |
+| ---- | ----- |
+| Code | R34045 |
+| Entity | @Crm.Presales.Leads |
+| Name | SetCompanyName |
+| Attribute | CompanyName |
+| Layer | Front-End |
+| Events | AttributeChanged(IdentifiedCompany) |
+| Priority | Normal |
+| Modify | YES |
+| Applicable Legislations | ALL // no condition needed |
+| Action | Set CompanyName=IdentifiedCompany.PartyName |
+| Description | When the value of the Identified Company field is changed, the rule sets its name to the Company Name field automatically. |
+| Message | - |
+| Introduced In Version | Introduced: 2023 |
+| Revocable | YES |
