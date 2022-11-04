@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R00000.html",
-          "hash": "+i172D8CpZaoEBcHXR2yLQ=="
+          "hash": "TgHh82rCCtXiBbsmpUcppg=="
         }
       },
       "is_incremental": false,
@@ -10970,6 +10970,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R34045.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34045.html",
+          "hash": "F7KnLTySCWzVHl+NJgM1tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R34065.md",
       "output": {
         ".html": {
@@ -12892,7 +12904,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Presales.Leads.html",
-          "hash": "ttN7CTOUw9thaBn0u4I1Cw=="
+          "hash": "2RN0urGJhoz//JiWuOcGBw=="
         }
       },
       "is_incremental": false,
