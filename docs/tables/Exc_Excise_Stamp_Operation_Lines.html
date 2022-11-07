@@ -145,7 +145,7 @@
 <tr>
 <td><a href="#product_id">Product_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>The excise product for which the operation is applied.</td>
+<td>The product for which the operation is applied. When is NULL then there is no product yet.</td>
 </tr>
 <tr>
 <td><a href="#quantity">Quantity</a></td>
@@ -1182,7 +1182,7 @@
 </tbody>
 </table>
 <h3 id="product_id">Product_Id</h3>
-<p>The excise product for which the operation is applied.</p>
+<p>The product for which the operation is applied. When is NULL then there is no product yet.</p>
 <table>
 <thead>
 <tr>
@@ -1265,7 +1265,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>uniqueidentifier</td>
+<td>uniqueidentifier (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -1299,7 +1299,7 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
-<td>no</td>
+<td>yes</td>
 <td>no</td>
 </tr>
 </tbody>

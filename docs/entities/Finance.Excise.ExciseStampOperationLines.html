@@ -186,8 +186,8 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Finance.Excise.ExciseStampOperationLines.html#product">Product</a></td>
-<td><a href="General.Products.Products.html">Products</a></td>
-<td>The excise product for which the operation is applied. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td><a href="General.Products.Products.html">Products</a> (nullable)</td>
+<td>The product for which the operation is applied. When is null then there is no product yet. <code>Filter(multi eq)</code></td>
 </tr>
 </tbody>
 </table>
@@ -286,8 +286,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="product">Product</h3>
-<p>The excise product for which the operation is applied. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
+<p>The product for which the operation is applied. When is null then there is no product yet. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h2 id="api-methods">API Methods</h2>

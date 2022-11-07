@@ -25,7 +25,7 @@ Excise Stamp Operation Lines. Entity: Exc_Excise_Stamp_Operation_Lines (Introduc
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Parent_Document_Id](#parent_document_id)|`uniqueidentifier` |The document, which the current line executes. NULL when the current line does not execute another line.|
 |[Parent_Line_No](#parent_line_no)|`int` |The number of the line within the parent document, which the current line executes. NULL when the current line does not execute line.|
-|[Product_Id](#product_id)|`uniqueidentifier` |The excise product for which the operation is applied.|
+|[Product_Id](#product_id)|`uniqueidentifier` |The product for which the operation is applied. When is NULL then there is no product yet.|
 |[Quantity](#quantity)|`int` |The number of excise stamps that are processed with the current operation.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Start_Number](#start_number)|`nvarchar(30)` |The start number of the sequence of excise stamps that are processed with the current operation.|
@@ -332,7 +332,7 @@ The number of the line within the parent document, which the current line execut
 ### Product_Id
 
 
-The excise product for which the operation is applied.
+The product for which the operation is applied. When is NULL then there is no product yet.
 
 | Property | Value |
 | - | - |
@@ -354,7 +354,7 @@ The excise product for which the operation is applied.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -364,7 +364,7 @@ The excise product for which the operation is applied.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Quantity
 
