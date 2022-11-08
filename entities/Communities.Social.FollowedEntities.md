@@ -72,6 +72,7 @@ _Default Value_: **NewGuid**
 The user which follows the entity. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sec_Users_Table.User_Id`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Inherited From_: **Sec_Users_Table.User_Id**  
 _Supported Filters_: **Equals, EqualsIn**  

@@ -5,7 +5,7 @@
 
 Entity: [Systems.Dmv.ProcedureStatusInfo](~/entities/Systems.Dmv.ProcedureStatusInfo.md)
 
-Procedures info dynamic management view. Entity: Dmv_Procedure_Status_Info (Introduced in version 23.1.1.53)
+Dynamic management view for long running procedures. Entity: Dmv_Procedure_Status_Info (Introduced in version 23.1.1.53)
 
 ## Summary
 

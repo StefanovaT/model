@@ -24,7 +24,7 @@ User logins. Entity: Sec_Users
 |[Lockout_End_Utc](#lockout_end_utc)|`datetime` |Contains the date and time (in UTC) until the user is locked. NULL when the user is not locked.|
 |[Login](#login)|`nvarchar(64)` |The login name of the user, which is usually the email|
 |[Notes](#notes)|`nvarchar(254)` ||
-|[Password](#password)|`nvarchar(64)` |The password hash of the user, stored in the format, specified in Password Format.|
+|[Password](#password)|`nvarchar(64)` Readonly|The password hash of the user, stored in the format, specified in Password Format.|
 |[Password_Format](#password_format)|`nvarchar(3)` Allowed: `MD5`, `AN3`|The format of the Password. MD5=MD5 format; AN3 = ASP.NET Core Identity v3.|
 |[Person_Id](#person_id)|`uniqueidentifier` |The person from within the system, which is authenticated with this login. NULL means that this user is not associated with a person record in the database.|
 |[Phone_Number](#phone_number)|`nvarchar(64)` |Used only for two-factor authentication. NULL when phone-based two-factor is not used.|
@@ -504,10 +504,10 @@ The password hash of the user, stored in the format, specified in Password Forma
 |Max Length|64|
 |Order|2147483647|
 |Ownership Reference|no|
-|Pasword|no|
+|Pasword|yes|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
