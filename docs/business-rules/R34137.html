@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R34065 SocialComment - Update Group LastInteractionTime | ERP.net Domain Model </title>
+    <title>R34137 Sales Order Line - Set Level 2 Discount Percent | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R34065 SocialComment - Update Group LastInteractionTime | ERP.net Domain Model ">
+    <meta name="title" content="R34137 Sales Order Line - Set Level 2 Discount Percent | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,35 +70,35 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r34065-socialcomment---update-group-lastinteractiontime">R34065 SocialComment - Update Group LastInteractionTime</h1>
+<h1 id="r34137-sales-order-line---set-level-2-discount-percent">R34137 Sales Order Line - Set Level 2 Discount Percent</h1>
 
 <table>
-<col style="width:23.93%">
-<col style="width:76.07%">
+<col style="width:25%">
+<col style="width:75%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
-<td>R34065</td>
+<td>R34137</td>
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Communities.Social.Comments.html">Communities.Social.Comments Entity</a></td>
+<td><a class="xref" href="../entities/Crm.Sales.SalesOrderLines.html">Crm.Sales.SalesOrderLines Entity</a></td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>UpdateGroupLastInteractionTime</td>
+<td>SetLevel2DiscountPercent</td>
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
-<td>-</td>
+<td>Level2DiscountPercent</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
-<td>Back-End</td>
+<td>Front-End</td>
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>Commit</td>
+<td>AttributeChanged(Level2Discount)</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
@@ -110,14 +110,19 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>IF DataObject.ExtensibleDataObject.EntityType == Cmm_Social_Groups <br>
-, then SET Group.LastInteractionTimeUtc = NOW(UTC)<br>
-WHERE Group.Id = DataObject.ExtensibleDataObject.EntityItemId</td>
+<td>IF(Level2Discount != null)
+<br><br>
+, then SET value: Level2DiscountPercent = Level2Discount.DiscountPercent
+<br><br>
+, else SET value: Level2DiscountPercent = 0.00%</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>When a user comments or edits a comment in a Social Group, the current time in UTC
-is set in the LastInteractionTimeUtc field of that Group.</td>
+<td>When the value of the &quot;Level 2 Discount&quot; field is changed, the percent of the new
+discount is set to the &quot;Level 2 Discount Percent&quot; field.
+<br><br>
+If we set an empty value in the &quot;Level 2 Discount&quot; field, then
+the &quot;Level 2 Discount Percent&quot; field is set to 0.00%.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
@@ -125,16 +130,16 @@ is set in the LastInteractionTimeUtc field of that Group.</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
-<td>Introduced: 2023</td>
+<td>Introduced:</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 </tbody>
 </table>
-<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
-topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
+<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
 </article>
           </div>
           
@@ -143,7 +148,7 @@ topic <a href="../templates/template-description-system-business-rules.html">Sys
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R34065.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R34137.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
