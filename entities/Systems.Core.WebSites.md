@@ -140,6 +140,7 @@ _Allowed Values (Systems.Core.WebSitesRepository.WebSiteType Enum Members)_
 | WebClientApplication | WebClientApplication value. Stored as 'APP'. <br /> _Database Value:_ 'APP' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'WebClientApplication' |
 | TableAPI | TableAPI value. Stored as 'TAP'. <br /> _Database Value:_ 'TAP' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'TableAPI' |
 | DataAccessAPI | DataAccessAPI value. Stored as 'DAP'. <br /> _Database Value:_ 'DAP' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'DataAccessAPI' |
+| LEGALUK | LEGALUK value. Stored as 'LUK'. <br /> _Database Value:_ 'LUK' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'LEGALUK' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

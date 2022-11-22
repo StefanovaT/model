@@ -35,7 +35,7 @@ Aggregate Tree
 _Type_: **string (256)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **256**  
 
 ### Status
@@ -43,7 +43,7 @@ _Maximum Length_: **256**
 _Type_: **string (10)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **10**  
 
 ### Type
@@ -51,7 +51,7 @@ _Maximum Length_: **10**
 _Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **64**  
 
 

@@ -83,17 +83,17 @@
 <p>The roles &quot;played&quot; by the security users. Entity: Wf_Role_Users</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Role.Name}</em><br>
+<em>{User.Name:T}</em><br>
 Default Search Members:<br>
-<em>Role.Name</em><br>
+<em>User.Name</em><br>
 Name Data Member:<br>
-<em>Role.Name</em></p>
+<em>User.Name</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
-<a href="Systems.Workflow.Roles.html">Systems.Workflow.Roles</a><br>
+<a href="Systems.Security.Users.html">Systems.Security.Users</a><br>
 Aggregate Root:<br>
-<a href="Systems.Workflow.Roles.html">Systems.Workflow.Roles</a></p>
+<a href="Systems.Security.Users.html">Systems.Security.Users</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -134,12 +134,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Workflow.RoleUsers.html#role">Role</a></td>
 <td><a href="Systems.Workflow.Roles.html">Roles</a></td>
-<td>The <see cref="Role"></see> to which this RoleUser belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
+<td></td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.RoleUsers.html#user">User</a></td>
 <td><a href="Systems.Security.Users.html">Users</a></td>
-<td>The user, which plays the role. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The user, which plays the role. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
@@ -164,17 +164,16 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****</p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="role">Role</h3>
-<p>The <see cref="Role"></see> to which this RoleUser belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Roles.html">Roles</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="user">User</h3>
-<p>The user, which plays the role. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The user, which plays the role. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

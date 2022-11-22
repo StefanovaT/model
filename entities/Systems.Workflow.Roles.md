@@ -20,7 +20,6 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Systems.Workflow.Roles](Systems.Workflow.Roles.md)  
-  * [Systems.Workflow.RoleUsers](Systems.Workflow.RoleUsers.md)  
 
 ## Attributes
 
@@ -32,12 +31,6 @@ Aggregate Tree
 | [ObjectVersion](Systems.Workflow.Roles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RoleDescription](Systems.Workflow.Roles.md#roledescription) | string (max) __nullable__ | Description of the role. 
 | [VisualStyle](Systems.Workflow.Roles.md#visualstyle) | string (64) __nullable__ | The default visual style for the user interface. 
-
-## Child Collections
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| Users | [RoleUsers](Systems.Workflow.RoleUsers.md) | List of `RoleUser`(Systems.Workflow.RoleUsers.md) child objects, based on the `Systems.Workflow.RoleUser.Role`(Systems.Workflow.RoleUsers.md#role) back reference 
 
 
 ## Attribute Details

@@ -26,6 +26,7 @@ Aggregate Tree
   * [Systems.Security.UserGroups](Systems.Security.UserGroups.md)  
   * [Systems.Security.UserProviderLogins](Systems.Security.UserProviderLogins.md)  
   * [Systems.Security.UserProviderTokens](Systems.Security.UserProviderTokens.md)  
+  * [Systems.Workflow.RoleUsers](Systems.Workflow.RoleUsers.md)  
 
 ## Attributes
 
@@ -72,6 +73,7 @@ Aggregate Tree
 | Groups | [UserGroups](Systems.Security.UserGroups.md) | List of `UserGroup`(Systems.Security.UserGroups.md) child objects, based on the `Systems.Security.UserGroup.User`(Systems.Security.UserGroups.md#user) back reference 
 | ProviderLogins | [UserProviderLogins](Systems.Security.UserProviderLogins.md) | List of `UserProviderLogin`(Systems.Security.UserProviderLogins.md) child objects, based on the `Systems.Security.UserProviderLogin.User`(Systems.Security.UserProviderLogins.md#user) back reference 
 | ProviderTokens | [UserProviderTokens](Systems.Security.UserProviderTokens.md) | List of `UserProviderToken`(Systems.Security.UserProviderTokens.md) child objects, based on the `Systems.Security.UserProviderToken.User`(Systems.Security.UserProviderTokens.md#user) back reference 
+| RoleUsers | [RoleUsers](Systems.Workflow.RoleUsers.md) | List of `RoleUser`(Systems.Workflow.RoleUsers.md) child objects, based on the `Systems.Workflow.RoleUser.User`(Systems.Workflow.RoleUsers.md#user) back reference 
 
 
 ## Attribute Details

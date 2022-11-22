@@ -9,19 +9,19 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 
 ## Default Visualization
 Default Display Text Format:  
-_{Role.Name}_  
+_{User.Name:T}_  
 Default Search Members:  
-_Role.Name_  
+_User.Name_  
 Name Data Member:  
-_Role.Name_  
+_User.Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[Systems.Workflow.Roles](Systems.Workflow.Roles.md)  
+[Systems.Security.Users](Systems.Security.Users.md)  
 Aggregate Root:  
-[Systems.Workflow.Roles](Systems.Workflow.Roles.md)  
+[Systems.Security.Users](Systems.Security.Users.md)  
 
 ## Attributes
 
@@ -35,8 +35,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Role](Systems.Workflow.RoleUsers.md#role) | [Roles](Systems.Workflow.Roles.md) | The <see cref="Role"/> to which this RoleUser belongs. `Required` `Filter(multi eq)` `Owner` |
-| [User](Systems.Workflow.RoleUsers.md#user) | [Users](Systems.Security.Users.md) | The user, which plays the role. `Required` `Filter(multi eq)` |
+| [Role](Systems.Workflow.RoleUsers.md#role) | [Roles](Systems.Workflow.Roles.md) |  |
+| [User](Systems.Workflow.RoleUsers.md#user) | [Users](Systems.Security.Users.md) | The user, which plays the role. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -72,21 +72,19 @@ _Supports Order By_: ****
 
 ### Role
 
-The <see cref="Role"/> to which this RoleUser belongs. `Required` `Filter(multi eq)` `Owner`
-
 _Type_: **[Roles](Systems.Workflow.Roles.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
 ### User
 
-The user, which plays the role. `Required` `Filter(multi eq)`
+The user, which plays the role. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
 
 ## API Methods

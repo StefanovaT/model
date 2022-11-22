@@ -9,7 +9,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 
 ## Owner Tables Hierarchy
 
-* [Wf_Roles](Wf_Roles.md)
+* [Sec_Users](Sec_Users.md)
 
 ## Summary
 
@@ -34,7 +34,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
@@ -128,7 +128,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

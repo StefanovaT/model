@@ -27,9 +27,9 @@ Aggregate Tree
 | [ElapsedMin](Systems.Dmv.ProcedureStatusInfo.md#elapsedmin) | string (64) |  
 | [ElapsedPercent](Systems.Dmv.ProcedureStatusInfo.md#elapsedpercent) | double |  
 | [EndTime](Systems.Dmv.ProcedureStatusInfo.md#endtime) | string (64) |  
-| [Error](Systems.Dmv.ProcedureStatusInfo.md#error) | string (128) | If not null, this is the text of the exception that occured during the procedure execution. `Required` 
+| [Error](Systems.Dmv.ProcedureStatusInfo.md#error) | string (128) | If not null, this is the text of the exception that occured during the procedure execution. `Required` `ORD` 
 | [Procedure](Systems.Dmv.ProcedureStatusInfo.md#procedure) | string (128) |  
-| [Properties](Systems.Dmv.ProcedureStatusInfo.md#properties) | string (128) | List of procedure status properties. `Required` 
+| [Properties](Systems.Dmv.ProcedureStatusInfo.md#properties) | string (128) | List of procedure status properties. `Required` `ORD` 
 | [StartTime](Systems.Dmv.ProcedureStatusInfo.md#starttime) | string (64) |  
 | [User](Systems.Dmv.ProcedureStatusInfo.md#user) | string (128) |  
 
@@ -41,14 +41,14 @@ Aggregate Tree
 _Type_: **boolean**  
 _Category_: **System**  
 _Supported Filters_: **Equals**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 
 ### ElapsedMin
 
 _Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **64**  
 
 ### ElapsedPercent
@@ -56,24 +56,24 @@ _Maximum Length_: **64**
 _Type_: **double**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 
 ### EndTime
 
 _Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **64**  
 
 ### Error
 
-If not null, this is the text of the exception that occured during the procedure execution. `Required`
+If not null, this is the text of the exception that occured during the procedure execution. `Required` `ORD`
 
 _Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **128**  
 
 ### Procedure
@@ -81,17 +81,17 @@ _Maximum Length_: **128**
 _Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **128**  
 
 ### Properties
 
-List of procedure status properties. `Required`
+List of procedure status properties. `Required` `ORD`
 
 _Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **128**  
 
 ### StartTime
@@ -99,7 +99,7 @@ _Maximum Length_: **128**
 _Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **64**  
 
 ### User
@@ -107,7 +107,7 @@ _Maximum Length_: **64**
 _Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **128**  
 
 
