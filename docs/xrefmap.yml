@@ -1840,6 +1840,9 @@ references:
 - uid: Systems.Security.Groups
   name: Systems.Security.Groups Entity
   href: entities/Systems.Security.Groups.html
+- uid: Systems.Security.Roles
+  name: Systems.Security.Roles Entity
+  href: entities/Systems.Security.Roles.html
 - uid: Systems.Security.TrustedApplicationAuthorizations
   name: Systems.Security.TrustedApplicationAuthorizations Entity
   href: entities/Systems.Security.TrustedApplicationAuthorizations.html

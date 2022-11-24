@@ -80,7 +80,7 @@
 <h1 id="logisticsinventorydemandmanagementavailabletopromisebylots-view">Logistics.Inventory.DemandManagement.AvailableToPromiseByLots View</h1>
 
 <p><strong>Namespace:</strong> <a href="Logistics.Inventory.DemandManagement.html">Logistics.Inventory.DemandManagement</a></p>
-<p>Quantities available to promise for the different date periods. Also contains the current and projected availability. The algorithm accounts for the quantities for each lot and separately for the quantities without lot. Entity: Inv_Demand_Management_ATP_By_Lots</p>
+<p>Quantities available to promise for the different date periods. Also contains the current and projected availability. The algorithm accounts for the quantities for each lot and separately for the quantities without lot. Entity: Inv_Demand_Management_ATP_By_Lots (Introduced in version 23.1.1.80)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
 <em>{ATPBaseValue}: {CurrentAvailabilityBaseValue}</em><br>
@@ -147,22 +147,22 @@ __</p>
 <tr>
 <td><a href="Logistics.Inventory.DemandManagement.AvailableToPromiseByLots.html#enterprisecompany">EnterpriseCompany</a></td>
 <td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></td>
-<td>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></td>
+<td>Тhe Enterprise Company, for which the quantities are calculated. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.DemandManagement.AvailableToPromiseByLots.html#lot">Lot</a></td>
 <td><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</td>
-<td>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_&lt;br /&gt;Lines_Table.Lot_Id</code></td>
+<td>The Lot, for which the quantities are calculated. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_&lt;br /&gt;Lines_Table.Lot_Id</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.DemandManagement.AvailableToPromiseByLots.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The product which should be received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_&lt;br /&gt;Lines_Table.Product_Id</code></td>
+<td>The Product, for which the quantities are calculated. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_&lt;br /&gt;Lines_Table.Product_Id</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.DemandManagement.AvailableToPromiseByLots.html#store">Store</a></td>
 <td><a href="Logistics.Inventory.Stores.html">Stores</a></td>
-<td>The designated warehouse for the operation. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Id</code></td>
+<td>The Store, for which the quantities are calculated. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Id</code></td>
 </tr>
 </tbody>
 </table>
@@ -205,25 +205,25 @@ __</p>
 <em>Supports Order By</em>: <strong>False</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
-<p>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></p>
+<p>Тhe Enterprise Company, for which the quantities are calculated. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Gen_Documents_Table.Enterprise_Company_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="lot">Lot</h3>
-<p>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Lot_Id</code></p>
+<p>The Lot, for which the quantities are calculated. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Lot_Id</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Order_Lines_Table.Lot_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="product">Product</h3>
-<p>The product which should be received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Product_Id</code></p>
+<p>The Product, for which the quantities are calculated. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Product_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Order_Lines_Table.Product_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="store">Store</h3>
-<p>The designated warehouse for the operation. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Id</code></p>
+<p>The Store, for which the quantities are calculated. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Id</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Stores.html">Stores</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Orders_Table.Store_Id</strong><br>

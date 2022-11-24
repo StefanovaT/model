@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Workflow.Roles](~/entities/Systems.Workflow.Roles.md)
+Entity: [Systems.Security.Roles](~/entities/Systems.Security.Roles.md)
 
 The various roles, which the users can play. Entity: Wf_Roles
 

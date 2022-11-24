@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Systems.Core.DataEntryDefaultValues Entity | ERP.net Domain Model </title>
+    <title>Systems.Security.Roles Entity | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Systems.Core.DataEntryDefaultValues Entity | ERP.net Domain Model ">
+    <meta name="title" content="Systems.Security.Roles Entity | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -76,23 +76,23 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Systems.Core.DataEntryDefaultValues">
-<h1 id="systemscoredataentrydefaultvalues-entity">Systems.Core.DataEntryDefaultValues Entity</h1>
+            <article class="content wrap" id="_content" data-uid="Systems.Security.Roles">
+<h1 id="systemssecurityroles-entity">Systems.Security.Roles Entity</h1>
 
-<p><strong>Namespace:</strong> <a href="Systems.Core.html">Systems.Core</a></p>
-<p>Contains user-specified default values for columns in data entry forms. Entity: Sys_Default_Values</p>
+<p><strong>Namespace:</strong> <a href="Systems.Security.html">Systems.Security</a></p>
+<p>The various roles, which the users can play. Entity: Wf_Roles</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ColumnName}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
-<em>ColumnName</em><br>
+<em>Name</em><br>
 Name Data Member:<br>
-<em>ColumnName</em></p>
+<em>Name</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
 <ul>
-<li><a href="Systems.Core.DataEntryDefaultValues.html">Systems.Core.DataEntryDefaultValues</a></li>
+<li><a href="Systems.Security.Roles.html">Systems.Security.Roles</a></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -105,121 +105,38 @@ Name Data Member:<br>
 </thead>
 <tbody>
 <tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#columnname">ColumnName</a></td>
-<td>string (64)</td>
-<td>The column for which the default is specified. <code>Required</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#conditionformname">ConditionFormName</a></td>
-<td>string (64) <strong>nullable</strong></td>
-<td>If not null specifies that the default should be applied only if Form_Name equals the specified value. <code>Filter(eq)</code> <code>ORD</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#conditionuserlogin">ConditionUserLogin</a></td>
-<td>string (64) <strong>nullable</strong></td>
-<td>If not null specifies that the default should be applied only if User_Login equals this value. <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#conditionusermachine">ConditionUserMachine</a></td>
-<td>string (64) <strong>nullable</strong></td>
-<td>If not null specifies that the default should be applied only if User_Machine equals this value. <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#defaultvaluefield">DefaultValueField</a></td>
-<td>string (254) <strong>nullable</strong></td>
-<td>The default value for Column_Name. Should be applied only if the other conditions are met. null specifies null default.</td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#displaytext">DisplayText</a></td>
+<td><a href="Systems.Security.Roles.html#displaytext">DisplayText</a></td>
 <td>string</td>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
 </tr>
 <tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#id">Id</a></td>
+<td><a href="Systems.Security.Roles.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#objectversion">ObjectVersion</a></td>
+<td><a href="Systems.Security.Roles.html#name">Name</a></td>
+<td>string (254)</td>
+<td>The name of this Role. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Security.Roles.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#panelname">PanelName</a></td>
+<td><a href="Systems.Security.Roles.html#roledescription">RoleDescription</a></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>Description of the role.</td>
+</tr>
+<tr>
+<td><a href="Systems.Security.Roles.html#visualstyle">VisualStyle</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>When not null, specifies the panel for which the default value applies. <code>Filter(eq;like)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#tablename">TableName</a></td>
-<td>string (64) <strong>nullable</strong></td>
-<td>The table, containing the column for which the default value is specified. <code>Filter(eq)</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="references">References</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#conditiondocumenttype">ConditionDocumentType</a></td>
-<td><a href="General.DocumentTypes.html">DocumentTypes</a> (nullable)</td>
-<td>If not null specifies that the default should be applied only if Document_Type_Id equals this value. <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#conditionenterprisecompany">ConditionEnterpriseCompany</a></td>
-<td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</td>
-<td>If not null specifies that the default should be applied only if Enterprise_Company_Id equals this value. <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#conditionrole">ConditionRole</a></td>
-<td><a href="Systems.Security.Roles.html">Roles</a> (nullable)</td>
-<td>When not null, specifies that the default value should be applied only when the user plays the specified role. <code>Filter(multi eq)</code></td>
+<td>The default visual style for the user interface.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
-<h3 id="columnname">ColumnName</h3>
-<p>The column for which the default is specified. <code>Required</code> <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>string (64)</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
-<h3 id="conditionformname">ConditionFormName</h3>
-<p>If not null specifies that the default should be applied only if Form_Name equals the specified value. <code>Filter(eq)</code> <code>ORD</code></p>
-<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
-<h3 id="conditionuserlogin">ConditionUserLogin</h3>
-<p>If not null specifies that the default should be applied only if User_Login equals this value. <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
-<h3 id="conditionusermachine">ConditionUserMachine</h3>
-<p>If not null specifies that the default should be applied only if User_Machine equals this value. <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
-<h3 id="defaultvaluefield">DefaultValueField</h3>
-<p>The default value for Column_Name. Should be applied only if the other conditions are met. null specifies null default.</p>
-<p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
@@ -232,42 +149,34 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong></p>
+<h3 id="name">Name</h3>
+<p>The name of this Role. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>string (254)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Maximum Length</em>: <strong>254</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****</p>
-<h3 id="panelname">PanelName</h3>
-<p>When not null, specifies the panel for which the default value applies. <code>Filter(eq;like)</code></p>
+<h3 id="roledescription">RoleDescription</h3>
+<p>Description of the role.</p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<h3 id="visualstyle">VisualStyle</h3>
+<p>The default visual style for the user interface.</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong></p>
-<h3 id="tablename">TableName</h3>
-<p>The table, containing the column for which the default value is specified. <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
-<h2 id="reference-details">Reference Details</h2>
-<h3 id="conditiondocumenttype">ConditionDocumentType</h3>
-<p>If not null specifies that the default should be applied only if Document_Type_Id equals this value. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a> (nullable)</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
-<h3 id="conditionenterprisecompany">ConditionEnterpriseCompany</h3>
-<p>If not null specifies that the default should be applied only if Enterprise_Company_Id equals this value. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
-<h3 id="conditionrole">ConditionRole</h3>
-<p>When not null, specifies that the default value should be applied only when the user plays the specified role. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="Systems.Security.Roles.html">Roles</a> (nullable)</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
@@ -343,9 +252,9 @@ The subject.<br>
 <p>None</p>
 <h2 id="api">API</h2>
 <p>Domain API Query:
-<a href="https://demodb.my.erp.net/api/domain/odata/Systems_Core_DataEntryDefaultValues?$top=10">https://demodb.my.erp.net/api/domain/odata/Systems_Core_DataEntryDefaultValues?$top=10</a></p>
+<a href="https://demodb.my.erp.net/api/domain/odata/Systems_Security_Roles?$top=10">https://demodb.my.erp.net/api/domain/odata/Systems_Security_Roles?$top=10</a></p>
 <p>Domain API Query Builder:
-<a href="https://demodb.my.erp.net/api/domain/querybuilder#Systems_Core_DataEntryDefaultValues?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Systems_Core_DataEntryDefaultValues?$top=10</a></p>
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Systems_Security_Roles?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Systems_Security_Roles?$top=10</a></p>
 </article>
           </div>
           
@@ -354,7 +263,7 @@ The subject.<br>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Systems.Core.DataEntryDefaultValues.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Systems.Security.Roles.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

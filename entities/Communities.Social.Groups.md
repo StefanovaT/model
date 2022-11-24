@@ -11,9 +11,7 @@ Represents a group of users, sharing interest in the group topic. Entity: Cmm_So
 Default Display Text Format:  
 _{Name}_  
 Default Search Members:  
-_Code; Name_  
-Code Data Member:  
-_Code_  
+_Name_  
 Name Data Member:  
 _Name_  
 
@@ -28,7 +26,6 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Code](Communities.Social.Groups.md#code) | string (32) | Unique code of the group. Also used as group slug for Internet URL purposes. `Required` `ORD` 
 | [DisplayText](Communities.Social.Groups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.Social.Groups.md#id) | guid |  
 | [LastInteractionTimeUtc](Communities.Social.Groups.md#lastinteractiontimeutc) | datetime __nullable__ | The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. null means the group did not have any interactions yet. `ORD` `ReadOnly` `Introduced in version 22.1.6.61` 
@@ -44,17 +41,6 @@ Aggregate Tree
 
 
 ## Attribute Details
-
-### Code
-
-Unique code of the group. Also used as group slug for Internet URL purposes. `Required` `ORD`
-
-_Type_: **string (32)**  
-_Indexed_: **True**  
-_Category_: **System**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: **True**  
-_Maximum Length_: **32**  
 
 ### DisplayText
 

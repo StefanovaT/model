@@ -14,7 +14,6 @@ Represents a group of users, sharing interest in the group topic. Entity: Cmm_So
 |[Last_Interaction_Time_Utc](#last_interaction_time_utc)|`datetime` Readonly|The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. NULL means the group did not have any interactions yet.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
-|[Social_Group_Code](#social_group_code)|`nvarchar(32)` |Unique code of the group. Also used as group slug for Internet URL purposes.|
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` `PK`||
 |[Social_Group_Name](#social_group_name)|`nvarchar(256)` |Multilanguage name of the group.|
 
@@ -103,36 +102,6 @@ The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) 
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
-
-### Social_Group_Code
-
-
-Unique code of the group. Also used as group slug for Internet URL purposes.
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|32|
-|Order|2147483647|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|yes|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|nvarchar(32)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
 
 ### Social_Group_Id
 

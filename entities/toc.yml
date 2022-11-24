@@ -1177,6 +1177,8 @@
       href: Systems.Security.GroupAccessKeys.md
     - name: Groups
       href: Systems.Security.Groups.md
+    - name: Roles
+      href: Systems.Security.Roles.md
     - name: TrustedApplicationAuthorizations
       href: Systems.Security.TrustedApplicationAuthorizations.md
     - name: TrustedApplications
@@ -1203,8 +1205,6 @@
     items:
     - name: Processes
       href: Systems.Workflow.Processes.md
-    - name: Roles
-      href: Systems.Workflow.Roles.md
     - name: RoleUsers
       href: Systems.Workflow.RoleUsers.md
     - name: Routes

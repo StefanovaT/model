@@ -1,42 +1,36 @@
 ---
-uid: Systems.Workflow.RoleUsers
+uid: Systems.Security.Roles
 ---
-# Systems.Workflow.RoleUsers Entity
+# Systems.Security.Roles Entity
 
-**Namespace:** [Systems.Workflow](Systems.Workflow.md)  
+**Namespace:** [Systems.Security](Systems.Security.md)  
 
-The roles "played" by the security users. Entity: Wf_Role_Users
+The various roles, which the users can play. Entity: Wf_Roles
 
 ## Default Visualization
 Default Display Text Format:  
-_{User.Name:T}_  
+_{Name}_  
 Default Search Members:  
-_User.Name_  
+_Name_  
 Name Data Member:  
-_User.Name_  
+_Name_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[Systems.Security.Users](Systems.Security.Users.md)  
-Aggregate Root:  
-[Systems.Security.Users](Systems.Security.Users.md)  
+Aggregate Tree  
+* [Systems.Security.Roles](Systems.Security.Roles.md)  
 
 ## Attributes
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DisplayText](Systems.Workflow.RoleUsers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [Id](Systems.Workflow.RoleUsers.md#id) | guid |  
-| [ObjectVersion](Systems.Workflow.RoleUsers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-
-## References
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| [Role](Systems.Workflow.RoleUsers.md#role) | [Roles](Systems.Security.Roles.md) |  |
-| [User](Systems.Workflow.RoleUsers.md#user) | [Users](Systems.Security.Users.md) | The user, which plays the role. `Required` `Filter(multi eq)` `Owner` |
+| [DisplayText](Systems.Security.Roles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [Id](Systems.Security.Roles.md#id) | guid |  
+| [Name](Systems.Security.Roles.md#name) | string (254) | The name of this Role. `Required` `Filter(eq;like)` `ORD` 
+| [ObjectVersion](Systems.Security.Roles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [RoleDescription](Systems.Security.Roles.md#roledescription) | string (max) __nullable__ | Description of the role. 
+| [VisualStyle](Systems.Security.Roles.md#visualstyle) | string (64) __nullable__ | The default visual style for the user interface. 
 
 
 ## Attribute Details
@@ -58,6 +52,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 
+### Name
+
+The name of this Role. `Required` `Filter(eq;like)` `ORD`
+
+_Type_: **string (254)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **True**  
+_Maximum Length_: **254**  
+
 ### ObjectVersion
 
 The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
@@ -67,24 +72,25 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 
+### RoleDescription
 
-## Reference Details
+Description of the role.
 
-### Role
-
-_Type_: **[Roles](Systems.Security.Roles.md)**  
-_Indexed_: **True**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
 
-### User
+### VisualStyle
 
-The user, which plays the role. `Required` `Filter(multi eq)` `Owner`
+The default visual style for the user interface.
 
-_Type_: **[Users](Systems.Security.Users.md)**  
+_Type_: **string (64) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
 
 
 ## API Methods
@@ -165,17 +171,17 @@ _Domain API Request_: **POST**
 
 ## Business Rules
 
-[!list limit=1000 erp.entity=Systems.Workflow.RoleUsers erp.type=business-rule default-text="None"]
+[!list limit=1000 erp.entity=Systems.Security.Roles erp.type=business-rule default-text="None"]
 
 ## Front-End Business Rules
 
-[!list limit=1000 erp.entity=Systems.Workflow.RoleUsers erp.type=front-end-business-rule default-text="None"]
+[!list limit=1000 erp.entity=Systems.Security.Roles erp.type=front-end-business-rule default-text="None"]
 
 ## API
 
 Domain API Query:
-<https://demodb.my.erp.net/api/domain/odata/Systems_Workflow_RoleUsers?$top=10>
+<https://demodb.my.erp.net/api/domain/odata/Systems_Security_Roles?$top=10>
 
 Domain API Query Builder:
-<https://demodb.my.erp.net/api/domain/querybuilder#Systems_Workflow_RoleUsers?$top=10>
+<https://demodb.my.erp.net/api/domain/querybuilder#Systems_Security_Roles?$top=10>
 
