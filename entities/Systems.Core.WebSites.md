@@ -141,6 +141,7 @@ _Allowed Values (Systems.Core.WebSitesRepository.WebSiteType Enum Members)_
 | TableAPI | TableAPI value. Stored as 'TAP'. <br /> _Database Value:_ 'TAP' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'TableAPI' |
 | DataAccessAPI | DataAccessAPI value. Stored as 'DAP'. <br /> _Database Value:_ 'DAP' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'DataAccessAPI' |
 | LEGALUK | LEGALUK value. Stored as 'LUK'. <br /> _Database Value:_ 'LUK' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'LEGALUK' |
+| OLAP | OLAP value. Stored as 'OLP'. <br /> _Database Value:_ 'OLP' <br /> _Model Value:_ 10 <br /> _Domain API Value:_ 'OLAP' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
