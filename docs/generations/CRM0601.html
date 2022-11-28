@@ -147,9 +147,10 @@ Customer.Active == true &amp;&amp; (Customer.FromDate &lt;= SalesOrder.DocumentD
 (Customer.ThruDate &gt;= SalesOrder.DocumentDate || Customer.ThruDate == null).
 </code></pre>
 <p>If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
-<p>&quot;No valid client is found for '{MarketingActivity.TargetParty.PartyName}' party.
-In order to create a sales order, there must be an active customer for '{MarketingActivity.TargetParty.PartyName}' party,
-applicable to the current enterprise company.&quot;</p>
+<pre><code>No valid client is found for '{MarketingActivity.TargetParty.PartyName}' party. 
+ In order to create a sales order, there must be an active customer for '{MarketingActivity.TargetParty.PartyName}' party,
+ applicable to the current enterprise company.&quot;
+</code></pre>
 <p><strong>The fields in the Sales Order’s header are filled as follows:</strong></p>
 <pre><code>SalesOrder.Customer = the determined Customer for the MarketingActivity.TargetParty
 
