@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>CRM0601 Create Sales Orders | ERP.net Domain Model </title>
+    <title>CRM0601 Create Sales Orders (Single Execution) | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="CRM0601 Create Sales Orders | ERP.net Domain Model ">
+    <meta name="title" content="CRM0601 Create Sales Orders (Single Execution) | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,7 +70,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="crm0601-create-sales-orders">CRM0601 Create Sales Orders</h1>
+<h1 id="crm0601-create-sales-orders-single-execution">CRM0601 Create Sales Orders (Single Execution)</h1>
 
 <h2 id="general-information">General Information</h2>
 <table>
@@ -95,7 +95,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Full Name</td>
-<td>Create Sales Orders</td>
+<td>Create Sales Orders (Single Execution)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
@@ -136,20 +136,20 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This generation is used to create Sales Orders from Marketing Activities.</p>
-<p>To create a sales order, the customer has to be specified. <br>
-The customer is extracted from the Target party, selected in the Marketing Activity (MarketingActivity.TargetParty). The customer has to be up-to-date,
-with active customer definition for this party in the enterprise company of the sales order (SalesOrder.EnterpriseCompany) or for all enterprise companies.
+<p>This generation is single execution only. If there are unfulfilled quantities from the Marketing Activity there will be no automatically generated documents for the differences. You can still create an execution for the differences by manually starting the generation.
 <br><br>
-(Customer.Party = MarketingActivity.TargetParty &amp;&amp; <br>
-(Customer.EnterpriseCompany == SalesOrder.EnterpriseCompany || Customer.EnterpriseCompany == null) &amp;&amp; <br>
-Customer.Active == true &amp;&amp; (Customer.FromDate &lt;= SalesOrder.DocumentDate || Customer.FromDate == null) &amp;&amp; <br>
-(Customer.ThruDate &gt;= SalesOrder.DocumentDate || Customer.ThruDate == null).</p>
-<p>If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
-<pre><code> No valid client is found for '{MarketingActivity.TargetParty.PartyName}' party. 
- In order to create a sales order, there must be an active customer for '{MarketingActivity.TargetParty.PartyName}' party,
- applicable to the current enterprise company.
+To create a sales order, the customer has to be specified. <br>
+The customer is extracted from the Target party, selected in the Marketing Activity (MarketingActivity.TargetParty). The customer has to be up-to-date,
+with active customer definition for this party in the enterprise company of the sales order (SalesOrder.EnterpriseCompany) or for all enterprise companies:</p>
+<pre><code>(Customer.Party = MarketingActivity.TargetParty &amp;&amp; &lt;br&gt; 
+(Customer.EnterpriseCompany == SalesOrder.EnterpriseCompany || Customer.EnterpriseCompany == null) &amp;&amp; &lt;br&gt; 
+Customer.Active == true &amp;&amp; (Customer.FromDate &lt;= SalesOrder.DocumentDate || Customer.FromDate == null) &amp;&amp; &lt;br&gt;
+(Customer.ThruDate &gt;= SalesOrder.DocumentDate || Customer.ThruDate == null).
 </code></pre>
+<p>If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
+<p>&quot;No valid client is found for '{MarketingActivity.TargetParty.PartyName}' party.
+In order to create a sales order, there must be an active customer for '{MarketingActivity.TargetParty.PartyName}' party,
+applicable to the current enterprise company.&quot;</p>
 <p><strong>The fields in the Sales Order’s header are filled as follows:</strong></p>
 <pre><code>SalesOrder.Customer = the determined Customer for the MarketingActivity.TargetParty
 
