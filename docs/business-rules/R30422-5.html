@@ -118,23 +118,21 @@ Legislations</strong></td>
 <td><strong>Action</strong></td>
 <td>if (ParentSalesOrderLine !=null and ParentSalesOrderLine .Product !=null and Quantity != null
 and sol.QuantityUnit != null)
-{
-NetWeightkg = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.NetKilograms),
-Product, true).
-GrossWeightkg =
+<br> {                                                                                             |
+<br>NetWeightkg = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.NetKilograms),  |
+Product, true);
+<br>GrossWeightkg =
 Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.GrossKilograms), Product,
 true);
-Volumel = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.VolumeLiters),
+<br>Volumel = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.VolumeLiters),     |
 Product, true);
-Heightm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.HeightMeters),
+<br>Heightm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.HeightMeters),     |
 Product, true);
-Lengthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnitSystemUnit.LengthMeters),
+<br>Lengthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnitSystemUnit.LengthMeters),       |
 Product, true);
-Widthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.WidthMeters),
+<br>Widthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.WidthMeters),        |
 Product, true);
-}
-<br><br>
-<br><br>
+<br>}                                                                                             |
 <br><br>
 GetSystemMeasurementUnit =&gt;
 <br><br>
@@ -142,14 +140,10 @@ measurementUnits = transaction.Query&lt;MeasurementUnit&gt;().Where(mu =&gt; mu.
 systemUnit)
 <br><br>
 IF(measurementUnits.Count==0)
-<br><br>
-throw M1
+, throw M1                                                                                      |
 <br><br>
 IF(measurementUnits .Count&gt;1)
-<br><br>
-throw M2
-<br><br>
-<br><br></td>
+, throw M2                                                                                      |</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
