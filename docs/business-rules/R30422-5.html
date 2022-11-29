@@ -73,8 +73,8 @@
 <h1 id="r30422-5-shipmentorderline---fill-system-units">R30422-5 ShipmentOrderLine - Fill System Units</h1>
 
 <table>
-<col style="width:18.8%">
-<col style="width:81.2%">
+<col style="width:18.49%">
+<col style="width:81.51%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
@@ -118,32 +118,31 @@ Legislations</strong></td>
 <td><strong>Action</strong></td>
 <td>if (ParentSalesOrderLine !=null and ParentSalesOrderLine .Product !=null and Quantity != null
 and sol.QuantityUnit != null)
-<br> {                                                                                             |
-<br>NetWeightkg = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.NetKilograms),  |
+<br>{
+<br>NetWeightkg = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.NetKilograms),
 Product, true);
 <br>GrossWeightkg =
 Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.GrossKilograms), Product,
 true);
-<br>Volumel = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.VolumeLiters),     |
+<br>Volumel = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.VolumeLiters),
 Product, true);
-<br>Heightm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.HeightMeters),     |
+<br>Heightm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit( SystemUnit.HeightMeters),
 Product, true);
-<br>Lengthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnitSystemUnit.LengthMeters),       |
+<br>Lengthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnitSystemUnit.LengthMeters),
 Product, true);
-<br>Widthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.WidthMeters),        |
+<br>Widthm = Quantity.ConvertToOrDefault(GetSystemMeasurementUnit(SystemUnit.WidthMeters),
 Product, true);
-<br>}                                                                                             |
+<br>}
 <br><br>
 GetSystemMeasurementUnit =&gt;
-<br><br>
 measurementUnits = transaction.Query&lt;MeasurementUnit&gt;().Where(mu =&gt; mu.SystemUnit ==
 systemUnit)
 <br><br>
 IF(measurementUnits.Count==0)
-, throw M1                                                                                      |
+, throw M1
 <br><br>
 IF(measurementUnits .Count&gt;1)
-, throw M2                                                                                      |</td>
+, throw M2</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
