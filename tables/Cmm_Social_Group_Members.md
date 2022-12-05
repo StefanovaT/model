@@ -16,6 +16,7 @@ Represents the membership of a user in a social group. Entity: Cmm_Social_Group_
 | Name | Type | Description |
 | - | - | --- |
 |[Join_Time_Utc](#join_time_utc)|`datetime` |The exact server time (in UTC), when the user joined the group.|
+|[Role](#role)|`nvarchar(1)` |Member role in a group. Defaults to member.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |The group in which the user participates.|
 |[Social_Group_Member_Id](#social_group_member_id)|`uniqueidentifier` `PK`||
@@ -37,7 +38,7 @@ The exact server time (in UTC), when the user joined the group.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -48,6 +49,36 @@ The exact server time (in UTC), when the user joined the group.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### Role
+
+
+Member role in a group. Defaults to member.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|M|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|5|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(1)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -64,7 +95,7 @@ The exact server time (in UTC), when the user joined the group.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -94,7 +125,7 @@ The group in which the user participates.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -128,7 +159,7 @@ The group in which the user participates.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -164,7 +195,7 @@ The user, who is a member of the group.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

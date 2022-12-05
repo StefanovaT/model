@@ -31,6 +31,7 @@ Aggregate Root:
 | [Id](Communities.Social.GroupMembers.md#id) | guid |  
 | [JoinTimeUtc](Communities.Social.GroupMembers.md#jointimeutc) | datetime | The exact server time (in UTC), when the user joined the group. `Required` `Default(NowUtc)` 
 | [ObjectVersion](Communities.Social.GroupMembers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [Role](Communities.Social.GroupMembers.md#role) | string (1) | Member role in a group. Defaults to member. `Required` `Default("M")` `Introduced in version 23.1.1.95` 
 
 ## References
 
@@ -77,6 +78,17 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+
+### Role
+
+Member role in a group. Defaults to member. `Required` `Default("M")` `Introduced in version 23.1.1.95`
+
+_Type_: **string (1)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **1**  
+_Default Value_: **M**  
 
 
 ## Reference Details

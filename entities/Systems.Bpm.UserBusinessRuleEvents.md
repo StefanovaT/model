@@ -83,6 +83,9 @@ _Allowed Values (Systems.Bpm.UserBusinessRuleEventsRepository.EventType Enum Mem
 | STATECHANGING | Occurs during the document state change. The state is specified in the 'Event Parameter' field. Possible parameter values are 'PLANNING', 'FIRMPLANNING', 'RELEASING', 'COMPLETING' and 'CLOSING'.. Stored as 'STATECHANGING'. <br /> _Database Value:_ 'STATECHANGING' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'STATECHANGING' |
 | VOIDING | Occurs during the voiding of a document.. Stored as 'VOIDING'. <br /> _Database Value:_ 'VOIDING' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'VOIDING' |
 | CREATENEW | Occurs when a new object is created. Used to fill custom defaults.. Stored as 'CREATENEW'. <br /> _Database Value:_ 'CREATENEW' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'CREATENEW' |
+| COMMITTED | COMMITTED value. Stored as 'COMMITTED'. <br /> _Database Value:_ 'COMMITTED' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'COMMITTED' |
+| CLIENTCOMMITTED | CLIENTCOMMITTED value. Stored as 'CLIENTCOMMITTED'. <br /> _Database Value:_ 'CLIENTCOMMITTED' <br /> _Model Value:_ 10 <br /> _Domain API Value:_ 'CLIENTCOMMITTED' |
+| AGGREGATECLIENTCOMMITTED | AGGREGATECLIENTCOMMITTED value. Stored as 'AGGREGATECLIENTCOMMITTED'. <br /> _Database Value:_ 'AGGREGATECLIENTCOMMITTED' <br /> _Model Value:_ 11 <br /> _Domain API Value:_ 'AGGREGATECLIENTCOMMITTED' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
