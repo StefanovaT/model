@@ -101,10 +101,6 @@
 <td>Commit</td>
 </tr>
 <tr>
-<td><strong>Record State</strong></td>
-<td>Inserted</td>
-</tr>
-<tr>
 <td><strong>Priority</strong></td>
 <td>Normal</td>
 </tr>
@@ -113,8 +109,10 @@
 <td>YES</td>
 </tr>
 <tr>
-<td><strong>Action</strong></td>
-<td>SET value:
+<td><strong>Action</strong>
+<strong>Action</strong></td>
+<td>IF (Group.Members.First() is Added)
+then SET value:
 <br><br>
 Group.Members.First().Role = Admin</td>
 </tr>
