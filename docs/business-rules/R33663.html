@@ -118,7 +118,7 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If (User.DatabaseValue == NULL)  OR   (User != User.DatabaseValue), <br> <br> then create a new Follow as follows: <br><br> - Follow.User = GroupMember.User <br> - Follow.CreationTimeUtc =  NOW <br> - Follow.DataObject = GroupMembers.Group.DataObject</td>
+<td>If (User.DatabaseValue == NULL)  OR   (User != User.DatabaseValue), <br> <br> then create a new Follow as follows: <br><br> - Follow.User = GroupMember.User <br> - Follow.CreationTimeUtc =  NOW <br> - Follow.DataObject = GroupMembers.Group.GetOrCreateExtensibleDataObject()</td>
 </tr>
 <tr>
 <td>Description</td>

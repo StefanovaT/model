@@ -101,6 +101,10 @@
 <td>Commit</td>
 </tr>
 <tr>
+<td><strong>Record State</strong></td>
+<td>Inserted</td>
+</tr>
+<tr>
 <td><strong>Priority</strong></td>
 <td>Normal</td>
 </tr>
@@ -112,7 +116,7 @@
 <td><strong>Action</strong></td>
 <td>SET value:
 <br><br>
-GroupMembers(WHERE User = current User &amp;&amp; SocialGroup = current Social Group).Role = Admin</td>
+Group.Members.First().Role = Admin</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>

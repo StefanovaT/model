@@ -118,7 +118,7 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If Comments.DataObjectId == Follows.DataObjectId AND Comments.UserId != Follows.UserId, <br> then create a new Notification as follows: <br> <br> - Notification.UserId = Follows.UserId <br> - CreationTimeUtc = NOW <br> - Notification.DataObjectId = Comments.DataObjectId <br> - NotificationClass = NT_SOC_NEW_POST <br> - Subject = {Social.Comment.User.FullName} commented on a object that you're following.</td>
+<td>If Comments.DataObjectId == Follows.DataObjectId AND Comments.UserId != Follows.UserId, <br> then create a new Notification as follows: <br> <br> - Notification.UserId = Follows.UserId <br> - CreationTimeUtc = NOW <br> - Notification.DataObjectId = Comments.DataObjectId <br> - NotificationClass = NT_SOC_NEW_COMMENT <br> - Subject = {Social.Comment.User.FullName} commented on a object that you're following.</td>
 </tr>
 <tr>
 <td>Description</td>
