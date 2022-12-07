@@ -27,6 +27,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [DisplayText](Systems.Security.Roles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Security.Roles.md#id) | guid |  
+| [IsActive](Systems.Security.Roles.md#isactive) | boolean | Indicates whether the current Role is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 23.1.1.97` 
 | [Name](Systems.Security.Roles.md#name) | string (254) | The name of this Role. `Required` `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Systems.Security.Roles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RoleDescription](Systems.Security.Roles.md#roledescription) | string (max) __nullable__ | Description of the role. 
@@ -51,6 +52,16 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+
+### IsActive
+
+Indicates whether the current Role is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 23.1.1.97`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
 
 ### Name
 
