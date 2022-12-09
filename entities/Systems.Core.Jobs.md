@@ -28,7 +28,7 @@ Aggregate Tree
 | [DisplayText](Systems.Core.Jobs.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Core.Jobs.md#id) | guid |  
 | [IsActive](Systems.Core.Jobs.md#isactive) | boolean | Specifies whether the job is active and ready for running. `Required` `Default(true)` `Filter(eq)` 
-| [JobType](Systems.Core.Jobs.md#jobtype) | [JobType](Systems.Core.Jobs.md#jobtype) | The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications. `Required` `Filter(multi eq)` 
+| [JobType](Systems.Core.Jobs.md#jobtype) | [JobType](Systems.Core.Jobs.md#jobtype) | The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions. `Required` `Filter(multi eq)` 
 | [Name](Systems.Core.Jobs.md#name) | string (254) | The name of the job. `Required` `Filter(eq;like)` `ORD` 
 | [Notes](Systems.Core.Jobs.md#notes) | string (max) __nullable__ | Notes for this Job. 
 | [ObjectVersion](Systems.Core.Jobs.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -66,7 +66,7 @@ _Default Value_: **True**
 
 ### JobType
 
-The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications. `Required` `Filter(multi eq)`
+The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions. `Required` `Filter(multi eq)`
 
 _Type_: **[JobType](Systems.Core.Jobs.md#jobtype)**  
 _Category_: **System**  
@@ -79,6 +79,7 @@ _Allowed Values (Systems.Core.JobsRepository.JobType Enum Members)_
 | RunPostponedEvents | RunPostponedEvents value. Stored as 'POS'. <br /> _Database Value:_ 'POS' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'RunPostponedEvents' |
 | DeleteOldNotifications | DeleteOldNotifications value. Stored as 'DNT'. <br /> _Database Value:_ 'DNT' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'DeleteOldNotifications' |
 | DeleteOldPrintImages | DeleteOldPrintImages value. Stored as 'DPI'. <br /> _Database Value:_ 'DPI' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'DeleteOldPrintImages' |
+| DeleteOldDocumentVersions | Delete old document versions. Stored as 'DDV'. <br /> _Database Value:_ 'DDV' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'DeleteOldDocumentVersions' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
