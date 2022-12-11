@@ -179,14 +179,29 @@ Aggregate Root:<br>
 <td>The containing logistic unit. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 <tr>
+<td><a href="Logistics.LogisticUnitContents.html#lot">Lot</a></td>
+<td><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</td>
+<td>The lot of the product. Null means unknown or that the product does not use lots. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.LogisticUnitContents.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
 <td>The product, which is contained in the logistic unit. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Logistics.LogisticUnitContents.html#productvariant">ProductVariant</a></td>
+<td><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</td>
+<td>The product variant of the product. Null means unknown or that the product does not have variants. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.LogisticUnitContents.html#quantityunit">QuantityUnit</a></td>
 <td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
 <td>The measurement unit of the quantity. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.LogisticUnitContents.html#serialnumber">SerialNumber</a></td>
+<td><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</td>
+<td>The serial number of the product. Null means unknown or that product is not serialized. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></td>
 </tr>
 </tbody>
 </table>
@@ -271,14 +286,29 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<h3 id="lot">Lot</h3>
+<p>The lot of the product. Null means unknown or that the product does not use lots. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="product">Product</h3>
 <p>The product, which is contained in the logistic unit. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="productvariant">ProductVariant</h3>
+<p>The product variant of the product. Null means unknown or that the product does not have variants. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></p>
+<p><em>Type</em>: <strong><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h3 id="quantityunit">QuantityUnit</h3>
 <p>The measurement unit of the quantity. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<h3 id="serialnumber">SerialNumber</h3>
+<p>The serial number of the product. Null means unknown or that product is not serialized. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
 <h2 id="api-methods">API Methods</h2>

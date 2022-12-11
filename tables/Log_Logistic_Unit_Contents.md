@@ -21,12 +21,15 @@ Theoretical or actual content of a logistic unit. Entity: Log_Logistic_Unit_Cont
 |[Line_No](#line_no)|`int` |Consecutive position within the logistic unit.|
 |[Logistic_Unit_Content_Id](#logistic_unit_content_id)|`uniqueidentifier` `PK`||
 |[Logistic_Unit_Id](#logistic_unit_id)|`uniqueidentifier` |The containing logistic unit.|
+|[Lot_Id](#lot_id)|`uniqueidentifier` |The lot of the product. Null means unknown or that the product does not use lots.|
 |[Lot_Number](#lot_number)|`nvarchar(32)` |The production lot number. NULL means unknown.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Product_Id](#product_id)|`uniqueidentifier` |The product, which is contained in the logistic unit.|
+|[Product_Variant_Id](#product_variant_id)|`uniqueidentifier` |The product variant of the product. Null means unknown or that the product does not have variants.|
 |[Quantity](#quantity)|`decimal(12, 3)` |Quantity of the product in the logistic unit. Expressed in the specified measurement unit.|
 |[Quantity_Unit_Id](#quantity_unit_id)|`uniqueidentifier` |The measurement unit of the quantity.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` |The serial number of the product. Null means unknown or that product is not serialized.|
 |[Standard_Quantity](#standard_quantity)|`decimal(12, 3)` |The quantity, expessed in the standard measurement unit of the product.|
 
 ## Columns
@@ -249,6 +252,43 @@ The containing logistic unit.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Lot_Id
+
+
+The lot of the product. Null means unknown or that the product does not use lots.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Lots](Inv_Lots.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Lot_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Lot_Number
 
 
@@ -350,6 +390,43 @@ The product, which is contained in the logistic unit.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Product_Variant_Id
+
+
+The product variant of the product. Null means unknown or that the product does not have variants.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Product_Variants](Gen_Product_Variants.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Product_Variant_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Quantity
 
 
@@ -450,6 +527,43 @@ The measurement unit of the quantity.
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### Serial_Number_Id
+
+
+The serial number of the product. Null means unknown or that product is not serialized.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Serial_Numbers](Inv_Serial_Numbers.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Serial_Number_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Standard_Quantity
 

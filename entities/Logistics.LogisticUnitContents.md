@@ -46,8 +46,11 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [LogisticUnit](Logistics.LogisticUnitContents.md#logisticunit) | [LogisticUnits](Logistics.LogisticUnits.md) | The containing logistic unit. `Required` `Filter(multi eq)` `Owner` |
+| [Lot](Logistics.LogisticUnitContents.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot of the product. Null means unknown or that the product does not use lots. `Filter(multi eq)` `Introduced in version 23.1.2.0` |
 | [Product](Logistics.LogisticUnitContents.md#product) | [Products](General.Products.Products.md) | The product, which is contained in the logistic unit. `Required` `Filter(multi eq)` |
+| [ProductVariant](Logistics.LogisticUnitContents.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | The product variant of the product. Null means unknown or that the product does not have variants. `Filter(multi eq)` `Introduced in version 23.1.2.0` |
 | [QuantityUnit](Logistics.LogisticUnitContents.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of the quantity. `Required` `Filter(multi eq)` |
+| [SerialNumber](Logistics.LogisticUnitContents.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | The serial number of the product. Null means unknown or that product is not serialized. `Filter(multi eq)` `Introduced in version 23.1.2.0` |
 
 
 ## Attribute Details
@@ -170,6 +173,14 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 
+### Lot
+
+The lot of the product. Null means unknown or that the product does not use lots. `Filter(multi eq)` `Introduced in version 23.1.2.0`
+
+_Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
 ### Product
 
 The product, which is contained in the logistic unit. `Required` `Filter(multi eq)`
@@ -178,11 +189,27 @@ _Type_: **[Products](General.Products.Products.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
+### ProductVariant
+
+The product variant of the product. Null means unknown or that the product does not have variants. `Filter(multi eq)` `Introduced in version 23.1.2.0`
+
+_Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
 ### QuantityUnit
 
 The measurement unit of the quantity. `Required` `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
+### SerialNumber
+
+The serial number of the product. Null means unknown or that product is not serialized. `Filter(multi eq)` `Introduced in version 23.1.2.0`
+
+_Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 
