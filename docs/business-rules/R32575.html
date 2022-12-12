@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R32575 WarehousePolicies - Value | ERP.net Domain Model </title>
+    <title>R32575 WarehousePolicies - True False Value | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R32575 WarehousePolicies - Value | ERP.net Domain Model ">
+    <meta name="title" content="R32575 WarehousePolicies - True False Value | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,7 +70,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r32575-warehousepolicies---value">R32575 WarehousePolicies - Value</h1>
+<h1 id="r32575-warehousepolicies---true-false-value">R32575 WarehousePolicies - True False Value</h1>
 
 <table>
 <thead>
@@ -94,7 +94,7 @@
 </tr>
 <tr>
 <td>Attribute</td>
-<td>Value</td>
+<td>TrueFalseValue</td>
 </tr>
 <tr>
 <td>Layer</td>
@@ -118,11 +118,11 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>Validate that: <br> if (PolicyKind != ZoneType OR KittingControllingLevel OR DekittingControllingLevel)  <br>, then Value = 'true' OR 'false'</td>
+<td>Validate that: <br> if (PolicyKind == AllowProductChange <br> OR AllowLotChange <br> OR AllowLocationChange<br> OR AllowUnitChange<br> OR RequireSourceScan<br> OR RequireDestinationScan<br> OR AllowLineSkip)<br> , then Value = 'true' OR 'false'</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Validates if the value filled in the Value field is valid. Currently, valid values are only 'true' and 'false'.</td>
+<td>Validates if the value filled in the Value field is valid. For alow and prohibit policies, the only valid values are &quot;true&quot; and &quot;false&quot;.</td>
 </tr>
 <tr>
 <td>Message</td>
@@ -130,7 +130,7 @@
 </tr>
 <tr>
 <td>Introduced In Version</td>
-<td>Introduced: 2022<br>Updated: v.2023 Policy kinds &quot;KittingControllingLevel&quot; are &quot;DekittingControllingLevel&quot; excluded.</td>
+<td>Introduced: 2022<br>Updated: v.2023 The action is changed - the rule activates only for the specified policies. Name is changed to TrueFalseValue</td>
 </tr>
 <tr>
 <td>Revocable</td>

@@ -140,6 +140,8 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | ZoneType | Specifies the type of zone. Eg for receiving, shipping, packing, etc.. Stored as 'ZTY'. <br /> _Database Value:_ 'ZTY' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'ZoneType' |
 | KittingControllingLevel | Specifies the level of control during the kitting of the composite product’s components.. Stored as 'KCL'. <br /> _Database Value:_ 'KCL' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'KittingControllingLevel' |
 | DekittingControllingLevel | Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br /> _Database Value:_ 'DCL' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'DekittingControllingLevel' |
+| GS1SSCCCompanyPrefix | Specifies the GS1 company prefix issued by the national SG1 organization. 7 or 9 digit number used when generating SSCC codes.. Stored as 'GCP'. <br /> _Database Value:_ 'GCP' <br /> _Model Value:_ 10 <br /> _Domain API Value:_ 'GS1SSCCCompanyPrefix' |
+| GS1SSCCNextSerial | Specifies the next reference serial number used when generating SSCC codes. 7 or 9 digit number acting as a counter: e.g. 0000001, 0000002… .. Stored as 'GNS'. <br /> _Database Value:_ 'GNS' <br /> _Model Value:_ 11 <br /> _Domain API Value:_ 'GS1SSCCNextSerial' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

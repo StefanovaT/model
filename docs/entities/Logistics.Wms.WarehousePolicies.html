@@ -296,6 +296,14 @@ Allowed values for the <code>PolicyKind</code>(Logistics.Wms.WarehousePolicies.m
 <td>DekittingControllingLevel</td>
 <td>Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br> <em>Database Value:</em> 'DCL' <br> <em>Model Value:</em> 9 <br> <em>Domain API Value:</em> 'DekittingControllingLevel'</td>
 </tr>
+<tr>
+<td>GS1SSCCCompanyPrefix</td>
+<td>Specifies the GS1 company prefix issued by the national SG1 organization. 7 or 9 digit number used when generating SSCC codes.. Stored as 'GCP'. <br> <em>Database Value:</em> 'GCP' <br> <em>Model Value:</em> 10 <br> <em>Domain API Value:</em> 'GS1SSCCCompanyPrefix'</td>
+</tr>
+<tr>
+<td>GS1SSCCNextSerial</td>
+<td>Specifies the next reference serial number used when generating SSCC codes. 7 or 9 digit number acting as a counter: e.g. 0000001, 0000002… .. Stored as 'GNS'. <br> <em>Database Value:</em> 'GNS' <br> <em>Model Value:</em> 11 <br> <em>Domain API Value:</em> 'GS1SSCCNextSerial'</td>
+</tr>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -412,7 +420,7 @@ The subject.<br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
-<li><a href="../business-rules/R32575.html">R32575 WarehousePolicies - Value</a></li>
+<li><a href="../business-rules/R32575.html">R32575 WarehousePolicies - True False Value</a></li>
 <li><a href="../business-rules/R33172.html">R33172 WarehousePolicies - ZoneIsFromTheSameWarehouse</a></li>
 <li><a href="../business-rules/R33201.html">R33201 WarehousePolicies - Zone Policy</a></li>
 <li><a href="../business-rules/R33568.html">R33568 WarehousePolicies - Kit/DekitControllingLevelValue</a></li>
