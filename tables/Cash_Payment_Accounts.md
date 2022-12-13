@@ -159,7 +159,7 @@ The currency in which the movements for this payment account will be recorded.
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

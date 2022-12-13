@@ -164,7 +164,7 @@ The suggested by the program value equals Calendar_Date + Planning_Lead_Time_Day
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

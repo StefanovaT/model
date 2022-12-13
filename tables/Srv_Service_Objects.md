@@ -51,7 +51,7 @@ Contains the serviceable objects. The service objects can be covered by service 
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

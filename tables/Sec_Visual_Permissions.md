@@ -51,7 +51,7 @@ The security access key which controls the access to the visual permission
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Access_Key_Id - Supported Filters
 

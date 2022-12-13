@@ -143,7 +143,7 @@ Default store bin for new deliveries using this supply scheme
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

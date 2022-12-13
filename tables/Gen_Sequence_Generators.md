@@ -83,7 +83,7 @@ Allows to assign numbers explicitely regardless of the Next_Value of the generat
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

@@ -127,7 +127,7 @@ The description of the property allowed value. Used to fill the Description colu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

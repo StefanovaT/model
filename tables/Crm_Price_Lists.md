@@ -74,7 +74,7 @@ Price Lists are used to manage multiple price records, assign to customers, etc.
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

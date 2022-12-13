@@ -11021,6 +11021,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R34265.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34265.html",
+          "hash": "OHFlweGUy4owlPB1FGqx7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R34267.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34267.html",
+          "hash": "MfuzeVNJSnnI9qijsZBdqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -16675,7 +16699,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehousePolicies.html",
-          "hash": "MdurKqVKMhdnb0Ib1P0b2w=="
+          "hash": "VgRvbWZbYfRhkubbxP0+ow=="
         }
       },
       "is_incremental": false,
@@ -19437,7 +19461,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Ast_Assets.html",
-          "hash": "MyAX81PxCyOBdhvYIlgrxg=="
+          "hash": "MymeCQSm1J7SvuzZ4gqnTw=="
         }
       },
       "is_incremental": false,
@@ -19737,7 +19761,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Cash_Payment_Accounts.html",
-          "hash": "Vs6JeUVpMT861C74IxWJjg=="
+          "hash": "U4dVRRpRYvaS8oPzXSmeyA=="
         }
       },
       "is_incremental": false,
@@ -19857,7 +19881,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Cash_Payment_Types.html",
-          "hash": "PBlnr2YcLBwcSAlahbNTxA=="
+          "hash": "2l5CqsoxPFkjLinghfG77Q=="
         }
       },
       "is_incremental": false,
@@ -20625,7 +20649,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Customers.html",
-          "hash": "XfEsdZKNel27FqfF6VZz/g=="
+          "hash": "r4RgQ3OAcl7uw72UUk14dg=="
         }
       },
       "is_incremental": false,
@@ -20649,7 +20673,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Dealers.html",
-          "hash": "YpfPo+nZc19NB4CbE/faug=="
+          "hash": "Wqy3Ph2vFgK3Hnwb4UHh7Q=="
         }
       },
       "is_incremental": false,
@@ -20853,7 +20877,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Line_Discounts.html",
-          "hash": "gbUzDemHt75MpdjVWs0+PQ=="
+          "hash": "+63gnRreLvE70jk/7s0ToA=="
         }
       },
       "is_incremental": false,
@@ -20937,7 +20961,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Price_Lists.html",
-          "hash": "0wD92sru7wZqwiLrhGjCHQ=="
+          "hash": "+uGdhCo2KBHe2FjTXwQaFA=="
         }
       },
       "is_incremental": false,
@@ -21009,7 +21033,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Product_Prices.html",
-          "hash": "vl0vEOGmm+wylUGxrRGt9A=="
+          "hash": "2xeHFhjLlshUyTMMy9NMDQ=="
         }
       },
       "is_incremental": false,
@@ -21153,7 +21177,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Sales_Persons.html",
-          "hash": "Q18scwabIL/j7HFX1+VbOQ=="
+          "hash": "MGSKmEWwuXg5uj0lKsSf/A=="
         }
       },
       "is_incremental": false,
@@ -21945,7 +21969,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Areas.html",
-          "hash": "fOdAkLJrm5MpwIYXM4lF7g=="
+          "hash": "KL+xShSQMzw2SN8OUshPCQ=="
         }
       },
       "is_incremental": false,
@@ -22257,7 +22281,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Document_Type_Enterprise_Companies.html",
-          "hash": "F72bIwUS5zCxmmbjAcxL6g=="
+          "hash": "khGechEqBQKOOVw88C4Dag=="
         }
       },
       "is_incremental": false,
@@ -22281,7 +22305,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Document_Type_Properties.html",
-          "hash": "hb0DzTrGe34TW4ZIF90kgA=="
+          "hash": "x2BWnyp7L0xwiXCd3SJBNA=="
         }
       },
       "is_incremental": false,
@@ -22425,7 +22449,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Parties.html",
-          "hash": "BKUfMY78H98FL4bENncEDg=="
+          "hash": "+jnK08sC/LQgweWFBib4Lw=="
         }
       },
       "is_incremental": false,
@@ -22497,7 +22521,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Printouts.html",
-          "hash": "ALoHZv4mLfAChd8mdJAztg=="
+          "hash": "9A9vL9tbmDlvAbPT0aWhqA=="
         }
       },
       "is_incremental": false,
@@ -22617,7 +22641,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Product_Supply.html",
-          "hash": "c6Zp+pXPZ3q2lLeEG+5wNg=="
+          "hash": "XZJMNcZUjb8yBu2XMn6P6A=="
         }
       },
       "is_incremental": false,
@@ -22701,7 +22725,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Property_Allowed_Values.html",
-          "hash": "xiVhzzHzDUHxf8nhwa+cQw=="
+          "hash": "3zE3vC1M0EbHNbfUDCTJRQ=="
         }
       },
       "is_incremental": false,
@@ -22713,7 +22737,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Property_Enterprise_Company_Filters.html",
-          "hash": "SJSjFAsEFNM0hh/L97yuWA=="
+          "hash": "NjdbIi2mG+ZZOD5UQOWXpw=="
         }
       },
       "is_incremental": false,
@@ -22833,7 +22857,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Sequence_Generators.html",
-          "hash": "laXT6ryZAuvXuIssuJbZsg=="
+          "hash": "z0W5ibJAt4EE7Z/4w/DYnw=="
         }
       },
       "is_incremental": false,
@@ -23157,7 +23181,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Inv_Requisition_Plan.html",
-          "hash": "vR6af1qpjqFyRevo0Q4NJA=="
+          "hash": "iBCZsXcz33D3hH0JJMkLYw=="
         }
       },
       "is_incremental": false,
@@ -23205,7 +23229,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Inv_Store_Groups.html",
-          "hash": "PzgV0ygMNWeRvIRBRgo0Iw=="
+          "hash": "7RyVj3i87Qma9618NhIofA=="
         }
       },
       "is_incremental": false,
@@ -23265,7 +23289,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Inv_Stores.html",
-          "hash": "0oAutz3K85C3Hmi6QWv2Zg=="
+          "hash": "iEmI+UHkYXfjTp2++8k/Uw=="
         }
       },
       "is_incremental": false,
@@ -23769,7 +23793,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Nat_BG_VAT_Declaring_Persons.html",
-          "hash": "ue67T98yN70lqiHFmq5qyw=="
+          "hash": "lcEejijNjaf+ZqJep5NcUg=="
         }
       },
       "is_incremental": false,
@@ -24609,7 +24633,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Prj_Projects.html",
-          "hash": "jD/CzfN1h0UMVeWFQW/bcA=="
+          "hash": "yhFOA+466g1RfF5JCWSWgg=="
         }
       },
       "is_incremental": false,
@@ -24621,7 +24645,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Prj_Resources.html",
-          "hash": "CEDWeKFvVb3inEJeopqRYA=="
+          "hash": "HUzcsi51FM3rLHy7nU1LOg=="
         }
       },
       "is_incremental": false,
@@ -24717,7 +24741,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Prj_Types.html",
-          "hash": "gXsIKFo2t8XZErSiOUaQiA=="
+          "hash": "R/RMaGVDOmNhKwSoIvpP3Q=="
         }
       },
       "is_incremental": false,
@@ -25065,7 +25089,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Scm_Purchase_Product_Prices.html",
-          "hash": "6nJdWAgqS9md8a4i4P+Vkg=="
+          "hash": "4BoM65WicncdCje+gqRj5g=="
         }
       },
       "is_incremental": false,
@@ -25137,7 +25161,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Scm_Suppliers.html",
-          "hash": "aIhySvyr8kuFUOoSqAQepg=="
+          "hash": "v4C2LUR5STMY9AvAEZ3jrA=="
         }
       },
       "is_incremental": false,
@@ -25173,7 +25197,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Sec_Column_Permissions.html",
-          "hash": "UG32TlDkxE8lxbE0pxk1IA=="
+          "hash": "FoVveBeCm+E5vpCbGYTyhw=="
         }
       },
       "is_incremental": false,
@@ -25317,7 +25341,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Sec_Visual_Permissions.html",
-          "hash": "M85TWSvSn8rpGNEJBw7ndA=="
+          "hash": "ub8aDseF3V31l6nh5TyNFA=="
         }
       },
       "is_incremental": false,
@@ -25473,7 +25497,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Srv_Service_Objects.html",
-          "hash": "PT+/YBLKoAERoCb7LP5k2g=="
+          "hash": "o/GETPLkcK+FKGNQqY+BVg=="
         }
       },
       "is_incremental": false,

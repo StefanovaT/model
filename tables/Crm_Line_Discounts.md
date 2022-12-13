@@ -283,7 +283,7 @@ When not NULL, the policy is applied only for documents of the specified enterpr
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

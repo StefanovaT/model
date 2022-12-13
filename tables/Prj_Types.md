@@ -48,7 +48,7 @@ When not NULL means that the project type is specific to the enterprise company
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

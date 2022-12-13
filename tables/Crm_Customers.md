@@ -698,7 +698,7 @@ The Enterprise Company for which this customer is recorded. The same external pa
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

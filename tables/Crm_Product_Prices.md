@@ -213,7 +213,7 @@ When not NULL, specifies that the sales document must be in the specified enterp
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
 

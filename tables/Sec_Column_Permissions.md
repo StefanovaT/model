@@ -48,7 +48,7 @@ The required access key for accessing the column.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Access_Key_Id - Supported Filters
 
