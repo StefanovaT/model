@@ -4,7 +4,7 @@ uid: logistics-documents
 
 # Logistics documents
 
-Logistic documents is an impoverishing term for all documents in the system, in the lines of which the fields for Product and Quantity are present. 
+Logistic documents is an impoverishing term for all documents in the system, in the lines of which the fields for Product and Quantity are present e.g. Sales Orders, Invoices, Purchase Invoices, Store Transactions and other.
 Similar principles and rules often apply to these lines. 
 
 ## Business Rules
