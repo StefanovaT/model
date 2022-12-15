@@ -14,7 +14,8 @@ Hierarchy of store groups. Entity: Inv_Store_Groups
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
 |[Enterprise_Company_Location_Id](#enterprise_company_location_id)|`uniqueidentifier` ||
 |[Full_Path](#full_path)|`nvarchar(25)` Readonly|The full path to the store group in a dot separated, non-leading dot format. For example: 001.005.008.|
-|[Parent_Full_Path](#parent_full_path)|`nvarchar(25)` |The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005.|
+|[Parent_Full_Path](#parent_full_path)|`nvarchar(25)` Readonly|The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005.|
+|[Parent_Store_Group_Id](#parent_store_group_id)|`uniqueidentifier` |Parent store group. NULL if this is root group|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Store_Group_Code](#store_group_code)|`nvarchar(16)` ||
 |[Store_Group_Id](#store_group_id)|`uniqueidentifier` `PK`||
@@ -33,7 +34,7 @@ Hierarchy of store groups. Entity: Inv_Store_Groups
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -67,7 +68,7 @@ Hierarchy of store groups. Entity: Inv_Store_Groups
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -104,7 +105,7 @@ The full path to the store group in a dot separated, non-leading dot format. For
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|25|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -141,12 +142,12 @@ The full path to the parent store group. It is stored in a dot separated, non-le
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|25|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -155,7 +156,7 @@ The full path to the parent store group. It is stored in a dot separated, non-le
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Full_Path - Supported Filters
 
@@ -163,6 +164,43 @@ The full path to the parent store group. It is stored in a dot separated, non-le
 | - | - | - | - |
 |Equals|`NULL`|yes|yes|
 |Like|None|no|no|
+
+### Parent_Store_Group_Id
+
+
+Parent store group. NULL if this is root group
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Store_Groups](Inv_Store_Groups.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Parent_Store_Group_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Row_Version
 
@@ -202,7 +240,7 @@ The full path to the parent store group. It is stored in a dot separated, non-le
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|16|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -236,7 +274,7 @@ The full path to the parent store group. It is stored in a dot separated, non-le
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -269,7 +307,7 @@ The full path to the parent store group. It is stored in a dot separated, non-le
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

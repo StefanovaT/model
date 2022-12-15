@@ -29,11 +29,11 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Code](Logistics.Inventory.StoreGroups.md#code) | string (16) | The unique code of the StoreGroup. `Required` `Filter(eq;like)` 
 | [DisplayText](Logistics.Inventory.StoreGroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FullPath](Logistics.Inventory.StoreGroups.md#fullpath) | string (25) __nullable__ | The full path to the store group in a dot separated, non-leading dot format. For example: 001.005.008. `Filter(eq;like)` `ORD` `ReadOnly` 
+| [<s>FullPath</s>](Logistics.Inventory.StoreGroups.md#fullpath) | string (25) __nullable__ | **OBSOLETE! Do not use!** The full path to the store group in a dot separated, non-leading dot format. For example: 001.005.008. `Obsolete` `Filter(eq;like)` `ORD` `ReadOnly` `Obsoleted in version 23.1.2.3` 
 | [Id](Logistics.Inventory.StoreGroups.md#id) | guid |  
 | [Name](Logistics.Inventory.StoreGroups.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this StoreGroup. `Required` `Filter(like)` 
 | [ObjectVersion](Logistics.Inventory.StoreGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ParentFullPath](Logistics.Inventory.StoreGroups.md#parentfullpath) | string (25) __nullable__ | The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005. `Filter(eq;like)` 
+| [<s>ParentFullPath</s>](Logistics.Inventory.StoreGroups.md#parentfullpath) | string (25) __nullable__ | **OBSOLETE! Do not use!** The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005. `Obsolete` `Filter(eq;like)` `ReadOnly` `Obsoleted in version 23.1.2.3` 
 
 ## References
 
@@ -41,6 +41,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [EnterpriseCompany](Logistics.Inventory.StoreGroups.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this StoreGroup applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Logistics.Inventory.StoreGroups.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The Enterprise Company Location to which this StoreGroup applies, or null if it is for all enterprise company locations. `Filter(multi eq)` |
+| [Parent](Logistics.Inventory.StoreGroups.md#parent) | [StoreGroups](Logistics.Inventory.StoreGroups.md) (nullable) | Parent store group. null if this is root group. `Filter(multi eq)` `Introduced in version 23.1.2.3` |
 
 
 ## Attribute Details
@@ -66,7 +67,7 @@ _Supports Order By_: ****
 
 ### FullPath
 
-The full path to the store group in a dot separated, non-leading dot format. For example: 001.005.008. `Filter(eq;like)` `ORD` `ReadOnly`
+**OBSOLETE! Do not use!** The full path to the store group in a dot separated, non-leading dot format. For example: 001.005.008. `Obsolete` `Filter(eq;like)` `ORD` `ReadOnly` `Obsoleted in version 23.1.2.3`
 
 _Type_: **string (25) __nullable__**  
 _Indexed_: **True**  
@@ -75,6 +76,8 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **True**  
 _Maximum Length_: **25**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( ( obj.ParentFullPath != null) AndAlso ( obj.Code != null)), ( ( obj.ParentFullPath + obj.Code) + "."), null)`
 ### Id
 
 _Type_: **guid**  
@@ -103,7 +106,7 @@ _Supports Order By_: ****
 
 ### ParentFullPath
 
-The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005. `Filter(eq;like)`
+**OBSOLETE! Do not use!** The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005. `Obsolete` `Filter(eq;like)` `ReadOnly` `Obsoleted in version 23.1.2.3`
 
 _Type_: **string (25) __nullable__**  
 _Category_: **System**  
@@ -111,6 +114,11 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
 
+_Back-End Default Expression:_  
+`IIF( ( obj.Parent != null), obj.Parent.FullPath, null)`
+
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.Parent != null), obj.Parent.FullPath, null)`
 
 ## Reference Details
 
@@ -127,6 +135,14 @@ _Supported Filters_: **Equals, EqualsIn**
 The Enterprise Company Location to which this StoreGroup applies, or null if it is for all enterprise company locations. `Filter(multi eq)`
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+
+### Parent
+
+Parent store group. null if this is root group. `Filter(multi eq)` `Introduced in version 23.1.2.3`
+
+_Type_: **[StoreGroups](Logistics.Inventory.StoreGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 

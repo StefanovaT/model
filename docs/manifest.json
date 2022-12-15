@@ -11021,6 +11021,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R34222-1.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34222-1.html",
+          "hash": "DuoldHwNm/SKAz0VUZUCOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R34222-2.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34222-2.html",
+          "hash": "eLW26vJ0IkXlUQALGsYDkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R34265.md",
       "output": {
         ".html": {
@@ -15979,7 +16003,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Inventory.StoreGroups.html",
-          "hash": "hfH5NHBOj1QLZdCn3IxjhQ=="
+          "hash": "LaFjKTq1mM/wpyhKYlHFAg=="
         }
       },
       "is_incremental": false,
@@ -19077,7 +19101,7 @@
       "output": {
         ".html": {
           "relative_path": "reference/common-business-rules/logistics-documents.html",
-          "hash": "FZjYDIhnnpN/OrOeoRoqqA=="
+          "hash": "ASUthUbKDiF/sSGRZvWh8g=="
         }
       },
       "is_incremental": false,
@@ -23229,7 +23253,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Inv_Store_Groups.html",
-          "hash": "7RyVj3i87Qma9618NhIofA=="
+          "hash": "r1FO414sU6zX/ndc3ZhKsw=="
         }
       },
       "is_incremental": false,
