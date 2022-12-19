@@ -29,7 +29,7 @@ Aggregate Tree
 | [DisplayText](General.MeasurementCategories.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.MeasurementCategories.md#id) | guid |  
 | [IsDefault](General.MeasurementCategories.md#isdefault) | boolean | True=This category is the default category; false=otherwise. `Required` `Default(false)` `Filter(eq)` 
-| [Name](General.MeasurementCategories.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | The name of this MeasurementCategory. `Required` `Filter(eq;like)` `ORD` 
+| [Name](General.MeasurementCategories.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | The name of this MeasurementCategory. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.MeasurementCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## Child Collections
@@ -70,13 +70,13 @@ _Default Value_: **False**
 
 ### Name
 
-The name of this MeasurementCategory. `Required` `Filter(eq;like)` `ORD`
+The name of this MeasurementCategory. `Required` `Filter(eq;like)`
 
 _Type_: **[MultilanguageString (64)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### ObjectVersion
 

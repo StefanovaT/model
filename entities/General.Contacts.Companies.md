@@ -46,7 +46,7 @@ Aggregate Tree
 | [IsActive](General.Contacts.Companies.md#isactive) | boolean | Specifies whether the current party is active in the system or not. `Required` `Default(true)` `Filter(eq)` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [IsVATCashReporting<br />Registered](General.Contacts.Companies.md#isvatcashreportingregistered) | boolean | When true, specifies that the company uses the special VAT Cash Reporting Mode. `Required` `Default(false)` 
 | [IsVATRegistered](General.Contacts.Companies.md#isvatregistered) | boolean | Determines wheather the company is included in VAT registers. `Required` `Default(false)` 
-| [Name](General.Contacts.Companies.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The name of this Company. `Filter(eq;like)` `ORD` 
+| [Name](General.Contacts.Companies.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The name of this Company. `Filter(eq;like)` 
 | [ObjectVersion](General.Contacts.Companies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PartyCode](General.Contacts.Companies.md#partycode) | string (16) | The unique code of the party. `Required` `Filter(eq;like)` `ORD` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyCreationTime](General.Contacts.Companies.md#partycreationtime) | datetime __nullable__ | Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
@@ -190,13 +190,13 @@ _Default Value_: **False**
 
 ### Name
 
-The name of this Company. `Filter(eq;like)` `ORD`
+The name of this Company. `Filter(eq;like)`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### ObjectVersion
 

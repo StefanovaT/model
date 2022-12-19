@@ -36,7 +36,7 @@ Aggregate Root:
 | [Id](General.MeasurementUnits.md#id) | guid |  
 | [IsDefaultUnit](General.MeasurementUnits.md#isdefaultunit) | boolean | True if this measurement unit is the default measurement unit within the category. There can be only one default measurement unit within a category. `Required` `Default(false)` `Filter(eq)` 
 | [Multiplier](General.MeasurementUnits.md#multiplier) | decimal (9, 3) | Multiplier of the relative value of the measurement unit against other units (multiplier when converting to base). `Required` `Default(1)` 
-| [Name](General.MeasurementUnits.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | Name of the measurement unit. `Required` `Filter(eq;like)` `ORD` 
+| [Name](General.MeasurementUnits.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | Name of the measurement unit. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.MeasurementUnits.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SystemUnit](General.MeasurementUnits.md#systemunit) | [SystemUnit](General.MeasurementUnits.md#systemunit) __nullable__ | Not null only when this is one of the system measurement units. N=NetKG; G=GrossKG; V=VolumeL; H=HeightM; W=WidthM, L=LengthM, P=Piece, T=TimeH. `Filter(eq;like)` 
 
@@ -118,13 +118,13 @@ _Default Value_: **1**
 
 ### Name
 
-Name of the measurement unit. `Required` `Filter(eq;like)` `ORD`
+Name of the measurement unit. `Required` `Filter(eq;like)`
 
 _Type_: **[MultilanguageString (64)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### ObjectVersion
 

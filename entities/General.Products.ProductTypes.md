@@ -39,7 +39,7 @@ Aggregate Tree
 | [IsShipped](General.Products.ProductTypes.md#isshipped) | boolean | True when the products from this type are being shipped after sales. `Required` `Default(false)` `Filter(eq)` 
 | [IsStocked](General.Products.ProductTypes.md#isstocked) | boolean | True=The products of this type are stocked in a warehouse; false=otherwise (services). `Required` `Default(true)` `Filter(eq)` 
 | [LotAutoCreation](General.Products.ProductTypes.md#lotautocreation) | boolean | If checked specifies that lots are automatically created by the receiving orders with which the products are received. `Required` `Default(false)` 
-| [Name](General.Products.ProductTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this ProductType. `Required` `Filter(eq;like)` `ORD` 
+| [Name](General.Products.ProductTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this ProductType. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.Products.ProductTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## Child Collections
@@ -151,13 +151,13 @@ _Default Value_: **False**
 
 ### Name
 
-The name of this ProductType. `Required` `Filter(eq;like)` `ORD`
+The name of this ProductType. `Required` `Filter(eq;like)`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### ObjectVersion
 

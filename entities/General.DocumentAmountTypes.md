@@ -34,7 +34,7 @@ Aggregate Tree
 | [AllowedDirections](General.DocumentAmountTypes.md#alloweddirections) | [AllowedDirections](General.DocumentAmountTypes.md#alloweddirections) __nullable__ | Specifies condition for the sign of the allowed values for input percent or amount ​​that can be set in the documents. `Default(0)` 
 | [AmountInputAllowed](General.DocumentAmountTypes.md#amountinputallowed) | boolean | True when the user is allowed to input fixed amount for distribution. `Required` `Default(false)` `Filter(eq)` 
 | [AmountTypeCode](General.DocumentAmountTypes.md#amounttypecode) | string (16) | A code that can be used to uniquely identify the additional amount. Can also be used for sorting purposes. `Required` `Filter(multi eq)` `ORD` 
-| [AmountTypeName](General.DocumentAmountTypes.md#amounttypename) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | The name of the amount type. `Required` `Filter(like)` `ORD` 
+| [AmountTypeName](General.DocumentAmountTypes.md#amounttypename) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | The name of the amount type. `Required` `Filter(like)` 
 | [BaseOnLines](General.DocumentAmountTypes.md#baseonlines) | boolean | True means that the percentages will be applied over lines plus dependant amounts; false means only dependant amounts. `Required` `Default(true)` 
 | [DefaultPercent](General.DocumentAmountTypes.md#defaultpercent) | decimal (7, 6) __nullable__ | Default percent for amounts for which percent input is allowed; null otherwise. 
 | [Description](General.DocumentAmountTypes.md#description) | string (254) __nullable__ | The description of this DocumentAmountType. 
@@ -125,13 +125,13 @@ _Maximum Length_: **16**
 
 ### AmountTypeName
 
-The name of the amount type. `Required` `Filter(like)` `ORD`
+The name of the amount type. `Required` `Filter(like)`
 
 _Type_: **[MultilanguageString (128)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### BaseOnLines
 

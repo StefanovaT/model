@@ -192,8 +192,6 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>25</strong></p>
-<p><em>Front-End Recalc Expressions:</em><br>
-<code>IIF( ( ( obj.ParentFullPath != null) AndAlso ( obj.Code != null)), ( ( obj.ParentFullPath + obj.Code) + &quot;.&quot;), null)</code></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
@@ -219,10 +217,6 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>25</strong></p>
-<p><em>Back-End Default Expression:</em><br>
-<code>IIF( ( obj.Parent != null), obj.Parent.FullPath, null)</code></p>
-<p><em>Front-End Recalc Expressions:</em><br>
-<code>IIF( ( obj.Parent != null), obj.Parent.FullPath, null)</code></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The Enterprise Company to which this StoreGroup applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></p>

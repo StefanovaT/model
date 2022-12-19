@@ -65,7 +65,7 @@ Aggregate Tree
 | [ObjectVersion](General.DocumentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SchemaXML](General.DocumentTypes.md#schemaxml) | string (max) __nullable__ | Obsolete. Not used. 
 | [TransitionalDocument](General.DocumentTypes.md#transitionaldocument) | boolean | If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. `Required` `Default(false)` 
-| [TypeName](General.DocumentTypes.md#typename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Description of the document type. `Required` `Filter(like)` `ORD` 
+| [TypeName](General.DocumentTypes.md#typename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Description of the document type. `Required` `Filter(like)` 
 
 ## References
 
@@ -233,13 +233,13 @@ _Front-End Recalc Expressions:_
 `IIF( obj.CreateManully, False, obj.TransitionalDocument)`
 ### TypeName
 
-Description of the document type. `Required` `Filter(like)` `ORD`
+Description of the document type. `Required` `Filter(like)`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 
 ## Reference Details

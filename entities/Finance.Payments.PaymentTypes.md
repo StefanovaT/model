@@ -31,7 +31,7 @@ Aggregate Tree
 | [DisplayText](Finance.Payments.PaymentTypes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Payments.PaymentTypes.md#id) | guid |  
 | [IsActive](Finance.Payments.PaymentTypes.md#isactive) | boolean | Indicates wheather the payment type is active and usable for choosing in new documents. `Required` `Default(true)` `Filter(eq)` `Introduced in version 19.1` 
-| [Name](Finance.Payments.PaymentTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this PaymentType. `Required` `Filter(like)` `ORD` 
+| [Name](Finance.Payments.PaymentTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this PaymentType. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Payments.PaymentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SystemType](Finance.Payments.PaymentTypes.md#systemtype) | [SystemType](Finance.Payments.PaymentTypes.md#systemtype) __nullable__ | Not null only when this is one of the system payment types. CS=Cash; CD=By Card; BT=Bank Transfer. 
 
@@ -85,13 +85,13 @@ _Default Value_: **True**
 
 ### Name
 
-The name of this PaymentType. `Required` `Filter(like)` `ORD`
+The name of this PaymentType. `Required` `Filter(like)`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### ObjectVersion
 

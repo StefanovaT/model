@@ -27,7 +27,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [DisplayText](General.PropertiesCategories.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.PropertiesCategories.md#id) | guid |  
-| [Name](General.PropertiesCategories.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | The name of this PropertiesCategory. `Required` `Filter(eq;like)` `ORD` 
+| [Name](General.PropertiesCategories.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | The name of this PropertiesCategory. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.PropertiesCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 
@@ -52,13 +52,13 @@ _Default Value_: **NewGuid**
 
 ### Name
 
-The name of this PropertiesCategory. `Required` `Filter(eq;like)` `ORD`
+The name of this PropertiesCategory. `Required` `Filter(eq;like)`
 
 _Type_: **[MultilanguageString (64)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 
 ### ObjectVersion
 

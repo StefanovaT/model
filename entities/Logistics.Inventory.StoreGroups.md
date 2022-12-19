@@ -76,8 +76,6 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **True**  
 _Maximum Length_: **25**  
 
-_Front-End Recalc Expressions:_  
-`IIF( ( ( obj.ParentFullPath != null) AndAlso ( obj.Code != null)), ( ( obj.ParentFullPath + obj.Code) + "."), null)`
 ### Id
 
 _Type_: **guid**  
@@ -114,11 +112,6 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
 
-_Back-End Default Expression:_  
-`IIF( ( obj.Parent != null), obj.Parent.FullPath, null)`
-
-_Front-End Recalc Expressions:_  
-`IIF( ( obj.Parent != null), obj.Parent.FullPath, null)`
 
 ## Reference Details
 
