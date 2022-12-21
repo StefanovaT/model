@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>Document.EntityName</em><br>
 Name Data Member:<br>
-<em>Document.EntityName</em></p>
+<em>Document.EntityName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -206,25 +208,29 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="inputamount">InputAmount</h3>
 <p>When not null, specifies directly the amount of the additional amount. <code>Currency: GetInputAmountCurrency()</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( obj.DocumentAmountType.AmountInputAllowed, obj.InputAmount, null)</code></p>
 <h3 id="inputpercent">InputPercent</h3>
@@ -232,7 +238,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.DocumentAmountType.DefaultPercent</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -242,7 +249,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 5)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( obj.DocumentAmountType.UnitAmountInputAllowed, obj.InputUnitAmount, null)</code></p>
 <h3 id="objectversion">ObjectVersion</h3>
@@ -250,20 +258,23 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="totaldistributedamount">TotalDistributedAmount</h3>
 <p>The total amount (in documents currency) which was distributed to the documents lines. Null if the amount is not distributed yet. <code>Currency: LogisticsDocument.DocumentCurrency</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="usercanchangeinput">UserCanChangeInput</h3>
 <p>True if the user, entering the document is allowed to change the default input percent. <code>Required</code> <code>Default(true)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The <see cref="Document"></see> to which this DocumentAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
@@ -271,24 +282,28 @@ Aggregate Root:<br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="documentamounttype">DocumentAmountType</h3>
 <p>The type of the amount. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentAmountTypes.html">DocumentAmountTypes</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="inputamountcurrency">InputAmountCurrency</h3>
 <p>When specifying the amount directly in Input Amount, this contains the currency of the amount. Used and required when Input Amount is not null. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Currencies.html">Currencies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( obj.DocumentAmountType.AmountInputAllowed, obj.InputAmountCurrency, null)</code></p>
 <h3 id="inputunit">InputUnit</h3>
 <p>Measurement unit of the input unit amount. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( obj.DocumentAmountType.UnitAmountInputAllowed, obj.InputUnit, null)</code></p>
 <h2 id="api-methods">API Methods</h2>

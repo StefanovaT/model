@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{StoreOrderLineId}: {DocumentDate}</em><br>
 Default Search Members:<br>
-__</p>
+__<br>
+Category:  <em>Views</em><br>
+Show in UI:  <em>CannotBeShown</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -184,75 +186,87 @@ __</p>
 <em>Inherited From</em>: <strong>Gen_Documents_Table.Document_Date</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>CurrentDate</strong></p>
+<em>Default Value</em>: <strong>CurrentDate</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="isfulfilled">IsFulfilled</h3>
 <p>Returns 1/true when both the Quantity and Cost are fulfilled or only negligible (less than 0.001 for qty and 0.01 for cost) sums remain. Please note, that filtering by this fields forces full scan and calculation of remaining amounts for all non-finished store orders. For best performance, the store orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="isquantityfulfilled">IsQuantityFulfilled</h3>
 <p>Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this fields forces full scan and calculation of remaining amounts for all non-finished store orders. For best performance, the store orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderremaininglinecost">OrderRemainingLineCost</h3>
 <p>The remaining (unfulfilled) line cost of the order line. <code>Required</code> <code>Filter(multi eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>decimal (38, 2)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, EqualsIn</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderremainingquantitybase">OrderRemainingQuantityBase</h3>
 <p>The remaining (unfulfilled) quantity of the order line in base measurement unit. <code>Required</code> <code>Filter(multi eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>decimal (38, 3)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, EqualsIn</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Gen_Documents_Table.Enterprise_Company_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lot">Lot</h3>
 <p>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Lot_Id</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Order_Lines_Table.Lot_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>The product which should be received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Product_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Order_Lines_Table.Product_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productvariant">ProductVariant</h3>
 <p>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Product_Variant_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Order_Lines_Table.Product_Variant_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>
 <p>Which serial number to receive/issue. null means that serial number is unknown or not applicable. <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Order_Lines_Table.Serial_Number_Id</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Order_Lines_Table.Serial_Number_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="store">Store</h3>
 <p>The designated warehouse for the operation. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Id</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Stores.html">Stores</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Orders_Table.Store_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="storeorderline">StoreOrderLine</h3>
 <p>The line, containing the ordered quantity, which this execution line executes. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Parent_Store_Order_Line_Id</code> <code>FilterableReference</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreOrderLines.html">StoreOrderLines</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Parent_Store_Order_Line_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Logistics_Inventory_StoreOrderLinesUnfulfilledView?$top=10">https://demodb.my.erp.net/api/domain/odata/Logistics_Inventory_StoreOrderLinesUnfulfilledView?$top=10</a></p>

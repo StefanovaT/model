@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>DocumentType.EntityName</em><br>
 Name Data Member:<br>
-<em>DocumentType.EntityName</em></p>
+<em>DocumentType.EntityName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -189,7 +191,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( obj.Remainder, null, obj.AmountPercent)</code></p>
 <h3 id="displaytext">DisplayText</h3>
@@ -197,7 +200,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="duedateformmethod">DueDateFormMethod</h3>
 <p>Method to determine the payment due date. SLS = Use sales order date, INV = Use invoice date, EXP = Specify the date explicitly, SDD = Sales order due date, IDD = Invoice due date. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#duedateformmethod">PaymentPlanDueDateSource</a></strong><br>
@@ -235,19 +239,22 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="installmentnumber">InstallmentNumber</h3>
 <p>Consequtive installment number. Used for identifying different payments generated according this payment plan. <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( obj.DocumentType.DefaultSalesOrderPaymentPlans.Select( c =&gt; c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -257,14 +264,16 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="paymenttermdays">PaymentTermDays</h3>
 <p>Payment term in days, which are to be added to form the payment due date. 0 means that the date determined by Due_Date_Form_Method and Explicit_Payment_Due_Date is taken as due date. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( Convert( obj.DueDateFormMethod, Int32) == 3) OrElse ( Convert( obj.DueDateFormMethod, Int32) == 4)), 0, obj.PaymentTermDays)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -275,7 +284,8 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.AmountPercent != null), False, obj.Remainder)</code></p>
 <h2 id="reference-details">Reference Details</h2>
@@ -284,31 +294,36 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>Enterprise company for which the current default installment template is valid. If enterprise company is not set then the installment template is valid for all enterprise companies. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="enterprisecompanylocation">EnterpriseCompanyLocation</h3>
 <p>Enterprise company location (within the chosen enterprise company) for which the current default installment template is valid. If enterprise company location is not set then the installment template is valid for all enterprise company locations. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.EnterpriseCompany.Company != obj.EnterpriseCompanyLocation.Company), null, obj.EnterpriseCompanyLocation)</code></p>
 <h3 id="paymentaccount">PaymentAccount</h3>
 <p>Default payment account for the current installment. null means that there is no default account. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentAccounts.html">PaymentAccounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PaymentType.GetDefaultPaymentAccount( ).IfNullThen( obj.PaymentAccount)</code></p>
 <h3 id="paymenttype">PaymentType</h3>
 <p>Default payment type for the current installment. null means that there is no default payment type. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentTypes.html">PaymentTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

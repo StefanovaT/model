@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{LineNo}. {ExciseAdministrativeDocument.DocumentNo} {ExciseAdministrativeDocument.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
-<em>ExciseAdministrativeDocument.DocumentNo</em></p>
+<em>ExciseAdministrativeDocument.DocumentNo</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -237,13 +239,15 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="excisealcoholicstrength">ExciseAlcoholicStrength</h3>
 <p>The alcoholic strength, which will be used for Excise reporting purposes. null  if the product is not subject to alcoholic Excise reporting. <code>Introduced in version 21.1.3.97</code></p>
 <p><em>Type</em>: <strong>decimal (5, 2) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.GetNewAlcoholicStrength( obj.MeasuringTransaction, obj.Product)</code></p>
 <h3 id="exciseamount">ExciseAmount</h3>
@@ -252,7 +256,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>new Amount( ( obj.ExciseAmountBase * ( obj.ExciseDutyRateValue ?? 0)), obj.Document.EnterpriseCompany.BaseCurrency)</code></p>
 <h3 id="exciseamountbase">ExciseAmountBase</h3>
@@ -261,7 +266,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength) == null), Convert( obj.ExciseAmountBase, Nullable</code>1), obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength))`</p>
 <h3 id="excisedutyratevalue">ExciseDutyRateValue</h3>
@@ -269,7 +275,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>decimal (10, 6) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.ExciseDutyRate.ExciseDutyRateField</code></p>
 <h3 id="excisequantity">ExciseQuantity</h3>
@@ -277,7 +284,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.QuantityBase.ConvertTo( obj.ExciseQuantityUnit, obj.Product)</code></p>
 <h3 id="id">Id</h3>
@@ -285,13 +293,15 @@ Aggregate Root:<br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="lineno">LineNo</h3>
 <p>Consecutive line number within the document. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( obj.ExciseAdministrativeDocument.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -302,32 +312,37 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parentlineno">ParentLineNo</h3>
 <p>The number of the line within the parent document, which the current line executes. Null when the current line does not execute line. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.4.9</code></p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="quantity">Quantity</h3>
 <p>The quantity being sold, in the measurement unit, specified in Quantity Unit. <code>Unit: QuantityUnit</code> <code>Required</code> <code>Default(1)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="quantitybase">QuantityBase</h3>
 <p>The quantity in base measurement category for the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h2 id="reference-details">Reference Details</h2>
@@ -335,62 +350,72 @@ Aggregate Root:<br>
 <p>The <see cref="ExciseAdministrativeDocument"></see> to which this ExciseAdministrativeDocumentLine belongs. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.ExciseAdministrativeDocuments.html">ExciseAdministrativeDocuments</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="exciseadministrativedocument">ExciseAdministrativeDocument</h3>
 <p>The <see cref="ExciseAdministrativeDocument"></see> to which this ExciseAdministrativeDocumentLine belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.ExciseAdministrativeDocuments.html">ExciseAdministrativeDocuments</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="excisedutyrate">ExciseDutyRate</h3>
 <p>The Duty rate specified by the taxation and customs authorities. <code>Filter(multi eq)</code> <code>Introduced in version 21.1.3.97</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.ExciseDutyRates.html">ExciseDutyRates</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DetermineExciseDutyRate( obj.ExciseProduct, obj.ExcisePurposeCode)</code></p>
 <h3 id="exciseproduct">ExciseProduct</h3>
 <p>The Excise product code defined by the taxation and customs authorities. <code>Filter(multi eq)</code> <code>Introduced in version 21.1.3.97</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.ExciseProducts.html">ExciseProducts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.ExciseProductType.ExciseProduct</code></p>
 <h3 id="excisepurposecode">ExcisePurposeCode</h3>
 <p>The Purpose codes specify the different purposes recognized by the authorities for determining the excise rate. <code>Filter(multi eq)</code> <code>Introduced in version 21.1.3.97</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.ExcisePurposeCodes.html">ExcisePurposeCodes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.LineNo == obj.LineNo), obj.DefaultExcisePurposeCode( ), null)</code></p>
 <h3 id="excisequantityunit">ExciseQuantityUnit</h3>
 <p>The measurement unit of Excise Quantity. Copied from the excise product type. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.58</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.ExciseProductType.MeasurementUnit</code></p>
 <h3 id="measuringtransaction">MeasuringTransaction</h3>
 <p>Transaction of product input or output, measured with specialized measuring device for excise purposes. <code>Filter(multi eq)</code> <code>Introduced in version 21.1.3.87</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.MeasuringTransactions.html">MeasuringTransactions</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="parentdocument">ParentDocument</h3>
 <p>The document, which the current line executes. Null when the current line does not execute another line. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.4.9</code></p>
 <p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>The product being sold. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="quantityunit">QuantityUnit</h3>
 <p>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.MeasurementUnit</code></p>
 <h2 id="api-methods">API Methods</h2>

@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>SalesPersonTarget.DocumentNo</em><br>
 Name Data Member:<br>
-<em>SalesPersonTarget.EntityName</em></p>
+<em>SalesPersonTarget.EntityName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -209,43 +211,50 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="perioddate">PeriodDate</h3>
 <p>Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). <code>Required</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="periodmonth">PeriodMonth</h3>
 <p>Month of the period in which the target must be fulfilled (the period is determined by specifying a month and an year). <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>byte</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="periodyear">PeriodYear</h3>
 <p>Year of the period in which the target must be fulfilled (the period is determined by specifying a month and an year). <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>int16</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="targetamount">TargetAmount</h3>
 <p>Target amount to be fulfilled by the specified sales person. Deprecated - use Target_Value. <code>Currency: TargetAmountCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="targettype">TargetType</h3>
 <p>Type of target. Defines the meaning of Target_Value. SALES-sales amount, BONUS-count of bonus progs, PACK-count of promo packs. <code>Required</code> <code>Default(&quot;SALES&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Distribution.SalesPersonTargetLines.html#targettype">TargetType</a></strong><br>
@@ -280,37 +289,43 @@ Allowed values for the <code>TargetType</code>(Crm.Distribution.SalesPersonTarge
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>SalesAmount</strong></p>
+<em>Default Value</em>: <strong>SalesAmount</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="targetvalue">TargetValue</h3>
 <p>Value of target. Meaning depends on target type. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>decimal (9, 2)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="targetweight">TargetWeight</h3>
 <p>Relative weight of target, comparatively to other targets. <code>Required</code> <code>Default(1)</code></p>
 <p><em>Type</em>: <strong>decimal (5, 2)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>1</strong></p>
+<em>Default Value</em>: <strong>1</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="bonusprogram">BonusProgram</h3>
 <p>Bonus program Id when the target type is BONUS, null otherwise. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.BonusPrograms.html">BonusPrograms</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="document">Document</h3>
 <p>The <see cref="SalesPersonTarget"></see> to which this SalesPersonTargetLine belongs. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Distribution.SalesPersonTargets.html">SalesPersonTargets</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="productgroup">ProductGroup</h3>
 <p>Product group for which the target is defined. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductGroups.html">ProductGroups</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesPersonTarget.ProductGroup</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -319,12 +334,14 @@ Allowed values for the <code>TargetType</code>(Crm.Distribution.SalesPersonTarge
 <p>Promotional Package Id when the target type is PROMO, null otherwise. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.PromotionalPackages.html">PromotionalPackages</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="salesperson">SalesPerson</h3>
 <p>Sales person to whom the target is assigned. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.SalesPersons.html">SalesPersons</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesPersonTarget.SalesPerson</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -334,12 +351,14 @@ Allowed values for the <code>TargetType</code>(Crm.Distribution.SalesPersonTarge
 <p><em>Type</em>: <strong><a href="Crm.Distribution.SalesPersonTargets.html">SalesPersonTargets</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="targetamountcurrency">TargetAmountCurrency</h3>
 <p>Deprecated - use currency in document header. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Currencies.html">Currencies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesPersonTarget.TargetCurrency</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>

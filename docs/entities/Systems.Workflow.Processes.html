@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
-<em>Name</em></p>
+<em>Name</em><br>
+Category:  <em>Settings</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -187,52 +189,60 @@ Name Data Member:<br>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creationuser">CreationUser</h3>
 <p>Login name of the user, who created the Process. <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="islandscape">IsLandscape</h3>
 <p>Specifies whether the process diagram is intended to be viewed in landscape mode. <code>Required</code> <code>Default(true)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>The name of this Process. <code>Required</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="notes">Notes</h3>
 <p>Notes for this Process.</p>
 <p><em>Type</em>: <strong>string (2000) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2000</strong></p>
+<em>Maximum Length</em>: <strong>2000</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="schemaformat">SchemaFormat</h3>
 <p>Application specific format of the Schema Layout. <code>Required</code> <code>Default(&quot;D&quot;)</code></p>
 <p><em>Type</em>: <strong>string (1)</strong><br>
@@ -240,45 +250,52 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>1</strong><br>
-<em>Default Value</em>: <strong>D</strong></p>
+<em>Default Value</em>: <strong>D</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="schemalayout">SchemaLayout</h3>
 <p>Contains the actual presentation layout of the business process. The layout is stored in the format, specified by Schema Format. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (max)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="startevent">StartEvent</h3>
 <p>USR=User created; EML=Email receive (still not supported). null means that there is no starting event for this process.</p>
 <p><em>Type</em>: <strong>string (3) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>3</strong></p>
+<em>Maximum Length</em>: <strong>3</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="startroleid">StartRoleId</h3>
 <p>When Start_Event='USR' then specifies the role which the user must play in order to start the process. null when Start_Event&lt;&gt;'USR'. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="thumbnail">Thumbnail</h3>
 <p>Contains the visual thumbnail of the presentation of the business process. It is stored in bitmap (BMP) format.</p>
 <p><em>Type</em>: <strong>byte[] <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
 <p>Date and time when the Process was last updated. <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="updateuser">UpdateUser</h3>
 <p>Login name of the user, who last updated the Process. <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

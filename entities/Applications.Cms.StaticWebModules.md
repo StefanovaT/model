@@ -21,6 +21,8 @@ Code Data Member:
 _LanguageCode_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,8 +51,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>Parent</s>](Applications.Cms.StaticWebModules.md#parent) | [WebModules](Applications.Cms.WebModules.md) (nullable) | **OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
-| [<s>WebSite</s>](Applications.Cms.StaticWebModules.md#website) | [WebSites](Applications.Cms.WebSites.md) | **OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
+| [<s>Parent</s>](Applications.Cms.StaticWebModules.md#parent) | [WebModules](Applications.Cms.WebModules.md) (nullable) | **OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
+| [<s>WebSite</s>](Applications.Cms.StaticWebModules.md#website) | [WebSites](Applications.Cms.WebSites.md) | **OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
 
 
 ## Attribute Details
@@ -64,6 +66,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -73,6 +76,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -81,6 +85,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsPublished
 
@@ -91,6 +96,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LanguageCode
 
@@ -102,6 +108,7 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **7**  
 _Default Value_: **EN**  
+_Show in UI_: **ShownByDefault**  
 
 ### LocalUrl
 
@@ -112,6 +119,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### ModulePicture
 
@@ -121,6 +129,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ModuleType
 
@@ -139,6 +148,7 @@ _Allowed Values (Applications.Cms.WebModulesRepository.ModuleType Enum Members)_
 
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -149,6 +159,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **512**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -158,26 +169,29 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
 
 ### Parent
 
-**OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md))
+**OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md))
 
 _Type_: **[WebModules](Applications.Cms.WebModules.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WebSite
 
-**OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md))
+**OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md))
 
 _Type_: **[WebSites](Applications.Cms.WebSites.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

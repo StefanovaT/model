@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -60,6 +62,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### BackgroundImage
 
@@ -69,6 +72,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### BackgroundPositionHorizontal
 
@@ -88,6 +92,7 @@ _Allowed Values (General.Products.ProductCatalogsRepository.BackgroundPositionHo
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Left**  
+_Show in UI_: **ShownByDefault**  
 
 ### BackgroundPositionVertical
 
@@ -107,6 +112,7 @@ _Allowed Values (General.Products.ProductCatalogsRepository.BackgroundPositionVe
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Top**  
+_Show in UI_: **ShownByDefault**  
 
 ### BackgroundRepeat
 
@@ -127,6 +133,7 @@ _Allowed Values (General.Products.ProductCatalogsRepository.BackgroundRepeat Enu
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **RepeatBothVerticallyAndHorizontally**  
+_Show in UI_: **ShownByDefault**  
 
 ### Code
 
@@ -137,6 +144,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -146,6 +154,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FooterHtml
 
@@ -156,6 +165,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **CannotBeShown**  
 
 ### HeaderHtml
 
@@ -166,6 +176,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **CannotBeShown**  
 
 ### Id
 
@@ -174,6 +185,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Logo
 
@@ -183,6 +195,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -192,6 +205,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -202,6 +216,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -211,6 +226,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -222,6 +238,7 @@ The root (starting) product group of the catalog. Each catalog starts from a roo
 _Type_: **[ProductGroups](General.Products.ProductGroups.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WebSite
 
@@ -231,6 +248,7 @@ _Type_: **[WebSites](Systems.Core.WebSites.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

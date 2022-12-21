@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {Offer.DocumentNo} {Offer.DocumentType.TypeName:T}_  
 Default Search Members:  
 _Offer.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -70,6 +72,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **60**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DeliveryTermDays
 
@@ -80,6 +83,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -89,6 +93,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### GuaranteePeriodDays
 
@@ -98,6 +103,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.GuaranteePeriodDays`
@@ -108,6 +114,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsSelected
 
@@ -118,6 +125,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **HiddenByDefault**  
 
 ### LineAmount
 
@@ -128,6 +136,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))`
@@ -143,6 +152,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineNo
 
@@ -152,6 +162,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.Offer.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -167,6 +178,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.LineDiscount.DiscountPercent`
@@ -182,6 +194,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -191,6 +204,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductDescription
 
@@ -200,6 +214,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Product.Name`
@@ -215,6 +230,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -224,6 +240,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -238,6 +255,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Offer.RequiredDeliveryDate`
@@ -253,6 +271,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -268,6 +287,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( CalculateUnitPriceFromLineAmount( obj.LineAmount, obj.Quantity, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent) ?? obj.UnitPrice)`
@@ -283,6 +303,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **60**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -295,6 +316,7 @@ _Type_: **[Offers](Crm.Presales.Offers.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineDiscount
 
@@ -303,6 +325,7 @@ When not null, contains the discount policy selected for this line. `Filter(mult
 _Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DetermineLineDiscount( obj.RequiredDeliveryDate, obj.Offer.Customer, obj.Offer.ShipToCustomer, obj.Product, obj.Quantity, obj.QuantityUnit, obj.Offer.EnterpriseCompany, obj.Offer.EnterpriseCompanyLocation, obj.Offer.PriceList, obj.LineDiscount)`
@@ -313,6 +336,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Offer.EndCustomerParty`
@@ -328,6 +352,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### Product
 
@@ -336,6 +361,7 @@ The offered product. `Required` `Filter(multi eq)`
 _Type_: **[Products](General.Products.Products.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( obj.ProductCode.Product == null), obj.Product, obj.ProductCode.Product)`
@@ -349,6 +375,7 @@ Not null, when the product is selected using a coding system code. `Filter(multi
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ProductPrice
 
@@ -357,6 +384,7 @@ Not null when the price has been selected from the list of valid standard prices
 _Type_: **[ProductPrices](Crm.ProductPrices.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `DetermineProductPrice( obj.Product, obj.Quantity, obj.QuantityUnit, obj.RequiredDeliveryDate, obj.Offer.Customer, obj.Offer.ShipToCustomer, obj.Offer.EnterpriseCompany, obj.Offer.EnterpriseCompanyLocation, null, obj.Offer.PriceList, obj.ProductPrice)`
@@ -367,6 +395,7 @@ The measurement unit of Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Product.MeasurementUnit.IfNullThen( obj.QuantityUnit)`

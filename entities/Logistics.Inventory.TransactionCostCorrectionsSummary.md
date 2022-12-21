@@ -12,6 +12,8 @@ Default Display Text Format:
 _{BaseCostAdjustmentValue}: {CostCorrectionAmountValue}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -48,6 +50,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CostCorrectionAmount
 
@@ -57,6 +60,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductCostAdjustment
 
@@ -66,6 +70,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StoreCostAdjustment
 
@@ -75,6 +80,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -88,6 +94,7 @@ _Category_: **System**
 _Inherited From_: **Inv_Transaction_Lines_Table.Transaction_Line_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### TransactionObj
 
@@ -98,6 +105,7 @@ _Category_: **System**
 _Inherited From_: **Inv_Transaction_Lines_Table.Transaction_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

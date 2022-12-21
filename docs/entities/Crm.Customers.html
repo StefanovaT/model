@@ -89,7 +89,9 @@ Default Search Members:<br>
 Code Data Member:<br>
 <em>Number</em><br>
 Name Data Member:<br>
-<em>Party.PartyName</em></p>
+<em>Party.PartyName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -298,40 +300,46 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="allowuseasprimarycustomer">AllowUseAsPrimaryCustomer</h3>
 <p>Specifies whether to allow the customer to be used as primary customer in a sales deal. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="allowuseasshiptocustomer">AllowUseAsShipToCustomer</h3>
 <p>True to allow the customer to be used as ship to customer in a sales deal. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtime">CreationTime</h3>
 <p>Date and time when the Customer was created. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creationuser">CreationUser</h3>
 <p>Login name of the user, who created the Customer. <code>Filter(like)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creditlimit">CreditLimit</h3>
 <p>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: DefaultCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( obj.DefaultCurrency != null), obj.EnterpriseCompany.DefaultCustomerCreditLimitBase, obj.CreditLimit)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -342,47 +350,54 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultpaymentstartdays">DefaultPaymentStartDays</h3>
 <p>Specifies the number of days after the sales order, when the payment becomes due. 0 means that the payment is due immediately. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultpaymenttermdays">DefaultPaymentTermDays</h3>
 <p>Default payment term in days when issuing documents for this customer. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="fromdate">FromDate</h3>
 <p>Start date of the customer relationship. <code>Default(Today)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>CurrentDate</strong></p>
+<em>Default Value</em>: <strong>CurrentDate</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="graceperioddays">GracePeriodDays</h3>
 <p>Number of days after the payment deadline, during which the system still allows new sales orders for the customer. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="number">Number</h3>
 <p>Unique customer number. <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (16) <strong>nullable</strong></strong><br>
@@ -390,86 +405,100 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>16</strong></p>
+<em>Maximum Length</em>: <strong>16</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="persistsalesorderslots">PersistSalesOrdersLots</h3>
 <p>If checked, specifies that the lots set in the Sales orders for this customer, cannot be changed during the execution of the Store transactions for these Sales orders. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="thrudate">ThruDate</h3>
 <p>The date of customer relationship termination. null for active customers. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
 <p>Date and time when the Customer was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="updateuser">UpdateUser</h3>
 <p>Login name of the user, who last updated the Customer. <code>Filter(like)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="collectionsresponsibleemployee">CollectionsResponsibleEmployee</h3>
 <p>The employee, who is responsible for the collections from the customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyEmployees.html">CompanyEmployees</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="customertype">CustomerType</h3>
 <p>The user-defined type of this customer. null when there is no specific type. Record-level security from the customer type is applied to the individual customers and can be used for security purposes. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.CustomerTypes.html">CustomerTypes</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultcurrency">DefaultCurrency</h3>
 <p>The primary currency for value calculations for this customer - for credit limit, due amounts, etc. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Currencies.html">Currencies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.EnterpriseCompany.BaseCurrency</code></p>
 <h3 id="defaultdistributionchannel">DefaultDistributionChannel</h3>
 <p>The default distribution channel used when selling to the customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.DistributionChannels.html">DistributionChannels</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultpaymentaccount">DefaultPaymentAccount</h3>
 <p>The default payment account to use when creating new documents for this customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentAccounts.html">PaymentAccounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DefaultPaymentType.GetDefaultPaymentAccount( ).IfNullThen( obj.DefaultPaymentAccount)</code></p>
 <h3 id="defaultpaymenttype">DefaultPaymentType</h3>
 <p>If not null, specifies default payment type for the sales, offers and invoices for this customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentTypes.html">PaymentTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultpricelist">DefaultPriceList</h3>
 <p>If not null, specifies default price list when selling to this customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.PriceLists.html">PriceLists</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The Enterprise Company for which this customer is recorded. The same external party can be listed with different conditions for the different enterprise companies. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Transaction.CurrentEnterpriseCompany</code></p>
 <h3 id="party">Party</h3>
@@ -478,18 +507,21 @@ Name Data Member:<br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="salesperson">SalesPerson</h3>
 <p>The default sales person for new sales documents for this customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.SalesPersons.html">SalesPersons</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="servicedbyenterprisecompanylocation">ServicedByEnterpriseCompanyLocation</h3>
 <p>The enterprise company location, which sells to this client by default. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

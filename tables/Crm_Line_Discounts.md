@@ -15,6 +15,7 @@ Discount policies for sales documents. Entity: Crm_Line_Discounts
 |[Customer_Id](#customer_id)|`uniqueidentifier` |Apply the discount only if this is the customer|
 |[Customer_Type_Id](#customer_type_id)|`uniqueidentifier` |Apply the discount only if the customer is of this customer type|
 |[Description](#description)|`nvarchar(50)` |The description of the discount that is shown to the operator when he/she should choose between different discounts|
+|[Discount_Level](#discount_level)|`nvarchar(1)` Allowed: `1`, `2`, `3`|Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm.|
 |[Discount_Percent](#discount_percent)|`decimal(7, 6)` |The discount percent that should be applied if all the matching criteria are met.|
 |[Distribution_Channel_Id](#distribution_channel_id)|`uniqueidentifier` |Apply the discount only when the sales document is on the specified channel|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, the policy is applied only for documents of the specified enterprise company |
@@ -47,7 +48,7 @@ Discount policies for sales documents. Entity: Crm_Line_Discounts
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -84,7 +85,7 @@ Apply the discount only if this is the customer
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -121,7 +122,7 @@ Apply the discount only if the customer is of this customer type
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -158,7 +159,7 @@ The description of the discount that is shown to the operator when he/she should
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|50|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -180,6 +181,37 @@ The description of the discount that is shown to the operator when he/she should
 | - | - | - | - |
 |Like|None|no|no|
 
+### Discount_Level
+
+
+Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`1`, `2`, `3`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|1|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|19|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|yes|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(1)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
 ### Discount_Percent
 
 
@@ -195,7 +227,7 @@ The discount percent that should be applied if all the matching criteria are met
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -231,7 +263,7 @@ Apply the discount only when the sales document is on the specified channel
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -268,7 +300,7 @@ When not NULL, the policy is applied only for documents of the specified enterpr
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -305,7 +337,7 @@ When set, the policy is applied only for documents of the specified enterprise c
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -342,7 +374,7 @@ Starting date of validity of the discount. NULL means no from date restriction
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -376,7 +408,7 @@ Starting date of validity of the discount. NULL means no from date restriction
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -412,7 +444,7 @@ Apply the discount only if the quantity sold is equal to or less than the specif
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -449,7 +481,7 @@ Apply the discount only if the quantity sold is equal to or more than the specif
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -486,7 +518,7 @@ Apply the discount only if this price list is used
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -524,7 +556,7 @@ The priority of this discount policy. When selecting a discount for a sales docu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -554,7 +586,7 @@ Apply the discount only if the product sold is contained in this product group o
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -591,7 +623,7 @@ Apply the discount only when this specific product is sold
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -625,7 +657,7 @@ Apply the discount only when this specific product is sold
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -655,7 +687,7 @@ Apply the discount only if the customer is included in this target group
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -692,7 +724,7 @@ Ending date (inclusive) of validity of the discount. If NULL, the discount is va
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

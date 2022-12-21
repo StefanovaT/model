@@ -14,6 +14,8 @@ Default Search Members:
 _ParentName_  
 Name Data Member:  
 _ParentName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -65,6 +67,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowBasicData
 
@@ -75,6 +78,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowEmail
 
@@ -85,6 +89,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowOtherData
 
@@ -95,6 +100,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowPhone
 
@@ -105,6 +111,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConsentImage
 
@@ -114,6 +121,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConsentText
 
@@ -124,6 +132,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConsentType
 
@@ -145,6 +154,7 @@ _Allowed Values (Applications.PersonalData.ProcessingConsentsRepository.ConsentT
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -154,6 +164,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### GivenOnUtc
 
@@ -163,6 +174,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -171,6 +183,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -181,6 +194,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsChild
 
@@ -191,6 +205,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -201,6 +216,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -210,6 +226,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentEmail
 
@@ -220,6 +237,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentName
 
@@ -230,6 +248,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentPhone
 
@@ -240,6 +259,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
 
 ### RetractedOnUtc
 
@@ -249,6 +269,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -260,6 +281,7 @@ The person, for which the consent is given. Null when the consent is given by an
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonalDataProcess
 
@@ -268,6 +290,7 @@ The process, which will be used to process the data. Null when the process is un
 _Type_: **[PersonalDataProcesses](Applications.PersonalData.PersonalDataProcesses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### User
 
@@ -276,6 +299,7 @@ The login user, for which the consent is given. Null when a consent is entered f
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

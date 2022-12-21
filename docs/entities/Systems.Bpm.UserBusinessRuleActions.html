@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>UserBusinessRule.Name</em><br>
 Name Data Member:<br>
-<em>UserBusinessRule.Name</em></p>
+<em>UserBusinessRule.Name</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -184,7 +186,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( obj.UserBusinessRule.Actions.Select( c =&gt; c.ActionNo).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -230,25 +233,29 @@ Allowed values for the <code>ActionType</code>(Systems.Bpm.UserBusinessRuleActio
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parameter1type">Parameter1Type</h3>
 <p>The type of the parameter specifies how to obtain the parameter value.</p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRuleActions.html#parameter1type">ActionParameterType</a> <strong>nullable</strong></strong><br>
@@ -286,14 +293,16 @@ Generic enum type for ActionParameterType properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parameter1value">Parameter1Value</h3>
 <p>The actual value of the parameter.</p>
 <p><em>Type</em>: <strong>string (256) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>256</strong></p>
+<em>Maximum Length</em>: <strong>256</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parameter2type">Parameter2Type</h3>
 <p>The type of the parameter specifies how to obtain the parameter value.</p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRuleActions.html#parameter2type">ActionParameterType</a> <strong>nullable</strong></strong><br>
@@ -331,14 +340,16 @@ Generic enum type for ActionParameterType properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parameter2value">Parameter2Value</h3>
 <p>The actual value of the parameter.</p>
 <p><em>Type</em>: <strong>string (256) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>256</strong></p>
+<em>Maximum Length</em>: <strong>256</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parameter3type">Parameter3Type</h3>
 <p>The type of the parameter specifies how to obtain the parameter value.</p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRuleActions.html#parameter3type">ActionParameterType</a> <strong>nullable</strong></strong><br>
@@ -376,21 +387,24 @@ Generic enum type for ActionParameterType properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parameter3value">Parameter3Value</h3>
 <p>The actual value of the parameter.</p>
 <p><em>Type</em>: <strong>string (256) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>256</strong></p>
+<em>Maximum Length</em>: <strong>256</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="userbusinessrule">UserBusinessRule</h3>
 <p>The business rule, for which the action is defined. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRules.html">UserBusinessRules</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

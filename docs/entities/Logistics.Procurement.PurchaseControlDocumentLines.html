@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{LineNo}. {PurchaseControlDocument.DocumentNo} {PurchaseControlDocument.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
-<em>PurchaseControlDocument.DocumentNo</em></p>
+<em>PurchaseControlDocument.DocumentNo</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -192,12 +194,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#document"><s>Document</s></a></td>
 <td><a href="Logistics.Procurement.PurchaseControlDocuments.html">PurchaseControlDocuments</a></td>
-<td><strong>OBSOLETE! Do not use!</strong> The <see cref="Purchase<br />ControlDocument"></see> to which this PurchaseControl<br>DocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The <see cref="Purchase<br />ControlDocument"></see> to which this PurchaseControl<br>DocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#purchasecontroldocument"><s>PurchaseControlDocument</s></a></td>
 <td><a href="Logistics.Procurement.PurchaseControlDocuments.html">PurchaseControlDocuments</a></td>
-<td><strong>OBSOLETE! Do not use!</strong> The <see cref="Purchase<br />ControlDocument"></see> to which this PurchaseControl<br>DocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code> <code>Obsolete</code> <code>Owner</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The <see cref="Purchase<br />ControlDocument"></see> to which this PurchaseControl<br>DocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code> <code>Obsolete</code> <code>Owner</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#purchaseinvoice">PurchaseInvoice</a></td>
@@ -212,7 +214,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#purchaseoperationtype"><s>PurchaseOperationType</s></a></td>
 <td><a href="Logistics.Procurement.PurchaseOperationTypes.html">PurchaseOperationTypes</a> (nullable)</td>
-<td><strong>OBSOLETE! Do not use!</strong> The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code> <code>Obsolete</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code> <code>Obsolete</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#purchaseorder">PurchaseOrder</a></td>
@@ -252,151 +254,177 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>decimal (14, 2) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="confirmedstandardquantitybase">ConfirmedStandardQuantityBase</h3>
 <p>The standard quantity of the ordered items, confirmed by the supplier (usually with Purchase Confirmation) in base measurement unit. Null when the logged operation did not involve confirming ordered items.</p>
 <p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="invoicedamountbase">InvoicedAmountBase</h3>
 <p>The amount (in base currency) of the invoiced items (usually with Purchase Invoice). Null when the logged operation did not involve invoicing items.</p>
 <p><em>Type</em>: <strong>decimal (14, 2) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="invoicedstandardquantitybase">InvoicedStandardQuantityBase</h3>
 <p>The standard quantity of the invoiced items (usually with Purchase Invoice) in base measurement unit. Null when the logged operation did not involve invoicing items.</p>
 <p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lineno">LineNo</h3>
 <p>The consecutive line number within the control document. <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="notes">Notes</h3>
 <p>Notes for this PurchaseControlDocumentLine.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderedamountbase">OrderedAmountBase</h3>
 <p>The amount (in base currency) of the ordered items (usually with Purchase Order). Null when the logged operation did not involve ordering items.</p>
 <p><em>Type</em>: <strong>decimal (14, 2) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderedstandardquantitybase">OrderedStandardQuantityBase</h3>
 <p>The standard quantity of the ordered items (usually with Purchase Order) in base measurement unit. Null when the logged operation did not involve ordering items.</p>
 <p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="receivedamountbase">ReceivedAmountBase</h3>
 <p>The amount (in base currency) of the received items (usually with Receiving Order). Null when the logged operation did not involve receiving items.</p>
 <p><em>Type</em>: <strong>decimal (14, 2) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="receivedstandardquantitybase">ReceivedStandardQuantityBase</h3>
 <p>The standard quantity of the received items (usually with Receiving Order) in base measurement unit. Null when the logged operation did not involve receiving items.</p>
 <p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="requestedamountbase">RequestedAmountBase</h3>
 <p>The amount (in base currency) of the requested items (usually with Purchase Requisition). Null when the logged operation did not involve requesting items.</p>
 <p><em>Type</em>: <strong>decimal (14, 2) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="requestedstandardquantitybase">RequestedStandardQuantityBase</h3>
 <p>The standard quantity of the requested items (usually with Purchase Requisition) in base measurement unit. Null when the logged operation did not involve requesting items.</p>
 <p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
-<p><strong>OBSOLETE! Do not use!</strong> The <see cref="PurchaseControlDocument"></see> to which this PurchaseControlDocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code></p>
-<p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseControlDocuments.html">PurchaseControlDocuments</a></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
-<h3 id="purchasecontroldocument">PurchaseControlDocument</h3>
-<p><strong>OBSOLETE! Do not use!</strong> The <see cref="PurchaseControlDocument"></see> to which this PurchaseControlDocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code> <code>Obsolete</code> <code>Owner</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> The <see cref="PurchaseControlDocument"></see> to which this PurchaseControlDocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseControlDocuments.html">PurchaseControlDocuments</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="purchasecontroldocument">PurchaseControlDocument</h3>
+<p><strong>OBSOLETE! Do not use!</strong> The <see cref="PurchaseControlDocument"></see> to which this PurchaseControlDocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code> <code>Obsolete</code> <code>Owner</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseControlDocuments.html">PurchaseControlDocuments</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="purchaseinvoice">PurchaseInvoice</h3>
 <p>The purchase invoice which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseInvoices.html">PurchaseInvoices</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="purchaseinvoiceline">PurchaseInvoiceLine</h3>
 <p>The purchase invoice line which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseInvoiceLines.html">PurchaseInvoiceLines</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="purchaseoperationtype">PurchaseOperationType</h3>
-<p><strong>OBSOLETE! Do not use!</strong> The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code> <code>Obsolete</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code> <code>Obsolete</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseOperationTypes.html">PurchaseOperationTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="purchaseorder">PurchaseOrder</h3>
 <p>The purchase order which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseOrders.html">PurchaseOrders</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="purchaseorderline">PurchaseOrderLine</h3>
 <p>The purchase order line which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseOrderLines.html">PurchaseOrderLines</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="purchaserequisition">PurchaseRequisition</h3>
 <p>The purchase requisition which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.Requisitions.html">Requisitions</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="purchaserequisitionline">PurchaseRequisitionLine</h3>
 <p>The purchase requisition line which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.RequisitionLines.html">RequisitionLines</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="receivingorder">ReceivingOrder</h3>
 <p>The receiving order which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.ReceivingOrders.html">ReceivingOrders</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="receivingorderline">ReceivingOrderLine</h3>
 <p>The receiving order line which is to be or was executed. Null when the data is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.ReceivingOrderLines.html">ReceivingOrderLines</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

@@ -12,6 +12,8 @@ Default Display Text Format:
 _{DiscountPercent:P} {Description}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -24,6 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Description](Crm.LineDiscounts.md#description) | string (50) __nullable__ | The description of the discount that is shown to the operator when he/she should choose between different discounts. `Filter(like)` 
+| [DiscountLevel](Crm.LineDiscounts.md#discountlevel) | [DiscountLevel](Crm.LineDiscounts.md#discountlevel) | Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. `Required` `Default("1")` `ORD` `Introduced in version 23.1.2.8` 
 | [DiscountPercent](Crm.LineDiscounts.md#discountpercent) | decimal (7, 6) | The discount percent that should be applied if all the matching criteria are met. `Required` `Default(0)` `Filter(ge;le)` 
 | [DisplayText](Crm.LineDiscounts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Crm.LineDiscounts.md#fromdate) | datetime __nullable__ | Starting date of validity of the discount. null means no from date restriction. `Filter(eq;ge;le)` 
@@ -61,6 +64,28 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
+
+### DiscountLevel
+
+Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. `Required` `Default("1")` `ORD` `Introduced in version 23.1.2.8`
+
+_Type_: **[DiscountLevel](Crm.LineDiscounts.md#discountlevel)**  
+_Indexed_: **True**  
+_Category_: **System**  
+Allowed values for the `DiscountLevel`(Crm.LineDiscounts.md#discountlevel) data attribute  
+_Allowed Values (Crm.LineDiscountsRepository.DiscountLevel Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| One | One value. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'One' |
+| Two | Two value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Two' |
+| Three | Three value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Three' |
+
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **True**  
+_Default Value_: **One**  
+_Show in UI_: **ShownByDefault**  
 
 ### DiscountPercent
 
@@ -71,6 +96,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -80,6 +106,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FromDate
 
@@ -89,6 +116,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -97,6 +125,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### MaxQuantity
 
@@ -106,6 +135,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### MinQuantity
 
@@ -115,6 +145,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -124,6 +155,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Priority
 
@@ -145,6 +177,7 @@ _Allowed Values (General.Priority Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **3**  
+_Show in UI_: **ShownByDefault**  
 
 ### ThruDate
 
@@ -154,6 +187,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -165,6 +199,7 @@ _Supports Order By_: **False**
 _Type_: **[Campaigns](Crm.Marketing.Campaigns.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Customer
 
@@ -174,6 +209,7 @@ _Type_: **[Customers](Crm.Customers.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### CustomerType
 
@@ -182,6 +218,7 @@ Apply the discount only if the customer is of this customer type. `Filter(multi 
 _Type_: **[CustomerTypes](Crm.CustomerTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DistributionChannel
 
@@ -191,6 +228,7 @@ _Type_: **[DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullabl
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -199,6 +237,7 @@ When not null, the policy is applied only for documents of the specified enterpr
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### EnterpriseCompanyLocation
 
@@ -207,6 +246,7 @@ When set, the policy is applied only for documents of the specified enterprise c
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.EnterpriseCompanyLocation != null) AndAlso ( obj.EnterpriseCompanyLocation.Company != obj.EnterpriseCompany)), null, obj.EnterpriseCompanyLocation.Company)`
@@ -217,6 +257,7 @@ Apply the discount only if this price list is used. `Filter(multi eq)`
 _Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -226,6 +267,7 @@ _Type_: **[Products](General.Products.Products.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductGroup
 
@@ -234,6 +276,7 @@ Apply the discount only if the product sold is contained in this product group o
 _Type_: **[ProductGroups](General.Products.ProductGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### TargetGroup
 
@@ -242,6 +285,7 @@ Apply the discount only if the customer is included in this target group. `Filte
 _Type_: **[TargetGroups](Crm.Marketing.TargetGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

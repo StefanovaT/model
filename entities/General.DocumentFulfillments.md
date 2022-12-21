@@ -14,6 +14,8 @@ Default Search Members:
 _DestinationEntityName_  
 Name Data Member:  
 _DestinationEntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -64,6 +66,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
+_Show in UI_: **ShownByDefault**  
 
 ### DestinationEntityName
 
@@ -75,6 +78,7 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Default Value_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -84,6 +88,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### DocumentLineId
 
@@ -93,6 +98,7 @@ _Type_: **guid**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### FulfillmentType
 
@@ -110,6 +116,7 @@ _Allowed Values (General.DocumentFulfillmentsRepository.FulfillmentType Enum Mem
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -118,6 +125,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsFinal
 
@@ -127,6 +135,7 @@ _Type_: **boolean**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineNo
 
@@ -136,6 +145,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineType
 
@@ -147,6 +157,7 @@ _Supported Filters_: **Equals, EqualsIn**
 _Supports Order By_: **False**  
 _Maximum Length_: **1**  
 _Default Value_: **L**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -156,6 +167,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -165,6 +177,7 @@ _Type_: **decimal (12, 3)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardQuantity
 
@@ -174,6 +187,7 @@ _Type_: **decimal (12, 3)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -185,6 +199,7 @@ The user, who created the record. `Required` `Filter(multi eq)`
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Document
 
@@ -195,6 +210,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Lot
 
@@ -203,6 +219,7 @@ The lot, which was fulfilled. null when the fulfillment was not for a specific l
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentFulfillment
 
@@ -211,6 +228,7 @@ The parent document fulfillment. Used when the information of the current fulfil
 _Type_: **[DocumentFulfillments](General.DocumentFulfillments.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -220,6 +238,7 @@ _Type_: **[Products](General.Products.Products.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductVariant
 
@@ -228,6 +247,7 @@ The product variant, which was fulfilled. null when the fulfillment was not for 
 _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 
@@ -236,6 +256,7 @@ The serial number, which was fulfilled. null when the fulfillment was not for a 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

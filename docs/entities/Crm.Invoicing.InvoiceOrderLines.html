@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{LineNo}. {InvoiceOrder.DocumentNo} {InvoiceOrder.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
-<em>InvoiceOrder.DocumentNo</em></p>
+<em>InvoiceOrder.DocumentNo</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -263,26 +265,30 @@ Generic enum type for InvoicingBusinessReason properties<br>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Shipment</strong></p>
+<em>Default Value</em>: <strong>Shipment</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="lineamount">LineAmount</h3>
 <p>Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, Convert( obj.LineCustomDiscountPercent, Nullable</code>1), Convert( obj.LineStandardDiscountPercent, Nullable<code>1), obj.InvoiceOrder.DocumentCurrency)</code></p>
 <h3 id="linecustomdiscountpercent">LineCustomDiscountPercent</h3>
@@ -291,13 +297,15 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lineno">LineNo</h3>
 <p>Line number, unique within the InvoiceOrder. Usually is increasing number like 10, 20, 30, ... when initially entering the InvoiceOrder (in order to allow insertions with adjustment documents). <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( obj.InvoiceOrder.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -308,7 +316,8 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.LineDiscount != null), obj.LineDiscount.DiscountPercent, 0)</code></p>
 <h3 id="objectversion">ObjectVersion</h3>
@@ -316,13 +325,15 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productdescription">ProductDescription</h3>
 <p>The description of Product. Initially copied from the name of the Product or from the generating document. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.Name</code></p>
 <h3 id="quantity">Quantity</h3>
@@ -331,13 +342,15 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="quantitybase">QuantityBase</h3>
 <p>The equivalent of Quantity in the base measurement unit of the Product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -347,7 +360,8 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -358,7 +372,8 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.CalculateUnitPrice( obj.InvoiceOrder, obj.Product)</code></p>
 <h2 id="reference-details">Reference Details</h2>
@@ -367,19 +382,22 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrders.html">InvoiceOrders</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="invoiceorder">InvoiceOrder</h3>
 <p>The <see cref="InvoiceOrder"></see> to which this InvoiceOrderLine belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrders.html">InvoiceOrders</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="linedealtype">LineDealType</h3>
 <p>Deal type to be passed to the invoice line. If deal type in the line is different from deal type in the header another VAT entry is created from the invoice. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.InvoiceOrder.DealType</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -388,7 +406,8 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p>The line discount type used to form the Line_Standard_Discount_Percent. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DetermineLineDiscount( Convert( ( obj.InvoiceOrder.DeliveryDate ?? obj.InvoiceOrder.DocumentDate), Nullable</code>1), obj.InvoiceOrder.Customer, obj.Product, obj.Quantity, obj.InvoiceOrder.EnterpriseCompany, obj.InvoiceOrder.EnterpriseCompanyLocation, IIF( ( obj.SalesOrder == null), null, obj.SalesOrder.DistributionChannel), IIF( ( obj.SalesOrder == null), null, obj.SalesOrder.PriceList))`</p>
 <h3 id="paymenttransaction">PaymentTransaction</h3>
@@ -396,17 +415,20 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p><em>Type</em>: <strong><a href="Finance.Payments.PaymentTransactions.html">PaymentTransactions</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>The product, which is ordered for invoicing. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="quantityunit">QuantityUnit</h3>
 <p>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.MeasurementUnit</code></p>
 <h3 id="salesorder">SalesOrder</h3>
@@ -414,7 +436,8 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrders.html">SalesOrders</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.InvoiceOrder.SalesOrder</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -424,18 +447,21 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrderLines.html">SalesOrderLines</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>
 <p>Which serial number to receive/issue. null means that serial number is unknown or not applicable. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="transactionline">TransactionLine</h3>
 <p>The store transaction line that is to be invoiced by this line, for Business Reason = S. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreTransactionLines.html">StoreTransactionLines</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

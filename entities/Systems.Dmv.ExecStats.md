@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Application}: {Database}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -46,6 +48,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### AvgTimeMs
 
@@ -55,6 +58,7 @@ _Type_: **double**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Count
 
@@ -64,6 +68,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Database
 
@@ -74,6 +79,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsLongPolling
 
@@ -83,6 +89,7 @@ _Type_: **boolean**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Kind
 
@@ -93,6 +100,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### MaxTimeMs
 
@@ -102,6 +110,7 @@ _Type_: **double**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Operation
 
@@ -112,6 +121,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### StatisticsSince
 
@@ -121,6 +131,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TotalTimeMs
 
@@ -130,6 +141,7 @@ _Type_: **double**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

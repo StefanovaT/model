@@ -14,6 +14,8 @@ Default Search Members:
 _SalesOrder.EntityName_  
 Name Data Member:  
 _SalesOrder.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -60,6 +62,7 @@ _Type_: **[Amount (14, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### AmountPercent
 
@@ -69,6 +72,7 @@ _Type_: **decimal (7, 6) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -78,6 +82,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### DueDateFormMethod
 
@@ -98,6 +103,7 @@ _Allowed Values (Crm.PaymentPlanDueDateSource Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExplicitPaymentDueDate
 
@@ -107,6 +113,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( Convert( obj.DueDateFormMethod, Int32) != 0), null, obj.ExplicitPaymentDueDate)`
@@ -118,6 +125,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( Convert( obj.DueDateFormMethod, Int32) != 0), null, obj.ExplicitPaymentDueStartDate)`
@@ -128,6 +136,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### InstallmentNumber
 
@@ -137,6 +146,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.SalesOrder.PaymentPlans.Select( c => c.InstallmentNumber).DefaultIfEmpty( 0).Max( ) + 1)`
@@ -152,6 +162,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -161,6 +172,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PaymentStartDays
 
@@ -171,6 +183,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### PaymentTermDays
 
@@ -181,6 +194,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( Convert( obj.DueDateFormMethod, Int32) == 3) OrElse ( Convert( obj.DueDateFormMethod, Int32) == 4)), 0, obj.PaymentTermDays)`
@@ -196,6 +210,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( obj.AmountPercent != null), False, obj.Remainder)`
@@ -212,6 +227,7 @@ Specifies the payment account towards which the payment is expected. null means 
 _Type_: **[PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.PaymentAccount`
@@ -226,6 +242,7 @@ Specifies the expected payment type. null means that there is no expected paymen
 _Type_: **[PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.PaymentType`
@@ -241,6 +258,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

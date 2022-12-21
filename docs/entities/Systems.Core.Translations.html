@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>ApplicationName</em><br>
 Name Data Member:<br>
-<em>ApplicationName</em></p>
+<em>ApplicationName</em><br>
+Category:  <em>Settings</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -168,7 +170,8 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( Not( IsNullOrEmpty( obj.TranslationField)), True, obj.Active)</code></p>
 <h3 id="applicationname">ApplicationName</h3>
@@ -178,26 +181,30 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>50</strong></p>
+<em>Maximum Length</em>: <strong>50</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtime">CreationTime</h3>
 <p>Timestamp when the translation was first created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>CurrentDateTime</strong></p>
+<em>Default Value</em>: <strong>CurrentDateTime</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="language">Language</h3>
 <p>The code of the language or language-culture pair. Standard Windows codes are used. English=&quot;en&quot;; US English = &quot;en-us&quot;. <code>Required</code> <code>Default(&quot;en&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (8)</strong><br>
@@ -205,20 +212,23 @@ Name Data Member:<br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>8</strong><br>
-<em>Default Value</em>: <strong>en</strong></p>
+<em>Default Value</em>: <strong>en</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="resourceid">ResourceId</h3>
 <p>The unique identifier of the translated resource. Should use ASCII/English chars only. Shorter strings are suggested. Depending on Text_Type: T:TableName; C:ColumnName; H:TableName.ColumnName; E,M,S: Application specific code. <code>Required</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (800)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>800</strong></p>
+<em>Maximum Length</em>: <strong>800</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="resourcetype">ResourceType</h3>
 <p>T=Table (entity) Name; C=Column Name; H=Column Hint; R=Meta Resource; E=Error; M=Message; S=Other application specific String. <code>Required</code> <code>Default(&quot;S&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.Translations.html#resourcetype">ResourceType</a></strong><br>
@@ -265,21 +275,24 @@ Allowed values for the <code>ResourceType</code>(Systems.Core.Translations.md#re
 </table>
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>OtherApplicationSpecific</strong></p>
+<em>Default Value</em>: <strong>OtherApplicationSpecific</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="translationfield">TranslationField</h3>
 <p>The translated text. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (max)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
 <p>When the translation was last updated. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>CurrentDateTime</strong></p>
+<em>Default Value</em>: <strong>CurrentDateTime</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

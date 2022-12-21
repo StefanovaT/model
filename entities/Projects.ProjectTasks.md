@@ -14,6 +14,8 @@ Default Search Members:
 _TaskName_  
 Name Data Member:  
 _TaskName_  
+Category:  _Definitions_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -72,6 +74,7 @@ _Type_: **[Amount (12, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.PlannedDurationHours != 0) AndAlso ( obj.WorkType != null)), obj.CalculateBudgetLaborAmount( ), new Amount( 0, obj.Project.BudgetingCurrency))`
@@ -83,6 +86,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FinishDateTime
 
@@ -93,6 +97,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -101,6 +106,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Notes
 
@@ -111,6 +117,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -120,6 +127,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PlannedDurationHours
 
@@ -130,6 +138,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProjectTaskNo
 
@@ -139,6 +148,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StartDateTime
 
@@ -149,6 +159,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### TaskName
 
@@ -159,6 +170,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -170,6 +182,7 @@ The Id of the Cm_Activity created for this task. null means that activity is sti
 _Type_: **[Activities](General.Contacts.Activities.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Project
 
@@ -179,6 +192,7 @@ _Type_: **[Projects](Projects.Projects.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProjectWorkElement
 
@@ -187,6 +201,7 @@ The work element under which the task is filed. `Required` `Filter(multi eq)`
 _Type_: **[ProjectWorkElements](Projects.ProjectWorkElements.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Resource
 
@@ -195,6 +210,7 @@ The resource, which is required for the task. null means - do not plan any resou
 _Type_: **[Resources](Projects.Resources.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### ResponsibleParty
 
@@ -203,6 +219,7 @@ The responsible party. Usually a person and usually one of the project participa
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### TaskType
 
@@ -211,6 +228,7 @@ The type of the task. Determines the work type of the tasks, default billing rul
 _Type_: **[TaskTypes](Projects.TaskTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkType
 
@@ -219,6 +237,7 @@ Type of work to be done. null means that type of work is undetermined yet. `Filt
 _Type_: **[TypeWorkTypes](Projects.TypeWorkTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

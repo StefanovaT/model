@@ -14,6 +14,8 @@ Default Search Members:
 _ServiceAgreement.EntityName_  
 Name Data Member:  
 _ServiceAgreement.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -55,6 +57,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EndDate
 
@@ -64,6 +67,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -72,6 +76,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineNo
 
@@ -81,6 +86,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.ServiceAgreement.Services.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -95,6 +101,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Quantity
 
@@ -104,6 +111,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StartDate
 
@@ -113,6 +121,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -124,6 +133,7 @@ The measurement unit of Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Service.MeasurementUnit.IfNullThen( obj.ServiceProduct.MeasurementUnit).IfNullThen( obj.QuantityUnit)`
@@ -134,6 +144,7 @@ Paid or agreed in advance service that won't be invoiced after service activitie
 _Type_: **[Services](Applications.Service.Services.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ServiceProduct != null), null, obj.Service)`
@@ -146,6 +157,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### ServiceProduct
 
@@ -154,6 +166,7 @@ Paid or agreed in advance product that will be substracted from the invoiced pro
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.Service != null), null, obj.ServiceProduct)`

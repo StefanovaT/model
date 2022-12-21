@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>AssetTransaction.EntityName</em><br>
 Name Data Member:<br>
-<em>AssetTransaction.EntityName</em></p>
+<em>AssetTransaction.EntityName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -210,7 +212,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DepreciationValueBase.ConvertTo( obj.Asset.ValuationCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="depreciationvaluebase">DepreciationValueBase</h3>
@@ -219,7 +222,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DepreciationValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="displaytext">DisplayText</h3>
@@ -227,20 +231,23 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="negativereservevalue">NegativeReserveValue</h3>
 <p>Change in the value of the negative reserve after asset valuations (in the currency of the asset). <code>Currency: Asset.ValuationCurrency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.NegativeReserveValueBase.ConvertTo( obj.Asset.ValuationCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="negativereservevaluebase">NegativeReserveValueBase</h3>
@@ -249,7 +256,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.NegativeReserveValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="objectversion">ObjectVersion</h3>
@@ -257,7 +265,8 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="operationtype">OperationType</h3>
 <p>Type of the current asset operation: PUR = Purchase, SLS = Sale, DEP = Depreciation, ADJ = Adjustment, REV = Reevaluation. <code>Required</code> <code>Default(&quot;ADJ&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Assets.AssetTransactionLines.html#operationtype">OperationType</a></strong><br>
@@ -296,14 +305,16 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Adjustment</strong></p>
+<em>Default Value</em>: <strong>Adjustment</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="positivereservevalue">PositiveReserveValue</h3>
 <p>Change in the value of the positive reserve after asset valuations (in the currency of the asset). <code>Currency: Asset.ValuationCurrency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PositiveReserveValueBase.ConvertTo( obj.Asset.ValuationCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="positivereservevaluebase">PositiveReserveValueBase</h3>
@@ -312,7 +323,8 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PositiveReserveValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="purchasevalue">PurchaseValue</h3>
@@ -321,7 +333,8 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PurchaseValueBase.ConvertTo( obj.Asset.ValuationCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="purchasevaluebase">PurchaseValueBase</h3>
@@ -330,7 +343,8 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PurchaseValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="salvagevalue">SalvageValue</h3>
@@ -339,7 +353,8 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalvageValueBase.ConvertTo( obj.Asset.ValuationCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h3 id="salvagevaluebase">SalvageValueBase</h3>
@@ -348,7 +363,8 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalvageValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
 <h2 id="reference-details">Reference Details</h2>
@@ -357,19 +373,22 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <p><em>Type</em>: <strong><a href="Finance.Assets.Assets.html">Assets</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="assettransaction">AssetTransaction</h3>
 <p>The <see cref="AssetTransaction"></see> to which this AssetTransactionLine belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Assets.AssetTransactions.html">AssetTransactions</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="valuationmodel">ValuationModel</h3>
 <p>Valuation model in which the changes of the asset values have occurred (Taxation model or Accounting model or other). <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Assets.ValuationModels.html">ValuationModels</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

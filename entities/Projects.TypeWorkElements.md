@@ -16,6 +16,8 @@ Code Data Member:
 _WorkElementCode_  
 Name Data Member:  
 _WorkElementName_  
+Category:  _Definitions_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -55,6 +57,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FullPath
 
@@ -65,6 +68,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -73,6 +77,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Notes
 
@@ -83,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -92,6 +98,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentFullPath
 
@@ -102,6 +109,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkElementCode
 
@@ -112,6 +120,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **3**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkElementName
 
@@ -122,6 +131,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -135,6 +145,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

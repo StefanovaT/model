@@ -89,7 +89,9 @@ Default Search Members:<br>
 Code Data Member:<br>
 <em>Login</em><br>
 Name Data Member:<br>
-<em>Name</em></p>
+<em>Name</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -307,48 +309,55 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="active">Active</h3>
 <p>True when the login is currently active and the user can log in. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="basicauthenticationallowed">BasicAuthenticationAllowed</h3>
 <p>If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.1.35</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="companyname">CompanyName</h3>
 <p>Name of the company in which the user claims they are working. <code>Introduced in version 22.1.6.61</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
 <p>The date and time (in UTC), when the user was created. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>CurrentDateTime</strong></p>
+<em>Default Value</em>: <strong>CurrentDateTime</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultculture">DefaultCulture</h3>
 <p>The preferred default culture of the user for UI, notifications, etc. null means &quot;en-US&quot;. <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong>string (15) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>15</strong></p>
+<em>Maximum Length</em>: <strong>15</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="email">Email</h3>
 <p>Unique email of the user. Can be null because there may be login providers that don't use emails. <code>Filter(multi eq;like)</code> <code>ORD</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
@@ -356,33 +365,38 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="emailconfirmed">EmailConfirmed</h3>
 <p>Indicates whether the email address for the specified user has been verified. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="isadmin">IsAdmin</h3>
 <p>True if the user is administrator, otherwise false. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lockoutendutc">LockoutEndUtc</h3>
 <p>Contains the date and time (in UTC) until the user is locked. null when the user is not locked. <code>Filter(eq;ge;le;like)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="login">Login</h3>
 <p>The login name of the user, which is usually the email. <code>Required</code> <code>Filter(multi eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
@@ -390,33 +404,38 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>The full name of the user. <code>Required</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="notes">Notes</h3>
 <p>Notes for this User.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="password">Password</h3>
 <p>The password hash of the user, stored in the format, specified in Password Format. <code>Unit: PasswordFormat</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="passwordformat">PasswordFormat</h3>
 <p>The format of the Password. MD5=MD5 format; AN3 = ASP.NET Core Identity v3. <code>Required</code> <code>Default(&quot;MD5&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html#passwordformat">PasswordFormat</a></strong><br>
@@ -443,35 +462,40 @@ Allowed values for the <code>PasswordFormat</code>(Systems.Security.Users.md#pas
 </table>
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>MD5</strong></p>
+<em>Default Value</em>: <strong>MD5</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="phonenumber">PhoneNumber</h3>
 <p>Used only for two-factor authentication. null when phone-based two-factor is not used. <code>Filter(eq;like)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="phonenumberconfirmed">PhoneNumberConfirmed</h3>
 <p>Indicates whether the Phone Number has been verified. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="registrationmessage">RegistrationMessage</h3>
 <p>Message from the user to the registration operator, regarding the desired permissions and assignment. <code>Introduced in version 22.1.6.61</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="twofactorenabled">TwoFactorEnabled</h3>
 <p>Indicates whether two-factor authentication has been enabled. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="usertype">UserType</h3>
 <p>Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application. <code>Required</code> <code>Default(&quot;INT&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html#usertype">UserType</a></strong><br>
@@ -510,32 +534,37 @@ Allowed values for the <code>UserType</code>(Systems.Security.Users.md#usertype)
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>InternalUser</strong></p>
+<em>Default Value</em>: <strong>InternalUser</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="voiceextensionnumbers">VoiceExtensionNumbers</h3>
 <p>Comma separated list of internal extension numbers of the voice telephones of the user. Used for VOIP integration.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="windowsusername">WindowsUserName</h3>
 <p>The Windows (Active Directory) user, to which this login is bound. The user will be allowed to login only when the client machine is logged in Active Directory with the specified user.</p>
 <p><em>Type</em>: <strong>string (128) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>128</strong></p>
+<em>Maximum Length</em>: <strong>128</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="domain">Domain</h3>
 <p>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Domains.html">Domains</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="person">Person</h3>
 <p>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>TableName</em><br>
 Name Data Member:<br>
-<em>TableName</em></p>
+<em>TableName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -174,7 +176,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.ReportQueries.html#report"><s>Report</s></a></td>
 <td><a href="General.Reports.html">Reports</a></td>
-<td><strong>OBSOLETE! Do not use!</strong> The <see cref="Report"></see> to which this ReportQuery belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code> <code>Obsolete</code> <code>Owner</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The <see cref="Report"></see> to which this ReportQuery belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code> <code>Obsolete</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
@@ -185,80 +187,92 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="extensionslist">ExtensionsList</h3>
 <p>A comma separated list of report extension names. An extension is set of additional fields that participate in the query.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="filterxml">FilterXml</h3>
 <p>Filter for the loaded table.</p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="referencepath">ReferencePath</h3>
 <p>A sequence of table names and foreign key columns that define how the data will be loaded by this query. For example - Gen_Documents/Enterprise_Company_Id/Company_Id - will load the definition of the company for the enterprise company of a document. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (512)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>512</strong></p>
+<em>Maximum Length</em>: <strong>512</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="showcustomproperties">ShowCustomProperties</h3>
 <p>True to include the custom properties. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="showtextcolumns">ShowTextColumns</h3>
 <p>True to include text descriptions for certain columns. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="tablename">TableName</h3>
 <p>The name of the report query. A Reference_Path can participate more than one time in the report but with different Report_Query_Name. This can be used to specify different filter for the same query. Can be null.</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="uniquename">UniqueName</h3>
 <p>The name of the data table in the printout datasource. If null the Reference_Path is used.</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="report">Report</h3>
-<p><strong>OBSOLETE! Do not use!</strong> The <see cref="Report"></see> to which this ReportQuery belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.7</code> <code>Obsolete</code> <code>Owner</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> The <see cref="Report"></see> to which this ReportQuery belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.10</code> <code>Obsolete</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="General.Reports.html">Reports</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

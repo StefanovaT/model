@@ -14,6 +14,8 @@ Default Search Members:
 _PosOperatorCode_  
 Code Data Member:  
 _PosOperatorCode_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -53,6 +55,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -61,6 +64,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -71,6 +75,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -80,6 +85,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PosOperatorCode
 
@@ -90,6 +96,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### StartingDate
 
@@ -99,6 +106,7 @@ _Type_: **date**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TerminationDate
 
@@ -108,6 +116,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -119,6 +128,7 @@ The default POS terminal for this opertor. null when there is no default. `Filte
 _Type_: **[Terminals](Crm.Pos.Terminals.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PosLocation
 
@@ -128,6 +138,7 @@ _Type_: **[Locations](Crm.Pos.Locations.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PosRole
 
@@ -136,6 +147,7 @@ The role, assigned to the operator. The role indicates the permissions of the op
 _Type_: **[Roles](Crm.Pos.Roles.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### User
 
@@ -144,6 +156,7 @@ The login user for this POS operator. `Required` `Filter(multi eq)`
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

@@ -14,6 +14,8 @@ Default Search Members:
 _Person.PartyName_  
 Name Data Member:  
 _Person.PartyName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -56,6 +58,7 @@ _Type_: **decimal (7, 6) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CommissionPolicyId
 
@@ -64,6 +67,7 @@ Current commission policy for the sales person. null means there is no commissio
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### ContractEndDate
 
@@ -73,6 +77,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ContractStartDate
 
@@ -82,6 +87,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -91,6 +97,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -99,6 +106,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -109,6 +117,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -118,6 +127,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -129,6 +139,7 @@ The Enterprise Company to which this SalesPerson applies, or null if it is for a
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### EnterpriseCompanyLocation
 
@@ -137,6 +148,7 @@ The enterprise company location, to which the sales person is assigned. The sale
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Person
 
@@ -147,6 +159,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### SalesPersonGroup
 
@@ -155,6 +168,7 @@ The sales person group to which this sales person is assigned. `Required` `Filte
 _Type_: **[SalesPersonGroups](Crm.Distribution.SalesPersonGroups.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

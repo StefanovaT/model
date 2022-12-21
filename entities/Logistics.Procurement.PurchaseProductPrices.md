@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Id}: {MaxQuantityValue}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -57,6 +59,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FromDate
 
@@ -66,6 +69,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -74,6 +78,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### MaxQuantity
 
@@ -83,6 +88,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### MinQuantity
 
@@ -92,6 +98,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Notes
 
@@ -102,6 +109,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -111,6 +119,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Price
 
@@ -121,6 +130,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### PriceQuantity
 
@@ -131,6 +141,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Priority
 
@@ -152,6 +163,7 @@ _Allowed Values (Logistics.Procurement.PurchaseProductPricesRepository.Priority 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **2**  
+_Show in UI_: **ShownByDefault**  
 
 ### ThruDate
 
@@ -161,6 +173,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -172,6 +185,7 @@ The currency of the price. `Required` `Filter(multi eq)`
 _Type_: **[Currencies](General.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -180,6 +194,7 @@ Determines for which enterprise company this price is used. If not specified the
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PriceQuantityMeasurementUnit
 
@@ -188,6 +203,7 @@ The measurement unit of Price_Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.BaseUnit.IfNullThen( obj.PriceQuantityMeasurementUnit)`
@@ -199,6 +215,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchasePriceList
 
@@ -207,6 +224,7 @@ When not null, specifies that this price is valid only when the purchase documen
 _Type_: **[PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Supplier
 
@@ -215,6 +233,7 @@ When not null, specifies that the price is valid only for the specified supplier
 _Type_: **[Suppliers](Logistics.Procurement.Suppliers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

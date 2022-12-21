@@ -16,6 +16,8 @@ Code Data Member:
 _Login_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -87,6 +89,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### Active
 
@@ -97,6 +100,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### BasicAuthenticationAllowed
 
@@ -107,6 +111,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CompanyName
 
@@ -117,6 +122,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationTimeUtc
 
@@ -127,6 +133,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultCulture
 
@@ -137,6 +144,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **15**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -146,6 +154,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Email
 
@@ -157,6 +166,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### EmailConfirmed
 
@@ -167,6 +177,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -175,6 +186,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsAdmin
 
@@ -185,6 +197,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LockoutEndUtc
 
@@ -194,6 +207,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Login
 
@@ -205,6 +219,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -214,6 +229,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -224,6 +240,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -233,6 +250,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Password
 
@@ -243,6 +261,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### PasswordFormat
 
@@ -261,6 +280,7 @@ _Allowed Values (Systems.Security.UsersRepository.PasswordFormat Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **MD5**  
+_Show in UI_: **ShownByDefault**  
 
 ### PhoneNumber
 
@@ -271,6 +291,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### PhoneNumberConfirmed
 
@@ -281,6 +302,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RegistrationMessage
 
@@ -291,6 +313,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### TwoFactorEnabled
 
@@ -301,6 +324,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### UserType
 
@@ -322,6 +346,7 @@ _Allowed Values (Systems.Security.UsersRepository.UserType Enum Members)_
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **InternalUser**  
+_Show in UI_: **ShownByDefault**  
 
 ### VoiceExtensionNumbers
 
@@ -332,6 +357,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### WindowsUserName
 
@@ -342,6 +368,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -353,6 +380,7 @@ The domain, to which the user belongs. `Filter(multi eq)` `Introduced in version
 _Type_: **[Domains](Systems.Security.Domains.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Person
 
@@ -361,6 +389,7 @@ The person from within the system, which is authenticated with this login. null 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

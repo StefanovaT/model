@@ -89,7 +89,9 @@ Default Search Members:<br>
 Code Data Member:<br>
 <em>Code</em><br>
 Name Data Member:<br>
-<em>Name</em></p>
+<em>Name</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -280,7 +282,8 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="code">Code</h3>
 <p>The unique code of the ProductGroup. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (16)</strong><br>
@@ -288,14 +291,16 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>16</strong></p>
+<em>Maximum Length</em>: <strong>16</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="configuratorcreatesrecipe">ConfiguratorCreatesRecipe</h3>
 <p>Whether the product configurator should create one default recipe. true=yes;false=no. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="configuratorstatus">ConfiguratorStatus</h3>
 <p>Usage of product configurator for new products. 0=Product configurator cannot be used to create products in this group;1=The configurator can be used;2=The configurator should be used and products cannot be created directly. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductGroups.html#configuratorstatus">ConfiguratorStatus</a></strong><br>
@@ -326,13 +331,15 @@ Allowed values for the <code>ConfiguratorStatus</code>(General.Products.ProductG
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="fullpath">FullPath</h3>
 <p>Full tree path in the form /parent/.../leaf/. Contains the group codes. <code>Required</code> <code>Default(&quot;&quot;)</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
@@ -341,7 +348,8 @@ Allowed values for the <code>ConfiguratorStatus</code>(General.Products.ProductG
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
-<em>Default Value</em>: ****</p>
+<em>Default Value</em>: ****<br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>Format( &quot;{0}{1}/&quot;, IIF( ( obj.ParentGroup != null), obj.ParentGroup.FullPath, &quot;/&quot;), obj.Code)</code></p>
 <h3 id="id">Id</h3>
@@ -349,40 +357,46 @@ Allowed values for the <code>ConfiguratorStatus</code>(General.Products.ProductG
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="name">Name</h3>
 <p>Group name should be unique among the other groups within the same parent. <code>Required</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (180)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="nextpartnumber">NextPartNumber</h3>
 <p>Contains the next part number to be auto-assigned to parts, created in the group or sub-groups.</p>
 <p><em>Type</em>: <strong>string (16) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>16</strong></p>
+<em>Maximum Length</em>: <strong>16</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="nextserialnumber">NextSerialNumber</h3>
 <p>When not null, specifies the next serial number, that should be assigned to new produced items. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (40) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>40</strong></p>
+<em>Maximum Length</em>: <strong>40</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="notes">Notes</h3>
 <p>User notes for the item group.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parent">Parent</h3>
 <p><strong>OBSOLETE! Do not use!</strong> Full tree path of the parent group in the form /parent/.../leaf/. Contains the group codes. <code>Obsolete</code> <code>Required</code> <code>Default(&quot;/&quot;)</code> <code>Filter(eq)</code> <code>ORD</code> <code>Obsoleted in version 22.1.6.92</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
@@ -391,7 +405,8 @@ Allowed values for the <code>ConfiguratorStatus</code>(General.Products.ProductG
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
-<em>Default Value</em>: <strong>/</strong></p>
+<em>Default Value</em>: <strong>/</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( obj.ParentGroup != null), obj.ParentGroup.FullPath, &quot;/&quot;)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -401,25 +416,29 @@ Allowed values for the <code>ConfiguratorStatus</code>(General.Products.ProductG
 <p><em>Type</em>: <strong>byte[] <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="picturelastupdatetime">PictureLastUpdateTime</h3>
 <p>Last update time of the Picture. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productdescriptionmask">ProductDescriptionMask</h3>
 <p>When not null specifies mask for new product descriptions for this group and its sub-groups. The mask substitutes {0}..{n} with the appropriate custom attributes.</p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (1000)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productnamemask">ProductNameMask</h3>
 <p>When not null specifies mask for new product names for this group and its sub-groups. The mask substitutes {0}..{n} with the appropriate custom attributes.</p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (1000)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="uselots">UseLots</h3>
 <p>Specifies whether for the products from this group and its sub-groups the use of lots in store documents is required or is unallowed or is allowed while not required.</p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductGroups.html#uselots">UseLots</a> <strong>nullable</strong></strong><br>
@@ -449,36 +468,42 @@ Allowed values for the <code>UseLots</code>(General.Products.ProductGroups.md#us
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="defaultmeasurementunit">DefaultMeasurementUnit</h3>
 <p>When not null, specifies default measurement unit, which should be assigned to new products in the group. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultproducttype">DefaultProductType</h3>
 <p>When not null, specifies default product type, which should be assigned to new products in the group. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductTypes.html">ProductTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>When not null, specifies that the product group, its sub-groups and products are specific to a given enterprise company and may be used only in documents from this enterprise company. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parentgroup">ParentGroup</h3>
 <p>Parent product group. null if this is root group. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.5.98</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductGroups.html">ProductGroups</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.Transaction.Query( ).Where( pg =&gt; ( pg.FullPath == obj.Parent)).FirstOrDefault( )</code></p>
 <h3 id="pricingmodel">PricingModel</h3>
 <p>When not null, specifies the pricing model, for the products in this product group. The model is by default valid also for sub-groups, unless they have other models. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Pricing.PricingModels.html">PricingModels</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

@@ -14,6 +14,8 @@ Default Search Members:
 _CompanyName_  
 Name Data Member:  
 _CompanyName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -72,6 +74,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationTimestampUtc
 
@@ -81,6 +84,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( obj.MQLTimestampUtc == null), Convert( DateTime.UtcNow, Nullable`1), obj.MQLTimestampUtc)`
@@ -93,6 +97,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -101,6 +106,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### MQLTimestampUtc
 
@@ -110,6 +116,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -119,6 +126,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonEmail
 
@@ -129,6 +137,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonFirstName
 
@@ -139,6 +148,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonLastName
 
@@ -149,6 +159,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonMobilePhone
 
@@ -159,6 +170,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonSalutation
 
@@ -169,6 +181,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonWebProfile
 
@@ -179,6 +192,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### PersonWorkPhone
 
@@ -189,6 +203,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
+_Show in UI_: **ShownByDefault**  
 
 ### RoleInCompany
 
@@ -199,6 +214,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
+_Show in UI_: **ShownByDefault**  
 
 ### SQLTimestampUtc
 
@@ -208,6 +224,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### SystemStage
 
@@ -229,6 +246,7 @@ _Allowed Values (Crm.Presales.LeadsRepository.SystemStage Enum Members)_
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **New**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -240,6 +258,7 @@ Sales rep to whom this lead is assigned for further processing. null - not yet a
 _Type_: **[SalesPersons](Crm.SalesPersons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Campaign
 
@@ -249,6 +268,7 @@ _Type_: **[Campaigns](Crm.Marketing.Campaigns.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConvertedToDeal
 
@@ -257,6 +277,7 @@ Filled when the lead is converted to opportunity (deal). `Filter(multi eq)`
 _Type_: **[Deals](Crm.Presales.Deals.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -265,6 +286,7 @@ The enterprise company to which this lead belongs. `Required` `Filter(multi eq)`
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompanyLocation
 
@@ -273,6 +295,7 @@ The enterprise company location to which this lead belongs. `Filter(multi eq)` `
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### IdentifiedCompany
 
@@ -281,6 +304,7 @@ Filled when the company is identified within our database. `Filter(multi eq)`
 _Type_: **[Companies](General.Contacts.Companies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### IdentifiedPerson
 
@@ -289,6 +313,7 @@ Filled when the person is identified and recorded in our master records. `Filter
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### LeadUserStage
 
@@ -298,6 +323,7 @@ _Type_: **[LeadUserStages](Crm.Presales.LeadUserStages.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MarketingCompanySize
 
@@ -306,6 +332,7 @@ The size class of the company. `Filter(multi eq)`
 _Type_: **[CompanySizeClasses](Crm.Marketing.CompanySizeClasses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MarketingIndustry
 
@@ -314,6 +341,7 @@ The industry (for marketing purposes) of the lead. `Filter(multi eq)`
 _Type_: **[Industries](Crm.Marketing.Industries.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MarketingSolution
 
@@ -322,6 +350,7 @@ The marketing solution, in which the lead is interested or which generated the l
 _Type_: **[MarketingSolutions](Crm.Marketing.MarketingSolutions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### OwnerUser
 
@@ -330,6 +359,7 @@ The user, responsible for this record. `Required` `Filter(multi eq)`
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SalesArea
 
@@ -338,6 +368,7 @@ The sales area, where the lead is located, when it is identified. This should al
 _Type_: **[Areas](General.Geography.Areas.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

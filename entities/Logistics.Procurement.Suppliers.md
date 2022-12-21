@@ -16,6 +16,8 @@ Code Data Member:
 _Number_  
 Name Data Member:  
 _Party.PartyName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -65,6 +67,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CreationUser
 
@@ -75,6 +78,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DefaultDeliveryTermDays
 
@@ -85,6 +89,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultPaymentStartDays
 
@@ -95,6 +100,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultPaymentTermDays
 
@@ -105,6 +111,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -114,6 +121,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FromDate
 
@@ -123,6 +131,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -131,6 +140,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -141,6 +151,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Number
 
@@ -152,6 +163,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -161,6 +173,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ThruDate
 
@@ -170,6 +183,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### UpdateTime
 
@@ -179,6 +193,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### UpdateUser
 
@@ -189,6 +204,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -200,6 +216,7 @@ The default currency for purchases from this supplier. null means there is no de
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultPaymentAccount
 
@@ -208,6 +225,7 @@ When not null, specifies the default payment account which should be used for ne
 _Type_: **[PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultPaymentType
 
@@ -216,6 +234,7 @@ When not null, specifies the default payment type which should be used for new p
 _Type_: **[PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultPurchasePriceList
 
@@ -224,6 +243,7 @@ The default purchase price list, which shall be used for new purchase documents 
 _Type_: **[PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -232,6 +252,7 @@ The Enterprise Company to which this Supplier applies, or null if it is for all 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Party
 
@@ -240,6 +261,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### SupplierType
 
@@ -248,6 +270,7 @@ When not null, specifies the type of this supplier. The type is primarily used f
 _Type_: **[SupplierTypes](Logistics.Procurement.SupplierTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

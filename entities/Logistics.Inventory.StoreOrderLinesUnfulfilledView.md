@@ -12,6 +12,8 @@ Default Display Text Format:
 _{StoreOrderLineId}: {DocumentDate}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -54,6 +56,7 @@ _Inherited From_: **Gen_Documents_Table.Document_Date**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsFulfilled
 
@@ -63,6 +66,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsQuantityFulfilled
 
@@ -72,6 +76,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderRemainingLineCost
 
@@ -81,6 +86,7 @@ _Type_: **decimal (38, 2)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderRemainingQuantityBase
 
@@ -90,6 +96,7 @@ _Type_: **decimal (38, 3)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -102,6 +109,7 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**
 _Category_: **System**  
 _Inherited From_: **Gen_Documents_Table.Enterprise_Company_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Lot
 
@@ -111,6 +119,7 @@ _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Lot_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -120,6 +129,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Product_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductVariant
 
@@ -129,6 +139,7 @@ _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Product_Variant_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 
@@ -138,6 +149,7 @@ _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Serial_Number_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Store
 
@@ -147,6 +159,7 @@ _Type_: **[Stores](Logistics.Inventory.Stores.md)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Orders_Table.Store_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### StoreOrderLine
 
@@ -157,6 +170,7 @@ _Category_: **System**
 _Inherited From_: **Inv_Transaction_Lines_Table.Parent_Store_Order_Line_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

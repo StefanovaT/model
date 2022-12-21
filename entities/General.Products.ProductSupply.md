@@ -14,6 +14,8 @@ Default Search Members:
 _BuyerName_  
 Name Data Member:  
 _BuyerName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -80,6 +82,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -89,6 +92,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FixedOrderQuantityBase
 
@@ -99,6 +103,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -107,6 +112,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -117,6 +123,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **HiddenByDefault**  
 
 ### IsDefault
 
@@ -127,6 +134,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ManufacturingPolicy
 
@@ -147,6 +155,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.ManufacturingPolicy En
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **MakeToStock**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -156,6 +165,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderLotSizeQuantityBase
 
@@ -166,6 +176,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderLotSizingMethod
 
@@ -188,6 +199,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.OrderLotSizingMethod E
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **ReorderPoint**  
+_Show in UI_: **HiddenByDefault**  
 
 ### OrderMaximum
 
@@ -197,6 +209,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### OrderMinimum
 
@@ -207,6 +220,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 ### OrderMultiple
 
@@ -217,6 +231,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderPeriodPlanningDays
 
@@ -226,6 +241,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### OrderPeriodStartDate
 
@@ -235,6 +251,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### OrderPointQuantityBase
 
@@ -245,6 +262,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderPolicy
 
@@ -265,6 +283,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.OrderPolicy Enum Membe
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **OrderPointSystem**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PlanningAnnualCarryingCostPercent
 
@@ -274,6 +293,7 @@ _Type_: **decimal (5, 4) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PlanningAnnualUsageQuantityBase
 
@@ -283,6 +303,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PlanningHorizonDays
 
@@ -293,6 +314,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **CannotBeShown**  
 
 ### PlanningLeadTimeDays
 
@@ -303,6 +325,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.PreferredSupplier.DefaultDeliveryTermDays`
@@ -314,6 +337,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PlanningOrderCostBaseCurrency
 
@@ -323,6 +347,7 @@ _Type_: **[Amount (18, 3)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PlanningOrderCycleDays
 
@@ -332,6 +357,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PlanningSafetyStockQuantityBase
 
@@ -342,6 +368,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PlanningTimeFenceDays
 
@@ -352,6 +379,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
+_Show in UI_: **CannotBeShown**  
 
 ### ProcurementType
 
@@ -371,6 +399,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.ProcurementType Enum M
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Buy**  
+_Show in UI_: **HiddenByDefault**  
 
 ### StandardCostPerLot
 
@@ -381,6 +410,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 ### SupplySchemaId
 
@@ -389,6 +419,7 @@ The supply schema to use for the distribution of the product among warehouses. `
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## Reference Details
@@ -400,6 +431,7 @@ Default store bin for new deliveries using this supply scheme. `Filter(multi eq)
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### EnterpriseCompany
 
@@ -408,6 +440,7 @@ The Enterprise Company to which this ProductSupply applies, or null if it is for
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### FromStore
 
@@ -416,6 +449,7 @@ Used when the Procurement_Type is Transfer. `Filter(multi eq)`
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### GenerateDocumentType
 
@@ -424,6 +458,7 @@ Specifies the type of the document which should be generated by the procurement 
 _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PreferredSupplier
 
@@ -432,6 +467,7 @@ Preferred supplier for the product. null if there is no preferred supplier. `Fil
 _Type_: **[Suppliers](Logistics.Procurement.Suppliers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -441,6 +477,7 @@ _Type_: **[Products](General.Products.Products.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductGroup
 
@@ -449,6 +486,7 @@ Not null when the method is a default method for a whole product group. In this 
 _Type_: **[ProductGroups](General.Products.ProductGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Store
 
@@ -457,6 +495,7 @@ The store for which this rule is defined. When null, the rule is valid for all s
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

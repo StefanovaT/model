@@ -14,6 +14,8 @@ Default Search Members:
 _Recipe.Name_  
 Name Data Member:  
 _Recipe.Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -66,6 +68,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -74,6 +77,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineOrd
 
@@ -83,6 +87,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.Recipe.Operations.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
@@ -97,6 +102,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### MoveTimeMinutes
 
@@ -107,6 +113,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -117,6 +124,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -126,6 +134,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### OperationDescription
 
@@ -136,6 +145,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### RoutingOperationId
 
@@ -144,6 +154,7 @@ _Maximum Length_: **2147483647**
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### RunTimeMinutes
 
@@ -154,6 +165,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### ScrapRate
 
@@ -164,6 +176,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### SetupTimeMinutes
 
@@ -174,6 +187,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardCostPerHour
 
@@ -183,6 +197,7 @@ _Type_: **[Amount (18, 6)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardPricePerHour
 
@@ -193,6 +208,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### Tooling
 
@@ -203,6 +219,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### UseQuantity
 
@@ -213,6 +230,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### WaitTimeMinutes
 
@@ -223,6 +241,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -234,6 +253,7 @@ Standard operation Id. If not null used to load the details. If null the details
 _Type_: **[Operations](Production.Resources.Operations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### OperationInstruction
 
@@ -242,6 +262,7 @@ Link to additional data, containing instructions in external format. `Filter(mul
 _Type_: **[OperationInstructions](Production.Resources.OperationInstructions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Recipe
 
@@ -252,6 +273,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### UseQuantityUnit
 
@@ -260,6 +282,7 @@ The measurement unit of Use_Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkgroupResource
 
@@ -268,6 +291,7 @@ The exact workgroup resource that is engaged in the operation. null means that n
 _Type_: **[WorkgroupResources](Production.Resources.WorkgroupResources.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

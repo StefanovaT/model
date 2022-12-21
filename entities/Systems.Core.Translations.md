@@ -14,6 +14,8 @@ Default Search Members:
 _ApplicationName_  
 Name Data Member:  
 _ApplicationName_  
+Category:  _Settings_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,6 +51,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( Not( IsNullOrEmpty( obj.TranslationField)), True, obj.Active)`
@@ -62,6 +65,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationTime
 
@@ -72,6 +76,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -81,6 +86,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -89,6 +95,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Language
 
@@ -100,6 +107,7 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Maximum Length_: **8**  
 _Default Value_: **en**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -109,6 +117,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ResourceId
 
@@ -119,6 +128,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **800**  
+_Show in UI_: **ShownByDefault**  
 
 ### ResourceType
 
@@ -142,6 +152,7 @@ _Allowed Values (Systems.Core.TranslationsRepository.ResourceType Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **OtherApplicationSpecific**  
+_Show in UI_: **ShownByDefault**  
 
 ### TranslationField
 
@@ -152,6 +163,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### UpdateTime
 
@@ -162,6 +174,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

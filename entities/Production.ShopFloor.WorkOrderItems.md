@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _WorkOrder.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -75,6 +77,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.WorkOrder.CompletionDate`
@@ -89,6 +92,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -97,6 +101,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineOrd
 
@@ -106,6 +111,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.WorkOrder.Items.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -121,6 +127,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `new Quantity( obj.Recipe.ProduceQuantity.Value, obj.ProducedQuantity.Unit)`
@@ -133,6 +140,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -142,6 +150,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentLineId
 
@@ -150,6 +159,7 @@ If not null contains the Id of the line of the parent document, that created the
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### ParentLineNo
 
@@ -159,6 +169,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Priority
 
@@ -180,6 +191,7 @@ _Allowed Values (Production.ShopFloor.WorkOrderItemsRepository.Priority Enum Mem
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **3**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ProducedQuantity
 
@@ -190,6 +202,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `new Quantity( obj.Recipe.ProduceQuantity.Value, obj.ProducedQuantity.Unit)`
@@ -201,6 +214,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.ProducedQuantity != null) AndAlso ( obj.ProducedQuantityUnit != null)) AndAlso ( obj.Product != null)), obj.ProducedQuantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.ProducedQuantityBase)`
@@ -215,6 +229,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.ProducedQuantity != null) AndAlso ( obj.ProducedQuantityUnit != null)) AndAlso ( obj.Product != null)), IIF( obj.Product.AllowVariableMeasurementRatios, obj.ProducedQuantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.ProducedQuantityBase), obj.ProducedStandardQuantityBase)`
@@ -229,6 +244,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.WorkOrder.ReleaseDate`
@@ -243,6 +259,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ScheduledStartDateTime
 
@@ -252,6 +269,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -264,6 +282,7 @@ _Type_: **[WorkOrders](Production.ShopFloor.WorkOrders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Lot
 
@@ -272,6 +291,7 @@ The lot of the produced product. `Filter(multi eq)`
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( obj.Lot.Product != obj.Product), null, obj.Lot)`
@@ -285,6 +305,7 @@ Output store for the production. `Filter(multi eq)`
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.WorkOrder.DefaultOutputStore`
@@ -299,6 +320,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ProducedQuantityUnit
 
@@ -307,6 +329,7 @@ The measurement unit of the quantity produced in the operation. `Required` `Filt
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ProductCode.CodingSystem.DefaultMeasurementUnit.IfNullThen( obj.Product.MeasurementUnit.IfNullThen( obj.ProducedQuantityUnit))`
@@ -321,6 +344,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ProductCode.Product.IfNullThen( obj.Product)`
@@ -334,6 +358,7 @@ Selects the product thru some of the product codes. `Filter(multi eq)`
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( obj.ProductCode.Product != obj.Product), null, obj.ProductCode)`
@@ -347,6 +372,7 @@ The base recipe. null means that the item is produced without recipe. `Filter(mu
 _Type_: **[Recipes](Production.Technologies.Recipes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.GetDefaultRecipe( ( obj.ReleaseDate ?? obj.WorkOrder.DocumentDate), obj.OutputStore.IfNullThen( obj.WorkOrder.DefaultOutputStore))`
@@ -357,6 +383,7 @@ If not null, specifies that the product was (has to be) produced with specific s
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### StoreBin
 
@@ -365,6 +392,7 @@ The store bin in which to store the products. `Filter(multi eq)`
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### WorkOrder
 
@@ -375,6 +403,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

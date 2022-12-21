@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
+Category:  _Settings_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -71,6 +73,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowedValuesFilterXML
 
@@ -80,6 +83,7 @@ _Type_: **dataaccessfilter __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Code
 
@@ -91,6 +95,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **40**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -100,6 +105,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityName
 
@@ -111,6 +117,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Hint
 
@@ -120,6 +127,7 @@ _Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -128,6 +136,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### KeyOrder
 
@@ -137,6 +146,7 @@ _Type_: **byte __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LimitToAllowedValues
 
@@ -147,6 +157,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### MaskLength
 
@@ -156,6 +167,7 @@ _Type_: **int16 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -166,6 +178,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -176,6 +189,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -185,6 +199,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PropertyType
 
@@ -205,6 +220,7 @@ _Allowed Values (General.CustomPropertiesRepository.PropertyType Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Text**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -216,6 +232,7 @@ Specifies the user defined property, which is used for filtering the allowed val
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowedValuesProperty
 
@@ -224,6 +241,7 @@ When not null, specifies that the current property can have the same allowed val
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PropertiesCategory
 
@@ -232,6 +250,7 @@ When not null, categorizes the property under a category. `Filter(multi eq)`
 _Type_: **[PropertiesCategories](General.PropertiesCategories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

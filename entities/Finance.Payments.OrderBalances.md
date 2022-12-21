@@ -12,6 +12,8 @@ Default Display Text Format:
 _{OrderAmountValue}: {PaidAmountValue}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -69,6 +71,7 @@ _Inherited From_: **Cash_Payment_Orders_Table.Direction**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **Expense**  
+_Show in UI_: **ShownByDefault**  
 
 ### DueDate
 
@@ -79,6 +82,7 @@ _Category_: **System**
 _Inherited From_: **Cash_Payment_Orders_Table.Due_Date**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DueStartDate
 
@@ -89,6 +93,7 @@ _Category_: **System**
 _Inherited From_: **Cash_Payment_Orders_Table.Due_Start_Date**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsInvoiced
 
@@ -98,6 +103,7 @@ _Type_: **boolean**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderAmount
 
@@ -109,6 +115,7 @@ _Inherited From_: **Cash_Payment_Orders_Table.Total_Amount**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### PaidAmount
 
@@ -118,6 +125,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefDocumentDate
 
@@ -128,6 +136,7 @@ _Category_: **System**
 _Inherited From_: **Cash_Payment_Orders_Table.Ref_Document_Date**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.RefDocument.DocumentDate`
@@ -144,6 +153,7 @@ _Inherited From_: **Cash_Payment_Orders_Table.Ref_Document_No**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.RefDocument.DocumentNo`
@@ -159,6 +169,7 @@ _Category_: **System**
 _Inherited From_: **Cash_Payment_Orders_Table.Ref_Invoice_Document_Date**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.RefInvoiceDocument.DocumentDate`
@@ -175,6 +186,7 @@ _Inherited From_: **Cash_Payment_Orders_Table.Ref_Invoice_Document_No**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.RefInvoiceDocument.DocumentNo`
@@ -192,6 +204,7 @@ _Type_: **[Currencies](General.Currencies.md)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Total_Amount_Currency_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -201,6 +214,7 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**
 _Category_: **System**  
 _Inherited From_: **Gen_Documents_Table.Enterprise_Company_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### LocationParty
 
@@ -210,6 +224,7 @@ _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Location_Party_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Party
 
@@ -219,6 +234,7 @@ _Type_: **[Parties](General.Contacts.Parties.md)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Party_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PaymentOrder
 
@@ -229,6 +245,7 @@ _Category_: **System**
 _Inherited From_: **Cash_Payment_Orders_Table.Payment_Order_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefDocument
 
@@ -238,6 +255,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Ref_Document_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefDocumentType
 
@@ -247,6 +265,7 @@ _Type_: **[DocumentTypes](General.DocumentTypes.md)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Ref_Document_Type_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.RefDocument.DocumentType`
@@ -261,6 +280,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Ref_Invoice_Document_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### RefInvoiceDocumentType
 
@@ -270,6 +290,7 @@ _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Ref_Invoice_Document_Type_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.RefInvoiceDocument.DocumentType`

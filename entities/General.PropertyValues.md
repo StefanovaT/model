@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Id}: {EntityItemId}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,6 +51,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -58,6 +61,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityItemId
 
@@ -66,6 +70,7 @@ The Id of the actual entity for which the value is specified. `Required` `Filter
 _Type_: **guid**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -74,6 +79,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -83,6 +89,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Picture
 
@@ -92,6 +99,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PropertyValueField
 
@@ -102,6 +110,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ValueId
 
@@ -110,6 +119,7 @@ The internal Id of the value of the property for the specified entity (the entit
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -122,6 +132,7 @@ _Type_: **[CustomProperties](General.CustomProperties.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

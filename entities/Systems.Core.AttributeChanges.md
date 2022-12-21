@@ -12,6 +12,8 @@ Default Display Text Format:
 _{ObjectChangeId}: {AttributeName}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -45,6 +47,7 @@ _Inherited From_: **Sys_Attribute_Changes_Table.Attribute_Name**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### NewValue
 
@@ -54,6 +57,7 @@ _Inherited From_: **Sys_Attribute_Changes_Table.New_Value**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -67,6 +71,7 @@ _Category_: **System**
 _Inherited From_: **Sys_Attribute_Changes_Table.Object_Change_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

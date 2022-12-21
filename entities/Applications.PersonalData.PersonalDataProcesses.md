@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
+Category:  _Settings_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -77,6 +79,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### ContainsSensitiveData
 
@@ -86,6 +89,7 @@ _Type_: **boolean**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DataSubjectCategory
 
@@ -108,6 +112,7 @@ _Allowed Values (Applications.PersonalData.PersonalDataProcessesRepository.DataS
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Description
 
@@ -118,6 +123,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### DiscontinuationDate
 
@@ -127,6 +133,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -136,6 +143,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EstablishDate
 
@@ -146,6 +154,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -154,6 +163,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LegalBasisForProcessing
 
@@ -175,6 +185,7 @@ _Allowed Values (Applications.PersonalData.PersonalDataProcessesRepository.Legal
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ListOfDataCategories
 
@@ -185,6 +196,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ListOfDataRecipientCategories
 
@@ -195,6 +207,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ListOfProcessingPurposes
 
@@ -205,6 +218,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ListOfTechnicalMeasures
 
@@ -215,6 +229,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ListOfTransfersToThirdCountries
 
@@ -225,6 +240,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ListOfUsedSoftware
 
@@ -235,6 +251,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -244,6 +261,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -254,6 +272,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -263,6 +282,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ProcessingRole
 
@@ -281,6 +301,7 @@ _Allowed Values (Applications.PersonalData.PersonalDataProcessesRepository.Proce
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **Controller**  
+_Show in UI_: **ShownByDefault**  
 
 ### RetentionPeriodMonths
 
@@ -290,6 +311,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ThirdCountryTransfersSafeguards
 
@@ -300,6 +322,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -311,6 +334,7 @@ The enterprise company, which owns the process. `Required` `Filter(multi eq)`
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProcessOwnerPerson
 
@@ -319,6 +343,7 @@ The owner and responsible person for the process. `Required` `Filter(multi eq)`
 _Type_: **[Persons](General.Contacts.Persons.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

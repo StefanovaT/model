@@ -14,6 +14,8 @@ Default Search Members:
 _Name_  
 Name Data Member:  
 _Name_  
+Category:  _Settings_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -55,6 +57,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -63,6 +66,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LayoutFormat
 
@@ -73,6 +77,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
+_Show in UI_: **CannotBeShown**  
 
 ### Name
 
@@ -83,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -93,6 +99,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **512**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -102,6 +109,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### OneRow
 
@@ -112,6 +120,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### QueryName
 
@@ -122,6 +131,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReportBinaryLayout
 
@@ -131,6 +141,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 ### ReportLayout
 
@@ -141,6 +152,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### TemplateFilterXml
 
@@ -151,6 +163,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### TemplatePriority
 
@@ -160,6 +173,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -171,6 +185,7 @@ Report data source. If specified should be based on the query in Query_Name. nul
 _Type_: **[DataSources](Systems.Reporting.DataSources.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

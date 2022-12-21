@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {SalesOrder.DocumentNo} {SalesOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _SalesOrder.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -34,6 +36,8 @@ Aggregate Root:
 | [IntrastatApplyDate](Crm.Sales.SalesOrderLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83` 
 | [IntrastatTransaction<br />NatureCode](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
 | [IntrastatTransportModeCode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) | [TransportMode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) __nullable__ | Transport mode; used for Intrastat reporting. 
+| [Level2DiscountPercent](Crm.Sales.SalesOrderLines.md#level2discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 2 discount. `Introduced in version 23.1.2.8` 
+| [Level3DiscountPercent](Crm.Sales.SalesOrderLines.md#level3discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 3 discount. `Introduced in version 23.1.2.8` 
 | [LineAmount](Crm.Sales.SalesOrderLines.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)` 
 | [LineCustomDiscountPercent](Crm.Sales.SalesOrderLines.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)` 
 | [LineFromDate](Crm.Sales.SalesOrderLines.md#linefromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
@@ -60,6 +64,8 @@ Aggregate Root:
 | [BonusProgram](Crm.Sales.SalesOrderLines.md#bonusprogram) | [BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable) | The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)` |
 | [Document](Crm.Sales.SalesOrderLines.md#document) | [SalesOrders](Crm.Sales.SalesOrders.md) | The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` |
 | [IntrastatTransportCountry](Crm.Sales.SalesOrderLines.md#intrastattransportcountry) | [Countries](General.Geography.Countries.md) (nullable) | Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)` |
+| [Level2Discount](Crm.Sales.SalesOrderLines.md#level2discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 2 discount.  . `Filter(multi eq)` `Introduced in version 23.1.2.8` |
+| [Level3Discount](Crm.Sales.SalesOrderLines.md#level3discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
 | [LineDealType](Crm.Sales.SalesOrderLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)` |
 | [LineDiscount](Crm.Sales.SalesOrderLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` |
 | [LineEndCustomerParty](Crm.Sales.SalesOrderLines.md#lineendcustomerparty) | [Parties](General.Contacts.Parties.md) (nullable) | The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. `Filter(multi eq)` `Introduced in version 20.1` |
@@ -107,6 +113,7 @@ _Allowed Values (Finance.Intrastat.DeliveryTerms Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.DeliveryTermsCode`
@@ -121,6 +128,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### GuaranteePeriodDays
 
@@ -130,6 +138,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.Product != null), obj.Product.GuaranteePeriodDays, obj.GuaranteePeriodDays)`
@@ -142,6 +151,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### HistoricalUnitCost
 
@@ -151,6 +161,7 @@ _Type_: **[Amount (14, 5)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -159,6 +170,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IntrastatApplyDate
 
@@ -168,6 +180,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### IntrastatTransactionNatureCode
 
@@ -202,6 +215,7 @@ _Allowed Values (Finance.Intrastat.TransactionNature Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.IntrastatTransactionNatureCode`
@@ -230,12 +244,33 @@ _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.IntrastatTransportModeCode`
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.IntrastatTransportModeCode`
+### Level2DiscountPercent
+
+The percent of the level 2 discount. `Introduced in version 23.1.2.8`
+
+_Type_: **decimal (7, 6) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
+### Level3DiscountPercent
+
+The percent of the level 3 discount. `Introduced in version 23.1.2.8`
+
+_Type_: **decimal (7, 6) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
 ### LineAmount
 
 The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)`
@@ -245,6 +280,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))`
@@ -260,6 +296,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineFromDate
 
@@ -269,6 +306,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.FromDate`
@@ -283,6 +321,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.SalesOrder.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -298,6 +337,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.DetermineLineStandardDiscountPercent( obj.Product, obj.LineDiscount, obj.BonusProgram, obj.PromotionalPackage, obj.ReturnForSalesOrderLine)`
@@ -312,6 +352,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.ToDate`
@@ -327,6 +368,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -336,6 +378,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentLineNo
 
@@ -345,6 +388,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PersistLot
 
@@ -355,6 +399,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `( ( obj.Lot != null) AndAlso obj.SalesOrder.Customer.PersistSalesOrdersLots)`
@@ -369,6 +414,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Product.Name`
@@ -384,6 +430,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -393,6 +440,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -407,6 +455,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### RequiredDeliveryDate
 
@@ -416,6 +465,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.RequiredDeliveryDate`
@@ -430,6 +480,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -444,6 +495,7 @@ _Type_: **[Amount (14, 5)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Product.GetStandardUnitPrice( obj.QuantityUnit, obj.SalesOrder.DocumentCurrency, obj.SalesOrder.CurrencyDirectory)`
@@ -459,6 +511,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( CalculateUnitPriceFromLineAmount( obj.LineAmount, obj.Quantity, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent) ?? obj.UnitPrice)`
@@ -475,6 +528,7 @@ The bonus program, based on which the line was automatically added. null when th
 _Type_: **[BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ReturnForSalesOrderLine != null), null, obj.BonusProgram)`
@@ -486,6 +540,7 @@ _Type_: **[SalesOrders](Crm.Sales.SalesOrders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### IntrastatTransportCountry
 
@@ -494,12 +549,31 @@ Country of origin of the transport company; used for Intrastat reporting. `Filte
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.IntrastatTransportCountry`
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.IntrastatTransportCountry`
+### Level2Discount
+
+Indicates the level 2 discount.  . `Filter(multi eq)` `Introduced in version 23.1.2.8`
+
+_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### Level3Discount
+
+Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8`
+
+_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### LineDealType
 
 Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)`
@@ -507,6 +581,7 @@ Deal type to be passed to the invoice line. If deal type in entered then the inv
 _Type_: **[DealTypes](Finance.Vat.DealTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.DealType`
@@ -520,6 +595,7 @@ The line discount type used to form the Line_Standard_Discount_Percent. `Filter(
 _Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)`
@@ -530,6 +606,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.EndCustomerParty`
@@ -543,6 +620,7 @@ The store which should be used to issue the goods for the line. null means to us
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesOrder.Store`
@@ -556,6 +634,7 @@ Specifies the lot from which the goods should be issued. null means that the lot
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ParentDocument
 
@@ -565,6 +644,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Product
 
@@ -574,6 +654,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)), obj.BonusProgram.BonusProduct, IIF( ( ( obj.ProductCode.Product != null) AndAlso ( obj.ProductCode.Product.Active == True)), obj.ProductCode.Product, obj.Product))`
@@ -587,6 +668,7 @@ Used to set the Product_Id thru the coding systems. `Filter(multi eq)`
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ProductPrice
 
@@ -595,6 +677,7 @@ Not null when the price has been selected from the list of valid standard prices
 _Type_: **[ProductPrices](Crm.ProductPrices.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)) OrElse ( obj.ReturnForSalesOrderLine != null)), null, DetermineProductPrice( obj.Product, obj.Quantity, obj.QuantityUnit, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.ProductPrice))`
@@ -605,6 +688,7 @@ If specified determines which product variant of the current product in this lin
 _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PromotionalPackage
 
@@ -613,6 +697,7 @@ The promotional package, based on which the line was added. null when the line w
 _Type_: **[PromotionalPackages](Crm.PromotionalPackages.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ReturnForSalesOrderLine != null), null, obj.PromotionalPackage)`
@@ -623,6 +708,7 @@ The measurement unit of Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ProductCode.CodingSystem.DefaultMeasurementUnit.IfNullThen( obj.Product.MeasurementUnit.IfNullThen( obj.QuantityUnit))`
@@ -637,6 +723,7 @@ _Type_: **[InvoiceLines](Crm.Invoicing.InvoiceLines.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ReturnForSalesOrderLine
 
@@ -646,6 +733,7 @@ _Type_: **[SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### SalesOrder
 
@@ -656,6 +744,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### SerialNumber
 
@@ -664,6 +753,7 @@ Which serial number to receive/issue. null means that serial number is unknown o
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### StoreBin
 
@@ -672,6 +762,7 @@ The bin from which the goods should be withdrawn. null means that the bin will b
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

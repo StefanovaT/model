@@ -14,6 +14,8 @@ Default Search Members:
 _ColumnName_  
 Name Data Member:  
 _ColumnName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -56,6 +58,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionFormName
 
@@ -67,6 +70,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionUserLogin
 
@@ -77,6 +81,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionUserMachine
 
@@ -87,6 +92,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultValueField
 
@@ -97,6 +103,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -106,6 +113,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -114,6 +122,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -123,6 +132,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PanelName
 
@@ -133,6 +143,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### TableName
 
@@ -143,6 +154,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -154,6 +166,7 @@ If not null specifies that the default should be applied only if Document_Type_I
 _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionEnterpriseCompany
 
@@ -162,6 +175,7 @@ If not null specifies that the default should be applied only if Enterprise_Comp
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionRole
 
@@ -170,6 +184,7 @@ When not null, specifies that the default value should be applied only when the 
 _Type_: **[Roles](Systems.Security.Roles.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

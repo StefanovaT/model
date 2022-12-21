@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineOrd}. {Reconciliation.DocumentNo} {Reconciliation.DocumentType.TypeName:T}_  
 Default Search Members:  
 _Reconciliation.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -63,6 +65,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -72,6 +75,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -80,6 +84,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineOrd
 
@@ -89,6 +94,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.Reconciliation.Lines.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -104,6 +110,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -113,6 +120,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Quantity
 
@@ -122,6 +130,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -131,6 +140,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -145,6 +155,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -159,6 +170,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -171,6 +183,7 @@ _Type_: **[Reconciliations](Logistics.Inventory.Reconciliations.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Lot
 
@@ -179,6 +192,7 @@ The lot, which was reconciled. `Filter(multi eq)`
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Product
 
@@ -187,6 +201,7 @@ The id of the reconciled product. `Required` `Filter(multi eq)`
 _Type_: **[Products](General.Products.Products.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ProductCode.Product.IfNullThen( obj.Product)`
@@ -197,6 +212,7 @@ Selects the product thru some of the product codes. `Filter(multi eq)`
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Product != null) AndAlso ( obj.ProductCode != null)) AndAlso ( obj.Product != obj.ProductCode.Product)), null, obj.ProductCode)`
@@ -207,6 +223,7 @@ The product variant, which was reconciled. `Filter(multi eq)` `Introduced in ver
 _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### QuantityUnit
 
@@ -215,6 +232,7 @@ The measurement unit of Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ProductCode.CodingSystem.DefaultMeasurementUnit.IfNullThen( obj.Product.MeasurementUnit.IfNullThen( obj.QuantityUnit))`
@@ -227,6 +245,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### SerialNumber
 
@@ -235,6 +254,7 @@ Item serial number for serialized items. null for non-serializable items. `Filte
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( Not( obj.Product.IsSerialized) OrElse ( ( obj.SerialNumber != null) AndAlso ( obj.Product != obj.SerialNumber.Product))), null, obj.SerialNumber)`
@@ -245,6 +265,7 @@ The store, containing the reconciled product. `Required` `Filter(multi eq)`
 _Type_: **[Stores](Logistics.Inventory.Stores.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Reconciliation.DefaultStore.IfNullThen( obj.Store)`
@@ -255,6 +276,7 @@ The store bin, that was counted. `Filter(multi eq)`
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Reconciliation.DefaultStoreBin.IfNullThen( obj.StoreBin)`
@@ -266,6 +288,7 @@ _Type_: **[WarehouseTransactions](Logistics.Wms.WarehouseTransactions.md) (nulla
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

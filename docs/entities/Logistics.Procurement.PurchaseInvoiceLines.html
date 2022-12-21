@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{LineNo}. {PurchaseInvoice.DocumentNo} {PurchaseInvoice.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
-<em>PurchaseInvoice.DocumentNo</em></p>
+<em>PurchaseInvoice.DocumentNo</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -312,7 +314,8 @@ Generic enum type for DeliveryTerms properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.DeliveryTermsCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -322,19 +325,22 @@ Generic enum type for DeliveryTerms properties<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="intrastatapplydate">IntrastatApplyDate</h3>
 <p>Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used.</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="intrastattransactionnaturecode">IntrastatTransactionNatureCode</h3>
 <p>Transaction nature; used for Intrastat reporting.</p>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseInvoiceLines.html#intrastattransactionnaturecode">TransactionNature</a> <strong>nullable</strong></strong><br>
@@ -428,7 +434,8 @@ Generic enum type for TransactionNature properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.IntrastatTransactionNatureCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -482,7 +489,8 @@ Generic enum type for TransportMode properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.IntrastatTransportModeCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -493,13 +501,15 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lineno">LineNo</h3>
 <p>Consecutive line number within the invoice. <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( obj.PurchaseInvoice.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -510,19 +520,22 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productname">ProductName</h3>
 <p>The name of the invoiced product, initially copied from the name in the product definition. The field can be edited by the user. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.Product.Name</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -533,7 +546,8 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ReceivingOrderLine != null), obj.ReceivingOrderLine.ConfirmedQuantity.IfNullThen( obj.ReceivingOrderLine.Quantity), obj.Quantity)</code></p>
 <h3 id="quantitybase">QuantityBase</h3>
@@ -541,7 +555,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -551,7 +566,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -562,7 +578,8 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ReceivingOrderLine != null), obj.ReceivingOrderLine.PricePerUnit, obj.GetDefaultProductPrice( obj.Product))</code></p>
 <h2 id="reference-details">Reference Details</h2>
@@ -571,12 +588,14 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.PurchaseInvoices.html">PurchaseInvoices</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="intrastatdestinationregion">IntrastatDestinationRegion</h3>
 <p>Region, which is the final destination of the goods. Used for Intrastat reporting. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.AdministrativeRegions.html">AdministrativeRegions</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.IntrastatDestinationRegion</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -585,7 +604,8 @@ Generic enum type for TransportMode properties<br>
 <p>Country of origin of the transport company; used for Intrastat reporting. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.Countries.html">Countries</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.IntrastatTransportCountry</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -594,12 +614,14 @@ Generic enum type for TransportMode properties<br>
 <p>Cost center for which the amount from this row will be accounted. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Accounting.CostCenters.html">CostCenters</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="linedealtype">LineDealType</h3>
 <p>Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.DealType</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -608,13 +630,15 @@ Generic enum type for TransportMode properties<br>
 <p>The country of origin of the invoiced product. Should be non-null only when this is different from the country of origin from the product definition. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.Countries.html">Countries</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>The invoiced product. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ReceivingOrderLine != null), obj.ReceivingOrderLine.Product, obj.Product)</code></p>
 <h3 id="purchaseinvoice">PurchaseInvoice</h3>
@@ -623,12 +647,14 @@ Generic enum type for TransportMode properties<br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="quantityunit">QuantityUnit</h3>
 <p>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ReceivingOrderLine != null), obj.ReceivingOrderLine.QuantityUnit, IIF( ( obj.Product != null), obj.Product.MeasurementUnit, obj.QuantityUnit))</code></p>
 <h3 id="receivingorderline">ReceivingOrderLine</h3>
@@ -636,12 +662,14 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="Logistics.Procurement.ReceivingOrderLines.html">ReceivingOrderLines</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="salelinedealtype">SaleLineDealType</h3>
 <p>Sale deal type for this line. If sale deal type in the line is different from sale deal type in the header another Sales VAT entry is created. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.PurchaseInvoice.SaleDealType</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>

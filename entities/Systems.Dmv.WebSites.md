@@ -12,6 +12,8 @@ Default Display Text Format:
 _{RootUrl}: {Type}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -37,6 +39,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **256**  
+_Show in UI_: **ShownByDefault**  
 
 ### Status
 
@@ -45,6 +48,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **10**  
+_Show in UI_: **ShownByDefault**  
 
 ### Type
 
@@ -53,6 +57,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

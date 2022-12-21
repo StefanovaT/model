@@ -16,6 +16,8 @@ Code Data Member:
 _RentalAssetCode_  
 Name Data Member:  
 _RentalAssetName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -69,6 +71,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -77,6 +80,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -87,6 +91,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -97,6 +102,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -106,6 +112,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### RentalAssetCode
 
@@ -117,6 +124,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **20**  
+_Show in UI_: **ShownByDefault**  
 
 ### RentalAssetName
 
@@ -127,6 +135,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardGuaranteeAmount
 
@@ -136,6 +145,7 @@ _Type_: **[Amount (14, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TimePeriodType
 
@@ -153,6 +163,7 @@ _Allowed Values (Applications.Rental.AssetsRepository.TimePeriodType Enum Member
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -164,6 +175,7 @@ When not null identifies the corresponding accounting asset. `Filter(multi eq)`
 _Type_: **[Assets](Finance.Assets.Assets.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -172,6 +184,7 @@ When not null, specifies that the asset is specific to a given enterprise compan
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -180,6 +193,7 @@ Product which is used in the store transactions for this asset. `Filter(multi eq
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.SerialNumber != null) AndAlso ( obj.SerialNumber.Product != obj.Product)), obj.SerialNumber.Product, obj.Product)`
@@ -190,6 +204,7 @@ The logical group of the rental asset. `Required` `Filter(multi eq)`
 _Type_: **[AssetGroups](Applications.Rental.AssetGroups.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### RentalAssetType
 
@@ -198,6 +213,7 @@ The type of the asset. `Required` `Filter(multi eq)`
 _Type_: **[AssetTypes](Applications.Rental.AssetTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SalesProduct
 
@@ -206,6 +222,7 @@ Product which is used in the creation of Sales Orders to form the price of the s
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 
@@ -214,6 +231,7 @@ Serial number which in conjunction with the product for store operations allows 
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.SerialNumber != null) AndAlso ( obj.Product != obj.SerialNumber.Product)), null, obj.SerialNumber)`
@@ -224,6 +242,7 @@ Currency of the standard guarantee amount. `Filter(multi eq)`
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkSchedule
 
@@ -232,6 +251,7 @@ Work schedule, which is used to calculate how many days this assets has been ren
 _Type_: **[WorkSchedules](General.Resources.WorkSchedules.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

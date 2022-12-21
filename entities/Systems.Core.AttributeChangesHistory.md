@@ -12,6 +12,8 @@ Default Display Text Format:
 _{RepositoryName}: {EntityItemId}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -47,6 +49,7 @@ _Inherited From_: **Sys_Attribute_Changes_Table.Attribute_Name**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityItemId
 
@@ -56,6 +59,7 @@ _Type_: **guid**
 _Category_: **System**  
 _Inherited From_: **Sys_Object_Changes_Table.Entity_Item_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### NewValue
 
@@ -65,6 +69,7 @@ _Inherited From_: **Sys_Attribute_Changes_Table.New_Value**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### PreviousValue
 
@@ -75,6 +80,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### RepositoryName
 
@@ -86,6 +92,7 @@ _Inherited From_: **Sys_Object_Changes_Table.Repository_Name**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### TimeUtc
 
@@ -97,6 +104,7 @@ _Inherited From_: **Sys_Object_Changesets_Table.Time_Utc**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Default Value_: **CurrentDateTimeUtc**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -109,6 +117,7 @@ _Type_: **[Users](Systems.Security.Users.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Sys_Object_Changesets_Table.User_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

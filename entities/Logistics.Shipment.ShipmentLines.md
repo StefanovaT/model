@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {Shipment.DocumentNo} {Shipment.DocumentType.TypeName:T}_  
 Default Search Members:  
 _Shipment.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -72,6 +74,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -81,6 +84,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Finished
 
@@ -91,6 +95,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 ### GrossWeightkg
 
@@ -100,6 +105,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### GuaranteePeriodDays
 
@@ -109,6 +115,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( obj.ParentSalesOrderLine.Product.ProductType.IsServiced, obj.ParentSalesOrderLine.Product.GuaranteePeriodDays, null)`
@@ -120,6 +127,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -128,6 +136,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Lengthm
 
@@ -137,6 +146,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### LineNo
 
@@ -146,6 +156,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.Shipment.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -160,6 +171,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Shipment.RequiredDeliveryDate`
@@ -174,6 +186,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Notes
 
@@ -184,6 +197,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -193,6 +207,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PalletNo
 
@@ -202,6 +217,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ParentLineNo
 
@@ -211,6 +227,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Quantity
 
@@ -220,6 +237,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ParentSalesOrderLine.Quantity`
@@ -231,6 +249,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -245,6 +264,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, IIF( obj.Product.AllowVariableMeasurementRatios, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.QuantityBase))`
@@ -259,6 +279,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Widthm
 
@@ -268,6 +289,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -280,6 +302,7 @@ _Type_: **[Shipments](Logistics.Shipment.Shipments.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Lot
 
@@ -288,6 +311,7 @@ The store lot from which to take the goods. `Filter(multi eq)`
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ParentSalesOrderLine.Lot`
@@ -299,6 +323,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ParentSalesOrderLine
 
@@ -308,6 +333,7 @@ _Type_: **[SalesOrderLines](Crm.Sales.SalesOrderLines.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### QuantityUnit
 
@@ -316,6 +342,7 @@ The measurement unit of Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ParentSalesOrderLine.QuantityUnit`
@@ -326,6 +353,7 @@ The serial number of the shipped product. null means that serial number is unkno
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Shipment
 
@@ -336,6 +364,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### ShipmentOrderLine
 
@@ -345,6 +374,7 @@ _Type_: **[ShipmentOrderLines](Logistics.Shipment.ShipmentOrderLines.md) (nullab
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### StoreBin
 
@@ -353,6 +383,7 @@ The store bin from which to take the goods. `Filter(multi eq)`
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### TransactionLine
 
@@ -362,6 +393,7 @@ _Type_: **[StoreTransactionLines](Logistics.Inventory.StoreTransactionLines.md) 
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

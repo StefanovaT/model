@@ -14,6 +14,8 @@ Default Search Members:
 _WorkOrderItemOperation.WorkOrderItem.WorkOrder.EntityName_  
 Name Data Member:  
 _WorkOrderItemOperation.WorkOrderItem.WorkOrder.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -56,6 +58,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -65,6 +68,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -73,6 +77,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -82,6 +87,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Priority
 
@@ -103,6 +109,7 @@ _Allowed Values (Production.Resources.LoadRepository.Priority Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **3**  
+_Show in UI_: **ShownByDefault**  
 
 ### TimeType
 
@@ -123,6 +130,7 @@ _Allowed Values (Production.Resources.LoadRepository.TimeType Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Run**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsageEndTime
 
@@ -132,6 +140,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsageQuantity
 
@@ -142,6 +151,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsageStartTime
 
@@ -151,6 +161,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsageTimeMinutes
 
@@ -161,6 +172,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -172,6 +184,7 @@ The exact resource being utilised. `Required` `Filter(multi eq)`
 _Type_: **[WorkgroupResources](Production.Resources.WorkgroupResources.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkOrderItemOperation
 
@@ -181,6 +194,7 @@ _Type_: **[WorkOrderItemOperations](Production.ShopFloor.WorkOrderItemOperations
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

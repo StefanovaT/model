@@ -12,6 +12,8 @@ Default Display Text Format:
 _{TaskType} {CreationTimeUtc:yyyy-MM-dd HH:mm:ss.fff}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -62,6 +64,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationTimeUtc
 
@@ -70,6 +73,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
+_Show in UI_: **ShownByDefault**  
 
 ### Direction
 
@@ -88,6 +92,7 @@ _Allowed Values (Logistics.Wms.WarehouseTransactionsRepository.Direction Enum Me
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **IN**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -97,6 +102,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -105,6 +111,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -114,6 +121,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Quantity
 
@@ -124,6 +132,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -133,6 +142,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardQuantity
 
@@ -142,6 +152,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TaskType
 
@@ -172,6 +183,7 @@ _Allowed Values (Logistics.Wms.WarehouseOrderLinesRepository.TaskType Enum Membe
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -183,12 +195,14 @@ The measurement unit of the catch quantity. null when catch measurement is not c
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationUser
 
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### LogisticUnit
 
@@ -198,6 +212,7 @@ _Type_: **[LogisticUnits](Logistics.LogisticUnits.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Lot
 
@@ -207,6 +222,7 @@ _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -216,6 +232,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductVariant
 
@@ -225,6 +242,7 @@ _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityUnit
 
@@ -233,6 +251,7 @@ The measurement unit of quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 
@@ -242,6 +261,7 @@ _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Warehouse
 
@@ -250,6 +270,7 @@ The warehouse in which the transaction occurred. `Required` `Filter(multi eq)`
 _Type_: **[Warehouses](Logistics.Wms.Warehouses.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WarehouseLocation
 
@@ -259,6 +280,7 @@ _Type_: **[WarehouseLocations](Logistics.Wms.WarehouseLocations.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WarehouseOrder
 
@@ -267,6 +289,7 @@ The order which created this transaction. null when this transaction was not bas
 _Type_: **[WarehouseOrders](Logistics.Wms.WarehouseOrders.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WarehouseOrderLine
 
@@ -276,6 +299,7 @@ _Type_: **[WarehouseOrderLines](Logistics.Wms.WarehouseOrderLines.md) (nullable)
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

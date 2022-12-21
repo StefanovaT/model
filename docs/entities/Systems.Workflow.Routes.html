@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>ProcedureName</em><br>
 Name Data Member:<br>
-<em>ProcedureName</em></p>
+<em>ProcedureName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -292,14 +294,16 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>CurrentDate</strong></p>
+<em>Default Value</em>: <strong>CurrentDate</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="active">Active</h3>
 <p>True if the route is active, otherwise false. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="allowedgenerationtypes">AllowedGenerationTypes</h3>
 <p>Determines the possible types of the generation of the destination document: A=Auto, M=Manual, B=Both (Auto and Manual). <code>Required</code> <code>Default(&quot;B&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html#allowedgenerationtypes">AllowedGenerationTypes</a></strong><br>
@@ -330,20 +334,23 @@ Allowed values for the <code>AllowedGenerationTypes</code>(Systems.Workflow.Rout
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>BothAutoAndManually</strong></p>
+<em>Default Value</em>: <strong>BothAutoAndManually</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="allowobsoletegeneration">AllowObsoleteGeneration</h3>
 <p>Allows the usage of unsupported generation procedures (marked as obsolete). This is a user override of the system prohibition of the usage of obsolete procedures. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditionfilterxml">ConditionFilterXML</h3>
 <p>Contains filter condition, which the document must match in order to execute the route.</p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditionstatesbitmask">ConditionStatesBitMask</h3>
 <p>The system states for which to execute the specified route. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html#conditionstatesbitmask">DocumentStateFlags</a></strong><br>
@@ -390,7 +397,8 @@ Enumeration of document system states that can be combined in bit mask<br>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="connectedpartycondition">ConnectedPartyCondition</h3>
 <p>A - any party; C - connected party: to_party is enterprise company; U - unconnected party - not enterprise company;. <code>Required</code> <code>Default(&quot;A&quot;)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html#connectedpartycondition">ConnectedPartyCondition</a></strong><br>
@@ -421,13 +429,15 @@ Allowed values for the <code>ConnectedPartyCondition</code>(Systems.Workflow.Rou
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>AnyParty</strong></p>
+<em>Default Value</em>: <strong>AnyParty</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="deactivationdate">DeactivationDate</h3>
 <p>The date until (including) the route is active. The date is matched against the document date of the generating document. Null means the route does not have a deactivation date. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="destinationstate">DestinationState</h3>
 <p>0=New;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html#destinationstate">DocumentState</a></strong><br>
@@ -473,38 +483,44 @@ Enumeration of document system states<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="negativeconditionfilterxml">NegativeConditionFilterXml</h3>
 <p>The negative condition should NOT be matched by the document in order to execute the route.</p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="notes">Notes</h3>
 <p>Notes for this Route.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parentdocumentrelationshiptype">ParentDocumentRelationshipType</h3>
 <p>Determines the default relationship type between the generated document and the parent document. <code>Required</code> <code>Default(&quot;S&quot;)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html#parentdocumentrelationshiptype">ParentDocument<br>RelationshipType</a></strong><br>
@@ -535,72 +551,84 @@ Relationship between parent and child documents<br>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Subtask</strong></p>
+<em>Default Value</em>: <strong>Subtask</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="procedurename">ProcedureName</h3>
 <p>The system name of the generation procedure, which must be executed by the route. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="processevent">ProcessEvent</h3>
 <p>Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="readonly">ReadOnly</h3>
 <p>Indicates wheather the destination document shoul be read only. true - the destination document is read only. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="schemaxml">SchemaXML</h3>
 <p><strong>OBSOLETE! Do not use!</strong></p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="conditionenterprisecompany">ConditionEnterpriseCompany</h3>
 <p>The enterprise company for which this route is activated. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditionuserstatus">ConditionUserStatus</h3>
 <p>The user-defined status, for which the document route is activated. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="destinationdocumenttype">DestinationDocumentType</h3>
 <p>The type of the document, that will be generated by executing the route. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="destinationenterprisecompany">DestinationEnterpriseCompany</h3>
 <p>The enterprise company in which to generate the target document. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="destinationenterprisecompanylocation">DestinationEnterpriseCompanyLocation</h3>
 <p>The enterprise company location in which to generate the target document. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="destinationuserstatus">DestinationUserStatus</h3>
 <p>The user defined status to set to the generated document. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="documenttype">DocumentType</h3>
 <p>The document type from which this route originates. Documents from this type generate sub-documents using this route. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

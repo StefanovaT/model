@@ -14,6 +14,8 @@ Default Search Members:
 _Product.Name_  
 Name Data Member:  
 _Product.Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -55,6 +57,7 @@ _Type_: **decimal (9, 3)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 _Back-End Default Expression:_  
 `( ( obj.DestQuantity.Value * obj.DestQuantityUnit.Multiplier) * obj.SourceQuantityUnit.Divisor)`
@@ -67,6 +70,7 @@ _Type_: **decimal (9, 3)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 _Back-End Default Expression:_  
 `( ( obj.SourceQuantity.Value * obj.SourceQuantityUnit.Multiplier) * obj.DestQuantityUnit.Divisor)`
@@ -80,6 +84,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -89,6 +94,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -97,6 +103,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -106,6 +113,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### SourceQuantity
 
@@ -116,6 +124,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -127,6 +136,7 @@ The measurement unit of Dest_Quantity. Should be one of the units of the base me
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MeasurementCategory
 
@@ -135,6 +145,7 @@ The measurement category of Source Quantity Unit. For each product, only one con
 _Type_: **[MeasurementCategories](General.MeasurementCategories.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SourceQuantityUnit.MeasurementCategory`
@@ -150,6 +161,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### SourceQuantityUnit
 
@@ -158,6 +170,7 @@ The non-base measurement unit for which we specify convertion ratio. `Required` 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

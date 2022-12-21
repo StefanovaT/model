@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Id}: {EnterpriseCompanyId}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -52,6 +54,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreatedOnUtc
 
@@ -62,6 +65,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -71,6 +75,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -79,6 +84,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Notes
 
@@ -89,6 +95,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -98,6 +105,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### RequestedRight
 
@@ -119,6 +127,7 @@ _Allowed Values (Applications.PersonalData.DataSubjectRightRequestsRepository.Re
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Status
 
@@ -139,6 +148,7 @@ _Allowed Values (Applications.PersonalData.DataSubjectRightRequestsRepository.St
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -150,6 +160,7 @@ The internal user account, which marked the request as implemented. Null when th
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreatedByUser
 
@@ -158,6 +169,7 @@ The user account, which was used to create the request. Null when the request wa
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -166,6 +178,7 @@ The enterprise company, to which the request was made. `Required` `Filter(multi 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Person
 
@@ -174,6 +187,7 @@ The person, whose data will be corrected with the request. . `Required` `Filter(
 _Type_: **[Persons](General.Contacts.Persons.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

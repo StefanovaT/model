@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
+Category:  _Settings_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -59,6 +61,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### Capacity
 
@@ -69,6 +72,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### Category
 
@@ -87,6 +91,7 @@ _Allowed Values (Finance.Excise.ExciseProductTypesRepository.Category Enum Membe
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Code
 
@@ -98,6 +103,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **32**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.GetNextDefaultCode( )`
@@ -110,6 +116,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseAmountPerStamp
 
@@ -120,6 +127,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -128,6 +136,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -138,6 +147,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -147,6 +157,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -157,6 +168,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -166,6 +178,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -177,6 +190,7 @@ Code from The Combined Nomenclature used within the European Union countries. `R
 _Type_: **[CommodityCodes](Finance.Intrastat.CommodityCodes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseProduct
 
@@ -185,6 +199,7 @@ Excise product according to the EU nomenclature for products subject to excise d
 _Type_: **[ExciseProducts](Finance.Excise.ExciseProducts.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MeasurementUnit
 
@@ -193,6 +208,7 @@ The unit of measure in which the product is reported. `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

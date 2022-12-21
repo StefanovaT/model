@@ -12,6 +12,8 @@ Default Display Text Format:
 _{UserId}: {DataObjectId}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -43,6 +45,7 @@ The followed entity item. `Required` `Filter(multi eq)`
 _Type_: **guid**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityType
 
@@ -53,6 +56,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -66,6 +70,7 @@ _Category_: **System**
 _Inherited From_: **Sys_Objects_Table.Object_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### User
 
@@ -77,6 +82,7 @@ _Category_: **System**
 _Inherited From_: **Sec_Users_Table.User_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

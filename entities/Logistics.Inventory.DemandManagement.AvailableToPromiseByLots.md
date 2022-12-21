@@ -12,6 +12,8 @@ Default Display Text Format:
 _{ATPBaseValue}: {CurrentAvailabilityBaseValue}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -50,6 +52,7 @@ _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CurrentAvailabilityBase
 
@@ -59,6 +62,7 @@ _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### FromDate
 
@@ -68,6 +72,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### MovementsBase
 
@@ -77,6 +82,7 @@ _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### MovementsToDateBase
 
@@ -86,6 +92,7 @@ _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProjectedAvailabilityBase
 
@@ -95,6 +102,7 @@ _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -107,6 +115,7 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**
 _Category_: **System**  
 _Inherited From_: **Gen_Documents_Table.Enterprise_Company_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Lot
 
@@ -116,6 +125,7 @@ _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Lot_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -125,6 +135,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Order_Lines_Table.Product_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Store
 
@@ -134,6 +145,7 @@ _Type_: **[Stores](Logistics.Inventory.Stores.md)**
 _Category_: **System**  
 _Inherited From_: **Inv_Store_Orders_Table.Store_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

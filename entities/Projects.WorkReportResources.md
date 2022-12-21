@@ -14,6 +14,8 @@ Default Search Members:
 _WorkReport.EntityName_  
 Name Data Member:  
 _WorkReport.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -54,6 +56,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ActualStartTime
 
@@ -63,6 +66,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -72,6 +76,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -80,6 +85,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -89,6 +95,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### TotalResourceUsageHours
 
@@ -99,6 +106,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -110,6 +118,7 @@ The project task for which the work is reported. `Required` `Filter(multi eq)`
 _Type_: **[ProjectTasks](Projects.ProjectTasks.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.WorkReport.ProjectTask`
@@ -123,6 +132,7 @@ The resource, for which usage is reported. `Required` `Filter(multi eq)`
 _Type_: **[Resources](General.Resources.Resources.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ResourceInstance
 
@@ -131,6 +141,7 @@ The concrete resource instance used. null when no concrete resource was used or 
 _Type_: **[ResourceInstances](General.Resources.ResourceInstances.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.ResourceInstance != null) AndAlso ( obj.ResourceInstance.Resource != obj.Resource)), null, obj.ResourceInstance)`
@@ -142,6 +153,7 @@ _Type_: **[WorkReports](Projects.WorkReports.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

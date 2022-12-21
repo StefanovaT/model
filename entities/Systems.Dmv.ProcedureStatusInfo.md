@@ -12,6 +12,8 @@ Default Display Text Format:
 _{StartTime}: {User}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -42,6 +44,7 @@ _Type_: **boolean**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### ElapsedMin
 
@@ -50,6 +53,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### ElapsedPercent
 
@@ -57,6 +61,7 @@ _Type_: **double**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### EndTime
 
@@ -65,6 +70,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### Error
 
@@ -75,6 +81,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **True**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### Procedure
 
@@ -83,6 +90,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### Properties
 
@@ -93,6 +101,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **True**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### StartTime
 
@@ -101,6 +110,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### User
 
@@ -109,6 +119,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

@@ -14,6 +14,8 @@ Default Search Members:
 _Name_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -84,6 +86,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### BonusAction
 
@@ -102,6 +105,7 @@ _Allowed Values (Crm.Marketing.BonusProgramsRepository.BonusAction Enum Members)
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **Discount**  
+_Show in UI_: **ShownByDefault**  
 
 ### BonusDocumentAmountPercent
 
@@ -111,6 +115,7 @@ _Type_: **decimal (7, 6) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 ### BonusLineDiscountPercent
 
@@ -121,6 +126,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### BonusProductQuantity
 
@@ -130,6 +136,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### BonusProductQuantityMultiplierForEachLotSize
 
@@ -139,6 +146,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionCustomerFilterXML
 
@@ -148,6 +156,7 @@ _Type_: **dataaccessfilter __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionDistributionChannelFilterXML
 
@@ -157,6 +166,7 @@ _Type_: **dataaccessfilter __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionFromDate
 
@@ -166,6 +176,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionMaxAmount
 
@@ -175,6 +186,7 @@ _Type_: **[Amount (12, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionMaxQuantity
 
@@ -184,6 +196,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionMinAmount
 
@@ -193,6 +206,7 @@ _Type_: **[Amount (12, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionMinQuantity
 
@@ -202,6 +216,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionShipToCustomerFilterXML
 
@@ -211,6 +226,7 @@ _Type_: **dataaccessfilter __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionToDate
 
@@ -220,6 +236,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -229,6 +246,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -237,6 +255,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Name
 
@@ -246,6 +265,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -255,6 +275,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Priority
 
@@ -276,6 +297,7 @@ _Allowed Values (Crm.Marketing.BonusProgramsRepository.Priority Enum Members)_
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **2**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -287,6 +309,7 @@ When not null specifies that a document amount should be added to the order when
 _Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### BonusProduct
 
@@ -295,6 +318,7 @@ The product that is rewarded if the bonus conditions are met. null means that th
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### BonusProductQuantityUnit
 
@@ -303,6 +327,7 @@ The measurement unit of the quantity rewarded of the bonus product. Should be no
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Campaign
 
@@ -311,6 +336,7 @@ _Supported Filters_: **Equals, EqualsIn**
 _Type_: **[Campaigns](Crm.Marketing.Campaigns.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### CompanyLocation
 
@@ -319,6 +345,7 @@ When set, specifies that the sales document must be of the specified enterprise 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionCustomer
 
@@ -327,6 +354,7 @@ When not null, specifies that the bonus should be applied only to the specified 
 _Type_: **[Customers](Crm.Customers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionDistributionChannel
 
@@ -335,6 +363,7 @@ When not null, specifies that the bonus should be applied only when the specifie
 _Type_: **[DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionDocumentCurrency
 
@@ -343,6 +372,7 @@ Condition for the document amount. Should be not null if any of the amount condi
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionPriceList
 
@@ -351,6 +381,7 @@ When not null, specifies that the bonus should be applied only when the sales or
 _Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionProduct
 
@@ -360,6 +391,7 @@ _Type_: **[Products](General.Products.Products.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionProductGroup
 
@@ -368,6 +400,7 @@ When not null, specifies that the bonus should be applied only to products from 
 _Type_: **[ProductGroups](General.Products.ProductGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionShipToCustomer
 
@@ -376,6 +409,7 @@ When not null, specifies that the bonus should be applied only when shipping to 
 _Type_: **[Customers](Crm.Customers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionTargetGroup
 
@@ -384,6 +418,7 @@ When not null, specifies that the bonus should be applied only to the specified 
 _Type_: **[TargetGroups](Crm.Marketing.TargetGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -392,6 +427,7 @@ When set, specifies that the sales document must be of the specified enterprise 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

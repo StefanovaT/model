@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
-<em>Name</em></p>
+<em>Name</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -104,6 +106,11 @@ Name Data Member:<br>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="Crm.PriceLists.html#autoapplydiscountlevel">AutoApplyDiscountLevel</a></td>
+<td><a href="Crm.PriceLists.html#autoapplydiscountlevel">AutoApplyDiscountLevel</a></td>
+<td>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Introduced in version 23.1.2.8</code></td>
+</tr>
 <tr>
 <td><a href="Crm.PriceLists.html#description">Description</a></td>
 <td>string (max) <strong>nullable</strong></td>
@@ -159,31 +166,67 @@ Name Data Member:<br>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
+<h3 id="autoapplydiscountlevel">AutoApplyDiscountLevel</h3>
+<p>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong><a href="Crm.PriceLists.html#autoapplydiscountlevel">AutoApplyDiscountLevel</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>AutoApplyDiscountLevel</code>(Crm.PriceLists.md#autoapplydiscountlevel) data attribute<br>
+<em>Allowed Values (Crm.PriceListsRepository.AutoApplyDiscountLevel Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One</td>
+<td>One value. Stored as '1'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'One'</td>
+</tr>
+<tr>
+<td>Two</td>
+<td>Two value. Stored as '2'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Two'</td>
+</tr>
+<tr>
+<td>Three</td>
+<td>Three value. Stored as '3'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Three'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>One</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="description">Description</h3>
 <p>The description of this PriceList.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="fromdate">FromDate</h3>
 <p>Starting validity of the price list. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="name">Name</h3>
 <p>The name of this PriceList. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (50)</strong><br>
@@ -191,25 +234,29 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>50</strong></p>
+<em>Maximum Length</em>: <strong>50</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="thrudate">ThruDate</h3>
 <p>Ending validity of the price list. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The Enterprise Company to which this PriceList applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

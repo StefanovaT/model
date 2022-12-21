@@ -16,6 +16,8 @@ Code Data Member:
 _PartNumber_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -128,6 +130,7 @@ _Allowed Values (General.Products.ProductsRepository.ABCClass Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **B**  
+_Show in UI_: **ShownByDefault**  
 
 ### Active
 
@@ -138,6 +141,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowVariableMeasurementRatios
 
@@ -148,6 +152,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CatalogDescriptionHtml
 
@@ -158,6 +163,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **CannotBeShown**  
 
 ### CostingMethod
 
@@ -176,6 +182,7 @@ _Allowed Values (General.Products.ProductsRepository.CostingMethod Enum Members)
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CreationTime
 
@@ -185,6 +192,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CreationUser
 
@@ -195,6 +203,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Description
 
@@ -204,6 +213,7 @@ _Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -213,6 +223,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ExpiryPeriodDays
 
@@ -222,6 +233,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### FlushingMethod
 
@@ -241,6 +253,7 @@ _Allowed Values (General.Products.ProductsRepository.FlushingMethod Enum Members
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Manual**  
+_Show in UI_: **ShownByDefault**  
 
 ### GuaranteePeriodDays
 
@@ -250,6 +263,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -258,6 +272,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsFeatured
 
@@ -268,6 +283,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsSerialized
 
@@ -278,6 +294,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LotsIssue
 
@@ -296,6 +313,7 @@ _Allowed Values (General.Products.ProductsRepository.LotsIssue Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ManufacturingPolicy
 
@@ -307,6 +325,7 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **3**  
 _Default Value_: **MTS**  
+_Show in UI_: **CannotBeShown**  
 
 ### MinimalSalesPricePerLot
 
@@ -316,6 +335,7 @@ _Type_: **[Amount (18, 4)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### MinimalSalesQuantityBase
 
@@ -325,6 +345,7 @@ _Type_: **decimal (18, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -334,6 +355,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -343,6 +365,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PartNumber
 
@@ -354,6 +377,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **32**  
+_Show in UI_: **ShownByDefault**  
 
 ### PlanningDemandTimeFenceDays
 
@@ -363,6 +387,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PlanningHorizonDays
 
@@ -372,6 +397,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 ### PlanningTimeFenceDays
 
@@ -381,6 +407,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 ### ScrapRate
 
@@ -391,6 +418,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### ShortName
 
@@ -400,6 +428,7 @@ _Type_: **[MultilanguageString (128)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ShowInCatalog
 
@@ -410,6 +439,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardCostPerLot
 
@@ -420,6 +450,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardLotSizeBase
 
@@ -430,6 +461,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardPricePerLot
 
@@ -440,6 +472,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### SupplySchemaId
 
@@ -448,6 +481,7 @@ The supply schema to use for the distribution of the product among warehouses. `
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### UpdateTime
 
@@ -457,6 +491,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### UpdateUser
 
@@ -467,6 +502,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### UseLots
 
@@ -486,6 +522,7 @@ _Allowed Values (General.Products.ProductsRepository.UseLots Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Allowed**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -497,6 +534,7 @@ The base measurement category for quantities of this product. `Required` `Filter
 _Type_: **[MeasurementCategories](General.MeasurementCategories.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ProductGroup.DefaultMeasurementUnit.MeasurementCategory`
@@ -507,6 +545,7 @@ Specifies what type of cargo this product is. Required when generating transport
 _Type_: **[CargoTypes](Logistics.Shipment.CargoTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### CostingCurrency
 
@@ -515,6 +554,7 @@ Specifies the currency to use for cost calculations for the product. When null, 
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -523,6 +563,7 @@ When not null, specifies that the product is specific to a given enterprise comp
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ProductGroup.EnterpriseCompany`
@@ -533,6 +574,7 @@ Specifies the basic excise attributes of the product. `Filter(multi eq)` `Introd
 _Type_: **[ExciseProductTypes](Finance.Excise.ExciseProductTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### IntrastatCommodityCode
 
@@ -541,6 +583,7 @@ Code from The Combined Nomenclature used within the European Union countries. Us
 _Type_: **[CommodityCodes](Finance.Intrastat.CommodityCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### IntrastatSupplementaryUnit
 
@@ -549,6 +592,7 @@ Additional measurement unit from the Intrastat Combined nomenclature. Used when 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MeasurementUnit
 
@@ -557,6 +601,7 @@ Default measurement unit, when creating new documents with this product. `Requir
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ProductGroup.DefaultMeasurementUnit`
@@ -567,6 +612,7 @@ Country from which the product originates (in which the product is produced/cult
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductGroup
 
@@ -576,6 +622,7 @@ _Type_: **[ProductGroups](General.Products.ProductGroups.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductType
 
@@ -585,6 +632,7 @@ _Type_: **[ProductTypes](General.Products.ProductTypes.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ProductGroup.GetDefaultProductTypeForNewProduct( )`
@@ -595,6 +643,7 @@ Default measurement unit to use, when creating new purchase documents with this 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ValuationGroup
 
@@ -603,6 +652,7 @@ Valuation group of the product. Used in reconciliations when compensating pluses
 _Type_: **[ProductValuationGroups](Logistics.Inventory.ProductValuationGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

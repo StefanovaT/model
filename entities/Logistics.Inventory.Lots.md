@@ -14,6 +14,8 @@ Default Search Members:
 _Number_  
 Code Data Member:  
 _Number_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -61,6 +63,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### Description
 
@@ -70,6 +73,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -79,6 +83,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ExpiryDate
 
@@ -88,6 +93,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -96,6 +102,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LicenseNo
 
@@ -106,6 +113,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
 
 ### Number
 
@@ -116,6 +124,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **30**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -125,6 +134,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductionBatchId
 
@@ -133,6 +143,7 @@ Non-null if the production batch is known. Production batches are automatically 
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### PurchaseLotNumber
 
@@ -143,6 +154,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **30**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceiptDate
 
@@ -152,6 +164,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Status
 
@@ -172,6 +185,7 @@ _Allowed Values (Logistics.Inventory.LotsRepository.Status Enum Members)_
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -183,6 +197,7 @@ If non-null, contains the document for which the lot is blocked. `Filter(multi e
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### BlockedForParty
 
@@ -191,6 +206,7 @@ Non-null when the warehouse lot is blocked specifically for some party. `Filter(
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### CertificateDocument
 
@@ -199,6 +215,7 @@ Document, containing the certificate for this lot. `Filter(multi eq)`
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseMeasuringTransaction
 
@@ -207,6 +224,7 @@ When the lot was created in an excise controlled environment, specifies the meas
 _Type_: **[MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -216,6 +234,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceiptStoreTransaction
 
@@ -224,6 +243,7 @@ The store receipt transaction, which created the lot. null if the lot is manuall
 _Type_: **[StoreTransactions](Logistics.Inventory.StoreTransactions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

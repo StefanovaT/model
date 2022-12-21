@@ -90,7 +90,9 @@ Default Search Members:<br>
 Code Data Member:<br>
 <em>Code</em><br>
 Name Data Member:<br>
-<em>Name</em></p>
+<em>Name</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -290,13 +292,15 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>10</strong></p>
+<em>Maximum Length</em>: <strong>10</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="gln">GLN</h3>
 <p>Global Location Number used by EDI systems. <code>Filter(multi eq)</code> <code>ORD</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (13) <strong>nullable</strong></strong><br>
@@ -304,32 +308,37 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>13</strong></p>
+<em>Maximum Length</em>: <strong>13</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="isactive">IsActive</h3>
 <p>Specifies whether the current party is active in the system or not. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong></p>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>Multi-language company divsion name. <code>Required</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="partycode">PartyCode</h3>
 <p>The unique code of the party. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (16)</strong><br>
@@ -337,34 +346,39 @@ Name Data Member:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
-<em>Maximum Length</em>: <strong>16</strong></p>
+<em>Maximum Length</em>: <strong>16</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="partycreationtime">PartyCreationTime</h3>
 <p>Date and time when the Party was created. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="partycreationuser">PartyCreationUser</h3>
 <p>Login name of the user, who created the Party. <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="partyname">PartyName</h3>
 <p>The name of the party. <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="partynotes">PartyNotes</h3>
 <p>Notes for this Party. (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="partytype">PartyType</h3>
 <p>Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. <code>Required</code> <code>Default(&quot;P&quot;)</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyDivisions.html#partytype">PartyType</a></strong><br>
@@ -403,55 +417,64 @@ Allowed values for the PartyType data attribute<br>
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Person</strong></p>
+<em>Default Value</em>: <strong>Person</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="partyuniquenumber">PartyUniqueNumber</h3>
 <p>Unique number of the party (National number for persons, Registration number for companies). <code>Filter(eq;like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (16) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>16</strong></p>
+<em>Maximum Length</em>: <strong>16</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="partyupdatetime">PartyUpdateTime</h3>
 <p>Date and time when the Party was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="partyupdateuser">PartyUpdateUser</h3>
 <p>Login name of the user, who last updated the Party. <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="administrativeregion">AdministrativeRegion</h3>
 <p>The administrative region in which the party is situated. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Geography.AdministrativeRegions.html">AdministrativeRegions</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="area">Area</h3>
 <p>The area in which the party is situated. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Geography.Areas.html">Areas</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="company">Company</h3>
 <p>The company to which this company division belongs. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Companies.html">Companies</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultproductcodingsystem">DefaultProductCodingSystem</h3>
 <p>When not null, specifies coding system for products, which is required by the party. The coding system is used primarily for document printouts and document import/exports. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Products.CodingSystems.html">CodingSystems</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parentparty">ParentParty</h3>
 <p>Organizational unit (branch from the hierarchy of all parties) to which this party is referred to. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{Name}</em><br>
 Default Search Members:<br>
-<em>Name</em></p>
+<em>Name</em><br>
+Category:  <em>Views</em><br>
+Show in UI:  <em>CannotBeShown</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -164,7 +166,8 @@ Default Search Members:<br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.Email</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>254</strong></p>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="isadmin">IsAdmin</h3>
 <p>True if the user is administrator, otherwise false. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Inherited from Sec_Users_Table.Is_Admin</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
@@ -172,7 +175,8 @@ Default Search Members:<br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.Is_Admin</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="login">Login</h3>
 <p>The login name of the user, which is usually the email. <code>Required</code> <code>Filter(multi eq;like)</code> <code>Inherited from Sec_Users_Table.Login</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
@@ -180,14 +184,16 @@ Default Search Members:<br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.Login</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>The full name of the user. <code>Required</code> <code>Filter(like)</code> <code>Inherited from Sec_Users_Table.User_Name</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.User_Name</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="phonenumber">PhoneNumber</h3>
 <p>Used only for two-factor authentication. null when phone-based two-factor is not used. <code>Filter(eq;like)</code> <code>Inherited from Sec_Users_Table.Phone_Number</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
@@ -195,25 +201,29 @@ Default Search Members:<br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.Phone_Number</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong></p>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="userid">UserId</h3>
 <p>The Id of the security user. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="domain">Domain</h3>
 <p>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Domain_Id</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Domains.html">Domains</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.Domain_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="person">Person</h3>
 <p>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code> <code>Inherited from Sec_Users_Table.Person_Id</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sec_Users_Table.Person_Id</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getaccesskeypermissions">GetAccessKeyPermissions</h3>

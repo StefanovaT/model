@@ -12,6 +12,8 @@ Default Display Text Format:
 _{User}: {Device}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -43,6 +45,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Applications
 
@@ -51,6 +54,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### CurrentRequestsCount
 
@@ -58,6 +62,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Device
 
@@ -66,6 +71,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### DownloadMB
 
@@ -73,6 +79,7 @@ _Type_: **decimal (12, 3)**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### LastRequestTime
 
@@ -80,6 +87,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### StartTime
 
@@ -87,6 +95,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### TotalRequestsCount
 
@@ -94,6 +103,7 @@ _Type_: **int64**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### UploadMB
 
@@ -101,6 +111,7 @@ _Type_: **decimal (12, 3)**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### User
 
@@ -109,6 +120,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

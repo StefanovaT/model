@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Id}: {DataObjectId}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,6 +51,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationTimeUtc
 
@@ -59,6 +62,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -68,6 +72,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -76,6 +81,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -85,6 +91,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -96,6 +103,7 @@ The root data object (post, marketplace product, document, etc), for which the c
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReplyToComment
 
@@ -104,6 +112,7 @@ When not null, means that the comment is a reply to the specified comment. The c
 _Type_: **[Comments](Communities.Social.Comments.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### User
 
@@ -112,6 +121,7 @@ The user, who made the comment. `Required` `Filter(multi eq)`
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

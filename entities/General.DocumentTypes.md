@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _TypeName_  
+Category:  _Settings_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -53,7 +55,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Code](General.DocumentTypes.md#code) | string (16) | Unique descriptive code of the document type. `Required` `Filter(eq;like)` `ORD` 
-| [CreateFulfillments<br />OnCompletion](General.DocumentTypes.md#createfulfillmentsoncompletion) | boolean | When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents. `Required` `Default(false)` 
+| [CreateFulfillments<br />OnCompletion](General.DocumentTypes.md#createfulfillmentsoncompletion) | boolean | When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents. `Required` `Default(false)` `Introduced in version 23.1.2.9` 
 | [CreateManully](General.DocumentTypes.md#createmanully) | boolean | False if documents with this document type only can be generated; true - the user can create documents with this type. `Required` `Default(true)` `Filter(eq)` 
 | [Description](General.DocumentTypes.md#description) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | The description of this DocumentType. 
 | [DisallowOpposite<br />ValuesGeneration](General.DocumentTypes.md#disallowoppositevaluesgeneration) | boolean | Disallow the generation of decreasing scalar values (values with opposite directions than the original values determined by the parent document) through this document type. `Required` `Default(false)` 
@@ -110,16 +112,18 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreateFulfillmentsOnCompletion
 
-When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents. `Required` `Default(false)`
+When document state is changed to Completed, creates completed document fulfillments for the parent document. Used only for logistic documents. `Required` `Default(false)` `Introduced in version 23.1.2.9`
 
 _Type_: **boolean**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreateManully
 
@@ -130,6 +134,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( obj.TransitionalDocument, False, obj.CreateManully)`
@@ -141,6 +146,7 @@ _Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisallowOppositeValuesGeneration
 
@@ -151,6 +157,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -160,6 +167,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityName
 
@@ -171,6 +179,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### GenerateSingleDocument
 
@@ -181,6 +190,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -189,6 +199,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Notes
 
@@ -199,6 +210,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -208,6 +220,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### SchemaXML
 
@@ -218,6 +231,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **CannotBeShown**  
 
 ### TransitionalDocument
 
@@ -228,6 +242,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( obj.CreateManully, False, obj.TransitionalDocument)`
@@ -240,6 +255,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -251,6 +267,7 @@ The access key, containing the user permissions for this DocumentType. Null mean
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Sequence
 
@@ -259,6 +276,7 @@ The sequence that will be used to give new numbers to the documents of this type
 _Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

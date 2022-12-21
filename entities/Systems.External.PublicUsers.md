@@ -20,6 +20,8 @@ Code Data Member:
 _PhoneNumber_  
 Name Data Member:  
 _CompanyName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -61,7 +63,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Company](Systems.External.PublicUsers.md#company) | [Companies](General.Contacts.Companies.md) (nullable) | Link to an internal company record, specified by internal employee. `Filter(multi eq)` |
 | [Person](Systems.External.PublicUsers.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | Link to an internal person record. Usually specified by internal employee, but can also be an automated process. `Filter(multi eq)` |
-| [<s>PublicUserList</s>](Systems.External.PublicUsers.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) | **OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` |
+| [<s>PublicUserList</s>](Systems.External.PublicUsers.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) | **OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` |
 
 
 ## Attribute Details
@@ -75,6 +77,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **1024**  
+_Show in UI_: **ShownByDefault**  
 
 ### Address
 
@@ -85,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### AlternateEmail
 
@@ -95,6 +99,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### City
 
@@ -105,6 +110,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### CompanyName
 
@@ -115,6 +121,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### Country
 
@@ -125,6 +132,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreatedOn
 
@@ -135,6 +143,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -144,6 +153,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Email
 
@@ -154,6 +164,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### FirstName
 
@@ -164,6 +175,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -172,6 +184,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -182,6 +195,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### LastName
 
@@ -192,6 +206,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -202,6 +217,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -211,6 +227,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PasswordAlgorithm
 
@@ -221,6 +238,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### PasswordHash
 
@@ -231,6 +249,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### PasswordRecoveryCode
 
@@ -239,6 +258,7 @@ Automatically generated unique code for the last password recovery attempt. `Fil
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PasswordRecoveryCreationTime
 
@@ -248,6 +268,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PhoneNumber
 
@@ -258,6 +279,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### PostalCode
 
@@ -268,6 +290,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProfilePicture
 
@@ -277,6 +300,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### State
 
@@ -287,6 +311,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -298,6 +323,7 @@ Link to an internal company record, specified by internal employee. `Filter(mult
 _Type_: **[Companies](General.Contacts.Companies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Person
 
@@ -306,14 +332,16 @@ Link to an internal person record. Usually specified by internal employee, but c
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PublicUserList
 
-**OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete`
+**OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete`
 
 _Type_: **[PublicUserLists](Systems.External.PublicUserLists.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

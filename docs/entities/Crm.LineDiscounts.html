@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{DiscountPercent:P} {Description}</em><br>
 Default Search Members:<br>
-__</p>
+__<br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -106,6 +108,11 @@ __</p>
 <td><a href="Crm.LineDiscounts.html#description">Description</a></td>
 <td>string (50) <strong>nullable</strong></td>
 <td>The description of the discount that is shown to the operator when he/she should choose between different discounts. <code>Filter(like)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.LineDiscounts.html#discountlevel">DiscountLevel</a></td>
+<td><a href="Crm.LineDiscounts.html#discountlevel">DiscountLevel</a></td>
+<td>Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>ORD</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.LineDiscounts.html#discountpercent">DiscountPercent</a></td>
@@ -223,50 +230,91 @@ __</p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>50</strong></p>
+<em>Maximum Length</em>: <strong>50</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="discountlevel">DiscountLevel</h3>
+<p>Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>ORD</code> <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html#discountlevel">DiscountLevel</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>DiscountLevel</code>(Crm.LineDiscounts.md#discountlevel) data attribute<br>
+<em>Allowed Values (Crm.LineDiscountsRepository.DiscountLevel Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One</td>
+<td>One value. Stored as '1'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'One'</td>
+</tr>
+<tr>
+<td>Two</td>
+<td>Two value. Stored as '2'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Two'</td>
+</tr>
+<tr>
+<td>Three</td>
+<td>Three value. Stored as '3'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Three'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Default Value</em>: <strong>One</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="discountpercent">DiscountPercent</h3>
 <p>The discount percent that should be applied if all the matching criteria are met. <code>Required</code> <code>Default(0)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="fromdate">FromDate</h3>
 <p>Starting date of validity of the discount. null means no from date restriction. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="maxquantity">MaxQuantity</h3>
 <p>Apply the discount only if the quantity sold is equal to or less than the specified here. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="minquantity">MinQuantity</h3>
 <p>Apply the discount only if the quantity sold is equal to or more than the specified here. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="priority">Priority</h3>
 <p>The priority of this discount policy. When selecting a discount for a sales document line, only the highest priority policy, matching the criteria is applied. <code>Required</code> <code>Default(3)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html#priority">Priority</a></strong><br>
@@ -305,69 +353,81 @@ Generic enum type for Priority properties<br>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>3</strong></p>
+<em>Default Value</em>: <strong>3</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="thrudate">ThruDate</h3>
 <p>Ending date (inclusive) of validity of the discount. If null, the discount is valid forever. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="campaign">Campaign</h3>
 <p>Тhe marketing campaign to which the current definition belongs. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.4.67</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.Campaigns.html">Campaigns</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="customer">Customer</h3>
 <p>Apply the discount only if this is the customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Customers.html">Customers</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="customertype">CustomerType</h3>
 <p>Apply the discount only if the customer is of this customer type. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.CustomerTypes.html">CustomerTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="distributionchannel">DistributionChannel</h3>
 <p>Apply the discount only when the sales document is on the specified channel. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.DistributionChannels.html">DistributionChannels</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>When not null, the policy is applied only for documents of the specified enterprise company . <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="enterprisecompanylocation">EnterpriseCompanyLocation</h3>
 <p>When set, the policy is applied only for documents of the specified enterprise company location. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( obj.EnterpriseCompanyLocation != null) AndAlso ( obj.EnterpriseCompanyLocation.Company != obj.EnterpriseCompany)), null, obj.EnterpriseCompanyLocation.Company)</code></p>
 <h3 id="pricelist">PriceList</h3>
 <p>Apply the discount only if this price list is used. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.PriceLists.html">PriceLists</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>Apply the discount only when this specific product is sold. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productgroup">ProductGroup</h3>
 <p>Apply the discount only if the product sold is contained in this product group or any of its sub-groups. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductGroups.html">ProductGroups</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="targetgroup">TargetGroup</h3>
 <p>Apply the discount only if the customer is included in this target group. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.TargetGroups.html">TargetGroups</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

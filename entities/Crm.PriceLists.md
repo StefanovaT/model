@@ -14,6 +14,8 @@ Default Search Members:
 _Name_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -25,6 +27,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel) | [AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel) | Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. `Required` `Default("1")` `Introduced in version 23.1.2.8` 
 | [Description](Crm.PriceLists.md#description) | string (max) __nullable__ | The description of this PriceList. 
 | [DisplayText](Crm.PriceLists.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Crm.PriceLists.md#fromdate) | datetime __nullable__ | Starting validity of the price list. `Filter(eq;ge;le)` 
@@ -42,6 +45,26 @@ Aggregate Tree
 
 ## Attribute Details
 
+### AutoApplyDiscountLevel
+
+Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. `Required` `Default("1")` `Introduced in version 23.1.2.8`
+
+_Type_: **[AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel)**  
+_Category_: **System**  
+Allowed values for the `AutoApplyDiscountLevel`(Crm.PriceLists.md#autoapplydiscountlevel) data attribute  
+_Allowed Values (Crm.PriceListsRepository.AutoApplyDiscountLevel Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| One | One value. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'One' |
+| Two | Two value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Two' |
+| Three | Three value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Three' |
+
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **One**  
+_Show in UI_: **ShownByDefault**  
+
 ### Description
 
 The description of this PriceList.
@@ -51,6 +74,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -60,6 +84,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FromDate
 
@@ -69,6 +94,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -77,6 +103,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Name
 
@@ -88,6 +115,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **50**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -97,6 +125,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ThruDate
 
@@ -106,6 +135,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -117,6 +147,7 @@ The Enterprise Company to which this PriceList applies, or null if it is for all
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

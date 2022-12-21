@@ -93,6 +93,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="#auto_apply_discount_level">Auto_Apply_Discount_Level</a></td>
+<td><code>nvarchar(1)</code> Allowed: <code>1</code>, <code>2</code>, <code>3</code></td>
+<td>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated.</td>
+</tr>
+<tr>
 <td><a href="#description">Description</a></td>
 <td><code>nvarchar(max)</code></td>
 <td></td>
@@ -130,6 +135,110 @@
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
+<h3 id="auto_apply_discount_level">Auto_Apply_Discount_Level</h3>
+<p>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allowed Values</td>
+<td><code>1</code>, <code>2</code>, <code>3</code></td>
+</tr>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>nvarchar(1)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="description">Description</h3>
 <table>
 <thead>
@@ -169,7 +278,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>5</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -268,7 +377,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>4</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -391,7 +500,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>2</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -515,7 +624,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>0</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -633,7 +742,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>1</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -757,7 +866,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>6</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -857,7 +966,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>3</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>

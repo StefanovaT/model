@@ -14,6 +14,8 @@ Default Search Members:
 _ProjectTask.TaskName_  
 Name Data Member:  
 _ProjectTask.TaskName_  
+Category:  _Definitions_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -62,6 +64,7 @@ _Allowed Values (Projects.ProjectTaskDependanciesRepository.DependancyType Enum 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **FinishToStart**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -71,6 +74,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -79,6 +83,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -88,6 +93,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -99,6 +105,7 @@ The task on which Project_Task depends. `Required` `Filter(multi eq)`
 _Type_: **[ProjectTasks](Projects.ProjectTasks.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProjectTask
 
@@ -108,6 +115,7 @@ _Type_: **[ProjectTasks](Projects.ProjectTasks.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

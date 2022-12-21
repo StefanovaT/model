@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {WarehouseOrder.DocumentNo} {WarehouseOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _WarehouseOrder.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -66,6 +68,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -74,6 +77,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineGroupNo
 
@@ -84,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
+_Show in UI_: **HiddenByDefault**  
 
 ### LineNo
 
@@ -93,6 +98,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.WarehouseOrder.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -108,6 +114,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -117,6 +124,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentLineNo
 
@@ -126,6 +134,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Quantity
 
@@ -136,6 +145,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -145,6 +155,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -159,6 +170,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantity, IIF( obj.Product.AllowVariableMeasurementRatios, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.QuantityBase))`
@@ -194,6 +206,7 @@ _Allowed Values (Logistics.Wms.WarehouseOrderLinesRepository.TaskType Enum Membe
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -206,6 +219,7 @@ _Type_: **[WarehouseOrders](Logistics.Wms.WarehouseOrders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### LogisticUnit
 
@@ -214,6 +228,7 @@ Logistic unit, which should be used in the operation. `Filter(multi eq)` `Introd
 _Type_: **[LogisticUnits](Logistics.LogisticUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Lot
 
@@ -222,6 +237,7 @@ The lot of the product, which should be used. null for operations, which are not
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ParentDocument
 
@@ -230,6 +246,7 @@ The document, which the current line executes. null when the current line does n
 _Type_: **[WarehouseRequisitions](Logistics.Wms.WarehouseRequisitions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Product
 
@@ -238,6 +255,7 @@ The product, which should be used for the operation. `Filter(multi eq)`
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductVariant
 
@@ -246,6 +264,7 @@ The product variant, which should be used. `Filter(multi eq)` `Introduced in ver
 _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### QuantityUnit
 
@@ -254,6 +273,7 @@ The measurement unit of Quantity. null for operations, which are not quantity-re
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.MeasurementUnit`
@@ -264,6 +284,7 @@ The serial number of the product, which should be used. null for operations, whi
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ToWarehouseLocation
 
@@ -272,6 +293,7 @@ Destination warehouse location. null for operations, which do not specify destin
 _Type_: **[WarehouseLocations](Logistics.Wms.WarehouseLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### WarehouseLocation
 
@@ -280,6 +302,7 @@ Location, where the opeartion should be performed. null for operations, which do
 _Type_: **[WarehouseLocations](Logistics.Wms.WarehouseLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### WarehouseOrder
 
@@ -290,6 +313,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### WarehouseWorker
 
@@ -298,6 +322,7 @@ Human or robot worker, which should execute the operation. null means that the l
 _Type_: **[WarehouseWorkers](Logistics.Wms.WarehouseWorkers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.WarehouseOrder.WarehouseWorker`
@@ -311,6 +336,7 @@ The warehouse zone, in which the operation should be performed. null for operati
 _Type_: **[WarehouseZones](Logistics.Wms.WarehouseZones.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

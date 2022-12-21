@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _WorkOrder.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -65,6 +67,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### DistributeBy
 
@@ -83,6 +86,7 @@ _Allowed Values (Production.ShopFloor.WorkOrderItemIngredientsRepository.Distrib
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.WorkOrderItem != null), null, obj.DistributeBy)`
@@ -95,6 +99,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -103,6 +108,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineOrd
 
@@ -112,6 +118,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.WorkOrder.ItemIngredients.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -127,6 +134,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -136,6 +144,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### UsedQuantity
 
@@ -146,6 +155,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsedQuantityBase
 
@@ -155,6 +165,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.Material != null) AndAlso ( obj.UsedQuantity != null)) AndAlso ( obj.UsedQuantityUnit != null)), obj.UsedQuantity.ConvertTo( obj.Material.BaseUnit, obj.Material), obj.UsedQuantityBase)`
@@ -169,6 +180,7 @@ _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `IIF( ( ( ( obj.UsedQuantity != null) AndAlso ( obj.UsedQuantityUnit != null)) AndAlso ( obj.Material != null)), IIF( obj.Material.AllowVariableMeasurementRatios, obj.UsedQuantity.ConvertTo( obj.Material.BaseUnit, obj.Material), obj.UsedQuantityBase), obj.UsedStandardQuantityBase)`
@@ -185,6 +197,7 @@ Measurement category by which the materials from the line are distributed amongs
 _Type_: **[MeasurementCategories](General.MeasurementCategories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.DistributeBy == null) OrElse ( Convert( obj.DistributeBy.Value, Int32) != 1)), null, obj.DistributeByMeasurementCategory)`
@@ -196,6 +209,7 @@ _Type_: **[WorkOrders](Production.ShopFloor.WorkOrders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### Lot
 
@@ -204,6 +218,7 @@ Lot from which to get the material. When null, any lot can be used. `Filter(mult
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Material
 
@@ -212,6 +227,7 @@ The Id of the consumed material (Gen_Products_Table). `Required` `Filter(multi e
 _Type_: **[Products](General.Products.Products.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ProductCode.Product.IfNullThen( obj.Material)`
@@ -225,6 +241,7 @@ Specifies for which operation this ingredient is used. `Filter(multi eq)`
 _Type_: **[Operations](Production.Resources.Operations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PrincipalRecipeIngredient
 
@@ -233,6 +250,7 @@ The principal recipe ingredient on which this record is based. `Filter(multi eq)
 _Type_: **[PrincipalRecipeIngredients](Production.Technologies.PrincipalRecipeIngredients.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductCode
 
@@ -241,6 +259,7 @@ Selects the product thru some of the product codes. `Filter(multi eq)`
 _Type_: **[ProductCodes](General.Products.ProductCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ProductCode.Product != obj.Material), null, obj.ProductCode)`
@@ -251,6 +270,7 @@ If not null, specifies the serial number of the ingredient. `Filter(multi eq)`
 _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Store
 
@@ -259,6 +279,7 @@ The store from which to retrieve the material. `Filter(multi eq)`
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.WorkOrder.DefaultMaterialsStore`
@@ -272,6 +293,7 @@ The store bin from which to take the ingredients. `Filter(multi eq)`
 _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsedQuantityUnit
 
@@ -280,6 +302,7 @@ The measurement unit of the quantity of the material consumed in the operation. 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ProductCode.CodingSystem.DefaultMeasurementUnit.IfNullThen( obj.Material.MeasurementUnit.IfNullThen( obj.UsedQuantityUnit))`
@@ -295,6 +318,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### WorkOrderItem
 
@@ -304,6 +328,7 @@ _Type_: **[WorkOrderItems](Production.ShopFloor.WorkOrderItems.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.DistributeBy != null), null, obj.WorkOrderItem)`

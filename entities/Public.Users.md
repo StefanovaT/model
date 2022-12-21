@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Name}_  
 Default Search Members:  
 _Name_  
+Category:  _Views_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -50,6 +52,7 @@ _Inherited From_: **Sec_Users_Table.Email**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsAdmin
 
@@ -61,6 +64,7 @@ _Inherited From_: **Sec_Users_Table.Is_Admin**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Login
 
@@ -72,6 +76,7 @@ _Inherited From_: **Sec_Users_Table.Login**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
@@ -82,6 +87,7 @@ _Category_: **System**
 _Inherited From_: **Sec_Users_Table.User_Name**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PhoneNumber
 
@@ -93,6 +99,7 @@ _Inherited From_: **Sec_Users_Table.Phone_Number**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### UserId
 
@@ -101,6 +108,7 @@ The Id of the security user. `Required` `Filter(multi eq)`
 _Type_: **guid**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -113,6 +121,7 @@ _Type_: **[Domains](Systems.Security.Domains.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Sec_Users_Table.Domain_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Person
 
@@ -122,6 +131,7 @@ _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Sec_Users_Table.Person_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

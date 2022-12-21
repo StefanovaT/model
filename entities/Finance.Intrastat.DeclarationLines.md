@@ -14,6 +14,8 @@ Default Search Members:
 _IntrastatDeclaration.EntityName_  
 Name Data Member:  
 _IntrastatDeclaration.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -81,6 +83,7 @@ _Allowed Values (Finance.Intrastat.DeliveryTerms Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -90,6 +93,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -98,6 +102,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### InvoicedValueAmountBase
 
@@ -107,6 +112,7 @@ _Type_: **[Amount (10, 0)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineAction
 
@@ -127,6 +133,7 @@ _Allowed Values (Finance.Intrastat.DeclarationLinesRepository.LineAction Enum Me
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **New**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineNo
 
@@ -136,6 +143,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.IntrastatDeclaration.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -150,6 +158,7 @@ _Type_: **decimal (14, 3)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -159,6 +168,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantitySupplementaryUnit
 
@@ -168,6 +178,7 @@ _Type_: **decimal (10, 0) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StatisticalValueAmountBase
 
@@ -177,6 +188,7 @@ _Type_: **[Amount (10, 0)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TransactionNature
 
@@ -211,6 +223,7 @@ _Allowed Values (Finance.Intrastat.TransactionNature Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TransportMode
 
@@ -234,6 +247,7 @@ _Allowed Values (Finance.Intrastat.TransportMode Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -245,6 +259,7 @@ Administrative region of the enterprise company at the time of the declaration. 
 _Type_: **[AdministrativeRegions](General.Geography.AdministrativeRegions.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### IntrastatCommodityCode
 
@@ -253,6 +268,7 @@ The commodity code of the goods, according to the Intrastat commodity classifica
 _Type_: **[CommodityCodes](Finance.Intrastat.CommodityCodes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### IntrastatDeclaration
 
@@ -262,6 +278,7 @@ _Type_: **[Declarations](Finance.Intrastat.Declarations.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### OriginCountry
 
@@ -270,6 +287,7 @@ The country of origin of the goods. null for outbound declarations. `Filter(mult
 _Type_: **[Countries](General.Geography.Countries.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Party
 
@@ -278,6 +296,7 @@ Partner to whom the goods are dispatched, or partner from whom the goods are rec
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PartyCountry
 
@@ -286,6 +305,7 @@ The country of the partner. `Required` `Filter(multi eq)`
 _Type_: **[Countries](General.Geography.Countries.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### TransportCountry
 
@@ -294,6 +314,7 @@ The country of the transportation company. `Required` `Filter(multi eq)`
 _Type_: **[Countries](General.Geography.Countries.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

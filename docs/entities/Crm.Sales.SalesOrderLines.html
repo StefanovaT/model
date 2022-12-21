@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{LineNo}. {SalesOrder.DocumentNo} {SalesOrder.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
-<em>SalesOrder.DocumentNo</em></p>
+<em>SalesOrder.DocumentNo</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -146,6 +148,16 @@ Aggregate Root:<br>
 <td><a href="Crm.Sales.SalesOrderLines.html#intrastattransportmodecode">IntrastatTransportModeCode</a></td>
 <td><a href="Crm.Sales.SalesOrderLines.html#intrastattransportmodecode">TransportMode</a> <strong>nullable</strong></td>
 <td>Transport mode; used for Intrastat reporting.</td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level2discountpercent">Level2DiscountPercent</a></td>
+<td>decimal (7, 6) <strong>nullable</strong></td>
+<td>The percent of the level 2 discount. <code>Introduced in version 23.1.2.8</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level3discountpercent">Level3DiscountPercent</a></td>
+<td>decimal (7, 6) <strong>nullable</strong></td>
+<td>The percent of the level 3 discount. <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#lineamount">LineAmount</a></td>
@@ -263,6 +275,16 @@ Aggregate Root:<br>
 <td><a href="Crm.Sales.SalesOrderLines.html#intrastattransportcountry">IntrastatTransportCountry</a></td>
 <td><a href="General.Geography.Countries.html">Countries</a> (nullable)</td>
 <td>Country of origin of the transport company; used for Intrastat reporting. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level2discount">Level2Discount</a></td>
+<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td>Indicates the level 2 discount.  . <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level3discount">Level3Discount</a></td>
+<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td>Indicates the level 3 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#linedealtype">LineDealType</a></td>
@@ -417,7 +439,8 @@ Generic enum type for DeliveryTerms properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.DeliveryTermsCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -427,13 +450,15 @@ Generic enum type for DeliveryTerms properties<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="guaranteeperioddays">GuaranteePeriodDays</h3>
 <p>Guarantee period in days for the offered product. null for non-serviced products.</p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.Product != null), obj.Product.GuaranteePeriodDays, obj.GuaranteePeriodDays)</code></p>
 <h3 id="historicaldatajson">HistoricalDataJson</h3>
@@ -442,25 +467,29 @@ Generic enum type for DeliveryTerms properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="historicalunitcost">HistoricalUnitCost</h3>
 <p>Used for returning of goods that are sold before the exploitation of the system. <code>Currency: SalesOrder.DocumentCurrency</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 5)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="intrastatapplydate">IntrastatApplyDate</h3>
 <p>Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. <code>Introduced in version 21.1.3.83</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="intrastattransactionnaturecode">IntrastatTransactionNatureCode</h3>
 <p>Transaction nature; used for Intrastat reporting.</p>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrderLines.html#intrastattransactionnaturecode">TransactionNature</a> <strong>nullable</strong></strong><br>
@@ -554,7 +583,8 @@ Generic enum type for TransactionNature properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.IntrastatTransactionNatureCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -608,18 +638,34 @@ Generic enum type for TransportMode properties<br>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.IntrastatTransportModeCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.IntrastatTransportModeCode</code></p>
+<h3 id="level2discountpercent">Level2DiscountPercent</h3>
+<p>The percent of the level 2 discount. <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="level3discountpercent">Level3DiscountPercent</h3>
+<p>The percent of the level 3 discount. <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lineamount">LineAmount</h3>
 <p>The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. <code>Currency: SalesOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -630,13 +676,15 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="linefromdate">LineFromDate</h3>
 <p>When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.FromDate</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -646,7 +694,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>True</strong></p>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( obj.SalesOrder.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -657,7 +706,8 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>0</strong></p>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.DetermineLineStandardDiscountPercent( obj.Product, obj.LineDiscount, obj.BonusProgram, obj.PromotionalPackage, obj.ReturnForSalesOrderLine)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -667,7 +717,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.ToDate</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -678,26 +729,30 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong></p>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parentlineno">ParentLineNo</h3>
 <p>The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="persistlot">PersistLot</h3>
 <p>If checked specifies that the lot in the line cannot be changed in the sub-documents created by the current document. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>False</strong></p>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( ( obj.Lot != null) AndAlso obj.SalesOrder.Customer.PersistSalesOrdersLots)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -707,7 +762,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.Product.Name</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -718,13 +774,15 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="quantitybase">QuantityBase</h3>
 <p>The equivalent of Quantity in the base measurement category of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -734,13 +792,15 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="requireddeliverydate">RequiredDeliveryDate</h3>
 <p>The required (contracted) delivery date for the line. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.RequiredDeliveryDate</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -750,7 +810,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -760,7 +821,8 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 5)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.Product.GetStandardUnitPrice( obj.QuantityUnit, obj.SalesOrder.DocumentCurrency, obj.SalesOrder.CurrencyDirectory)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -771,7 +833,8 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>Constant</strong></p>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>( CalculateUnitPriceFromLineAmount( obj.LineAmount, obj.Quantity, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent) ?? obj.UnitPrice)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -781,7 +844,8 @@ Generic enum type for TransportMode properties<br>
 <p>The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.BonusPrograms.html">BonusPrograms</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ReturnForSalesOrderLine != null), null, obj.BonusProgram)</code></p>
 <h3 id="document">Document</h3>
@@ -789,21 +853,36 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrders.html">SalesOrders</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="intrastattransportcountry">IntrastatTransportCountry</h3>
 <p>Country of origin of the transport company; used for Intrastat reporting. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.Countries.html">Countries</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.IntrastatTransportCountry</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.IntrastatTransportCountry</code></p>
+<h3 id="level2discount">Level2Discount</h3>
+<p>Indicates the level 2 discount.  . <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="level3discount">Level3Discount</h3>
+<p>Indicates the level 3 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="linedealtype">LineDealType</h3>
 <p>Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.DealType</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -812,14 +891,16 @@ Generic enum type for TransportMode properties<br>
 <p>The line discount type used to form the Line_Standard_Discount_Percent. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)</code></p>
 <h3 id="lineendcustomerparty">LineEndCustomerParty</h3>
 <p>The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.EndCustomerParty</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -828,7 +909,8 @@ Generic enum type for TransportMode properties<br>
 <p>The store which should be used to issue the goods for the line. null means to use the store from the header. <code>Filter(multi eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Stores.html">Stores</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.SalesOrder.Store</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -837,19 +919,22 @@ Generic enum type for TransportMode properties<br>
 <p>Specifies the lot from which the goods should be issued. null means that the lot will be specified at a later stage (store order, etc.). <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="parentdocument">ParentDocument</h3>
 <p>The document, which the current line executes. null when the current line does not execute another line. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>The product sold. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>IIF( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)), obj.BonusProgram.BonusProduct, IIF( ( ( obj.ProductCode.Product != null) AndAlso ( obj.ProductCode.Product.Active == True)), obj.ProductCode.Product, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -858,31 +943,36 @@ Generic enum type for TransportMode properties<br>
 <p>Used to set the Product_Id thru the coding systems. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductCodes.html">ProductCodes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="productprice">ProductPrice</h3>
 <p>Not null when the price has been selected from the list of valid standard prices. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.ProductPrices.html">ProductPrices</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.BonusProgram != null) AndAlso ( Convert( obj.BonusProgram.BonusAction, Int32) == 0)) OrElse ( obj.ReturnForSalesOrderLine != null)), null, DetermineProductPrice( obj.Product, obj.Quantity, obj.QuantityUnit, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.ProductPrice))</code></p>
 <h3 id="productvariant">ProductVariant</h3>
 <p>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="promotionalpackage">PromotionalPackage</h3>
 <p>The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Crm.PromotionalPackages.html">PromotionalPackages</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ReturnForSalesOrderLine != null), null, obj.PromotionalPackage)</code></p>
 <h3 id="quantityunit">QuantityUnit</h3>
 <p>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
 <code>obj.ProductCode.CodingSystem.DefaultMeasurementUnit.IfNullThen( obj.Product.MeasurementUnit.IfNullThen( obj.QuantityUnit))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -892,30 +982,35 @@ Generic enum type for TransportMode properties<br>
 <p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceLines.html">InvoiceLines</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="returnforsalesorderline">ReturnForSalesOrderLine</h3>
 <p>When specified indicates that the goods sold in Return_For_Sales_Order_Line_Id are returned with the current line. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrderLines.html">SalesOrderLines</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="salesorder">SalesOrder</h3>
 <p>The <see cref="SalesOrder"></see> to which this SalesOrderLine belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrders.html">SalesOrders</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>
 <p>Which serial number to receive/issue. null means that serial number is unknown or not applicable. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="storebin">StoreBin</h3>
 <p>The bin from which the goods should be withdrawn. null means that the bin will be specified at a later stage (store order, etc.). <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreBins.html">StoreBins</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong></p>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

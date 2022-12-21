@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Id}: {MailBoxFolderId}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -64,6 +66,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CcEmailAddressList
 
@@ -74,6 +77,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2048**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationDateTime
 
@@ -84,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -93,6 +98,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FromEmailAddress
 
@@ -103,6 +109,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **512**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -111,6 +118,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsEncrypted
 
@@ -121,6 +129,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsRead
 
@@ -131,6 +140,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -140,6 +150,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceivedDateTime
 
@@ -149,6 +160,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### SentDateTime
 
@@ -158,6 +170,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ServerMessageID
 
@@ -169,6 +182,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **256**  
+_Show in UI_: **CannotBeShown**  
 
 ### Subject
 
@@ -179,6 +193,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **1024**  
+_Show in UI_: **ShownByDefault**  
 
 ### ToEmailAddressList
 
@@ -189,6 +204,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2048**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -201,6 +217,7 @@ _Type_: **[BoxFolders](Applications.Mail.BoxFolders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### RelatedToParty
 
@@ -209,6 +226,7 @@ The party id of the external participating (sender/receiver) party (customer, su
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

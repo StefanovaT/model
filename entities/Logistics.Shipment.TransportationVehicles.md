@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Vehicle.EngineIdentificationNumber_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -42,7 +44,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CargoType](Logistics.Shipment.TransportationVehicles.md#cargotype) | [CargoTypes](Logistics.Shipment.CargoTypes.md) | The cargo type supported by this transportation vehicle. `Required` `Filter(multi eq)` |
-| [Carrier](Logistics.Shipment.TransportationVehicles.md#carrier) | [Carriers](Logistics.Shipment.Carriers.md) (nullable) | The carrier, operating the vehicle. null for our own vehicles. `Filter(multi eq)` |
+| [Carrier](Logistics.Shipment.TransportationVehicles.md#carrier) | [Carriers](Logistics.Shipment.Carriers.md) (nullable) | The carrier, operating the vehicle. null for our own vehicles. `Filter(multi eq)` `Introduced in version 23.1.2.9` |
 | [EnterpriseCompany](Logistics.Shipment.TransportationVehicles.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company to which the transportation vehicle will be bound. `Required` `Filter(multi eq)` |
 | [TransportationMode](Logistics.Shipment.TransportationVehicles.md#transportationmode) | [TransportationModes](Logistics.Shipment.TransportationModes.md) | The mode of transportation provided by this transportation vehicle. The same base vehicle might be used for more than one mode. `Required` `Filter(multi eq)` |
 | [Vehicle](Logistics.Shipment.TransportationVehicles.md#vehicle) | [Vehicles](Applications.Fleet.Vehicles.md) | The definition of the base vehicle. `Required` `Filter(multi eq)` `Owner` |
@@ -60,6 +62,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -69,6 +72,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -77,6 +81,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### MaxCargoWeightKg
 
@@ -86,6 +91,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### MaxPalletsCount
 
@@ -95,6 +101,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -105,6 +112,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -114,6 +122,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -125,14 +134,16 @@ The cargo type supported by this transportation vehicle. `Required` `Filter(mult
 _Type_: **[CargoTypes](Logistics.Shipment.CargoTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Carrier
 
-The carrier, operating the vehicle. null for our own vehicles. `Filter(multi eq)`
+The carrier, operating the vehicle. null for our own vehicles. `Filter(multi eq)` `Introduced in version 23.1.2.9`
 
 _Type_: **[Carriers](Logistics.Shipment.Carriers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -141,6 +152,7 @@ The enterprise company to which the transportation vehicle will be bound. `Requi
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### TransportationMode
 
@@ -149,6 +161,7 @@ The mode of transportation provided by this transportation vehicle. The same bas
 _Type_: **[TransportationModes](Logistics.Shipment.TransportationModes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Vehicle
 
@@ -158,6 +171,7 @@ _Type_: **[Vehicles](Applications.Fleet.Vehicles.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

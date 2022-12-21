@@ -12,6 +12,8 @@ Default Display Text Format:
 _{BaseCostValue}: {EnterpriseCompanyId}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -51,6 +53,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductCost
 
@@ -60,6 +63,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -69,6 +73,7 @@ _Type_: **[Quantity (38, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### StoreCost
 
@@ -78,6 +83,7 @@ _Type_: **[Amount (38, 2)](../data-types.md#amount)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -90,6 +96,7 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**
 _Category_: **System**  
 _Inherited From_: **Gen_Documents_Table.Enterprise_Company_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Lot
 
@@ -99,6 +106,7 @@ _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Lot_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -108,6 +116,7 @@ _Type_: **[Products](General.Products.Products.md)**
 _Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Product_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductVariant
 
@@ -117,6 +126,7 @@ _Type_: **[ProductVariants](General.Products.ProductVariants.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Product_Variant_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 
@@ -126,6 +136,7 @@ _Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Serial_Number_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Store
 
@@ -135,6 +146,7 @@ _Type_: **[Stores](Logistics.Inventory.Stores.md)**
 _Category_: **System**  
 _Inherited From_: **Inv_Transactions_Table.Store_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### StoreBin
 
@@ -144,6 +156,7 @@ _Type_: **[StoreBins](Logistics.Inventory.StoreBins.md) (nullable)**
 _Category_: **System**  
 _Inherited From_: **Inv_Transaction_Lines_Table.Store_Bin_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

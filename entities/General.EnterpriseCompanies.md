@@ -16,6 +16,8 @@ Code Data Member:
 _Company.RegistrationNumber_  
 Name Data Member:  
 _Company.PartyName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -79,6 +81,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultCostingMethod
 
@@ -98,6 +101,7 @@ _Allowed Values (General.EnterpriseCompaniesRepository.DefaultCostingMethod Enum
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **AverageCost**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultCustomerCreditLimitBase
 
@@ -107,6 +111,7 @@ _Type_: **[Amount (18, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultLanguage
 
@@ -125,6 +130,7 @@ _Allowed Values (General.EnterpriseCompaniesRepository.DefaultLanguage Enum Memb
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **English**  
+_Show in UI_: **CannotBeShown**  
 
 ### DisplayText
 
@@ -134,6 +140,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EditPeriodStartDate
 
@@ -143,6 +150,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -151,6 +159,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
@@ -161,6 +170,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -170,6 +180,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PrintImagesRetentionMonths
 
@@ -180,6 +191,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **60**  
+_Show in UI_: **ShownByDefault**  
 
 ### UIBaseColor
 
@@ -189,6 +201,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -200,6 +213,7 @@ The access key, containing the user permissions for this EnterpriseCompany. Null
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### AdvanceProduct
 
@@ -208,6 +222,7 @@ Product that is used for handling advances in trade documents. `Filter(multi eq)
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### BaseCurrency
 
@@ -216,6 +231,7 @@ The base currency for summary reporting for this company. `Required` `Filter(mul
 _Type_: **[Currencies](General.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Company
 
@@ -225,6 +241,7 @@ _Type_: **[Companies](General.Contacts.Companies.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExchangeDifferenceCreditAccount
 
@@ -233,6 +250,7 @@ Account for balancing accounting vouchers with credit difference due to currency
 _Type_: **[Accounts](Finance.Accounting.Accounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExchangeDifferenceDebitAccount
 
@@ -241,6 +259,7 @@ Account for balancing accounting vouchers with debit difference due to currency 
 _Type_: **[Accounts](Finance.Accounting.Accounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### VATDocumentAmountType
 
@@ -249,6 +268,7 @@ The document amount that is used to determine the amount of the VAT entries when
 _Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

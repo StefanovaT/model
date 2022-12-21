@@ -85,7 +85,9 @@
 <p>Default Display Text Format:<br>
 <em>{DataObjectId}: {SocialCommentId}</em><br>
 Default Search Members:<br>
-__</p>
+__<br>
+Category:  <em>Views</em><br>
+Show in UI:  <em>CannotBeShown</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -141,7 +143,8 @@ __</p>
 <p><em>Type</em>: <strong>int64</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="reactiontype">ReactionType</h3>
 <p>The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Communities.Social.ReactionsSummary.html#reactiontype">ReactionType</a></strong><br>
@@ -183,7 +186,8 @@ Allowed values for the <code>ReactionType</code>(Communities.Social.ReactionsSum
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="dataobject">DataObject</h3>
 <p>. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Objects_Table.Object_Id</code></p>
@@ -192,13 +196,15 @@ Allowed values for the <code>ReactionType</code>(Communities.Social.ReactionsSum
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Objects_Table.Object_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="socialcomment">SocialComment</h3>
 <p><em>Type</em>: <strong><a href="Communities.Social.Comments.html">Comments</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Cmm_Social_Comments_Table.Social_Comment_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Communities_Social_ReactionsSummary?$top=10">https://demodb.my.erp.net/api/domain/odata/Communities_Social_ReactionsSummary?$top=10</a></p>

@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _OutputOrder.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -59,6 +61,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConsumedQuantityForScrap
 
@@ -69,6 +72,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConsumedQuantityForSetup
 
@@ -79,6 +83,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -88,6 +93,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -96,6 +102,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineNo
 
@@ -105,6 +112,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.OutputOrder.ConsumptionLines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
@@ -120,6 +128,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -129,6 +138,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -141,6 +151,7 @@ _Type_: **[OutputOrders](Production.ShopFloor.OutputOrders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineWorkOrder
 
@@ -149,6 +160,7 @@ Work order for the line. Initially copied from the header (if there work order i
 _Type_: **[WorkOrders](Production.ShopFloor.WorkOrders.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.OutputOrder.WorkOrder`
@@ -159,6 +171,7 @@ The consumed material. `Required` `Filter(multi eq)`
 _Type_: **[Products](General.Products.Products.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### OutputOrder
 
@@ -169,6 +182,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### QuantityUnit
 
@@ -177,6 +191,7 @@ The measurement unit for the consumed quantity for setup, run and scrap. `Requir
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Material.MeasurementUnit`
@@ -187,6 +202,7 @@ When Consumed_Quantity_For_Scrap &lt;&gt; 0 denotes the reason for the scrap. `F
 _Type_: **[ScrapTypes](Logistics.Inventory.ScrapTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkOrderItem
 
@@ -195,6 +211,7 @@ The work order item, for which the consumption is recorded. `Required` `Filter(m
 _Type_: **[WorkOrderItems](Production.ShopFloor.WorkOrderItems.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### WorkOrderItemOperation
 
@@ -203,6 +220,7 @@ The operation in which the material was consumed. null = unknown. `Filter(multi 
 _Type_: **[WorkOrderItemOperations](Production.ShopFloor.WorkOrderItemOperations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

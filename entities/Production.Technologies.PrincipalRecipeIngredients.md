@@ -14,6 +14,8 @@ Default Search Members:
 _IngredientName_  
 Name Data Member:  
 _IngredientName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -65,6 +67,7 @@ _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nu
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionalPropertyValue
 
@@ -75,6 +78,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -84,6 +88,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FixedScrapQuantity
 
@@ -94,6 +99,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -102,6 +108,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IngredientId
 
@@ -111,6 +118,7 @@ _Type_: **guid**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IngredientName
 
@@ -121,6 +129,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DefaultMaterial.Name`
@@ -132,6 +141,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.PrincipalRecipe.Ingredients.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
@@ -146,6 +156,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ScrapRate
 
@@ -156,6 +167,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### UsageQuantity
 
@@ -166,6 +178,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.UsageQuantityFormula != null), null, obj.UsageQuantity)`
@@ -178,6 +191,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.UsageQuantity != null), null, obj.UsageQuantityFormula)`
@@ -191,6 +205,7 @@ When not null, specifies that, when creating recipe, the ingredient will be adde
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionalPropertyAllowedValue
 
@@ -199,6 +214,7 @@ When not null, specifies that, when creating recipe, the ingredient will be adde
 _Type_: **[CustomPropertyAllowedValues](General.CustomPropertyAllowedValues.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### DefaultMaterial
 
@@ -207,6 +223,7 @@ If not null, points to default product for this ingredient. `Filter(multi eq)`
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultStore
 
@@ -215,6 +232,7 @@ The default store from which to retrieve the material. `Filter(multi eq)`
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MaterialFromProperty
 
@@ -223,6 +241,7 @@ When not null, specifies that the material will be obtained from the value of th
 _Type_: **[CustomProperties](General.CustomProperties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### MaterialGroup
 
@@ -231,6 +250,7 @@ Filter for choosing specific material in the recipe (Gen_Product_Groups_Table). 
 _Type_: **[ProductGroups](General.Products.ProductGroups.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Operation
 
@@ -239,6 +259,7 @@ Specifies for which operation this ingredient will be used. `Filter(multi eq)`
 _Type_: **[Operations](Production.Resources.Operations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PrincipalRecipe
 
@@ -248,6 +269,7 @@ _Type_: **[PrincipalRecipes](Production.Technologies.PrincipalRecipes.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### UsageUnit
 
@@ -256,6 +278,7 @@ The measurement unit of Usage_Quantity. The selected item must support the speci
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DefaultMaterial.BaseUnit`

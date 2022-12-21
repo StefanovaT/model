@@ -16,6 +16,8 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -81,6 +83,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Code
 
@@ -92,6 +95,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConfiguratorCreatesRecipe
 
@@ -102,6 +106,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConfiguratorStatus
 
@@ -121,6 +126,7 @@ _Allowed Values (General.Products.ProductGroupsRepository.ConfiguratorStatus Enu
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -130,6 +136,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### FullPath
 
@@ -142,6 +149,7 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
 _Default Value_: ****  
+_Show in UI_: **CannotBeShown**  
 
 _Front-End Recalc Expressions:_  
 `Format( "{0}{1}/", IIF( ( obj.ParentGroup != null), obj.ParentGroup.FullPath, "/"), obj.Code)`
@@ -152,6 +160,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Name
 
@@ -161,6 +170,7 @@ _Type_: **[MultilanguageString (180)](../data-types.md#multilanguagestring)**
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### NextPartNumber
 
@@ -171,6 +181,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
+_Show in UI_: **ShownByDefault**  
 
 ### NextSerialNumber
 
@@ -181,6 +192,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **40**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -191,6 +203,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -200,6 +213,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Parent
 
@@ -212,6 +226,7 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
 _Default Value_: **/**  
+_Show in UI_: **CannotBeShown**  
 
 _Back-End Default Expression:_  
 `IIF( ( obj.ParentGroup != null), obj.ParentGroup.FullPath, "/")`
@@ -226,6 +241,7 @@ _Type_: **byte[] __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PictureLastUpdateTime
 
@@ -235,6 +251,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductDescriptionMask
 
@@ -244,6 +261,7 @@ _Type_: **[MultilanguageString (1000)](../data-types.md#multilanguagestring) __n
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductNameMask
 
@@ -253,6 +271,7 @@ _Type_: **[MultilanguageString (1000)](../data-types.md#multilanguagestring) __n
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### UseLots
 
@@ -271,6 +290,7 @@ _Allowed Values (General.Products.ProductGroupsRepository.UseLots Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -282,6 +302,7 @@ When not null, specifies default measurement unit, which should be assigned to n
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DefaultProductType
 
@@ -290,6 +311,7 @@ When not null, specifies default product type, which should be assigned to new p
 _Type_: **[ProductTypes](General.Products.ProductTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EnterpriseCompany
 
@@ -298,6 +320,7 @@ When not null, specifies that the product group, its sub-groups and products are
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentGroup
 
@@ -307,6 +330,7 @@ _Type_: **[ProductGroups](General.Products.ProductGroups.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.Transaction.Query( ).Where( pg => ( pg.FullPath == obj.Parent)).FirstOrDefault( )`
@@ -318,6 +342,7 @@ When not null, specifies the pricing model, for the products in this product gro
 _Type_: **[PricingModels](Crm.Pricing.PricingModels.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

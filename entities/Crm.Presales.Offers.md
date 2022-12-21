@@ -15,6 +15,8 @@ Default Search Members:
 _DocumentNo_  
 Code Data Member:  
 _DocumentNo_  
+Category:  _Documents_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -131,6 +133,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### AdjustmentNumber
 
@@ -141,6 +144,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
 
 ### AdjustmentTime
 
@@ -150,6 +154,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### AdjustmentUser
 
@@ -160,6 +165,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CompleteTime
 
@@ -169,6 +175,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CreationTime
 
@@ -179,6 +186,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **HiddenByDefault**  
 
 ### CreationUser
 
@@ -189,6 +197,7 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 
@@ -198,6 +207,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### DocumentDate
 
@@ -209,6 +219,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Default Value_: **CurrentDate**  
+_Show in UI_: **ShownByDefault**  
 
 ### DocumentNo
 
@@ -220,6 +231,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **20**  
+_Show in UI_: **ShownByDefault**  
 
 ### DocumentNotes
 
@@ -230,6 +242,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DocumentVersion
 
@@ -240,6 +253,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
+_Show in UI_: **HiddenByDefault**  
 
 ### EntityName
 
@@ -251,6 +265,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
+_Show in UI_: **CannotBeShown**  
 
 ### Id
 
@@ -259,6 +274,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsReleased
 
@@ -269,6 +285,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### IsSingleExecution
 
@@ -279,6 +296,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Notes
 
@@ -289,6 +307,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -298,6 +317,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentDocumentRelationshipType
 
@@ -316,6 +336,7 @@ _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PaymentDueDate
 
@@ -325,6 +346,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DocumentDate.AddDays( Convert( IIF( ( obj.ShipToCustomer.DefaultPaymentTermDays != 0), obj.ShipToCustomer.DefaultPaymentTermDays, obj.Customer.DefaultPaymentTermDays), Double))`
@@ -337,6 +359,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ReadOnly
 
@@ -347,6 +370,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ReferenceDate
 
@@ -357,6 +381,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ReferenceDocumentNo
 
@@ -367,6 +392,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ReleaseTime
 
@@ -376,6 +402,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### RequiredDeliveryDate
 
@@ -385,6 +412,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DocumentDate.AddDays( Convert( IIF( ( obj.ShipToCustomer.DefaultDeliveryTermDays != 0), obj.ShipToCustomer.DefaultDeliveryTermDays, obj.Customer.DefaultDeliveryTermDays), Double))`
@@ -411,6 +439,7 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ValidTill
 
@@ -420,6 +449,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Void
 
@@ -431,6 +461,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### VoidReason
 
@@ -441,6 +472,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### VoidTime
 
@@ -450,6 +482,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### VoidUser
 
@@ -460,6 +493,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -471,6 +505,7 @@ The access key, containing the user permissions for this document. null means th
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### AdjustedDocument
 
@@ -480,6 +515,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### AssignedToUser
 
@@ -488,6 +524,7 @@ The user to which this document is assigned for handling. null means that the do
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### CurrencyDirectory
 
@@ -496,6 +533,7 @@ The currency directory, containing all the convertion rates, used by the documen
 _Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Customer
 
@@ -504,6 +542,7 @@ The customer to which the products are offered. `Required` `Filter(multi eq)`
 _Type_: **[Customers](Crm.Customers.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Deal
 
@@ -512,6 +551,7 @@ The opportunity (deal) on which this offer is based. `Filter(multi eq)`
 _Type_: **[Deals](Crm.Presales.Deals.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### DocumentCurrency
 
@@ -520,6 +560,7 @@ The currency in which the document is issued. All amounts are in this currency. 
 _Type_: **[Currencies](General.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ShipToCustomer.DefaultCurrency.IfNullThen( obj.Customer.DefaultCurrency).IfNullThen( obj.DocumentCurrency).IfNullThen( obj.EnterpriseCompany.BaseCurrency)`
@@ -534,6 +575,7 @@ _Type_: **[DocumentTypes](General.DocumentTypes.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EndCustomerParty
 
@@ -542,6 +584,7 @@ The end customer is the customer of the dealer. It is stored for information pur
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Lines.Select( c => c.LineEndCustomerParty).Distinct( ).OnlyIfSingle( )`
@@ -553,6 +596,7 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### EnterpriseCompanyLocation
 
@@ -561,6 +605,7 @@ The enterprise company location which issued the document. null means that there
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### FromCompanyDivision
 
@@ -569,6 +614,7 @@ The division of the company, issuing the document. null when the document is not
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### FromParty
 
@@ -577,6 +623,7 @@ The party which issued the document. `Required` `Filter(multi eq)` (Inherited fr
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### MasterDocument
 
@@ -586,6 +633,7 @@ _Type_: **[Documents](General.Documents.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Parent
 
@@ -595,6 +643,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PaymentType
 
@@ -603,6 +652,7 @@ Way of payment. null means that no specific way of payment was offered. `Filter(
 _Type_: **[PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ShipToCustomer.DefaultPaymentType.IfNullThen( obj.Customer.DefaultPaymentType).IfNullThen( obj.PaymentType)`
@@ -613,6 +663,7 @@ The price list, based on which the prices are selected. Initially copied from th
 _Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PrimeCauseDocument
 
@@ -622,6 +673,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### RecipientPerson
 
@@ -630,6 +682,7 @@ The offer recipient. It should be employee of the customer. null means that ther
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ResponsiblePerson
 
@@ -638,6 +691,7 @@ The person that is responsible for this order or transaction. It could be the sa
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ReverseOfDocument
 
@@ -646,6 +700,7 @@ The document which the current document is reverse of. `Filter(multi eq)` `ReadO
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### SalesPerson
 
@@ -654,6 +709,7 @@ Responsible sales person. null when no sales person was assigned. `Filter(multi 
 _Type_: **[SalesPersons](Crm.SalesPersons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `DetermineSalesPerson( obj.Transaction, obj.EnterpriseCompany, new [] {obj.Customer, obj.ShipToCustomer})`
@@ -664,6 +720,7 @@ The sequence that will be used to give new numbers to the documents of this type
 _Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ShipToCustomer
 
@@ -672,6 +729,7 @@ The customer to whom to ship the sales order. Usually it is a customer entry for
 _Type_: **[Customers](Crm.Customers.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `DetermineShipToCustomer( obj.Transaction, obj.EnterpriseCompany, obj.EnterpriseCompanyLocation, obj.Customer)`
@@ -682,6 +740,7 @@ The store, from which the products will be sold. When null, the store is unknown
 _Type_: **[Stores](Logistics.Inventory.Stores.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ToCompanyDivision
 
@@ -690,6 +749,7 @@ The division of the company, receiving the document. null when the document is n
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ToParty
 
@@ -698,6 +758,7 @@ The party which should receive the document. `Filter(multi eq)` (Inherited from 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Back-End Default Expression:_  
 `obj.ObtainToParty( )`
@@ -709,6 +770,7 @@ The user status of this document if applicable for this document type. null mean
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

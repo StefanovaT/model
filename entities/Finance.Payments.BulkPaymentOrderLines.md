@@ -14,6 +14,8 @@ Default Search Members:
 _BulkPaymentOrder.EntityName_  
 Name Data Member:  
 _BulkPaymentOrder.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -77,6 +79,7 @@ _Allowed Values (Finance.Payments.BulkPaymentOrderLinesRepository.BillTo Enum Me
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Direction
 
@@ -95,6 +98,7 @@ _Allowed Values (Finance.Payments.BulkPaymentOrderLinesRepository.Direction Enum
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **Expense**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -104,6 +108,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### DueDate
 
@@ -113,6 +118,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -121,6 +127,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### InstallmentNumber
 
@@ -130,6 +137,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### InvoiceAmount
 
@@ -139,6 +147,7 @@ _Type_: **[Amount (18, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### IsAmountWithVAT
 
@@ -149,6 +158,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -159,6 +169,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -168,6 +179,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### RefDocumentDate
 
@@ -177,6 +189,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefDocumentNo
 
@@ -187,6 +200,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefInvoiceApplyDate
 
@@ -196,6 +210,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefInvoiceDocumentDate
 
@@ -205,6 +220,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### RefInvoiceDocumentNo
 
@@ -215,6 +231,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
+_Show in UI_: **HiddenByDefault**  
 
 ### TotalAmount
 
@@ -225,6 +242,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -238,6 +256,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### InvoiceAmountCurrency
 
@@ -246,6 +265,7 @@ The currency of Invoice Amount. `Filter(multi eq)`
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### LocationParty
 
@@ -254,6 +274,7 @@ Location or sub-party of the Party_Id. `Filter(multi eq)`
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Party
 
@@ -262,6 +283,7 @@ The party which is to pay or receive the amount. `Required` `Filter(multi eq)`
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.LocationParty.ParentParty`
@@ -272,6 +294,7 @@ When not null, specifies the payment account that is expected or will be used by
 _Type_: **[PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.PaymentType.GetDefaultPaymentAccount( ).IfNullThen( obj.PaymentAccount)`
@@ -282,6 +305,7 @@ Expected payment type. When null, there is no expectation for payment type. `Fil
 _Type_: **[PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefDocumentType
 
@@ -290,6 +314,7 @@ The type of the document which is the basis for the payment. `Required` `Filter(
 _Type_: **[DocumentTypes](General.DocumentTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### RefInvoiceDocumentType
 
@@ -298,6 +323,7 @@ The document type of the invoice which is related and is the basis for the payme
 _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### TotalAmountCurrency
 
@@ -306,6 +332,7 @@ The currency of Total Amount. `Required` `Filter(multi eq)`
 _Type_: **[Currencies](General.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.PaymentAccount.Currency`

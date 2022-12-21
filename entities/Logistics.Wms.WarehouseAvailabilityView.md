@@ -12,6 +12,8 @@ Default Display Text Format:
 _{WarehouseId}: {WarehouseLocationId}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,6 +51,7 @@ _Type_: **decimal (38, 3)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### StandardQuantityAvailable
 
@@ -58,6 +61,7 @@ _Type_: **decimal (38, 3)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -71,6 +75,7 @@ _Category_: **System**
 _Inherited From_: **Log_Logistic_Units_Table.Logistic_Unit_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### Lot
 
@@ -81,6 +86,7 @@ _Category_: **System**
 _Inherited From_: **Inv_Lots_Table.Lot_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -91,6 +97,7 @@ _Category_: **System**
 _Inherited From_: **Gen_Products_Table.Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProductVariant
 
@@ -101,6 +108,7 @@ _Category_: **System**
 _Inherited From_: **Gen_Product_Variants_Table.Product_Variant_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 
@@ -111,6 +119,7 @@ _Category_: **System**
 _Inherited From_: **Inv_Serial_Numbers_Table.Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### Warehouse
 
@@ -121,6 +130,7 @@ _Category_: **System**
 _Inherited From_: **Wms_Warehouses_Table.Warehouse_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### WarehouseLocation
 
@@ -131,6 +141,7 @@ _Category_: **System**
 _Inherited From_: **Wms_Warehouse_Locations_Table.Warehouse_Location_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

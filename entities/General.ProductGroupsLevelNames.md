@@ -12,6 +12,8 @@ Default Display Text Format:
 _{L1Name}: {L2Name}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -42,6 +44,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **180**  
+_Show in UI_: **ShownByDefault**  
 
 ### L2Name
 
@@ -52,6 +55,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **180**  
+_Show in UI_: **ShownByDefault**  
 
 ### L3Name
 
@@ -62,6 +66,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **180**  
+_Show in UI_: **ShownByDefault**  
 
 ### L4Name
 
@@ -72,6 +77,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **180**  
+_Show in UI_: **ShownByDefault**  
 
 ### L5Name
 
@@ -82,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **180**  
+_Show in UI_: **ShownByDefault**  
 
 ### L6Name
 
@@ -92,6 +99,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **180**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

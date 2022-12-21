@@ -12,6 +12,8 @@ Default Display Text Format:
 _{DataObjectId}: {SocialCommentId}_  
 Default Search Members:  
 __  
+Category:  _Views_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -42,6 +44,7 @@ _Type_: **int64**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReactionType
 
@@ -63,6 +66,7 @@ _Allowed Values (Communities.Social.ReactionsSummaryRepository.ReactionType Enum
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -77,6 +81,7 @@ _Category_: **System**
 _Inherited From_: **Sys_Objects_Table.Object_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### SocialComment
 
@@ -85,6 +90,7 @@ _Category_: **System**
 _Inherited From_: **Cmm_Social_Comments_Table.Social_Comment_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

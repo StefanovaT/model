@@ -12,6 +12,8 @@ Default Display Text Format:
 _{Id}: {EntityType}_  
 Default Search Members:  
 __  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -60,6 +62,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -69,6 +72,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityItemId
 
@@ -77,6 +81,7 @@ The Id of the primary row to which the object is bound. `Required` `Filter(multi
 _Type_: **guid**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### EntityType
 
@@ -89,6 +94,7 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **True**  
 _Maximum Length_: **64**  
 _Default Value_: ** **  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -97,6 +103,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsDeleted
 
@@ -107,6 +114,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LastUpdateTimeUtc
 
@@ -116,6 +124,7 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LatestVersion
 
@@ -126,6 +135,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -135,6 +145,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -146,6 +157,7 @@ The user, who created the object represented by this system object . null means 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### LastUpdateUser
 
@@ -154,6 +166,7 @@ The user, who made the last modification of the object represented by this syste
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

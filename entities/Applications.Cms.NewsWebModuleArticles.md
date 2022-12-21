@@ -18,6 +18,8 @@ Default Search Members:
 _LanguageCode_  
 Code Data Member:  
 _LanguageCode_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -41,8 +43,8 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>AuthorPublicUser</s>](Applications.Cms.NewsWebModuleArticles.md#authorpublicuser) | [PublicUsers](Systems.External.PublicUsers.md) | **OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` |
-| [<s>NewsWebModule</s>](Applications.Cms.NewsWebModuleArticles.md#newswebmodule) | [NewsWebModules](Applications.Cms.NewsWebModules.md) | **OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` |
+| [<s>AuthorPublicUser</s>](Applications.Cms.NewsWebModuleArticles.md#authorpublicuser) | [PublicUsers](Systems.External.PublicUsers.md) | **OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` |
+| [<s>NewsWebModule</s>](Applications.Cms.NewsWebModuleArticles.md#newswebmodule) | [NewsWebModules](Applications.Cms.NewsWebModules.md) | **OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` |
 
 
 ## Attribute Details
@@ -56,6 +58,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -65,6 +68,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -73,6 +77,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsPublished
 
@@ -83,6 +88,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LanguageCode
 
@@ -93,6 +99,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **8**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -102,6 +109,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PublishDate
 
@@ -112,25 +120,28 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
 
 ### AuthorPublicUser
 
-**OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete`
+**OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete`
 
 _Type_: **[PublicUsers](Systems.External.PublicUsers.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### NewsWebModule
 
-**OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete`
+**OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete`
 
 _Type_: **[NewsWebModules](Applications.Cms.NewsWebModules.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

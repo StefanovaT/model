@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {MarketingActivity.DocumentNo} {MarketingActivity.DocumentType.TypeName:T}_  
 Default Search Members:  
 _MarketingActivity.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -58,6 +60,7 @@ _Type_: **decimal (15, 5) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -67,6 +70,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -75,6 +79,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### InStoreAvailableQuantity
 
@@ -84,6 +89,7 @@ _Type_: **[Quantity (10, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### InStoreLocation
 
@@ -94,6 +100,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
+_Show in UI_: **ShownByDefault**  
 
 ### InStorePrice
 
@@ -103,6 +110,7 @@ _Type_: **decimal (15, 5) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineNo
 
@@ -112,6 +120,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.MarketingActivity.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
@@ -127,6 +136,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -136,6 +146,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderQuantity
 
@@ -145,6 +156,7 @@ _Type_: **[Quantity (15, 3)](../data-types.md#quantity) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -156,6 +168,7 @@ Competitor where marketing activity was held. `Filter(multi eq)`
 _Type_: **[Competitors](Crm.Marketing.Competitors.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Document
 
@@ -164,6 +177,7 @@ Marketing activity. `Required` `Filter(multi eq)`
 _Type_: **[MarketingActivities](Crm.Marketing.MarketingActivities.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### MarketingActivity
 
@@ -173,6 +187,7 @@ _Type_: **[MarketingActivities](Crm.Marketing.MarketingActivities.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### MarketingActivityLineType
 
@@ -181,6 +196,7 @@ Describes what the purpose of the marketing activity is. `Required` `Filter(mult
 _Type_: **[MarketingActivityLineTypes](Crm.Marketing.MarketingActivityLineTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderQuantityUnit
 
@@ -189,6 +205,7 @@ The measurement unit of In_Store_Available_Quantity and Order_Quantity. `Filter(
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.MeasurementUnit`
@@ -199,6 +216,7 @@ The specific product that was target of the marketing activity. `Required` `Filt
 _Type_: **[Products](General.Products.Products.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

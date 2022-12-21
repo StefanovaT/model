@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {ExciseAdministrativeDocument.DocumentNo} {ExciseAdministrativeDocument.DocumentType.TypeName:T}_  
 Default Search Members:  
 _ExciseAdministrativeDocument.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -65,6 +67,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseAlcoholicStrength
 
@@ -74,6 +77,7 @@ _Type_: **decimal (5, 2) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.GetNewAlcoholicStrength( obj.MeasuringTransaction, obj.Product)`
@@ -86,6 +90,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `new Amount( ( obj.ExciseAmountBase * ( obj.ExciseDutyRateValue ?? 0)), obj.Document.EnterpriseCompany.BaseCurrency)`
@@ -98,6 +103,7 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength) == null), Convert( obj.ExciseAmountBase, Nullable`1), obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength))`
@@ -109,6 +115,7 @@ _Type_: **decimal (10, 6) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.ExciseDutyRate.ExciseDutyRateField`
@@ -120,6 +127,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.QuantityBase.ConvertTo( obj.ExciseQuantityUnit, obj.Product)`
@@ -130,6 +138,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineNo
 
@@ -139,6 +148,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.ExciseAdministrativeDocument.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
@@ -154,6 +164,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ObjectVersion
 
@@ -163,6 +174,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentLineNo
 
@@ -172,6 +184,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Quantity
 
@@ -182,6 +195,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityBase
 
@@ -191,6 +205,7 @@ _Type_: **[Quantity (12, 3)](../data-types.md#quantity)**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
@@ -204,6 +219,7 @@ The <see cref="ExciseAdministrativeDocument"/> to which this ExciseAdministrativ
 _Type_: **[ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### ExciseAdministrativeDocument
 
@@ -213,6 +229,7 @@ _Type_: **[ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDoc
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### ExciseDutyRate
 
@@ -221,6 +238,7 @@ The Duty rate specified by the taxation and customs authorities. `Filter(multi e
 _Type_: **[ExciseDutyRates](Finance.Excise.ExciseDutyRates.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.DetermineExciseDutyRate( obj.ExciseProduct, obj.ExcisePurposeCode)`
@@ -231,6 +249,7 @@ The Excise product code defined by the taxation and customs authorities. `Filter
 _Type_: **[ExciseProducts](Finance.Excise.ExciseProducts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.ExciseProductType.ExciseProduct`
@@ -241,6 +260,7 @@ The Purpose codes specify the different purposes recognized by the authorities f
 _Type_: **[ExcisePurposeCodes](Finance.Excise.ExcisePurposeCodes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.LineNo == obj.LineNo), obj.DefaultExcisePurposeCode( ), null)`
@@ -251,6 +271,7 @@ The measurement unit of Excise Quantity. Copied from the excise product type. `R
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.ExciseProductType.MeasurementUnit`
@@ -261,6 +282,7 @@ Transaction of product input or output, measured with specialized measuring devi
 _Type_: **[MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ParentDocument
 
@@ -270,6 +292,7 @@ _Type_: **[Documents](General.Documents.md) (nullable)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Product
 
@@ -278,6 +301,7 @@ The product being sold. `Required` `Filter(multi eq)`
 _Type_: **[Products](General.Products.Products.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### QuantityUnit
 
@@ -286,6 +310,7 @@ The measurement unit of Quantity. `Required` `Filter(multi eq)`
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.MeasurementUnit`

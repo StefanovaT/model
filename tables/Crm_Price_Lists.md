@@ -11,6 +11,7 @@ Price Lists are used to manage multiple price records, assign to customers, etc.
 
 | Name | Type | Description |
 | - | - | --- |
+|[Auto_Apply_Discount_Level](#auto_apply_discount_level)|`nvarchar(1)` Allowed: `1`, `2`, `3`|Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated.|
 |[Description](#description)|`nvarchar(max)` ||
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
 |[From_Date](#from_date)|`datetime` |Starting validity of the price list|
@@ -20,6 +21,37 @@ Price Lists are used to manage multiple price records, assign to customers, etc.
 |[Thru_Date](#thru_date)|`datetime` |Ending validity of the price list|
 
 ## Columns
+
+### Auto_Apply_Discount_Level
+
+
+Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`1`, `2`, `3`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|1|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(1)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Description
 
@@ -32,7 +64,7 @@ Price Lists are used to manage multiple price records, assign to customers, etc.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -59,7 +91,7 @@ Price Lists are used to manage multiple price records, assign to customers, etc.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -96,7 +128,7 @@ Starting validity of the price list
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -130,7 +162,7 @@ Starting validity of the price list
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -163,7 +195,7 @@ Starting validity of the price list
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|50|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -197,7 +229,7 @@ Starting validity of the price list
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -227,7 +259,7 @@ Ending validity of the price list
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

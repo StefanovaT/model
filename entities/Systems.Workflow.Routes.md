@@ -14,6 +14,8 @@ Default Search Members:
 _ProcedureName_  
 Name Data Member:  
 _ProcedureName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -81,6 +83,7 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
+_Show in UI_: **ShownByDefault**  
 
 ### Active
 
@@ -91,6 +94,7 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowedGenerationTypes
 
@@ -110,6 +114,7 @@ _Allowed Values (Systems.Workflow.RoutesRepository.AllowedGenerationTypes Enum M
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **BothAutoAndManually**  
+_Show in UI_: **ShownByDefault**  
 
 ### AllowObsoleteGeneration
 
@@ -120,6 +125,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionFilterXML
 
@@ -129,6 +135,7 @@ _Type_: **dataaccessfilter __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionStatesBitMask
 
@@ -152,6 +159,7 @@ _Allowed Values (General.DocumentStateFlags Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConnectedPartyCondition
 
@@ -171,6 +179,7 @@ _Allowed Values (Systems.Workflow.RoutesRepository.ConnectedPartyCondition Enum 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **AnyParty**  
+_Show in UI_: **ShownByDefault**  
 
 ### DeactivationDate
 
@@ -180,6 +189,7 @@ _Type_: **date __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DestinationState
 
@@ -202,6 +212,7 @@ _Allowed Values (General.DocumentState Enum Members)_
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -211,6 +222,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -219,6 +231,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### NegativeConditionFilterXml
 
@@ -228,6 +241,7 @@ _Type_: **dataaccessfilter __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -238,6 +252,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -247,6 +262,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentDocumentRelationshipType
 
@@ -266,6 +282,7 @@ _Allowed Values (General.ParentDocumentRelationshipType Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Subtask**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProcedureName
 
@@ -276,6 +293,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ProcessEvent
 
@@ -286,6 +304,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReadOnly
 
@@ -296,6 +315,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### SchemaXML
 
@@ -306,6 +326,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## Reference Details
@@ -317,6 +338,7 @@ The enterprise company for which this route is activated. `Filter(multi eq)`
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConditionUserStatus
 
@@ -325,6 +347,7 @@ The user-defined status, for which the document route is activated. `Filter(mult
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DestinationDocumentType
 
@@ -333,6 +356,7 @@ The type of the document, that will be generated by executing the route. `Filter
 _Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DestinationEnterpriseCompany
 
@@ -341,6 +365,7 @@ The enterprise company in which to generate the target document. `Filter(multi e
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DestinationEnterpriseCompanyLocation
 
@@ -349,6 +374,7 @@ The enterprise company location in which to generate the target document. `Filte
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DestinationUserStatus
 
@@ -357,6 +383,7 @@ The user defined status to set to the generated document. `Filter(multi eq)`
 _Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### DocumentType
 
@@ -366,6 +393,7 @@ _Type_: **[DocumentTypes](General.DocumentTypes.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

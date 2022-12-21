@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {PurchaseControlDocument.DocumentNo} {PurchaseControlDocument.DocumentType.TypeName:T}_  
 Default Search Members:  
 _PurchaseControlDocument.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -45,11 +47,11 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>Document</s>](Logistics.Procurement.PurchaseControlDocumentLines.md#document) | [PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md) | **OBSOLETE! Do not use!** The <see cref="Purchase<br />ControlDocument"/> to which this PurchaseControl<br />DocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` |
-| [<s>PurchaseControlDocument</s>](Logistics.Procurement.PurchaseControlDocumentLines.md#purchasecontroldocument) | [PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md) | **OBSOLETE! Do not use!** The <see cref="Purchase<br />ControlDocument"/> to which this PurchaseControl<br />DocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` `Owner` |
+| [<s>Document</s>](Logistics.Procurement.PurchaseControlDocumentLines.md#document) | [PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md) | **OBSOLETE! Do not use!** The <see cref="Purchase<br />ControlDocument"/> to which this PurchaseControl<br />DocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` |
+| [<s>PurchaseControlDocument</s>](Logistics.Procurement.PurchaseControlDocumentLines.md#purchasecontroldocument) | [PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md) | **OBSOLETE! Do not use!** The <see cref="Purchase<br />ControlDocument"/> to which this PurchaseControl<br />DocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` `Owner` |
 | [PurchaseInvoice](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaseinvoice) | [PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) (nullable) | The purchase invoice which is to be or was executed. Null when the data is unknown. `Filter(multi eq)` |
 | [PurchaseInvoiceLine](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaseinvoiceline) | [PurchaseInvoiceLines](Logistics.Procurement.PurchaseInvoiceLines.md) (nullable) | The purchase invoice line which is to be or was executed. Null when the data is unknown. `Filter(multi eq)` |
-| [<s>PurchaseOperationType</s>](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaseoperationtype) | [PurchaseOperationTypes](Logistics.Procurement.PurchaseOperationTypes.md) (nullable) | **OBSOLETE! Do not use!** The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` |
+| [<s>PurchaseOperationType</s>](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaseoperationtype) | [PurchaseOperationTypes](Logistics.Procurement.PurchaseOperationTypes.md) (nullable) | **OBSOLETE! Do not use!** The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` |
 | [PurchaseOrder](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaseorder) | [PurchaseOrders](Logistics.Procurement.PurchaseOrders.md) (nullable) | The purchase order which is to be or was executed. Null when the data is unknown. `Filter(multi eq)` |
 | [PurchaseOrderLine](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaseorderline) | [PurchaseOrderLines](Logistics.Procurement.PurchaseOrderLines.md) (nullable) | The purchase order line which is to be or was executed. Null when the data is unknown. `Filter(multi eq)` |
 | [PurchaseRequisition](Logistics.Procurement.PurchaseControlDocumentLines.md#purchaserequisition) | [Requisitions](Logistics.Procurement.Requisitions.md) (nullable) | The purchase requisition which is to be or was executed. Null when the data is unknown. `Filter(multi eq)` |
@@ -68,6 +70,7 @@ _Type_: **decimal (14, 2) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ConfirmedStandardQuantityBase
 
@@ -77,6 +80,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -86,6 +90,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -94,6 +99,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### InvoicedAmountBase
 
@@ -103,6 +109,7 @@ _Type_: **decimal (14, 2) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### InvoicedStandardQuantityBase
 
@@ -112,6 +119,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### LineNo
 
@@ -121,6 +129,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 
@@ -131,6 +140,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -140,6 +150,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderedAmountBase
 
@@ -149,6 +160,7 @@ _Type_: **decimal (14, 2) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### OrderedStandardQuantityBase
 
@@ -158,6 +170,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceivedAmountBase
 
@@ -167,6 +180,7 @@ _Type_: **decimal (14, 2) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceivedStandardQuantityBase
 
@@ -176,6 +190,7 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RequestedAmountBase
 
@@ -185,6 +200,7 @@ _Type_: **decimal (14, 2) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RequestedStandardQuantityBase
 
@@ -194,28 +210,31 @@ _Type_: **decimal (12, 3) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
 
 ### Document
 
-**OBSOLETE! Do not use!** The <see cref="PurchaseControlDocument"/> to which this PurchaseControlDocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7`
+**OBSOLETE! Do not use!** The <see cref="PurchaseControlDocument"/> to which this PurchaseControlDocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10`
 
 _Type_: **[PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### PurchaseControlDocument
 
-**OBSOLETE! Do not use!** The <see cref="PurchaseControlDocument"/> to which this PurchaseControlDocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete` `Owner`
+**OBSOLETE! Do not use!** The <see cref="PurchaseControlDocument"/> to which this PurchaseControlDocumentLine belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` `Owner`
 
 _Type_: **[PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### PurchaseInvoice
 
@@ -224,6 +243,7 @@ The purchase invoice which is to be or was executed. Null when the data is unkno
 _Type_: **[PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchaseInvoiceLine
 
@@ -232,14 +252,16 @@ The purchase invoice line which is to be or was executed. Null when the data is 
 _Type_: **[PurchaseInvoiceLines](Logistics.Procurement.PurchaseInvoiceLines.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchaseOperationType
 
-**OBSOLETE! Do not use!** The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.7` `Obsolete`
+**OBSOLETE! Do not use!** The user-defined operation type, which is being recorded by the current line. Used for better grouping of the control entries. null when the operation type was not specified by the user. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete`
 
 _Type_: **[PurchaseOperationTypes](Logistics.Procurement.PurchaseOperationTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchaseOrder
 
@@ -248,6 +270,7 @@ The purchase order which is to be or was executed. Null when the data is unknown
 _Type_: **[PurchaseOrders](Logistics.Procurement.PurchaseOrders.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchaseOrderLine
 
@@ -256,6 +279,7 @@ The purchase order line which is to be or was executed. Null when the data is un
 _Type_: **[PurchaseOrderLines](Logistics.Procurement.PurchaseOrderLines.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchaseRequisition
 
@@ -264,6 +288,7 @@ The purchase requisition which is to be or was executed. Null when the data is u
 _Type_: **[Requisitions](Logistics.Procurement.Requisitions.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PurchaseRequisitionLine
 
@@ -272,6 +297,7 @@ The purchase requisition line which is to be or was executed. Null when the data
 _Type_: **[RequisitionLines](Logistics.Procurement.RequisitionLines.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceivingOrder
 
@@ -280,6 +306,7 @@ The receiving order which is to be or was executed. Null when the data is unknow
 _Type_: **[ReceivingOrders](Logistics.Procurement.ReceivingOrders.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ReceivingOrderLine
 
@@ -288,6 +315,7 @@ The receiving order line which is to be or was executed. Null when the data is u
 _Type_: **[ReceivingOrderLines](Logistics.Procurement.ReceivingOrderLines.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

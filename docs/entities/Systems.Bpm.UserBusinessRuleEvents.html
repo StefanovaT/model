@@ -87,7 +87,9 @@
 Default Search Members:<br>
 <em>UserBusinessRule.Name</em><br>
 Name Data Member:<br>
-<em>UserBusinessRule.Name</em></p>
+<em>UserBusinessRule.Name</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
@@ -164,14 +166,16 @@ Aggregate Root:<br>
 <p><em>Type</em>: <strong>string</strong><br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="eventparameter">EventParameter</h3>
 <p>Registration parameter. The meaning is determined by the event. Usually - attribute name, document state, etc.</p>
 <p><em>Type</em>: <strong>string (128) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>128</strong></p>
+<em>Maximum Length</em>: <strong>128</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="eventtype">EventType</h3>
 <p>The event for which to register the business rule. <code>Required</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRuleEvents.html#eventtype">EventType</a></strong><br>
@@ -237,7 +241,8 @@ Allowed values for the <code>EventType</code>(Systems.Bpm.UserBusinessRuleEvents
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong></p>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="executionpriority">ExecutionPriority</h3>
 <p>Execution priority. Lower values indicate earlier priorities. Possible values - 30-Early, 50-Normal, 70-Late. <code>Required</code> <code>Default(50)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRuleEvents.html#executionpriority">RuleExecutionPriority</a></strong><br>
@@ -275,13 +280,15 @@ Allowed values for the <code>EventType</code>(Systems.Bpm.UserBusinessRuleEvents
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>50</strong></p>
+<em>Default Value</em>: <strong>50</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong></p>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="layer">Layer</h3>
 <p>Specifies the layer on which to register the event. Allowed values = FTE-FrontEnd, BKE-BackEnd. <code>Required</code> <code>Default(&quot;BKE&quot;)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRuleEvents.html#layer">Layer</a></strong><br>
@@ -308,20 +315,23 @@ Allowed values for the <code>Layer</code>(Systems.Bpm.UserBusinessRuleEvents.md#
 </table>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>BackEnd</strong></p>
+<em>Default Value</em>: <strong>BackEnd</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****</p>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="userbusinessrule">UserBusinessRule</h3>
 <p>The rule, which will be registered for the event. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Bpm.UserBusinessRules.html">UserBusinessRules</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong></p>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

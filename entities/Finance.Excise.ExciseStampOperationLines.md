@@ -12,6 +12,8 @@ Default Display Text Format:
 _{LineNo}. {ExciseStampOperation.DocumentNo} {ExciseStampOperation.DocumentType.TypeName:T}_  
 Default Search Members:  
 _ExciseStampOperation.DocumentNo_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -57,6 +59,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### EndNumber
 
@@ -67,6 +70,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **30**  
+_Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `Format( "{0}", Convert( ( ( Convert( Parse( obj.StartNumber), Nullable`1) + Convert( obj.Quantity, Nullable`1)) - Convert( Convert( 1, Int64), Nullable`1)), Object)).PadLeft( obj.StartNumber.Trim( ).Length, 0)`
@@ -77,6 +81,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineNo
 
@@ -86,6 +91,7 @@ _Type_: **int32**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `( obj.ExciseStampOperation.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 1)`
@@ -101,6 +107,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -110,6 +117,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### ParentLineNo
 
@@ -119,6 +127,7 @@ _Type_: **int32 __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### Quantity
 
@@ -129,6 +138,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### StartNumber
 
@@ -139,6 +149,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **30**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -151,6 +162,7 @@ _Type_: **[ExciseStampOperations](Finance.Excise.ExciseStampOperations.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### ExciseProductType
 
@@ -159,6 +171,7 @@ Specifies the excise product type which is used in the current operation. Determ
 _Type_: **[ExciseProductTypes](Finance.Excise.ExciseProductTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseStampLot
 
@@ -167,6 +180,7 @@ The lot of the excise stamps. `Filter(multi eq)`
 _Type_: **[ExciseStampLots](Finance.Excise.ExciseStampLots.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseStampOperation
 
@@ -177,6 +191,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### ParentDocument
 
@@ -185,6 +200,7 @@ The document, which the current line executes. null when the current line does n
 _Type_: **[Documents](General.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 
@@ -193,6 +209,7 @@ The product for which the operation is applied. When is null then there is no pr
 _Type_: **[Products](General.Products.Products.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

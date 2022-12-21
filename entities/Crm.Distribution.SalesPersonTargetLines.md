@@ -14,6 +14,8 @@ Default Search Members:
 _SalesPersonTarget.DocumentNo_  
 Name Data Member:  
 _SalesPersonTarget.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -61,6 +63,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -69,6 +72,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 
@@ -78,6 +82,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **ShownByDefault**  
 
 ### PeriodDate
 
@@ -87,6 +92,7 @@ _Type_: **datetime**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PeriodMonth
 
@@ -96,6 +102,7 @@ _Type_: **byte**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### PeriodYear
 
@@ -105,6 +112,7 @@ _Type_: **int16**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TargetAmount
 
@@ -114,6 +122,7 @@ _Type_: **[Amount (18, 2)](../data-types.md#amount) __nullable__**
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
 
 ### TargetType
 
@@ -134,6 +143,7 @@ _Allowed Values (Crm.Distribution.SalesPersonTargetLinesRepository.TargetType En
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **SalesAmount**  
+_Show in UI_: **ShownByDefault**  
 
 ### TargetValue
 
@@ -144,6 +154,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **ShownByDefault**  
 
 ### TargetWeight
 
@@ -154,6 +165,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
@@ -165,6 +177,7 @@ Bonus program Id when the target type is BONUS, null otherwise. `Filter(multi eq
 _Type_: **[BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Document
 
@@ -173,6 +186,7 @@ The <see cref="SalesPersonTarget"/> to which this SalesPersonTargetLine belongs.
 _Type_: **[SalesPersonTargets](Crm.Distribution.SalesPersonTargets.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 ### ProductGroup
 
@@ -181,6 +195,7 @@ Product group for which the target is defined. `Filter(multi eq)`
 _Type_: **[ProductGroups](General.Products.ProductGroups.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesPersonTarget.ProductGroup`
@@ -194,6 +209,7 @@ Promotional Package Id when the target type is PROMO, null otherwise. `Filter(mu
 _Type_: **[PromotionalPackages](Crm.PromotionalPackages.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### SalesPerson
 
@@ -202,6 +218,7 @@ Sales person to whom the target is assigned. `Required` `Filter(multi eq)`
 _Type_: **[SalesPersons](Crm.SalesPersons.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesPersonTarget.SalesPerson`
@@ -216,6 +233,7 @@ _Type_: **[SalesPersonTargets](Crm.Distribution.SalesPersonTargets.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### TargetAmountCurrency
 
@@ -224,6 +242,7 @@ Deprecated - use currency in document header. `Filter(multi eq)`
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
 `obj.SalesPersonTarget.TargetCurrency`
