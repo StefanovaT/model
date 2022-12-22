@@ -16,7 +16,7 @@ Contains custom percent ratios for additional amount distribution over products 
 | Name | Type | Description |
 | - | - | --- |
 |[Deal_Type_Document_Amount_Id](#deal_type_document_amount_id)|`uniqueidentifier` `PK`|Deal Type - Document Amount|
-|[Deal_Type_Id](#deal_type_id)|`uniqueidentifier` |Deal type for which is calculated additional amount.|
+|[Deal_Type_Id](#deal_type_id)|`uniqueidentifier` Readonly|Deal type for which is calculated additional amount.|
 |[Document_Amount_Type_Id](#document_amount_type_id)|`uniqueidentifier` |Type of additional amount which is calculated for the documents.|
 |[Line_Percent](#line_percent)|`decimal(14, 3)` |Percent by which additional amount is calculated.|
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -79,7 +79,7 @@ Deal type for which is calculated additional amount.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[VAT_Deal_Types](VAT_Deal_Types.md)|
 |RTF|no|
 |Sortable|no|
@@ -89,7 +89,7 @@ Deal type for which is calculated additional amount.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Deal_Type_Id - Supported Filters
 

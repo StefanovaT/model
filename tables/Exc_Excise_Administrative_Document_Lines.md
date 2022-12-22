@@ -66,7 +66,7 @@ The details of the movement of each excise product for each excise document. Ent
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Excise_Administrative_Document_Id - Supported Filters
 

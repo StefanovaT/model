@@ -142,7 +142,7 @@ Specifies whether the payment reason is defined by the system. The system define
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(254) (MultiLanguage)|

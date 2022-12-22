@@ -133,7 +133,7 @@ Unique code of the color. Used to generate parts of bar-codes and in other codin
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(254) (MultiLanguage)|

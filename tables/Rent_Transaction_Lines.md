@@ -158,7 +158,7 @@ Notes
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Rent_Transaction_Id - Supported Filters
 

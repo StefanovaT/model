@@ -101,7 +101,7 @@ Percent of the sales order amount to be payed.
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -118,9 +118,9 @@ Percent of the sales order amount to be payed.
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|100|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Document_Type_Id - Supported Filters
 

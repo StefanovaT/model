@@ -13,6 +13,7 @@ Composition of products established for transport and/or storage which needs to 
 | - | - | --- |
 |[Cargo_Type_Id](#cargo_type_id)|`uniqueidentifier` |General type of the cargo of the logistic unit. NULL means unknown or N/A.|
 |[Expected_Weight](#expected_weight)|`decimal(12, 3)` |Expected weight in KG. Used for planning purposes. NULL means unknown.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the logistic unit is currently active.|
 |[Logistic_Unit_Id](#logistic_unit_id)|`uniqueidentifier` `PK`||
 |[Logistic_Unit_Type_Id](#logistic_unit_type_id)|`uniqueidentifier` |The type of the logistic unit. NULL means the type is currently unknown.|
 |[Measured_Weight](#measured_weight)|`decimal(12, 3)` |Actual measured weight of the unit in KG. NULL means unknown.|
@@ -96,6 +97,42 @@ Expected weight in KG. Used for planning purposes. NULL means unknown.
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 |GreaterThanOrLessThan|None|yes|yes|
+
+### Is_Active
+
+
+Indicates whether the logistic unit is currently active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Logistic_Unit_Id
 

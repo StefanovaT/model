@@ -244,7 +244,7 @@ The containing logistic unit.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Logistic_Unit_Id - Supported Filters
 

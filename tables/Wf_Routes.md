@@ -592,9 +592,9 @@ The document type from which this route originates. Documents from this type gen
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|Long|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Document_Type_Id - Supported Filters
 

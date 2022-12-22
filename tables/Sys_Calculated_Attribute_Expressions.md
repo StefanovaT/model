@@ -89,7 +89,7 @@ Represent an expression within the calculation of a calculated attribute. Entity
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Calculated_Attribute_Id - Supported Filters
 

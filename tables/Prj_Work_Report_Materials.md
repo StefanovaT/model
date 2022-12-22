@@ -265,7 +265,7 @@ The measurement unit of Quantity. It is strongly suggested that the same unit is
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Work_Report_Id - Supported Filters
 

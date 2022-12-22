@@ -109,7 +109,7 @@
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Object_Change_Id - Supported Filters
 

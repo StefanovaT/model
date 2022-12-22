@@ -118,7 +118,7 @@ The project in which the participant will participate
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Project_Id - Supported Filters
 

@@ -162,7 +162,7 @@ The lot of the excise stamps.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Excise_Stamp_Operation_Id - Supported Filters
 

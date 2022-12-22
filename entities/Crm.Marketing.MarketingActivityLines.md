@@ -177,7 +177,7 @@ Marketing activity. `Required` `Filter(multi eq)`
 _Type_: **[MarketingActivities](Crm.Marketing.MarketingActivities.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### MarketingActivity
 
@@ -187,7 +187,7 @@ _Type_: **[MarketingActivities](Crm.Marketing.MarketingActivities.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### MarketingActivityLineType
 

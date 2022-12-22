@@ -163,7 +163,7 @@ Unique company Id
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(254) (MultiLanguage) (Allows NULL)|

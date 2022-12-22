@@ -219,7 +219,7 @@ The <see cref="ExciseAdministrativeDocument"/> to which this ExciseAdministrativ
 _Type_: **[ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDocuments.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseAdministrativeDocument
 
@@ -229,7 +229,7 @@ _Type_: **[ExciseAdministrativeDocuments](Finance.Excise.ExciseAdministrativeDoc
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### ExciseDutyRate
 

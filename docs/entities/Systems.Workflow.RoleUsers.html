@@ -134,6 +134,16 @@ Aggregate Root:<br>
 </thead>
 <tbody>
 <tr>
+<td><a href="Systems.Workflow.RoleUsers.html#companylocation">CompanyLocation</a></td>
+<td><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</td>
+<td>Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.11</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Workflow.RoleUsers.html#enterprisecompany">EnterpriseCompany</a></td>
+<td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</td>
+<td>Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.11</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Workflow.RoleUsers.html#role">Role</a></td>
 <td><a href="Systems.Security.Roles.html">Roles</a></td>
 <td></td>
@@ -168,6 +178,18 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="companylocation">CompanyLocation</h3>
+<p>Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.11</code></p>
+<p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="enterprisecompany">EnterpriseCompany</h3>
+<p>Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.11</code></p>
+<p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="role">Role</h3>
 <p><em>Type</em>: <strong><a href="Systems.Security.Roles.html">Roles</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>

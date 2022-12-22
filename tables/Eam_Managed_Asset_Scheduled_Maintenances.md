@@ -165,7 +165,7 @@ The asset, which will be maintained.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Managed_Asset_Id - Supported Filters
 

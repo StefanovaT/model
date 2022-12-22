@@ -50,7 +50,7 @@ Contains the output data for the specified period. This is the output on which c
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Cost_Distribution_Id - Supported Filters
 

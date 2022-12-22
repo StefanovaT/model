@@ -32,6 +32,7 @@ Aggregate Tree
 | [DisplayText](Logistics.LogisticUnits.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExpectedWeight](Logistics.LogisticUnits.md#expectedweight) | decimal (12, 3) __nullable__ | Expected weight in KG. Used for planning purposes. null means unknown. `Filter(eq;ge;le)` 
 | [Id](Logistics.LogisticUnits.md#id) | guid |  
+| [IsActive](Logistics.LogisticUnits.md#isactive) | boolean | Indicates whether the logistic unit is currently active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 23.1.2.11` 
 | [MeasuredWeight](Logistics.LogisticUnits.md#measuredweight) | decimal (12, 3) __nullable__ | Actual measured weight of the unit in KG. null means unknown. `Filter(eq;ge;le)` 
 | [Notes](Logistics.LogisticUnits.md#notes) | string (max) __nullable__ | Notes for this LogisticUnit. `Filter(like)` 
 | [ObjectVersion](Logistics.LogisticUnits.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -83,6 +84,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the logistic unit is currently active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 23.1.2.11`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### MeasuredWeight
 

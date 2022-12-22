@@ -527,7 +527,7 @@ The object to which the file is attached
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Object_Id - Supported Filters
 

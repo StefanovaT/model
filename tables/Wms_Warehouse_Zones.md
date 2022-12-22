@@ -145,7 +145,7 @@ The warehouse in which the zone is located.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Warehouse_Id - Supported Filters
 

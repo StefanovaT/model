@@ -91,7 +91,7 @@ The logistic unit, which is detailed by this specification.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Logistic_Unit_Id - Supported Filters
 

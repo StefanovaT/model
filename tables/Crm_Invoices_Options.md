@@ -122,7 +122,7 @@ The document type for which the invoice option applies.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Document_Type_Id - Supported Filters
 

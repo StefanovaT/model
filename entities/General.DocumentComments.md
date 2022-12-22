@@ -118,7 +118,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### User
 

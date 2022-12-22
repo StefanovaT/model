@@ -150,7 +150,7 @@ The custom percent for the current product and amount type.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Product_Id - Supported Filters
 

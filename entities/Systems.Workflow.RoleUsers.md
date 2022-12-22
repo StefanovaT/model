@@ -37,6 +37,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [CompanyLocation](Systems.Workflow.RoleUsers.md#companylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company. `Filter(multi eq)` `Introduced in version 23.1.2.11` |
+| [EnterpriseCompany](Systems.Workflow.RoleUsers.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs. `Filter(multi eq)` `Introduced in version 23.1.2.11` |
 | [Role](Systems.Workflow.RoleUsers.md#role) | [Roles](Systems.Security.Roles.md) |  |
 | [User](Systems.Workflow.RoleUsers.md#user) | [Users](Systems.Security.Users.md) | The user, which plays the role. `Required` `Filter(multi eq)` `Owner` |
 
@@ -74,6 +76,24 @@ _Show in UI_: **ShownByDefault**
 
 
 ## Reference Details
+
+### CompanyLocation
+
+Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company. `Filter(multi eq)` `Introduced in version 23.1.2.11`
+
+_Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### EnterpriseCompany
+
+Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs. `Filter(multi eq)` `Introduced in version 23.1.2.11`
+
+_Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Role
 

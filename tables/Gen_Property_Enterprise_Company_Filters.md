@@ -150,7 +150,7 @@ When not null, specifies a filter for the allowed values of the property for the
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Property_Id - Supported Filters
 

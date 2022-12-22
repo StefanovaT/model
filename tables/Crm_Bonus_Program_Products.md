@@ -48,7 +48,7 @@ Provides a way to specify additional (to the one specified in Bonus Program.Cond
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Bonus_Program_Id - Supported Filters
 

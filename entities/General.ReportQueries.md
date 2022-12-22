@@ -45,7 +45,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>Report</s>](General.ReportQueries.md#report) | [Reports](General.Reports.md) | **OBSOLETE! Do not use!** The <see cref="Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` `Owner` |
+| [<s>Report</s>](General.ReportQueries.md#report) | [Reports](General.Reports.md) | **OBSOLETE! Do not use!** The <see cref="Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.11` `Obsolete` `Owner` |
 
 
 ## Attribute Details
@@ -171,13 +171,13 @@ _Show in UI_: **HiddenByDefault**
 
 ### Report
 
-**OBSOLETE! Do not use!** The <see cref="Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.10` `Obsolete` `Owner`
+**OBSOLETE! Do not use!** The <see cref="Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 23.1.2.11` `Obsolete` `Owner`
 
 _Type_: **[Reports](General.Reports.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

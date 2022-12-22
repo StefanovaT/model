@@ -872,9 +872,9 @@ The Id of the work order, containing the item
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|100|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Work_Order_Id - Supported Filters
 

@@ -90,15 +90,15 @@
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
-<td>UnitCost</td>
+<td>Line.SerialNumber</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
-<td>Front-End</td>
+<td>Back-End</td>
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>AttributeChanged(LineCost)</td>
+<td>Releasing</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
@@ -116,7 +116,7 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Validate that: if (Quantity!=null AND IsSerialized==true)
+<td>Validate that: if (Quantity!= 0 AND IsSerialized==true)
 , then Line.SerialNumner != null</td>
 </tr>
 <tr>

@@ -100,7 +100,7 @@ Specifies the asset, whose depreciation should be calculated with the current do
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -119,7 +119,7 @@ Specifies the asset, whose depreciation should be calculated with the current do
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Depreciation_Id - Supported Filters
 

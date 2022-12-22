@@ -45,9 +45,9 @@ The Id of the base document
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|100|
+|UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Document_Id - Supported Filters
 

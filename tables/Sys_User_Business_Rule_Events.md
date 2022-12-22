@@ -237,7 +237,7 @@ The rule, which will be registered for the event.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### User_Business_Rule_Id - Supported Filters
 

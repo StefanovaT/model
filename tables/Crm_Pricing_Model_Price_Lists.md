@@ -152,7 +152,7 @@ The pricing model, for which the price list is listed
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Pricing_Model_Id - Supported Filters
 

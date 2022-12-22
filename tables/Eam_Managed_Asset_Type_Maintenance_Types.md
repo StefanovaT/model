@@ -182,7 +182,7 @@ The asset type for which the allowed maintenance type is defined.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Managed_Asset_Type_Id - Supported Filters
 

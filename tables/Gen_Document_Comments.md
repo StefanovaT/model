@@ -184,7 +184,7 @@ The document to which to attach the comment
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Document_Id - Supported Filters
 

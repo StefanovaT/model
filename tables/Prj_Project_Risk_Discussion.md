@@ -192,7 +192,7 @@ The contents of the message.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Project_Risk_Id - Supported Filters
 

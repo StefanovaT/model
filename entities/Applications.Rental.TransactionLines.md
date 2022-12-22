@@ -156,7 +156,7 @@ _Type_: **[Transactions](Applications.Rental.Transactions.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods

@@ -147,7 +147,7 @@ The domain for which the provider is setup.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Domain_Id - Supported Filters
 

@@ -157,7 +157,7 @@ Lease line with which the current consumable is given.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Lease_Line_Id - Supported Filters
 

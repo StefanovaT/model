@@ -127,6 +127,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td></td>
 </tr>
 <tr>
+<td><a href="Logistics.LogisticUnits.html#isactive">IsActive</a></td>
+<td>boolean</td>
+<td>Indicates whether the logistic unit is currently active. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.2.11</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.LogisticUnits.html#measuredweight">MeasuredWeight</a></td>
 <td>decimal (12, 3) <strong>nullable</strong></td>
 <td>Actual measured weight of the unit in KG. null means unknown. <code>Filter(eq;ge;le)</code></td>
@@ -219,6 +224,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="isactive">IsActive</h3>
+<p>Indicates whether the logistic unit is currently active. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.2.11</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="measuredweight">MeasuredWeight</h3>
 <p>Actual measured weight of the unit in KG. null means unknown. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>decimal (12, 3) <strong>nullable</strong></strong><br>
@@ -345,7 +358,9 @@ The subject.<br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R34307.html">R34307 LogisticUnits - No Availability On Deactivation</a></li>
+</ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <p>None</p>
 <h2 id="api">API</h2>

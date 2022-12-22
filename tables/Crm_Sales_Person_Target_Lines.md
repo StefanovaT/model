@@ -318,7 +318,7 @@ Sales person to whom the target is assigned
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -337,7 +337,7 @@ Sales person to whom the target is assigned
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Sales_Person_Target_Id - Supported Filters
 

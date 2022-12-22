@@ -271,7 +271,7 @@ Marketing activity
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Marketing_Activity_Id - Supported Filters
 

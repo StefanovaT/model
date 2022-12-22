@@ -140,7 +140,7 @@ Depreciation method by which the asset will be depreciated
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -157,9 +157,9 @@ Depreciation method by which the asset will be depreciated
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|100|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Depreciation_Plan_Id - Supported Filters
 

@@ -257,7 +257,7 @@ Pricing model, for which the cost is defined
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Pricing_Model_Id - Supported Filters
 

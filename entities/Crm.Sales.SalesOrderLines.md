@@ -283,10 +283,10 @@ _Default Value_: **Constant**
 _Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
-`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))`
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))`
 
 _Front-End Recalc Expressions:_  
-`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))`
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))`
 ### LineCustomDiscountPercent
 
 User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)`
@@ -540,7 +540,7 @@ _Type_: **[SalesOrders](Crm.Sales.SalesOrders.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### IntrastatTransportCountry
 
@@ -744,7 +744,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### SerialNumber
 

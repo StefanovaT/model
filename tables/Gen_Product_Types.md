@@ -355,7 +355,7 @@ If checked specifies that lots are automatically created by the receiving orders
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(254) (MultiLanguage)|

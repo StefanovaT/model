@@ -15,12 +15,88 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 
 | Name | Type | Description |
 | - | - | --- |
+|[Company_Location_Id](#company_location_id)|`uniqueidentifier` |Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company.|
+|[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs.|
 |[Role_Id](#role_id)|`uniqueidentifier` ||
 |[Role_User_Id](#role_user_id)|`uniqueidentifier` `PK`||
 |[Row_Version](#row_version)|`timestamp` ||
 |[User_Id](#user_id)|`uniqueidentifier` ||
 
 ## Columns
+
+### Company_Location_Id
+
+
+Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|5|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Cm_Company_Locations](Cm_Company_Locations.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Company_Location_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Enterprise_Company_Id
+
+
+Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|4|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Enterprise_Companies](Gen_Enterprise_Companies.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Enterprise_Company_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Role_Id
 
@@ -33,7 +109,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -67,7 +143,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -100,7 +176,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -127,7 +203,7 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|

@@ -184,7 +184,7 @@ The Vehicle which is part of the vehicle set
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Vehicle_Set_Id - Supported Filters
 

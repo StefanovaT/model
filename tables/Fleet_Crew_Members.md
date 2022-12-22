@@ -54,7 +54,7 @@ The crew to which this member belongs
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Crew_Id - Supported Filters
 

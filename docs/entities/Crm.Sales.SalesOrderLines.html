@@ -667,9 +667,9 @@ Generic enum type for TransportMode properties<br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))</code></p>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, ( ( ( obj.Quantity.Value * obj.UnitPrice) * ( 1 - obj.LineStandardDiscountPercent)) * ( 1 - obj.LineCustomDiscountPercent)).Round( ))</code></p>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))</code></p>
 <h3 id="linecustomdiscountpercent">LineCustomDiscountPercent</h3>
 <p>User-defined discount for the line. <code>Required</code> <code>Default(0)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
@@ -854,7 +854,7 @@ Generic enum type for TransportMode properties<br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="intrastattransportcountry">IntrastatTransportCountry</h3>
 <p>Country of origin of the transport company; used for Intrastat reporting. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Geography.Countries.html">Countries</a> (nullable)</strong><br>
@@ -998,7 +998,7 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
-<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>
 <p>Which serial number to receive/issue. null means that serial number is unknown or not applicable. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
@@ -1103,6 +1103,7 @@ The subject.<br>
 <li><a href="../business-rules/R33507-22.html">R33507-22 Sales Order Line - Set Promotional Package (Recalc)</a></li>
 <li><a href="../business-rules/R33507-23.html">R33507-23 Sales Order Line - Set Persist Lot (Recalc)</a></li>
 <li><a href="../business-rules/R33507-24.html">R33507-24 Sales Order Line - Set Standard Quantity Base (Recalc)</a></li>
+<li><a href="../business-rules/R34129.html">R34129 Sales Order Line - Set Line Amount (Recalc)</a></li>
 <li><a href="../business-rules/R34137.html">R34137 Sales Order Line - Set Level 2 Discount Percent</a></li>
 <li><a href="../business-rules/R34138.html">R34138 Sales Order Line - Set Level 3 Discount Percent</a></li>
 </ul>

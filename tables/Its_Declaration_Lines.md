@@ -171,7 +171,7 @@ The intrastat declaration, to which this line belongs
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Intrastat_Declaration_Id - Supported Filters
 

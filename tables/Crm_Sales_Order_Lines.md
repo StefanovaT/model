@@ -385,6 +385,7 @@ Indicates the level 2 discount.
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Crm_Line_Discounts](Crm_Line_Discounts.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -451,6 +452,7 @@ Indicates the level 3 discount.
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Crm_Line_Discounts](Crm_Line_Discounts.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -1517,7 +1519,7 @@ When specified indicates that the goods sold in Return_For_Sales_Order_Line_Id a
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -1534,9 +1536,9 @@ When specified indicates that the goods sold in Return_For_Sales_Order_Line_Id a
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|100|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Sales_Order_Id - Supported Filters
 

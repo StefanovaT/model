@@ -119,7 +119,7 @@ The cost (in base currency) which should be distributed.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Cost_Distribution_Id - Supported Filters
 

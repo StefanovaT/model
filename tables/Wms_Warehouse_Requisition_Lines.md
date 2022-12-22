@@ -501,7 +501,7 @@ The theoretical quantity in base measurement unit according to the current measu
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Warehouse_Requisition_Id - Supported Filters
 

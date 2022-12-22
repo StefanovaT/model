@@ -19,7 +19,7 @@ Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced 
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` |The user, who created the record.|
 |[Destination_Entity_Name](#destination_entity_name)|`nvarchar(64)` |The name of the entity which fulfills the line. Used to differentiate between different fulfillment types. For example, sales order line can be fulfilled, for different purposes, by store order line and invoice order line.|
 |[Document_Fulfillment_Id](#document_fulfillment_id)|`uniqueidentifier` `PK`||
-|[Document_Id](#document_id)|`uniqueidentifier` Readonly|The Document, which is fulfilled.|
+|[Document_Id](#document_id)|`uniqueidentifier` |The Document, which is fulfilled.|
 |[Document_Line_Id](#document_line_id)|`uniqueidentifier` |The Id of the fulfilled line within the document. The attribute contains the Id and is not a reference, because it references different entities depending on document entity type and line type.|
 |[Fulfillment_Type](#fulfillment_type)|`nvarchar(1)` Allowed: `P`, `C`|Type of fulfillment: P=Planned; C=Completed.|
 |[Is_Final](#is_final)|`bit` |Specifies whether this fulfillment finalizes the line, regardless of any remaining quantities.|
@@ -197,7 +197,7 @@ The Document, which is fulfilled.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|yes|
+|Readonly|no|
 |Referenced Table|[Gen_Documents](Gen_Documents.md)|
 |RTF|no|
 |Sortable|no|
@@ -207,7 +207,7 @@ The Document, which is fulfilled.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Document_Id - Supported Filters
 

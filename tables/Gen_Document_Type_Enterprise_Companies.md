@@ -82,9 +82,9 @@ The document type for which visibility (availability) is set.
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|Long|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Document_Type_Id - Supported Filters
 

@@ -304,7 +304,7 @@ The total number of resource-hours, which are actually consumed. Equals to the d
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Work_Report_Id - Supported Filters
 

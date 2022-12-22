@@ -341,7 +341,7 @@ Number of pallets affected by this operation. NULL when unknown or N/A.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Transportation_Execution_Id - Supported Filters
 

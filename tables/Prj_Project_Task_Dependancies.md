@@ -153,7 +153,7 @@ The task which depends on another task
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Project_Task_Id - Supported Filters
 

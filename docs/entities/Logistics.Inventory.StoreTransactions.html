@@ -540,6 +540,8 @@ Allowed values for the <code>CostSource</code>(Logistics.Inventory.StoreTransact
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.CalculateCostSource( )</code></p>
 <h3 id="creationtime">CreationTime</h3>
 <p>Date/Time when the document was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime</strong><br>
@@ -1257,6 +1259,7 @@ The subject.<br>
 <ul>
 <li><a href="../business-rules/R18067.html">R18067 StoreTransaction - Store Enterprise Company</a></li>
 <li><a href="../business-rules/R26709.html">R26709 StoreTransaction - Line Product Use Lots</a></li>
+<li><a href="../business-rules/R26742.html">R26742 StoreTransactionLine - Line Product Is Serialized</a></li>
 <li><a href="../business-rules/R26881.html">R26881 StoreTransaction - Line Fixed Measurement Ratios</a></li>
 <li><a href="../business-rules/R27243.html">R27243  StoreTransaction - Line Quantity Base</a></li>
 <li><a href="../business-rules/R27305.html">R27305 StoreTransaction - Parent Store Order Movement Type</a></li>
@@ -1272,7 +1275,6 @@ The subject.<br>
 </ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
-<li><a href="../business-rules/R26742.html">R26742 StoreTransactionLine - Line Product Is Serialized</a></li>
 <li><a href="../business-rules/R30425-1.html">R30425-1 Transaction Obj - Set Store (Recalc)</a></li>
 <li><a href="../business-rules/R30425-2.html">R30425-2 StoreTransaction - Set Cost Source</a></li>
 </ul>

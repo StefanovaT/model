@@ -181,6 +181,9 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.CalculateCostSource( )`
+
 ### CreationTime
 
 Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))

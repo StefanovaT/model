@@ -278,7 +278,7 @@ The trip for which the segment is defined
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Trip_Id - Supported Filters
 

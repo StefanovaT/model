@@ -182,7 +182,7 @@ The type of promotional package sold
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Sales_Order_Id - Supported Filters
 

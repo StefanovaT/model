@@ -706,7 +706,7 @@ Location, where the opeartion should be performed. NULL for operations, which do
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Warehouse_Order_Id - Supported Filters
 

@@ -286,7 +286,7 @@ The standard quantity of the ordered items (usually with Purchase Order) in base
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -305,7 +305,7 @@ The standard quantity of the ordered items (usually with Purchase Order) in base
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Purchase_Control_Document_Id - Supported Filters
 

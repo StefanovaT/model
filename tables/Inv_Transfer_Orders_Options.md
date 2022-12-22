@@ -87,7 +87,7 @@ The document type, for which these options apply.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Document_Type_Id - Supported Filters
 

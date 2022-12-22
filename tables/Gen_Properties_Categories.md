@@ -68,7 +68,7 @@ Categories of properties. Entity: Gen_Properties_Categories
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64) (MultiLanguage)|

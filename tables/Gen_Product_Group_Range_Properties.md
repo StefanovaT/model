@@ -82,7 +82,7 @@ Starting value of the range of alternative values. Used only when Rage Type = R 
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Product_Group_Id - Supported Filters
 

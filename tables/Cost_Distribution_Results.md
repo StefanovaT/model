@@ -51,7 +51,7 @@ Contains the results of a cost distribution calculation. Entity: Cost_Distributi
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Cost_Distribution_Id - Supported Filters
 

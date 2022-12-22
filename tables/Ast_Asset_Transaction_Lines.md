@@ -79,7 +79,7 @@ Asset for which changes in values have occurred.
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -96,9 +96,9 @@ Asset for which changes in values have occurred.
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|100|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Asset_Transaction_Id - Supported Filters
 

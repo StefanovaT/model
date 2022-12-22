@@ -126,7 +126,7 @@ Type of box in VAT declaration.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Declaration_Id - Supported Filters
 

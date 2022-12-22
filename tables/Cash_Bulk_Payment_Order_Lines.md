@@ -81,7 +81,7 @@ If filled indicates which party is billed for the total amount. Possible values:
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -100,7 +100,7 @@ If filled indicates which party is billed for the total amount. Possible values:
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Bulk_Payment_Order_Id - Supported Filters
 
