@@ -261,6 +261,8 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)`
 ### Level3DiscountPercent
 
 The percent of the level 3 discount. `Introduced in version 23.1.2.8`
@@ -271,6 +273,8 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.Level3Discount != null), Convert( obj.Level3Discount.DiscountPercent, Object), null)`
 ### LineAmount
 
 The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)`

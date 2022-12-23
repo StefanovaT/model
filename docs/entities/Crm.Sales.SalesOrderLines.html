@@ -651,6 +651,8 @@ Generic enum type for TransportMode properties<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)</code></p>
 <h3 id="level3discountpercent">Level3DiscountPercent</h3>
 <p>The percent of the level 3 discount. <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
@@ -658,6 +660,8 @@ Generic enum type for TransportMode properties<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( obj.Level3Discount != null), Convert( obj.Level3Discount.DiscountPercent, Object), null)</code></p>
 <h3 id="lineamount">LineAmount</h3>
 <p>The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. <code>Currency: SalesOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>
@@ -1104,8 +1108,8 @@ The subject.<br>
 <li><a href="../business-rules/R33507-23.html">R33507-23 Sales Order Line - Set Persist Lot (Recalc)</a></li>
 <li><a href="../business-rules/R33507-24.html">R33507-24 Sales Order Line - Set Standard Quantity Base (Recalc)</a></li>
 <li><a href="../business-rules/R34129.html">R34129 Sales Order Line - Set Line Amount (Recalc)</a></li>
-<li><a href="../business-rules/R34137.html">R34137 Sales Order Line - Set Level 2 Discount Percent</a></li>
-<li><a href="../business-rules/R34138.html">R34138 Sales Order Line - Set Level 3 Discount Percent</a></li>
+<li><a href="../business-rules/R34137.html">R34137 Sales Order Line - Set Level2 Discount Percent (Recalc)</a></li>
+<li><a href="../business-rules/R34138.html">R34138 Sales Order Line - Set Level3 Discount Percent (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
