@@ -46,12 +46,18 @@ Indicates the level to which discounts are applied automatically. Increasing the
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|no|
+|Supports EQUALS_IN|yes|
 |Type|nvarchar(1)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Auto_Apply_Discount_Level - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Description
 

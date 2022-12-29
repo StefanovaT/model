@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Description](Crm.LineDiscounts.md#description) | string (50) __nullable__ | The description of the discount that is shown to the operator when he/she should choose between different discounts. `Filter(like)` 
-| [DiscountLevel](Crm.LineDiscounts.md#discountlevel) | [DiscountLevel](Crm.LineDiscounts.md#discountlevel) | Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. `Required` `Default("1")` `ORD` `Introduced in version 23.1.2.8` 
+| [DiscountLevel](Crm.LineDiscounts.md#discountlevel) | [DiscountLevel](Crm.LineDiscounts.md#discountlevel) | Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. `Required` `Default("1")` `Filter(multi eq)` `ORD` `Introduced in version 23.1.2.8` 
 | [DiscountPercent](Crm.LineDiscounts.md#discountpercent) | decimal (7, 6) | The discount percent that should be applied if all the matching criteria are met. `Required` `Default(0)` `Filter(ge;le)` 
 | [DisplayText](Crm.LineDiscounts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Crm.LineDiscounts.md#fromdate) | datetime __nullable__ | Starting date of validity of the discount. null means no from date restriction. `Filter(eq;ge;le)` 
@@ -68,7 +68,7 @@ _Show in UI_: **ShownByDefault**
 
 ### DiscountLevel
 
-Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. `Required` `Default("1")` `ORD` `Introduced in version 23.1.2.8`
+Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm. `Required` `Default("1")` `Filter(multi eq)` `ORD` `Introduced in version 23.1.2.8`
 
 _Type_: **[DiscountLevel](Crm.LineDiscounts.md#discountlevel)**  
 _Indexed_: **True**  
@@ -82,7 +82,7 @@ _Allowed Values (Crm.LineDiscountsRepository.DiscountLevel Enum Members)_
 | Two | Two value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Two' |
 | Three | Three value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Three' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **True**  
 _Default Value_: **One**  
 _Show in UI_: **ShownByDefault**  

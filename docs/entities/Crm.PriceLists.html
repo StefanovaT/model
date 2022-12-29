@@ -108,8 +108,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tbody>
 <tr>
 <td><a href="Crm.PriceLists.html#autoapplydiscountlevel">AutoApplyDiscountLevel</a></td>
-<td><a href="Crm.PriceLists.html#autoapplydiscountlevel">AutoApplyDiscountLevel</a></td>
-<td>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Introduced in version 23.1.2.8</code></td>
+<td><a href="Crm.PriceLists.html#autoapplydiscountlevel">DiscountLevel</a></td>
+<td>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.PriceLists.html#description">Description</a></td>
@@ -167,11 +167,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="autoapplydiscountlevel">AutoApplyDiscountLevel</h3>
-<p>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Introduced in version 23.1.2.8</code></p>
-<p><em>Type</em>: <strong><a href="Crm.PriceLists.html#autoapplydiscountlevel">AutoApplyDiscountLevel</a></strong><br>
+<p>Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
+<p><em>Type</em>: <strong><a href="Crm.PriceLists.html#autoapplydiscountlevel">DiscountLevel</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-Allowed values for the <code>AutoApplyDiscountLevel</code>(Crm.PriceLists.md#autoapplydiscountlevel) data attribute<br>
-<em>Allowed Values (Crm.PriceListsRepository.AutoApplyDiscountLevel Enum Members)</em></p>
+Allowed values for the <code>DiscountLevel</code>(Crm.LineDiscounts.md#discountlevel) data attribute<br>
+<em>Allowed Values (Crm.LineDiscountsRepository.DiscountLevel Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -194,7 +194,7 @@ Allowed values for the <code>AutoApplyDiscountLevel</code>(Crm.PriceLists.md#aut
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>One</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

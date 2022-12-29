@@ -205,12 +205,18 @@ Specifies the cascade level (1..3), on which the discount is applied. The discou
 |RTF|no|
 |Sortable|yes|
 |Summary Type|None|
-|Supports EQUALS_IN|no|
+|Supports EQUALS_IN|yes|
 |Type|nvarchar(1)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Discount_Level - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Discount_Percent
 

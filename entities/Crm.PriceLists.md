@@ -27,7 +27,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel) | [AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel) | Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. `Required` `Default("1")` `Introduced in version 23.1.2.8` 
+| [AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel) | [DiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel) | Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. `Required` `Default("1")` `Filter(multi eq)` `Introduced in version 23.1.2.8` 
 | [Description](Crm.PriceLists.md#description) | string (max) __nullable__ | The description of this PriceList. 
 | [DisplayText](Crm.PriceLists.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Crm.PriceLists.md#fromdate) | datetime __nullable__ | Starting validity of the price list. `Filter(eq;ge;le)` 
@@ -47,12 +47,12 @@ Aggregate Tree
 
 ### AutoApplyDiscountLevel
 
-Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. `Required` `Default("1")` `Introduced in version 23.1.2.8`
+Indicates the level to which discounts are applied automatically. Increasing the level has performance implications. Discounts, higher than the specified level can also be applied, but must be selected manually by the users. Level 1 discounts are always calculated. `Required` `Default("1")` `Filter(multi eq)` `Introduced in version 23.1.2.8`
 
-_Type_: **[AutoApplyDiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel)**  
+_Type_: **[DiscountLevel](Crm.PriceLists.md#autoapplydiscountlevel)**  
 _Category_: **System**  
-Allowed values for the `AutoApplyDiscountLevel`(Crm.PriceLists.md#autoapplydiscountlevel) data attribute  
-_Allowed Values (Crm.PriceListsRepository.AutoApplyDiscountLevel Enum Members)_  
+Allowed values for the `DiscountLevel`(Crm.LineDiscounts.md#discountlevel) data attribute  
+_Allowed Values (Crm.LineDiscountsRepository.DiscountLevel Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -60,7 +60,7 @@ _Allowed Values (Crm.PriceListsRepository.AutoApplyDiscountLevel Enum Members)_
 | Two | Two value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Two' |
 | Three | Three value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Three' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **One**  
 _Show in UI_: **ShownByDefault**  
