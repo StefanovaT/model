@@ -1,13 +1,13 @@
 ---
 erp.type: business-rule
-erp.entity: Logistics.Inventory.StoreTransactions
+erp.entity: Logistics.Wms.WarehouseTransactions
 ---
 
 # R34326 StoreTransaction - Line Product Use Lots
 +-------------------+--------------------------------------------------------------------------------------------------+
-| **Code**          | R34326                                                                                        |
+| **Code**          | R34326                                                                                           |
 +-------------------+--------------------------------------------------------------------------------------------------+
-| **Entity**        | @Logistics.Inventory.StoreTransactions                                                           |
+| **Entity**        | @Logistics.Wms.WarehouseTransactions                                                             |
 +-------------------+--------------------------------------------------------------------------------------------------+
 | **Name**          | LineProductUseLots                                                                               |
 +-------------------+--------------------------------------------------------------------------------------------------+
