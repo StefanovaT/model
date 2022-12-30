@@ -1,0 +1,55 @@
+---
+erp.type: business-rule
+erp.entity: Logistics.Wms.WarehouseTransactions
+---
+
+# R34326 StoreTransaction - Line Product Use Lots
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Code**          | R34326                                                                                           |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Entity**        | @Logistics.Wms.WarehouseTransactions                                                             |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Name**          | LineProductUseLots                                                                               |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Attribute**     | Lot                                                                                              |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Layer**         | Back-End                                                                                         |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Events**        | Releasing +                                                                                      |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Modify**        | NO                                                                                               |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Action**        | Validate that:                                                                                   |
+|                   | <br/><br/>                                                                                       |
+|                   | -   if \"Product.UseLots == Required\", then \"StoreTransactionLine.Lot\" has value;             |
+|                   | -   if \"Product.UseLots == NotAllowed\", then \"StoreTransactionLine.Lot = NULL\";              |
+|                   | -   if \"Product.UseLots == Allowed\", then \"StoreTransactionLine.Lot = NULL or has value\".    |
+|                   | <br/><br/>                                                                                       |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Description**   | High traceability is important for some products and not for others and therefore those products |
+|                   | have different requirements for obligatory use of lots. That's why through the field \"Use       |
+|                   | Lots\" in the products definition could be specified if the particular product uses lots. The    |
+|                   | possible values for the field are:                                                               |
+|                   | <br/><br/>                                                                                       |
+|                   | -   Allowed -- This setting allows lots to be used for this product, but does not make use of    |
+|                   |     lots required;                                                                               |
+|                   | -   NotAllowed - This setting does not allow lots to be used for this product;                   |
+|                   | -   Required - This setting makes use of lots compulsory. It requires the use of lots in each    |
+|                   |     form in which the product is used.                                                           |
+|                   | <br/><br/>                                                                                       |
+|                   | The current business rule validates that the use of lots in the store transaction lines          |
+|                   | corresponds to the specified option in the products definitions.                                 |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Message**       | The lot "{Lot}" for product "{Product}" violates the lot setting of the product.                 |
+|                   | <br/><br/>                                                                                       |
+|                   | Lot setting: {Product.UseLots}..                                                                 |
+|                   |                                                                                                  |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Introduced In   | 2023                                                                                             |
+| Version**         |                                                                                                  |
++-------------------+--------------------------------------------------------------------------------------------------+
+| **Revocable**     | NO                                                                                               |
++-------------------+--------------------------------------------------------------------------------------------------+
+
+*\* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic [System Business Rules](../templates/template-description-system-business-rules.md).*
