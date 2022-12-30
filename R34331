@@ -1,0 +1,50 @@
+---
+erp.type: front-end-business-rule
+erp.entity: LogisticUnitContents
+---
+
+# RR34331 LogisticUnitContents - Set Quantity From Quantity Base
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Code**                    | R34331                                                                                |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Entity**                  | [LogisticUnitContents](~/reference/common-business-rules/LogisticUnitContents.md)     |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Name**                    | SetQuantityFromQuantityBase                                                           |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Attribute**               | Quantity                                                                              |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Layer**                   | Front-End                                                                             |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Events**                  | AttributeChanged(QuantityBase)                                                        |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Priority**                | Normal                                                                                |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Modify**                  | YES                                                                                   |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Applicable Legislations** | [ALL // no condition                                                                  |
+|                             | needed](xref:applicable-legislations)                                                 |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Action**                  | if (Product != null                                                                   |
+|                             |                 && QuantityUnit != null                                               |
+|                             |                 && QuantityBase != null                                               |
+|                             |                 && QuantityBase != Quantity.ConvertTo(Product.BaseUnit, Product))     |
+|                             |             {                                                                         |
+|                             |                 if (!Product.AllowVariableMeasurementRatios)                          |
+|                             |                     Quantity = QuantityBase.ConvertTo(QuantityUnit, Product);         |
+|                             |                 else if (Product.BaseUnit == QuantityUnit)                            |
+|                             |                     Quantity = QuantityBase;                                          |
+|                             |             }                                                                         |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Description**             | Recalculates Quantity when Quantity Base is changed. For products which use Variable  |
+|                             | Measurement Ratios, the recalculation is performed only if the Quantity Unit in the   |
+|                             | line is the Base Мeasurement Unit of the product.                                     |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Message**                 | \-                                                                                    |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Version**                 | 2023                                                                                  |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Revocable**               | YES                                                                                   |
++-----------------------------+---------------------------------------------------------------------------------------+
+
+*\* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic [System Business Rules](../templates/template-description-system-business-rules.md).*
