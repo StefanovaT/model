@@ -150,7 +150,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.Todo.Tasks.html#state">State</a></td>
 <td><a href="Projects.Todo.Tasks.html#state">State</a></td>
-<td>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(eq)</code></td>
+<td>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Todo.Tasks.html#title">Title</a></td>
@@ -286,7 +286,7 @@ Allowed values for the <code>Importance</code>(Projects.Todo.Tasks.md#importance
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="state">State</h3>
-<p>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(eq)</code></p>
+<p>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Todo.Tasks.html#state">State</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>State</code>(Projects.Todo.Tasks.md#state) data attribute<br>
@@ -317,7 +317,7 @@ Allowed values for the <code>State</code>(Projects.Todo.Tasks.md#state) data att
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>Equals</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>New</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>

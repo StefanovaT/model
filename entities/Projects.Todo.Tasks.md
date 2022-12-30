@@ -32,7 +32,7 @@ Aggregate Tree
 | [Notes](Projects.Todo.Tasks.md#notes) | string (max) __nullable__ | Notes for this Task. `Introduced in version 23.1.1.48` 
 | [ObjectVersion](Projects.Todo.Tasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RemindTimeUtc](Projects.Todo.Tasks.md#remindtimeutc) | datetime __nullable__ | When to remind the assigned user for the task (in UTC). `Filter(eq;ge;le)` `Introduced in version 23.1.1.51` 
-| [State](Projects.Todo.Tasks.md#state) | [State](Projects.Todo.Tasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(eq)` 
+| [State](Projects.Todo.Tasks.md#state) | [State](Projects.Todo.Tasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(multi eq)` 
 | [Title](Projects.Todo.Tasks.md#title) | string (254) | A brief description of the task. `Required` `Filter(like)` 
 
 ## References
@@ -143,7 +143,7 @@ _Show in UI_: **ShownByDefault**
 
 ### State
 
-Indicates the current task state. `Required` `Default("N")` `Filter(eq)`
+Indicates the current task state. `Required` `Default("N")` `Filter(multi eq)`
 
 _Type_: **[State](Projects.Todo.Tasks.md#state)**  
 _Category_: **System**  
@@ -157,7 +157,7 @@ _Allowed Values (Projects.Todo.TasksRepository.State Enum Members)_
 | Waiting | Waiting value. Stored as 'W'. <br /> _Database Value:_ 'W' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Waiting' |
 | Completed | Completed value. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Completed' |
 
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **New**  
 _Show in UI_: **HiddenByDefault**  
