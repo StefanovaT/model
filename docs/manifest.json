@@ -11153,6 +11153,42 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R34326.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34326.html",
+          "hash": "3YLIpnvdgGinKVLhzNsOFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R34328.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34328.html",
+          "hash": "/1l0dQHII+VrfG4zVtjvGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R34331.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34331.html",
+          "hash": "iTNx6ID5FtL9F9rUOtxZdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -16279,7 +16315,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.LogisticUnitContents.html",
-          "hash": "4KWsctLNabD/+KSTOYcscA=="
+          "hash": "QMdTdg9BP/0TVdFgsjNf8A=="
         }
       },
       "is_incremental": false,
@@ -16867,7 +16903,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehouseTransactions.html",
-          "hash": "BG/tBq0kgA0zPxleGWPFEg=="
+          "hash": "IZsPoTGYv07zAUlo/RtZoQ=="
         }
       },
       "is_incremental": false,
