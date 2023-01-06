@@ -223,6 +223,8 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`obj.Product.MeasurementUnit`
 ### SerialNumber
 
 The serial number of the product. Null means unknown or that product is not serialized. `Filter(multi eq)` `Introduced in version 23.1.2.0`

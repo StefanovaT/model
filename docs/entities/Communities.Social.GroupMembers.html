@@ -128,7 +128,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Communities.Social.GroupMembers.html#role">Role</a></td>
-<td>string (1)</td>
+<td><a href="Communities.Social.GroupMembers.html#role">Role</a></td>
 <td>Member role in a group. Defaults to member. <code>Required</code> <code>Default(&quot;M&quot;)</code> <code>Introduced in version 23.1.1.95</code></td>
 </tr>
 </tbody>
@@ -187,12 +187,31 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="role">Role</h3>
 <p>Member role in a group. Defaults to member. <code>Required</code> <code>Default(&quot;M&quot;)</code> <code>Introduced in version 23.1.1.95</code></p>
-<p><em>Type</em>: <strong>string (1)</strong><br>
+<p><em>Type</em>: <strong><a href="Communities.Social.GroupMembers.html#role">Role</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+Allowed values for the <code>Role</code>(Communities.Social.GroupMembers.md#role) data attribute<br>
+<em>Allowed Values (Communities.Social.GroupMembersRepository.Role Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Member</td>
+<td>Member. Stored as 'M'. <br> <em>Database Value:</em> 'M' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Member'</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>Admin. Stored as 'A'. <br> <em>Database Value:</em> 'A' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Admin'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>1</strong><br>
-<em>Default Value</em>: <strong>M</strong><br>
+<em>Default Value</em>: <strong>Member</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="socialgroup">SocialGroup</h3>

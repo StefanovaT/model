@@ -16,7 +16,7 @@ Represents the membership of a user in a social group. Entity: Cmm_Social_Group_
 | Name | Type | Description |
 | - | - | --- |
 |[Join_Time_Utc](#join_time_utc)|`datetime` |The exact server time (in UTC), when the user joined the group.|
-|[Role](#role)|`nvarchar(1)` |Member role in a group. Defaults to member.|
+|[Role](#role)|`nvarchar(1)` Allowed: `M`, `A`|Member role in a group. Defaults to member.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |The group in which the user participates.|
 |[Social_Group_Member_Id](#social_group_member_id)|`uniqueidentifier` `PK`||
@@ -61,6 +61,7 @@ Member role in a group. Defaults to member.
 
 | Property | Value |
 | - | - |
+|Allowed Values|`M`, `A`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|M|

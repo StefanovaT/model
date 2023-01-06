@@ -324,6 +324,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.Product.MeasurementUnit</code></p>
 <h3 id="serialnumber">SerialNumber</h3>
 <p>The serial number of the product. Null means unknown or that product is not serialized. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.0</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
@@ -407,6 +409,7 @@ The subject.<br>
 </ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
+<li><a href="../business-rules/R34327.html">R34327 Logistic Unit Content - Set Quantity Unit (Recalc)</a></li>
 <li><a href="../business-rules/R34331.html">R34331 LogisticUnitContents - Set Quantity From Quantity Base</a></li>
 </ul>
 <h2 id="api">API</h2>
