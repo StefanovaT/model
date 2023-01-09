@@ -11228,6 +11228,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R34361.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34361.html",
+          "hash": "l8KfSjc4Sn41ya0uob2CFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -19176,7 +19188,7 @@
       "output": {
         ".html": {
           "relative_path": "reference/common-business-rules/all-entities.html",
-          "hash": "DcHQ3XdHZALcWLNQ9CXs8w=="
+          "hash": "rDMVR6e0IRS6H45ew0vkRA=="
         }
       },
       "is_incremental": false,
