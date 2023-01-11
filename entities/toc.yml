@@ -556,6 +556,8 @@
       href: Finance.Vat.DealTypeDocumentAmounts.md
     - name: DealTypes
       href: Finance.Vat.DealTypes.md
+    - name: DeclarationAmountDetails
+      href: Finance.Vat.DeclarationAmountDetails.md
     - name: DeclarationLines
       href: Finance.Vat.DeclarationLines.md
     - name: Declarations

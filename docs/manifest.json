@@ -14586,6 +14586,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Finance.Vat.DeclarationAmountDetails.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Finance.Vat.DeclarationAmountDetails.html",
+          "hash": "DJo4PjwmlQe2y0P2pZUeGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Finance.Vat.DeclarationLines.md",
       "output": {
         ".html": {
@@ -14626,7 +14638,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Vat.html",
-          "hash": "+QnDfmJzmGvreIxxZrktzA=="
+          "hash": "NQW4ztolf3BqRZ+weA+LXA=="
         }
       },
       "is_incremental": false,
@@ -18742,7 +18754,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "ZStewui3XWM5aHb2A9BRrQ=="
+          "hash": "UUACLALB8gZWlHF3B1hCqg=="
         }
       },
       "is_incremental": false,
@@ -21264,7 +21276,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Sales_Order_Lines.html",
-          "hash": "D2ghNSxeuoCsBv72qZPddA=="
+          "hash": "is4ehj+vzPAghUE2QDbu/A=="
         }
       },
       "is_incremental": false,
@@ -22836,7 +22848,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Product_Supply.html",
-          "hash": "XZJMNcZUjb8yBu2XMn6P6A=="
+          "hash": "gXUxxgOyrTDWgYKb/iBNUQ=="
         }
       },
       "is_incremental": false,
@@ -26232,7 +26244,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/VAT.html",
-          "hash": "D2M374Qb1+vXvKY7EvMLrA=="
+          "hash": "uPYItCGKUb3D/nab3dLG9Q=="
         }
       },
       "is_incremental": false,
@@ -26281,6 +26293,18 @@
         ".html": {
           "relative_path": "tables/VAT_Deal_Types.html",
           "hash": "K93040qYXZxb7CZ8vni7og=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/VAT_Declaration_Box_Deal_Type_Amounts.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/VAT_Declaration_Box_Deal_Type_Amounts.html",
+          "hash": "8V0HbuS7l9hvujGSlmux7A=="
         }
       },
       "is_incremental": false,
@@ -26568,7 +26592,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/index.html",
-          "hash": "duHXbPH2SaeI6oC9PoOjOw=="
+          "hash": "vjSTgH3KsAGeaknfQWpttA=="
         }
       },
       "is_incremental": false,
@@ -26580,7 +26604,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/toc.html",
-          "hash": "dYZWOs+DUnPEJcemZFZQvw=="
+          "hash": "5Vd9SO4GsKV8vqqwPsFhHg=="
         }
       },
       "is_incremental": false,

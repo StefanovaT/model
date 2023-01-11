@@ -844,6 +844,9 @@ references:
 - uid: Finance.Vat.DealTypes
   name: Finance.Vat.DealTypes Entity
   href: entities/Finance.Vat.DealTypes.html
+- uid: Finance.Vat.DeclarationAmountDetails
+  name: Finance.Vat.DeclarationAmountDetails View
+  href: entities/Finance.Vat.DeclarationAmountDetails.html
 - uid: Finance.Vat.DeclarationLines
   name: Finance.Vat.DeclarationLines Entity
   href: entities/Finance.Vat.DeclarationLines.html

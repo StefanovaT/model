@@ -409,6 +409,7 @@ The percent of the level 2 discount.
 
 | Property | Value |
 | - | - |
+|Attributes|IsPercent|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -476,6 +477,7 @@ The percent of the level 3 discount.
 
 | Property | Value |
 | - | - |
+|Attributes|IsPercent|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

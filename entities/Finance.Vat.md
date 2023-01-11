@@ -11,6 +11,7 @@ uid: Finance.Vat
 - [BoxTypes](Finance.Vat.BoxTypes.md)  
 - [DealTypeDocumentAmounts](Finance.Vat.DealTypeDocumentAmounts.md)  
 - [DealTypes](Finance.Vat.DealTypes.md)  
+- [DeclarationAmountDetails](Finance.Vat.DeclarationAmountDetails.md)  
 - [DeclarationLines](Finance.Vat.DeclarationLines.md)  
 - [Declarations](Finance.Vat.Declarations.md)  
 - [Entries](Finance.Vat.Entries.md)  

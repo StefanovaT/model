@@ -1187,6 +1187,8 @@
     href: VAT_Deal_Type_Document_Amounts.md
   - name: VAT_Deal_Types
     href: VAT_Deal_Types.md
+  - name: VAT_Declaration_Box_Deal_Type_Amounts
+    href: VAT_Declaration_Box_Deal_Type_Amounts.md
   - name: VAT_Declaration_Lines
     href: VAT_Declaration_Lines.md
   - name: VAT_Declarations

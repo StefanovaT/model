@@ -419,6 +419,12 @@ LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOr
 |User Login|no|
 |Visible|no|
 
+#### Order_Lot_Sizing_Method - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Order_Maximum
 
 
@@ -478,6 +484,13 @@ Minimum order quantity both for buying and making
 |UI Width|100|
 |User Login|no|
 |Visible|no|
+
+#### Order_Minimum - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Order_Multiple
 
@@ -599,6 +612,13 @@ Order point quantity under the OP replenishment system
 |User Login|no|
 |Visible|yes|
 
+#### Order_Point_Quantity_Base - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
+
 ### Order_Policy
 
 
@@ -629,6 +649,12 @@ Order policy/replenishment system. OPS=Order Point System; OPT=Order Point Syste
 |UI Width|100|
 |User Login|no|
 |Visible|no|
+
+#### Order_Policy - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Planning_Annual_Carrying_Cost_Percent
 
