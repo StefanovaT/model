@@ -17,7 +17,7 @@ _Code_
 Name Data Member:  
 _Name_  
 Category:  _Settings_  
-Show in UI:  _ShownByDefault_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  

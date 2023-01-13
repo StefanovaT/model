@@ -154,7 +154,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Products.ProductSupply.html#orderlotsizingmethod">OrderLotSizingMethod</a></td>
 <td><a href="General.Products.ProductSupply.html#orderlotsizingmethod">OrderLotSizingMethod</a></td>
-<td>LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. <code>Required</code> <code>Default(&quot;ROP&quot;)</code></td>
+<td>LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. <code>Required</code> <code>Default(&quot;ROP&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#ordermaximum">OrderMaximum</a></td>
@@ -164,7 +164,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Products.ProductSupply.html#orderminimum">OrderMinimum</a></td>
 <td><a href="../data-types.html#quantity">Quantity (18, 3)</a></td>
-<td>Minimum order quantity both for buying and making. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code></td>
+<td>Minimum order quantity both for buying and making. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#ordermultiple">OrderMultiple</a></td>
@@ -184,12 +184,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Products.ProductSupply.html#orderpointquantitybase">OrderPointQuantityBase</a></td>
 <td><a href="../data-types.html#quantity">Quantity (18, 3)</a></td>
-<td>Order point quantity under the OP replenishment system. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code></td>
+<td>Order point quantity under the OP replenishment system. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#orderpolicy">OrderPolicy</a></td>
 <td><a href="General.Products.ProductSupply.html#orderpolicy">OrderPolicy</a></td>
-<td>Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. <code>Required</code> <code>Default(&quot;OPS&quot;)</code></td>
+<td>Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. <code>Required</code> <code>Default(&quot;OPS&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#planningannualcarryingcostpercent">PlanningAnnual<br>CarryingCostPercent</a></td>
@@ -404,7 +404,7 @@ Allowed values for the <code>ManufacturingPolicy</code>(General.Products.Product
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderlotsizingmethod">OrderLotSizingMethod</h3>
-<p>LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. <code>Required</code> <code>Default(&quot;ROP&quot;)</code></p>
+<p>LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. <code>Required</code> <code>Default(&quot;ROP&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductSupply.html#orderlotsizingmethod">OrderLotSizingMethod</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>OrderLotSizingMethod</code>(General.Products.ProductSupply.md#orderlotsizingmethod) data attribute<br>
@@ -443,7 +443,7 @@ Allowed values for the <code>OrderLotSizingMethod</code>(General.Products.Produc
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>ReorderPoint</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -455,10 +455,10 @@ Allowed values for the <code>OrderLotSizingMethod</code>(General.Products.Produc
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="orderminimum">OrderMinimum</h3>
-<p>Minimum order quantity both for buying and making. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code></p>
+<p>Minimum order quantity both for buying and making. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -485,15 +485,15 @@ Allowed values for the <code>OrderLotSizingMethod</code>(General.Products.Produc
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="orderpointquantitybase">OrderPointQuantityBase</h3>
-<p>Order point quantity under the OP replenishment system. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code></p>
+<p>Order point quantity under the OP replenishment system. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderpolicy">OrderPolicy</h3>
-<p>Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. <code>Required</code> <code>Default(&quot;OPS&quot;)</code></p>
+<p>Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. <code>Required</code> <code>Default(&quot;OPS&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductSupply.html#orderpolicy">OrderPolicy</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>OrderPolicy</code>(General.Products.ProductSupply.md#orderpolicy) data attribute<br>
@@ -524,7 +524,7 @@ Allowed values for the <code>OrderPolicy</code>(General.Products.ProductSupply.m
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>OrderPointSystem</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>

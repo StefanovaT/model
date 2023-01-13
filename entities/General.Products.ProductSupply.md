@@ -36,14 +36,14 @@ Aggregate Tree
 | [ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy) | [ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy) | MTS=Make-To-Stock; MTO=Make-To-Order; ATO=Assemble-To-Order;ETO=Engineer-To-Order. `Required` `Default("MTS")` 
 | [ObjectVersion](General.Products.ProductSupply.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrderLotSizeQuantityBase](General.Products.ProductSupply.md#orderlotsizequantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity of the product, normally ordered from the plant or supplier. The quantity is expressed in the base measurement unit. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(1)` 
-| [OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod) | [OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod) | LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. `Required` `Default("ROP")` 
+| [OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod) | [OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod) | LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. `Required` `Default("ROP")` `Filter(eq)` 
 | [OrderMaximum](General.Products.ProductSupply.md#ordermaximum) | [Quantity (18, 3)](../data-types.md#quantity) __nullable__ | Order maximum when buying or making. null means no maximum. `Unit: Product.BaseMeasurementCategory.BaseUnit` 
-| [OrderMinimum](General.Products.ProductSupply.md#orderminimum) | [Quantity (18, 3)](../data-types.md#quantity) | Minimum order quantity both for buying and making. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` 
+| [OrderMinimum](General.Products.ProductSupply.md#orderminimum) | [Quantity (18, 3)](../data-types.md#quantity) | Minimum order quantity both for buying and making. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(eq;ge;le)` 
 | [OrderMultiple](General.Products.ProductSupply.md#ordermultiple) | boolean | True if the order qty should be multiple of lot size when buying or making. `Required` `Default(false)` 
 | [OrderPeriodPlanningDays](General.Products.ProductSupply.md#orderperiodplanningdays) | int32 __nullable__ | For how many days in the future should be planned - for fixed period replenishment system. null - not yet specified. 
 | [OrderPeriodStartDate](General.Products.ProductSupply.md#orderperiodstartdate) | datetime __nullable__ | Start date of the first period under fixed period replenishment system. null - not yet specified. 
-| [OrderPointQuantityBase](General.Products.ProductSupply.md#orderpointquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Order point quantity under the OP replenishment system. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` 
-| [OrderPolicy](General.Products.ProductSupply.md#orderpolicy) | [OrderPolicy](General.Products.ProductSupply.md#orderpolicy) | Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. `Required` `Default("OPS")` 
+| [OrderPointQuantityBase](General.Products.ProductSupply.md#orderpointquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Order point quantity under the OP replenishment system. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(eq;ge;le)` 
+| [OrderPolicy](General.Products.ProductSupply.md#orderpolicy) | [OrderPolicy](General.Products.ProductSupply.md#orderpolicy) | Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. `Required` `Default("OPS")` `Filter(eq)` 
 | [PlanningAnnual<br />CarryingCostPercent](General.Products.ProductSupply.md#planningannualcarryingcostpercent) | decimal (5, 4) __nullable__ | The expected carrying cost as percentage of inventory cost. null means unknown. 
 | [PlanningAnnual<br />UsageQuantityBase](General.Products.ProductSupply.md#planningannualusagequantitybase) | [Quantity (18, 3)](../data-types.md#quantity) __nullable__ | Average usage of the product for 1 year. NUL means unknown. `Unit: Product.BaseMeasurementCategory.BaseUnit` 
 | [PlanningHorizonDays](General.Products.ProductSupply.md#planninghorizondays) | int32 | Number of days in the future for which to plan the demand and supply. `Required` `Default(0)` 
@@ -180,7 +180,7 @@ _Show in UI_: **ShownByDefault**
 
 ### OrderLotSizingMethod
 
-LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. `Required` `Default("ROP")`
+LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. `Required` `Default("ROP")` `Filter(eq)`
 
 _Type_: **[OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod)**  
 _Category_: **System**  
@@ -196,7 +196,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.OrderLotSizingMethod E
 | ReorderPoint | ReorderPoint value. Stored as 'ROP'. <br /> _Database Value:_ 'ROP' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'ReorderPoint' |
 | ReorderPointWith<br />TimePlanning | ReorderPointWith<br />TimePlanning value. Stored as 'ROT'. <br /> _Database Value:_ 'ROT' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'ReorderPointWith<br />TimePlanning' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **ReorderPoint**  
 _Show in UI_: **HiddenByDefault**  
@@ -213,11 +213,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### OrderMinimum
 
-Minimum order quantity both for buying and making. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)`
+Minimum order quantity both for buying and making. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(eq;ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **HiddenByDefault**  
@@ -255,18 +255,18 @@ _Show in UI_: **HiddenByDefault**
 
 ### OrderPointQuantityBase
 
-Order point quantity under the OP replenishment system. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)`
+Order point quantity under the OP replenishment system. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(eq;ge;le)`
 
 _Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
 
 ### OrderPolicy
 
-Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. `Required` `Default("OPS")`
+Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. `Required` `Default("OPS")` `Filter(eq)`
 
 _Type_: **[OrderPolicy](General.Products.ProductSupply.md#orderpolicy)**  
 _Category_: **System**  
@@ -280,7 +280,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.OrderPolicy Enum Membe
 | OrderPointSystem<br />WithTimePlanning | OrderPointSystem<br />WithTimePlanning value. Stored as 'OPT'. <br /> _Database Value:_ 'OPT' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'OrderPointSystem<br />WithTimePlanning' |
 | PeriodicReviewSystem | PeriodicReviewSystem value. Stored as 'PRS'. <br /> _Database Value:_ 'PRS' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'PeriodicReviewSystem' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **OrderPointSystem**  
 _Show in UI_: **HiddenByDefault**  
