@@ -5,12 +5,13 @@
 
 Entity: [Finance.Vat.DeclarationAmountDetails](~/entities/Finance.Vat.DeclarationAmountDetails.md)
 
+Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_Type_Amounts (Introduced in version 23.1.2.31)
 
 ## Summary
 
 | Name | Type | Description |
 | - | - | --- |
-|[Amount](#amount)|`decimal(15, 2)` |Base data for calculation of Vat Box amounts.|
+|[Amount](#amount)|`decimal(15, 2)` ||
 |[Box_Id](#box_id)|`uniqueidentifier` ||
 |[Declaration_Id](#declaration_id)|`uniqueidentifier` ||
 |[VAT_Entry_Id](#vat_entry_id)|`uniqueidentifier` ||
@@ -18,9 +19,6 @@ Entity: [Finance.Vat.DeclarationAmountDetails](~/entities/Finance.Vat.Declaratio
 ## Columns
 
 ### Amount
-
-
-Base data for calculation of Vat Box amounts.
 
 | Property | Value |
 | - | - |

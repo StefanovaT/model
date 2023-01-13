@@ -34,7 +34,7 @@ Aggregate Tree
 | [Category](Finance.Excise.ExciseProductTypes.md#category) | [Category](Finance.Excise.ExciseProductTypes.md#category) | Specifies the excise product category of the excise stamp - alcohol, tobacco, and others. `Required` 
 | [Code](Finance.Excise.ExciseProductTypes.md#code) | string (32) | The unique code of the ExciseProductType. `Required` `Filter(multi eq;like)` `ORD` 
 | [DisplayText](Finance.Excise.ExciseProductTypes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [ExciseAmountPerStamp](Finance.Excise.ExciseProductTypes.md#exciseamountperstamp) | decimal (5, 2) | The excise duty, which is charged with one excise label. `Required` `Default(0)` 
+| [ExciseAmountPerStamp](Finance.Excise.ExciseProductTypes.md#exciseamountperstamp) | decimal (10, 6) | The excise duty, which is charged with one excise label. `Required` `Default(0)` 
 | [Id](Finance.Excise.ExciseProductTypes.md#id) | guid |  
 | [IsActive](Finance.Excise.ExciseProductTypes.md#isactive) | boolean | Indicates whether this excise poduct type is active and usable for choosing in new documents. `Required` `Default(true)` `Filter(eq)` 
 | [Name](Finance.Excise.ExciseProductTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this ExciseProductType. `Required` `Filter(like)` 
@@ -116,13 +116,13 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **HiddenByDefault**  
 
 ### ExciseAmountPerStamp
 
 The excise duty, which is charged with one excise label. `Required` `Default(0)`
 
-_Type_: **decimal (5, 2)**  
+_Type_: **decimal (10, 6)**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -178,7 +178,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

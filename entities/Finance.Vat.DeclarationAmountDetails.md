@@ -5,13 +5,15 @@ uid: Finance.Vat.DeclarationAmountDetails
 
 **Namespace:** [Finance.Vat](Finance.Vat.md)  
 
+Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_Type_Amounts (Introduced in version 23.1.2.31)
+
 ## Default Visualization
 Default Display Text Format:  
 _{DeclarationId}: {BoxId}_  
 Default Search Members:  
 __  
 Category:  _Views_  
-Show in UI:  _ShownByDefault_  
+Show in UI:  _CannotBeShown_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -23,7 +25,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Amount](Finance.Vat.DeclarationAmountDetails.md#amount) | decimal (15, 2) | Base data for calculation of Vat Box amounts. `Required` 
+| [Amount](Finance.Vat.DeclarationAmountDetails.md#amount) | decimal (15, 2) |  
 
 ## References
 
@@ -37,8 +39,6 @@ Aggregate Tree
 ## Attribute Details
 
 ### Amount
-
-Base data for calculation of Vat Box amounts. `Required`
 
 _Type_: **decimal (15, 2)**  
 _Category_: **System**  

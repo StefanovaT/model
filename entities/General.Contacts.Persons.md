@@ -145,7 +145,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **HiddenByDefault**  
 
 ### FirstName
 
@@ -259,7 +259,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **HiddenByDefault**  
 
 ### PartyCode
 

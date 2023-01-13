@@ -16,7 +16,7 @@ The different types of excise products. Excise product types are differentiated 
 |[Category](#category)|`nvarchar(2)` Allowed: `TT`, `AA`, `DF`|Specifies the excise product category of the excise stamp - alcohol, tobacco, and others.|
 |[Code](#code)|`nvarchar(32)` ||
 |[Commodity_Code_Id](#commodity_code_id)|`uniqueidentifier` |Code from The Combined Nomenclature used within the European Union countries.|
-|[Excise_Amount_Per_Stamp](#excise_amount_per_stamp)|`decimal(5, 2)` |The excise duty, which is charged with one excise label.|
+|[Excise_Amount_Per_Stamp](#excise_amount_per_stamp)|`decimal(10, 6)` |The excise duty, which is charged with one excise label.|
 |[Excise_Product_Id](#excise_product_id)|`uniqueidentifier` |Excise product according to the EU nomenclature for products subject to excise duty.|
 |[Excise_Product_Type_Id](#excise_product_type_id)|`uniqueidentifier` `PK`||
 |[Is_Active](#is_active)|`bit` |Indicates whether this excise poduct type is active and usable for choosing in new documents.|
@@ -213,7 +213,7 @@ The excise duty, which is charged with one excise label.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|decimal(5, 2)|
+|Type|decimal(10, 6)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

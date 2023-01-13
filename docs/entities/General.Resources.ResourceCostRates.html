@@ -177,7 +177,7 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="fromdate">FromDate</h3>
 <p>Starting date of validity of the cost rate. The rate is valid until the next cost rate record with later date is defined. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
@@ -206,7 +206,7 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>Extensible Data Object</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="overtimerateperhour">OvertimeRatePerHour</h3>
 <p>The overtime cost of the resource per hour in the resources costing currency. The overtime rate specifies the cost of the resource, when it is used outside the normal working schedule. null means that there is no special overtime rate and the standard rate should be applied. <code>Currency: Resource.CostingCurrency</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (12, 4)</a> <strong>nullable</strong></strong><br>
