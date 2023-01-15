@@ -162,6 +162,7 @@ _Allowed Values (Systems.Bpm.ExpressionOperator Enum Members)_
 | TOP | TOP(Number, Clauses) => Clause, returning only the first elements.. Stored as 'TOP'. <br /> _Database Value:_ 'TOP' <br /> _Model Value:_ 42 <br /> _Domain API Value:_ 'TOP' |
 | TOUPPER | TOUPPER(String) => Returns the string, converted to upper-case.. Stored as 'TOUPPER'. <br /> _Database Value:_ 'TOUPPER' <br /> _Model Value:_ 43 <br /> _Domain API Value:_ 'TOUPPER' |
 | WHERE | WHERE(Condition1, Condition2) => Clause, which filters by Condition1 AND Condition2.. Stored as 'WHERE'. <br /> _Database Value:_ 'WHERE' <br /> _Model Value:_ 44 <br /> _Domain API Value:_ 'WHERE' |
+| INTERPOLATE | INTERPOLATE(Object?, InterpolatedString) => Performs string interpolation, according to the context of the passed object.. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 45 <br /> _Domain API Value:_ 'INTERPOLATE' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
