@@ -110,8 +110,8 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Logistics.LogisticUnitContents.html#basequantity">BaseQuantity</a></td>
-<td>decimal (12, 3)</td>
-<td>The quantity, expressed in the base measurement category of the product. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
+<td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
+<td>The quantity, expressed in the base measurement category of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.LogisticUnitContents.html#displaytext">DisplayText</a></td>
@@ -155,13 +155,13 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Logistics.LogisticUnitContents.html#quantity">Quantity</a></td>
-<td>decimal (12, 3)</td>
-<td>Quantity of the product in the logistic unit. Expressed in the specified measurement unit. <code>Required</code> <code>Filter(multi eq;ge;le)</code></td>
+<td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
+<td>Quantity of the product in the logistic unit. Expressed in the specified measurement unit. <code>Unit: QuantityUnit</code> <code>Required</code> <code>Filter(multi eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.LogisticUnitContents.html#standardquantity">StandardQuantity</a></td>
-<td>decimal (12, 3)</td>
-<td>The quantity, expessed in the standard measurement unit of the product. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
+<td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
+<td>The quantity, expessed in the standard measurement unit of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -209,12 +209,14 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="basequantity">BaseQuantity</h3>
-<p>The quantity, expressed in the base measurement category of the product. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
-<p><em>Type</em>: <strong>decimal (12, 3)</strong><br>
+<p>The quantity, expressed in the base measurement category of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.BaseQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
@@ -278,19 +280,21 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="quantity">Quantity</h3>
-<p>Quantity of the product in the logistic unit. Expressed in the specified measurement unit. <code>Required</code> <code>Filter(multi eq;ge;le)</code></p>
-<p><em>Type</em>: <strong>decimal (12, 3)</strong><br>
+<p>Quantity of the product in the logistic unit. Expressed in the specified measurement unit. <code>Unit: QuantityUnit</code> <code>Required</code> <code>Filter(multi eq;ge;le)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="standardquantity">StandardQuantity</h3>
-<p>The quantity, expessed in the standard measurement unit of the product. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
-<p><em>Type</em>: <strong>decimal (12, 3)</strong><br>
+<p>The quantity, expessed in the standard measurement unit of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.BaseQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="logisticunit">LogisticUnit</h3>
 <p>The containing logistic unit. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
@@ -411,6 +415,8 @@ The subject.<br>
 <ul>
 <li><a href="../business-rules/R34327.html">R34327 Logistic Unit Content - Set Quantity Unit (Recalc)</a></li>
 <li><a href="../business-rules/R34331.html">R34331 LogisticUnitContents - Set Quantity From Quantity Base</a></li>
+<li><a href="../business-rules/R34387.html">R34387 Logistic Unit Content - Set Base Quantity (Recalc)</a></li>
+<li><a href="../business-rules/R34388.html">R34388 Logistic Unit Content - Set Standard Quantity (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:

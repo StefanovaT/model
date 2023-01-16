@@ -31,7 +31,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BaseQuantity](Logistics.LogisticUnitContents.md#basequantity) | decimal (12, 3) | The quantity, expressed in the base measurement category of the product. `Required` `Filter(eq;ge;le)` 
+| [BaseQuantity](Logistics.LogisticUnitContents.md#basequantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity, expressed in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(eq;ge;le)` 
 | [DisplayText](Logistics.LogisticUnitContents.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExpirationDate](Logistics.LogisticUnitContents.md#expirationdate) | date __nullable__ | Expiration date of the goods. null means unknown or N/A. `Filter(multi eq;ge;le)` 
 | [GrossWeight](Logistics.LogisticUnitContents.md#grossweight) | decimal (12, 3) __nullable__ | Gross weight in kilograms (kg). null means unknown. `Filter(eq;ge;le)` 
@@ -40,8 +40,8 @@ Aggregate Root:
 | [LotNumber](Logistics.LogisticUnitContents.md#lotnumber) | string (32) __nullable__ | The production lot number. null means unknown. `Filter(multi eq;like)` 
 | [Notes](Logistics.LogisticUnitContents.md#notes) | string (max) __nullable__ | Notes for this LogisticUnitContent. 
 | [ObjectVersion](Logistics.LogisticUnitContents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Quantity](Logistics.LogisticUnitContents.md#quantity) | decimal (12, 3) | Quantity of the product in the logistic unit. Expressed in the specified measurement unit. `Required` `Filter(multi eq;ge;le)` 
-| [StandardQuantity](Logistics.LogisticUnitContents.md#standardquantity) | decimal (12, 3) | The quantity, expessed in the standard measurement unit of the product. `Required` `Filter(eq;ge;le)` 
+| [Quantity](Logistics.LogisticUnitContents.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | Quantity of the product in the logistic unit. Expressed in the specified measurement unit. `Unit: QuantityUnit` `Required` `Filter(multi eq;ge;le)` 
+| [StandardQuantity](Logistics.LogisticUnitContents.md#standardquantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity, expessed in the standard measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(eq;ge;le)` 
 
 ## References
 
@@ -59,14 +59,16 @@ Aggregate Root:
 
 ### BaseQuantity
 
-The quantity, expressed in the base measurement category of the product. `Required` `Filter(eq;ge;le)`
+The quantity, expressed in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(eq;ge;le)`
 
-_Type_: **decimal (12, 3)**  
+_Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.BaseQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
 ### DisplayText
 
 Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
@@ -155,9 +157,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### Quantity
 
-Quantity of the product in the logistic unit. Expressed in the specified measurement unit. `Required` `Filter(multi eq;ge;le)`
+Quantity of the product in the logistic unit. Expressed in the specified measurement unit. `Unit: QuantityUnit` `Required` `Filter(multi eq;ge;le)`
 
-_Type_: **decimal (12, 3)**  
+_Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
@@ -165,14 +167,16 @@ _Show in UI_: **ShownByDefault**
 
 ### StandardQuantity
 
-The quantity, expessed in the standard measurement unit of the product. `Required` `Filter(eq;ge;le)`
+The quantity, expessed in the standard measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(eq;ge;le)`
 
-_Type_: **decimal (12, 3)**  
+_Type_: **[Quantity (12, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.BaseQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
 
 ## Reference Details
 
