@@ -60,7 +60,7 @@ Logistic unit, which was transacted. NULL when the transaction was not for a log
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -71,11 +71,12 @@ Logistic unit, which was transacted. NULL when the transaction was not for a log
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Log_Logistic_Units](Log_Logistic_Units.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -85,7 +86,7 @@ Logistic unit, which was transacted. NULL when the transaction was not for a log
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Lot_Id
 
@@ -96,7 +97,7 @@ The lot which was transacted. NULL when the transaction was not for a specific l
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -107,11 +108,12 @@ The lot which was transacted. NULL when the transaction was not for a specific l
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Inv_Lots](Inv_Lots.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -121,7 +123,7 @@ The lot which was transacted. NULL when the transaction was not for a specific l
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Product_Id
 
@@ -131,9 +133,8 @@ The product, which was transacted.
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Base Table.Column|[Gen_Products](Gen_Products.md).[Id](Gen_Products.md#id)|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -144,6 +145,7 @@ The product, which was transacted.
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Gen_Products](Gen_Products.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -169,7 +171,7 @@ The product variant, which was transacted. NULL when the transaction was not for
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -180,11 +182,12 @@ The product variant, which was transacted. NULL when the transaction was not for
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Gen_Product_Variants](Gen_Product_Variants.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -194,7 +197,7 @@ The product variant, which was transacted. NULL when the transaction was not for
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Quantity_Base_Available
 
@@ -238,9 +241,8 @@ The serial number which was transacted. NULL when the transaction was not for a 
 | Property | Value |
 | - | - |
 |Auto Complete|no|
-|Base Table.Column|[Inv_Serial_Numbers](Inv_Serial_Numbers.md).[Id](Inv_Serial_Numbers.md#id)|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -251,11 +253,12 @@ The serial number which was transacted. NULL when the transaction was not for a 
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Inv_Serial_Numbers](Inv_Serial_Numbers.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -265,7 +268,7 @@ The serial number which was transacted. NULL when the transaction was not for a 
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Standard_Quantity_Available
 
@@ -294,6 +297,13 @@ The serial number which was transacted. NULL when the transaction was not for a 
 |User Login|no|
 |Visible|yes|
 
+#### Standard_Quantity_Available - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
+
 ### Warehouse_Id
 
 
@@ -303,7 +313,7 @@ The warehouse in which the transaction occurred.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -314,6 +324,7 @@ The warehouse in which the transaction occurred.
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Wms_Warehouses](Wms_Warehouses.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -339,7 +350,7 @@ The warehouse location, where the transaction occurred.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -350,6 +361,7 @@ The warehouse location, where the transaction occurred.
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Wms_Warehouse_Locations](Wms_Warehouse_Locations.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
