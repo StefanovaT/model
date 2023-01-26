@@ -1798,6 +1798,9 @@ references:
 - uid: Systems.Dmv.ProcedureStatusInfo
   name: Systems.Dmv.ProcedureStatusInfo View
   href: entities/Systems.Dmv.ProcedureStatusInfo.html
+- uid: Systems.Dmv.TableInfo
+  name: Systems.Dmv.TableInfo View
+  href: entities/Systems.Dmv.TableInfo.html
 - uid: Systems.Dmv.WebSites
   name: Systems.Dmv.WebSites View
   href: entities/Systems.Dmv.WebSites.html

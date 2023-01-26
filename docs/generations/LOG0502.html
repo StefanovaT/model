@@ -136,7 +136,7 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This generation is used to create Warehouse Orders from Warehouse Requisitions when the company is using Composite Products. Thе generation creates warehouse orders for both composite and noncomposite products. What is special about this generation is that it creates two kinds of warehouse order lines for the composite products. One line for the composite product and one line for each of its components.</p>
+<p>This generation is used to create Warehouse Orders from Warehouse Requisitions when the company is using <a class="xref" href="https://erpnetdocs.github.io/tech/modules/logistics/wms/composite-products/index.html">Composite Products</a>. Thе generation creates warehouse orders for both composite and noncomposite products. What is special about this generation is that it creates two kinds of warehouse order lines for the composite products. One line for the composite product and one line for each of its components.</p>
 <p><strong>The Warehouse Order’s header is created based on the Warehouse Requisition’s header as follows:</strong></p>
 <pre><code>WarehouseOrder.DocumentDate = WarehouseRequisition.DocumentDate
 
@@ -244,6 +244,8 @@ Valid composite product components are those for which:</p>
                             , then WarehouseOrderLine.TaskType = Receive
 
                             , else WarehouseOrderLine.TaskType = Dispatch
+                            
+WarehouseOrderLine.LineGroupNo = If all products in the order are non-composite, then 1, else autonumber 1, 2, 3
 
 WarehouseOrderLine.Product = WarehouseRequisitionLine.Product
 
@@ -278,15 +280,20 @@ WarehouseOrderLine.ParentDocument = WarehouseRequisition
 WarehouseOrderLine.ParentLineNo = WarehouseRequisitionLine.LineNo
 </code></pre>
 <p><strong>Composite products</strong></p>
-<p>If the parent requsition line contains a composite product are created two sets of Warehouse Order Lines - one for the composite product and one for each of its components.</p>
-<p>If the movement type is &quot;Inbound&quot;, then the composite product line is created first and then the lines for its components are created. The composite product line is with &quot;Dekit&quot; task type, because it respresents the &quot;disassembly&quot; of the product. On the other hand, the components lines have &quot;Component receive' task type because they are the ones need to be physically received in the warehouse and put away in the warehouse locations.</p>
-<p>This is the opposite of when the movement type is &quot;Outbound&quot; - we first create the lines for the components and then the line for the composite product. The composite product line is with &quot;Kit&quot; task type, because it respresents the &quot;assembly&quot; of the product. On the other hand, the components lines have &quot;Component dispatch' task type because they are the ones that need to be physically dispatched from the warehouse.</p>
+<p>If the parent requsition line contains a composite product, the system will create two sets of Warehouse Order Lines to fulfill it - one for the composite product and one for each of its components.</p>
+<p>If the movement type is &quot;Inbound&quot;, the created composite product line is with &quot;Dekit&quot; task type, because it respresents the &quot;disassembly&quot; of the product. On the other hand, the components lines have &quot;Component Receive' task type because they are the ones need to be physically received in the warehouse and put away in the warehouse locations.</p>
+<p>The order of the lines of the two sets depends on the value of the <a class="xref" href="https://erpnetdocs.github.io/tech/modules/logistics/wms/how-to/setup-warehouse/warehouse-policies.html">&quot;Dekitting Controlling Level&quot; policy</a>. If the policy's value is 0 or 1, then the dekit line for composite product is created first and then then it is followed by the composite receive lines. If the policy's value is 2, 3 or 4, then the component receive lines are created first and then then they are followed by the dekit line for composite product itself.</p>
+<p>This is the opposite of when the movement type is &quot;Outbound&quot;, the created composite product line is with &quot;Kit&quot; task type, because it respresents the &quot;assembly&quot; of the product. On the other hand, the components lines have &quot;Component Dispatch' task type because they are the ones that need to be physically dispatched from the warehouse.</p>
+<p>The order of the lines is always the same, the component dispatch lines are created first and they are followed by the kit line for composite product itself.</p>
+<p>The link between the two sets (the line of the composite product and the lines for its components) is performed through the &quot;Line Group No&quot; field in the warehouse order line. Component lines have the same &quot;Line Group No&quot; as the &quot;Line Group No&quot; of their composite product line e.g. &quot;1&quot;.</p>
 <p><strong>The Warehouse Order Lines for composite products are created as follows</strong></p>
 <pre><code>WarehouseOrderLine.TaskType = If (WarehouseRequisition.RequisitionType = Inbound )
 
                             , then WarehouseOrderLine.TaskType = Dekit
 
                             , else WarehouseOrderLine.TaskType = Kit
+                            
+WarehouseOrderLine.LineGroupNo = an autonumber 1, 2, 3 
 
 WarehouseOrderLine.Product = WarehouseRequisitionLine.Product
 
@@ -335,6 +342,8 @@ Valid composite product components are those for which:</p>
                             , then WarehouseOrderLine.TaskType = ComponentReceive
 
                             , else WarehouseOrderLine.TaskType = ComponentDispatch
+                            
+WarehouseOrderLine.LineGroupNo = same as the LineGroupNo of the kit/dekit line of the composite product
 
 WarehouseOrderLine.Product = CompositeProductComponent.ComponentProductId	
 

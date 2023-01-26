@@ -7,5 +7,6 @@ uid: Systems.Dmv
 - [CurrentSessions](Systems.Dmv.CurrentSessions.md)  
 - [ExecStats](Systems.Dmv.ExecStats.md)  
 - [ProcedureStatusInfo](Systems.Dmv.ProcedureStatusInfo.md)  
+- [TableInfo](Systems.Dmv.TableInfo.md)  
 - [WebSites](Systems.Dmv.WebSites.md)  
 

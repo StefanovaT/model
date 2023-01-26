@@ -5,7 +5,7 @@ uid: Systems.Core.AttributeChangesHistory
 
 **Namespace:** [Systems.Core](Systems.Core.md)  
 
-Each entry represents an entity attribute change with previous and new value. Entity: Sys_Attribute_Changes_History_View
+Each entry represents an entity attribute change with previous and new value. Entity: Sys_Attribute_Changes_History_View (Introduced in version 23.1.2.37)
 
 ## Default Visualization
 Default Display Text Format:  
