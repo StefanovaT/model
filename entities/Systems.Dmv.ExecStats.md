@@ -26,15 +26,15 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Application](Systems.Dmv.ExecStats.md#application) | string (64) | The name of the application that executes the operation. `Required` `Filter(eq;like)` `ORD` 
-| [AvgTimeMs](Systems.Dmv.ExecStats.md#avgtimems) | double | Average time of operation execution. `Required` `Filter(ge;le)` `ORD` 
+| [AvgTimeMs](Systems.Dmv.ExecStats.md#avgtimems) | string (64) | Average time of operation execution. `Required` `Filter(ge;le)` `ORD` 
 | [Count](Systems.Dmv.ExecStats.md#count) | int32 | The number of times the operation is executed since last statistics reset. `Required` `Filter(ge;le)` `ORD` 
 | [Database](Systems.Dmv.ExecStats.md#database) | string (64) | The database in which the operation is executed. `Required` `Filter(eq;like)` `ORD` 
 | [IsLongPolling](Systems.Dmv.ExecStats.md#islongpolling) | boolean | True if the operation is long polling. `Required` `Filter(eq)` 
 | [Kind](Systems.Dmv.ExecStats.md#kind) | string (64) | The operation kind. Various operation kinds exist, e.g. Db, Long Procs etc. `Required` `Filter(eq;like)` `ORD` 
-| [MaxTimeMs](Systems.Dmv.ExecStats.md#maxtimems) | double | The maximum time of one operation execution. `Required` `Filter(ge;le)` `ORD` 
+| [MaxTimeMs](Systems.Dmv.ExecStats.md#maxtimems) | string (64) | The maximum time of one operation execution. `Required` `Filter(ge;le)` `ORD` 
 | [Operation](Systems.Dmv.ExecStats.md#operation) | string (128) | The operation name. `Required` `Filter(like)` 
 | [StatisticsSince](Systems.Dmv.ExecStats.md#statisticssince) | datetime | The date and time since when the statistics are collected. `Required` `Filter(ge;le)` 
-| [TotalTimeMs](Systems.Dmv.ExecStats.md#totaltimems) | double | Total time spent for the operation. `Required` `Filter(ge;le)` `ORD` 
+| [TotalTimeMs](Systems.Dmv.ExecStats.md#totaltimems) | string (64) | Total time spent for the operation. `Required` `Filter(ge;le)` `ORD` 
 
 
 ## Attribute Details
@@ -54,10 +54,11 @@ _Show in UI_: **ShownByDefault**
 
 Average time of operation execution. `Required` `Filter(ge;le)` `ORD`
 
-_Type_: **double**  
+_Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 ### Count
@@ -106,10 +107,11 @@ _Show in UI_: **ShownByDefault**
 
 The maximum time of one operation execution. `Required` `Filter(ge;le)` `ORD`
 
-_Type_: **double**  
+_Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 ### Operation
@@ -137,10 +139,11 @@ _Show in UI_: **ShownByDefault**
 
 Total time spent for the operation. `Required` `Filter(ge;le)` `ORD`
 
-_Type_: **double**  
+_Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 
