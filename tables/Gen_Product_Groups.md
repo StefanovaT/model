@@ -435,7 +435,7 @@ Full tree path of the parent group in the form /parent/.../leaf/. Contains the g
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(254)|
