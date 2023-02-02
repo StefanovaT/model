@@ -117,7 +117,8 @@
 <td>if (GroupMember.Role == Admin)
 , then check:
 <br><br>
-if (Count (GroupMembers, where SocialGroup == GroupMember.SocialGroup &amp;&amp; Role == Admin ) == 1)|
+if (Count (GroupMembers, where SocialGroup == GroupMember.SocialGroup
+&amp;&amp; Role == Admin ) == 1)
 , then FAIL</td>
 </tr>
 <tr>
@@ -127,7 +128,8 @@ the group or remove themselves as a member.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>You cannot leave '{SocialGroup.DisplayText}' because you are the only admin of the group.|
+<td>You cannot leave '{SocialGroup.DisplayText}' because you are the only admin of
+the group.
 <br><br>
 There must be at least one admin in the group.</td>
 </tr>
