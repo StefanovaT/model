@@ -358,6 +358,8 @@
     href: Dmv_Exec_Stats.md
   - name: Dmv_Procedure_Status_Info
     href: Dmv_Procedure_Status_Info.md
+  - name: Dmv_Table_Info
+    href: Dmv_Table_Info.md
   - name: Dmv_Web_Sites
     href: Dmv_Web_Sites.md
 - name: Dw

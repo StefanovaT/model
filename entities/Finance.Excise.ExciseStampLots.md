@@ -79,6 +79,8 @@ _Supports Order By_: **False**
 _Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.Quantity > 0), obj.StartNumber, null).AddToNumberInString( Convert( ( obj.Quantity - 1), BigInteger), null)`
 ### Id
 
 _Type_: **guid**  

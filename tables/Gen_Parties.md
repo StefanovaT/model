@@ -22,7 +22,7 @@ Contains base data for different kind of parties - companies, persons, departmen
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Parent_Party_Id](#parent_party_id)|`uniqueidentifier` |Organizational unit (branch from the hierarchy of all parties) to which this party is referred to|
 |[Party_Code](#party_code)|`nvarchar(16)` Readonly|The unique code of the party|
-|[Party_Name](#party_name)|`nvarchar(254)` `ML`|The name of the party|
+|[Party_Name](#party_name)|`nvarchar(254)` `ML`, Readonly|The name of the party|
 |[Party_Type](#party_type)|`nvarchar(1)` Allowed: `C`, `L`, `P`, `S`, `V`|Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division|
 |[Party_Unique_Number](#party_unique_number)|`nvarchar(16)` Readonly|Unique number of the party (National number for persons, Registration number for companies)|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -437,7 +437,7 @@ The name of the party
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|

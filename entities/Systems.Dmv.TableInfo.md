@@ -25,30 +25,30 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [RowCount](Systems.Dmv.TableInfo.md#rowcount) | int64 | Total number of rows. `Required` `Filter(ge;le)` `ORD` 
-| [SizeMB](Systems.Dmv.TableInfo.md#sizemb) | decimal (12, 3) | Total used size of the table in Megabytes. `Required` `Filter(ge;le)` `ORD` 
-| [TableName](Systems.Dmv.TableInfo.md#tablename) | string (256) | The name of the table, for which we provide the data. `Required` `Filter(eq;like)` `ORD` 
+| [RowCount](Systems.Dmv.TableInfo.md#rowcount) | int64 | Total number of rows. `Required` `Filter(eq;ge;le)` `ORD` 
+| [SizeMB](Systems.Dmv.TableInfo.md#sizemb) | decimal (12, 3) | Total used size of the table in Megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
+| [TableName](Systems.Dmv.TableInfo.md#tablename) | string (128) | The name of the table, for which we provide the data. `Required` `Filter(eq;like)` `ORD` 
 
 
 ## Attribute Details
 
 ### RowCount
 
-Total number of rows. `Required` `Filter(ge;le)` `ORD`
+Total number of rows. `Required` `Filter(eq;ge;le)` `ORD`
 
 _Type_: **int64**  
 _Category_: **System**  
-_Supported Filters_: **GreaterThanOrLessThan**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### SizeMB
 
-Total used size of the table in Megabytes. `Required` `Filter(ge;le)` `ORD`
+Total used size of the table in Megabytes. `Required` `Filter(eq;ge;le)` `ORD`
 
 _Type_: **decimal (12, 3)**  
 _Category_: **System**  
-_Supported Filters_: **GreaterThanOrLessThan**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 
@@ -56,11 +56,11 @@ _Show in UI_: **ShownByDefault**
 
 The name of the table, for which we provide the data. `Required` `Filter(eq;like)` `ORD`
 
-_Type_: **string (256)**  
+_Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
-_Maximum Length_: **256**  
+_Maximum Length_: **128**  
 _Show in UI_: **ShownByDefault**  
 
 

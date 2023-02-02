@@ -44,7 +44,7 @@ Aggregate Tree
 | [PartyCreationTime](General.Contacts.Parties.md#partycreationtime) | datetime __nullable__ | Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` 
 | [PartyCreationUser](General.Contacts.Parties.md#partycreationuser) | string (64) __nullable__ | Login name of the user, who created the Party. `Filter(like)` `ReadOnly` 
 | [PartyId](General.Contacts.Parties.md#partyid) | guid | Gets the Id of the party row, related to the domain object 
-| [PartyName](General.Contacts.Parties.md#partyname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the party. `Required` `Filter(eq;like)` 
+| [PartyName](General.Contacts.Parties.md#partyname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of the party. `Required` `Filter(eq;like)` `ReadOnly` 
 | [PartyNotes](General.Contacts.Parties.md#partynotes) | string (254) __nullable__ | Notes for this Party. 
 | [PartyType](General.Contacts.Parties.md#partytype) | [PartyType](General.Contacts.Parties.md#partytype) | Type of party. Currently supported are P=Person, C=Company, S=Store, L=Company Location, V=Division. `Required` `Default("P")` `Filter(multi eq)` 
 | [PartyUniqueNumber](General.Contacts.Parties.md#partyuniquenumber) | string (16) __nullable__ | Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` 
@@ -164,7 +164,7 @@ _Show in UI_: **CannotBeShown**
 
 ### PartyName
 
-The name of the party. `Required` `Filter(eq;like)`
+The name of the party. `Required` `Filter(eq;like)` `ReadOnly`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Indexed_: **True**  
