@@ -12,9 +12,9 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 | Name | Type | Description |
 | - | - | --- |
 |[Amount](#amount)|`decimal(15, 2)` ||
-|[Box_Id](#box_id)|`uniqueidentifier` ||
+|[Box_Id](#box_id)|`uniqueidentifier` |The type of box in a VAT declaration.|
 |[Declaration_Id](#declaration_id)|`uniqueidentifier` ||
-|[VAT_Entry_Id](#vat_entry_id)|`uniqueidentifier` ||
+|[VAT_Entry_Id](#vat_entry_id)|`uniqueidentifier` |Unique identification number of this VAT entry.|
 
 ## Columns
 
@@ -47,6 +47,9 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 
 ### Box_Id
 
+
+The type of box in a VAT declaration.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -57,7 +60,7 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -114,6 +117,9 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 
 ### VAT_Entry_Id
 
+
+Unique identification number of this VAT entry.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -136,7 +142,7 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 |Supports EQUALS_IN|yes|
 |Type|uniqueidentifier|
 |UI Memo Editor|no|
-|UI Width|Medium|
+|UI Width|100|
 |User Login|no|
 |Visible|yes|
 
@@ -144,6 +150,6 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|no|yes|
 
 

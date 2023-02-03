@@ -9,7 +9,7 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 
 ## Default Visualization
 Default Display Text Format:  
-_{DeclarationId}: {BoxId}_  
+_{BoxId}: {DeclarationId}_  
 Default Search Members:  
 __  
 Category:  _Views_  
@@ -58,7 +58,7 @@ _Category_: **System**
 _Inherited From_: **VAT_Box_Types_Table.Box_Type_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### Declaration
 
@@ -78,7 +78,7 @@ _Category_: **System**
 _Inherited From_: **VAT_Entries_Table.Entry_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API

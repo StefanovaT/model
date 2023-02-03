@@ -14650,7 +14650,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Vat.DeclarationAmountDetails.html",
-          "hash": "B/VGEKWqij1gYlrGbFJ1Fg=="
+          "hash": "4dzHOEtPO6l0csr/q2NlCQ=="
         }
       },
       "is_incremental": false,
@@ -26388,7 +26388,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/VAT_Declaration_Box_Deal_Type_Amounts.html",
-          "hash": "Up3Fnr3PQNMl+BeZMBsQ2Q=="
+          "hash": "wxK8+gSW5nquU1dwjjQKYQ=="
         }
       },
       "is_incremental": false,
