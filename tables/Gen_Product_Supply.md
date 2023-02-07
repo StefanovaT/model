@@ -358,6 +358,12 @@ MTS=Make-To-Stock; MTO=Make-To-Order; ATO=Assemble-To-Order;ETO=Engineer-To-Orde
 |User Login|no|
 |Visible|no|
 
+#### Manufacturing_Policy - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Order_Lot_Size_Quantity_Base
 
 

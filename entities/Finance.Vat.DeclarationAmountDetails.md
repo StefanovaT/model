@@ -58,7 +58,7 @@ _Category_: **System**
 _Inherited From_: **VAT_Box_Types_Table.Box_Type_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### Declaration
 
@@ -78,7 +78,7 @@ _Category_: **System**
 _Inherited From_: **VAT_Entries_Table.Entry_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API

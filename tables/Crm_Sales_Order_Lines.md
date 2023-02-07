@@ -25,10 +25,12 @@ Sales Orders detail records. Entity: Crm_Sales_Order_Lines
 |[Intrastat_Transaction_Nature_Code](#intrastat_transaction_nature_code)|`nvarchar(2)` Allowed: `11`, `12`, `13`, `14`, `19`, `21`, `22`, `23`, `29`, `60`, `70`, `80`, `91`, `99`, `30`, `41`, `42`, `51`, `52`|Transaction nature; used for Intrastat reporting|
 |[Intrastat_Transport_Country_Id](#intrastat_transport_country_id)|`uniqueidentifier` |Country of origin of the transport company; used for Intrastat reporting|
 |[Intrastat_Transport_Mode_Code](#intrastat_transport_mode_code)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `7`, `8`, `9`|Transport mode; used for Intrastat reporting|
-|[Level2_Discount_Id](#level2_discount_id)|`uniqueidentifier` |Indicates the level 2 discount.<br><br>|
-|[Level2_Discount_Percent](#level2_discount_percent)|`decimal(7, 6)` |The percent of the level 2 discount.|
+|[Level1_Discount_Id](#level1_discount_id)|`uniqueidentifier` |Indicates the level 1 discount.|
+|[Level1_Discount_Percent](#level1_discount_percent)|`decimal(7, 6)` Readonly|The percent of the level 1 discount.|
+|[Level2_Discount_Id](#level2_discount_id)|`uniqueidentifier` |Indicates the level 2 discount.|
+|[Level2_Discount_Percent](#level2_discount_percent)|`decimal(7, 6)` Readonly|The percent of the level 2 discount.|
 |[Level3_Discount_Id](#level3_discount_id)|`uniqueidentifier` |Indicates the level 3 discount.|
-|[Level3_Discount_Percent](#level3_discount_percent)|`decimal(7, 6)` |The percent of the level 3 discount.|
+|[Level3_Discount_Percent](#level3_discount_percent)|`decimal(7, 6)` Readonly|The percent of the level 3 discount.|
 |[Line_Amount](#line_amount)|`decimal(14, 2)` |The total amount for the line. Equals to Quantity * Unit_Price, less the discounts|
 |[Line_Custom_Discount_Percent](#line_custom_discount_percent)|`decimal(7, 6)` |User-defined discount for the line|
 |[Line_Deal_Type_Id](#line_deal_type_id)|`uniqueidentifier` |Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type.|
@@ -363,12 +365,10 @@ Transport mode; used for Intrastat reporting
 |User Login|no|
 |Visible|no|
 
-### Level2_Discount_Id
+### Level1_Discount_Id
 
 
-Indicates the level 2 discount.
-
-
+Indicates the level 1 discount.
 
 | Property | Value |
 | - | - |
@@ -380,6 +380,74 @@ Indicates the level 2 discount.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|45|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Crm_Line_Discounts](Crm_Line_Discounts.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Level1_Discount_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Level1_Discount_Percent
+
+
+The percent of the level 1 discount.
+
+| Property | Value |
+| - | - |
+|Attributes|IsPercent|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|46|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(7, 6) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### Level2_Discount_Id
+
+
+Indicates the level 2 discount.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|47|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -417,12 +485,12 @@ The percent of the level 2 discount.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|46|
+|Order|48|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -447,7 +515,7 @@ Indicates the level 3 discount.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|47|
+|Order|49|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -485,12 +553,12 @@ The percent of the level 3 discount.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|48|
+|Order|50|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|

@@ -150,14 +150,19 @@ Aggregate Root:<br>
 <td>Transport mode; used for Intrastat reporting.</td>
 </tr>
 <tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level1discountpercent">Level1DiscountPercent</a></td>
+<td>decimal (7, 6) <strong>nullable</strong></td>
+<td>The percent of the level 1 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.56</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level2discountpercent">Level2DiscountPercent</a></td>
 <td>decimal (7, 6) <strong>nullable</strong></td>
-<td>The percent of the level 2 discount. <code>Introduced in version 23.1.2.8</code></td>
+<td>The percent of the level 2 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level3discountpercent">Level3DiscountPercent</a></td>
 <td>decimal (7, 6) <strong>nullable</strong></td>
-<td>The percent of the level 3 discount. <code>Introduced in version 23.1.2.8</code></td>
+<td>The percent of the level 3 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#lineamount">LineAmount</a></td>
@@ -277,9 +282,14 @@ Aggregate Root:<br>
 <td>Country of origin of the transport company; used for Intrastat reporting. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level1discount">Level1Discount</a></td>
+<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td>Indicates the level 1 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.56</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level2discount">Level2Discount</a></td>
 <td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
-<td>Indicates the level 2 discount.  . <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
+<td>Indicates the level 2 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level3discount">Level3Discount</a></td>
@@ -292,9 +302,9 @@ Aggregate Root:<br>
 <td>Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
-<td><a href="Crm.Sales.SalesOrderLines.html#linediscount">LineDiscount</a></td>
+<td><a href="Crm.Sales.SalesOrderLines.html#linediscount"><s>LineDiscount</s></a></td>
 <td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
-<td>The line discount type used to form the Line_Standard_<br>Discount_Percent. <code>Filter(multi eq)</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The line discount type used to form the Line_Standard_<br>Discount_Percent. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.56</code> <code>Obsolete</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#lineendcustomerparty">LineEndCustomerParty</a></td>
@@ -644,8 +654,17 @@ Generic enum type for TransportMode properties<br>
 <code>obj.SalesOrder.IntrastatTransportModeCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.IntrastatTransportModeCode</code></p>
+<h3 id="level1discountpercent">Level1DiscountPercent</h3>
+<p>The percent of the level 1 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.56</code></p>
+<p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( obj.Level1Discount != null), Convert( obj.Level1Discount.DiscountPercent, Object), null)</code></p>
 <h3 id="level2discountpercent">Level2DiscountPercent</h3>
-<p>The percent of the level 2 discount. <code>Introduced in version 23.1.2.8</code></p>
+<p>The percent of the level 2 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -654,7 +673,7 @@ Generic enum type for TransportMode properties<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)</code></p>
 <h3 id="level3discountpercent">Level3DiscountPercent</h3>
-<p>The percent of the level 3 discount. <code>Introduced in version 23.1.2.8</code></p>
+<p>The percent of the level 3 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -671,9 +690,9 @@ Generic enum type for TransportMode properties<br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))</code></p>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))</code></p>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent))</code></p>
 <h3 id="linecustomdiscountpercent">LineCustomDiscountPercent</h3>
 <p>User-defined discount for the line. <code>Required</code> <code>Default(0)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
@@ -869,8 +888,14 @@ Generic enum type for TransportMode properties<br>
 <code>obj.SalesOrder.IntrastatTransportCountry</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.IntrastatTransportCountry</code></p>
+<h3 id="level1discount">Level1Discount</h3>
+<p>Indicates the level 1 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.56</code></p>
+<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="level2discount">Level2Discount</h3>
-<p>Indicates the level 2 discount.  . <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
+<p>Indicates the level 2 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -896,7 +921,7 @@ Generic enum type for TransportMode properties<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.DealType</code></p>
 <h3 id="linediscount">LineDiscount</h3>
-<p>The line discount type used to form the Line_Standard_Discount_Percent. <code>Filter(multi eq)</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> The line discount type used to form the Line_Standard_Discount_Percent. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 23.1.2.56</code> <code>Obsolete</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -1102,7 +1127,7 @@ The subject.<br>
 <li><a href="../business-rules/R33507-13.html">R33507-13 Sales Order Line - Set Quantity Base (Recalc)</a></li>
 <li><a href="../business-rules/R33507-14.html">R33507-14 Sales Order Line - Set Unit Price (Recalc)</a></li>
 <li><a href="../business-rules/R33507-15.html">R33507-15 Sales Order Line - Set Standard Unit Price (Recalc)</a></li>
-<li><a href="../business-rules/R33507-16.html">R33507-16 Sales Order Line - Set Line Amount (Recalc)  (obsolete, replaced by R34129)</a></li>
+<li><a href="../business-rules/R33507-16.html">R33507-16 Sales Order Line - Set Line Amount (Recalc)</a></li>
 <li><a href="../business-rules/R33507-17.html">R33507-17 Sales Order Line - Set Line Discount (Recalc)</a></li>
 <li><a href="../business-rules/R33507-18.html">R33507-18 Sales Order Line - Set Line Standard Discount Percent (Recalc)</a></li>
 <li><a href="../business-rules/R33507-19.html">R33507-19 Sales Order Line - Set Product Price (Recalc)</a></li>
@@ -1116,6 +1141,7 @@ The subject.<br>
 <li><a href="../business-rules/R34138.html">R34138 Sales Order Line - Set Level3 Discount Percent (Recalc)</a></li>
 <li><a href="../business-rules/R34176.html">R34176 Sales Order Line - Set Level2 Discount (Recalc)</a></li>
 <li><a href="../business-rules/R34244.html">R34244 Sales Order Line - Set Level3 Discount (Recalc)</a></li>
+<li><a href="../business-rules/R34511.html">R34511 Sales Order Line - Set Level1 Discount Percent (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:

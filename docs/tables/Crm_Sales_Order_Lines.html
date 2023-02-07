@@ -143,13 +143,23 @@
 <td>Transport mode; used for Intrastat reporting</td>
 </tr>
 <tr>
+<td><a href="#level1_discount_id">Level1_Discount_Id</a></td>
+<td><code>uniqueidentifier</code></td>
+<td>Indicates the level 1 discount.</td>
+</tr>
+<tr>
+<td><a href="#level1_discount_percent">Level1_Discount_Percent</a></td>
+<td><code>decimal(7, 6)</code> Readonly</td>
+<td>The percent of the level 1 discount.</td>
+</tr>
+<tr>
 <td><a href="#level2_discount_id">Level2_Discount_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>Indicates the level 2 discount.<br><br></td>
+<td>Indicates the level 2 discount.</td>
 </tr>
 <tr>
 <td><a href="#level2_discount_percent">Level2_Discount_Percent</a></td>
-<td><code>decimal(7, 6)</code></td>
+<td><code>decimal(7, 6)</code> Readonly</td>
 <td>The percent of the level 2 discount.</td>
 </tr>
 <tr>
@@ -159,7 +169,7 @@
 </tr>
 <tr>
 <td><a href="#level3_discount_percent">Level3_Discount_Percent</a></td>
-<td><code>decimal(7, 6)</code></td>
+<td><code>decimal(7, 6)</code> Readonly</td>
 <td>The percent of the level 3 discount.</td>
 </tr>
 <tr>
@@ -1332,6 +1342,233 @@
 </tr>
 </tbody>
 </table>
+<h3 id="level1_discount_id">Level1_Discount_Id</h3>
+<p>Indicates the level 1 discount.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Referenced Table</td>
+<td><a href="Crm_Line_Discounts.html">Crm_Line_Discounts</a></td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>uniqueidentifier (Allows NULL)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="level1_discount_id---supported-filters">Level1_Discount_Id - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="level1_discount_percent">Level1_Discount_Percent</h3>
+<p>The percent of the level 1 discount.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attributes</td>
+<td>IsPercent</td>
+</tr>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>46</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>decimal(7, 6) (Allows NULL)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
 <h3 id="level2_discount_id">Level2_Discount_Id</h3>
 <p>Indicates the level 2 discount.</p>
 <table>
@@ -1372,7 +1609,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>45</td>
+<td>47</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -1499,7 +1736,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>46</td>
+<td>48</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -1519,7 +1756,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -1599,7 +1836,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>47</td>
+<td>49</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -1726,7 +1963,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>48</td>
+<td>50</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -1746,7 +1983,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>

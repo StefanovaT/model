@@ -36,8 +36,9 @@ Aggregate Root:
 | [IntrastatApplyDate](Crm.Sales.SalesOrderLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83` 
 | [IntrastatTransaction<br />NatureCode](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
 | [IntrastatTransportModeCode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) | [TransportMode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) __nullable__ | Transport mode; used for Intrastat reporting. 
-| [Level2DiscountPercent](Crm.Sales.SalesOrderLines.md#level2discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 2 discount. `Introduced in version 23.1.2.8` 
-| [Level3DiscountPercent](Crm.Sales.SalesOrderLines.md#level3discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 3 discount. `Introduced in version 23.1.2.8` 
+| [Level1DiscountPercent](Crm.Sales.SalesOrderLines.md#level1discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56` 
+| [Level2DiscountPercent](Crm.Sales.SalesOrderLines.md#level2discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 2 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
+| [Level3DiscountPercent](Crm.Sales.SalesOrderLines.md#level3discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
 | [LineAmount](Crm.Sales.SalesOrderLines.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)` 
 | [LineCustomDiscountPercent](Crm.Sales.SalesOrderLines.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)` 
 | [LineFromDate](Crm.Sales.SalesOrderLines.md#linefromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
@@ -64,10 +65,11 @@ Aggregate Root:
 | [BonusProgram](Crm.Sales.SalesOrderLines.md#bonusprogram) | [BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable) | The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)` |
 | [Document](Crm.Sales.SalesOrderLines.md#document) | [SalesOrders](Crm.Sales.SalesOrders.md) | The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` |
 | [IntrastatTransportCountry](Crm.Sales.SalesOrderLines.md#intrastattransportcountry) | [Countries](General.Geography.Countries.md) (nullable) | Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)` |
-| [Level2Discount](Crm.Sales.SalesOrderLines.md#level2discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 2 discount.  . `Filter(multi eq)` `Introduced in version 23.1.2.8` |
+| [Level1Discount](Crm.Sales.SalesOrderLines.md#level1discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 1 discount. `Filter(multi eq)` `Introduced in version 23.1.2.56` |
+| [Level2Discount](Crm.Sales.SalesOrderLines.md#level2discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 2 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
 | [Level3Discount](Crm.Sales.SalesOrderLines.md#level3discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
 | [LineDealType](Crm.Sales.SalesOrderLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)` |
-| [LineDiscount](Crm.Sales.SalesOrderLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` |
+| [<s>LineDiscount</s>](Crm.Sales.SalesOrderLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | **OBSOLETE! Do not use!** The line discount type used to form the Line_Standard_<br />Discount_Percent. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.56` `Obsolete` |
 | [LineEndCustomerParty](Crm.Sales.SalesOrderLines.md#lineendcustomerparty) | [Parties](General.Contacts.Parties.md) (nullable) | The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. `Filter(multi eq)` `Introduced in version 20.1` |
 | [LineStore](Crm.Sales.SalesOrderLines.md#linestore) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store which should be used to issue the goods for the line. null means to use the store from the header. `Filter(multi eq;like)` |
 | [Lot](Crm.Sales.SalesOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | Specifies the lot from which the goods should be issued. null means that the lot will be specified at a later stage (store order, etc.). `Filter(multi eq)` |
@@ -251,9 +253,21 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.IntrastatTransportModeCode`
+### Level1DiscountPercent
+
+The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56`
+
+_Type_: **decimal (7, 6) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.Level1Discount != null), Convert( obj.Level1Discount.DiscountPercent, Object), null)`
 ### Level2DiscountPercent
 
-The percent of the level 2 discount. `Introduced in version 23.1.2.8`
+The percent of the level 2 discount. `ReadOnly` `Introduced in version 23.1.2.8`
 
 _Type_: **decimal (7, 6) __nullable__**  
 _Category_: **System**  
@@ -265,7 +279,7 @@ _Front-End Recalc Expressions:_
 `IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)`
 ### Level3DiscountPercent
 
-The percent of the level 3 discount. `Introduced in version 23.1.2.8`
+The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8`
 
 _Type_: **decimal (7, 6) __nullable__**  
 _Category_: **System**  
@@ -287,10 +301,10 @@ _Default Value_: **Constant**
 _Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
-`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))`
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent))`
 
 _Front-End Recalc Expressions:_  
-`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent, obj.Level2DiscountPercent, obj.Level3DiscountPercent))`
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.UnitPrice == null)) OrElse ( ( obj.Quantity.Value == 0) AndAlso ( obj.UnitPrice.Value == 0))), obj.LineAmount, obj.CalculateLineAmount( obj.Quantity, obj.UnitPrice, obj.LineStandardDiscountPercent, obj.LineCustomDiscountPercent))`
 ### LineCustomDiscountPercent
 
 User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)`
@@ -560,9 +574,18 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.IntrastatTransportCountry`
+### Level1Discount
+
+Indicates the level 1 discount. `Filter(multi eq)` `Introduced in version 23.1.2.56`
+
+_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### Level2Discount
 
-Indicates the level 2 discount.  . `Filter(multi eq)` `Introduced in version 23.1.2.8`
+Indicates the level 2 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8`
 
 _Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
@@ -598,7 +621,7 @@ _Front-End Recalc Expressions:_
 `obj.SalesOrder.DealType`
 ### LineDiscount
 
-The line discount type used to form the Line_Standard_Discount_Percent. `Filter(multi eq)`
+**OBSOLETE! Do not use!** The line discount type used to form the Line_Standard_Discount_Percent. `Obsolete` `Filter(multi eq)` `Obsoleted in version 23.1.2.56` `Obsolete`
 
 _Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
