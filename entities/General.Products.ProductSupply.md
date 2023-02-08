@@ -33,7 +33,7 @@ Aggregate Tree
 | [Id](General.Products.ProductSupply.md#id) | guid |  
 | [IsActive](General.Products.ProductSupply.md#isactive) | boolean | True if this product supply is active. `Required` `Default(true)` `Filter(eq)` 
 | [IsDefault](General.Products.ProductSupply.md#isdefault) | boolean | Specifies whether this is the default supply rule. The planning system works using *only* the default supply rules. The other rules are for reference and user information. `Required` `Default(true)` `Filter(eq)` 
-| [ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy) | [ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy) | MTS=Make-To-Stock; MTO=Make-To-Order; ATO=Assemble-To-Order;ETO=Engineer-To-Order. `Required` `Default("MTS")` 
+| [ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy) | [ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy) | MTS=Make-To-Stock; MTO=Make-To-Order; ATO=Assemble-To-Order;ETO=Engineer-To-Order. `Required` `Default("MTS")` `Filter(eq)` 
 | [ObjectVersion](General.Products.ProductSupply.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrderLotSizeQuantityBase](General.Products.ProductSupply.md#orderlotsizequantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity of the product, normally ordered from the plant or supplier. The quantity is expressed in the base measurement unit. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(1)` 
 | [OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod) | [OrderLotSizingMethod](General.Products.ProductSupply.md#orderlotsizingmethod) | LFL=Lot for Lot; FOQ=Fixed order quantity; EOQ=Eqonomic Order Quantity; ROP=ReOrder Point; ROT=ReOrder point with Time planning; LFP = Lot For Period;. `Required` `Default("ROP")` `Filter(eq)` 
@@ -138,7 +138,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ManufacturingPolicy
 
-MTS=Make-To-Stock; MTO=Make-To-Order; ATO=Assemble-To-Order;ETO=Engineer-To-Order. `Required` `Default("MTS")`
+MTS=Make-To-Stock; MTO=Make-To-Order; ATO=Assemble-To-Order;ETO=Engineer-To-Order. `Required` `Default("MTS")` `Filter(eq)`
 
 _Type_: **[ManufacturingPolicy](General.Products.ProductSupply.md#manufacturingpolicy)**  
 _Category_: **System**  
@@ -152,7 +152,7 @@ _Allowed Values (General.Products.ProductSupplyRepository.ManufacturingPolicy En
 | MakeToStock | MakeToStock value. Stored as 'MTS'. <br /> _Database Value:_ 'MTS' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'MakeToStock' |
 | EngineerToOrder | EngineerToOrder value. Stored as 'ETO'. <br /> _Database Value:_ 'ETO' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'EngineerToOrder' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **MakeToStock**  
 _Show in UI_: **HiddenByDefault**  
