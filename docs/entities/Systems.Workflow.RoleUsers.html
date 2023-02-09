@@ -117,6 +117,11 @@ Aggregate Root:<br>
 <td></td>
 </tr>
 <tr>
+<td><a href="Systems.Workflow.RoleUsers.html#islayoutadmin">IsLayoutAdmin</a></td>
+<td>boolean</td>
+<td>Specifies whether the user can manage the layouts for the role. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.2.58</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Workflow.RoleUsers.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
@@ -146,7 +151,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Workflow.RoleUsers.html#role">Role</a></td>
 <td><a href="Systems.Security.Roles.html">Roles</a></td>
-<td></td>
+<td>The role, played by the user. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.RoleUsers.html#user">User</a></td>
@@ -170,6 +175,14 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="islayoutadmin">IsLayoutAdmin</h3>
+<p>Specifies whether the user can manage the layouts for the role. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.2.58</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
@@ -191,6 +204,7 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="role">Role</h3>
+<p>The role, played by the user. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Roles.html">Roles</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>

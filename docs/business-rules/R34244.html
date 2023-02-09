@@ -99,8 +99,9 @@
 <tr>
 <td><strong>Events</strong></td>
 <td>AttributeChanged(RequiredDeliveryDate, Quantity, SalesOrder, Product, QuantityUnit,
-ReturnForSalesOrderLine, BonusProgram, PromotionalPackage, LineDiscount, EnterpriseCompany,
-EnterpriseCompanyLocation, Customer, ShipToCustomer, DistributionChannel, PriceList)</td>
+ReturnForSalesOrderLine, BonusProgram, PromotionalPackage, Level3Discount,
+EnterpriseCompany, EnterpriseCompanyLocation, Customer, ShipToCustomer, DistributionChannel,
+PriceList)</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
@@ -120,13 +121,14 @@ Legislations</strong></td>
 <td>DetermineLineDiscount(SalesOrder.EnterpriseCompany, SalesOrder.EnterpriseCompanyLocation,
 RequiredDeliveryDate, SalesOrder.Customer, SalesOrder.ShipToCustomer, SalesOrder.
 DistributionChannel, SalesOrder.PriceList, Product, Quantity, QuantityUnit,
-ReturnForSalesOrderLine, BonusProgram, PromotionalPackage, LineDiscount)</td>
+ReturnForSalesOrderLine, BonusProgram, PromotionalPackage, Level3Discount)</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>The rule sets a value in &quot;Level 3 Discount&quot; field by calling the DetermineLineDiscount
 method. The rule is triggered, when some of the values of the fields on which the discount
-determination depends, are changed (e.g. Customer, Price List, Quantity, etc.)</td>
+determination depends, are changed (e.g. Customer, Price List, Quantity, etc.)   Version =
+Introduced: 2023</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>

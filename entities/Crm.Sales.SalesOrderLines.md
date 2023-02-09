@@ -43,7 +43,7 @@ Aggregate Root:
 | [LineCustomDiscountPercent](Crm.Sales.SalesOrderLines.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)` 
 | [LineFromDate](Crm.Sales.SalesOrderLines.md#linefromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
 | [LineNo](Crm.Sales.SalesOrderLines.md#lineno) | int32 | Consecutive number of the line within the sales order. `Required` `Filter(eq)` `ORD` 
-| [LineStandardDiscount<br />Percent](Crm.Sales.SalesOrderLines.md#linestandarddiscountpercent) | decimal (7, 6) | Standard discount for the line. This is automatically computed according to discount conditions. `Required` `Default(0)` `ReadOnly` 
+| [LineStandardDiscount<br />Percent](Crm.Sales.SalesOrderLines.md#linestandarddiscountpercent) | decimal (7, 6) | Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels. `Required` `Default(0)` `ReadOnly` 
 | [LineToDate](Crm.Sales.SalesOrderLines.md#linetodate) | date __nullable__ | When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
 | [Notes](Crm.Sales.SalesOrderLines.md#notes) | string (max) __nullable__ | Notes for this SalesOrderLine. 
 | [ObjectVersion](Crm.Sales.SalesOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -348,7 +348,7 @@ _Front-End Recalc Expressions:_
 `( obj.SalesOrder.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
 ### LineStandardDiscountPercent
 
-Standard discount for the line. This is automatically computed according to discount conditions. `Required` `Default(0)` `ReadOnly`
+Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels. `Required` `Default(0)` `ReadOnly`
 
 _Type_: **decimal (7, 6)**  
 _Category_: **System**  
@@ -583,6 +583,8 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.Level1Discount)`
 ### Level2Discount
 
 Indicates the level 2 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8`
@@ -593,7 +595,7 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
-`obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)`
+`obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.Level2Discount)`
 ### Level3Discount
 
 Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8`
@@ -604,7 +606,7 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
-`obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)`
+`obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.Level3Discount)`
 ### LineDealType
 
 Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)`
@@ -628,8 +630,6 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
 
-_Front-End Recalc Expressions:_  
-`obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)`
 ### LineEndCustomerParty
 
 The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. `Filter(multi eq)` `Introduced in version 20.1`

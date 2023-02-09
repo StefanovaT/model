@@ -187,7 +187,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#linestandarddiscountpercent">LineStandardDiscount<br>Percent</a></td>
 <td>decimal (7, 6)</td>
-<td>Standard discount for the line. This is automatically computed according to discount conditions. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code></td>
+<td>Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#linetodate">LineToDate</a></td>
@@ -724,7 +724,7 @@ Generic enum type for TransportMode properties<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>( obj.SalesOrder.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
 <h3 id="linestandarddiscountpercent">LineStandardDiscountPercent</h3>
-<p>Standard discount for the line. This is automatically computed according to discount conditions. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code></p>
+<p>Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -894,6 +894,8 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.Level1Discount)</code></p>
 <h3 id="level2discount">Level2Discount</h3>
 <p>Indicates the level 2 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
@@ -901,7 +903,7 @@ Generic enum type for TransportMode properties<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)</code></p>
+<code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.Level2Discount)</code></p>
 <h3 id="level3discount">Level3Discount</h3>
 <p>Indicates the level 3 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
@@ -909,7 +911,7 @@ Generic enum type for TransportMode properties<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)</code></p>
+<code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.Level3Discount)</code></p>
 <h3 id="linedealtype">LineDealType</h3>
 <p>Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</strong><br>
@@ -926,8 +928,6 @@ Generic enum type for TransportMode properties<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
-<p><em>Front-End Recalc Expressions:</em><br>
-<code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, obj.BonusProgram, obj.PromotionalPackage, obj.LineDiscount)</code></p>
 <h3 id="lineendcustomerparty">LineEndCustomerParty</h3>
 <p>The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
@@ -1142,6 +1142,7 @@ The subject.<br>
 <li><a href="../business-rules/R34176.html">R34176 Sales Order Line - Set Level2 Discount (Recalc)</a></li>
 <li><a href="../business-rules/R34244.html">R34244 Sales Order Line - Set Level3 Discount (Recalc)</a></li>
 <li><a href="../business-rules/R34511.html">R34511 Sales Order Line - Set Level1 Discount Percent (Recalc)</a></li>
+<li><a href="../business-rules/R34524.html">R34524 Sales Order Line - Set Level1 Discount (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:

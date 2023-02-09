@@ -17,10 +17,11 @@ The roles "played" by the security users. Entity: Wf_Role_Users
 | - | - | --- |
 |[Company_Location_Id](#company_location_id)|`uniqueidentifier` |Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs.|
-|[Role_Id](#role_id)|`uniqueidentifier` ||
+|[Is_Layout_Admin](#is_layout_admin)|`bit` |Specifies whether the user can manage the layouts for the role.|
+|[Role_Id](#role_id)|`uniqueidentifier` |The role, played by the user.|
 |[Role_User_Id](#role_user_id)|`uniqueidentifier` `PK`||
 |[Row_Version](#row_version)|`timestamp` ||
-|[User_Id](#user_id)|`uniqueidentifier` ||
+|[User_Id](#user_id)|`uniqueidentifier` |The user, which plays the role.|
 
 ## Columns
 
@@ -98,7 +99,46 @@ Specifies the Enterprise Company of the selected role. Null means that the role 
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
+### Is_Layout_Admin
+
+
+Specifies whether the user can manage the layouts for the role.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|False|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Layout_Admin - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Role_Id
+
+
+The role, played by the user.
 
 | Property | Value |
 | - | - |
@@ -193,6 +233,9 @@ Specifies the Enterprise Company of the selected role. Null means that the role 
 |Visible|no|
 
 ### User_Id
+
+
+The user, which plays the role.
 
 | Property | Value |
 | - | - |

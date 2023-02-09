@@ -38,7 +38,7 @@ Sales Orders detail records. Entity: Crm_Sales_Order_Lines
 |[Line_End_Customer_Party_Id](#line_end_customer_party_id)|`uniqueidentifier` |The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party.|
 |[Line_From_Date](#line_from_date)|`date` |When selling a service valid only for a period, denotes the beginning of the period. NULL means that it is unknown or N/A.|
 |[Line_No](#line_no)|`int` |Consecutive number of the line within the sales order|
-|[Line_Standard_Discount_Percent](#line_standard_discount_percent)|`decimal(7, 6)` Readonly|Standard discount for the line. This is automatically computed according to discount conditions|
+|[Line_Standard_Discount_Percent](#line_standard_discount_percent)|`decimal(7, 6)` Readonly|Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels.|
 |[Line_Store_Id](#line_store_id)|`uniqueidentifier` |The store which should be used to issue the goods for the line. NULL means to use the store from the header|
 |[Line_To_Date](#line_to_date)|`date` |When selling a service valid only for a period, denotes the end of the period. NULL means that it is unknown or N/A.|
 |[Lot_Id](#lot_id)|`uniqueidentifier` |Specifies the lot from which the goods should be issued. NULL means that the lot will be specified at a later stage (store order, etc.)|
@@ -818,7 +818,7 @@ Consecutive number of the line within the sales order
 ### Line_Standard_Discount_Percent
 
 
-Standard discount for the line. This is automatically computed according to discount conditions
+Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels.
 
 | Property | Value |
 | - | - |

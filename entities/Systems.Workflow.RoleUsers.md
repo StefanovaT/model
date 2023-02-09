@@ -31,6 +31,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [DisplayText](Systems.Workflow.RoleUsers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Workflow.RoleUsers.md#id) | guid |  
+| [IsLayoutAdmin](Systems.Workflow.RoleUsers.md#islayoutadmin) | boolean | Specifies whether the user can manage the layouts for the role. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.2.58` 
 | [ObjectVersion](Systems.Workflow.RoleUsers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
@@ -39,7 +40,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [CompanyLocation](Systems.Workflow.RoleUsers.md#companylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | Specifies the Enterprise Company Location of the selected role. Null means that role is valid for all locations belonging to the Enterprise Company. `Filter(multi eq)` `Introduced in version 23.1.2.11` |
 | [EnterpriseCompany](Systems.Workflow.RoleUsers.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | Specifies the Enterprise Company of the selected role. Null means that the role is valid for all Enterprise Companiеs. `Filter(multi eq)` `Introduced in version 23.1.2.11` |
-| [Role](Systems.Workflow.RoleUsers.md#role) | [Roles](Systems.Security.Roles.md) |  |
+| [Role](Systems.Workflow.RoleUsers.md#role) | [Roles](Systems.Security.Roles.md) | The role, played by the user. `Required` `Filter(multi eq)` |
 | [User](Systems.Workflow.RoleUsers.md#user) | [Users](Systems.Security.Users.md) | The user, which plays the role. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -63,6 +64,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsLayoutAdmin
+
+Specifies whether the user can manage the layouts for the role. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.2.58`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -96,6 +108,8 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **ShownByDefault**  
 
 ### Role
+
+The role, played by the user. `Required` `Filter(multi eq)`
 
 _Type_: **[Roles](Systems.Security.Roles.md)**  
 _Indexed_: **True**  

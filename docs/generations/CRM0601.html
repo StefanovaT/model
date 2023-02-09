@@ -302,12 +302,28 @@ SalesOrderLine.QuantityBase = REMAINING(MarketingActivityLine.MStandardQuantityB
 
 SalesOrderLine.StandardQuantityBase = REMAINING(MarketingActivityLine.MStandardQuantityBase)
 
-SalesOrderLine.LineDiscount = loaded by the 'Determine line discount'* method
+SalesOrderLine.Level1Discount = loaded by the 'Determine line discount'* method
 
-SalesOrderLine.LineStandardDiscountPercent = 
-    if (SalesOrderLine.LineDiscount != null)
-    , then SalesOrderLine.LineStandardDiscountPercent = SalesOrderLine.LineDiscount.DiscountPercent
-    , else SalesOrderLine.LineStandardDiscountPercent = 0.00% 
+SalesOrderLine.Level1DiscountPercent =
+    if (SalesOrderLine.Level1Discount != null)
+    , then SalesOrderLine.Level1DiscountPercent = SalesOrderLine.Level1Discount.DiscountPercent
+    , else SalesOrderLine.Level1DiscountPercent = null
+
+SalesOrderLine.Level2Discount = loaded by the 'Determine line discount'* method
+
+SalesOrderLine.Level2DiscountPercent =
+    if (SalesOrderLine.Level2Discount != null)
+    , then SalesOrderLine.Level2DiscountPercent = SalesOrderLine.Level2Discount.DiscountPercent
+    , else SalesOrderLine.Level2DiscountPercent = null
+
+SalesOrderLine.Level3Discount = loaded by the 'Determine line discount'* method
+
+SalesOrderLine.Level3DiscountPercent =
+    if (SalesOrderLine.Level3Discount != null)
+    , then SalesOrderLine.Level3DiscountPercent = SalesOrderLine.Level3Discount.DiscountPercent
+    , else SalesOrderLine.Level3DiscountPercent = null
+
+SalesOrderLine.LineStandardDiscountPercent = loaded by the 'Determine Line Standard Discount Percent' method
                                              
 SalesOrderLine.LineCustomDiscountPercent = 0.00%
 
