@@ -33,7 +33,7 @@ Aggregate Root:
 | [Id](Communities.Social.GroupMembers.md#id) | guid |  
 | [JoinTimeUtc](Communities.Social.GroupMembers.md#jointimeutc) | datetime | The exact server time (in UTC), when the user joined the group. `Required` `Default(NowUtc)` 
 | [ObjectVersion](Communities.Social.GroupMembers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Role](Communities.Social.GroupMembers.md#role) | [Role](Communities.Social.GroupMembers.md#role) | Member role in a group. Defaults to member. `Required` `Default("M")` `Introduced in version 23.1.1.95` 
+| [Role](Communities.Social.GroupMembers.md#role) | [Role](Communities.Social.GroupMembers.md#role) | Member role in a group. Defaults to member. `Required` `Default("M")` `Filter(eq)` `Introduced in version 23.1.1.95` 
 
 ## References
 
@@ -87,7 +87,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Role
 
-Member role in a group. Defaults to member. `Required` `Default("M")` `Introduced in version 23.1.1.95`
+Member role in a group. Defaults to member. `Required` `Default("M")` `Filter(eq)` `Introduced in version 23.1.1.95`
 
 _Type_: **[Role](Communities.Social.GroupMembers.md#role)**  
 _Category_: **System**  
@@ -99,7 +99,7 @@ _Allowed Values (Communities.Social.GroupMembersRepository.Role Enum Members)_
 | Member | Member. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Member' |
 | Admin | Admin. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Admin' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **Member**  
 _Show in UI_: **ShownByDefault**  

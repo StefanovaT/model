@@ -33,7 +33,7 @@ Aggregate Tree
 | [Name](Systems.Reporting.Reports.md#name) | string (254) | Multi-language report name. `Required` `Filter(eq;like)` 
 | [Notes](Systems.Reporting.Reports.md#notes) | string (512) __nullable__ | Notes for this Report. 
 | [ObjectVersion](Systems.Reporting.Reports.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [OneRow](Systems.Reporting.Reports.md#onerow) | boolean | True means that report can be used for one-row forms only. False means that the report can be used for navigators only. `Required` `Default(false)` 
+| [OneRow](Systems.Reporting.Reports.md#onerow) | boolean | True means that report can be used for one-row forms only. False means that the report can be used for navigators only. `Required` `Default(false)` `Filter(eq)` 
 | [QueryName](Systems.Reporting.Reports.md#queryname) | string (128) | The query on which the report is based. `Required` `Filter(eq)` 
 | [ReportBinaryLayout](Systems.Reporting.Reports.md#reportbinarylayout) | byte[] __nullable__ | The printout layout, when the format requires binary storage. Alternative to Report_Layout. 
 | [ReportLayout](Systems.Reporting.Reports.md#reportlayout) | string (max) __nullable__ | The textual representation of the printout layout, when the format requires text representation. Alternative to Report_Binary_Layout. 
@@ -113,11 +113,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### OneRow
 
-True means that report can be used for one-row forms only. False means that the report can be used for navigators only. `Required` `Default(false)`
+True means that report can be used for one-row forms only. False means that the report can be used for navigators only. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  

@@ -157,6 +157,12 @@ True means that report can be used for one-row forms only. False means that the 
 |User Login|no|
 |Visible|yes|
 
+#### One_Row - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Query_Name
 
 

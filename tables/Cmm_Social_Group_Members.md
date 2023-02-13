@@ -85,6 +85,12 @@ Member role in a group. Defaults to member.
 |User Login|no|
 |Visible|yes|
 
+#### Role - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Row_Version
 
 | Property | Value |
