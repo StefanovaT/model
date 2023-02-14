@@ -9,11 +9,11 @@ Additional product codes, categorized by coding systems. Entity: Gen_Product_Cod
 
 ## Default Visualization
 Default Display Text Format:  
-_{Product.Name:T}_  
+_{ProductCodeField}_  
 Default Search Members:  
-_Product.Name_  
-Name Data Member:  
-_Product.Name_  
+_ProductCodeField_  
+Code Data Member:  
+_ProductCodeField_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
