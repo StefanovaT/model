@@ -212,6 +212,11 @@ Aggregate Root:<br>
 <td>The measurement unit of Excise Quantity. Copied from the excise product type. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.58</code></td>
 </tr>
 <tr>
+<td><a href="Finance.Excise.ExciseAdministrativeDocumentLines.html#lot">Lot</a></td>
+<td><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</td>
+<td>Warehouse lot. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.68</code></td>
+</tr>
+<tr>
 <td><a href="Finance.Excise.ExciseAdministrativeDocumentLines.html#measuringtransaction">MeasuringTransaction</a></td>
 <td><a href="Finance.Excise.MeasuringTransactions.html">MeasuringTransactions</a> (nullable)</td>
 <td>Transaction of product input or output, measured with specialized measuring device for excise purposes. <code>Filter(multi eq)</code> <code>Introduced in version 21.1.3.87</code></td>
@@ -391,6 +396,12 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.ExciseProductType.MeasurementUnit</code></p>
+<h3 id="lot">Lot</h3>
+<p>Warehouse lot. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.68</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="measuringtransaction">MeasuringTransaction</h3>
 <p>Transaction of product input or output, measured with specialized measuring device for excise purposes. <code>Filter(multi eq)</code> <code>Introduced in version 21.1.3.87</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.MeasuringTransactions.html">MeasuringTransactions</a> (nullable)</strong><br>

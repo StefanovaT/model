@@ -28,6 +28,7 @@ The details of the movement of each excise product for each excise document. Ent
 |[Excise_Quantity](#excise_quantity)|`decimal(12, 3)` |The quantity, converted, for reporting purposes, in the measurement unit of the excise product type.|
 |[Excise_Quantity_Unit_Id](#excise_quantity_unit_id)|`uniqueidentifier` |The measurement unit of Excise Quantity. Copied from the excise product type.|
 |[Line_No](#line_no)|`int` |Consecutive line number within the document.|
+|[Lot_Id](#lot_id)|`uniqueidentifier` |Warehouse lot|
 |[Measuring_Transaction_Id](#measuring_transaction_id)|`uniqueidentifier` |Transaction of product input or output, measured with specialized measuring device for excise purposes.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Parent_Document_Id](#parent_document_id)|`uniqueidentifier` |The document, which the current line executes. Null when the current line does not execute another line.|
@@ -456,6 +457,43 @@ Consecutive line number within the document.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Lot_Id
+
+
+Warehouse lot
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|20|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Lots](Inv_Lots.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Lot_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Measuring_Transaction_Id
 
 
@@ -740,7 +778,7 @@ The measurement unit of Quantity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|20|
+|Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

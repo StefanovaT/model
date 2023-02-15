@@ -132,7 +132,7 @@ Specifies how the operation changes the Excise Stamp availability in the corresp
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
 |Type|nvarchar(32)|
