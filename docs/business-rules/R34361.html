@@ -114,7 +114,7 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If Count(FollowedEntities where EntityItemId ==  currentEntity.Id) &gt;= 1 <br> , then create a notification for each record as follows: <br><br> - Notification.User = FollowedEntities.User <br> - CreationTimeUtc = NOW <br> - Notification.DataObject = ExtensibleDataObject <br> - NotificationClass = NT_AE_UPON_UPDATE <br> - Subject = An object you are following has been updated:{Object.DisplayText}</td>
+<td>If Count(FollowedEntities where EntityItemId ==  currentEntity.Id) &gt;= 1 <br> , then create a notification for each record as follows: <br><br> - Notification.User = FollowedEntities.User <br> - CreationTimeUtc = NOW <br> - Notification.DataObject = ExtensibleDataObject <br> - NotificationClass = NT_ALL_UPDATE <br> - Subject = An object you are following has been updated:{Object.DisplayText}</td>
 </tr>
 <tr>
 <td>Description</td>
