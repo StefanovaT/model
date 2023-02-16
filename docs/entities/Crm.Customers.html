@@ -140,7 +140,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Customers.html#creditlimit">CreditLimit</a></td>
 <td><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></td>
-<td>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: DefaultCurrency</code></td>
+<td>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: EnterpriseCompany?.BaseCurrency</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Customers.html#defaultdeliverytermdays">DefaultDeliveryTermDays</a></td>
@@ -334,7 +334,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creditlimit">CreditLimit</h3>
-<p>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: DefaultCurrency</code></p>
+<p>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: EnterpriseCompany?.BaseCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -508,7 +508,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
-<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="salesperson">SalesPerson</h3>
 <p>The default sales person for new sales documents for this customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.SalesPersons.html">SalesPersons</a> (nullable)</strong><br>

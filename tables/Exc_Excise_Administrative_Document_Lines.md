@@ -467,6 +467,7 @@ Warehouse lot
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
+|Depends On|[Product_Id](#product_id)|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
