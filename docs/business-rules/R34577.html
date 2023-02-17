@@ -114,11 +114,11 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>if (GroupMember.Role == Admin) AND the edited field is Role<br>
+<td>if (GroupMember.Role != Admin) AND GroupMember.Role.DatabaseValue == Admin <br>
 , then check:
 <br><br>
 if (Count (GroupMembers, where SocialGroup == GroupMember.SocialGroup
-&amp;&amp; Role == Admin ) == 1)<br>
+&amp;&amp; Role == Admin ) &lt;= 1)<br>
 , then FAIL</td>
 </tr>
 <tr>
