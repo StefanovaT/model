@@ -44,7 +44,7 @@ Aggregate Tree
 | [AdjustmentNumber](Finance.Excise.ExciseAdministrativeDocuments.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [AdjustmentTime](Finance.Excise.ExciseAdministrativeDocuments.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [AdjustmentUser](Finance.Excise.ExciseAdministrativeDocuments.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [Administrative<br />ReferenceCode](Finance.Excise.ExciseAdministrativeDocuments.md#administrativereferencecode) | string (16) __nullable__ | The reference code, returned the customs authorities, when the document is exported to them. null means the document is not yet exported to the authorities. 
+| [Administrative<br />ReferenceCode](Finance.Excise.ExciseAdministrativeDocuments.md#administrativereferencecode) | string (32) __nullable__ | The reference code, returned the customs authorities, when the document is exported to them. null means the document is not yet exported to the authorities. 
 | [CompleteTime](Finance.Excise.ExciseAdministrativeDocuments.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Finance.Excise.ExciseAdministrativeDocuments.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationUser](Finance.Excise.ExciseAdministrativeDocuments.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -164,11 +164,11 @@ _Show in UI_: **HiddenByDefault**
 
 The reference code, returned the customs authorities, when the document is exported to them. null means the document is not yet exported to the authorities.
 
-_Type_: **string (16) __nullable__**  
+_Type_: **string (32) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
-_Maximum Length_: **16**  
+_Maximum Length_: **32**  
 _Show in UI_: **ShownByDefault**  
 
 ### CompleteTime

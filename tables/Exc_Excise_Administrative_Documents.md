@@ -16,7 +16,7 @@ Represents the data, sent to the customs authorities for the movements of excise
 | Name | Type | Description |
 | - | - | --- |
 |[Accrue_Excise_Duty](#accrue_excise_duty)|`bit` |Accrue Excise Duty|
-|[Administrative_Reference_Code](#administrative_reference_code)|`nvarchar(16)` |The reference code, returned the customs authorities, when the document is exported to them. NULL means the document is not yet exported to the authorities.|
+|[Administrative_Reference_Code](#administrative_reference_code)|`nvarchar(32)` |The reference code, returned the customs authorities, when the document is exported to them. NULL means the document is not yet exported to the authorities.|
 |[Direction](#direction)|`nvarchar(1)` Allowed: `I`, `R`|Indicates whether the document is Receipt('R') or Issue('I') of the Tax Warehouse|
 |[Document_Id](#document_id)|`uniqueidentifier` ||
 |[Excise_Administrative_Document_Id](#excise_administrative_document_id)|`uniqueidentifier` `PK`||
@@ -79,7 +79,7 @@ The reference code, returned the customs authorities, when the document is expor
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|16|
+|Max Length|32|
 |Order|2|
 |Ownership Reference|no|
 |Pasword|no|
@@ -90,7 +90,7 @@ The reference code, returned the customs authorities, when the document is expor
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(16) (Allows NULL)|
+|Type|nvarchar(32) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
