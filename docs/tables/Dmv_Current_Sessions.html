@@ -95,57 +95,58 @@
 <tr>
 <td><a href="#absolute_expiration_time">Absolute_Expiration_Time</a></td>
 <td><code>datetime</code></td>
-<td></td>
+<td>Absolute expiration time of the session. Not empty if the session is created by a service appllication.</td>
 </tr>
 <tr>
 <td><a href="#applications">Applications</a></td>
 <td><code>nvarchar(64)</code></td>
-<td></td>
+<td>A comma separated list of client applications that share this session.</td>
 </tr>
 <tr>
 <td><a href="#current_requests_count">Current_Requests_Count</a></td>
 <td><code>int</code></td>
-<td></td>
+<td>The requests count in the time of the request.</td>
 </tr>
 <tr>
 <td><a href="#device">Device</a></td>
 <td><code>nvarchar(64)</code></td>
-<td></td>
+<td>The name of the user's device.</td>
 </tr>
 <tr>
 <td><a href="#download_mb">Download_MB</a></td>
 <td><code>decimal(12, 3)</code></td>
-<td></td>
+<td>The downloaded megabytes at the time of the request.</td>
 </tr>
 <tr>
 <td><a href="#last_request_time">Last_Request_Time</a></td>
 <td><code>datetime</code></td>
-<td></td>
+<td>The last request time.</td>
 </tr>
 <tr>
 <td><a href="#start_time">Start_Time</a></td>
 <td><code>datetime</code></td>
-<td></td>
+<td>The login time of the session.</td>
 </tr>
 <tr>
 <td><a href="#total_requests_count">Total_Requests_Count</a></td>
 <td><code>bigint</code></td>
-<td></td>
+<td>The total request count at the time of the request.</td>
 </tr>
 <tr>
 <td><a href="#upload_mb">Upload_MB</a></td>
 <td><code>decimal(12, 3)</code></td>
-<td></td>
+<td>The uploaded megabytes at the time of the request.</td>
 </tr>
 <tr>
 <td><a href="#user">User</a></td>
 <td><code>nvarchar(64)</code></td>
-<td></td>
+<td>The login name of the session's user.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="columns">Columns</h2>
 <h3 id="absolute_expiration_time">Absolute_Expiration_Time</h3>
+<p>Absolute expiration time of the session. Not empty if the session is created by a service appllication.</p>
 <table>
 <thead>
 <tr>
@@ -212,7 +213,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -264,6 +265,7 @@
 </tbody>
 </table>
 <h3 id="applications">Applications</h3>
+<p>A comma separated list of client applications that share this session.</p>
 <table>
 <thead>
 <tr>
@@ -330,7 +332,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -388,6 +390,7 @@
 </tbody>
 </table>
 <h3 id="current_requests_count">Current_Requests_Count</h3>
+<p>The requests count in the time of the request.</p>
 <table>
 <thead>
 <tr>
@@ -454,7 +457,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -506,6 +509,7 @@
 </tbody>
 </table>
 <h3 id="device">Device</h3>
+<p>The name of the user's device.</p>
 <table>
 <thead>
 <tr>
@@ -572,7 +576,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -630,6 +634,7 @@
 </tbody>
 </table>
 <h3 id="download_mb">Download_MB</h3>
+<p>The downloaded megabytes at the time of the request.</p>
 <table>
 <thead>
 <tr>
@@ -696,7 +701,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -748,6 +753,7 @@
 </tbody>
 </table>
 <h3 id="last_request_time">Last_Request_Time</h3>
+<p>The last request time.</p>
 <table>
 <thead>
 <tr>
@@ -814,7 +820,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -866,6 +872,7 @@
 </tbody>
 </table>
 <h3 id="start_time">Start_Time</h3>
+<p>The login time of the session.</p>
 <table>
 <thead>
 <tr>
@@ -932,7 +939,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -984,6 +991,7 @@
 </tbody>
 </table>
 <h3 id="total_requests_count">Total_Requests_Count</h3>
+<p>The total request count at the time of the request.</p>
 <table>
 <thead>
 <tr>
@@ -1050,7 +1058,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -1102,6 +1110,7 @@
 </tbody>
 </table>
 <h3 id="upload_mb">Upload_MB</h3>
+<p>The uploaded megabytes at the time of the request.</p>
 <table>
 <thead>
 <tr>
@@ -1168,7 +1177,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>
@@ -1220,6 +1229,7 @@
 </tbody>
 </table>
 <h3 id="user">User</h3>
+<p>The login name of the session's user.</p>
 <table>
 <thead>
 <tr>
@@ -1286,7 +1296,7 @@
 </tr>
 <tr>
 <td>Sortable</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Summary Type</td>

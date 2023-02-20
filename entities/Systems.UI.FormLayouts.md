@@ -35,8 +35,8 @@ Aggregate Tree
 | [Layout](Systems.UI.FormLayouts.md#layout) | byte[] __nullable__ | The byte storage of the layout. 
 | [LayoutFormat](Systems.UI.FormLayouts.md#layoutformat) | [LayoutFormat](Systems.UI.FormLayouts.md#layoutformat) | The format of the data in the Layout column. Values can be: 'U' - uncompressed; 'L' - LZO compressed; 'D' - Deflate compressed. `Required` `Default("U")` 
 | [LayoutName](Systems.UI.FormLayouts.md#layoutname) | string (64) | The name of a named layout. Standard layouts have empty string names. `Required` `Filter(eq;like)` 
-| [<s>LayoutXml</s>](Systems.UI.FormLayouts.md#layoutxml) | string (max) __nullable__ | **OBSOLETE! Do not use!**  
-| [<s>MachineName</s>](Systems.UI.FormLayouts.md#machinename) | string (128) __nullable__ | **OBSOLETE! Do not use!**  
+| [<s>LayoutXml</s>](Systems.UI.FormLayouts.md#layoutxml) | string (max) __nullable__ | **OBSOLETE! Do not use!** Layout xml - not used. `Obsolete` `Obsoleted in version 22.1.6.61` 
+| [<s>MachineName</s>](Systems.UI.FormLayouts.md#machinename) | string (128) __nullable__ | **OBSOLETE! Do not use!** The machine name - not used. `Obsolete` `Filter(eq;like)` `Obsoleted in version 22.1.6.61` 
 | [ObjectVersion](Systems.UI.FormLayouts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PanelName](Systems.UI.FormLayouts.md#panelname) | string (64) | The visual panel, for which the layout is applied. `Required` `Default("Form")` `Filter(eq)` 
 | [UserName](Systems.UI.FormLayouts.md#username) | string (64) __nullable__ | The user for which the layout is applied. null means that the layout is applied for all users. `Filter(eq;like)` 
@@ -147,7 +147,7 @@ _Show in UI_: **ShownByDefault**
 
 ### LayoutXml
 
-**OBSOLETE! Do not use!**
+**OBSOLETE! Do not use!** Layout xml - not used. `Obsolete` `Obsoleted in version 22.1.6.61`
 
 _Type_: **string (max) __nullable__**  
 _Category_: **System**  
@@ -158,7 +158,7 @@ _Show in UI_: **ShownByDefault**
 
 ### MachineName
 
-**OBSOLETE! Do not use!**
+**OBSOLETE! Do not use!** The machine name - not used. `Obsolete` `Filter(eq;like)` `Obsoleted in version 22.1.6.61`
 
 _Type_: **string (128) __nullable__**  
 _Category_: **System**  

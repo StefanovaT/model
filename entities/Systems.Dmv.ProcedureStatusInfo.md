@@ -25,20 +25,22 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Completed](Systems.Dmv.ProcedureStatusInfo.md#completed) | boolean |  
-| [ElapsedMin](Systems.Dmv.ProcedureStatusInfo.md#elapsedmin) | string (64) |  
-| [ElapsedPercent](Systems.Dmv.ProcedureStatusInfo.md#elapsedpercent) | double |  
-| [EndTime](Systems.Dmv.ProcedureStatusInfo.md#endtime) | string (64) |  
+| [Completed](Systems.Dmv.ProcedureStatusInfo.md#completed) | boolean | True if the procedure is completed. `Required` `Filter(eq)` `ORD` 
+| [ElapsedMin](Systems.Dmv.ProcedureStatusInfo.md#elapsedmin) | string (64) | The elapsed minutes of the procedure at the time of the request. `Required` `Filter(ge;le)` `ORD` 
+| [ElapsedPercent](Systems.Dmv.ProcedureStatusInfo.md#elapsedpercent) | double | The elapsed percent of the procedure at the time of the request. `Required` `Filter(ge;le)` `ORD` 
+| [EndTime](Systems.Dmv.ProcedureStatusInfo.md#endtime) | string (64) | The end time of the procedure. `Required` `Filter(ge;le)` `ORD` 
 | [Error](Systems.Dmv.ProcedureStatusInfo.md#error) | string (128) | If not null, this is the text of the exception that occured during the procedure execution. `Required` `ORD` 
-| [Procedure](Systems.Dmv.ProcedureStatusInfo.md#procedure) | string (128) |  
+| [Procedure](Systems.Dmv.ProcedureStatusInfo.md#procedure) | string (128) | The name of the procedure. `Required` `Filter(eq;like)` `ORD` 
 | [Properties](Systems.Dmv.ProcedureStatusInfo.md#properties) | string (128) | List of procedure status properties. `Required` `ORD` 
-| [StartTime](Systems.Dmv.ProcedureStatusInfo.md#starttime) | string (64) |  
-| [User](Systems.Dmv.ProcedureStatusInfo.md#user) | string (128) |  
+| [StartTime](Systems.Dmv.ProcedureStatusInfo.md#starttime) | string (64) | The start time of the procedure. `Required` `Filter(ge;le)` `ORD` 
+| [User](Systems.Dmv.ProcedureStatusInfo.md#user) | string (128) | The user started the procedure. `Required` `Filter(eq;like)` `ORD` 
 
 
 ## Attribute Details
 
 ### Completed
+
+True if the procedure is completed. `Required` `Filter(eq)` `ORD`
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -47,6 +49,8 @@ _Supports Order By_: **True**
 _Show in UI_: **ShownByDefault**  
 
 ### ElapsedMin
+
+The elapsed minutes of the procedure at the time of the request. `Required` `Filter(ge;le)` `ORD`
 
 _Type_: **string (64)**  
 _Category_: **System**  
@@ -57,6 +61,8 @@ _Show in UI_: **ShownByDefault**
 
 ### ElapsedPercent
 
+The elapsed percent of the procedure at the time of the request. `Required` `Filter(ge;le)` `ORD`
+
 _Type_: **double**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
@@ -64,6 +70,8 @@ _Supports Order By_: **True**
 _Show in UI_: **ShownByDefault**  
 
 ### EndTime
+
+The end time of the procedure. `Required` `Filter(ge;le)` `ORD`
 
 _Type_: **string (64)**  
 _Category_: **System**  
@@ -85,6 +93,8 @@ _Show in UI_: **ShownByDefault**
 
 ### Procedure
 
+The name of the procedure. `Required` `Filter(eq;like)` `ORD`
+
 _Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
@@ -105,6 +115,8 @@ _Show in UI_: **ShownByDefault**
 
 ### StartTime
 
+The start time of the procedure. `Required` `Filter(ge;le)` `ORD`
+
 _Type_: **string (64)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
@@ -113,6 +125,8 @@ _Maximum Length_: **64**
 _Show in UI_: **ShownByDefault**  
 
 ### User
+
+The user started the procedure. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (128)**  
 _Category_: **System**  

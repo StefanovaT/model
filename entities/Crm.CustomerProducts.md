@@ -48,7 +48,7 @@ Aggregate Root:
 | [CompanyDivision](Crm.CustomerProducts.md#companydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | When the customer is a company, denotes the division for which the product is listed. null when the customer is not a company or when the listing is not division specific. `Filter(multi eq)` |
 | [CompanyLocation](Crm.CustomerProducts.md#companylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | When the customer is a company, denotes the location for which the product is listed. null when the customer is not a company or when the listing is not location specific. `Filter(multi eq)` |
 | [Customer](Crm.CustomerProducts.md#customer) | [Customers](Crm.Customers.md) | Customer, for which the product is listed. `Required` `Filter(multi eq)` `Owner` |
-| [InStoreQuantityUnit](Crm.CustomerProducts.md#instorequantityunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) |  |
+| [InStoreQuantityUnit](Crm.CustomerProducts.md#instorequantityunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | Location in store, like row, stand, etc. `Filter(multi eq)` |
 | [Product](Crm.CustomerProducts.md#product) | [Products](General.Products.Products.md) | The product, which is listed for the customer. `Required` `Filter(multi eq)` |
 
 
@@ -199,6 +199,8 @@ _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-reference
 _Show in UI_: **ShownByDefault**  
 
 ### InStoreQuantityUnit
+
+Location in store, like row, stand, etc. `Filter(multi eq)`
 
 _Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  

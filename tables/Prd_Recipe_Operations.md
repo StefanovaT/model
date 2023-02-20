@@ -24,7 +24,7 @@ Contains the routing (operation list) of the recipes. Entity: Prd_Recipe_Operati
 |[Operation_Id](#operation_id)|`uniqueidentifier` |Standard operation Id. If not NULL used to load the details. If NULL the details (times, scrap rates, etc.) must be entered manually|
 |[Operation_Instruction_Id](#operation_instruction_id)|`uniqueidentifier` |Link to additional data, containing instructions in external format|
 |[Recipe_Id](#recipe_id)|`uniqueidentifier` ||
-|[Routing_Operation_Id](#routing_operation_id)|`uniqueidentifier` ||
+|[Routing_Operation_Id](#routing_operation_id)|`uniqueidentifier` |Not used.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Run_Time_Minutes](#run_time_minutes)|`int` |Duration of the operation for standard lot of the product|
 |[Scrap_Rate](#scrap_rate)|`decimal(7, 6)` |Standard rate of scrap during the operation|
@@ -331,6 +331,9 @@ Link to additional data, containing instructions in external format
 |Equals|`NULL`|no|no|
 
 ### Routing_Operation_Id
+
+
+Not used.
 
 | Property | Value |
 | - | - |

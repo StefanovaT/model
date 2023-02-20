@@ -107,22 +107,22 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#completed">Completed</a></td>
 <td>boolean</td>
-<td></td>
+<td>True if the procedure is completed. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#elapsedmin">ElapsedMin</a></td>
 <td>string (64)</td>
-<td></td>
+<td>The elapsed minutes of the procedure at the time of the request. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#elapsedpercent">ElapsedPercent</a></td>
 <td>double</td>
-<td></td>
+<td>The elapsed percent of the procedure at the time of the request. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#endtime">EndTime</a></td>
 <td>string (64)</td>
-<td></td>
+<td>The end time of the procedure. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#error">Error</a></td>
@@ -132,7 +132,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#procedure">Procedure</a></td>
 <td>string (128)</td>
-<td></td>
+<td>The name of the procedure. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#properties">Properties</a></td>
@@ -142,23 +142,25 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#starttime">StartTime</a></td>
 <td>string (64)</td>
-<td></td>
+<td>The start time of the procedure. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.ProcedureStatusInfo.html#user">User</a></td>
 <td>string (128)</td>
-<td></td>
+<td>The user started the procedure. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="completed">Completed</h3>
+<p>True if the procedure is completed. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="elapsedmin">ElapsedMin</h3>
+<p>The elapsed minutes of the procedure at the time of the request. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -166,12 +168,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="elapsedpercent">ElapsedPercent</h3>
+<p>The elapsed percent of the procedure at the time of the request. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>double</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="endtime">EndTime</h3>
+<p>The end time of the procedure. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -187,6 +191,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>128</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="procedure">Procedure</h3>
+<p>The name of the procedure. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (128)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
@@ -202,6 +207,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>128</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="starttime">StartTime</h3>
+<p>The start time of the procedure. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -209,6 +215,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="user">User</h3>
+<p>The user started the procedure. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (128)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>

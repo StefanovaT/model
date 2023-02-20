@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CatchQuantity](Logistics.Wms.WarehouseTransactions.md#catchquantity) | decimal (12, 3) __nullable__ | Catch (measured) quantity for the transaction. Positive values indicate transactions. Negative values are used for adjustments. null when catch measurement is not configured for the product. `Filter(eq;ge;le)` 
-| [CreationTimeUtc](Logistics.Wms.WarehouseTransactions.md#creationtimeutc) | datetime |  
+| [CreationTimeUtc](Logistics.Wms.WarehouseTransactions.md#creationtimeutc) | datetime | The creation time in UTC. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` 
 | [Direction](Logistics.Wms.WarehouseTransactions.md#direction) | [Direction](Logistics.Wms.WarehouseTransactions.md#direction) | Direction of the transaction - I=IN, O=OUT. `Required` `Default("I")` `Filter(eq)` 
 | [DisplayText](Logistics.Wms.WarehouseTransactions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Wms.WarehouseTransactions.md#id) | guid |  
@@ -41,7 +41,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CatchQuantityUnit](Logistics.Wms.WarehouseTransactions.md#catchquantityunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit of the catch quantity. null when catch measurement is not configured for the product. `Filter(multi eq)` |
-| [CreationUser](Logistics.Wms.WarehouseTransactions.md#creationuser) | [Users](Systems.Security.Users.md) |  |
+| [CreationUser](Logistics.Wms.WarehouseTransactions.md#creationuser) | [Users](Systems.Security.Users.md) | The creation user. `Required` `Filter(multi eq)` |
 | [LogisticUnit](Logistics.Wms.WarehouseTransactions.md#logisticunit) | [LogisticUnits](Logistics.LogisticUnits.md) (nullable) | Logistic unit, which was transacted. null when the transaction was not for a logistic unit. `Filter(multi eq)` |
 | [Lot](Logistics.Wms.WarehouseTransactions.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot which was transacted. null when the transaction was not for a specific lot. `Filter(multi eq)` |
 | [Product](Logistics.Wms.WarehouseTransactions.md#product) | [Products](General.Products.Products.md) | The product, which was transacted. `Required` `Filter(multi eq)` |
@@ -67,6 +67,8 @@ _Supports Order By_: **False**
 _Show in UI_: **ShownByDefault**  
 
 ### CreationTimeUtc
+
+The creation time in UTC. `Required` `Default(NowUtc)` `Filter(eq;ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
@@ -198,6 +200,8 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **ShownByDefault**  
 
 ### CreationUser
+
+The creation user. `Required` `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  

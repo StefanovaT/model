@@ -21,12 +21,12 @@ Contains the products, that are contracted (listed) with a customer. Entity: Crm
 |[Customer_Product_Id](#customer_product_id)|`uniqueidentifier` `PK`|Customer Product listing|
 |[From_Date](#from_date)|`date` |The initial date of the listing. NULL when the initial date is unknown|
 |[In_Store_Location](#in_store_location)|`nvarchar(32)` ||
-|[In_Store_Max_Quantity](#in_store_max_quantity)|`decimal(10, 3)` ||
-|[In_Store_Min_Quantity](#in_store_min_quantity)|`decimal(10, 3)` ||
-|[In_Store_Quantity_Unit_Id](#in_store_quantity_unit_id)|`uniqueidentifier` ||
+|[In_Store_Max_Quantity](#in_store_max_quantity)|`decimal(10, 3)` |Maximum quantity maintained by the customer. Measurement unit is Product.MeasurementUnit|
+|[In_Store_Min_Quantity](#in_store_min_quantity)|`decimal(10, 3)` |Minimum quantity maintained by the customer. Measurement unit is Product.MeasurementUnit|
+|[In_Store_Quantity_Unit_Id](#in_store_quantity_unit_id)|`uniqueidentifier` |Location in store, like row, stand, etc.|
 |[Is_Active](#is_active)|`bit` |Indicates whether this customer product definition is active|
 |[Notes](#notes)|`nvarchar(254)` |Notes for the listing|
-|[OrderMultiple](#ordermultiple)|`decimal(10, 3)` ||
+|[OrderMultiple](#ordermultiple)|`decimal(10, 3)` |Determines the step when the system offers a quantity to order|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product, which is listed for the customer|
 |[Row_Version](#row_version)|`timestamp` ||
 |[To_Date](#to_date)|`date` |The final date of the listing. NULL when the final date is unknown|
@@ -246,6 +246,9 @@ The initial date of the listing. NULL when the initial date is unknown
 
 ### In_Store_Max_Quantity
 
+
+Maximum quantity maintained by the customer. Measurement unit is Product.MeasurementUnit
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -280,6 +283,9 @@ The initial date of the listing. NULL when the initial date is unknown
 
 ### In_Store_Min_Quantity
 
+
+Minimum quantity maintained by the customer. Measurement unit is Product.MeasurementUnit
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -313,6 +319,9 @@ The initial date of the listing. NULL when the initial date is unknown
 |GreaterThanOrLessThan|None|yes|no|
 
 ### In_Store_Quantity_Unit_Id
+
+
+Location in store, like row, stand, etc.
 
 | Property | Value |
 | - | - |
@@ -414,6 +423,9 @@ Notes for the listing
 |Visible|yes|
 
 ### OrderMultiple
+
+
+Determines the step when the system offers a quantity to order
 
 | Property | Value |
 | - | - |

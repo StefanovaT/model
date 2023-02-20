@@ -13,8 +13,8 @@ Represents increase or decrease in the quantity available in a warehouse locatio
 | - | - | --- |
 |[Catch_Quantity](#catch_quantity)|`decimal(12, 3)` |Catch (measured) quantity for the transaction. Positive values indicate transactions. Negative values are used for adjustments. NULL when catch measurement is not configured for the product.|
 |[Catch_Quantity_Unit_Id](#catch_quantity_unit_id)|`uniqueidentifier` |The measurement unit of the catch quantity. NULL when catch measurement is not configured for the product.|
-|[Creation_Time_Utc](#creation_time_utc)|`datetime` ||
-|[Creation_User_Id](#creation_user_id)|`uniqueidentifier` ||
+|[Creation_Time_Utc](#creation_time_utc)|`datetime` |The creation time in UTC.|
+|[Creation_User_Id](#creation_user_id)|`uniqueidentifier` |The creation user.|
 |[Direction](#direction)|`nvarchar(1)` Allowed: `I`, `O`|Direction of the transaction - I=IN, O=OUT.|
 |[Logistic_Unit_Id](#logistic_unit_id)|`uniqueidentifier` |Logistic unit, which was transacted. NULL when the transaction was not for a logistic unit.|
 |[Lot_Id](#lot_id)|`uniqueidentifier` |The lot which was transacted. NULL when the transaction was not for a specific lot.|
@@ -111,6 +111,9 @@ The measurement unit of the catch quantity. NULL when catch measurement is not c
 
 ### Creation_Time_Utc
 
+
+The creation time in UTC.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -144,6 +147,9 @@ The measurement unit of the catch quantity. NULL when catch measurement is not c
 |GreaterThanOrLessThan|None|no|no|
 
 ### Creation_User_Id
+
+
+The creation user.
 
 | Property | Value |
 | - | - |

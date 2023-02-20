@@ -19,8 +19,8 @@ Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 |[Layout](#layout)|`varbinary` |The byte storage of the layout.|
 |[Layout_Format](#layout_format)|`nvarchar(1)` Allowed: `D`, `L`, `U`|The format of the data in the Layout column. Values can be: 'U' - uncompressed; 'L' - LZO compressed; 'D' - Deflate compressed.|
 |[Layout_Name](#layout_name)|`nvarchar(64)` |The name of a named layout. Standard layouts have empty string names.|
-|[Layout_Xml](#layout_xml)|`nvarchar(max)` ||
-|[Machine_Name](#machine_name)|`nvarchar(128)` ||
+|[Layout_Xml](#layout_xml)|`nvarchar(max)` |Layout xml - not used.|
+|[Machine_Name](#machine_name)|`nvarchar(128)` |The machine name - not used.|
 |[Panel_Name](#panel_name)|`nvarchar(64)` |The visual panel, for which the layout is applied.|
 |[Role_Id](#role_id)|`uniqueidentifier` |The role, for which the layout is applied.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -307,6 +307,9 @@ The name of a named layout. Standard layouts have empty string names.
 
 ### Layout_Xml
 
+
+Layout xml - not used.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -333,6 +336,9 @@ The name of a named layout. Standard layouts have empty string names.
 |Visible|yes|
 
 ### Machine_Name
+
+
+The machine name - not used.
 
 | Property | Value |
 | - | - |

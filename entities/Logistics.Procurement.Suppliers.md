@@ -53,7 +53,7 @@ Aggregate Tree
 | [DefaultPaymentType](Logistics.Procurement.Suppliers.md#defaultpaymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | When not null, specifies the default payment type which should be used for new purchase document for this supplier. `Filter(multi eq)` |
 | [DefaultPurchasePriceList](Logistics.Procurement.Suppliers.md#defaultpurchasepricelist) | [PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable) | The default purchase price list, which shall be used for new purchase documents for this supplier. `Filter(multi eq)` |
 | [EnterpriseCompany](Logistics.Procurement.Suppliers.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this Supplier applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
-| [Party](Logistics.Procurement.Suppliers.md#party) | [Parties](General.Contacts.Parties.md) |  |
+| [Party](Logistics.Procurement.Suppliers.md#party) | [Parties](General.Contacts.Parties.md) | The party who is the supplier for the enterprise company. `Required` `Filter(multi eq)` `FilterableReference` |
 | [SupplierType](Logistics.Procurement.Suppliers.md#suppliertype) | [SupplierTypes](Logistics.Procurement.SupplierTypes.md) (nullable) | When not null, specifies the type of this supplier. The type is primarily used for security access differentiation of the supplier records. `Filter(multi eq)` |
 
 
@@ -255,6 +255,8 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **HiddenByDefault**  
 
 ### Party
+
+The party who is the supplier for the enterprise company. `Required` `Filter(multi eq)` `FilterableReference`
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Indexed_: **True**  

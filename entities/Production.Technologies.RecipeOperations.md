@@ -37,7 +37,7 @@ Aggregate Root:
 | [Notes](Production.Technologies.RecipeOperations.md#notes) | string (254) __nullable__ | Notes for this RecipeOperation. 
 | [ObjectVersion](Production.Technologies.RecipeOperations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OperationDescription](Production.Technologies.RecipeOperations.md#operationdescription) | string (max) __nullable__ | The description of the operation. 
-| [<s>RoutingOperationId</s>](Production.Technologies.RecipeOperations.md#routingoperationid) | guid __nullable__ | **OBSOLETE! Do not use!**  
+| [<s>RoutingOperationId</s>](Production.Technologies.RecipeOperations.md#routingoperationid) | guid __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Filter(multi eq)` `Obsoleted in version 22.1.6.61` 
 | [RunTimeMinutes](Production.Technologies.RecipeOperations.md#runtimeminutes) | int32 | Duration of the operation for standard lot of the product. `Required` `Default(0)` 
 | [ScrapRate](Production.Technologies.RecipeOperations.md#scraprate) | decimal (7, 6) | Standard rate of scrap during the operation. `Required` `Default(0)` 
 | [SetupTimeMinutes](Production.Technologies.RecipeOperations.md#setuptimeminutes) | int32 | Time needed to setup the equipment. `Required` `Default(0)` 
@@ -149,7 +149,7 @@ _Show in UI_: **ShownByDefault**
 
 ### RoutingOperationId
 
-**OBSOLETE! Do not use!**
+**OBSOLETE! Do not use!** Not used. `Obsolete` `Filter(multi eq)` `Obsoleted in version 22.1.6.61`
 
 _Type_: **guid __nullable__**  
 _Category_: **System**  

@@ -11,7 +11,7 @@ Each entry represents an entity attribute change with previous and new value. En
 
 | Name | Type | Description |
 | - | - | --- |
-|[Attribute_Name](#attribute_name)|`nvarchar(64)` ||
+|[Attribute_Name](#attribute_name)|`nvarchar(64)` |The name of the attribute.|
 |[Entity_Item_Id](#entity_item_id)|`uniqueidentifier` |The id of the actual changed object, described by this change.|
 |[New_Value](#new_value)|`nvarchar(max)` |The new value|
 |[Previous_Value](#previous_value)|`nvarchar(max)` |The previous value|
@@ -22,6 +22,9 @@ Each entry represents an entity attribute change with previous and new value. En
 ## Columns
 
 ### Attribute_Name
+
+
+The name of the attribute.
 
 | Property | Value |
 | - | - |
@@ -222,7 +225,7 @@ Date and time (in Utc) when the changeset was processed by the server.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime|

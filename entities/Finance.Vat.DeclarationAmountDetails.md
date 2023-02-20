@@ -25,20 +25,22 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Amount](Finance.Vat.DeclarationAmountDetails.md#amount) | decimal (15, 2) |  
+| [Amount](Finance.Vat.DeclarationAmountDetails.md#amount) | decimal (15, 2) | The amount of the operation according to the category. `Required` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Box](Finance.Vat.DeclarationAmountDetails.md#box) | [BoxTypes](Finance.Vat.BoxTypes.md) | The type of box in a VAT declaration. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from VAT_Box_Types_Table.Box_Type_Id` |
-| [Declaration](Finance.Vat.DeclarationAmountDetails.md#declaration) | [Declarations](Finance.Vat.Declarations.md) |  |
+| [Declaration](Finance.Vat.DeclarationAmountDetails.md#declaration) | [Declarations](Finance.Vat.Declarations.md) | The VAT declaration. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from VAT_Declarations_Table.Declaration_Id` |
 | [VATEntry](Finance.Vat.DeclarationAmountDetails.md#vatentry) | [Entries](Finance.Vat.Entries.md) | Unique identification number of this VAT entry. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from VAT_Entries_Table.Entry_Id` |
 
 
 ## Attribute Details
 
 ### Amount
+
+The amount of the operation according to the category. `Required`
 
 _Type_: **decimal (15, 2)**  
 _Category_: **System**  
@@ -61,6 +63,8 @@ _Default Value_: **NewGuid**
 _Show in UI_: **ShownByDefault**  
 
 ### Declaration
+
+The VAT declaration. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from VAT_Declarations_Table.Declaration_Id`
 
 _Type_: **[Declarations](Finance.Vat.Declarations.md)**  
 _Category_: **System**  

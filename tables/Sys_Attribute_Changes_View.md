@@ -5,7 +5,7 @@
 
 Entity: [Systems.Core.AttributeChanges](~/entities/Systems.Core.AttributeChanges.md)
 
-Attribute values of an object change. Entity: Sys_Attribute_Changes_View
+Attribute values of an object change. Entity: Sys_Attribute_Changes_View (Introduced in version 23.1.2.71)
 
 ## Owner Tables Hierarchy
 

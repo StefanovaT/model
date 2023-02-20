@@ -107,7 +107,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Finance.Vat.DeclarationAmountDetails.html#amount">Amount</a></td>
 <td>decimal (15, 2)</td>
-<td></td>
+<td>The amount of the operation according to the category. <code>Required</code></td>
 </tr>
 </tbody>
 </table>
@@ -129,7 +129,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Finance.Vat.DeclarationAmountDetails.html#declaration">Declaration</a></td>
 <td><a href="Finance.Vat.Declarations.html">Declarations</a></td>
-<td></td>
+<td>The VAT declaration. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from VAT_Declarations_Table.Declaration_Id</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Vat.DeclarationAmountDetails.html#vatentry">VATEntry</a></td>
@@ -140,6 +140,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="amount">Amount</h3>
+<p>The amount of the operation according to the category. <code>Required</code></p>
 <p><em>Type</em>: <strong>decimal (15, 2)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -155,6 +156,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="declaration">Declaration</h3>
+<p>The VAT declaration. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from VAT_Declarations_Table.Declaration_Id</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Vat.Declarations.html">Declarations</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>VAT_Declarations_Table.Declaration_Id</strong><br>

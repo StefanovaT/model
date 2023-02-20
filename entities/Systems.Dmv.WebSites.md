@@ -25,14 +25,16 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [RootUrl](Systems.Dmv.WebSites.md#rooturl) | string (256) |  
-| [Status](Systems.Dmv.WebSites.md#status) | string (10) |  
-| [Type](Systems.Dmv.WebSites.md#type) | string (64) |  
+| [RootUrl](Systems.Dmv.WebSites.md#rooturl) | string (256) | The root URL of the web site. `Required` `Filter(eq;like)` `ORD` 
+| [Status](Systems.Dmv.WebSites.md#status) | string (10) | The current status of the web site. `Required` `Filter(like)` `ORD` 
+| [Type](Systems.Dmv.WebSites.md#type) | string (64) | The site type. `Required` `Filter(eq;like)` `ORD` 
 
 
 ## Attribute Details
 
 ### RootUrl
+
+The root URL of the web site. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (256)**  
 _Category_: **System**  
@@ -43,6 +45,8 @@ _Show in UI_: **ShownByDefault**
 
 ### Status
 
+The current status of the web site. `Required` `Filter(like)` `ORD`
+
 _Type_: **string (10)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
@@ -51,6 +55,8 @@ _Maximum Length_: **10**
 _Show in UI_: **ShownByDefault**  
 
 ### Type
+
+The site type. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (64)**  
 _Category_: **System**  

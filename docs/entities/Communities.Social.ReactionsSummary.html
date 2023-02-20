@@ -107,7 +107,7 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Communities.Social.ReactionsSummary.html#cnt">Cnt</a></td>
 <td>int64</td>
-<td></td>
+<td>Count of social reactions. <code>Required</code></td>
 </tr>
 <tr>
 <td><a href="Communities.Social.ReactionsSummary.html#reactiontype">ReactionType</a></td>
@@ -129,17 +129,18 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Communities.Social.ReactionsSummary.html#dataobject">DataObject</a></td>
 <td><a href="Systems.Core.ExtensibleDataObjects.html">ExtensibleDataObjects</a></td>
-<td>. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Objects_Table.Object_Id</code></td>
+<td>The extensible data object. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Objects_Table.Object_Id</code></td>
 </tr>
 <tr>
 <td><a href="Communities.Social.ReactionsSummary.html#socialcomment">SocialComment</a></td>
 <td><a href="Communities.Social.Comments.html">Comments</a></td>
-<td></td>
+<td>The social comment. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Cmm_Social_Comments_Table.Social_Comment_Id</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="cnt">Cnt</h3>
+<p>Count of social reactions. <code>Required</code></p>
 <p><em>Type</em>: <strong>int64</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -190,15 +191,15 @@ Allowed values for the <code>ReactionType</code>(Communities.Social.ReactionsSum
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="dataobject">DataObject</h3>
-<p>. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Objects_Table.Object_Id</code></p>
+<p>The extensible data object. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Objects_Table.Object_Id</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.ExtensibleDataObjects.html">ExtensibleDataObjects</a></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Objects_Table.Object_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="socialcomment">SocialComment</h3>
+<p>The social comment. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Cmm_Social_Comments_Table.Social_Comment_Id</code></p>
 <p><em>Type</em>: <strong><a href="Communities.Social.Comments.html">Comments</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Cmm_Social_Comments_Table.Social_Comment_Id</strong><br>

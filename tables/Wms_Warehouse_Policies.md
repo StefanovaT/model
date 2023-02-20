@@ -18,7 +18,7 @@ Warehouse Policies is a hierarchical system for applying policies to warehouse o
 |[Code](#code)|`nvarchar(16)` |The unique code of the warehouse policy.|
 |[From_Date](#from_date)|`date` |When set, specifies the activation date of the policy.|
 |[Importance](#importance)|`int` |The importance of the policy, relative to other applicable policies. Higher numbers indicate higher importance.|
-|[Note](#note)|`nvarchar(max)` ||
+|[Note](#note)|`nvarchar(max)` |Notes|
 |[Policy_Kind](#policy_kind)|`nvarchar(3)` Allowed: `APC`, `ATC`, `ALC`, `AUC`, `RSS`, `RDS`, `ALS`, `ZTY`, `KCL`, `DCL`, `GCP`, `GNS`|The kind of policy, which is being applied.|
 |[Product_Group_Id](#product_group_id)|`uniqueidentifier` |When set, specifies that the policy will apply to the specified product group only.|
 |[Product_Id](#product_id)|`uniqueidentifier` |When set, specifies that the policy will apply to the specified product only.|
@@ -137,6 +137,9 @@ The importance of the policy, relative to other applicable policies. Higher numb
 |GreaterThanOrLessThan|None|no|no|
 
 ### Note
+
+
+Notes
 
 | Property | Value |
 | - | - |

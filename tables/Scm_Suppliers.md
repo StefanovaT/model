@@ -23,7 +23,7 @@ Contains supplier conditions (contracts). Entity: Scm_Suppliers
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
 |[From_Date](#from_date)|`datetime` |The date on which this party became a supplier or the date, when the supplier contract was signed.|
 |[Is_Active](#is_active)|`bit` |Indicates whether the current supplier is active.|
-|[Party_Id](#party_id)|`uniqueidentifier` ||
+|[Party_Id](#party_id)|`uniqueidentifier` |The party who is the supplier for the enterprise company.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Supplier_Id](#supplier_id)|`uniqueidentifier` `PK`||
 |[Supplier_Number](#supplier_number)|`nvarchar(16)` |The unique supplier number.|
@@ -445,6 +445,9 @@ Indicates whether the current supplier is active.
 |Equals|`NULL`|no|no|
 
 ### Party_Id
+
+
+The party who is the supplier for the enterprise company.
 
 | Property | Value |
 | - | - |

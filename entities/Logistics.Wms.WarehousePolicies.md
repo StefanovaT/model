@@ -36,7 +36,7 @@ Aggregate Root:
 | [FromDate](Logistics.Wms.WarehousePolicies.md#fromdate) | date __nullable__ | When set, specifies the activation date of the policy. `Filter(eq;ge;le)` 
 | [Id](Logistics.Wms.WarehousePolicies.md#id) | guid |  
 | [Importance](Logistics.Wms.WarehousePolicies.md#importance) | int32 | The importance of the policy, relative to other applicable policies. Higher numbers indicate higher importance. `Required` `Default(0)` `Filter(eq;ge;le)` 
-| [Note](Logistics.Wms.WarehousePolicies.md#note) | string (max) __nullable__ |  
+| [Note](Logistics.Wms.WarehousePolicies.md#note) | string (max) __nullable__ | Notes. 
 | [ObjectVersion](Logistics.Wms.WarehousePolicies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PolicyKind](Logistics.Wms.WarehousePolicies.md#policykind) | [PolicyKind](Logistics.Wms.WarehousePolicies.md#policykind) | The kind of policy, which is being applied. `Required` `Filter(multi eq)` 
 | [ToDate](Logistics.Wms.WarehousePolicies.md#todate) | date __nullable__ | When set, specifies the de-activation date of the policy. `Filter(eq;ge;le)` 
@@ -110,6 +110,8 @@ _Default Value_: **0**
 _Show in UI_: **ShownByDefault**  
 
 ### Note
+
+Notes.
 
 _Type_: **string (max) __nullable__**  
 _Category_: **System**  

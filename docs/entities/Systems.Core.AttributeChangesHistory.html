@@ -107,17 +107,17 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.AttributeChangesHistory.html#attributename">AttributeName</a></td>
 <td>string (64)</td>
-<td></td>
+<td>The name of the attribute. <code>Required</code> <code>Filter(eq)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.Attribute_Name</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.AttributeChangesHistory.html#entityitemid">EntityItemId</a></td>
 <td>guid</td>
-<td>The id of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changes_Table.Entity_Item_Id</code></td>
+<td>The id of the actual changed object, described by this change. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changes_Table.Entity_Item_Id</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.AttributeChangesHistory.html#newvalue">NewValue</a></td>
 <td>string (max) <strong>nullable</strong></td>
-<td></td>
+<td>The new value. <code>Filter(eq;like)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.New_Value</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.AttributeChangesHistory.html#previousvalue">PreviousValue</a></td>
@@ -155,6 +155,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="attributename">AttributeName</h3>
+<p>The name of the attribute. <code>Required</code> <code>Filter(eq)</code> <code>Inherited from Sys_Attribute_Changes_Table.Attribute_Name</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.Attribute_Name</strong><br>
@@ -163,13 +164,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="entityitemid">EntityItemId</h3>
-<p>The id of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changes_Table.Entity_Item_Id</code></p>
+<p>The id of the actual changed object, described by this change. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changes_Table.Entity_Item_Id</code></p>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Object_Changes_Table.Entity_Item_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="newvalue">NewValue</h3>
+<p>The new value. <code>Filter(eq;like)</code> <code>Inherited from Sys_Attribute_Changes_Table.New_Value</code></p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.New_Value</strong><br>

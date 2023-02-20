@@ -5,6 +5,8 @@ uid: Projects.Todo.Tasks
 
 **Namespace:** [Projects.Todo](Projects.Todo.md)  
 
+Represents a task, such as a piece of work or personal item, that can be tracked and completed. Entity: Gen_Todo_Tasks (Introduced in version 23.1.1.39)
+
 ## Default Visualization
 Default Display Text Format:  
 _{Title}_  

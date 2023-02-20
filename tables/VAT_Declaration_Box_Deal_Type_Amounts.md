@@ -11,14 +11,17 @@ Base data for calculation of Vat Box amounts. Entity: VAT_Declaration_Box_Deal_T
 
 | Name | Type | Description |
 | - | - | --- |
-|[Amount](#amount)|`decimal(15, 2)` ||
+|[Amount](#amount)|`decimal(15, 2)` |The amount of the operation according to the category.|
 |[Box_Id](#box_id)|`uniqueidentifier` |The type of box in a VAT declaration.|
-|[Declaration_Id](#declaration_id)|`uniqueidentifier` ||
+|[Declaration_Id](#declaration_id)|`uniqueidentifier` |The VAT declaration|
 |[VAT_Entry_Id](#vat_entry_id)|`uniqueidentifier` |Unique identification number of this VAT entry.|
 
 ## Columns
 
 ### Amount
+
+
+The amount of the operation according to the category.
 
 | Property | Value |
 | - | - |
@@ -83,6 +86,9 @@ The type of box in a VAT declaration.
 |Equals|`NULL`|no|no|
 
 ### Declaration_Id
+
+
+The VAT declaration
 
 | Property | Value |
 | - | - |

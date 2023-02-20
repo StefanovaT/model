@@ -11,20 +11,23 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 
 | Name | Type | Description |
 | - | - | --- |
-|[Completed](#completed)|`bit` ||
-|[ElapsedMin](#elapsedmin)|`nvarchar(64)` ||
-|[ElapsedPercent](#elapsedpercent)|`float` ||
-|[EndTime](#endtime)|`nvarchar(64)` ||
+|[Completed](#completed)|`bit` |True if the procedure is completed.|
+|[ElapsedMin](#elapsedmin)|`nvarchar(64)` |The elapsed minutes of the procedure at the time of the request.|
+|[ElapsedPercent](#elapsedpercent)|`float` |The elapsed percent of the procedure at the time of the request.|
+|[EndTime](#endtime)|`nvarchar(64)` |The end time of the procedure.|
 |[Error](#error)|`nvarchar(128)` |If not null, this is the text of the exception that occured during the procedure execution.|
-|[Id](#id)|`uniqueidentifier` ||
-|[Procedure](#procedure)|`nvarchar(128)` ||
+|[Id](#id)|`uniqueidentifier` |The ID of the long-running procedure.|
+|[Procedure](#procedure)|`nvarchar(128)` |The name of the procedure.|
 |[Properties](#properties)|`nvarchar(128)` |List of procedure status properties.|
-|[StartTime](#starttime)|`nvarchar(64)` ||
-|[User](#user)|`nvarchar(128)` ||
+|[StartTime](#starttime)|`nvarchar(64)` |The start time of the procedure.|
+|[User](#user)|`nvarchar(128)` |The user started the procedure.|
 
 ## Columns
 
 ### Completed
+
+
+True if the procedure is completed.
 
 | Property | Value |
 | - | - |
@@ -42,7 +45,7 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|bit|
@@ -59,6 +62,9 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 
 ### ElapsedMin
 
+
+The elapsed minutes of the procedure at the time of the request.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -75,7 +81,7 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -91,6 +97,9 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 |GreaterThanOrLessThan|None|no|no|
 
 ### ElapsedPercent
+
+
+The elapsed percent of the procedure at the time of the request.
 
 | Property | Value |
 | - | - |
@@ -108,7 +117,7 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|float|
@@ -124,6 +133,9 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 |GreaterThanOrLessThan|None|no|no|
 
 ### EndTime
+
+
+The end time of the procedure.
 
 | Property | Value |
 | - | - |
@@ -141,7 +153,7 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -177,7 +189,7 @@ If not null, this is the text of the exception that occured during the procedure
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(128)|
@@ -187,6 +199,9 @@ If not null, this is the text of the exception that occured during the procedure
 |Visible|yes|
 
 ### Id
+
+
+The ID of the long-running procedure.
 
 | Property | Value |
 | - | - |
@@ -222,6 +237,9 @@ If not null, this is the text of the exception that occured during the procedure
 
 ### Procedure
 
+
+The name of the procedure.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -238,7 +256,7 @@ If not null, this is the text of the exception that occured during the procedure
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(128)|
@@ -275,7 +293,7 @@ List of procedure status properties.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(128)|
@@ -285,6 +303,9 @@ List of procedure status properties.
 |Visible|yes|
 
 ### StartTime
+
+
+The start time of the procedure.
 
 | Property | Value |
 | - | - |
@@ -302,7 +323,7 @@ List of procedure status properties.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -318,6 +339,9 @@ List of procedure status properties.
 |GreaterThanOrLessThan|None|no|no|
 
 ### User
+
+
+The user started the procedure.
 
 | Property | Value |
 | - | - |
@@ -335,7 +359,7 @@ List of procedure status properties.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(128)|

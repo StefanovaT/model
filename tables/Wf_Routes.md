@@ -39,7 +39,7 @@ Contains document routes, which specify which document generation procedures wil
 |[Read_Only](#read_only)|`bit` |Indicates wheather the destination document shoul be read only. 1 - the destination document is read only|
 |[Route_Id](#route_id)|`uniqueidentifier` `PK`||
 |[Row_Version](#row_version)|`timestamp` ||
-|[Schema_XML](#schema_xml)|`nvarchar(max)` ||
+|[Schema_XML](#schema_xml)|`nvarchar(max)` |Not used.|
 
 ## Columns
 
@@ -842,6 +842,9 @@ Indicates wheather the destination document shoul be read only. 1 - the destinat
 |Visible|no|
 
 ### Schema_XML
+
+
+Not used.
 
 | Property | Value |
 | - | - |

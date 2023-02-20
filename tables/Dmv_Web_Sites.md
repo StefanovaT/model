@@ -11,13 +11,16 @@ Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 
 
 | Name | Type | Description |
 | - | - | --- |
-|[Root_Url](#root_url)|`nvarchar(256)` ||
-|[Status](#status)|`nvarchar(10)` ||
-|[Type](#type)|`nvarchar(64)` ||
+|[Root_Url](#root_url)|`nvarchar(256)` |The root URL of the web site.|
+|[Status](#status)|`nvarchar(10)` |The current status of the web site.|
+|[Type](#type)|`nvarchar(64)` |The site type.|
 
 ## Columns
 
 ### Root_Url
+
+
+The root URL of the web site.
 
 | Property | Value |
 | - | - |
@@ -35,7 +38,7 @@ Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(256)|
@@ -53,6 +56,9 @@ Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 
 
 ### Status
 
+
+The current status of the web site.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -69,7 +75,7 @@ Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(10)|
@@ -85,6 +91,9 @@ Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 
 |Like|None|no|no|
 
 ### Type
+
+
+The site type.
 
 | Property | Value |
 | - | - |
@@ -102,7 +111,7 @@ Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|

@@ -12,7 +12,7 @@ Production workgroups. Entity: Prd_Workgroups
 | Name | Type | Description |
 | - | - | --- |
 |[Active](#active)|`bit` |Indicates whether the current workgroup is active.|
-|[Cost_Currency](#cost_currency)|`nvarchar(3)` ||
+|[Cost_Currency](#cost_currency)|`nvarchar(3)` |Not used.|
 |[Full_Path](#full_path)|`nvarchar(254)` |The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'.|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique workgroup auto-generated Id|
 |[Notes](#notes)|`nvarchar(254)` |User notes for the workgroup|
@@ -59,6 +59,9 @@ Indicates whether the current workgroup is active.
 |Equals|`True`|no|no|
 
 ### Cost_Currency
+
+
+Not used.
 
 | Property | Value |
 | - | - |

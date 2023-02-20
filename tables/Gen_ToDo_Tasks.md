@@ -5,6 +5,7 @@
 
 Entity: [Projects.Todo.Tasks](~/entities/Projects.Todo.Tasks.md)
 
+Represents a task, such as a piece of work or personal item, that can be tracked and completed. Entity: Gen_Todo_Tasks (Introduced in version 23.1.1.39)
 
 ## Summary
 

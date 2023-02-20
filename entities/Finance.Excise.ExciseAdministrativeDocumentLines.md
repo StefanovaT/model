@@ -30,7 +30,7 @@ Aggregate Root:
 | [DisplayText](Finance.Excise.ExciseAdministrativeDocumentLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExciseAlcoholicStrength](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisealcoholicstrength) | decimal (5, 2) __nullable__ | The alcoholic strength, which will be used for Excise reporting purposes. null  if the product is not subject to alcoholic Excise reporting. `Introduced in version 21.1.3.97` 
 | [ExciseAmount](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamount) | [Amount (14, 2)](../data-types.md#amount) | The excise amount . `Currency: Document.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94` 
-| [ExciseAmountBase](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamountbase) | decimal (14, 2) | The excise amount in base currency. `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94` 
+| [ExciseAmountBase](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseamountbase) | decimal (14, 2) | The excise amount in base currency. `Unit: ExciseAdministrative<br />Document.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94` 
 | [ExciseDutyRateValue](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisedutyratevalue) | decimal (10, 6) __nullable__ | The rate which should be applied for the specified product and purpose. null means not assigned yet. `Introduced in version 21.1.3.97` 
 | [ExciseQuantity](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisequantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity, converted, for reporting purposes, in the measurement unit of the excise product type. `Unit: ExciseQuantityUnit` `Required` `Introduced in version 22.1.6.58` 
 | [Id](Finance.Excise.ExciseAdministrativeDocumentLines.md#id) | guid |  
@@ -97,7 +97,7 @@ _Front-End Recalc Expressions:_
 `new Amount( ( obj.ExciseAmountBase * ( obj.ExciseDutyRateValue ?? 0)), obj.Document.EnterpriseCompany.BaseCurrency)`
 ### ExciseAmountBase
 
-The excise amount in base currency. `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94`
+The excise amount in base currency. `Unit: ExciseAdministrativeDocument.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` `Filter(eq;ge;le)` `Introduced in version 21.1.3.94`
 
 _Type_: **decimal (14, 2)**  
 _Category_: **System**  
@@ -107,7 +107,7 @@ _Default Value_: **0**
 _Show in UI_: **HiddenByDefault**  
 
 _Front-End Recalc Expressions:_  
-`IIF( ( obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength) == null), Convert( obj.ExciseAmountBase, Nullable`1), obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength))`
+`obj.CalculateExciseAmountBase( obj.ExciseProduct, obj.ExciseQuantity, obj.ExciseAlcoholicStrength).IfNullThen( obj.ExciseAmountBase)`
 ### ExciseDutyRateValue
 
 The rate which should be applied for the specified product and purpose. null means not assigned yet. `Introduced in version 21.1.3.97`

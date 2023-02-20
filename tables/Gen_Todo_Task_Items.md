@@ -5,6 +5,7 @@
 
 Entity: [Projects.Todo.TaskItems](~/entities/Projects.Todo.TaskItems.md)
 
+A sub-item of a "to do" task. Entity: Gen_Todo_Task_Items (Introduced in version 23.1.1.39)
 
 ## Owner Tables Hierarchy
 
@@ -16,7 +17,7 @@ Entity: [Projects.Todo.TaskItems](~/entities/Projects.Todo.TaskItems.md)
 | - | - | --- |
 |[Completed_Date_Time_Utc](#completed_date_time_utc)|`datetime` Readonly|Indicates (in UTC) when the task item was completed.|
 |[Created_Date_Time_Utc](#created_date_time_utc)|`datetime` Readonly|Indicates (in UTC) when the task item was created.|
-|[Is_Completed](#is_completed)|`bit` ||
+|[Is_Completed](#is_completed)|`bit` |Indicates whether the task item is completed.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
 |[Task_Id](#task_id)|`uniqueidentifier` |The task to which this item is part of.|
@@ -100,6 +101,9 @@ Indicates (in UTC) when the task item was created.
 |GreaterThanOrLessThan|None|yes|no|
 
 ### Is_Completed
+
+
+Indicates whether the task item is completed.
 
 | Property | Value |
 | - | - |

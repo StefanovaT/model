@@ -112,7 +112,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Wms.WarehouseTransactions.html#creationtimeutc">CreationTimeUtc</a></td>
 <td>datetime</td>
-<td></td>
+<td>The creation time in UTC. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Wms.WarehouseTransactions.html#direction">Direction</a></td>
@@ -174,7 +174,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Wms.WarehouseTransactions.html#creationuser">CreationUser</a></td>
 <td><a href="Systems.Security.Users.html">Users</a></td>
-<td></td>
+<td>The creation user. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Wms.WarehouseTransactions.html#logisticunit">LogisticUnit</a></td>
@@ -237,6 +237,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
+<p>The creation time in UTC. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
@@ -401,6 +402,7 @@ Allowed values for the <code>TaskType</code>(Logistics.Wms.WarehouseOrderLines.m
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationuser">CreationUser</h3>
+<p>The creation user. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

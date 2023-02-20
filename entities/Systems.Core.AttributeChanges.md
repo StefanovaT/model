@@ -5,7 +5,7 @@ uid: Systems.Core.AttributeChanges
 
 **Namespace:** [Systems.Core](Systems.Core.md)  
 
-Attribute values of an object change. Entity: Sys_Attribute_Changes_View
+Attribute values of an object change. Entity: Sys_Attribute_Changes_View (Introduced in version 23.1.2.71)
 
 ## Default Visualization
 Default Display Text Format:  
@@ -27,19 +27,21 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AttributeName](Systems.Core.AttributeChanges.md#attributename) | string (64) |  
-| [NewValue](Systems.Core.AttributeChanges.md#newvalue) | string (max) __nullable__ |  
+| [AttributeName](Systems.Core.AttributeChanges.md#attributename) | string (64) | The attribute name. `Required` `Filter(eq)` `Inherited from Sys_Attribute_<br />Changes_Table.Attribute_Name` 
+| [NewValue](Systems.Core.AttributeChanges.md#newvalue) | string (max) __nullable__ | The new value. `Filter(eq;like)` `Inherited from Sys_Attribute_<br />Changes_Table.New_Value` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ObjectChange](Systems.Core.AttributeChanges.md#objectchange) | [ObjectChanges](Systems.Core.ObjectChanges.md) | The <see cref="ObjectChange"/> to which this AttributeChange belongs. `Required` `Filter(multi eq)` `Inherited from Sys_Attribute_<br />Changes_Table.Object_Change_Id` `Owner` |
+| [ObjectChange](Systems.Core.AttributeChanges.md#objectchange) | [ObjectChanges](Systems.Core.ObjectChanges.md) | The object change. `Required` `Filter(multi eq)` `Inherited from Sys_Attribute_<br />Changes_Table.Object_Change_Id` `Owner` |
 
 
 ## Attribute Details
 
 ### AttributeName
+
+The attribute name. `Required` `Filter(eq)` `Inherited from Sys_Attribute_Changes_Table.Attribute_Name`
 
 _Type_: **string (64)**  
 _Category_: **System**  
@@ -50,6 +52,8 @@ _Maximum Length_: **64**
 _Show in UI_: **ShownByDefault**  
 
 ### NewValue
+
+The new value. `Filter(eq;like)` `Inherited from Sys_Attribute_Changes_Table.New_Value`
 
 _Type_: **string (max) __nullable__**  
 _Category_: **System**  
@@ -64,7 +68,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ObjectChange
 
-The <see cref="ObjectChange"/> to which this AttributeChange belongs. `Required` `Filter(multi eq)` `Inherited from Sys_Attribute_Changes_Table.Object_Change_Id` `Owner`
+The object change. `Required` `Filter(multi eq)` `Inherited from Sys_Attribute_Changes_Table.Object_Change_Id` `Owner`
 
 _Type_: **[ObjectChanges](Systems.Core.ObjectChanges.md)**  
 _Category_: **System**  

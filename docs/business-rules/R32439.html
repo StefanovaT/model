@@ -115,9 +115,8 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Convert(IIF((CalculateExciseAmountBase(ExciseProduct, ExciseQuantity,
-ExciseAlcoholicStrength) == null), Convert(ExciseAmountBase, Nullable`1),
-CalculateExciseAmountBase(ExciseProduct, ExciseQuantity, ExciseAlcoholicStrength)), Object)</td>
+<td>Convert(CalculateExciseAmountBase(ExciseProduct, ExciseQuantity, ExciseAlcoholicStrength).
+IfNullThen(ExciseAmountBase), Object)</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>

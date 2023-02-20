@@ -15,7 +15,7 @@ Headers of material consuption orders of the work orders. Entity: Prd_Consumptio
 
 | Name | Type | Description |
 | - | - | --- |
-|[Document_Currency_Id](#document_currency_id)|`uniqueidentifier` ||
+|[Document_Currency_Id](#document_currency_id)|`uniqueidentifier` |Not used.|
 |[Document_Id](#document_id)|`uniqueidentifier` ||
 |[Id](#id)|`uniqueidentifier` `PK`||
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
@@ -28,6 +28,9 @@ Headers of material consuption orders of the work orders. Entity: Prd_Consumptio
 ## Columns
 
 ### Document_Currency_Id
+
+
+Not used.
 
 | Property | Value |
 | - | - |

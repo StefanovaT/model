@@ -25,20 +25,22 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Cnt](Communities.Social.ReactionsSummary.md#cnt) | int64 |  
+| [Cnt](Communities.Social.ReactionsSummary.md#cnt) | int64 | Count of social reactions. `Required` 
 | [ReactionType](Communities.Social.ReactionsSummary.md#reactiontype) | [ReactionType](Communities.Social.ReactionsSummary.md#reactiontype) | The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. `Required` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Social.ReactionsSummary.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | . `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` |
-| [SocialComment](Communities.Social.ReactionsSummary.md#socialcomment) | [Comments](Communities.Social.Comments.md) |  |
+| [DataObject](Communities.Social.ReactionsSummary.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The extensible data object. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` |
+| [SocialComment](Communities.Social.ReactionsSummary.md#socialcomment) | [Comments](Communities.Social.Comments.md) | The social comment. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Cmm_Social_Comments_Table.Social_Comment_Id` |
 
 
 ## Attribute Details
 
 ### Cnt
+
+Count of social reactions. `Required`
 
 _Type_: **int64**  
 _Category_: **System**  
@@ -73,10 +75,9 @@ _Show in UI_: **ShownByDefault**
 
 ### DataObject
 
-. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id`
+The extensible data object. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
-_Indexed_: **True**  
 _Category_: **System**  
 _Inherited From_: **Sys_Objects_Table.Object_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -84,6 +85,8 @@ _Default Value_: **NewGuid**
 _Show in UI_: **ShownByDefault**  
 
 ### SocialComment
+
+The social comment. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Cmm_Social_Comments_Table.Social_Comment_Id`
 
 _Type_: **[Comments](Communities.Social.Comments.md)**  
 _Category_: **System**  

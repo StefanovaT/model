@@ -80,6 +80,7 @@
 <h1 id="projectstodotaskitems-entity">Projects.Todo.TaskItems Entity</h1>
 
 <p><strong>Namespace:</strong> <a href="Projects.Todo.html">Projects.Todo</a></p>
+<p>A sub-item of a &quot;to do&quot; task. Entity: Gen_Todo_Task_Items (Introduced in version 23.1.1.39)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
 <em>{Task}</em><br>
@@ -128,7 +129,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Todo.TaskItems.html#iscompleted">IsCompleted</a></td>
 <td>boolean</td>
-<td></td>
+<td>Indicates whether the task item is completed. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Todo.TaskItems.html#notes">Notes</a></td>
@@ -194,6 +195,7 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="iscompleted">IsCompleted</h3>
+<p>Indicates whether the task item is completed. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>

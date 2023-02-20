@@ -11,20 +11,23 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 | Name | Type | Description |
 | - | - | --- |
-|[Absolute_Expiration_Time](#absolute_expiration_time)|`datetime` ||
-|[Applications](#applications)|`nvarchar(64)` ||
-|[Current_Requests_Count](#current_requests_count)|`int` ||
-|[Device](#device)|`nvarchar(64)` ||
-|[Download_MB](#download_mb)|`decimal(12, 3)` ||
-|[Last_Request_Time](#last_request_time)|`datetime` ||
-|[Start_Time](#start_time)|`datetime` ||
-|[Total_Requests_Count](#total_requests_count)|`bigint` ||
-|[Upload_MB](#upload_mb)|`decimal(12, 3)` ||
-|[User](#user)|`nvarchar(64)` ||
+|[Absolute_Expiration_Time](#absolute_expiration_time)|`datetime` |Absolute expiration time of the session. Not empty if the session is created by a service appllication.|
+|[Applications](#applications)|`nvarchar(64)` |A comma separated list of client applications that share this session.|
+|[Current_Requests_Count](#current_requests_count)|`int` |The requests count in the time of the request.|
+|[Device](#device)|`nvarchar(64)` |The name of the user's device.|
+|[Download_MB](#download_mb)|`decimal(12, 3)` |The downloaded megabytes at the time of the request.|
+|[Last_Request_Time](#last_request_time)|`datetime` |The last request time.|
+|[Start_Time](#start_time)|`datetime` |The login time of the session.|
+|[Total_Requests_Count](#total_requests_count)|`bigint` |The total request count at the time of the request.|
+|[Upload_MB](#upload_mb)|`decimal(12, 3)` |The uploaded megabytes at the time of the request.|
+|[User](#user)|`nvarchar(64)` |The login name of the session's user.|
 
 ## Columns
 
 ### Absolute_Expiration_Time
+
+
+Absolute expiration time of the session. Not empty if the session is created by a service appllication.
 
 | Property | Value |
 | - | - |
@@ -42,7 +45,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime|
@@ -58,6 +61,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |GreaterThanOrLessThan|None|no|no|
 
 ### Applications
+
+
+A comma separated list of client applications that share this session.
 
 | Property | Value |
 | - | - |
@@ -75,7 +81,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -93,6 +99,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ### Current_Requests_Count
 
+
+The requests count in the time of the request.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -109,7 +118,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|int|
@@ -125,6 +134,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |GreaterThanOrLessThan|None|no|no|
 
 ### Device
+
+
+The name of the user's device.
 
 | Property | Value |
 | - | - |
@@ -142,7 +154,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -160,6 +172,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ### Download_MB
 
+
+The downloaded megabytes at the time of the request.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -176,7 +191,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|decimal(12, 3)|
@@ -193,6 +208,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ### Last_Request_Time
 
+
+The last request time.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -209,7 +227,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime|
@@ -226,6 +244,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ### Start_Time
 
+
+The login time of the session.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -242,7 +263,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime|
@@ -259,6 +280,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ### Total_Requests_Count
 
+
+The total request count at the time of the request.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -275,7 +299,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|bigint|
@@ -292,6 +316,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ### Upload_MB
 
+
+The uploaded megabytes at the time of the request.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -308,7 +335,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|decimal(12, 3)|
@@ -324,6 +351,9 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |GreaterThanOrLessThan|None|no|no|
 
 ### User
+
+
+The login name of the session's user.
 
 | Property | Value |
 | - | - |
@@ -341,7 +371,7 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|

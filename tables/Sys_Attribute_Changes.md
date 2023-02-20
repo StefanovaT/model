@@ -10,13 +10,16 @@
 
 | Name | Type | Description |
 | - | - | --- |
-|[Attribute_Name](#attribute_name)|`nvarchar(64)` `PK`||
-|[New_Value](#new_value)|`nvarchar(max)` ||
-|[Object_Change_Id](#object_change_id)|`uniqueidentifier` `PK`||
+|[Attribute_Name](#attribute_name)|`nvarchar(64)` `PK`|The attribute name.|
+|[New_Value](#new_value)|`nvarchar(max)` |The new value.|
+|[Object_Change_Id](#object_change_id)|`uniqueidentifier` `PK`|The object change|
 
 ## Columns
 
 ### Attribute_Name
+
+
+The attribute name.
 
 | Property | Value |
 | - | - |
@@ -51,6 +54,9 @@
 
 ### New_Value
 
+
+The new value.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -84,6 +90,9 @@
 |Like|None|no|no|
 
 ### Object_Change_Id
+
+
+The object change
 
 | Property | Value |
 | - | - |

@@ -80,7 +80,7 @@
 <h1 id="systemscoreattributechanges-view">Systems.Core.AttributeChanges View</h1>
 
 <p><strong>Namespace:</strong> <a href="Systems.Core.html">Systems.Core</a></p>
-<p>Attribute values of an object change. Entity: Sys_Attribute_Changes_View</p>
+<p>Attribute values of an object change. Entity: Sys_Attribute_Changes_View (Introduced in version 23.1.2.71)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
 <em>{ObjectChangeId}: {AttributeName}</em><br>
@@ -107,12 +107,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Core.AttributeChanges.html#attributename">AttributeName</a></td>
 <td>string (64)</td>
-<td></td>
+<td>The attribute name. <code>Required</code> <code>Filter(eq)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.Attribute_Name</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.AttributeChanges.html#newvalue">NewValue</a></td>
 <td>string (max) <strong>nullable</strong></td>
-<td></td>
+<td>The new value. <code>Filter(eq;like)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.New_Value</code></td>
 </tr>
 </tbody>
 </table>
@@ -129,12 +129,13 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Core.AttributeChanges.html#objectchange">ObjectChange</a></td>
 <td><a href="Systems.Core.ObjectChanges.html">ObjectChanges</a></td>
-<td>The <see cref="ObjectChange"></see> to which this AttributeChange belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.Object_Change_Id</code> <code>Owner</code></td>
+<td>The object change. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.Object_Change_Id</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="attributename">AttributeName</h3>
+<p>The attribute name. <code>Required</code> <code>Filter(eq)</code> <code>Inherited from Sys_Attribute_Changes_Table.Attribute_Name</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.Attribute_Name</strong><br>
@@ -143,6 +144,7 @@ Aggregate Root:<br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="newvalue">NewValue</h3>
+<p>The new value. <code>Filter(eq;like)</code> <code>Inherited from Sys_Attribute_Changes_Table.New_Value</code></p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.New_Value</strong><br>
@@ -152,7 +154,7 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="objectchange">ObjectChange</h3>
-<p>The <see cref="ObjectChange"></see> to which this AttributeChange belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Attribute_Changes_Table.Object_Change_Id</code> <code>Owner</code></p>
+<p>The object change. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Attribute_Changes_Table.Object_Change_Id</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.ObjectChanges.html">ObjectChanges</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.Object_Change_Id</strong><br>
