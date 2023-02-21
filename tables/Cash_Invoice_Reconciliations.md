@@ -1,6 +1,16 @@
 # Table Cash_Invoice_Reconciliations
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
+## Entity
+
+Entity: [Finance.Payments.InvoiceReconciliations](~/entities/Finance.Payments.InvoiceReconciliations.md)
+
+Obsolete. Not used. Entity: Cash_Invoice_Reconciliations (Obsoleted in version 20.1.0.0)
+
 ## Owner Tables Hierarchy
 
 * [Gen_Documents](Gen_Documents.md)

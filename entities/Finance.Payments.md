@@ -6,6 +6,8 @@ uid: Finance.Payments
 ## Entities
 - [BulkPaymentOrderLines](Finance.Payments.BulkPaymentOrderLines.md)  
 - [BulkPaymentOrders](Finance.Payments.BulkPaymentOrders.md)  
+- [InvoiceReconciliationLines](Finance.Payments.InvoiceReconciliationLines.md)  
+- [InvoiceReconciliations](Finance.Payments.InvoiceReconciliations.md)  
 - [OrderBalances](Finance.Payments.OrderBalances.md)  
 - [PaymentAccounts](Finance.Payments.PaymentAccounts.md)  
 - [PaymentOrders](Finance.Payments.PaymentOrders.md)  

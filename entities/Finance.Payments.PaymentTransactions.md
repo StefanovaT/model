@@ -660,6 +660,7 @@ _Show in UI_: **HiddenByDefault**
 The Payment Slip Amount, which the current payment transaction fulfills . null when the current document does not execute any Payment Slip Amount. `Filter(multi eq)` `Introduced in version 19.1`
 
 _Type_: **[PaymentSlipAmounts](Finance.Payments.PaymentSlipAmounts.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

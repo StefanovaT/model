@@ -15,7 +15,7 @@ Default Search Members:
 _DocumentNo_  
 Code Data Member:  
 _DocumentNo_  
-Category:  _Definitions_  
+Category:  _Documents_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate

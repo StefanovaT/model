@@ -515,6 +515,10 @@
       href: Finance.Payments.BulkPaymentOrderLines.md
     - name: BulkPaymentOrders
       href: Finance.Payments.BulkPaymentOrders.md
+    - name: InvoiceReconciliationLines
+      href: Finance.Payments.InvoiceReconciliationLines.md
+    - name: InvoiceReconciliations
+      href: Finance.Payments.InvoiceReconciliations.md
     - name: OrderBalances
       href: Finance.Payments.OrderBalances.md
     - name: PaymentAccounts

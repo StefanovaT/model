@@ -784,6 +784,12 @@ references:
 - uid: Finance.Payments.BulkPaymentOrders
   name: Finance.Payments.BulkPaymentOrders Entity
   href: entities/Finance.Payments.BulkPaymentOrders.html
+- uid: Finance.Payments.InvoiceReconciliationLines
+  name: Finance.Payments.InvoiceReconciliationLines Entity
+  href: entities/Finance.Payments.InvoiceReconciliationLines.html
+- uid: Finance.Payments.InvoiceReconciliations
+  name: Finance.Payments.InvoiceReconciliations Entity
+  href: entities/Finance.Payments.InvoiceReconciliations.html
 - uid: Finance.Payments.OrderBalances
   name: Finance.Payments.OrderBalances View
   href: entities/Finance.Payments.OrderBalances.html
