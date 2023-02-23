@@ -25,12 +25,23 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [IsSystemSite](Systems.Dmv.WebSites.md#issystemsite) | boolean | Indicates whether this website is a system website. `Required` `Introduced in version 24.1.0.3` 
 | [RootUrl](Systems.Dmv.WebSites.md#rooturl) | string (256) | The root URL of the web site. `Required` `Filter(eq;like)` `ORD` 
 | [Status](Systems.Dmv.WebSites.md#status) | string (10) | The current status of the web site. `Required` `Filter(like)` `ORD` 
 | [Type](Systems.Dmv.WebSites.md#type) | string (64) | The site type. `Required` `Filter(eq;like)` `ORD` 
 
 
 ## Attribute Details
+
+### IsSystemSite
+
+Indicates whether this website is a system website. `Required` `Introduced in version 24.1.0.3`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### RootUrl
 

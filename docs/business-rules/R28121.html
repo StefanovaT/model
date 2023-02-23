@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R28121 Invoice - Parent Sales Order Line | ERP.net Domain Model </title>
+    <title>R28121 Invoice - Parent Sales Order Line Quantiy Unit | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R28121 Invoice - Parent Sales Order Line | ERP.net Domain Model ">
+    <meta name="title" content="R28121 Invoice - Parent Sales Order Line Quantiy Unit | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,7 +70,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r28121-invoice---parent-sales-order-line">R28121 Invoice - Parent Sales Order Line</h1>
+<h1 id="r28121-invoice---parent-sales-order-line-quantiy-unit">R28121 Invoice - Parent Sales Order Line Quantiy Unit</h1>
 
 <table>
 <col style="width:16.24%">
@@ -86,7 +86,7 @@
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>ParentSalesOrderLine</td>
+<td>ParentSalesOrderLineQuantiyUnit</td>
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
@@ -108,7 +108,7 @@
 <td><strong>Action</strong></td>
 <td>For every line:
 <br><br>
-If ( Config.CheckInvoiceLinesQuantityUnitDisabled.KeyValue == NULL OR != 1
+If ( Config.CheckInvoiceLinesQuantityUnitDisabled is NOT specified or its KeyValue != 1
 <br><br>
 AND
 <br><br>
@@ -123,7 +123,7 @@ InvoiceLine.Product == ParentSalesOrderLine.Product)
 <tr>
 <td><strong>Description</strong></td>
 <td><p>The current rule validates that the Quantity Unit set in the current Invoice Line equals
-the Quantity Unit set in the Parent Sales Order Line.  If the units differ then standard Unit
+the Quantity Unit set in the Parent Sales Order Line.  If the units differ then the Standard Unit
 Price in the Sales Order will be incorrect according to the Invoice.
 <br><br>
 The validation is performed on First Releasing of the document, for each of its lines, but only
@@ -136,7 +136,7 @@ see <a class="xref" href="https://erpnetdocs.github.io/tech/reference/config-op
 Reference</a></li>
 <li>the field &quot;Parent Sales Order Line&quot; is not empty</li>
 <li>the Product in the current invoice line equals the Product from the particular Parent Sales
-Order Line - </li>
+Order Line   </li>
 </ul>
 </td>
 </tr>
@@ -145,8 +145,8 @@ Order Line - </li>
 <td>The quantity measurement unit in line number '{LineNo}' in document '{DocumentText}' is
 invalid.
 <br><br>
-The measurement unit in the invoice can't be different from the unit specified in the sales
-order.</td>
+The measurement unit in the invoice line can not be different from the unit specified in the
+parent sales order line.</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
@@ -154,7 +154,7 @@ order.</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 </tbody>
 </table>
