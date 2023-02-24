@@ -29,6 +29,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [DisplayText](Finance.Accounting.ProfitCenters.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Accounting.ProfitCenters.md#id) | guid |  
+| [IsActive](Finance.Accounting.ProfitCenters.md#isactive) | boolean | Indicates whether the current Profit Center is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.0.4` 
 | [Name](Finance.Accounting.ProfitCenters.md#name) | string (254) | The name of this ProfitCenter. `Required` `Filter(like)` 
 | [Notes](Finance.Accounting.ProfitCenters.md#notes) | string (254) __nullable__ | Notes for this ProfitCenter. 
 | [ObjectVersion](Finance.Accounting.ProfitCenters.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -61,6 +62,18 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the current Profit Center is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.0.4`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
