@@ -219,7 +219,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.ProductPrices.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The product for which a price will be defined. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The product for which a price will be defined. <code>Required</code> <code>Filter(multi eq)</code> <code>FilterableReference</code></td>
 </tr>
 <tr>
 <td><a href="Crm.ProductPrices.html#shiptocustomer">ShipToCustomer</a></td>
@@ -408,11 +408,12 @@ Generic enum type for Priority properties<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
-<p>The product for which a price will be defined. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The product for which a price will be defined. <code>Required</code> <code>Filter(multi eq)</code> <code>FilterableReference</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="shiptocustomer">ShipToCustomer</h3>
 <p>When not null, specifies that the price will be applied only when the sales document has the specified Ship-To-Customer. <code>Filter(multi eq)</code></p>

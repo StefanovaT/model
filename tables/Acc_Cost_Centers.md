@@ -13,6 +13,7 @@ Defines cost centers and their relation to profit centers. Entity: Acc_Cost_Cent
 | - | - | --- |
 |[Cost_Center_Id](#cost_center_id)|`uniqueidentifier` `PK`||
 |[Cost_Center_Name](#cost_center_name)|`nvarchar(254)` ||
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Cost Center is active.|
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Parent_Cost_Center_Id](#parent_cost_center_id)|`uniqueidentifier` |Parent cost center, NULL if this is root cost center|
 |[Relative_Weight](#relative_weight)|`decimal(18, 4)` |The weight of this cost center, relative to the other cost centers within the same parent. The weight is used during cost distribution calculations. The sum of weights of all cost centers within a parent does not need to be 100, the ratio of total weight over weight is used.|
@@ -86,6 +87,42 @@ Defines cost centers and their relation to profit centers. Entity: Acc_Cost_Cent
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Like|None|no|no|
+
+### Is_Active
+
+
+Indicates whether the current Cost Center is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`True`|no|no|
 
 ### Notes
 
