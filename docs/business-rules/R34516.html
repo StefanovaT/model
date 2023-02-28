@@ -120,28 +120,34 @@
 if ((SocialGroup.Name != null) AND (the group name is NOT user-defined*)) <br>
 , then check <br>
 if (count GroupMembers after change &lt;= 3) <br>
-, set SocialGroup.Name = GroupMember.User.Name(first name) of all GroupMembers after change, separated with comma and sorted ascending by name <br> |
-else set SocialGroup.Name = get TOP2(GroupMember.User.Name(first name) of all GroupMembers after change, separated with comma and sorted ascending by name) + {GroupMembers.Count - 2}<br> |
+, set SocialGroup.Name = GroupMember.User.Name(first name) of all GroupMembers
+after change, separated with comma and sorted ascending by name <br>
+else set SocialGroup.Name = get TOP2(GroupMember.User.Name(first name) of all
+GroupMembers after change, separated with comma and sorted ascending by name)
++{GroupMembers.Count - 2}<br>
 <br><br>
 * check if the group name is user defined <br>
-if ((count GroupMembers before change &lt;= 3) AND (SocialGroup.Name.DatabaseValue != GroupMember.User.Name(first name) of all GroupMembers before the change, separated with comma and sorted ascending by name))<br> |
+<br><br>
+if ((count GroupMembers before change &lt;= 3) AND (SocialGroup.Name.DatabaseValue != GroupMember.User.Name(first name)
+of all GroupMembers before the change, separated with comma and sorted ascending by name))<br>
 , then TRUE <br>
 <br><br>
-if ((count GroupMembers before change &gt; 3) AND (SocialGroup.Name.DatabaseValue != get TOP2(GroupMember.User.Name(first name) of all GroupMembers before change, separated with comma and sorted ascending by name) + {GroupMembers.Count - 2}))<br> |
+if ((count GroupMembers before change &gt; 3) AND (SocialGroup.Name.DatabaseValue != get TOP2(GroupMember.User.Name(first name) of all GroupMembers before change, separated with comma and sorted ascending by name) + {GroupMembers.Count - 2}))<br>
 , then TRUE <br></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>If a social group name is not user-defined and a group member is added or removed
-from the members’ first names (sorted ascending by name).
+from this group, the name of the group is changed accordingly.
 <br><br>
 If the group members are 3 or less, the name is formed as a comma separated list from
 the members’ first names (sorted ascending by name).<br>
 E.g.: Anna, Ben, Chris
 <br><br>
 If the group members are more than 3, the name is formed as a comma separated list
-from first names of the first two members (sorted ascending by name) and the count of the rest of the members.<br> |
-E.g.: Anna, Ben +2</td>
+from first names of the first two members (sorted ascending by name) and the count of
+the rest of the members.<br>
+E.g.: Anna, Ben, +2</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
