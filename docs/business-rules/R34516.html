@@ -127,6 +127,7 @@ GroupMembers after change, separated with comma and sorted ascending by name)
 +{GroupMembers.Count - 2}<br>
 <br><br>
 * check if the group name is user defined: <br>
+<br><br>
 if ((count GroupMembers before change &lt;= 3) AND (SocialGroup.Name.DatabaseValue != GroupMember.User.Name(first name)
 of all GroupMembers before the change, separated with comma and sorted ascending by name))<br>
 , then TRUE <br>
@@ -139,13 +140,13 @@ if ((count GroupMembers before change &gt; 3) AND (SocialGroup.Name.DatabaseValu
 <td>If a social group name is not user-defined and a group member is added or removed
 from this group, the name of the group is changed accordingly.
 <br><br>
-If the group members are 3 or less, the name is formed as a comma separated list from
-the members’ first names (sorted ascending).<br>
+If the group members are 3 or less, the name is formed as a comma separated list
+from the members’ first names (sorted ascending).<br>
 E.g.: Anna, Ben, Chris
 <br><br>
 If the group members are more than 3, the name is formed as a comma separated list
-from first names of the first two members (sorted ascending) and the count of the rest
-of the members.<br>
+from first names of the first two members (sorted ascending) and the count of
+the rest of the members.<br>
 E.g.: Anna, Ben, +2</td>
 </tr>
 <tr>
