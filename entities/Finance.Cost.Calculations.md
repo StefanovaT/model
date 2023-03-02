@@ -36,7 +36,6 @@ Aggregate Tree
   * [General.DocumentParties](General.DocumentParties.md)  
   * [General.DocumentPrints](General.DocumentPrints.md)  
   * [General.DocumentStateChanges](General.DocumentStateChanges.md)  
-  * [General.DocumentVersions](General.DocumentVersions.md)  
 
 ## Attributes
 
@@ -112,7 +111,6 @@ Aggregate Tree
 | ProductOutputs | [CalculationProductOutputs](Finance.Cost.CalculationProductOutputs.md) | List of `CalculationProductOutput`(Finance.Cost.CalculationProductOutputs.md) child objects, based on the `Finance.Cost.CalculationProductOutput.Calculation`(Finance.Cost.CalculationProductOutputs.md#calculation) back reference 
 | Results | [CalculationResults](Finance.Cost.CalculationResults.md) | List of `CalculationResult`(Finance.Cost.CalculationResults.md) child objects, based on the `Finance.Cost.CalculationResult.Calculation`(Finance.Cost.CalculationResults.md#calculation) back reference 
 | StateChanges | [DocumentStateChanges](General.DocumentStateChanges.md) | List of `DocumentStateChange`(General.DocumentStateChanges.md) child objects, based on the `General.DocumentStateChange.Document`(General.DocumentStateChanges.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| Versions | [DocumentVersions](General.DocumentVersions.md) | List of `DocumentVersion`(General.DocumentVersions.md) child objects, based on the `General.DocumentVersion.Document`(General.DocumentVersions.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 
 
 ## Attribute Details

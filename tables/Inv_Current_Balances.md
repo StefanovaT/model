@@ -13,13 +13,13 @@ The current inventory balances, grouped by storage key (Store, Product, Lot, etc
 | - | - | --- |
 |[Base_Cost](#base_cost)|`decimal(38, 2)` |The cost of the inventory in base currency of the enterprise company.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
-|[Lot_Id](#lot_id)|`uniqueidentifier` |If non-null, contains the specific lot to use for the movement|
+|[Lot_Id](#lot_id)|`uniqueidentifier` ||
 |[Product_Cost](#product_cost)|`decimal(38, 2)` |The cost of the inventory in the products currency.|
 |[Product_Id](#product_id)|`uniqueidentifier` ||
-|[Product_Variant_Id](#product_variant_id)|`uniqueidentifier` |If specified determines which product variant of the current product in this line is used.|
+|[Product_Variant_Id](#product_variant_id)|`uniqueidentifier` ||
 |[Quantity_Base](#quantity_base)|`decimal(38, 3)` Readonly|The quantity of the stock received/issued in base measurement unit|
-|[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` |Item serial number for serialized items. NULL for non-serialized items|
-|[Store_Bin_Id](#store_bin_id)|`uniqueidentifier` |Store bin, from/to which the transaction was performed.|
+|[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` ||
+|[Store_Bin_Id](#store_bin_id)|`uniqueidentifier` ||
 |[Store_Cost](#store_cost)|`decimal(38, 2)` |The cost of the inventory in the stores currency.|
 |[Store_Id](#store_id)|`uniqueidentifier` ||
 
@@ -97,16 +97,12 @@ The cost of the inventory in base currency of the enterprise company.
 
 ### Lot_Id
 
-
-If non-null, contains the specific lot to use for the movement
-
 | Property | Value |
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Depends On|[Product_Id](#product_id)|
-|Enter Stop|no|
+|Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -199,15 +195,11 @@ The cost of the inventory in the products currency.
 
 ### Product_Variant_Id
 
-
-If specified determines which product variant of the current product in this line is used.
-
 | Property | Value |
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Depends On|[Product_Id](#product_id)|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -275,15 +267,12 @@ The quantity of the stock received/issued in base measurement unit
 
 ### Serial_Number_Id
 
-
-Item serial number for serialized items. NULL for non-serialized items
-
 | Property | Value |
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|no|
+|Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -311,9 +300,6 @@ Item serial number for serialized items. NULL for non-serialized items
 |Equals|`NULL`|yes|yes|
 
 ### Store_Bin_Id
-
-
-Store bin, from/to which the transaction was performed.
 
 | Property | Value |
 | - | - |

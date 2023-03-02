@@ -111,7 +111,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <li><a href="General.DocumentParties.html">General.DocumentParties</a></li>
 <li><a href="General.DocumentPrints.html">General.DocumentPrints</a></li>
 <li><a href="General.DocumentStateChanges.html">General.DocumentStateChanges</a></li>
-<li><a href="General.DocumentVersions.html">General.DocumentVersions</a></li>
 </ul>
 </li>
 </ul>
@@ -303,6 +302,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
+<td><a href="Finance.Excise.ExciseAdministrativeDocuments.html#deliveryparty">DeliveryParty</a></td>
+<td><a href="General.Contacts.Parties.html">Parties</a> (nullable)</td>
+<td>Indicates the party where the goods are send/received. null means it is the same as Other Party. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.0.10</code></td>
+</tr>
+<tr>
 <td><a href="Finance.Excise.ExciseAdministrativeDocuments.html#documenttype">DocumentType</a></td>
 <td><a href="General.DocumentTypes.html">DocumentTypes</a></td>
 <td>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
@@ -458,11 +462,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>StateChanges</td>
 <td><a href="General.DocumentStateChanges.html">DocumentStateChanges</a></td>
 <td>List of <code>DocumentStateChange</code>(General.DocumentStateChanges.md) child objects, based on the <code>General.DocumentStateChange.Document</code>(General.DocumentStateChanges.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
-</tr>
-<tr>
-<td>Versions</td>
-<td><a href="General.DocumentVersions.html">DocumentVersions</a></td>
-<td>List of <code>DocumentVersion</code>(General.DocumentVersions.md) child objects, based on the <code>General.DocumentVersion.Document</code>(General.DocumentVersions.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -805,6 +804,12 @@ Enumeration of document system states<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="deliveryparty">DeliveryParty</h3>
+<p>Indicates the party where the goods are send/received. null means it is the same as Other Party. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.0.10</code></p>
+<p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="documenttype">DocumentType</h3>
 <p>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>

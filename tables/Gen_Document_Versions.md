@@ -7,10 +7,6 @@ Entity: [General.DocumentVersions](~/entities/General.DocumentVersions.md)
 
 History of each saved version of each document. Entity: Gen_Document_Versions
 
-## Owner Tables Hierarchy
-
-* [Gen_Documents](Gen_Documents.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -133,7 +129,7 @@ The document whoose version is stored in this row
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

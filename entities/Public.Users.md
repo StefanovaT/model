@@ -150,8 +150,8 @@ _Domain API Request_: **POST**
     The access key id  
     _Type_: guid  
 
-  * **idToken**  
-    The identity token of the logged in user. Required when the currently logged user is different from the public user.  
+  * **userToken**  
+                 A proof token, identifying the logged in user. E.g. It could be an id token, or an access token.             Required when the currently logged user is different from the public user.               
     _Type_: string  
      _Optional_: True  
     _Default Value_: null  

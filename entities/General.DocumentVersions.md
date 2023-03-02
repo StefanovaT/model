@@ -9,21 +9,17 @@ History of each saved version of each document. Entity: Gen_Document_Versions
 
 ## Default Visualization
 Default Display Text Format:  
-_{Document.EntityName}_  
+_{Id}: {DocumentId}_  
 Default Search Members:  
-_Document.EntityName_  
-Name Data Member:  
-_Document.EntityName_  
+__  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[General.Documents](General.Documents.md)  
-Aggregate Root:  
-[General.Documents](General.Documents.md)  
+Aggregate Tree  
+* [General.DocumentVersions](General.DocumentVersions.md)  
 
 ## Attributes
 
@@ -44,7 +40,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.DocumentVersions.md#document) | [Documents](General.Documents.md) | The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly` `Owner` |
+| [Document](General.DocumentVersions.md#document) | [Documents](General.Documents.md) | The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly` |
 
 
 ## Attribute Details
@@ -173,13 +169,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Document
 
-The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly` `Owner`
+The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[Documents](General.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **CannotBeShown**  
 
 

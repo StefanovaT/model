@@ -36,7 +36,6 @@ Aggregate Tree
   * [General.DocumentParties](General.DocumentParties.md)  
   * [General.DocumentPrints](General.DocumentPrints.md)  
   * [General.DocumentStateChanges](General.DocumentStateChanges.md)  
-  * [General.DocumentVersions](General.DocumentVersions.md)  
 
 ## Attributes
 
@@ -125,7 +124,6 @@ Aggregate Tree
 | Reminders | [Reminders](General.Contacts.Reminders.md) | List of `Reminder`(General.Contacts.Reminders.md) child objects, based on the `General.Contacts.Reminder.Activity`(General.Contacts.Reminders.md#activity) back reference 
 | Resources | [ActivityResources](General.Contacts.ActivityResources.md) | List of `ActivityResource`(General.Contacts.ActivityResources.md) child objects, based on the `General.Contacts.ActivityResource.Activity`(General.Contacts.ActivityResources.md#activity) back reference 
 | StateChanges | [DocumentStateChanges](General.DocumentStateChanges.md) | List of `DocumentStateChange`(General.DocumentStateChanges.md) child objects, based on the `General.DocumentStateChange.Document`(General.DocumentStateChanges.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| Versions | [DocumentVersions](General.DocumentVersions.md) | List of `DocumentVersion`(General.DocumentVersions.md) child objects, based on the `General.DocumentVersion.Document`(General.DocumentVersions.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 
 
 ## Attribute Details

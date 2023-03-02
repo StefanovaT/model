@@ -105,7 +105,7 @@
 <tr>
 <td><a href="#lot_id">Lot_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>If non-null, contains the specific lot to use for the movement</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#product_cost">Product_Cost</a></td>
@@ -120,7 +120,7 @@
 <tr>
 <td><a href="#product_variant_id">Product_Variant_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>If specified determines which product variant of the current product in this line is used.</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#quantity_base">Quantity_Base</a></td>
@@ -130,12 +130,12 @@
 <tr>
 <td><a href="#serial_number_id">Serial_Number_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>Item serial number for serialized items. NULL for non-serialized items</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#store_bin_id">Store_Bin_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>Store bin, from/to which the transaction was performed.</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="#store_cost">Store_Cost</a></td>
@@ -392,7 +392,6 @@
 </tbody>
 </table>
 <h3 id="lot_id">Lot_Id</h3>
-<p>If non-null, contains the specific lot to use for the movement</p>
 <table>
 <thead>
 <tr>
@@ -414,12 +413,8 @@
 <td>None</td>
 </tr>
 <tr>
-<td>Depends On</td>
-<td><a href="#product_id">Product_Id</a></td>
-</tr>
-<tr>
 <td>Enter Stop</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Ignore for Insert Order</td>
@@ -741,7 +736,6 @@
 </tbody>
 </table>
 <h3 id="product_variant_id">Product_Variant_Id</h3>
-<p>If specified determines which product variant of the current product in this line is used.</p>
 <table>
 <thead>
 <tr>
@@ -761,10 +755,6 @@
 <tr>
 <td>Default Value</td>
 <td>None</td>
-</tr>
-<tr>
-<td>Depends On</td>
-<td><a href="#product_id">Product_Id</a></td>
 </tr>
 <tr>
 <td>Enter Stop</td>
@@ -997,7 +987,6 @@
 </tbody>
 </table>
 <h3 id="serial_number_id">Serial_Number_Id</h3>
-<p>Item serial number for serialized items. NULL for non-serialized items</p>
 <table>
 <thead>
 <tr>
@@ -1020,7 +1009,7 @@
 </tr>
 <tr>
 <td>Enter Stop</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Ignore for Insert Order</td>
@@ -1120,7 +1109,6 @@
 </tbody>
 </table>
 <h3 id="store_bin_id">Store_Bin_Id</h3>
-<p>Store bin, from/to which the transaction was performed.</p>
 <table>
 <thead>
 <tr>

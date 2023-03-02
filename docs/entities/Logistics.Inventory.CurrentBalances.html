@@ -139,37 +139,37 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#enterprisecompany">EnterpriseCompany</a></td>
 <td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></td>
-<td>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></td>
+<td>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#lot">Lot</a></td>
 <td><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</td>
-<td>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Lot_Id</code></td>
+<td>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Lot_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Product_Id</code></td>
+<td>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Product_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#productvariant">ProductVariant</a></td>
 <td><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</td>
-<td>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Product_Variant_Id</code></td>
+<td>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Product_Variant_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#serialnumber">SerialNumber</a></td>
 <td><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</td>
-<td>Item serial number for serialized items. null for non-serialized items. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Serial_Number_Id</code></td>
+<td>Item serial number for serialized items. null for non-serialized items. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Serial_Number_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#store">Store</a></td>
 <td><a href="Logistics.Inventory.Stores.html">Stores</a></td>
-<td>The store from which the goods are received or issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transactions_Table.Store_Id</code></td>
+<td>The store from which the goods are received or issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transactions_Table.Store_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#storebin">StoreBin</a></td>
 <td><a href="Logistics.Inventory.StoreBins.html">StoreBins</a> (nullable)</td>
-<td>Store bin, from/to which the transaction was performed. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Store_Bin_Id</code></td>
+<td>Store bin, from/to which the transaction was performed. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Store_Bin_Id</code> <code>Introduced in version 24.1.0.7</code></td>
 </tr>
 </tbody>
 </table>
@@ -204,49 +204,49 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
-<p>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code></p>
+<p>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Gen_Documents_Table.Enterprise_Company_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Gen_Documents_Table.Enterprise_Company_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lot">Lot</h3>
-<p>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Lot_Id</code></p>
+<p>If non-null, contains the specific lot to use for the movement. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Lot_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Lot_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
-<p>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Id</code></p>
+<p>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Product_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productvariant">ProductVariant</h3>
-<p>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Variant_Id</code></p>
+<p>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Variant_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductVariants.html">ProductVariants</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Product_Variant_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>
-<p>Item serial number for serialized items. null for non-serialized items. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Serial_Number_Id</code></p>
+<p>Item serial number for serialized items. null for non-serialized items. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Serial_Number_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Serial_Number_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="store">Store</h3>
-<p>The store from which the goods are received or issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transactions_Table.Store_Id</code></p>
+<p>The store from which the goods are received or issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transactions_Table.Store_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Stores.html">Stores</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transactions_Table.Store_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="storebin">StoreBin</h3>
-<p>Store bin, from/to which the transaction was performed. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Store_Bin_Id</code></p>
+<p>Store bin, from/to which the transaction was performed. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Store_Bin_Id</code> <code>Introduced in version 24.1.0.7</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreBins.html">StoreBins</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Store_Bin_Id</strong><br>

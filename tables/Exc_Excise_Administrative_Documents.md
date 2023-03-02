@@ -17,6 +17,7 @@ Represents the data, sent to the customs authorities for the movements of excise
 | - | - | --- |
 |[Accrue_Excise_Duty](#accrue_excise_duty)|`bit` |Accrue Excise Duty|
 |[Administrative_Reference_Code](#administrative_reference_code)|`nvarchar(32)` |The reference code, returned the customs authorities, when the document is exported to them. NULL means the document is not yet exported to the authorities.|
+|[Delivery_Party_Id](#delivery_party_id)|`uniqueidentifier` |Indicates the party where the goods are send/received. NULL means it is the same as Other Party.|
 |[Direction](#direction)|`nvarchar(1)` Allowed: `I`, `R`|Indicates whether the document is Receipt('R') or Issue('I') of the Tax Warehouse|
 |[Document_Id](#document_id)|`uniqueidentifier` ||
 |[Excise_Administrative_Document_Id](#excise_administrative_document_id)|`uniqueidentifier` `PK`||
@@ -95,6 +96,43 @@ The reference code, returned the customs authorities, when the document is expor
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+### Delivery_Party_Id
+
+
+Indicates the party where the goods are send/received. NULL means it is the same as Other Party.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|12|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Parties](Gen_Parties.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Delivery_Party_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Direction
 
