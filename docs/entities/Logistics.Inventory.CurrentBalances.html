@@ -149,7 +149,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Product_Id</code> <code>Introduced in version 24.1.0.7</code></td>
+<td>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Product_Id</code> <code>Introduced in version 24.1.0.7</code> <code>FilterableReference</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CurrentBalances.html#productvariant">ProductVariant</a></td>
@@ -218,11 +218,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
-<p>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Id</code> <code>Introduced in version 24.1.0.7</code></p>
+<p>The item that was received/issued. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Id</code> <code>Introduced in version 24.1.0.7</code> <code>FilterableReference</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Transaction_Lines_Table.Product_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productvariant">ProductVariant</h3>
 <p>If specified determines which product variant of the current product in this line is used. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Product_Variant_Id</code> <code>Introduced in version 24.1.0.7</code></p>
