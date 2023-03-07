@@ -121,6 +121,7 @@ _Show in UI_: **ShownByDefault**
 The warehouse in which the transaction occurred. `Required` `Filter(multi eq)` `Inherited from Wms_Warehouse_Transactions_Table.Warehouse_Id`
 
 _Type_: **[Warehouses](Logistics.Wms.Warehouses.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Inherited From_: **Wms_Warehouse_Transactions_Table.Warehouse_Id**  
 _Supported Filters_: **Equals, EqualsIn**  

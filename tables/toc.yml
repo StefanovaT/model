@@ -356,6 +356,8 @@
     href: Dmv_Current_Sessions.md
   - name: Dmv_Exec_Stats
     href: Dmv_Exec_Stats.md
+  - name: Dmv_Print_Images
+    href: Dmv_Print_Images.md
   - name: Dmv_Procedure_Status_Info
     href: Dmv_Procedure_Status_Info.md
   - name: Dmv_Table_Info
