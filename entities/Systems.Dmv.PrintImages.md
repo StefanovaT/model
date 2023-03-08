@@ -29,7 +29,7 @@ Aggregate Tree
 | [PrintoutLayoutName](Systems.Dmv.PrintImages.md#printoutlayoutname) | string (64) | Printout layout name. `Required` `Filter(eq;like)` `ORD` 
 | [PrintsCount](Systems.Dmv.PrintImages.md#printscount) | int32 | Total number of prints. `Required` `Filter(eq;ge;le)` `ORD` 
 | [SizeMB](Systems.Dmv.PrintImages.md#sizemb) | decimal (12, 3) | Total size of the print in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
-| [TypeName](Systems.Dmv.PrintImages.md#typename) | string (254) | Name of the document type. `Required` `Filter(eq;like)` `ORD` 
+| [TypeName](Systems.Dmv.PrintImages.md#typename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the document type. `Required` `Filter(eq;like)` `ORD` 
 | [UnitSizeMB](Systems.Dmv.PrintImages.md#unitsizemb) | decimal (12, 3) | Average print size in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
 
 
@@ -81,11 +81,10 @@ _Show in UI_: **ShownByDefault**
 
 Name of the document type. `Required` `Filter(eq;like)` `ORD`
 
-_Type_: **string (254)**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
-_Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
 
 ### UnitSizeMB

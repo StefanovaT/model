@@ -15,7 +15,7 @@ Information about print sizes, grouped by document type and print type. Entity: 
 |[Printout_Layout_Name](#printout_layout_name)|`nvarchar(64)` |Printout layout name.|
 |[Prints_Count](#prints_count)|`int` |Total number of prints.|
 |[Size_MB](#size_mb)|`decimal(12, 3)` |Total size of the print in megabytes.|
-|[Type_Name](#type_name)|`nvarchar(254)` |Name of the document type.|
+|[Type_Name](#type_name)|`nvarchar(254)` `ML`|Name of the document type.|
 |[Unit_Size_MB](#unit_size_mb)|`decimal(12, 3)` |Average print size in megabytes.|
 
 ## Columns
@@ -192,7 +192,7 @@ Name of the document type.
 |Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254)|
+|Type|nvarchar(254) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
