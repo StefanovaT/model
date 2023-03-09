@@ -226,6 +226,7 @@ The field specifies the JSON settings for this website. NULL means that there ar
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
