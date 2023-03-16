@@ -45,8 +45,8 @@ Aggregate Tree
 | [CompleteTime](Logistics.Inventory.TransferOrders.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Logistics.Inventory.TransferOrders.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationUser](Logistics.Inventory.TransferOrders.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [DefaultDueDateIn](Logistics.Inventory.TransferOrders.md#defaultduedatein) | datetime | The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. `Required` `Default(Today)` `Filter(ge;le)` 
-| [DefaultDueDateOut](Logistics.Inventory.TransferOrders.md#defaultduedateout) | datetime | The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. `Required` `Default(Today)` `Filter(ge;le)` 
+| [DefaultDueDateIn](Logistics.Inventory.TransferOrders.md#defaultduedatein) | datetime __nullable__ | The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. `Default(Today)` `Filter(ge;le)` 
+| [DefaultDueDateOut](Logistics.Inventory.TransferOrders.md#defaultduedateout) | datetime __nullable__ | The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. `Default(Today)` `Filter(ge;le)` 
 | [DisplayText](Logistics.Inventory.TransferOrders.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DocumentDate](Logistics.Inventory.TransferOrders.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md)) 
 | [DocumentNo](Logistics.Inventory.TransferOrders.md#documentno) | string (20) | Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.md)) 
@@ -180,9 +180,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### DefaultDueDateIn
 
-The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. `Required` `Default(Today)` `Filter(ge;le)`
+The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. `Default(Today)` `Filter(ge;le)`
 
-_Type_: **datetime**  
+_Type_: **datetime __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
@@ -193,9 +193,9 @@ _Front-End Recalc Expressions:_
 `obj.Lines.Select( c => TransferOrderLinesRepository.DueDateInAttribute.GetUntypedValue( c, False)).Distinct( ).OnlyIfSingle( )`
 ### DefaultDueDateOut
 
-The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. `Required` `Default(Today)` `Filter(ge;le)`
+The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. `Default(Today)` `Filter(ge;le)`
 
-_Type_: **datetime**  
+_Type_: **datetime __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  

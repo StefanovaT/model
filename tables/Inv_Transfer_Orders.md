@@ -53,7 +53,7 @@ The date, when the goods are expected to be received in the destination warehous
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|datetime (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -89,7 +89,7 @@ The date, when the transfer is scheduled to issue the goods from the source ware
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|datetime (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

@@ -185,6 +185,12 @@ The actual value of the property for the specified entity (the entity with the s
 |User Login|no|
 |Visible|yes|
 
+#### Property_Value - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Property_Value_Id
 
 | Property | Value |

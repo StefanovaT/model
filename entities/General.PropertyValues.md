@@ -31,7 +31,7 @@ Aggregate Tree
 | [Id](General.PropertyValues.md#id) | guid |  
 | [ObjectVersion](General.PropertyValues.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Picture](General.PropertyValues.md#picture) | byte[] __nullable__ | The actual picture of the property for the specified entity (the entity with the specified Id). 
-| [PropertyValueField](General.PropertyValues.md#propertyvaluefield) | string (254) __nullable__ | The actual value of the property for the specified entity (the entity with the specified Id). 
+| [PropertyValueField](General.PropertyValues.md#propertyvaluefield) | string (254) __nullable__ | The actual value of the property for the specified entity (the entity with the specified Id). `Filter(eq)` 
 | [ValueId](General.PropertyValues.md#valueid) | guid __nullable__ | The internal Id of the value of the property for the specified entity (the entity with the specified Id). For choosable properties, this contains the id of the original "allowed value" row, from which the value was derived. null for non-choosable (free-text) properties, but also for old property values (before this id was available) or other unknown values. `Filter(multi eq)` 
 
 ## References
@@ -103,11 +103,11 @@ _Show in UI_: **ShownByDefault**
 
 ### PropertyValueField
 
-The actual value of the property for the specified entity (the entity with the specified Id).
+The actual value of the property for the specified entity (the entity with the specified Id). `Filter(eq)`
 
 _Type_: **string (254) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
