@@ -101,6 +101,7 @@ _Allowed Values (Crm.Marketing.BonusProgramsRepository.BonusAction Enum Members)
 | ---- | --- |
 | Product | Product value. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Product' |
 | Discount | Discount value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Discount' |
+| CascadeDiscount | If the bonus is a product, then Bonus Product, Bonus Product Quantity and Bonus Product Quantity Unit fields should be filled in. If the bonus is a discount, the Bonus Line Discount Percent should be filled in. Product - add product to the order, Discount – replace the standard discount, Cascade discount - apply after the standard discount.. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'CascadeDiscount' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

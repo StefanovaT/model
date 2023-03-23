@@ -12,7 +12,7 @@ Bonus programs allow automatic adding of new line with bonus product or automati
 | Name | Type | Description |
 | - | - | --- |
 |[Active](#active)|`bit` |General condition if the bonus is active. The other conditions are verified only for active bonus programs|
-|[Bonus_Action](#bonus_action)|`nvarchar(1)` Allowed: `P`, `D`|Bonus action: P-Add product to the order, A-Add amount, D-Give discount|
+|[Bonus_Action](#bonus_action)|`nvarchar(1)` Allowed: `P`, `D`, `C`|Bonus action: P-Add product to the order, A-Add amount, D-Give discount|
 |[Bonus_Document_Amount_Percent](#bonus_document_amount_percent)|`decimal(7, 6)` |The percent of the document amount that is rewarded. Should be NULL if and only if the bonus document amount is NULL|
 |[Bonus_Document_Amount_Type_Id](#bonus_document_amount_type_id)|`uniqueidentifier` |When not NULL specifies that a document amount should be added to the order when the bonus conditions are met. NULL means that the bonus reward is not a document amount|
 |[Bonus_Line_Discount_Percent](#bonus_line_discount_percent)|`decimal(7, 6)` |The percent discount to be applied to bonus lines. Used only for bonus programs with Action = D (Discount)|
@@ -90,7 +90,7 @@ Bonus action: P-Add product to the order, A-Add amount, D-Give discount
 
 | Property | Value |
 | - | - |
-|Allowed Values|`P`, `D`|
+|Allowed Values|`P`, `D`, `C`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|D|
