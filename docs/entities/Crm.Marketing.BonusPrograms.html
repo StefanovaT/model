@@ -118,7 +118,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#bonusaction">BonusAction</a></td>
 <td><a href="Crm.Marketing.BonusPrograms.html#bonusaction">BonusAction</a></td>
-<td>Bonus action: P-Add product to the order, A-Add amount, D-Give discount. <code>Required</code> <code>Default(&quot;D&quot;)</code> <code>Filter(multi eq)</code></td>
+<td>If the bonus is a product, then Bonus Product, Bonus Product Quantity and Bonus Product Quantity Unit fields should be filled in. If the bonus is a discount, the Bonus Line Discount Percent should be filled in. Product - add product to the order, Discount – replace the standard discount, Cascade discount - apply after the standard discount. <code>Required</code> <code>Default(&quot;D&quot;)</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#bonusdocumentamountpercent">BonusDocumentAmountPercent</a></td>
@@ -321,7 +321,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="bonusaction">BonusAction</h3>
-<p>Bonus action: P-Add product to the order, A-Add amount, D-Give discount. <code>Required</code> <code>Default(&quot;D&quot;)</code> <code>Filter(multi eq)</code></p>
+<p>If the bonus is a product, then Bonus Product, Bonus Product Quantity and Bonus Product Quantity Unit fields should be filled in. If the bonus is a discount, the Bonus Line Discount Percent should be filled in. Product - add product to the order, Discount – replace the standard discount, Cascade discount - apply after the standard discount. <code>Required</code> <code>Default(&quot;D&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Marketing.BonusPrograms.html#bonusaction">BonusAction</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>BonusAction</code>(Crm.Marketing.BonusPrograms.md#bonusaction) data attribute<br>
@@ -344,7 +344,7 @@ Allowed values for the <code>BonusAction</code>(Crm.Marketing.BonusPrograms.md#b
 </tr>
 <tr>
 <td>CascadeDiscount</td>
-<td>If the bonus is a product, then Bonus Product, Bonus Product Quantity and Bonus Product Quantity Unit fields should be filled in. If the bonus is a discount, the Bonus Line Discount Percent should be filled in. Product - add product to the order, Discount – replace the standard discount, Cascade discount - apply after the standard discount.. Stored as 'C'. <br> <em>Database Value:</em> 'C' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'CascadeDiscount'</td>
+<td>CascadeDiscount value. Stored as 'C'. <br> <em>Database Value:</em> 'C' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'CascadeDiscount'</td>
 </tr>
 </tbody>
 </table>
