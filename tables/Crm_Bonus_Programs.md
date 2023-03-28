@@ -15,7 +15,7 @@ Bonus programs allow automatic adding of new line with bonus product or automati
 |[Bonus_Action](#bonus_action)|`nvarchar(1)` Allowed: `P`, `D`, `C`|If the bonus is a product, then Bonus Product, Bonus Product Quantity and Bonus Product Quantity Unit fields should be filled in. If the bonus is a discount, the Bonus Line Discount Percent should be filled in. Product - add product to the order, Discount – replace the standard discount, Cascade discount - apply after the standard discount.|
 |[Bonus_Document_Amount_Percent](#bonus_document_amount_percent)|`decimal(7, 6)` |The percent of the document amount that is rewarded. Should be NULL if and only if the bonus document amount is NULL|
 |[Bonus_Document_Amount_Type_Id](#bonus_document_amount_type_id)|`uniqueidentifier` |When not NULL specifies that a document amount should be added to the order when the bonus conditions are met. NULL means that the bonus reward is not a document amount|
-|[Bonus_Line_Discount_Percent](#bonus_line_discount_percent)|`decimal(7, 6)` |The percent discount to be applied to bonus lines. Used only for bonus programs with Action = D (Discount)|
+|[Bonus_Line_Discount_Percent](#bonus_line_discount_percent)|`decimal(7, 6)` |The percent discount to be applied to bonus lines. Used only for bonus programs with Action = D (Discount) and Action = C (Cascade discount)|
 |[Bonus_Product_Id](#bonus_product_id)|`uniqueidentifier` |The product that is rewarded if the bonus conditions are met. NULL means that the bonus reward is not product|
 |[Bonus_Product_Quantity](#bonus_product_quantity)|`decimal(12, 3)` |The quantity rewarded of the bonus product. Should be not NULL if and only when the bonus product is not NULL|
 |[Bonus_Product_Quantity_Multiplier_For_Each_Lot_Size](#bonus_product_quantity_multiplier_for_each_lot_size)|`decimal(12, 3)` |When not NULL, specifies that the bonus quantity should be multiplied for each of the specified lot size. Can be non-NULL only when condition product is specified|
@@ -190,7 +190,7 @@ When not NULL specifies that a document amount should be added to the order when
 ### Bonus_Line_Discount_Percent
 
 
-The percent discount to be applied to bonus lines. Used only for bonus programs with Action = D (Discount)
+The percent discount to be applied to bonus lines. Used only for bonus programs with Action = D (Discount) and Action = C (Cascade discount)
 
 | Property | Value |
 | - | - |
