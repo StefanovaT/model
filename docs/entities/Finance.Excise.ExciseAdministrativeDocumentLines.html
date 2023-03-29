@@ -121,7 +121,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Finance.Excise.ExciseAdministrativeDocumentLines.html#exciseamountbase">ExciseAmountBase</a></td>
-<td>decimal (14, 2)</td>
+<td>decimal (14, 4)</td>
 <td>The excise amount in base currency. <code>Unit: ExciseAdministrative&lt;br /&gt;Document.EnterpriseCompany.BaseCurrency</code> <code>Required</code> <code>Default(0)</code> <code>Filter(eq;ge;le)</code> <code>Introduced in version 21.1.3.94</code></td>
 </tr>
 <tr>
@@ -267,7 +267,7 @@ Aggregate Root:<br>
 <code>new Amount( ( obj.ExciseAmountBase * ( obj.ExciseDutyRateValue ?? 0)), obj.Document.EnterpriseCompany.BaseCurrency)</code></p>
 <h3 id="exciseamountbase">ExciseAmountBase</h3>
 <p>The excise amount in base currency. <code>Unit: ExciseAdministrativeDocument.EnterpriseCompany.BaseCurrency</code> <code>Required</code> <code>Default(0)</code> <code>Filter(eq;ge;le)</code> <code>Introduced in version 21.1.3.94</code></p>
-<p><em>Type</em>: <strong>decimal (14, 2)</strong><br>
+<p><em>Type</em>: <strong>decimal (14, 4)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
