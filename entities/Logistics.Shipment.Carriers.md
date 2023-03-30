@@ -9,7 +9,7 @@ Represents a carrier agreement. One actual carrier can have different agreements
 
 ## Default Visualization
 Default Display Text Format:  
-_{Code}_  
+_{Code}: {Supplier.Party.PartyName:T}_  
 Default Search Members:  
 _Code_  
 Code Data Member:  

@@ -9,7 +9,7 @@ A vehicle, which is used for transportation. One actual vehicle might be defined
 
 ## Default Visualization
 Default Display Text Format:  
-_{Vehicle.EngineIdentificationNumber}_  
+_{Code}: {Vehicle.VehicleType:T}, {Vehicle.VehicleRegistrationNumber:T}_  
 Default Search Members:  
 _Code; Vehicle.EngineIdentificationNumber_  
 Code Data Member:  
