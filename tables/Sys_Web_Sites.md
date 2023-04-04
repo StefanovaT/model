@@ -21,7 +21,7 @@ Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites
 |[Trusted_Application_Id](#trusted_application_id)|`uniqueidentifier` |The trusted application related to this web site|
 |[Web_Host_Id](#web_host_id)|`uniqueidentifier` |The web host in which to host the site.|
 |[Web_Site_Id](#web_site_id)|`uniqueidentifier` `PK`||
-|[Web_Site_Type](#web_site_type)|`nvarchar(3)` Allowed: `API`, `CC`, `EC`, `LEG`, `SI`, `DM`, `APP`, `TAP`, `DAP`, `LUK`, `OLP`|The type of web site - Api, Client Center, Id, etc.|
+|[Web_Site_Type](#web_site_type)|`nvarchar(3)` Allowed: `API`, `CC`, `EC`, `LEG`, `SI`, `DM`, `APP`, `TAP`, `DAP`, `LUK`, `OLP`, `MSS`|The type of web site - Api, Client Center, Id, etc.|
 
 ## Columns
 
@@ -364,7 +364,7 @@ The type of web site - Api, Client Center, Id, etc.
 
 | Property | Value |
 | - | - |
-|Allowed Values|`API`, `CC`, `EC`, `LEG`, `SI`, `DM`, `APP`, `TAP`, `DAP`, `LUK`, `OLP`|
+|Allowed Values|`API`, `CC`, `EC`, `LEG`, `SI`, `DM`, `APP`, `TAP`, `DAP`, `LUK`, `OLP`, `MSS`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

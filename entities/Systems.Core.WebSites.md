@@ -152,6 +152,7 @@ _Allowed Values (Systems.Core.WebSitesRepository.WebSiteType Enum Members)_
 | DataAccessAPI | DataAccessAPI value. Stored as 'DAP'. <br /> _Database Value:_ 'DAP' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'DataAccessAPI' |
 | LEGALUK | LEGALUK value. Stored as 'LUK'. <br /> _Database Value:_ 'LUK' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'LEGALUK' |
 | OLAP | OLAP value. Stored as 'OLP'. <br /> _Database Value:_ 'OLP' <br /> _Model Value:_ 10 <br /> _Domain API Value:_ 'OLAP' |
+| MicrosoftSync | MicrosoftSync value. Stored as 'MSS'. <br /> _Database Value:_ 'MSS' <br /> _Model Value:_ 11 <br /> _Domain API Value:_ 'MicrosoftSync' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

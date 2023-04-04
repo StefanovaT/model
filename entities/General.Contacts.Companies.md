@@ -10,7 +10,7 @@ Contains company definitions. Entity: Cm_Companies
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{PartyName}_  
 Default Search Members:  
 _PartyCode; Name_  
 Code Data Member:  

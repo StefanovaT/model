@@ -9,7 +9,7 @@ Contains base data for different kind of parties - companies, persons, departmen
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName:T}_  
+_{PartyName}_  
 Default Search Members:  
 _PartyCode; PartyName_  
 Code Data Member:  

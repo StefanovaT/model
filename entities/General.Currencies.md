@@ -9,7 +9,7 @@ List of user-defined currencies. Entity: Gen_Currencies
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{CurrencySign}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
