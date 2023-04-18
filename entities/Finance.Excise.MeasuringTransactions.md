@@ -9,7 +9,7 @@ Transaction of product input or output, measured with specialized measuring devi
 
 ## Default Visualization
 Default Display Text Format:  
-_{MeasuringDeviceCode}_  
+_{TransactionNumber}: {MeasuringDeviceCode}_  
 Default Search Members:  
 _MeasuringDeviceCode_  
 Code Data Member:  
