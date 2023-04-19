@@ -132,7 +132,8 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This Generation is used to create Excise Administrative Documents for the products of the current Store Transactions that have value for the field ExciseProductsType.
+<p>This Generation is used to create Excise Administrative Documents for the products of the current Store Transactions that have value for the field ExciseProductsType.<br>
+It is activated only if the store in the current Store Transaction has a value for the field TaxWarehouse.<br>
 The Excise Administrative Document's header is created based on the Store Transaction's header as follows:</p>
 <pre><code>ExciseAdministrativeDocument.TaxWarehouse = StoreTransaction.Store.TaxWarehouse
 
