@@ -10,7 +10,7 @@ Personal records. Requires related party record. Entity: Cm_Persons (Introduced 
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName}_  
+_{PartyName:T}_  
 Default Search Members:  
 _PartyCode; PartyName_  
 Code Data Member:  

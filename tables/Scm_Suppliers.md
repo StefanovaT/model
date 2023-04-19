@@ -576,6 +576,7 @@ The unique supplier number.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|Like|None|no|yes|
 
 ### Supplier_Type_Id
 

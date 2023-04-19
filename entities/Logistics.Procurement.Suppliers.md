@@ -38,7 +38,7 @@ Aggregate Tree
 | [FromDate](Logistics.Procurement.Suppliers.md#fromdate) | datetime __nullable__ | The date on which this party became a supplier or the date, when the supplier contract was signed. `Filter(ge;le)` 
 | [Id](Logistics.Procurement.Suppliers.md#id) | guid |  
 | [IsActive](Logistics.Procurement.Suppliers.md#isactive) | boolean | Indicates whether the current supplier is active. `Required` `Default(true)` `Filter(eq)` 
-| [Number](Logistics.Procurement.Suppliers.md#number) | string (16) __nullable__ | The unique supplier number. `Filter(eq)` `ORD` 
+| [Number](Logistics.Procurement.Suppliers.md#number) | string (16) __nullable__ | The unique supplier number. `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Logistics.Procurement.Suppliers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ThruDate](Logistics.Procurement.Suppliers.md#thrudate) | datetime __nullable__ | The date (inclusive) on which this party ceased to be a supplier. `Filter(ge;le)` 
 | [UpdateTime](Logistics.Procurement.Suppliers.md#updatetime) | datetime __nullable__ | Date and time when the Supplier was last updated. `Filter(ge;le)` `ReadOnly` 
@@ -155,12 +155,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Number
 
-The unique supplier number. `Filter(eq)` `ORD`
+The unique supplier number. `Filter(eq;like)` `ORD`
 
 _Type_: **string (16) __nullable__**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  

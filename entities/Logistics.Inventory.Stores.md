@@ -10,7 +10,7 @@ Represents the physical warehouses. Entity: Inv_Stores
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName}_  
+_{PartyName:T}_  
 Default Search Members:  
 _Code; PartyName_  
 Code Data Member:  
