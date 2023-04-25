@@ -312,6 +312,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The user to which this document is assigned for handling. null means that the document is not assigned to specific user. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
+<td><a href="Crm.Presales.Deals.html#campaign">Campaign</a></td>
+<td><a href="Crm.Marketing.Campaigns.html">Campaigns</a> (nullable)</td>
+<td>The marketing campaign to which this opportunity belongs. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.0.67</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Presales.Deals.html#currencydirectory">CurrencyDirectory</a></td>
 <td><a href="General.CurrencyDirectories.html">CurrencyDirectories</a> (nullable)</td>
 <td>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
@@ -848,6 +853,12 @@ Enumeration of document system states<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="campaign">Campaign</h3>
+<p>The marketing campaign to which this opportunity belongs. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.0.67</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Marketing.Campaigns.html">Campaigns</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="currencydirectory">CurrencyDirectory</h3>
 <p>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.CurrencyDirectories.html">CurrencyDirectories</a> (nullable)</strong><br>

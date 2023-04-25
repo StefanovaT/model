@@ -125,7 +125,7 @@
 <tr>
 <td><a href="#credit_limit">Credit_Limit</a></td>
 <td><code>decimal(18, 2)</code></td>
-<td>Total credit limit for the customer in the customers' default currency. NULL means there is no limit</td>
+<td>Total credit limit for the customer in the enterprise company base currency. null means there is no limit.</td>
 </tr>
 <tr>
 <td><a href="#customer_id">Customer_Id</a></td>
@@ -145,7 +145,7 @@
 <tr>
 <td><a href="#default_currency_id">Default_Currency_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td>The primary currency for value calculations for this customer - for credit limit, due amounts, etc.</td>
+<td>The default currency to use when creating new documents for this customer.</td>
 </tr>
 <tr>
 <td><a href="#default_delivery_term_days">Default_Delivery_Term_Days</a></td>
@@ -957,7 +957,7 @@
 </tbody>
 </table>
 <h3 id="credit_limit">Credit_Limit</h3>
-<p>Total credit limit for the customer in the customers' default currency. NULL means there is no limit</p>
+<p>Total credit limit for the customer in the enterprise company base currency. null means there is no limit.</p>
 <table>
 <thead>
 <tr>
@@ -1424,7 +1424,7 @@
 </tbody>
 </table>
 <h3 id="default_currency_id">Default_Currency_Id</h3>
-<p>The primary currency for value calculations for this customer - for credit limit, due amounts, etc.</p>
+<p>The default currency to use when creating new documents for this customer.</p>
 <table>
 <thead>
 <tr>

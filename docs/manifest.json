@@ -11340,7 +11340,19 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R34821.html",
-          "hash": "1LNDYpddA7LenpMOqPJd1w=="
+          "hash": "ow1m88EKqtZjv5Chnz2QlQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R34822.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34822.html",
+          "hash": "vxuBO8eVi5qAGX/OKqbA2w=="
         }
       },
       "is_incremental": false,
@@ -13234,7 +13246,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Presales.Deals.html",
-          "hash": "5XVDmk5DblAfzsHSRBQLuQ=="
+          "hash": "7v2Y55W/9Z51kksXFE+UEg=="
         }
       },
       "is_incremental": false,
@@ -13714,7 +13726,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Accounting.ProfitCenters.html",
-          "hash": "x7qS/ctx7lLn6iBWRceibQ=="
+          "hash": "FPjKjatYEKsyxwdGGdg9hg=="
         }
       },
       "is_incremental": false,
@@ -21012,7 +21024,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Customers.html",
-          "hash": "4/w5ckgzryNU5zv+ePucpg=="
+          "hash": "M0/zia2UxF+ELK3z3fNN+Q=="
         }
       },
       "is_incremental": false,
@@ -21048,7 +21060,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Deals.html",
-          "hash": "tUhZKOdcwbthywO1w5p5Wg=="
+          "hash": "zy8FHl/yApQbXz+pa5pFYg=="
         }
       },
       "is_incremental": false,

@@ -15,6 +15,7 @@ Potential deals (Opportunities). Entity: Crm_Deals
 
 | Name | Type | Description |
 | - | - | --- |
+|[Campaign_Id](#campaign_id)|`uniqueidentifier` |The marketing campaign to which this opportunity belongs.|
 |[Deal_Id](#deal_id)|`uniqueidentifier` `PK`||
 |[Deal_Status](#deal_status)|`nvarchar(3)` Allowed: `INP`, `SUC`, `UNS`|Current status of this deal. 'SUC' = Successful, 'UNS' = Unsuccessful, 'INP' = In progress|
 |[Dealer_Id](#dealer_id)|`uniqueidentifier` |The external dealer, which provided the opportunity|
@@ -34,6 +35,43 @@ Potential deals (Opportunities). Entity: Crm_Deals
 |[Success_Probability](#success_probability)|`decimal(3, 2)` |Probability of success of that opportunity in percents (for example, 15 percent is stored as 0.15).|
 
 ## Columns
+
+### Campaign_Id
+
+
+The marketing campaign to which this opportunity belongs.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|no|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Crm_Campaigns](Crm_Campaigns.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Campaign_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Deal_Id
 

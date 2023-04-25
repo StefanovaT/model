@@ -17,11 +17,11 @@ Customer contracts list. For each combination of Enterprise Company and external
 |[Collections_Responsible_Employee_Id](#collections_responsible_employee_id)|`uniqueidentifier` |The employee, who is responsible for the collections from the customer|
 |[Creation_Time](#creation_time)|`datetime` Readonly||
 |[Creation_User](#creation_user)|`nvarchar(64)` Readonly||
-|[Credit_Limit](#credit_limit)|`decimal(18, 2)` |Total credit limit for the customer in the customers' default currency. NULL means there is no limit|
+|[Credit_Limit](#credit_limit)|`decimal(18, 2)` |Total credit limit for the customer in the enterprise company base currency. null means there is no limit.|
 |[Customer_Id](#customer_id)|`uniqueidentifier` `PK`|Unique customer Id|
 |[Customer_Number](#customer_number)|`nvarchar(16)` |Unique customer number|
 |[Customer_Type_Id](#customer_type_id)|`uniqueidentifier` |The user-defined type of this customer. NULL when there is no specific type. Record-level security from the customer type is applied to the individual customers and can be used for security purposes|
-|[Default_Currency_Id](#default_currency_id)|`uniqueidentifier` |The primary currency for value calculations for this customer - for credit limit, due amounts, etc.|
+|[Default_Currency_Id](#default_currency_id)|`uniqueidentifier` |The default currency to use when creating new documents for this customer.|
 |[Default_Delivery_Term_Days](#default_delivery_term_days)|`int` |Default term in days for goods delivery, starting at the day of sale|
 |[Default_Distribution_Channel_Id](#default_distribution_channel_id)|`uniqueidentifier` |The default distribution channel used when selling to the customer|
 |[Default_Payment_Account_Id](#default_payment_account_id)|`uniqueidentifier` |The default payment account to use when creating new documents for this customer|
@@ -257,7 +257,7 @@ The employee, who is responsible for the collections from the customer
 ### Credit_Limit
 
 
-Total credit limit for the customer in the customers' default currency. NULL means there is no limit
+Total credit limit for the customer in the enterprise company base currency. null means there is no limit.
 
 | Property | Value |
 | - | - |
@@ -397,7 +397,7 @@ The user-defined type of this customer. NULL when there is no specific type. Rec
 ### Default_Currency_Id
 
 
-The primary currency for value calculations for this customer - for credit limit, due amounts, etc.
+The default currency to use when creating new documents for this customer.
 
 | Property | Value |
 | - | - |
