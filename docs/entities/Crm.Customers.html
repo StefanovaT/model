@@ -140,7 +140,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Customers.html#creditlimit">CreditLimit</a></td>
 <td><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></td>
-<td>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: EnterpriseCompany?.BaseCurrency</code></td>
+<td>Total credit limit for the customer in the enterprise company base currency. null means there is no limit. <code>Currency: EnterpriseCompany?.BaseCurrency</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Customers.html#defaultdeliverytermdays">DefaultDeliveryTermDays</a></td>
@@ -232,7 +232,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Customers.html#defaultcurrency">DefaultCurrency</a></td>
 <td><a href="General.Currencies.html">Currencies</a> (nullable)</td>
-<td>The primary currency for value calculations for this customer - for credit limit, due amounts, etc. <code>Filter(multi eq)</code></td>
+<td>The default currency to use when creating new documents for this customer. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Customers.html#defaultdistributionchannel">DefaultDistributionChannel</a></td>
@@ -334,7 +334,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creditlimit">CreditLimit</h3>
-<p>Total credit limit for the customer in the customers' default currency. null means there is no limit. <code>Currency: EnterpriseCompany?.BaseCurrency</code></p>
+<p>Total credit limit for the customer in the enterprise company base currency. null means there is no limit. <code>Currency: EnterpriseCompany?.BaseCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -459,7 +459,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultcurrency">DefaultCurrency</h3>
-<p>The primary currency for value calculations for this customer - for credit limit, due amounts, etc. <code>Filter(multi eq)</code></p>
+<p>The default currency to use when creating new documents for this customer. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Currencies.html">Currencies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

@@ -35,7 +35,7 @@ Aggregate Tree
 | [AllowUseAsShipToCustomer](Crm.Customers.md#allowuseasshiptocustomer) | boolean | True to allow the customer to be used as ship to customer in a sales deal. `Required` `Default(false)` `Filter(eq)` 
 | [CreationTime](Crm.Customers.md#creationtime) | datetime __nullable__ | Date and time when the Customer was created. `Filter(ge;le)` `ReadOnly` 
 | [CreationUser](Crm.Customers.md#creationuser) | string (64) __nullable__ | Login name of the user, who created the Customer. `Filter(like)` `ReadOnly` 
-| [CreditLimit](Crm.Customers.md#creditlimit) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | Total credit limit for the customer in the customers' default currency. null means there is no limit. `Currency: EnterpriseCompany?.BaseCurrency` 
+| [CreditLimit](Crm.Customers.md#creditlimit) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | Total credit limit for the customer in the enterprise company base currency. null means there is no limit. `Currency: EnterpriseCompany?.BaseCurrency` 
 | [DefaultDeliveryTermDays](Crm.Customers.md#defaultdeliverytermdays) | int32 | Default term in days for goods delivery, starting at the day of sale. `Required` `Default(0)` 
 | [DefaultPaymentStartDays](Crm.Customers.md#defaultpaymentstartdays) | int32 | Specifies the number of days after the sales order, when the payment becomes due. 0 means that the payment is due immediately. `Required` `Default(0)` 
 | [DefaultPaymentTermDays](Crm.Customers.md#defaultpaymenttermdays) | int32 | Default payment term in days when issuing documents for this customer. `Required` `Default(0)` 
@@ -56,7 +56,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [CollectionsResponsible<br />Employee](Crm.Customers.md#collectionsresponsibleemployee) | [CompanyEmployees](General.Contacts.CompanyEmployees.md) (nullable) | The employee, who is responsible for the collections from the customer. `Filter(multi eq)` |
 | [CustomerType](Crm.Customers.md#customertype) | [CustomerTypes](Crm.CustomerTypes.md) (nullable) | The user-defined type of this customer. null when there is no specific type. Record-level security from the customer type is applied to the individual customers and can be used for security purposes. `Filter(multi eq)` |
-| [DefaultCurrency](Crm.Customers.md#defaultcurrency) | [Currencies](General.Currencies.md) (nullable) | The primary currency for value calculations for this customer - for credit limit, due amounts, etc. `Filter(multi eq)` |
+| [DefaultCurrency](Crm.Customers.md#defaultcurrency) | [Currencies](General.Currencies.md) (nullable) | The default currency to use when creating new documents for this customer. `Filter(multi eq)` |
 | [DefaultDistributionChannel](Crm.Customers.md#defaultdistributionchannel) | [DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable) | The default distribution channel used when selling to the customer. `Filter(multi eq)` |
 | [DefaultPaymentAccount](Crm.Customers.md#defaultpaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | The default payment account to use when creating new documents for this customer. `Filter(multi eq)` |
 | [DefaultPaymentType](Crm.Customers.md#defaultpaymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | If not null, specifies default payment type for the sales, offers and invoices for this customer. `Filter(multi eq)` |
@@ -131,7 +131,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### CreditLimit
 
-Total credit limit for the customer in the customers' default currency. null means there is no limit. `Currency: EnterpriseCompany?.BaseCurrency`
+Total credit limit for the customer in the enterprise company base currency. null means there is no limit. `Currency: EnterpriseCompany?.BaseCurrency`
 
 _Type_: **[Amount (18, 2)](../data-types.md#amount) __nullable__**  
 _Category_: **System**  
@@ -306,7 +306,7 @@ _Show in UI_: **ShownByDefault**
 
 ### DefaultCurrency
 
-The primary currency for value calculations for this customer - for credit limit, due amounts, etc. `Filter(multi eq)`
+The default currency to use when creating new documents for this customer. `Filter(multi eq)`
 
 _Type_: **[Currencies](General.Currencies.md) (nullable)**  
 _Category_: **System**  
