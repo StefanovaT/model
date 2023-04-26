@@ -11372,6 +11372,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R34836.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R34836.html",
+          "hash": "7un126IoWNLjQtYZ+ex2YA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -13678,7 +13690,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Accounting.CostCenters.html",
-          "hash": "XQdOqlA6RUlFJh0OmXc+QQ=="
+          "hash": "m1WjYeTvB5qFAXi2KBsOiQ=="
         }
       },
       "is_incremental": false,
@@ -13738,7 +13750,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Accounting.ProfitCenters.html",
-          "hash": "RsjvBICGao9LD2R5lSaLBw=="
+          "hash": "1gLTwCE6jDb3Upp5nEpArg=="
         }
       },
       "is_incremental": false,
