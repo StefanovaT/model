@@ -125,7 +125,7 @@ _Type_: **[Parties](General.Contacts.Parties.md)**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods
