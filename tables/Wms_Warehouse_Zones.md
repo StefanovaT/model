@@ -188,6 +188,7 @@ Zone code, unique within the warehouse.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|yes|
+|Like|None|no|no|
 
 ### Warehouse_Zone_Id
 

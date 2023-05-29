@@ -111,7 +111,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Wms.WarehouseZones.html#code">Code</a></td>
 <td>string (32)</td>
-<td>Zone code, unique within the warehouse. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>Zone code, unique within the warehouse. <code>Required</code> <code>Filter(multi eq;like)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Wms.WarehouseZones.html#displaytext">DisplayText</a></td>
@@ -164,10 +164,10 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="code">Code</h3>
-<p>Zone code, unique within the warehouse. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>Zone code, unique within the warehouse. <code>Required</code> <code>Filter(multi eq;like)</code></p>
 <p><em>Type</em>: <strong>string (32)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>32</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

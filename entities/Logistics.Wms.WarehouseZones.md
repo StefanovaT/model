@@ -31,7 +31,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Code](Logistics.Wms.WarehouseZones.md#code) | string (32) | Zone code, unique within the warehouse. `Required` `Filter(multi eq)` 
+| [Code](Logistics.Wms.WarehouseZones.md#code) | string (32) | Zone code, unique within the warehouse. `Required` `Filter(multi eq;like)` 
 | [DisplayText](Logistics.Wms.WarehouseZones.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Wms.WarehouseZones.md#id) | guid |  
 | [Name](Logistics.Wms.WarehouseZones.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language name of the zone. `Required` `Filter(eq;like)` 
@@ -50,11 +50,11 @@ Aggregate Root:
 
 ### Code
 
-Zone code, unique within the warehouse. `Required` `Filter(multi eq)`
+Zone code, unique within the warehouse. `Required` `Filter(multi eq;like)`
 
 _Type_: **string (32)**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
 _Show in UI_: **ShownByDefault**  
