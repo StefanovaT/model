@@ -247,9 +247,9 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>True when the order is valid (e.g. released and not void). Used for internal processing. <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
-<td><a href="Crm.Sales.SalesOrders.html#notes">Notes</a></td>
+<td><a href="Crm.Sales.SalesOrders.html#notes"><s>Notes</s></a></td>
 <td>string (254) <strong>nullable</strong></td>
-<td>Notes for this SalesOrder.</td>
+<td><strong>OBSOLETE! Do not use!</strong> Notes for this SalesOrder. <code>Obsolete</code> <code>Obsoleted in version 24.1.1.4</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#objectversion">ObjectVersion</a></td>
@@ -1000,13 +1000,13 @@ Generic enum type for TransportMode properties<br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="notes">Notes</h3>
-<p>Notes for this SalesOrder.</p>
+<p><strong>OBSOLETE! Do not use!</strong> Notes for this SalesOrder. <code>Obsolete</code> <code>Obsoleted in version 24.1.1.4</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>

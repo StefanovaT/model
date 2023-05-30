@@ -800,11 +800,10 @@ Specifies whether the document is a single execution of its order document.
 
 | Property | Value |
 | - | - |
-|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|no|
+|Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|

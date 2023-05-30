@@ -65,7 +65,7 @@ Aggregate Tree
 | [<s>IsReleased</s>](Crm.Sales.SalesOrders.md#isreleased) | boolean | **OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` 
 | [IsSingleExecution](Crm.Sales.SalesOrders.md#issingleexecution) | boolean | Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [IsValidField](Crm.Sales.SalesOrders.md#isvalidfield) | boolean | True when the order is valid (e.g. released and not void). Used for internal processing. `Required` `Default(false)` `ReadOnly` 
-| [Notes](Crm.Sales.SalesOrders.md#notes) | string (254) __nullable__ | Notes for this SalesOrder. 
+| [<s>Notes</s>](Crm.Sales.SalesOrders.md#notes) | string (254) __nullable__ | **OBSOLETE! Do not use!** Notes for this SalesOrder. `Obsolete` `Obsoleted in version 24.1.1.4` 
 | [ObjectVersion](Crm.Sales.SalesOrders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Crm.Sales.SalesOrders.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Crm.Sales.SalesOrders.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [PaymentDueDate](Crm.Sales.SalesOrders.md#paymentduedate) | datetime __nullable__ | The last term for the payment of the sales order. `Filter(ge;le)` 
@@ -471,14 +471,14 @@ _Show in UI_: **CannotBeShown**
 
 ### Notes
 
-Notes for this SalesOrder.
+**OBSOLETE! Do not use!** Notes for this SalesOrder. `Obsolete` `Obsoleted in version 24.1.1.4`
 
 _Type_: **string (254) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
-_Show in UI_: **HiddenByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
 

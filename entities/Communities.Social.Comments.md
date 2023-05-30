@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CommentText](Communities.Social.Comments.md#commenttext) | string (max) | The comment contents in clear text. `Required` 
-| [CreationTimeUtc](Communities.Social.Comments.md#creationtimeutc) | datetime | The exact server time (in UTC), when the comment was created. `Required` `ORD` 
+| [CreationTimeUtc](Communities.Social.Comments.md#creationtimeutc) | datetime | The exact server time (in UTC), when the comment was created. `Required` `Filter(ge;le)` `ORD` 
 | [DisplayText](Communities.Social.Comments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.Social.Comments.md#id) | guid |  
 | [ObjectVersion](Communities.Social.Comments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -55,12 +55,12 @@ _Show in UI_: **ShownByDefault**
 
 ### CreationTimeUtc
 
-The exact server time (in UTC), when the comment was created. `Required` `ORD`
+The exact server time (in UTC), when the comment was created. `Required` `Filter(ge;le)` `ORD`
 
 _Type_: **datetime**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 

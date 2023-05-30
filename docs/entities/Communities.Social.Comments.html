@@ -112,7 +112,7 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Communities.Social.Comments.html#creationtimeutc">CreationTimeUtc</a></td>
 <td>datetime</td>
-<td>The exact server time (in UTC), when the comment was created. <code>Required</code> <code>ORD</code></td>
+<td>The exact server time (in UTC), when the comment was created. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Communities.Social.Comments.html#displaytext">DisplayText</a></td>
@@ -168,11 +168,11 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
-<p>The exact server time (in UTC), when the comment was created. <code>Required</code> <code>ORD</code></p>
+<p>The exact server time (in UTC), when the comment was created. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
