@@ -112,14 +112,14 @@
 <td><strong>Action</strong></td>
 <td>Validate that:
 <br><br>
-If (ContactMechanismPurpose != null)
-<br><br>
-ContactMechanism.ContactMechanismType == ContactMechanismPurpose.ContactMechanismType </td>
+The value in ContactMechanism.ContactMechanismType is the same as the value in
+ContactMechanismPurpose.ContactMechanismType OR
+ContactMechanismPurpose.ContactMechanismType has no value </td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>If the purpose of the PartyContactMechanism is defined, its contact mechanism type cannot be
-different than contact mechanism type of the type of its ContactMechanism.
+<td>If the purpose of the party contact mechanism is defined, the purpose’s contact mechanism type
+must be the same as the party contact mechanism's type or must be null.
 <br><br>
 The purpose of the contact mechanism may be for example - &quot;Email for invoices&quot;. So as a
 ContactMechanismType of the purspose &quot;email&quot; is selected. And then if a
@@ -134,9 +134,9 @@ type of the selected contact mechanism - {ContactMechanism.ContactMechanismType
 Please, select a proper purpose.</td>
 </tr>
 <tr>
-<td><strong>Introduced In
-Version</strong></td>
-<td>2018.2</td>
+<td><strong>Version</strong></td>
+<td>Introduced: 2018.2
+Updated:</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
