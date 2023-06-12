@@ -112,6 +112,7 @@
 <td><strong>Action</strong></td>
 <td>Validate that:
 <br><br>
+IF there is a value in ContactMechanismPurpose field <br>
 The value in ContactMechanism.ContactMechanismType is the same as the value in
 ContactMechanismPurpose.ContactMechanismType <br>
 OR <br>
@@ -120,10 +121,10 @@ ContactMechanismPurpose.ContactMechanismType has no value </td>
 <tr>
 <td><strong>Description</strong></td>
 <td>If the purpose of the party contact mechanism is defined, the purpose’s contact mechanism type
-must be the same as the party contact mechanism's type or must be null.
+must be the same as the selected contact mechanism's type or must be null.
 <br><br>
 The purpose of the contact mechanism may be for example - &quot;Email for invoices&quot;. So as a
-ContactMechanismType of the purspose &quot;email&quot; is selected. And then if a
+ContactMechanismType of the purpose &quot;email&quot; is selected. And then if a
 PartyContactMechnism sets its purpose attribute to the &quot;Email for invoices&quot; purpose, its
 ContactMechanism cannot be of type different than &quot;email&quot;.</td>
 </tr>
