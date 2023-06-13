@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R34303 WarehouseOrder - Line Serial Number | ERP.net Domain Model </title>
+    <title>R35021 WarehouseOrder - Required Warehouse Worker | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R34303 WarehouseOrder - Line Serial Number | ERP.net Domain Model ">
+    <meta name="title" content="R35021 WarehouseOrder - Required Warehouse Worker | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,63 +70,69 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r34303-warehouseorder---line-serial-number">R34303 WarehouseOrder - Line Serial Number</h1>
+<h1 id="r35021-warehouseorder---required-warehouse-worker">R35021 WarehouseOrder - Required Warehouse Worker</h1>
 
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
+<col style="width:18.8%">
+<col style="width:81.2%">
 <tbody>
 <tr>
-<td>Code</td>
-<td>R34303</td>
+<td><strong>Code</strong></td>
+<td>R35021</td>
 </tr>
 <tr>
-<td>Entity</td>
+<td><strong>Entity</strong></td>
 <td><a class="xref" href="../entities/Logistics.Wms.WarehouseOrders.html">Logistics.Wms.WarehouseOrders Entity</a></td>
 </tr>
 <tr>
-<td>Name</td>
-<td>LineSerialNumber</td>
+<td><strong>Name</strong></td>
+<td>RequiredWarehouseWorker</td>
 </tr>
 <tr>
-<td>Attribute</td>
-<td>Line.SerialNumber</td>
+<td><strong>Attribute</strong></td>
+<td>WarehouseWorker</td>
 </tr>
 <tr>
-<td>Layer</td>
+<td><strong>Layer</strong></td>
 <td>Back-End</td>
 </tr>
 <tr>
-<td>Events</td>
-<td>Planning +</td>
+<td><strong>Events</strong></td>
+<td>Release</td>
 </tr>
 <tr>
-<td>Modify</td>
+<td><strong>Priority</strong></td>
+<td>Normal</td>
+</tr>
+<tr>
+<td><strong>Modify</strong></td>
 <td>NO</td>
 </tr>
 <tr>
-<td>Action</td>
-<td>Use the Action from <a class="xref" href="../reference/common-business-rules/serial-numbers.html">Serial numbers</a></td>
+<td><strong>Applicable
+Legislations</strong></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">ALL // no condition
+needed</a></td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Use the Description from <a class="xref" href="../reference/common-business-rules/serial-numbers.html">Serial numbers</a></td>
+<td><strong>Action</strong></td>
+<td>If WarehouseWorker field is empty then throws an error.</td>
 </tr>
 <tr>
-<td>Message</td>
-<td>Use the Message from <a class="xref" href="../reference/common-business-rules/serial-numbers.html">Serial numbers</a></td>
+<td><strong>Description</strong></td>
+<td>The rule prevents unassigned warehouse orders to be released.</td>
 </tr>
 <tr>
-<td>Version</td>
-<td>Introduced in: 23</td>
+<td><strong>Message</strong></td>
+<td>Warehouse Worker field is required. Please fill in Warehouse Worker.</td>
 </tr>
 <tr>
-<td>Revocable</td>
-<td>YES</td>
+<td><strong>Version</strong></td>
+<td>Introduced:</td>
+</tr>
+<tr>
+<td><strong>Revocable</strong></td>
+<td>NO</td>
 </tr>
 </tbody>
 </table>
@@ -140,7 +146,7 @@ topic <a href="../templates/template-description-system-business-rules.html">Sys
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R34303.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R35021.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
