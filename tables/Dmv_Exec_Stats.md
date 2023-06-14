@@ -12,15 +12,15 @@ Execution statistics dynamic management view. Entity: Dmv_Exec_Stats (Introduced
 | Name | Type | Description |
 | - | - | --- |
 |[Application](#application)|`nvarchar(64)` |The name of the application that executes the operation|
-|[Avg_Time_Ms](#avg_time_ms)|`nvarchar(64)` |Average time of operation execution|
+|[Avg_Time_Ms](#avg_time_ms)|`decimal(12, 3)` |Average time of operation execution|
 |[Count](#count)|`int` |The number of times the operation is executed since last statistics reset.|
 |[Database](#database)|`nvarchar(64)` |The database in which the operation is executed|
 |[Is_Long_Polling](#is_long_polling)|`bit` |True if the operation is long polling.|
 |[Kind](#kind)|`nvarchar(64)` |The operation kind. Various operation kinds exist, e.g. Db, Long Procs etc.|
-|[Max_Time_Ms](#max_time_ms)|`nvarchar(64)` |The maximum time of one operation execution|
+|[Max_Time_Ms](#max_time_ms)|`decimal(12, 3)` |The maximum time of one operation execution|
 |[Operation](#operation)|`nvarchar(128)` |The operation name|
 |[Statistics_Since](#statistics_since)|`datetime` |The date and time since when the statistics are collected|
-|[Total_Time_Ms](#total_time_ms)|`nvarchar(64)` |Total time spent for the operation|
+|[Total_Time_Ms](#total_time_ms)|`decimal(12, 3)` |Total time spent for the operation|
 
 ## Columns
 
@@ -45,7 +45,7 @@ The name of the application that executes the operation
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -75,7 +75,7 @@ Average time of operation execution
 |Format|N0|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|64|
+|Max Length|-1|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -83,10 +83,10 @@ Average time of operation execution
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(64)|
+|Type|decimal(12, 3)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -119,7 +119,7 @@ The number of times the operation is executed since last statistics reset.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|int|
@@ -155,7 +155,7 @@ The database in which the operation is executed
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -228,7 +228,7 @@ The operation kind. Various operation kinds exist, e.g. Db, Long Procs etc.
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -258,7 +258,7 @@ The maximum time of one operation execution
 |Format|N0|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|64|
+|Max Length|-1|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -266,10 +266,10 @@ The maximum time of one operation execution
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(64)|
+|Type|decimal(12, 3)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -367,7 +367,7 @@ Total time spent for the operation
 |Format|N0|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|64|
+|Max Length|-1|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -375,10 +375,10 @@ Total time spent for the operation
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(64)|
+|Type|decimal(12, 3)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
