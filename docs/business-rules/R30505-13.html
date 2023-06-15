@@ -110,10 +110,11 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>if (ReceivingOrder.AdjustedDocument == null)
+<td>if (ReceivingOrder.AdjustedDocument == null)<br>
 , then check:
 <br><br>
-if ((Quantity != 0) &amp;&amp; (ConfirmedQuantity == null)) || ((ConfirmedQuantity != null) &amp;&amp; (ConfirmedQuantity != 0))|                          |                      | PricePerUnit = (LineAmount.Round() / Quantity).RoundUnitPrice();                              |
+if ((Quantity != 0) &amp;&amp; (ConfirmedQuantity == null)) || ((ConfirmedQuantity != null) &amp;&amp; (ConfirmedQuantity != 0))|
+PricePerUnit = (LineAmount.Round() / Quantity).RoundUnitPrice();
 <br><br>
 if ((Quantity == 0) &amp;&amp; (ConfirmedQuantity == null)) || (ConfirmedQuantity == 0)
 PricePerUnit = null
@@ -125,15 +126,12 @@ for Line Amounts</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td><p>When Line Amount is changed, Price Per Unit should be calculated as the result of dividing
-Line Amount:</p>
-<ul>
-<li>by Quantity (if Confirmed Quantity is null) or</li>
-<li>by Confirmed Quantity (if Confirmed Quantity is not null)
-If Quantity is 0 and Confirmed Quantity is null, Price Per Unit is null.
-If Confirmed Quantity is 0, Price Per Unit is null.</li>
-</ul>
-</td>
+<td>When Line Amount is changed, Price Per Unit should be calculated as the result of dividing
+Line Amount:<br>
+- by Quantity (if Confirmed Quantity is null) or
+- by Confirmed Quantity (if Confirmed Quantity is not null)
+If Quantity is 0 and Confirmed Quantity is null, Price Per Unit is null.<br>
+If Confirmed Quantity is 0, Price Per Unit is null.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
