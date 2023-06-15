@@ -116,7 +116,7 @@
 if ((Quantity != 0) &amp;&amp; (ConfirmedQuantity == null)) || ((ConfirmedQuantity != null) &amp;&amp; (ConfirmedQuantity != 0))|
 PricePerUnit = (LineAmount.Round() / Quantity).RoundUnitPrice();
 <br><br>
-if ((Quantity == 0) &amp;&amp; (ConfirmedQuantity == null)) || (ConfirmedQuantity == 0)
+if ((Quantity == 0) &amp;&amp; (ConfirmedQuantity == null)) || (ConfirmedQuantity == 0) <br>
 PricePerUnit = null
 <br><br>
 *RoundUnitPrice() is rounding with precision 5 - this is for Unit Prices and Price Per Unit
@@ -128,8 +128,8 @@ for Line Amounts</td>
 <td><strong>Description</strong></td>
 <td>When Line Amount is changed, Price Per Unit should be calculated as the result of dividing
 Line Amount:<br>
-- by Quantity (if Confirmed Quantity is null) or
-- by Confirmed Quantity (if Confirmed Quantity is not null)
+- by Quantity (if Confirmed Quantity is null) or <br>
+- by Confirmed Quantity (if Confirmed Quantity is not null) <br>
 If Quantity is 0 and Confirmed Quantity is null, Price Per Unit is null.<br>
 If Confirmed Quantity is 0, Price Per Unit is null.</td>
 </tr>
@@ -139,7 +139,7 @@ If Confirmed Quantity is 0, Price Per Unit is null.</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
-<td>Introduced: 2020.1
+<td>Introduced: 2020.1 <br>
 Updated:</td>
 </tr>
 <tr>
