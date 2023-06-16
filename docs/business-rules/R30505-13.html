@@ -113,11 +113,15 @@
 <td>if (ReceivingOrder.AdjustedDocument == null)<br>
 , then check:
 <br><br>
-if ((Quantity != 0) &amp;&amp; (ConfirmedQuantity == null)) || ((ConfirmedQuantity != null) &amp;&amp; (ConfirmedQuantity != 0))|
+if (ConfirmedQuantity ?? Quantity) != 0 <br>
 PricePerUnit = (LineAmount.Round() / Quantity).RoundUnitPrice();
 <br><br>
-if ((Quantity == 0) &amp;&amp; (ConfirmedQuantity == null)) || (ConfirmedQuantity == 0) <br>
+ELSE <br>
 PricePerUnit = null
+<br><br>
+*ConfirmedQuantity ?? Quantity - means the following:
+if (ConfirmedQuantity != null), then get the value from ConfirmedQuantity
+if (ConfirmedQuantity == null), then get the value from Quantity
 <br><br>
 *RoundUnitPrice() is rounding with precision 5 - this is for Unit Prices and Price Per Unit
 <br><br>
