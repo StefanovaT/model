@@ -27,7 +27,6 @@ Aggregate Tree
   * [Crm.Distributors](Crm.Distributors.md)  
   * [General.PartyApplicableLegislations](General.PartyApplicableLegislations.md)  
   * [General.PartyLocationNumbers](General.PartyLocationNumbers.md)  
-  * [General.Contacts.ActivityTimeIntervals](General.Contacts.ActivityTimeIntervals.md)  
   * [General.Contacts.PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md)  
   * [General.Contacts.PartyBankAccounts](General.Contacts.PartyBankAccounts.md)  
   * [General.Contacts.PartyPictures](General.Contacts.PartyPictures.md)  
@@ -64,7 +63,6 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| ActivityTimeIntervals | [ActivityTimeIntervals](General.Contacts.ActivityTimeIntervals.md) | List of `ActivityTimeInterval`(General.Contacts.ActivityTimeIntervals.md) child objects, based on the `General.Contacts.ActivityTimeInterval.Party`(General.Contacts.ActivityTimeIntervals.md#party) back reference 
 | ApplicableLegislations | [PartyApplicableLegislations](General.PartyApplicableLegislations.md) | List of `PartyApplicable<br />Legislation`(General.PartyApplicable<br />Legislations.md) child objects, based on the `General.PartyApplicableLegislation.Party`(General.PartyApplicable<br />Legislations.md#party) back reference 
 | BankAccounts | [PartyBankAccounts](General.Contacts.PartyBankAccounts.md) | List of `PartyBankAccount`(General.Contacts.PartyBankAccounts.md) child objects, based on the `General.Contacts.PartyBankAccount.Party`(General.Contacts.PartyBankAccounts.md#party) back reference 
 | ContactMechanisms | [PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md) | List of `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md) child objects, based on the `General.Contacts.PartyContactMechanism.Party`(General.Contacts.PartyContactMechanisms.md#party) back reference 

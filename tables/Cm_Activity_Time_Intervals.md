@@ -7,10 +7,6 @@ Entity: [General.Contacts.ActivityTimeIntervals](~/entities/General.Contacts.Act
 
 History of work efforts for executing activities (timesheet). Entity: Cm_Activity_Time_Intervals
 
-## Owner Tables Hierarchy
-
-* [Gen_Parties](Gen_Parties.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -258,7 +254,7 @@ The party for which the time interval is recorded
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

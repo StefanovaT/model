@@ -83,19 +83,17 @@
 <p>History of work efforts for executing activities (timesheet). Entity: Cm_Activity_Time_Intervals</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Party.PartyName:T}</em><br>
+<em>{Id}: {ActivityId}</em><br>
 Default Search Members:<br>
-<em>Party.PartyName</em><br>
-Name Data Member:<br>
-<em>Party.PartyName</em><br>
+__<br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Parent:<br>
-<a href="General.Contacts.Parties.html">General.Contacts.Parties</a><br>
-Aggregate Root:<br>
-<a href="General.Contacts.Parties.html">General.Contacts.Parties</a></p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="General.Contacts.ActivityTimeIntervals.html">General.Contacts.ActivityTimeIntervals</a></li>
+</ul>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -171,7 +169,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.Contacts.ActivityTimeIntervals.html#party">Party</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a></td>
-<td>The party for which the time interval is recorded. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
+<td>The party for which the time interval is recorded. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.ActivityTimeIntervals.html#userstatus">UserStatus</a></td>
@@ -296,11 +294,10 @@ Enumeration of document system states<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="party">Party</h3>
-<p>The party for which the time interval is recorded. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p>The party for which the time interval is recorded. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="userstatus">UserStatus</h3>
 <p>The user status of the primary activity in the moment the time interval was created. null when the user status is unknown. <code>Filter(multi eq)</code></p>

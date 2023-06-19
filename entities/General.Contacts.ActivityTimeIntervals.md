@@ -9,21 +9,17 @@ History of work efforts for executing activities (timesheet). Entity: Cm_Activit
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}_  
+_{Id}: {ActivityId}_  
 Default Search Members:  
-_Party.PartyName_  
-Name Data Member:  
-_Party.PartyName_  
+__  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[General.Contacts.Parties](General.Contacts.Parties.md)  
-Aggregate Root:  
-[General.Contacts.Parties](General.Contacts.Parties.md)  
+Aggregate Tree  
+* [General.Contacts.ActivityTimeIntervals](General.Contacts.ActivityTimeIntervals.md)  
 
 ## Attributes
 
@@ -44,7 +40,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Activity](General.Contacts.ActivityTimeIntervals.md#activity) | [Activities](General.Contacts.Activities.md) | The activity for which the time interval is recorded. `Required` `Filter(multi eq)` |
-| [Party](General.Contacts.ActivityTimeIntervals.md#party) | [Parties](General.Contacts.Parties.md) | The party for which the time interval is recorded. `Required` `Filter(multi eq)` `Owner` |
+| [Party](General.Contacts.ActivityTimeIntervals.md#party) | [Parties](General.Contacts.Parties.md) | The party for which the time interval is recorded. `Required` `Filter(multi eq)` |
 | [UserStatus](General.Contacts.ActivityTimeIntervals.md#userstatus) | [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable) | The user status of the primary activity in the moment the time interval was created. null when the user status is unknown. `Filter(multi eq)` |
 
 
@@ -170,12 +166,11 @@ _Show in UI_: **ShownByDefault**
 
 ### Party
 
-The party for which the time interval is recorded. `Required` `Filter(multi eq)` `Owner`
+The party for which the time interval is recorded. `Required` `Filter(multi eq)`
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### UserStatus
