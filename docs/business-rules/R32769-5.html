@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R32769-5 PartyContactMechanisms - Update Line Order | ERP.net Domain Model </title>
+    <title>R32769-5 PartyContactMechanisms - Set Line Order | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R32769-5 PartyContactMechanisms - Update Line Order | ERP.net Domain Model ">
+    <meta name="title" content="R32769-5 PartyContactMechanisms - Set Line Order | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,70 +70,82 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r32769-5-partycontactmechanisms---update-line-order">R32769-5 PartyContactMechanisms - Update Line Order</h1>
+<h1 id="r32769-5-partycontactmechanisms---set-line-order">R32769-5 PartyContactMechanisms - Set Line Order</h1>
 
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
+<col style="width:18.68%">
+<col style="width:81.32%">
 <tbody>
 <tr>
-<td>Code</td>
+<td rowspan="2"><p><strong>Code</strong></p>
+<hr>
+<p><strong>Entity</strong></p>
+</td>
 <td>R32769-5</td>
 </tr>
 <tr>
-<td>Entity</td>
 <td><a class="xref" href="../entities/General.Contacts.PartyContactMechanisms.html">General.Contacts.PartyContactMechanisms Entity</a></td>
 </tr>
 <tr>
-<td>Name</td>
+<td><strong>Name</strong></td>
 <td>UpdateLineOrder</td>
 </tr>
 <tr>
-<td>Attribute</td>
+<td><strong>Attribute</strong></td>
 <td>LineOrd</td>
 </tr>
 <tr>
-<td>Layer</td>
+<td rowspan="2"><p><strong>Layer</strong></p>
+<hr>
+<p><strong>Events</strong></p>
+</td>
 <td>Front-End</td>
 </tr>
 <tr>
-<td>Events</td>
-<td>AttributeChanged(Id, PartyId)</td>
+<td>AttributeChanged(Party, ContactMechanism.ContactMechanismType)</td>
 </tr>
 <tr>
-<td>Priority</td>
+<td><strong>Priority</strong></td>
 <td>Normal</td>
 </tr>
 <tr>
-<td>Modify</td>
-<td>YES</td>
+<td><strong>Modify</strong></td>
+<td rowspan="2"><h2 id="yes">YES</h2>
+<p>Set a value in LineOrd field after applying the following algorithm:<br>
+<br><br></p>
+<ol>
+<li>Select all the records in PartyContactMechanism table where: <br>
+Party = current PartyContactMechanism.Party AND <br>
+ContactMechanism.ContactMechanismType == current PartyContactMechanism.ContactMechanism.ContactMechanismType <br> |</li>
+<li>Sort them in descending order by LinOrd <br></li>
+<li>From the first record - get the value from LineOrd field <br></li>
+<li>Increment this value by 1. <br>
+<br><br>
+If there are no records found, then set 1 in LineOrd field.</li>
+</ol>
+</td>
 </tr>
 <tr>
-<td>Applicable Legislations</td>
-<td>ALL // no condition needed</td>
+<td><strong>Action</strong></td>
 </tr>
 <tr>
-<td>Action</td>
-<td>if (pcm.ObjectState != SystemFrameworks.Domain.ObjectState.Added || <br>    pcm.Party == null || <br>    pcm.ContactMechanism == null) <br>    return; <br>  max = SELECT FirstOrDefault LineOrd FROM PartyContactMechanism <br>        WHERE Party == pcm.Party &amp;&amp; <br>        ContactMechanism.ContactMechanismType == pcm.ContactMechanism.ContactMechanismType &amp;&amp; <br>        Id != pcm.Id <br>        ORDER BY LineOrd DESCENDING <br> pcm.LineOrd = max + 1</td>
+<td><strong>Description</strong></td>
+<td>The rule sets a value in LineOrd field.<br>
+This value is determined by taking the last (highest numbered) PartyContactMechanism record of the same ContactMechanismType within the current Party, and by adding one to the LineOrd of the last record. If no such record, then LineOrd is set to 1. <br>|</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>Updates line order of party contact mechanisms.</td>
+<td><strong>Message</strong></td>
+<td>
+<ul>
+<li></li>
+</ul>
+</td>
 </tr>
 <tr>
-<td>Message</td>
-<td>-</td>
+<td colspan="2"><strong>Introduced In Version</strong> | Introduced: 2022</td>
 </tr>
 <tr>
-<td>Introduced In Version</td>
-<td>Introduced: 2022</td>
-</tr>
-<tr>
-<td>Revocable</td>
+<td><strong>Revocable</strong></td>
 <td>YES</td>
 </tr>
 </tbody>
