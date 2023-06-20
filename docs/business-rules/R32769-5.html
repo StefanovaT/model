@@ -73,8 +73,8 @@
 <h1 id="r32769-5-partycontactmechanisms---set-line-order">R32769-5 PartyContactMechanisms - Set Line Order</h1>
 
 <table>
-<col style="width:19.05%">
-<col style="width:80.95%">
+<col style="width:16.67%">
+<col style="width:83.33%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
@@ -114,8 +114,8 @@
 <br><br></p>
 <ol>
 <li>Select all the records in PartyContactMechanism table where: <br>
-Party = current PartyContactMechanism.Party AND
-ContactMechanism.ContactMechanismType == current PartyContactMechanism.ContactMechanism.ContactMechanismType <br> |</li>
+Party = current PartyContactMechanism.Party AND <br>
+ContactMechanism.ContactMechanismType == current PartyContactMechanism.ContactMechanism.ContactMechanismType <br></li>
 <li>Sort them in descending order by LinOrd <br></li>
 <li>From the first record - get the value from LineOrd field <br></li>
 <li>Increment this value by 1.
