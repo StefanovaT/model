@@ -72,44 +72,82 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="r32769-5-partycontactmechanisms---set-line-order">R32769-5 PartyContactMechanisms - Set Line Order</h1>
 
-<p>+-----------------+--------------------------------------------------------------------------+
-| <strong>Code</strong>        | R32769-5                                                                 |
-+---------  ------+--------------------------------------------------------------------------+
-| <strong>Entity</strong>      | <a class="xref" href="../entities/General.Contacts.PartyContactMechanisms.html">General.Contacts.PartyContactMechanisms Entity</a>                                 |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Name</strong>        | UpdateLineOrder                                                          |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Attribute</strong>   | LineOrd                                                                  |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Layer</strong>       | Front-End                                                                |
-+--------------- -+--------------------------------------------------------------------------+
-| <strong>Events</strong>      | AttributeChanged(Party, ContactMechanism.ContactMechanismType)           |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Priority</strong>    | Normal                                                                   |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Modify</strong>      | YES                                                                      |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Action</strong>      | Set a value in LineOrd field after applying the following algorithm:<br>|
-|                 |<br><br>                                                                 |
-|                 | 1. Select all the records in PartyContactMechanism table where: <br>    |
-|                 | Party = current PartyContactMechanism.Party AND <br>                    |
-|                 | ContactMechanism.ContactMechanismType == current PartyContactMechanism.ContactMechanism.ContactMechanismType<br> |
-|                 | 2. Sort them in descending order by LinOrd <br>                         |
-|                 | 3. From the first record - get the value from LineOrd field <br>        |
-|                 | 4. Increment this value by 1. <br>                                      |
-|                 | <br><br>                                                                |
-|                 | If there are no records found, then set 1 in LineOrd field.              |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Description</strong> |  The rule sets a value in LineOrd field.<br>                            |
-|                 |  This value is determined by taking the last (highest numbered) PartyContactMechanism record of the same ContactMechanismType within the current Party, and by adding one to the LineOrd of the last record. <br>                    |
-|                 | If no such record, then LineOrd is set to 1.                             |
-+-----------------+--------------------------------------------------------------------------+
-| <strong>Message</strong>     | -                                                                        |
-+---------------------------+---------------------------------------- -----------------------+
-| <strong>Introduced In Version</strong> | Introduced: 2022                                               |
-+---------------------------+----------------------------------------------------------------+
-| <strong>Revocable</strong>   | YES                                                                      |
-+-----------------+--------------------------------------------------------------------------+</p>
+<table>
+<col style="width:25%">
+<col style="width:75%">
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>R32769-5</td>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td><a class="xref" href="../entities/General.Contacts.PartyContactMechanisms.html">General.Contacts.PartyContactMechanisms Entity</a></td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>SetLineOrder</td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>LineOrd</td>
+</tr>
+<tr>
+<td><strong>Layer</strong></td>
+<td>Front-End</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>AttributeChanged(Party, ContactMechanism.ContactMechanismType)</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>Normal</td>
+</tr>
+<tr>
+<td><strong>Modify</strong></td>
+<td>YES</td>
+</tr>
+<tr>
+<td><strong>Action</strong></td>
+<td><p>Set a value in LineOrd field after applying the following algorithm:<br>
+<br><br></p>
+<ol>
+<li>Select all the records in PartyContactMechanism table where: <br>
+Party = current PartyContactMechanism.Party AND <br>
+ContactMechanism.ContactMechanismType == current PartyContactMechanism.ContactMechanism.ContactMechanismType <br> |</li>
+<li>Sort them in descending order by LinOrd <br></li>
+<li>From the first record - get the value from LineOrd field <br></li>
+<li>Increment this value by 1. <br>
+<br><br>
+If there are no records found, then set 1 in LineOrd field.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The rule sets a value in LineOrd field.<br>
+This value is determined by taking the last (highest numbered) PartyContactMechanism
+record of the same ContactMechanismType within the current Party,
+and by adding one to the LineOrd of the last record.<br>
+If no such record, then LineOrd is set to 1.</td>
+</tr>
+<tr>
+<td><strong>Message</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>Introduced: 2022</td>
+</tr>
+<tr>
+<td><strong>Revocable</strong></td>
+<td>NO</td>
+</tr>
+</tbody>
+</table>
+<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
 </article>
           </div>
           
