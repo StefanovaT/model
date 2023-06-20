@@ -349,7 +349,7 @@ The unit price of the received products, in the documents currency.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|decimal(14, 5)|
+|Type|decimal(14, 5) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Short|
 |User Login|no|
