@@ -110,27 +110,14 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Set a value in LineOrd field after applying the following algorithm:
-<br><br>
-(1) Select all the records in PartyContactMechanism table where: <br>
-Party = current PartyContactMechanism.Party AND <br>
-ContactMechanism.ContactMechanismType = current PartyContactMechanism.ContactMechanism.ContactMechanismType <br>
+<td>Set LineOrd to the highest number +1 within the current party and the same contact mechanism type.<br> |
 <br>
-(2) Sort them in descending order by LinOrd <br>
-<br>
-(3) From the first record - get the value from LineOrd field <br>
-<br>
-(4) Increment this value by 1.<br>
-<br>
-If there are no records found, then set 1 in LineOrd field.</td>
+If there are no records found, then set 1.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule sets a value in LineOrd field.<br>
-This value is determined by taking the last (highest numbered)
-PartyContactMechanism record of the same ContactMechanismType
-within the current Party, and by adding one to the LineOrd of the last record.<br>
-If no such record, then LineOrd is set to 1.</td>
+<td>Gets the next consecutive number for the contact mechanism type.Each type has separate sequence, starting with 1.|
+separate sequence, starting with 1.                   |</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
