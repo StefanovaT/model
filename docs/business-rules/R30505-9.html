@@ -115,13 +115,13 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>IIF(((((ConfirmedQuantity ?? Quantity) == null) OrElse ((ConfirmedQuantity ?? Quantity).
-Value == 0)) OrElse (PricePerUnit == null)), LineAmount, ((ConfirmedQuantity ?? Quantity).
-Value * PricePerUnit).Round())</td>
+<td>IIF((((ConfirmedQuantity ?? Quantity) == null) OrElse (PricePerUnit == null)), LineAmount,
+((ConfirmedQuantity ?? Quantity).Value * PricePerUnit).Round())</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td></td>
+<td>The rule calculates Line Amount by multiplying quantity by price per unit. If price per
+unit or quantity is null, the Line Amount is not calculated.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>

@@ -153,6 +153,7 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | DekittingControllingLevel | Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br /> _Database Value:_ 'DCL' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'DekittingControllingLevel' |
 | GS1SSCCCompanyPrefix | Specifies the GS1 company prefix issued by the national SG1 organization. A digit number used when generating SSCC codes.. Stored as 'GCP'. <br /> _Database Value:_ 'GCP' <br /> _Model Value:_ 10 <br /> _Domain API Value:_ 'GS1SSCCCompanyPrefix' |
 | GS1SSCCNextSerial | Specifies the next reference serial number used when generating SSCC codes. А digit number acting as a counter: e.g. 0000001, 0000002… .. Stored as 'GNS'. <br /> _Database Value:_ 'GNS' <br /> _Model Value:_ 11 <br /> _Domain API Value:_ 'GS1SSCCNextSerial' |
+| RequireProductScan | Require scanning of the product. Stored as 'RPS'. <br /> _Database Value:_ 'RPS' <br /> _Model Value:_ 12 <br /> _Domain API Value:_ 'RequireProductScan' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

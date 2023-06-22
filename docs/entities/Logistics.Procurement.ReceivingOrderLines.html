@@ -310,9 +310,9 @@ Aggregate Root:<br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>IIF( ( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value == 0)) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))</code></p>
+<code>IIF( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
-<code>IIF( ( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value == 0)) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))</code></p>
+<code>IIF( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))</code></p>
 <h3 id="lineno">LineNo</h3>
 <p>Line number, unique within the ReceivingOrder. Usually is increasing number like 10, 20, 30, ... when initially entering the ReceivingOrder (in order to allow insertions with adjustment documents). <code>Required</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>

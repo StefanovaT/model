@@ -139,10 +139,10 @@ _Default Value_: **Constant**
 _Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
-`IIF( ( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value == 0)) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))`
+`IIF( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))`
 
 _Front-End Recalc Expressions:_  
-`IIF( ( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value == 0)) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))`
+`IIF( ( ( ( obj.ConfirmedQuantity ?? obj.Quantity) == null) OrElse ( obj.PricePerUnit == null)), obj.LineAmount, ( ( obj.ConfirmedQuantity ?? obj.Quantity).Value * obj.PricePerUnit).Round( ))`
 ### LineNo
 
 Line number, unique within the ReceivingOrder. Usually is increasing number like 10, 20, 30, ... when initially entering the ReceivingOrder (in order to allow insertions with adjustment documents). `Required`
