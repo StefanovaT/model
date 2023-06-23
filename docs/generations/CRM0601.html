@@ -141,9 +141,9 @@
 To create a sales order, the customer has to be specified. <br>
 The customer is extracted from the Target party, selected in the Marketing Activity (MarketingActivity.TargetParty). The customer has to be up-to-date,
 with active customer definition for this party in the enterprise company of the sales order (SalesOrder.EnterpriseCompany) or for all enterprise companies:</p>
-<pre><code>(Customer.Party = MarketingActivity.TargetParty &amp;&amp; &lt;br&gt; 
-(Customer.EnterpriseCompany == SalesOrder.EnterpriseCompany || Customer.EnterpriseCompany == null) &amp;&amp; &lt;br&gt; 
-Customer.Active == true &amp;&amp; (Customer.FromDate &lt;= SalesOrder.DocumentDate || Customer.FromDate == null) &amp;&amp; &lt;br&gt;
+<pre><code>(Customer.Party = MarketingActivity.TargetParty &amp;&amp; 
+(Customer.EnterpriseCompany == SalesOrder.EnterpriseCompany || Customer.EnterpriseCompany == null) &amp;&amp;
+Customer.Active == true &amp;&amp; (Customer.FromDate &lt;= SalesOrder.DocumentDate || Customer.FromDate == null) &amp;&amp;
 (Customer.ThruDate &gt;= SalesOrder.DocumentDate || Customer.ThruDate == null).
 </code></pre>
 <p>If no such customer is found, the generation procedure is stopped and an error is thrown. The error text is:</p>
