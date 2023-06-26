@@ -5253,7 +5253,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R30424-5.html",
-          "hash": "XLdZjfD9NgNpp4lWeHB2+g=="
+          "hash": "CJ6/CrwDL1jgnksPOz9jwQ=="
         }
       },
       "is_incremental": false,
@@ -5265,7 +5265,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R30424-6.html",
-          "hash": "dPlX7xz1Fw1eP6ZueKP39Q=="
+          "hash": "/T+yGzlGliVoIJyB8WxNZA=="
         }
       },
       "is_incremental": false,
@@ -5661,7 +5661,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R30505-13.html",
-          "hash": "BuqsR/9q4jtQXGtXgSpGUQ=="
+          "hash": "H/dhmdOm5nFMeyM3nedlQQ=="
         }
       },
       "is_incremental": false,
@@ -11384,6 +11384,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35078.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35078.html",
+          "hash": "Dkf69u9fNh9Mz8Sq64Nlsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -16366,7 +16378,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Inventory.StoreOrderLines.html",
-          "hash": "D50swXSUWicXm8+HAwrThQ=="
+          "hash": "QDW3eNzxXv4qCjkzbWPcRw=="
         }
       },
       "is_incremental": false,
@@ -17050,7 +17062,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehouseOrderLines.html",
-          "hash": "mzQvDVZEO9m87hKQUNFi0g=="
+          "hash": "gS0G8PJQHB+BjoYVqLY6iQ=="
         }
       },
       "is_incremental": false,
