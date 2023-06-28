@@ -338,6 +338,8 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.WarehouseLocation != null), obj.WarehouseLocation.WarehouseZone, obj.WarehouseZone)`
 
 ## API Methods
 

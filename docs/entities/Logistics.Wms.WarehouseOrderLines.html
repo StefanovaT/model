@@ -491,6 +491,8 @@ Allowed values for the <code>TaskType</code>(Logistics.Wms.WarehouseOrderLines.m
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( obj.WarehouseLocation != null), obj.WarehouseLocation.WarehouseZone, obj.WarehouseZone)</code></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
@@ -566,7 +568,7 @@ The subject.<br>
 </ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
-<li><a href="../business-rules/R35078.html">R35078 WarehouseOrderLine - Set Warehouse Zone</a></li>
+<li><a href="../business-rules/R35078.html">R35078 Warehouse Order Line - Set Warehouse Zone (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
