@@ -11468,6 +11468,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35140.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35140.html",
+          "hash": "SxkkSJd10HDqFif8tNc4XA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -14398,7 +14410,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Excise.ExciseStampOperationLines.html",
-          "hash": "0hluShXJ368TyOdDsSsvMQ=="
+          "hash": "YsD/nY03tWjQ5ma2F/o77g=="
         }
       },
       "is_incremental": false,
