@@ -293,6 +293,8 @@
     items:
     - name: Devices
       href: Crm.Pos.Devices.md
+    - name: FiscalReceiptTemplates
+      href: Crm.Pos.FiscalReceiptTemplates.md
     - name: Locations
       href: Crm.Pos.Locations.md
     - name: Operators

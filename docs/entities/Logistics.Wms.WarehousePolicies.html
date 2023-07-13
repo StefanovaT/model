@@ -267,56 +267,56 @@ Allowed values for the <code>PolicyKind</code>(Logistics.Wms.WarehousePolicies.m
 </thead>
 <tbody>
 <tr>
-<td>AllowProductChange</td>
-<td>Allow executing with а different product than the ordered.. Stored as 'APC'. <br> <em>Database Value:</em> 'APC' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'AllowProductChange'</td>
-</tr>
-<tr>
-<td>AllowLotChange</td>
-<td>Allow executing with a different lot than the ordered.. Stored as 'ATC'. <br> <em>Database Value:</em> 'ATC' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'AllowLotChange'</td>
-</tr>
-<tr>
 <td>AllowLocationChange</td>
-<td>Allow executing from a different location than the ordered.. Stored as 'ALC'. <br> <em>Database Value:</em> 'ALC' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'AllowLocationChange'</td>
-</tr>
-<tr>
-<td>AllowUnitChange</td>
-<td>Allow executing of a quantity in a different measurement unit than the ordered.. Stored as 'AUC'. <br> <em>Database Value:</em> 'AUC' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'AllowUnitChange'</td>
-</tr>
-<tr>
-<td>RequireSourceScan</td>
-<td>Require scanning of the source location when moving/dispatching. Stored as 'RSS'. <br> <em>Database Value:</em> 'RSS' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'RequireSourceScan'</td>
-</tr>
-<tr>
-<td>RequireDestinationScan</td>
-<td>Require scanning of the destination location when moving/receiving. Stored as 'RDS'. <br> <em>Database Value:</em> 'RDS' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'RequireDestinationScan'</td>
+<td>Allow executing from a different location than the ordered.. Stored as 'ALC'. <br> <em>Database Value:</em> 'ALC' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'AllowLocationChange'</td>
 </tr>
 <tr>
 <td>AllowLineSkip</td>
-<td>Allow skipping of an order line when executing (allow quantity = 0). Stored as 'ALS'. <br> <em>Database Value:</em> 'ALS' <br> <em>Model Value:</em> 6 <br> <em>Domain API Value:</em> 'AllowLineSkip'</td>
+<td>Allow skipping of an order line when executing (allow quantity = 0). Stored as 'ALS'. <br> <em>Database Value:</em> 'ALS' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'AllowLineSkip'</td>
 </tr>
 <tr>
-<td>ZoneType</td>
-<td>Specifies the type of zone. Eg for receiving, shipping, packing, etc.. Stored as 'ZTY'. <br> <em>Database Value:</em> 'ZTY' <br> <em>Model Value:</em> 7 <br> <em>Domain API Value:</em> 'ZoneType'</td>
+<td>AllowProductChange</td>
+<td>Allow executing with а different product than the ordered.. Stored as 'APC'. <br> <em>Database Value:</em> 'APC' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'AllowProductChange'</td>
+</tr>
+<tr>
+<td>AllowLotChange</td>
+<td>Allow executing with a different lot than the ordered.. Stored as 'ATC'. <br> <em>Database Value:</em> 'ATC' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'AllowLotChange'</td>
+</tr>
+<tr>
+<td>AllowUnitChange</td>
+<td>Allow executing of a quantity in a different measurement unit than the ordered.. Stored as 'AUC'. <br> <em>Database Value:</em> 'AUC' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'AllowUnitChange'</td>
+</tr>
+<tr>
+<td>DekittingControllingLevel</td>
+<td>Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br> <em>Database Value:</em> 'DCL' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'DekittingControllingLevel'</td>
+</tr>
+<tr>
+<td>GS1SSCCCompanyPrefix</td>
+<td>Specifies the GS1 company prefix issued by the national SG1 organization. A digit number used when generating SSCC codes.. Stored as 'GCP'. <br> <em>Database Value:</em> 'GCP' <br> <em>Model Value:</em> 6 <br> <em>Domain API Value:</em> 'GS1SSCCCompanyPrefix'</td>
+</tr>
+<tr>
+<td>GS1SSCCNextSerial</td>
+<td>Specifies the next reference serial number used when generating SSCC codes. А digit number acting as a counter: e.g. 0000001, 0000002… .. Stored as 'GNS'. <br> <em>Database Value:</em> 'GNS' <br> <em>Model Value:</em> 7 <br> <em>Domain API Value:</em> 'GS1SSCCNextSerial'</td>
 </tr>
 <tr>
 <td>KittingControllingLevel</td>
 <td>Specifies the level of control during the kitting of the composite product’s components.. Stored as 'KCL'. <br> <em>Database Value:</em> 'KCL' <br> <em>Model Value:</em> 8 <br> <em>Domain API Value:</em> 'KittingControllingLevel'</td>
 </tr>
 <tr>
-<td>DekittingControllingLevel</td>
-<td>Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br> <em>Database Value:</em> 'DCL' <br> <em>Model Value:</em> 9 <br> <em>Domain API Value:</em> 'DekittingControllingLevel'</td>
-</tr>
-<tr>
-<td>GS1SSCCCompanyPrefix</td>
-<td>Specifies the GS1 company prefix issued by the national SG1 organization. A digit number used when generating SSCC codes.. Stored as 'GCP'. <br> <em>Database Value:</em> 'GCP' <br> <em>Model Value:</em> 10 <br> <em>Domain API Value:</em> 'GS1SSCCCompanyPrefix'</td>
-</tr>
-<tr>
-<td>GS1SSCCNextSerial</td>
-<td>Specifies the next reference serial number used when generating SSCC codes. А digit number acting as a counter: e.g. 0000001, 0000002… .. Stored as 'GNS'. <br> <em>Database Value:</em> 'GNS' <br> <em>Model Value:</em> 11 <br> <em>Domain API Value:</em> 'GS1SSCCNextSerial'</td>
+<td>RequireDestinationScan</td>
+<td>Require scanning of the destination location when moving/receiving. Stored as 'RDS'. <br> <em>Database Value:</em> 'RDS' <br> <em>Model Value:</em> 9 <br> <em>Domain API Value:</em> 'RequireDestinationScan'</td>
 </tr>
 <tr>
 <td>RequireProductScan</td>
-<td>Require scanning of the product. Stored as 'RPS'. <br> <em>Database Value:</em> 'RPS' <br> <em>Model Value:</em> 12 <br> <em>Domain API Value:</em> 'RequireProductScan'</td>
+<td>Require scanning of the product. Stored as 'RPS'. <br> <em>Database Value:</em> 'RPS' <br> <em>Model Value:</em> 10 <br> <em>Domain API Value:</em> 'RequireProductScan'</td>
+</tr>
+<tr>
+<td>RequireSourceScan</td>
+<td>Require scanning of the source location when moving/dispatching. Stored as 'RSS'. <br> <em>Database Value:</em> 'RSS' <br> <em>Model Value:</em> 11 <br> <em>Domain API Value:</em> 'RequireSourceScan'</td>
+</tr>
+<tr>
+<td>ZoneType</td>
+<td>Specifies the type of zone. Eg for receiving, shipping, packing, etc.. Stored as 'ZTY'. <br> <em>Database Value:</em> 'ZTY' <br> <em>Model Value:</em> 12 <br> <em>Domain API Value:</em> 'ZoneType'</td>
 </tr>
 </tbody>
 </table>

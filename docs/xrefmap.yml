@@ -451,6 +451,9 @@ references:
 - uid: Crm.Pos.Devices
   name: Crm.Pos.Devices Entity
   href: entities/Crm.Pos.Devices.html
+- uid: Crm.Pos.FiscalReceiptTemplates
+  name: Crm.Pos.FiscalReceiptTemplates Entity
+  href: entities/Crm.Pos.FiscalReceiptTemplates.html
 - uid: Crm.Pos.Locations
   name: Crm.Pos.Locations Entity
   href: entities/Crm.Pos.Locations.html

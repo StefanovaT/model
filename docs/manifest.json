@@ -13266,6 +13266,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pos.FiscalReceiptTemplates.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pos.FiscalReceiptTemplates.html",
+          "hash": "lapVVJEctBUJ0Uu1H/2f1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Crm.Pos.Locations.md",
       "output": {
         ".html": {
@@ -13342,7 +13354,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Pos.html",
-          "hash": "w9veCRcqCBpC2NS2pyBpdg=="
+          "hash": "WYXs1LAeM+tV9hQNkeWC3Q=="
         }
       },
       "is_incremental": false,
@@ -17170,7 +17182,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehousePolicies.html",
-          "hash": "3HRzOQeVKG0ukBybap+ltw=="
+          "hash": "KgpTZ1GHgp3g/bfoc/nQaA=="
         }
       },
       "is_incremental": false,
@@ -19042,7 +19054,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "7UnQnBTiFwP119vw8GeR9A=="
+          "hash": "/Lq5PYid6vd3iaDBUxBiVg=="
         }
       },
       "is_incremental": false,
@@ -24408,7 +24420,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Pos.html",
-          "hash": "wBwuawQRl4C2iJu/4Xw0VA=="
+          "hash": "C/Vt6KHCblnsqeREiWyBHg=="
         }
       },
       "is_incremental": false,
@@ -24421,6 +24433,18 @@
         ".html": {
           "relative_path": "tables/Pos_Devices.html",
           "hash": "BAakSFv6xxI8VTQgXaDgOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Pos_Fiscal_Receipt_Templates.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Pos_Fiscal_Receipt_Templates.html",
+          "hash": "/eeYcamUGYZ9+9XqWQdByA=="
         }
       },
       "is_incremental": false,
@@ -26904,7 +26928,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/index.html",
-          "hash": "MbqTevr7psUW3p6wG/fdVg=="
+          "hash": "cg8bGZDippYS2/tIUhC9pA=="
         }
       },
       "is_incremental": false,
@@ -26916,7 +26940,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/toc.html",
-          "hash": "OWxb8Jedb3GSgt19WKbT0w=="
+          "hash": "8z4L6xGawEp4t3iu4UVmIA=="
         }
       },
       "is_incremental": false,

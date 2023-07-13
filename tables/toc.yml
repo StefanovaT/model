@@ -818,6 +818,8 @@
   items:
   - name: Pos_Devices
     href: Pos_Devices.md
+  - name: Pos_Fiscal_Receipt_Templates
+    href: Pos_Fiscal_Receipt_Templates.md
   - name: Pos_Locations
     href: Pos_Locations.md
   - name: Pos_Operators
