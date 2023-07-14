@@ -141,10 +141,10 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 
 | Value | Description |
 | ---- | --- |
-| AllowLocationChange | Allow executing from a different location than the ordered.. Stored as 'ALC'. <br /> _Database Value:_ 'ALC' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'AllowLocationChange' |
-| AllowLineSkip | Allow skipping of an order line when executing (allow quantity = 0). Stored as 'ALS'. <br /> _Database Value:_ 'ALS' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'AllowLineSkip' |
-| AllowProductChange | Allow executing with а different product than the ordered.. Stored as 'APC'. <br /> _Database Value:_ 'APC' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'AllowProductChange' |
-| AllowLotChange | Allow executing with a different lot than the ordered.. Stored as 'ATC'. <br /> _Database Value:_ 'ATC' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AllowLotChange' |
+| AllowLineSkip | Allow skipping of an order line when executing (allow quantity = 0). Stored as 'ALS'. <br /> _Database Value:_ 'ALS' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'AllowLineSkip' |
+| AllowLocationChange | Allow executing from a different location than the ordered.. Stored as 'ALC'. <br /> _Database Value:_ 'ALC' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'AllowLocationChange' |
+| AllowLotChange | Allow executing with a different lot than the ordered.. Stored as 'ATC'. <br /> _Database Value:_ 'ATC' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'AllowLotChange' |
+| AllowProductChange | Allow executing with а different product than the ordered.. Stored as 'APC'. <br /> _Database Value:_ 'APC' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AllowProductChange' |
 | AllowUnitChange | Allow executing of a quantity in a different measurement unit than the ordered.. Stored as 'AUC'. <br /> _Database Value:_ 'AUC' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'AllowUnitChange' |
 | DekittingControllingLevel | Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br /> _Database Value:_ 'DCL' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'DekittingControllingLevel' |
 | GS1SSCCCompanyPrefix | Specifies the GS1 company prefix issued by the national SG1 organization. A digit number used when generating SSCC codes.. Stored as 'GCP'. <br /> _Database Value:_ 'GCP' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'GS1SSCCCompanyPrefix' |

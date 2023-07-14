@@ -30,6 +30,7 @@ User-defined footer printed at the end of the document (interpolated string).
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -60,6 +61,7 @@ User-defined header printed at the beginning of the document (interpolated strin
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -90,6 +92,7 @@ User-defined footer printed after each row (interpolated string).
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -120,6 +123,7 @@ User-defined header printed before each row (interpolated string).
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

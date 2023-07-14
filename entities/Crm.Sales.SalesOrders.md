@@ -49,7 +49,7 @@ Aggregate Tree
 | [CreationUser](Crm.Sales.SalesOrders.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreditLimitOverride](Crm.Sales.SalesOrders.md#creditlimitoverride) | boolean | Allows the sales order to be released even in the case of violations of credit limit or presence of overdue receivables. `Required` `Default(false)` `Filter(eq)` 
 | [CustomerPurchaseOrderDate](Crm.Sales.SalesOrders.md#customerpurchaseorderdate) | date __nullable__ | Issue date of the referent customer purchase order. `Filter(ge;le)` 
-| [CustomerPurchaseOrderNo](Crm.Sales.SalesOrders.md#customerpurchaseorderno) | string (20) __nullable__ | Reference number of the customer's purchase order. `Filter(eq;like)` 
+| [CustomerPurchaseOrderNo](Crm.Sales.SalesOrders.md#customerpurchaseorderno) | string (20) __nullable__ | Reference number of the customer's purchase order. `Filter(eq;like)` `ORD` 
 | [DeliveryTermsCode](Crm.Sales.SalesOrders.md#deliverytermscode) | [DeliveryTerms](Crm.Sales.SalesOrders.md#deliverytermscode) __nullable__ | Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting. 
 | [DisplayText](Crm.Sales.SalesOrders.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DocumentDate](Crm.Sales.SalesOrders.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md)) 
@@ -234,12 +234,13 @@ _Show in UI_: **HiddenByDefault**
 
 ### CustomerPurchaseOrderNo
 
-Reference number of the customer's purchase order. `Filter(eq;like)`
+Reference number of the customer's purchase order. `Filter(eq;like)` `ORD`
 
 _Type_: **string (20) __nullable__**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **20**  
 _Show in UI_: **HiddenByDefault**  
 
