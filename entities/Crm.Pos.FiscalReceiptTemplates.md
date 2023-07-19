@@ -27,10 +27,10 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CustomFooter](Crm.Pos.FiscalReceiptTemplates.md#customfooter) | string (256) | User-defined footer printed at the end of the document (interpolated string). `Required` 
-| [CustomHeader](Crm.Pos.FiscalReceiptTemplates.md#customheader) | string (256) | User-defined header printed at the beginning of the document (interpolated string). `Required` 
-| [CustomRowFooter](Crm.Pos.FiscalReceiptTemplates.md#customrowfooter) | string (256) | User-defined footer printed after each row (interpolated string). `Required` 
-| [CustomRowHeader](Crm.Pos.FiscalReceiptTemplates.md#customrowheader) | string (256) | User-defined header printed before each row (interpolated string). `Required` 
+| [CustomFooter](Crm.Pos.FiscalReceiptTemplates.md#customfooter) | string (256) __nullable__ | User-defined footer printed at the end of the document (interpolated string). 
+| [CustomHeader](Crm.Pos.FiscalReceiptTemplates.md#customheader) | string (256) __nullable__ | User-defined header printed at the beginning of the document (interpolated string). 
+| [CustomRowFooter](Crm.Pos.FiscalReceiptTemplates.md#customrowfooter) | string (256) __nullable__ | User-defined footer printed after each row (interpolated string). 
+| [CustomRowHeader](Crm.Pos.FiscalReceiptTemplates.md#customrowheader) | string (256) __nullable__ | User-defined header printed before each row (interpolated string). 
 | [DisplayText](Crm.Pos.FiscalReceiptTemplates.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Pos.FiscalReceiptTemplates.md#id) | guid |  
 | [ObjectVersion](Crm.Pos.FiscalReceiptTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -43,9 +43,9 @@ Aggregate Tree
 
 ### CustomFooter
 
-User-defined footer printed at the end of the document (interpolated string). `Required`
+User-defined footer printed at the end of the document (interpolated string).
 
-_Type_: **string (256)**  
+_Type_: **string (256) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -54,9 +54,9 @@ _Show in UI_: **ShownByDefault**
 
 ### CustomHeader
 
-User-defined header printed at the beginning of the document (interpolated string). `Required`
+User-defined header printed at the beginning of the document (interpolated string).
 
-_Type_: **string (256)**  
+_Type_: **string (256) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -65,9 +65,9 @@ _Show in UI_: **ShownByDefault**
 
 ### CustomRowFooter
 
-User-defined footer printed after each row (interpolated string). `Required`
+User-defined footer printed after each row (interpolated string).
 
-_Type_: **string (256)**  
+_Type_: **string (256) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -76,9 +76,9 @@ _Show in UI_: **ShownByDefault**
 
 ### CustomRowHeader
 
-User-defined header printed before each row (interpolated string). `Required`
+User-defined header printed before each row (interpolated string).
 
-_Type_: **string (256)**  
+_Type_: **string (256) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  

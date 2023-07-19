@@ -48,7 +48,7 @@ User-defined footer printed at the end of the document (interpolated string).
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(256)|
+|Type|nvarchar(256) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -79,7 +79,7 @@ User-defined header printed at the beginning of the document (interpolated strin
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(256)|
+|Type|nvarchar(256) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -110,7 +110,7 @@ User-defined footer printed after each row (interpolated string).
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(256)|
+|Type|nvarchar(256) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -141,7 +141,7 @@ User-defined header printed before each row (interpolated string).
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(256)|
+|Type|nvarchar(256) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

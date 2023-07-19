@@ -281,6 +281,8 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( obj.Product != null), obj.Product.ExciseProductType, null)</code></p>
 <h3 id="excisestamplot">ExciseStampLot</h3>
 <p>The lot of the excise stamps. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Finance.Excise.ExciseStampLots.html">ExciseStampLots</a> (nullable)</strong><br>
@@ -381,7 +383,7 @@ The subject.<br>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R33144.html">R33144 Excise Stamp Operation Line - Set End Number (Recalc)</a></li>
-<li><a href="../business-rules/R35140.html">R35140 Excise Stamp Operation Line - Set Excise Product Type From Product</a></li>
+<li><a href="../business-rules/R35140.html">R35140 Excise Stamp Operation Line - Set Excise Product Type (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:

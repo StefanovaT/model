@@ -173,6 +173,8 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`IIF( ( obj.Product != null), obj.Product.ExciseProductType, null)`
 ### ExciseStampLot
 
 The lot of the excise stamps. `Filter(multi eq)`
