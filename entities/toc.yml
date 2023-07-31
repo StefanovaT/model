@@ -1022,6 +1022,11 @@
 - name: Projects
   href: Projects.md
   items:
+  - name: Agile
+    href: Projects.Agile.md
+    items:
+    - name: ProjectTypes
+      href: Projects.Agile.ProjectTypes.md
   - name: ProjectParticipants
     href: Projects.ProjectParticipants.md
   - name: ProjectRiskDiscussion

@@ -3,6 +3,7 @@ uid: Projects
 ---
 # Projects Namespace
 ## Namespaces
+- [Agile](Projects.Agile.md)  
 - [Todo](Projects.Todo.md)  
 
 ## Entities
