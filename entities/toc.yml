@@ -1025,6 +1025,8 @@
   - name: Agile
     href: Projects.Agile.md
     items:
+    - name: Projects
+      href: Projects.Agile.Projects.md
     - name: ProjectTypes
       href: Projects.Agile.ProjectTypes.md
   - name: ProjectParticipants

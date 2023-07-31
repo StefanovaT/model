@@ -1576,6 +1576,9 @@ references:
 - uid: Projects.Agile
   name: Projects.Agile Namespace
   href: entities/Projects.Agile.html
+- uid: Projects.Agile.Projects
+  name: Projects.Agile.Projects Entity
+  href: entities/Projects.Agile.Projects.html
 - uid: Projects.Agile.ProjectTypes
   name: Projects.Agile.ProjectTypes Entity
   href: entities/Projects.Agile.ProjectTypes.html

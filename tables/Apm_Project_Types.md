@@ -79,6 +79,12 @@ Specifies whether the project type is active for new projects.
 |User Login|no|
 |Visible|yes|
 
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`True`|no|no|
+
 ### Project_Type_Id
 
 | Property | Value |
@@ -141,6 +147,12 @@ Multi-language name of the project type.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Project_Type_Name - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Row_Version
 

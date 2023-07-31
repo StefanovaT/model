@@ -124,12 +124,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.Agile.ProjectTypes.html#isactive">IsActive</a></td>
 <td>boolean</td>
-<td>Specifies whether the project type is active for new projects. <code>Required</code> <code>Default(true)</code></td>
+<td>Specifies whether the project type is active for new projects. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.ProjectTypes.html#name">Name</a></td>
 <td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
-<td>Multi-language name of the project type. <code>Required</code></td>
+<td>Multi-language name of the project type. <code>Required</code> <code>Filter(like)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.ProjectTypes.html#objectversion">ObjectVersion</a></td>
@@ -162,18 +162,18 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="isactive">IsActive</h3>
-<p>Specifies whether the project type is active for new projects. <code>Required</code> <code>Default(true)</code></p>
+<p>Specifies whether the project type is active for new projects. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
-<p>Multi-language name of the project type. <code>Required</code></p>
+<p>Multi-language name of the project type. <code>Required</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
