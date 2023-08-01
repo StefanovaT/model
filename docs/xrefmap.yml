@@ -1810,6 +1810,9 @@ references:
 - uid: Systems.Dmv.CurrentSessions
   name: Systems.Dmv.CurrentSessions View
   href: entities/Systems.Dmv.CurrentSessions.html
+- uid: Systems.Dmv.DatabaseInfo
+  name: Systems.Dmv.DatabaseInfo View
+  href: entities/Systems.Dmv.DatabaseInfo.html
 - uid: Systems.Dmv.ExecStats
   name: Systems.Dmv.ExecStats View
   href: entities/Systems.Dmv.ExecStats.html

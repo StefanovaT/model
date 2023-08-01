@@ -18642,6 +18642,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Dmv.DatabaseInfo.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Dmv.DatabaseInfo.html",
+          "hash": "M3CqBPqkUxmfhqX7HcVoiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Systems.Dmv.ExecStats.md",
       "output": {
         ".html": {
@@ -18706,7 +18718,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Systems.Dmv.html",
-          "hash": "TFDho2xLbH0KTzv3oDHxhQ=="
+          "hash": "Em6USxfTd8JlmlCp3VL9TQ=="
         }
       },
       "is_incremental": false,
@@ -19102,7 +19114,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "hXrvmXnP8/vQLSaI6yXnEg=="
+          "hash": "/PGC8/RDv8NbeqPYGdeEPg=="
         }
       },
       "is_incremental": false,
@@ -21804,7 +21816,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Dmv.html",
-          "hash": "AgD0uMBgTLz1dGyJVTPpgg=="
+          "hash": "dCGXwjrHIUDEIK85C2JfRg=="
         }
       },
       "is_incremental": false,
@@ -21817,6 +21829,18 @@
         ".html": {
           "relative_path": "tables/Dmv_Current_Sessions.html",
           "hash": "HGZp2AuAYz1kuzu8oDQ1/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Dmv_Database_Info.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Dmv_Database_Info.html",
+          "hash": "MUkrt5wDqsnktZUVfGrOyw=="
         }
       },
       "is_incremental": false,
@@ -27012,7 +27036,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/index.html",
-          "hash": "4bLEvp3eZl6BsUyoDzGVCw=="
+          "hash": "t7USthfYm9n9yna0KlYw5A=="
         }
       },
       "is_incremental": false,
@@ -27024,7 +27048,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/toc.html",
-          "hash": "ec6L2aP1dr7Z47zpVjBkiA=="
+          "hash": "RoaSrKR2Nxendyzi+9NYhw=="
         }
       },
       "is_incremental": false,

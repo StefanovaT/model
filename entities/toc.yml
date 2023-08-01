@@ -1155,6 +1155,8 @@
     items:
     - name: CurrentSessions
       href: Systems.Dmv.CurrentSessions.md
+    - name: DatabaseInfo
+      href: Systems.Dmv.DatabaseInfo.md
     - name: ExecStats
       href: Systems.Dmv.ExecStats.md
     - name: PrintImages
