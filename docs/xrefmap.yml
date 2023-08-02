@@ -1576,6 +1576,9 @@ references:
 - uid: Projects.Agile
   name: Projects.Agile Namespace
   href: entities/Projects.Agile.html
+- uid: Projects.Agile.ProjectAreas
+  name: Projects.Agile.ProjectAreas Entity
+  href: entities/Projects.Agile.ProjectAreas.html
 - uid: Projects.Agile.Projects
   name: Projects.Agile.Projects Entity
   href: entities/Projects.Agile.Projects.html
@@ -1816,6 +1819,12 @@ references:
 - uid: Systems.Dmv.ExecStats
   name: Systems.Dmv.ExecStats View
   href: entities/Systems.Dmv.ExecStats.html
+- uid: Systems.Dmv.InformationMessages
+  name: Systems.Dmv.InformationMessages View
+  href: entities/Systems.Dmv.InformationMessages.html
+- uid: Systems.Dmv.InstanceParameters
+  name: Systems.Dmv.InstanceParameters View
+  href: entities/Systems.Dmv.InstanceParameters.html
 - uid: Systems.Dmv.PrintImages
   name: Systems.Dmv.PrintImages View
   href: entities/Systems.Dmv.PrintImages.html

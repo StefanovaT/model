@@ -38,6 +38,8 @@
 - name: Apm
   href: Apm.md
   items:
+  - name: Apm_Project_Areas
+    href: Apm_Project_Areas.md
   - name: Apm_Project_Types
     href: Apm_Project_Types.md
   - name: Apm_Projects
@@ -361,10 +363,12 @@
   items:
   - name: Dmv_Current_Sessions
     href: Dmv_Current_Sessions.md
-  - name: Dmv_Database_Info
-    href: Dmv_Database_Info.md
   - name: Dmv_Exec_Stats
     href: Dmv_Exec_Stats.md
+  - name: Dmv_Information_Messages
+    href: Dmv_Information_Messages.md
+  - name: Dmv_Instance_Parameters
+    href: Dmv_Instance_Parameters.md
   - name: Dmv_Print_Images
     href: Dmv_Print_Images.md
   - name: Dmv_Procedure_Status_Info

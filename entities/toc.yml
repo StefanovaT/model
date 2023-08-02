@@ -1025,6 +1025,8 @@
   - name: Agile
     href: Projects.Agile.md
     items:
+    - name: ProjectAreas
+      href: Projects.Agile.ProjectAreas.md
     - name: Projects
       href: Projects.Agile.Projects.md
     - name: ProjectTypes
@@ -1155,10 +1157,12 @@
     items:
     - name: CurrentSessions
       href: Systems.Dmv.CurrentSessions.md
-    - name: DatabaseInfo
-      href: Systems.Dmv.DatabaseInfo.md
     - name: ExecStats
       href: Systems.Dmv.ExecStats.md
+    - name: InformationMessages
+      href: Systems.Dmv.InformationMessages.md
+    - name: InstanceParameters
+      href: Systems.Dmv.InstanceParameters.md
     - name: PrintImages
       href: Systems.Dmv.PrintImages.md
     - name: ProcedureStatusInfo
