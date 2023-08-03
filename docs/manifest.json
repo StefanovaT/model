@@ -11492,6 +11492,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35229.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35229.html",
+          "hash": "hnxyXt8YOepCsnOIh61B6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -14458,7 +14470,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Excise.ExciseStampOperations.html",
-          "hash": "jrlbriXIqVXi41f4djja9g=="
+          "hash": "Vvr0u5VAv2tFCRJViTkvdw=="
         }
       },
       "is_incremental": false,
