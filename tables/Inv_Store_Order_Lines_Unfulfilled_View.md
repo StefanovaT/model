@@ -16,12 +16,14 @@ Returns the remaining (unfulfilled) quantity and cost for each Store Order Line 
 |[Is_Fulfilled](#is_fulfilled)|`int` |Returns 1/true when both the Quantity and Cost are fulfilled or only negligible (less than 0.001 for qty and 0.01 for cost) sums remain. Please note, that filtering by this fields forces full scan and calculation of remaining amounts for all non-finished store orders. For best performance, the store orders should be finished after fulfilling.|
 |[Is_QuantityFulfilled](#is_quantityfulfilled)|`int` |Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this fields forces full scan and calculation of remaining amounts for all non-finished store orders. For best performance, the store orders should be finished after fulfilling.|
 |[Lot_Id](#lot_id)|`uniqueidentifier` |If non-null, contains the specific lot to use for the movement|
+|[Movement_Type](#movement_type)|`nvarchar(1)` Allowed: `I`, `R`|Store order movement type. R=RECEIPT, I=ISSUE|
 |[Order_Remaining_Line_Cost](#order_remaining_line_cost)|`decimal(38, 2)` |The remaining (unfulfilled) line cost of the order line.|
 |[Order_Remaining_Quantity_Base](#order_remaining_quantity_base)|`decimal(38, 3)` |The remaining (unfulfilled) quantity of the order line in base measurement unit.|
 |[Product_Id](#product_id)|`uniqueidentifier` ||
 |[Product_Variant_Id](#product_variant_id)|`uniqueidentifier` |If specified determines which product variant of the current product in this line is used.|
 |[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` |Which serial number to receive/issue. NULL means that serial number is unknown or not applicable|
 |[Store_Id](#store_id)|`uniqueidentifier` ||
+|[Store_Order_Id](#store_order_id)|`uniqueidentifier` |Store Order|
 |[Store_Order_Line_Id](#store_order_line_id)|`uniqueidentifier` ||
 
 ## Columns
@@ -203,6 +205,43 @@ If non-null, contains the specific lot to use for the movement
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Movement_Type
+
+
+Store order movement type. R=RECEIPT, I=ISSUE
+
+| Property | Value |
+| - | - |
+|Allowed Values|`I`, `R`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|R|
+|Enter Stop|no|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|nvarchar(1)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Movement_Type - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Order_Remaining_Line_Cost
 
@@ -416,6 +455,42 @@ Which serial number to receive/issue. NULL means that serial number is unknown o
 |Visible|yes|
 
 #### Store_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Store_Order_Id
+
+
+Store Order
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|NewGuid|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Store_Order_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

@@ -83,7 +83,7 @@
 <p>Returns the remaining (unfulfilled) quantity and cost for each Store Order Line in Store Orders, which are Planned, FirmPlanned or Released. Is_Fulfilled and Is_QuantityFulfilled can be used to filter out lines which appear fulfilled. For best performance, the store orders should be finished after fulfilling. Entity: Inv_Store_Order_Lines_Unfulfilled_View (Introduced in version 21.1.1.16)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{StoreOrderLineId}: {DocumentDate}</em><br>
+<em>{StoreOrderLineId}: {StoreOrderId}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Views</em><br>
@@ -118,6 +118,11 @@ Show in UI:  <em>CannotBeShown</em></p>
 <td><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#isquantityfulfilled">IsQuantityFulfilled</a></td>
 <td>int32</td>
 <td>Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this fields forces full scan and calculation of remaining amounts for all non-finished store orders. For best performance, the store orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#movementtype">MovementType</a></td>
+<td><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#movementtype">MovementType</a></td>
+<td>Store order movement type. R=RECEIPT, I=ISSUE. <code>Required</code> <code>Default(&quot;R&quot;)</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Movement_Type</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#orderremaininglinecost">OrderRemainingLineCost</a></td>
@@ -172,6 +177,11 @@ Show in UI:  <em>CannotBeShown</em></p>
 <td>The designated warehouse for the operation. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Id</code></td>
 </tr>
 <tr>
+<td><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#storeorder">StoreOrder</a></td>
+<td><a href="Logistics.Inventory.StoreOrders.html">StoreOrders</a></td>
+<td>Store Order. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Order_Id</code> <code>Introduced in version 24.1.1.78</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#storeorderline">StoreOrderLine</a></td>
 <td><a href="Logistics.Inventory.StoreOrderLines.html">StoreOrderLines</a> (nullable)</td>
 <td>The line, containing the ordered quantity, which this execution line executes. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_&lt;br /&gt;Lines_Table.Parent_Store_Order_&lt;br /&gt;Line_Id</code> <code>FilterableReference</code></td>
@@ -201,6 +211,35 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="movementtype">MovementType</h3>
+<p>Store order movement type. R=RECEIPT, I=ISSUE. <code>Required</code> <code>Default(&quot;R&quot;)</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Movement_Type</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreOrderLinesUnfulfilledView.html#movementtype">MovementType</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Specifies the movement type (direction) of a warehouse document.<br>
+<em>Allowed Values (Logistics.Inventory.MovementType Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Issue</td>
+<td>Goods issue <br> <em>Database Value:</em> 'I' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Issue'</td>
+</tr>
+<tr>
+<td>Receipt</td>
+<td>Goods receive <br> <em>Database Value:</em> 'R' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Receipt'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Inherited From</em>: <strong>Inv_Store_Orders_Table.Movement_Type</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Receipt</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="orderremaininglinecost">OrderRemainingLineCost</h3>
 <p>The remaining (unfulfilled) line cost of the order line. <code>Required</code> <code>Filter(multi eq;ge;le)</code></p>
@@ -258,6 +297,14 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Inv_Store_Orders_Table.Store_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="storeorder">StoreOrder</h3>
+<p>Store Order. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Inv_Store_Orders_Table.Store_Order_Id</code> <code>Introduced in version 24.1.1.78</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreOrders.html">StoreOrders</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Inv_Store_Orders_Table.Store_Order_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="storeorderline">StoreOrderLine</h3>
 <p>The line, containing the ordered quantity, which this execution line executes. <code>Filter(multi eq)</code> <code>Inherited from Inv_Transaction_Lines_Table.Parent_Store_Order_Line_Id</code> <code>FilterableReference</code></p>
