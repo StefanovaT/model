@@ -4,6 +4,7 @@ uid: General
 # General Namespace
 ## Namespaces
 - [Contacts](General.Contacts.md)  
+- [Files](General.Files.md)  
 - [Geography](General.Geography.md)  
 - [Products](General.Products.md)  
 - [Resources](General.Resources.md)  
@@ -41,7 +42,6 @@ uid: General
 - [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md)  
 - [DocumentVersions](General.DocumentVersions.md)  
 - [EnterpriseCompanies](General.EnterpriseCompanies.md)  
-- [Folders](General.Folders.md)  
 - [LinkTypes](General.LinkTypes.md)  
 - [MeasurementCategories](General.MeasurementCategories.md)  
 - [MeasurementUnits](General.MeasurementUnits.md)  

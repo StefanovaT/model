@@ -1036,6 +1036,12 @@ references:
 - uid: General.EnterpriseCompanies
   name: General.EnterpriseCompanies Entity
   href: entities/General.EnterpriseCompanies.html
+- uid: General.Files
+  name: General.Files Namespace
+  href: entities/General.Files.html
+- uid: General.Files.Folders
+  name: General.Files.Folders Entity
+  href: entities/General.Files.Folders.html
 - uid: General.Folders
   name: General.Folders Entity
   href: entities/General.Folders.html

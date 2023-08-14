@@ -680,8 +680,11 @@
     href: General.DocumentVersions.md
   - name: EnterpriseCompanies
     href: General.EnterpriseCompanies.md
-  - name: Folders
-    href: General.Folders.md
+  - name: Files
+    href: General.Files.md
+    items:
+    - name: Folders
+      href: General.Files.Folders.md
   - name: Geography
     href: General.Geography.md
     items:

@@ -124,7 +124,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.Jobs.html#jobtype">JobType</a></td>
 <td><a href="Systems.Core.Jobs.html#jobtype">JobType</a></td>
-<td>The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions, DIM=Delete Old Information Messages. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.Jobs.html#name">Name</a></td>
@@ -172,7 +172,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="jobtype">JobType</h3>
-<p>The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions, DIM=Delete Old Information Messages. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.Jobs.html#jobtype">JobType</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>JobType</code>(Systems.Core.Jobs.md#jobtype) data attribute<br>
@@ -204,6 +204,10 @@ Allowed values for the <code>JobType</code>(Systems.Core.Jobs.md#jobtype) data a
 <tr>
 <td>DeleteOldDocumentVersions</td>
 <td>Delete old document versions. Stored as 'DDV'. <br> <em>Database Value:</em> 'DDV' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'DeleteOldDocumentVersions'</td>
+</tr>
+<tr>
+<td>DeleteOldInformation<br>Messages</td>
+<td>DeleteOldInformation<br>Messages value. Stored as 'DIM'. <br> <em>Database Value:</em> 'DIM' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'DeleteOldInformation<br>Messages'</td>
 </tr>
 </tbody>
 </table>

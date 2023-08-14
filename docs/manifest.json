@@ -15406,7 +15406,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.DocumentJobs.html",
-          "hash": "dCbdiP0XNSTJkbMwd78Gow=="
+          "hash": "oxLaLQLiZ7pRYDURJBdMLQ=="
         }
       },
       "is_incremental": false,
@@ -15647,6 +15647,30 @@
         ".html": {
           "relative_path": "entities/General.EnterpriseCompanies.html",
           "hash": "1GCRsasiu2IrRAxea+nbPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Files.Folders.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Files.Folders.html",
+          "hash": "j8Xy4umT19DmpVXBhTyi5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Files.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Files.html",
+          "hash": "Gz4aJiBDdZ9cM7JjVgoeiQ=="
         }
       },
       "is_incremental": false,
@@ -16270,7 +16294,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.html",
-          "hash": "sgJ9qP6UMPbpANmV44qzKA=="
+          "hash": "uY9+JejBGx/QTzWV8hT32g=="
         }
       },
       "is_incremental": false,
@@ -18502,7 +18526,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Systems.Core.Jobs.html",
-          "hash": "4q3breO0f3iQdjkFyexZAg=="
+          "hash": "2sTDrJHt/SHsRM9l0zIzAA=="
         }
       },
       "is_incremental": false,
@@ -19186,7 +19210,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "4JECVpEBFlDHtR/x2jPh4g=="
+          "hash": "CmtmghXCqWcDD2ur/y5/Ag=="
         }
       },
       "is_incremental": false,
@@ -23124,7 +23148,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Gen_Folders.html",
-          "hash": "gVOBvMRnmkGf7RhI9x+92g=="
+          "hash": "EuDaMAWKgykYK3Y0mcOkgg=="
         }
       },
       "is_incremental": false,
@@ -26532,7 +26556,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Sys_Jobs.html",
-          "hash": "iY8iLmY6qd7jW+Sib+EmnA=="
+          "hash": "y7lT28hUwf8IhGW7wYrT+g=="
         }
       },
       "is_incremental": false,
