@@ -16,6 +16,7 @@ Specifies the type of the Excise Stamp operation. Entity: Exc_Excise_Stamp_Opera
 |[Box_3_Effect](#box_3_effect)|`nvarchar(1)` Allowed: `N`, `P`, `M`|Specifies how the operation changes the Excise Stamp availability in the correspondent Box. The boxes are used to report the availability of excise stamps in the relevant locations according to the requirements of the customs administration.|
 |[Code](#code)|`nvarchar(32)` ||
 |[Excise_Stamp_Operation_Type_Id](#excise_stamp_operation_type_id)|`uniqueidentifier` `PK`||
+|[Is_Whole_Lot](#is_whole_lot)|`bit` |Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied.|
 |[Name](#name)|`nvarchar(254)` `ML`|Name of operation (multi-language string).|
 |[Row_Version](#row_version)|`timestamp` ||
 
@@ -180,6 +181,36 @@ Specifies how the operation changes the Excise Stamp availability in the corresp
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Is_Whole_Lot
+
+
+Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
 ### Name
 
 
@@ -227,7 +258,7 @@ Name of operation (multi-language string).
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

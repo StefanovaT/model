@@ -139,6 +139,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td></td>
 </tr>
 <tr>
+<td><a href="Finance.Excise.ExciseStampOperationTypes.html#iswholelot">IsWholeLot</a></td>
+<td>boolean <strong>nullable</strong></td>
+<td>Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. <code>Introduced in version 24.1.1.80</code></td>
+</tr>
+<tr>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#name">Name</a></td>
 <td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
 <td>Name of operation (multi-language string). <code>Required</code> <code>Filter(like)</code></td>
@@ -270,6 +275,13 @@ Generic enum type for ExciseStampOperationTypeEnum properties<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="iswholelot">IsWholeLot</h3>
+<p>Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. <code>Introduced in version 24.1.1.80</code></p>
+<p><em>Type</em>: <strong>boolean <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>Name of operation (multi-language string). <code>Required</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
