@@ -1,0 +1,26 @@
+---
+erp.type: front-end-business-rule
+erp.entity: Finance.Excise.ExciseStampOperationLines
+---
+
+# R35253 Excise Stamp Operation Line - Copy Quantity From Excise Stamp Lot
+
+| Name | Value |
+| ---- | ----- |
+| Code | R35253 |
+| Entity | @Finance.Excise.ExciseStampOperationLines |
+| Name | CopyQuantityFromExciseStampLot |
+| Attribute | [Quantity](../entities/Finance.Excise.ExciseStampOperationLines.html#quantity) <br> [StartNumber](../entities/Finance.Excise.ExciseStampOperationLines.html#startnumber) <br> [EndNumber](../entities/Finance.Excise.ExciseStampOperationLines.html#endnumber)|
+| Layer | Front-End |
+| Events |  AttributeChanged(ExciseStampLot) |
+| Priority | Early |
+| Modify | YES |
+| Applicable Legislations | [ALL // no condition needed](xref:applicable-legislations) |
+| Action | If (ExciseStampLot != null && ExciseStampOperation.ExciseStampOperationType.IsWholeLot = True) <br> <br> Quantity = ExciseStampLot.Quantity <br> StartNumber = ExciseStampLot.StartNumber <br> EndNumber = ExciseStampLot.EndNumber <br> |
+| Description| When Excise Stamp Lot is changed, if Excise Stamp Lot is not null and ExciseStampOperation.ExciseStampOperationType.IsWholeLot is True, then Quantity, Start Number and End Number should be copied from Excise Stamp Lot.|
+| Message | |
+| Version | Introduced: 2024 |
+| Revocable | YES |
+
+*\* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic [System Business Rules](../templates/template-description-system-business-rules.md).*
