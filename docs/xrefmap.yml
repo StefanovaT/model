@@ -1585,6 +1585,9 @@ references:
 - uid: Projects.Agile.ProjectAreas
   name: Projects.Agile.ProjectAreas Entity
   href: entities/Projects.Agile.ProjectAreas.html
+- uid: Projects.Agile.ProjectMilestones
+  name: Projects.Agile.ProjectMilestones Entity
+  href: entities/Projects.Agile.ProjectMilestones.html
 - uid: Projects.Agile.Projects
   name: Projects.Agile.Projects Entity
   href: entities/Projects.Agile.Projects.html

@@ -1030,6 +1030,8 @@
     items:
     - name: ProjectAreas
       href: Projects.Agile.ProjectAreas.md
+    - name: ProjectMilestones
+      href: Projects.Agile.ProjectMilestones.md
     - name: Projects
       href: Projects.Agile.Projects.md
     - name: ProjectTypes

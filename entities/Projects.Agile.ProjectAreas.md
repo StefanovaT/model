@@ -100,6 +100,7 @@ _Show in UI_: **HiddenByDefault**
 Specified, when there is primary user for the area. `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -109,6 +110,7 @@ _Show in UI_: **ShownByDefault**
 Specified for local project areas. null means that the area is global and assignable for all projects. `Filter(multi eq)`
 
 _Type_: **[Projects](Projects.Agile.Projects.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
