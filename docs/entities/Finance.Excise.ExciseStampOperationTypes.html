@@ -141,7 +141,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#iswholelot">IsWholeLot</a></td>
 <td>boolean <strong>nullable</strong></td>
-<td>Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. <code>Introduced in version 24.1.1.80</code></td>
+<td>Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.80</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#name">Name</a></td>
@@ -152,6 +152,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampOperationTypes.html#tracksequence">TrackSequence</a></td>
+<td>boolean <strong>nullable</strong></td>
+<td>Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.82</code></td>
 </tr>
 </tbody>
 </table>
@@ -276,10 +281,10 @@ Generic enum type for ExciseStampOperationTypeEnum properties<br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="iswholelot">IsWholeLot</h3>
-<p>Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. <code>Introduced in version 24.1.1.80</code></p>
+<p>Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.80</code></p>
 <p><em>Type</em>: <strong>boolean <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
@@ -296,6 +301,13 @@ Generic enum type for ExciseStampOperationTypeEnum properties<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="tracksequence">TrackSequence</h3>
+<p>Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.82</code></p>
+<p><em>Type</em>: <strong>boolean <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

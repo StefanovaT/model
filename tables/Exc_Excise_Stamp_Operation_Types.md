@@ -19,6 +19,7 @@ Specifies the type of the Excise Stamp operation. Entity: Exc_Excise_Stamp_Opera
 |[Is_Whole_Lot](#is_whole_lot)|`bit` |Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied.|
 |[Name](#name)|`nvarchar(254)` `ML`|Name of operation (multi-language string).|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Track_Sequence](#track_sequence)|`bit` |Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved.|
 
 ## Columns
 
@@ -211,6 +212,12 @@ Specifies for this Excise Stamp Operation Type, that when selecting a Excise Sta
 |User Login|no|
 |Visible|yes|
 
+#### Is_Whole_Lot - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Name
 
 
@@ -273,5 +280,41 @@ Name of operation (multi-language string).
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### Track_Sequence
+
+
+Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|8|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Track_Sequence - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 
