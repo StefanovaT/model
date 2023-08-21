@@ -159,7 +159,7 @@ Specified for local project milestones. NULL means the milestone is global and a
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Project_Milestone_Id - Supported Filters
 

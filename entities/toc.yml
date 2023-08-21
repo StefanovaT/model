@@ -1028,6 +1028,8 @@
   - name: Agile
     href: Projects.Agile.md
     items:
+    - name: CaseCategories
+      href: Projects.Agile.CaseCategories.md
     - name: ProjectAreas
       href: Projects.Agile.ProjectAreas.md
     - name: ProjectMilestones
