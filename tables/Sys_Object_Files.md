@@ -19,6 +19,7 @@ Contains files attached to objects. Entity: Sys_Object_Files
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` |Time (in UTC), when the file was created.|
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` |The user, who created the file record. NULL if it is unknown.|
 |[Embedded_File_Contents](#embedded_file_contents)|`varbinary` |Contains the contents of the file, when it is embedded in the database. NULL for linked files|
+|[Embedded_Thumbnail_Contents](#embedded_thumbnail_contents)|`varbinary` Readonly|Contains the compressed and/or resized contents of the file if applicable.|
 |[File_Name](#file_name)|`nvarchar(254)` |The file name of the linked or embedded file|
 |[File_Size_Bytes](#file_size_bytes)|`int` |The file size in bytes. If empty the file size is unknown.|
 |[Last_Update_Time_Utc](#last_update_time_utc)|`datetime` |Time (in UTC), when the file was last updated.|
@@ -169,6 +170,36 @@ Contains the contents of the file, when it is embedded in the database. NULL for
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+### Embedded_Thumbnail_Contents
+
+
+Contains the compressed and/or resized contents of the file if applicable.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|varbinary (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
 
 ### File_Name
 
