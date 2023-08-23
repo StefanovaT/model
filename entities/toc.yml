@@ -1030,6 +1030,8 @@
     items:
     - name: CaseCategories
       href: Projects.Agile.CaseCategories.md
+    - name: Cases
+      href: Projects.Agile.Cases.md
     - name: ProjectAreas
       href: Projects.Agile.ProjectAreas.md
     - name: ProjectMilestones

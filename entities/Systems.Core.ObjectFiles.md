@@ -31,6 +31,7 @@ Aggregate Root:
 | [CreationTimeUtc](Systems.Core.ObjectFiles.md#creationtimeutc) | datetime | Time (in UTC), when the file was created. `Required` `Default(NowUtc)` `Introduced in version 20.1` 
 | [DisplayText](Systems.Core.ObjectFiles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EmbeddedFileContents](Systems.Core.ObjectFiles.md#embeddedfilecontents) | byte[] __nullable__ | Contains the contents of the file, when it is embedded in the database. null for linked files. 
+| [EmbeddedThumbnailContents](Systems.Core.ObjectFiles.md#embeddedthumbnailcontents) | byte[] __nullable__ | Contains the compressed and/or resized contents of the file if applicable. `ReadOnly` `Introduced in version 24.1.1.85` 
 | [FileName](Systems.Core.ObjectFiles.md#filename) | string (254) | The file name of the linked or embedded file. `Required` `Filter(eq;like)` 
 | [FileSizeBytes](Systems.Core.ObjectFiles.md#filesizebytes) | int32 __nullable__ | The file size in bytes. If empty the file size is unknown. `Introduced in version 22.1.5.46` 
 | [Id](Systems.Core.ObjectFiles.md#id) | guid |  
@@ -105,6 +106,16 @@ _Category_: **Delay Loaded Attributes**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### EmbeddedThumbnailContents
+
+Contains the compressed and/or resized contents of the file if applicable. `ReadOnly` `Introduced in version 24.1.1.85`
+
+_Type_: **byte[] __nullable__**  
+_Category_: **Delay Loaded Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
 
 ### FileName
 

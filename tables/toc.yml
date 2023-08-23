@@ -40,6 +40,8 @@
   items:
   - name: Apm_Case_Categories
     href: Apm_Case_Categories.md
+  - name: Apm_Cases
+    href: Apm_Cases.md
   - name: Apm_Project_Areas
     href: Apm_Project_Areas.md
   - name: Apm_Project_Milestones

@@ -48,7 +48,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Milestones | [ProjectMilestones](Projects.Agile.ProjectMilestones.md) | List of ProjectMilestone child objects, based on the Apm.ProjectMilestone.Project back reference 
+| Milestones | [ProjectMilestones](Projects.Agile.ProjectMilestones.md) | List of `ProjectMilestone`(Projects.Agile.ProjectMilestones.md) child objects, based on the `Projects.Agile.ProjectMilestone.Project`(Projects.Agile.ProjectMilestones.md#project) back reference 
 
 
 ## Attribute Details

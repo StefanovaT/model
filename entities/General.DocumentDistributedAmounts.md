@@ -9,7 +9,7 @@ Contains the amounts which are distributed by the system over the document lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{Document.EntityName}_  
+_{DocumentAmountType} {DocumentLineId} {Amount}_  
 Default Search Members:  
 _Document.EntityName_  
 Name Data Member:  

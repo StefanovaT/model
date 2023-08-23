@@ -125,6 +125,11 @@ Aggregate Root:<br>
 <td>Contains the contents of the file, when it is embedded in the database. null for linked files.</td>
 </tr>
 <tr>
+<td><a href="Systems.Core.ObjectFiles.html#embeddedthumbnailcontents">EmbeddedThumbnailContents</a></td>
+<td>byte[] <strong>nullable</strong></td>
+<td>Contains the compressed and/or resized contents of the file if applicable. <code>ReadOnly</code> <code>Introduced in version 24.1.1.85</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Core.ObjectFiles.html#filename">FileName</a></td>
 <td>string (254)</td>
 <td>The file name of the linked or embedded file. <code>Required</code> <code>Filter(eq;like)</code></td>
@@ -268,6 +273,13 @@ Allowed values for the <code>ContentLocation</code>(Systems.Core.ObjectFiles.md#
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="embeddedthumbnailcontents">EmbeddedThumbnailContents</h3>
+<p>Contains the compressed and/or resized contents of the file if applicable. <code>ReadOnly</code> <code>Introduced in version 24.1.1.85</code></p>
+<p><em>Type</em>: <strong>byte[] <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>Delay Loaded Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="filename">FileName</h3>
 <p>The file name of the linked or embedded file. <code>Required</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
@@ -455,6 +467,7 @@ The subject.<br>
 <li><a href="../business-rules/R30812-2.html">R30812-2 ObjectFile - Set Creation User And Time</a></li>
 <li><a href="../business-rules/R31762.html">R31762 ObjectFiles - Set FileSizeBytes, MediaType, MediaWidth, MediaHeight</a></li>
 <li><a href="../business-rules/R32058.html">R32058 ObjectFile - Embedded File Contents Max Size</a></li>
+<li><a href="../business-rules/R33762.html">R32058 ObjectFile - Set Embedded Thumbnail Contents</a></li>
 <li><a href="../business-rules/R33122.html">R33122 ObjectFile - Change File Name If Same Filename Exists</a></li>
 <li><a href="../business-rules/R33213.html">R33213 ObjectFile - Check File Name Compatibility</a></li>
 </ul>
