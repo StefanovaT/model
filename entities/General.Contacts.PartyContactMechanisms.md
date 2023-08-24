@@ -4,6 +4,7 @@ uid: General.Contacts.PartyContactMechanisms
 # General.Contacts.PartyContactMechanisms Entity
 
 **Namespace:** [General.Contacts](General.Contacts.md)  
+**Inherited From:** [General.Contacts.ContactMechanisms](General.Contacts.ContactMechanisms.md)  
 
 Specifies the contact mechanisms, which are attached to the parties. Currently each contact mechanism is attached to strictly one party. Entity: Cm_Party_Contact_Mechanisms
 
@@ -11,9 +12,9 @@ Specifies the contact mechanisms, which are attached to the parties. Currently e
 Default Display Text Format:  
 _{ContactMechanism}_  
 Default Search Members:  
-_Party.PartyName_  
+_Name_  
 Name Data Member:  
-_Party.PartyName_  
+_Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
@@ -29,12 +30,14 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [ContactMechanismType](General.Contacts.PartyContactMechanisms.md#contactmechanismtype) | [ContactMechanismType](General.Contacts.PartyContactMechanisms.md#contactmechanismtype) | A=Address; E=e-mail; T=Telephone. `Required` `Default("A")` `Filter(multi eq)` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md)) 
 | [DisplayText](General.Contacts.PartyContactMechanisms.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](General.Contacts.PartyContactMechanisms.md#fromdate) | datetime __nullable__ | The first date when the contact mechanism was valid. null means unknown date. `Default(Today)` `Filter(eq;ge;le)` 
 | [Id](General.Contacts.PartyContactMechanisms.md#id) | guid |  
 | [IsActive](General.Contacts.PartyContactMechanisms.md#isactive) | boolean | True if the contact mechanism is currently active and can be used to contact the party. `Required` `Default(true)` `Filter(eq)` 
 | [IsDefault](General.Contacts.PartyContactMechanisms.md#isdefault) | boolean | True - when this is the default contact mechanism for this party; false - otherwise. `Required` `Default(false)` `Filter(eq)` 
 | [LineOrd](General.Contacts.PartyContactMechanisms.md#lineord) | int32 | Consecutive number of the contact information. The number is unique within the party. `Required` 
+| [Name](General.Contacts.PartyContactMechanisms.md#name) | string (254) | Contact mechanism description. `Required` `Filter(eq;like)` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md)) 
 | [NonSolicitation](General.Contacts.PartyContactMechanisms.md#nonsolicitation) | boolean | If true then Don't use the mechanism for solicitation purposes. `Required` `Default(false)` `Filter(eq)` 
 | [Notes](General.Contacts.PartyContactMechanisms.md#notes) | string (254) __nullable__ | Notes for this PartyContactMechanism. 
 | [ObjectVersion](General.Contacts.PartyContactMechanisms.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -44,13 +47,41 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ContactMechanism](General.Contacts.PartyContactMechanisms.md#contactmechanism) | [ContactMechanisms](General.Contacts.ContactMechanisms.md) | The contact mechanism of the party. `Required` `Filter(multi eq)` `FilterableReference` |
+| [AdministrativeRegion](General.Contacts.PartyContactMechanisms.md#administrativeregion) | [AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable) | The administrative region, where the contact mechanism is situated. Null if this is unknown or N/A. `Filter(multi eq)` `Introduced in version 18.2` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md)) |
+| [ContactMechanism](General.Contacts.PartyContactMechanisms.md#contactmechanism) | [ContactMechanisms](General.Contacts.ContactMechanisms.md) | Returns this `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added. |
 | [ContactMechanismPurpose](General.Contacts.PartyContactMechanisms.md#contactmechanismpurpose) | [ContactMechanismPurposes](General.Contacts.ContactMechanismPurposes.md) (nullable) | The purpose of this contact mechanism. Unique within the party. Can be used to seek for specific contact mechanisms. `Filter(multi eq)` `Introduced in version 18.2` |
+| [GeoPoint](General.Contacts.PartyContactMechanisms.md#geopoint) | [GeoPoints](General.Geography.GeoPoints.md) (nullable) | The geographical point, where the contact mechanism is situated. Null if this is unknown or N/A. `Filter(multi eq)` `Introduced in version 18.2` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md)) |
 | [Party](General.Contacts.PartyContactMechanisms.md#party) | [Parties](General.Contacts.Parties.md) | The party, having the contact mechanism. `Required` `Filter(multi eq)` `Owner` |
 | [PersonalDataProcess](General.Contacts.PartyContactMechanisms.md#personaldataprocess) | [PersonalDataProcesses](Applications.PersonalData.PersonalDataProcesses.md) (nullable) | The personal data process, which is used to process the current data. Null when the data is not personal or when the process is unknown. `Filter(multi eq)` `Introduced in version 18.2` |
 
 
 ## Attribute Details
+
+### ContactMechanismType
+
+A=Address; E=e-mail; T=Telephone. `Required` `Default("A")` `Filter(multi eq)` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md))
+
+_Type_: **[ContactMechanismType](General.Contacts.PartyContactMechanisms.md#contactmechanismtype)**  
+_Category_: **System**  
+Allowed values for the `ContactMechanismType`(General.Contacts.ContactMechanisms.md#contactmechanismtype) data attribute  
+_Allowed Values (General.Contacts.ContactMechanismsRepository.ContactMechanismType Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| Address | Address value. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Address' |
+| Mail | Mail value. Stored as 'E'. <br /> _Database Value:_ 'E' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Mail' |
+| Fax | Fax value. Stored as 'F'. <br /> _Database Value:_ 'F' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Fax' |
+| MobilePhone | MobilePhone value. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'MobilePhone' |
+| Other | Other value. Stored as 'O'. <br /> _Database Value:_ 'O' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Other' |
+| Telephone | Telephone value. Stored as 'T'. <br /> _Database Value:_ 'T' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'Telephone' |
+| WebSite | WebSite value. Stored as 'W'. <br /> _Database Value:_ 'W' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'WebSite' |
+| PostalCode | PostalCode value. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'PostalCode' |
+| WebProfile | WebProfile value. Stored as 'X'. <br /> _Database Value:_ 'X' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'WebProfile' |
+
+_Supported Filters_: **Equals, EqualsIn**  
+_Supports Order By_: **False**  
+_Default Value_: **Address**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -119,6 +150,17 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `( obj.Party.ContactMechanisms.Select( c => c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)`
+### Name
+
+Contact mechanism description. `Required` `Filter(eq;like)` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md))
+
+_Type_: **string (254)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **False**  
+_Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
+
 ### NonSolicitation
 
 If true then Don't use the mechanism for solicitation purposes. `Required` `Default(false)` `Filter(eq)`
@@ -164,22 +206,40 @@ _Show in UI_: **ShownByDefault**
 
 ## Reference Details
 
+### AdministrativeRegion
+
+The administrative region, where the contact mechanism is situated. Null if this is unknown or N/A. `Filter(multi eq)` `Introduced in version 18.2` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md))
+
+_Type_: **[AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### ContactMechanism
 
-The contact mechanism of the party. `Required` `Filter(multi eq)` `FilterableReference`
+Returns this `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added.
 
 _Type_: **[ContactMechanisms](General.Contacts.ContactMechanisms.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### ContactMechanismPurpose
 
 The purpose of this contact mechanism. Unique within the party. Can be used to seek for specific contact mechanisms. `Filter(multi eq)` `Introduced in version 18.2`
 
 _Type_: **[ContactMechanismPurposes](General.Contacts.ContactMechanismPurposes.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### GeoPoint
+
+The geographical point, where the contact mechanism is situated. Null if this is unknown or N/A. `Filter(multi eq)` `Introduced in version 18.2` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md))
+
+_Type_: **[GeoPoints](General.Geography.GeoPoints.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

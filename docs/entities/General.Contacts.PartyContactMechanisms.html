@@ -79,15 +79,16 @@
             <article class="content wrap" id="_content" data-uid="General.Contacts.PartyContactMechanisms">
 <h1 id="generalcontactspartycontactmechanisms-entity">General.Contacts.PartyContactMechanisms Entity</h1>
 
-<p><strong>Namespace:</strong> <a href="General.Contacts.html">General.Contacts</a></p>
+<p><strong>Namespace:</strong> <a href="General.Contacts.html">General.Contacts</a><br>
+<strong>Inherited From:</strong> <a href="General.Contacts.ContactMechanisms.html">General.Contacts.ContactMechanisms</a></p>
 <p>Specifies the contact mechanisms, which are attached to the parties. Currently each contact mechanism is attached to strictly one party. Entity: Cm_Party_Contact_Mechanisms</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
 <em>{ContactMechanism}</em><br>
 Default Search Members:<br>
-<em>Party.PartyName</em><br>
+<em>Name</em><br>
 Name Data Member:<br>
-<em>Party.PartyName</em><br>
+<em>Name</em><br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
@@ -106,6 +107,11 @@ Aggregate Root:<br>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="General.Contacts.PartyContactMechanisms.html#contactmechanismtype">ContactMechanismType</a></td>
+<td><a href="General.Contacts.PartyContactMechanisms.html#contactmechanismtype">ContactMechanismType</a></td>
+<td>A=Address; E=e-mail; T=Telephone. <code>Required</code> <code>Default(&quot;A&quot;)</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</td>
+</tr>
 <tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#displaytext">DisplayText</a></td>
 <td>string</td>
@@ -135,6 +141,11 @@ Aggregate Root:<br>
 <td><a href="General.Contacts.PartyContactMechanisms.html#lineord">LineOrd</a></td>
 <td>int32</td>
 <td>Consecutive number of the contact information. The number is unique within the party. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="General.Contacts.PartyContactMechanisms.html#name">Name</a></td>
+<td>string (254)</td>
+<td>Contact mechanism description. <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</td>
 </tr>
 <tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#nonsolicitation">NonSolicitation</a></td>
@@ -169,14 +180,24 @@ Aggregate Root:<br>
 </thead>
 <tbody>
 <tr>
+<td><a href="General.Contacts.PartyContactMechanisms.html#administrativeregion">AdministrativeRegion</a></td>
+<td><a href="General.Geography.AdministrativeRegions.html">AdministrativeRegions</a> (nullable)</td>
+<td>The administrative region, where the contact mechanism is situated. Null if this is unknown or N/A. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</td>
+</tr>
+<tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#contactmechanism">ContactMechanism</a></td>
 <td><a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a></td>
-<td>The contact mechanism of the party. <code>Required</code> <code>Filter(multi eq)</code> <code>FilterableReference</code></td>
+<td>Returns this <code>PartyContactMechanism</code>(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added.</td>
 </tr>
 <tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#contactmechanismpurpose">ContactMechanismPurpose</a></td>
 <td><a href="General.Contacts.ContactMechanismPurposes.html">ContactMechanismPurposes</a> (nullable)</td>
 <td>The purpose of this contact mechanism. Unique within the party. Can be used to seek for specific contact mechanisms. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></td>
+</tr>
+<tr>
+<td><a href="General.Contacts.PartyContactMechanisms.html#geopoint">GeoPoint</a></td>
+<td><a href="General.Geography.GeoPoints.html">GeoPoints</a> (nullable)</td>
+<td>The geographical point, where the contact mechanism is situated. Null if this is unknown or N/A. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</td>
 </tr>
 <tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#party">Party</a></td>
@@ -191,6 +212,62 @@ Aggregate Root:<br>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
+<h3 id="contactmechanismtype">ContactMechanismType</h3>
+<p>A=Address; E=e-mail; T=Telephone. <code>Required</code> <code>Default(&quot;A&quot;)</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Contacts.PartyContactMechanisms.html#contactmechanismtype">ContactMechanismType</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>ContactMechanismType</code>(General.Contacts.ContactMechanisms.md#contactmechanismtype) data attribute<br>
+<em>Allowed Values (General.Contacts.ContactMechanismsRepository.ContactMechanismType Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Address</td>
+<td>Address value. Stored as 'A'. <br> <em>Database Value:</em> 'A' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Address'</td>
+</tr>
+<tr>
+<td>Mail</td>
+<td>Mail value. Stored as 'E'. <br> <em>Database Value:</em> 'E' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Mail'</td>
+</tr>
+<tr>
+<td>Fax</td>
+<td>Fax value. Stored as 'F'. <br> <em>Database Value:</em> 'F' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Fax'</td>
+</tr>
+<tr>
+<td>MobilePhone</td>
+<td>MobilePhone value. Stored as 'M'. <br> <em>Database Value:</em> 'M' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'MobilePhone'</td>
+</tr>
+<tr>
+<td>Other</td>
+<td>Other value. Stored as 'O'. <br> <em>Database Value:</em> 'O' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'Other'</td>
+</tr>
+<tr>
+<td>Telephone</td>
+<td>Telephone value. Stored as 'T'. <br> <em>Database Value:</em> 'T' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'Telephone'</td>
+</tr>
+<tr>
+<td>WebSite</td>
+<td>WebSite value. Stored as 'W'. <br> <em>Database Value:</em> 'W' <br> <em>Model Value:</em> 6 <br> <em>Domain API Value:</em> 'WebSite'</td>
+</tr>
+<tr>
+<td>PostalCode</td>
+<td>PostalCode value. Stored as 'P'. <br> <em>Database Value:</em> 'P' <br> <em>Model Value:</em> 7 <br> <em>Domain API Value:</em> 'PostalCode'</td>
+</tr>
+<tr>
+<td>WebProfile</td>
+<td>WebProfile value. Stored as 'X'. <br> <em>Database Value:</em> 'X' <br> <em>Model Value:</em> 8 <br> <em>Domain API Value:</em> 'WebProfile'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Address</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
@@ -240,6 +317,14 @@ Aggregate Root:<br>
 <code>( obj.Party.ContactMechanisms.Select( c =&gt; c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>( obj.Party.ContactMechanisms.Select( c =&gt; c.LineOrd).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
+<h3 id="name">Name</h3>
+<p>Contact mechanism description. <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</p>
+<p><em>Type</em>: <strong>string (254)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="nonsolicitation">NonSolicitation</h3>
 <p>If true then Don't use the mechanism for solicitation purposes. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
@@ -271,17 +356,29 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="administrativeregion">AdministrativeRegion</h3>
+<p>The administrative region, where the contact mechanism is situated. Null if this is unknown or N/A. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Geography.AdministrativeRegions.html">AdministrativeRegions</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="contactmechanism">ContactMechanism</h3>
-<p>The contact mechanism of the party. <code>Required</code> <code>Filter(multi eq)</code> <code>FilterableReference</code></p>
+<p>Returns this <code>PartyContactMechanism</code>(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added.</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="contactmechanismpurpose">ContactMechanismPurpose</h3>
 <p>The purpose of this contact mechanism. Unique within the party. Can be used to seek for specific contact mechanisms. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.ContactMechanismPurposes.html">ContactMechanismPurposes</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="geopoint">GeoPoint</h3>
+<p>The geographical point, where the contact mechanism is situated. Null if this is unknown or N/A. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code> (Inherited from <a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Geography.GeoPoints.html">GeoPoints</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
