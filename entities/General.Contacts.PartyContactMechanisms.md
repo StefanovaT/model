@@ -10,7 +10,7 @@ Specifies the contact mechanisms, which are attached to the parties. Currently e
 
 ## Default Visualization
 Default Display Text Format:  
-_{ContactMechanism}_  
+_{ContactMechanismType}: {Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -48,7 +48,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AdministrativeRegion](General.Contacts.PartyContactMechanisms.md#administrativeregion) | [AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable) | The administrative region, where the contact mechanism is situated. Null if this is unknown or N/A. `Filter(multi eq)` `Introduced in version 18.2` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md)) |
-| [ContactMechanism](General.Contacts.PartyContactMechanisms.md#contactmechanism) | [ContactMechanisms](General.Contacts.ContactMechanisms.md) | Returns this `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added. |
+| [ContactMechanism](General.Contacts.PartyContactMechanisms.md#contactmechanism) | [ContactMechanisms](General.Contacts.ContactMechanisms.md) | Returns this `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md). DO NOT USE! Kept for backward compatibility.             When a contact mechanism is set, the old inner contact mechanism becomes an orphan.              If the orphan is newly added in this transaction it is deleted. |
 | [ContactMechanismPurpose](General.Contacts.PartyContactMechanisms.md#contactmechanismpurpose) | [ContactMechanismPurposes](General.Contacts.ContactMechanismPurposes.md) (nullable) | The purpose of this contact mechanism. Unique within the party. Can be used to seek for specific contact mechanisms. `Filter(multi eq)` `Introduced in version 18.2` |
 | [GeoPoint](General.Contacts.PartyContactMechanisms.md#geopoint) | [GeoPoints](General.Geography.GeoPoints.md) (nullable) | The geographical point, where the contact mechanism is situated. Null if this is unknown or N/A. `Filter(multi eq)` `Introduced in version 18.2` (Inherited from [ContactMechanisms](General.Contacts.ContactMechanisms.md)) |
 | [Party](General.Contacts.PartyContactMechanisms.md#party) | [Parties](General.Contacts.Parties.md) | The party, having the contact mechanism. `Required` `Filter(multi eq)` `Owner` |
@@ -217,7 +217,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ContactMechanism
 
-Returns this `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added.
+Returns this `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md). DO NOT USE! Kept for backward compatibility.             When a contact mechanism is set, the old inner contact mechanism becomes an orphan.              If the orphan is newly added in this transaction it is deleted.
 
 _Type_: **[ContactMechanisms](General.Contacts.ContactMechanisms.md)**  
 _Indexed_: **True**  

@@ -84,7 +84,7 @@
 <p>Specifies the contact mechanisms, which are attached to the parties. Currently each contact mechanism is attached to strictly one party. Entity: Cm_Party_Contact_Mechanisms</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ContactMechanism}</em><br>
+<em>{ContactMechanismType}: {Name}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -187,7 +187,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#contactmechanism">ContactMechanism</a></td>
 <td><a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a></td>
-<td>Returns this <code>PartyContactMechanism</code>(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added.</td>
+<td>Returns this <code>PartyContactMechanism</code>(General.Contacts.PartyContactMechanisms.md). DO NOT USE! Kept for backward compatibility.             When a contact mechanism is set, the old inner contact mechanism becomes an orphan.              If the orphan is newly added in this transaction it is deleted.</td>
 </tr>
 <tr>
 <td><a href="General.Contacts.PartyContactMechanisms.html#contactmechanismpurpose">ContactMechanismPurpose</a></td>
@@ -363,7 +363,7 @@ Allowed values for the <code>ContactMechanismType</code>(General.Contacts.Contac
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="contactmechanism">ContactMechanism</h3>
-<p>Returns this <code>PartyContactMechanism</code>(General.Contacts.PartyContactMechanisms.md). Kept for backward compatibility.             When a contact mechanism is set, the values are copied to this object;              the contact mechanism  is deleted if it's object state is Added.</p>
+<p>Returns this <code>PartyContactMechanism</code>(General.Contacts.PartyContactMechanisms.md). DO NOT USE! Kept for backward compatibility.             When a contact mechanism is set, the old inner contact mechanism becomes an orphan.              If the orphan is newly added in this transaction it is deleted.</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.ContactMechanisms.html">ContactMechanisms</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
