@@ -38,6 +38,7 @@ Aggregate Tree
 | [IsWholeLot](Finance.Excise.ExciseStampOperationTypes.md#iswholelot) | boolean __nullable__ | Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied. `Filter(eq)` `Introduced in version 24.1.1.80` 
 | [Name](Finance.Excise.ExciseStampOperationTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of operation (multi-language string). `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Excise.ExciseStampOperationTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [RequireProduct](Finance.Excise.ExciseStampOperationTypes.md#requireproduct) | boolean __nullable__ | Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line. `Filter(eq)` `Introduced in version 24.1.1.91` 
 | [TrackSequence](Finance.Excise.ExciseStampOperationTypes.md#tracksequence) | boolean __nullable__ | Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. `Filter(eq)` `Introduced in version 24.1.1.82` 
 
 
@@ -163,6 +164,16 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### RequireProduct
+
+Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line. `Filter(eq)` `Introduced in version 24.1.1.91`
+
+_Type_: **boolean __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### TrackSequence
 

@@ -259,6 +259,8 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.ExciseStampLot.Quantity</code></p>
 <h3 id="startnumber">StartNumber</h3>
 <p>The start number of the sequence of excise stamps that are processed with the current operation.</p>
 <p><em>Type</em>: <strong>string (30) <strong>nullable</strong></strong><br>
@@ -267,6 +269,8 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>30</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.ExciseStampLot.StartNumber</code></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The <see cref="ExciseStampOperation"></see> to which this ExciseStampOperationLine belongs. <code>Required</code> <code>Filter(multi eq)</code></p>
@@ -385,6 +389,8 @@ The subject.<br>
 <li><a href="../business-rules/R33144.html">R33144 Excise Stamp Operation Line - Set End Number (Recalc)</a></li>
 <li><a href="../business-rules/R35140.html">R35140 Excise Stamp Operation Line - Set Excise Product Type (Recalc)</a></li>
 <li><a href="../business-rules/R35253.html">R35253 Excise Stamp Operation Line - Copy Quantity From Excise Stamp Lot</a></li>
+<li><a href="../business-rules/R35253-1.html">R35253-1 Excise Stamp Operation Line - Set Quantity (Recalc)</a></li>
+<li><a href="../business-rules/R35253-2.html">R35253-2 Excise Stamp Operation Line - Set Start Number (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:

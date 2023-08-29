@@ -20,10 +20,8 @@ Show in UI:  _ShownByDefault_
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[Projects.Agile.Projects](Projects.Agile.Projects.md)  
-Aggregate Root:  
-[Projects.Agile.Projects](Projects.Agile.Projects.md)  
+Aggregate Tree  
+* [Projects.Agile.ProjectMilestones](Projects.Agile.ProjectMilestones.md)  
 
 ## Attributes
 
@@ -40,7 +38,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Project](Projects.Agile.ProjectMilestones.md#project) | [Projects](Projects.Agile.Projects.md) | Specified for local project milestones. null means the milestone is global and assignable for all projects. `Required` `Filter(multi eq)` `Owner` |
+| [Project](Projects.Agile.ProjectMilestones.md#project) | [Projects](Projects.Agile.Projects.md) (nullable) | Specified for local project milestones. null means the milestone is global and assignable for all projects. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -109,13 +107,12 @@ _Show in UI_: **HiddenByDefault**
 
 ### Project
 
-Specified for local project milestones. null means the milestone is global and assignable for all projects. `Required` `Filter(multi eq)` `Owner`
+Specified for local project milestones. null means the milestone is global and assignable for all projects. `Filter(multi eq)`
 
-_Type_: **[Projects](Projects.Agile.Projects.md)**  
+_Type_: **[Projects](Projects.Agile.Projects.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 

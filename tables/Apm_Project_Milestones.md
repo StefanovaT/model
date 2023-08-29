@@ -7,10 +7,6 @@ Entity: [Projects.Agile.ProjectMilestones](~/entities/Projects.Agile.ProjectMile
 
 Local and global project milestones. Entity: Apm_Project_Milestones (Introduced in version 24.1.1.81)
 
-## Owner Tables Hierarchy
-
-* [Apm_Projects](Apm_Projects.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -112,7 +108,7 @@ Specified for local project milestones. NULL means the milestone is global and a
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
@@ -122,7 +118,7 @@ Specified for local project milestones. NULL means the milestone is global and a
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -132,7 +128,7 @@ Specified for local project milestones. NULL means the milestone is global and a
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Project_Milestone_Id
 

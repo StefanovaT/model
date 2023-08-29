@@ -140,6 +140,8 @@ _Supports Order By_: **False**
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`obj.ExciseStampLot.Quantity`
 ### StartNumber
 
 The start number of the sequence of excise stamps that are processed with the current operation.
@@ -151,6 +153,8 @@ _Supports Order By_: **False**
 _Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
 
+_Front-End Recalc Expressions:_  
+`obj.ExciseStampLot.StartNumber`
 
 ## Reference Details
 

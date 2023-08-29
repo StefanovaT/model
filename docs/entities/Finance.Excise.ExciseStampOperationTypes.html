@@ -154,6 +154,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
+<td><a href="Finance.Excise.ExciseStampOperationTypes.html#requireproduct">RequireProduct</a></td>
+<td>boolean <strong>nullable</strong></td>
+<td>Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.91</code></td>
+</tr>
+<tr>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#tracksequence">TrackSequence</a></td>
 <td>boolean <strong>nullable</strong></td>
 <td>Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.82</code></td>
@@ -301,6 +306,13 @@ Generic enum type for ExciseStampOperationTypeEnum properties<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="requireproduct">RequireProduct</h3>
+<p>Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.91</code></p>
+<p><em>Type</em>: <strong>boolean <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="tracksequence">TrackSequence</h3>
 <p>Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.82</code></p>
 <p><em>Type</em>: <strong>boolean <strong>nullable</strong></strong><br>

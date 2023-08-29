@@ -22,7 +22,6 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Projects.Agile.Projects](Projects.Agile.Projects.md)  
-  * [Projects.Agile.ProjectMilestones](Projects.Agile.ProjectMilestones.md)  
 
 ## Attributes
 
@@ -43,12 +42,6 @@ Aggregate Tree
 | [Customer](Projects.Agile.Projects.md#customer) | [Customers](Crm.Customers.md) (nullable) | Specified, when the project is for a customer. `Filter(multi eq)` |
 | [PrimaryUser](Projects.Agile.Projects.md#primaryuser) | [Users](Systems.Security.Users.md) | The primary responsible user for the project. `Required` `Filter(multi eq)` |
 | [ProjectType](Projects.Agile.Projects.md#projecttype) | [ProjectTypes](Projects.Agile.ProjectTypes.md) | Specifies what kind of project is this. `Required` `Filter(multi eq)` |
-
-## Child Collections
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| Milestones | [ProjectMilestones](Projects.Agile.ProjectMilestones.md) | List of `ProjectMilestone`(Projects.Agile.ProjectMilestones.md) child objects, based on the `Projects.Agile.ProjectMilestone.Project`(Projects.Agile.ProjectMilestones.md#project) back reference 
 
 
 ## Attribute Details

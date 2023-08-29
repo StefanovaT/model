@@ -18,6 +18,7 @@ Specifies the type of the Excise Stamp operation. Entity: Exc_Excise_Stamp_Opera
 |[Excise_Stamp_Operation_Type_Id](#excise_stamp_operation_type_id)|`uniqueidentifier` `PK`||
 |[Is_Whole_Lot](#is_whole_lot)|`bit` |Specifies for this Excise Stamp Operation Type, that when selecting a Excise Stamp Lot within the Excise Stamp Operation line, the entire quantity from the chosen Excise Stamp Lot is copied.|
 |[Name](#name)|`nvarchar(254)` `ML`|Name of operation (multi-language string).|
+|[Require_Product](#require_product)|`bit` |Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Track_Sequence](#track_sequence)|`bit` |Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved.|
 
@@ -253,6 +254,42 @@ Name of operation (multi-language string).
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Like|None|no|no|
+
+### Require_Product
+
+
+Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Require_Product - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Row_Version
 
