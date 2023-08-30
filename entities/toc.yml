@@ -1040,6 +1040,11 @@
       href: Projects.Agile.Projects.md
     - name: ProjectTypes
       href: Projects.Agile.ProjectTypes.md
+  - name: AI
+    href: Projects.AI.md
+    items:
+    - name: Models
+      href: Projects.AI.Models.md
   - name: ProjectParticipants
     href: Projects.ProjectParticipants.md
   - name: ProjectRiskDiscussion

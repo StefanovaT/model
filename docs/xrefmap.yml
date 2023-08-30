@@ -1600,6 +1600,12 @@ references:
 - uid: Projects.Agile.ProjectTypes
   name: Projects.Agile.ProjectTypes Entity
   href: entities/Projects.Agile.ProjectTypes.html
+- uid: Projects.AI
+  name: Projects.AI Namespace
+  href: entities/Projects.AI.html
+- uid: Projects.AI.Models
+  name: Projects.AI.Models Entity
+  href: entities/Projects.AI.Models.html
 - uid: Projects.ProjectParticipants
   name: Projects.ProjectParticipants Entity
   href: entities/Projects.ProjectParticipants.html
