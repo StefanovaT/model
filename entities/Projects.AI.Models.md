@@ -22,6 +22,8 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Projects.AI.Models](Projects.AI.Models.md)  
+  * [Projects.AI.ModelBuilds](Projects.AI.ModelBuilds.md)  
+  * [Projects.AI.ModelQAs](Projects.AI.ModelQAs.md)  
 
 ## Attributes
 
@@ -29,7 +31,6 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [AutoUpdateToLatestBuild](Projects.AI.Models.md#autoupdatetolatestbuild) | boolean | Indicates whether to automatically update Conversation Build to the latest successful build. `Required` `Default(true)` 
 | [BaseProviderModel](Projects.AI.Models.md#baseprovidermodel) | string (64) __nullable__ | Provider-specific base model, to which we will add domain specific knowledge (for example "gpt-3.5-turbo-0613"). null for non-buildable models (only used as child models). 
-| [ConversationBuildId](Projects.AI.Models.md#conversationbuildid) | guid __nullable__ | The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. `Filter(multi eq)` 
 | [DisplayText](Projects.AI.Models.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.Models.md#id) | guid |  
 | [Name](Projects.AI.Models.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the model. `Required` `Filter(like)` 
@@ -42,8 +43,16 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [ConversationBuild](Projects.AI.Models.md#conversationbuild) | [ModelBuilds](Projects.AI.ModelBuilds.md) (nullable) | The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. `Filter(multi eq)` |
 | [Parent](Projects.AI.Models.md#parent) | [Models](Projects.AI.Models.md) (nullable) | A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. `Filter(multi eq)` |
 | [VirtualUser](Projects.AI.Models.md#virtualuser) | [Users](Systems.Security.Users.md) (nullable) | The virtual user, which will answer in chats on behalf of the model. null means the model cannot be used in chat. Each model should have different virtual user. `Filter(multi eq)` |
+
+## Child Collections
+
+| Name | Type | Description |
+| ---- | ---- | --- |
+| Builds | [ModelBuilds](Projects.AI.ModelBuilds.md) | List of `ModelBuild`(Projects.AI.ModelBuilds.md) child objects, based on the `Projects.AI.ModelBuild.Model`(Projects.AI.ModelBuilds.md#model) back reference 
+| QAs | [ModelQAs](Projects.AI.ModelQAs.md) | List of `ModelQA`(Projects.AI.ModelQAs.md) child objects, based on the `Projects.AI.ModelQA.Model`(Projects.AI.ModelQAs.md#model) back reference 
 
 
 ## Attribute Details
@@ -70,16 +79,6 @@ _Supports Order By_: **False**
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
-### ConversationBuildId
-
-The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. `Filter(multi eq)`
-
-_Type_: **guid __nullable__**  
-_Indexed_: **True**  
-_Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **ShownByDefault**  
-
 ### DisplayText
 
 Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
@@ -96,6 +95,7 @@ _Type_: **guid**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
 
 ### Name
@@ -160,6 +160,16 @@ _Show in UI_: **ShownByDefault**
 
 
 ## Reference Details
+
+### ConversationBuild
+
+The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. `Filter(multi eq)`
+
+_Type_: **[ModelBuilds](Projects.AI.ModelBuilds.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Parent
 

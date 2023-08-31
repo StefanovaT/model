@@ -1043,6 +1043,10 @@
   - name: AI
     href: Projects.AI.md
     items:
+    - name: ModelBuilds
+      href: Projects.AI.ModelBuilds.md
+    - name: ModelQAs
+      href: Projects.AI.ModelQAs.md
     - name: Models
       href: Projects.AI.Models.md
   - name: ProjectParticipants

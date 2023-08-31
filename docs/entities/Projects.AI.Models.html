@@ -94,7 +94,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
 <ul>
-<li><a href="Projects.AI.Models.html">Projects.AI.Models</a></li>
+<li><a href="Projects.AI.Models.html">Projects.AI.Models</a>
+<ul>
+<li><a href="Projects.AI.ModelBuilds.html">Projects.AI.ModelBuilds</a></li>
+<li><a href="Projects.AI.ModelQAs.html">Projects.AI.ModelQAs</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -115,11 +120,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.AI.Models.html#baseprovidermodel">BaseProviderModel</a></td>
 <td>string (64) <strong>nullable</strong></td>
 <td>Provider-specific base model, to which we will add domain specific knowledge (for example &quot;gpt-3.5-turbo-0613&quot;). null for non-buildable models (only used as child models).</td>
-</tr>
-<tr>
-<td><a href="Projects.AI.Models.html#conversationbuildid">ConversationBuildId</a></td>
-<td>guid <strong>nullable</strong></td>
-<td>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.Models.html#displaytext">DisplayText</a></td>
@@ -169,6 +169,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 </thead>
 <tbody>
 <tr>
+<td><a href="Projects.AI.Models.html#conversationbuild">ConversationBuild</a></td>
+<td><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a> (nullable)</td>
+<td>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
 <td><a href="Projects.AI.Models.html#parent">Parent</a></td>
 <td><a href="Projects.AI.Models.html">Models</a> (nullable)</td>
 <td>A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. <code>Filter(multi eq)</code></td>
@@ -177,6 +182,28 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.AI.Models.html#virtualuser">VirtualUser</a></td>
 <td><a href="Systems.Security.Users.html">Users</a> (nullable)</td>
 <td>The virtual user, which will answer in chats on behalf of the model. null means the model cannot be used in chat. Each model should have different virtual user. <code>Filter(multi eq)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="child-collections">Child Collections</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Builds</td>
+<td><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a></td>
+<td>List of <code>ModelBuild</code>(Projects.AI.ModelBuilds.md) child objects, based on the <code>Projects.AI.ModelBuild.Model</code>(Projects.AI.ModelBuilds.md#model) back reference</td>
+</tr>
+<tr>
+<td>QAs</td>
+<td><a href="Projects.AI.ModelQAs.html">ModelQAs</a></td>
+<td>List of <code>ModelQA</code>(Projects.AI.ModelQAs.md) child objects, based on the <code>Projects.AI.ModelQA.Model</code>(Projects.AI.ModelQAs.md#model) back reference</td>
 </tr>
 </tbody>
 </table>
@@ -197,13 +224,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="conversationbuildid">ConversationBuildId</h3>
-<p>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong>guid <strong>nullable</strong></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
@@ -216,6 +236,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="name">Name</h3>
 <p>Multi-language name of the model. <code>Required</code> <code>Filter(like)</code></p>
@@ -272,6 +293,13 @@ Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) dat
 <em>Maximum Length</em>: <strong>128</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="conversationbuild">ConversationBuild</h3>
+<p>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="parent">Parent</h3>
 <p>A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.AI.Models.html">Models</a> (nullable)</strong><br>

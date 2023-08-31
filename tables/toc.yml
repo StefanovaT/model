@@ -761,6 +761,10 @@
 - name: Llm
   href: Llm.md
   items:
+  - name: Llm_Model_Builds
+    href: Llm_Model_Builds.md
+  - name: Llm_Model_QAs
+    href: Llm_Model_QAs.md
   - name: Llm_Models
     href: Llm_Models.md
 - name: Log

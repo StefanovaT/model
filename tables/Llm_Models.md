@@ -105,6 +105,7 @@ The build, which should be used, when conversing on behalf of the model. Usually
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Llm_Model_Builds](Llm_Model_Builds.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -127,7 +128,7 @@ The build, which should be used, when conversing on behalf of the model. Usually
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|NewGuid|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
