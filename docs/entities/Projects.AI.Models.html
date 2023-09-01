@@ -98,6 +98,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <ul>
 <li><a href="Projects.AI.ModelBuilds.html">Projects.AI.ModelBuilds</a></li>
 <li><a href="Projects.AI.ModelQAs.html">Projects.AI.ModelQAs</a></li>
+<li><a href="Projects.AI.ModelAssets.html">Projects.AI.ModelAssets</a></li>
 </ul>
 </li>
 </ul>
@@ -148,13 +149,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 <tr>
 <td><a href="Projects.AI.Models.html#provider">Provider</a></td>
-<td><a href="Projects.AI.Models.html#provider">Provider</a></td>
-<td>The provider of the base models. Currently, only OpenAI is supported. <code>Required</code> <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></td>
+<td><a href="Projects.AI.Models.html#provider">Provider</a> <strong>nullable</strong></td>
+<td>The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.Models.html#providerapikey">ProviderApiKey</a></td>
 <td>string (128) <strong>nullable</strong></td>
-<td>The API key, which should be used to access the provider. null for non-buildable models (only used as child models).</td>
+<td>The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).</td>
 </tr>
 </tbody>
 </table>
@@ -195,6 +196,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Assets</td>
+<td><a href="Projects.AI.ModelAssets.html">ModelAssets</a></td>
+<td>List of <code>ModelAsset</code>(Projects.AI.ModelAssets.md) child objects, based on the <code>Projects.AI.ModelAsset.Model</code>(Projects.AI.ModelAssets.md#model) back reference</td>
+</tr>
 <tr>
 <td>Builds</td>
 <td><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a></td>
@@ -261,8 +267,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="provider">Provider</h3>
-<p>The provider of the base models. Currently, only OpenAI is supported. <code>Required</code> <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong><a href="Projects.AI.Models.html#provider">Provider</a></strong><br>
+<p>The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.AI.Models.html#provider">Provider</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) data attribute<br>
 <em>Allowed Values (Projects.AI.ModelsRepository.Provider Enum Members)</em></p>
@@ -285,7 +291,7 @@ Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) dat
 <em>Default Value</em>: <strong>OpenAI</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="providerapikey">ProviderApiKey</h3>
-<p>The API key, which should be used to access the provider. null for non-buildable models (only used as child models).</p>
+<p>The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).</p>
 <p><em>Type</em>: <strong>string (128) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>

@@ -112,7 +112,7 @@ The time when the QA was created.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|CurrentDateTimeUtc|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -164,7 +164,7 @@ The time when the QA was deactivated.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|datetime (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -174,7 +174,7 @@ The time when the QA was deactivated.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 |GreaterThanOrLessThan|None|no|no|
 
 ### Is_Active

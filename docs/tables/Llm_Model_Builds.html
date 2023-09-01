@@ -98,23 +98,28 @@
 <tbody>
 <tr>
 <td><a href="#build_completion_time_utc">Build_Completion_Time_Utc</a></td>
-<td><code>datetime</code></td>
+<td><code>datetime</code> Readonly</td>
 <td>The time when the build was completed.</td>
 </tr>
 <tr>
 <td><a href="#build_log">Build_Log</a></td>
-<td><code>nvarchar(max)</code></td>
+<td><code>nvarchar(max)</code> Readonly</td>
 <td>Build log, as returned by the model provider.</td>
 </tr>
 <tr>
 <td><a href="#build_start_time_utc">Build_Start_Time_Utc</a></td>
-<td><code>datetime</code></td>
+<td><code>datetime</code> Readonly</td>
 <td>The time when the build job was started.</td>
 </tr>
 <tr>
 <td><a href="#build_user_id">Build_User_Id</a></td>
-<td><code>uniqueidentifier</code></td>
+<td><code>uniqueidentifier</code> Readonly</td>
 <td>The user which started the build.</td>
+</tr>
+<tr>
+<td><a href="#job_name">Job_Name</a></td>
+<td><code>nvarchar(256)</code> Readonly</td>
+<td>The name of the build job in the provider cloud. NULL if the provider does not support job names.</td>
 </tr>
 <tr>
 <td><a href="#model_build_id">Model_Build_Id</a></td>
@@ -123,12 +128,12 @@
 </tr>
 <tr>
 <td><a href="#model_id">Model_Id</a></td>
-<td><code>uniqueidentifier</code></td>
+<td><code>uniqueidentifier</code> Readonly</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="#result_model_id">Result_Model_Id</a></td>
-<td><code>uniqueidentifier</code></td>
+<td><a href="#result_model_name">Result_Model_Name</a></td>
+<td><code>nvarchar(256)</code> Readonly</td>
 <td>The name of the model, which was created by the build. Updated after the build job completes.</td>
 </tr>
 <tr>
@@ -138,12 +143,12 @@
 </tr>
 <tr>
 <td><a href="#status">Status</a></td>
-<td><code>nvarchar(1)</code> Allowed: <code>N</code>, <code>R</code>, <code>C</code></td>
+<td><code>nvarchar(1)</code> Allowed: <code>N</code>, <code>R</code>, <code>C</code>, Readonly</td>
 <td>Indicates the status of the build - New, Running or Completed.</td>
 </tr>
 <tr>
 <td><a href="#success">Success</a></td>
-<td><code>bit</code></td>
+<td><code>bit</code> Readonly</td>
 <td>Indicates whether the build was successfully built.</td>
 </tr>
 </tbody>
@@ -209,7 +214,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -229,7 +234,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>datetime</td>
+<td>datetime (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -263,7 +268,7 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
-<td>no</td>
+<td>yes</td>
 <td>no</td>
 </tr>
 <tr>
@@ -334,7 +339,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -354,7 +359,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>nvarchar(max)</td>
+<td>nvarchar(max) (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -394,7 +399,7 @@
 </tr>
 <tr>
 <td>Default Value</td>
-<td>None</td>
+<td>CurrentDateTimeUtc</td>
 </tr>
 <tr>
 <td>Enter Stop</td>
@@ -434,7 +439,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -559,7 +564,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Referenced Table</td>
@@ -617,6 +622,131 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
+<td>no</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="job_name">Job_Name</h3>
+<p>The name of the build job in the provider cloud. NULL if the provider does not support job names.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>256</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>nvarchar(256) (Allows NULL)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="job_name---supported-filters">Job_Name - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Like</td>
+<td>None</td>
 <td>no</td>
 <td>no</td>
 </tr>
@@ -799,7 +929,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Referenced Table</td>
@@ -862,7 +992,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="result_model_id">Result_Model_Id</h3>
+<h3 id="result_model_name">Result_Model_Name</h3>
 <p>The name of the model, which was created by the build. Updated after the build job completes.</p>
 <table>
 <thead>
@@ -898,7 +1028,7 @@
 </tr>
 <tr>
 <td>Max Length</td>
-<td>-1</td>
+<td>256</td>
 </tr>
 <tr>
 <td>Order</td>
@@ -922,11 +1052,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
-</tr>
-<tr>
-<td>Referenced Table</td>
-<td><a href="Llm_Models.html">Llm_Models</a></td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -942,11 +1068,11 @@
 </tr>
 <tr>
 <td>Supports EQUALS_IN</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 <tr>
 <td>Type</td>
-<td>uniqueidentifier</td>
+<td>nvarchar(256) (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -966,7 +1092,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="result_model_id---supported-filters">Result_Model_Id - Supported Filters</h4>
+<h4 id="result_model_name---supported-filters">Result_Model_Name - Supported Filters</h4>
 <table>
 <thead>
 <tr>
@@ -980,6 +1106,12 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Like</td>
+<td>None</td>
 <td>no</td>
 <td>no</td>
 </tr>
@@ -1148,7 +1280,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -1248,7 +1380,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>

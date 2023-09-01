@@ -15,16 +15,17 @@ Successive builds of sub-models, containing the QAs available at the time of the
 
 | Name | Type | Description |
 | - | - | --- |
-|[Build_Completion_Time_Utc](#build_completion_time_utc)|`datetime` |The time when the build was completed.|
-|[Build_Log](#build_log)|`nvarchar(max)` |Build log, as returned by the model provider.|
-|[Build_Start_Time_Utc](#build_start_time_utc)|`datetime` |The time when the build job was started.|
-|[Build_User_Id](#build_user_id)|`uniqueidentifier` |The user which started the build.|
+|[Build_Completion_Time_Utc](#build_completion_time_utc)|`datetime` Readonly|The time when the build was completed.|
+|[Build_Log](#build_log)|`nvarchar(max)` Readonly|Build log, as returned by the model provider.|
+|[Build_Start_Time_Utc](#build_start_time_utc)|`datetime` Readonly|The time when the build job was started.|
+|[Build_User_Id](#build_user_id)|`uniqueidentifier` Readonly|The user which started the build.|
+|[Job_Name](#job_name)|`nvarchar(256)` Readonly|The name of the build job in the provider cloud. NULL if the provider does not support job names.|
 |[Model_Build_Id](#model_build_id)|`uniqueidentifier` `PK`||
-|[Model_Id](#model_id)|`uniqueidentifier` ||
-|[Result_Model_Id](#result_model_id)|`uniqueidentifier` |The name of the model, which was created by the build. Updated after the build job completes.|
+|[Model_Id](#model_id)|`uniqueidentifier` Readonly||
+|[Result_Model_Name](#result_model_name)|`nvarchar(256)` Readonly|The name of the model, which was created by the build. Updated after the build job completes.|
 |[Row_Version](#row_version)|`timestamp` ||
-|[Status](#status)|`nvarchar(1)` Allowed: `N`, `R`, `C`|Indicates the status of the build - New, Running or Completed.|
-|[Success](#success)|`bit` |Indicates whether the build was successfully built.|
+|[Status](#status)|`nvarchar(1)` Allowed: `N`, `R`, `C`, Readonly|Indicates the status of the build - New, Running or Completed.|
+|[Success](#success)|`bit` Readonly|Indicates whether the build was successfully built.|
 
 ## Columns
 
@@ -47,12 +48,12 @@ The time when the build was completed.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|datetime (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -62,7 +63,7 @@ The time when the build was completed.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 |GreaterThanOrLessThan|None|no|no|
 
 ### Build_Log
@@ -84,12 +85,12 @@ Build log, as returned by the model provider.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(max)|
+|Type|nvarchar(max) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -104,7 +105,7 @@ The time when the build job was started.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|CurrentDateTimeUtc|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -114,7 +115,7 @@ The time when the build job was started.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -151,7 +152,7 @@ The user which started the build.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[Sec_Users](Sec_Users.md)|
 |RTF|no|
 |Sortable|no|
@@ -168,6 +169,43 @@ The user which started the build.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Job_Name
+
+
+The name of the build job in the provider cloud. NULL if the provider does not support job names.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|256|
+|Order|10|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(256) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Job_Name - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Model_Build_Id
 
@@ -218,7 +256,7 @@ The user which started the build.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[Llm_Models](Llm_Models.md)|
 |RTF|no|
 |Sortable|no|
@@ -236,7 +274,7 @@ The user which started the build.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Result_Model_Id
+### Result_Model_Name
 
 
 The name of the model, which was created by the build. Updated after the build job completes.
@@ -249,29 +287,29 @@ The name of the model, which was created by the build. Updated after the build j
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|-1|
+|Max Length|256|
 |Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
-|Referenced Table|[Llm_Models](Llm_Models.md)|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(256) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
 
-#### Result_Model_Id - Supported Filters
+#### Result_Model_Name - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Row_Version
 
@@ -320,7 +358,7 @@ Indicates the status of the build - New, Running or Completed.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -350,7 +388,7 @@ Indicates whether the build was successfully built.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|

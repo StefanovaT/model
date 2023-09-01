@@ -24,6 +24,7 @@ Aggregate Tree
 * [Projects.AI.Models](Projects.AI.Models.md)  
   * [Projects.AI.ModelBuilds](Projects.AI.ModelBuilds.md)  
   * [Projects.AI.ModelQAs](Projects.AI.ModelQAs.md)  
+  * [Projects.AI.ModelAssets](Projects.AI.ModelAssets.md)  
 
 ## Attributes
 
@@ -36,8 +37,8 @@ Aggregate Tree
 | [Name](Projects.AI.Models.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the model. `Required` `Filter(like)` 
 | [Notes](Projects.AI.Models.md#notes) | string (max) __nullable__ | Notes for this Model. 
 | [ObjectVersion](Projects.AI.Models.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Provider](Projects.AI.Models.md#provider) | [Provider](Projects.AI.Models.md#provider) | The provider of the base models. Currently, only OpenAI is supported. `Required` `Default("OpenAI")` `Filter(eq)` 
-| [ProviderApiKey](Projects.AI.Models.md#providerapikey) | string (128) __nullable__ | The API key, which should be used to access the provider. null for non-buildable models (only used as child models). 
+| [Provider](Projects.AI.Models.md#provider) | [Provider](Projects.AI.Models.md#provider) __nullable__ | The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)` 
+| [ProviderApiKey](Projects.AI.Models.md#providerapikey) | string (128) __nullable__ | The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models). 
 
 ## References
 
@@ -51,6 +52,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| Assets | [ModelAssets](Projects.AI.ModelAssets.md) | List of `ModelAsset`(Projects.AI.ModelAssets.md) child objects, based on the `Projects.AI.ModelAsset.Model`(Projects.AI.ModelAssets.md#model) back reference 
 | Builds | [ModelBuilds](Projects.AI.ModelBuilds.md) | List of `ModelBuild`(Projects.AI.ModelBuilds.md) child objects, based on the `Projects.AI.ModelBuild.Model`(Projects.AI.ModelBuilds.md#model) back reference 
 | QAs | [ModelQAs](Projects.AI.ModelQAs.md) | List of `ModelQA`(Projects.AI.ModelQAs.md) child objects, based on the `Projects.AI.ModelQA.Model`(Projects.AI.ModelQAs.md#model) back reference 
 
@@ -131,9 +133,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### Provider
 
-The provider of the base models. Currently, only OpenAI is supported. `Required` `Default("OpenAI")` `Filter(eq)`
+The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)`
 
-_Type_: **[Provider](Projects.AI.Models.md#provider)**  
+_Type_: **[Provider](Projects.AI.Models.md#provider) __nullable__**  
 _Category_: **System**  
 Allowed values for the `Provider`(Projects.AI.Models.md#provider) data attribute  
 _Allowed Values (Projects.AI.ModelsRepository.Provider Enum Members)_  
@@ -149,7 +151,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ProviderApiKey
 
-The API key, which should be used to access the provider. null for non-buildable models (only used as child models).
+The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).
 
 _Type_: **string (128) __nullable__**  
 _Category_: **System**  

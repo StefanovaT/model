@@ -83,11 +83,11 @@
 <p>Successive builds of sub-models, containing the QAs available at the time of the build. Created automatically by the Build now function in the model. Entity: Llm_Model_Builds (Introduced in version 24.1.1.93)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Model.Name:T}</em><br>
+<em>{JobName}</em><br>
 Default Search Members:<br>
-<em>Model.Name</em><br>
+<em>JobName</em><br>
 Name Data Member:<br>
-<em>Model.Name</em><br>
+<em>JobName</em><br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
@@ -108,18 +108,18 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#buildcompletiontimeutc">BuildCompletionTimeUtc</a></td>
-<td>datetime</td>
-<td>The time when the build was completed. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
+<td>datetime <strong>nullable</strong></td>
+<td>The time when the build was completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#buildlog">BuildLog</a></td>
-<td>string (max)</td>
-<td>Build log, as returned by the model provider. <code>Required</code></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>Build log, as returned by the model provider. <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#buildstarttimeutc">BuildStartTimeUtc</a></td>
 <td>datetime</td>
-<td>The time when the build job was started. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
+<td>The time when the build job was started. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#displaytext">DisplayText</a></td>
@@ -132,19 +132,29 @@ Aggregate Root:<br>
 <td></td>
 </tr>
 <tr>
+<td><a href="Projects.AI.ModelBuilds.html#jobname">JobName</a></td>
+<td>string (256) <strong>nullable</strong></td>
+<td>The name of the build job in the provider cloud. null if the provider does not support job names. <code>Filter(eq;like)</code> <code>ReadOnly</code> <code>Introduced in version 24.1.1.94</code></td>
+</tr>
+<tr>
 <td><a href="Projects.AI.ModelBuilds.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
+<td><a href="Projects.AI.ModelBuilds.html#resultmodelname">ResultModelName</a></td>
+<td>string (256) <strong>nullable</strong></td>
+<td>The name of the model, which was created by the build. Updated after the build job completes. <code>Filter(eq;like)</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
 <td><a href="Projects.AI.ModelBuilds.html#status">Status</a></td>
 <td><a href="Projects.AI.ModelBuilds.html#status">Status</a></td>
-<td>Indicates the status of the build - New, Running or Completed. <code>Required</code> <code>Default(&quot;N&quot;)</code></td>
+<td>Indicates the status of the build - New, Running or Completed. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#success">Success</a></td>
 <td>boolean</td>
-<td>Indicates whether the build was successfully built. <code>Required</code></td>
+<td>Indicates whether the build was successfully built. <code>Required</code> <code>ReadOnly</code></td>
 </tr>
 </tbody>
 </table>
@@ -161,42 +171,38 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#builduser">BuildUser</a></td>
 <td><a href="Systems.Security.Users.html">Users</a></td>
-<td>The user which started the build. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The user which started the build. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.ModelBuilds.html#model">Model</a></td>
 <td><a href="Projects.AI.Models.html">Models</a></td>
-<td>The <see cref="Model"></see> to which this ModelBuild belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
-</tr>
-<tr>
-<td><a href="Projects.AI.ModelBuilds.html#resultmodel">ResultModel</a></td>
-<td><a href="Projects.AI.Models.html">Models</a></td>
-<td>The name of the model, which was created by the build. Updated after the build job completes. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The <see cref="Model"></see> to which this ModelBuild belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="buildcompletiontimeutc">BuildCompletionTimeUtc</h3>
-<p>The time when the build was completed. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
-<p><em>Type</em>: <strong>datetime</strong><br>
+<p>The time when the build was completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
+<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="buildlog">BuildLog</h3>
-<p>Build log, as returned by the model provider. <code>Required</code></p>
-<p><em>Type</em>: <strong>string (max)</strong><br>
+<p>Build log, as returned by the model provider. <code>ReadOnly</code></p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="buildstarttimeutc">BuildStartTimeUtc</h3>
-<p>The time when the build job was started. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
+<p>The time when the build job was started. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
@@ -212,6 +218,14 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="jobname">JobName</h3>
+<p>The name of the build job in the provider cloud. null if the provider does not support job names. <code>Filter(eq;like)</code> <code>ReadOnly</code> <code>Introduced in version 24.1.1.94</code></p>
+<p><em>Type</em>: <strong>string (256) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>256</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
@@ -219,8 +233,16 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="resultmodelname">ResultModelName</h3>
+<p>The name of the model, which was created by the build. Updated after the build job completes. <code>Filter(eq;like)</code> <code>ReadOnly</code></p>
+<p><em>Type</em>: <strong>string (256) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>256</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="status">Status</h3>
-<p>Indicates the status of the build - New, Running or Completed. <code>Required</code> <code>Default(&quot;N&quot;)</code></p>
+<p>Indicates the status of the build - New, Running or Completed. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Projects.AI.ModelBuilds.html#status">Status</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>Status</code>(Projects.AI.ModelBuilds.md#status) data attribute<br>
@@ -252,7 +274,7 @@ Allowed values for the <code>Status</code>(Projects.AI.ModelBuilds.md#status) da
 <em>Default Value</em>: <strong>New</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="success">Success</h3>
-<p>Indicates whether the build was successfully built. <code>Required</code></p>
+<p>Indicates whether the build was successfully built. <code>Required</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -260,26 +282,19 @@ Allowed values for the <code>Status</code>(Projects.AI.ModelBuilds.md#status) da
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="builduser">BuildUser</h3>
-<p>The user which started the build. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The user which started the build. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="model">Model</h3>
-<p>The <see cref="Model"></see> to which this ModelBuild belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p>The <see cref="Model"></see> to which this ModelBuild belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Projects.AI.Models.html">Models</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="resultmodel">ResultModel</h3>
-<p>The name of the model, which was created by the build. Updated after the build job completes. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="Projects.AI.Models.html">Models</a></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>

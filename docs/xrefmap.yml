@@ -1603,6 +1603,9 @@ references:
 - uid: Projects.AI
   name: Projects.AI Namespace
   href: entities/Projects.AI.html
+- uid: Projects.AI.ModelAssets
+  name: Projects.AI.ModelAssets Entity
+  href: entities/Projects.AI.ModelAssets.html
 - uid: Projects.AI.ModelBuilds
   name: Projects.AI.ModelBuilds Entity
   href: entities/Projects.AI.ModelBuilds.html

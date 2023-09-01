@@ -1043,6 +1043,8 @@
   - name: AI
     href: Projects.AI.md
     items:
+    - name: ModelAssets
+      href: Projects.AI.ModelAssets.md
     - name: ModelBuilds
       href: Projects.AI.ModelBuilds.md
     - name: ModelQAs

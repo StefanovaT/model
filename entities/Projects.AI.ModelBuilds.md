@@ -9,11 +9,11 @@ Successive builds of sub-models, containing the QAs available at the time of the
 
 ## Default Visualization
 Default Display Text Format:  
-_{Model.Name:T}_  
+_{JobName}_  
 Default Search Members:  
-_Model.Name_  
+_JobName_  
 Name Data Member:  
-_Model.Name_  
+_JobName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
@@ -29,31 +29,32 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BuildCompletionTimeUtc](Projects.AI.ModelBuilds.md#buildcompletiontimeutc) | datetime | The time when the build was completed. `Required` `Filter(eq;ge;le)` 
-| [BuildLog](Projects.AI.ModelBuilds.md#buildlog) | string (max) | Build log, as returned by the model provider. `Required` 
-| [BuildStartTimeUtc](Projects.AI.ModelBuilds.md#buildstarttimeutc) | datetime | The time when the build job was started. `Required` `Filter(eq;ge;le)` 
+| [BuildCompletionTimeUtc](Projects.AI.ModelBuilds.md#buildcompletiontimeutc) | datetime __nullable__ | The time when the build was completed. `Filter(eq;ge;le)` `ReadOnly` 
+| [BuildLog](Projects.AI.ModelBuilds.md#buildlog) | string (max) __nullable__ | Build log, as returned by the model provider. `ReadOnly` 
+| [BuildStartTimeUtc](Projects.AI.ModelBuilds.md#buildstarttimeutc) | datetime | The time when the build job was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly` 
 | [DisplayText](Projects.AI.ModelBuilds.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.ModelBuilds.md#id) | guid |  
+| [JobName](Projects.AI.ModelBuilds.md#jobname) | string (256) __nullable__ | The name of the build job in the provider cloud. null if the provider does not support job names. `Filter(eq;like)` `ReadOnly` `Introduced in version 24.1.1.94` 
 | [ObjectVersion](Projects.AI.ModelBuilds.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Status](Projects.AI.ModelBuilds.md#status) | [Status](Projects.AI.ModelBuilds.md#status) | Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` 
-| [Success](Projects.AI.ModelBuilds.md#success) | boolean | Indicates whether the build was successfully built. `Required` 
+| [ResultModelName](Projects.AI.ModelBuilds.md#resultmodelname) | string (256) __nullable__ | The name of the model, which was created by the build. Updated after the build job completes. `Filter(eq;like)` `ReadOnly` 
+| [Status](Projects.AI.ModelBuilds.md#status) | [Status](Projects.AI.ModelBuilds.md#status) | Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` `ReadOnly` 
+| [Success](Projects.AI.ModelBuilds.md#success) | boolean | Indicates whether the build was successfully built. `Required` `ReadOnly` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BuildUser](Projects.AI.ModelBuilds.md#builduser) | [Users](Systems.Security.Users.md) | The user which started the build. `Required` `Filter(multi eq)` |
-| [Model](Projects.AI.ModelBuilds.md#model) | [Models](Projects.AI.Models.md) | The <see cref="Model"/> to which this ModelBuild belongs. `Required` `Filter(multi eq)` `Owner` |
-| [ResultModel](Projects.AI.ModelBuilds.md#resultmodel) | [Models](Projects.AI.Models.md) | The name of the model, which was created by the build. Updated after the build job completes. `Required` `Filter(multi eq)` |
+| [BuildUser](Projects.AI.ModelBuilds.md#builduser) | [Users](Systems.Security.Users.md) | The user which started the build. `Required` `Filter(multi eq)` `ReadOnly` |
+| [Model](Projects.AI.ModelBuilds.md#model) | [Models](Projects.AI.Models.md) | The <see cref="Model"/> to which this ModelBuild belongs. `Required` `Filter(multi eq)` `ReadOnly` `Owner` |
 
 
 ## Attribute Details
 
 ### BuildCompletionTimeUtc
 
-The time when the build was completed. `Required` `Filter(eq;ge;le)`
+The time when the build was completed. `Filter(eq;ge;le)` `ReadOnly`
 
-_Type_: **datetime**  
+_Type_: **datetime __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
@@ -61,9 +62,9 @@ _Show in UI_: **ShownByDefault**
 
 ### BuildLog
 
-Build log, as returned by the model provider. `Required`
+Build log, as returned by the model provider. `ReadOnly`
 
-_Type_: **string (max)**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -72,12 +73,13 @@ _Show in UI_: **ShownByDefault**
 
 ### BuildStartTimeUtc
 
-The time when the build job was started. `Required` `Filter(eq;ge;le)`
+The time when the build job was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText
@@ -99,6 +101,17 @@ _Supported Filters_: **Equals, EqualsIn**
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
 
+### JobName
+
+The name of the build job in the provider cloud. null if the provider does not support job names. `Filter(eq;like)` `ReadOnly` `Introduced in version 24.1.1.94`
+
+_Type_: **string (256) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **False**  
+_Maximum Length_: **256**  
+_Show in UI_: **ShownByDefault**  
+
 ### ObjectVersion
 
 The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
@@ -109,9 +122,20 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
+### ResultModelName
+
+The name of the model, which was created by the build. Updated after the build job completes. `Filter(eq;like)` `ReadOnly`
+
+_Type_: **string (256) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **False**  
+_Maximum Length_: **256**  
+_Show in UI_: **ShownByDefault**  
+
 ### Status
 
-Indicates the status of the build - New, Running or Completed. `Required` `Default("N")`
+Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` `ReadOnly`
 
 _Type_: **[Status](Projects.AI.ModelBuilds.md#status)**  
 _Category_: **System**  
@@ -131,7 +155,7 @@ _Show in UI_: **ShownByDefault**
 
 ### Success
 
-Indicates whether the build was successfully built. `Required`
+Indicates whether the build was successfully built. `Required` `ReadOnly`
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -144,7 +168,7 @@ _Show in UI_: **ShownByDefault**
 
 ### BuildUser
 
-The user which started the build. `Required` `Filter(multi eq)`
+The user which started the build. `Required` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Indexed_: **True**  
@@ -154,23 +178,13 @@ _Show in UI_: **ShownByDefault**
 
 ### Model
 
-The <see cref="Model"/> to which this ModelBuild belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Model"/> to which this ModelBuild belongs. `Required` `Filter(multi eq)` `ReadOnly` `Owner`
 
 _Type_: **[Models](Projects.AI.Models.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **ShownByDefault**  
-
-### ResultModel
-
-The name of the model, which was created by the build. Updated after the build job completes. `Required` `Filter(multi eq)`
-
-_Type_: **[Models](Projects.AI.Models.md)**  
-_Indexed_: **True**  
-_Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
 

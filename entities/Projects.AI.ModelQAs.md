@@ -30,8 +30,8 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Answer](Projects.AI.ModelQAs.md#answer) | string (max) | Desired answer. `Required` `Filter(like)` 
-| [CreationTimeUtc](Projects.AI.ModelQAs.md#creationtimeutc) | datetime | The time when the QA was created. `Required` `Filter(eq;ge;le)` `ReadOnly` 
-| [DeactivatonTimeUtc](Projects.AI.ModelQAs.md#deactivatontimeutc) | datetime | The time when the QA was deactivated. `Required` `Filter(eq;ge;le)` `ReadOnly` 
+| [CreationTimeUtc](Projects.AI.ModelQAs.md#creationtimeutc) | datetime | The time when the QA was created. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly` 
+| [DeactivatonTimeUtc](Projects.AI.ModelQAs.md#deactivatontimeutc) | datetime __nullable__ | The time when the QA was deactivated. `Filter(eq;ge;le)` `ReadOnly` 
 | [DisplayText](Projects.AI.ModelQAs.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.ModelQAs.md#id) | guid |  
 | [IsActive](Projects.AI.ModelQAs.md#isactive) | boolean | Indicates whether to include this QA in future builds. `Required` `Default(true)` `Filter(eq)` 
@@ -64,19 +64,20 @@ _Show in UI_: **ShownByDefault**
 
 ### CreationTimeUtc
 
-The time when the QA was created. `Required` `Filter(eq;ge;le)` `ReadOnly`
+The time when the QA was created. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
 
 ### DeactivatonTimeUtc
 
-The time when the QA was deactivated. `Required` `Filter(eq;ge;le)` `ReadOnly`
+The time when the QA was deactivated. `Filter(eq;ge;le)` `ReadOnly`
 
-_Type_: **datetime**  
+_Type_: **datetime __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  

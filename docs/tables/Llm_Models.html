@@ -130,12 +130,12 @@
 <tr>
 <td><a href="#provider">Provider</a></td>
 <td><code>nvarchar(64)</code> Allowed: <code>OpenAI</code></td>
-<td>The provider of the base models. Currently, only OpenAI is supported.</td>
+<td>The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).</td>
 </tr>
 <tr>
 <td><a href="#provider_api_key">Provider_Api_Key</a></td>
 <td><code>nvarchar(128)</code></td>
-<td>The API key, which should be used to access the provider. NULL for non-buildable models (only used as child models).</td>
+<td>The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).</td>
 </tr>
 <tr>
 <td><a href="#row_version">Row_Version</a></td>
@@ -933,7 +933,7 @@
 </tbody>
 </table>
 <h3 id="provider">Provider</h3>
-<p>The provider of the base models. Currently, only OpenAI is supported.</p>
+<p>The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).</p>
 <table>
 <thead>
 <tr>
@@ -1016,7 +1016,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>nvarchar(64)</td>
+<td>nvarchar(64) (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -1050,13 +1050,13 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
-<td>no</td>
+<td>yes</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h3 id="provider_api_key">Provider_Api_Key</h3>
-<p>The API key, which should be used to access the provider. NULL for non-buildable models (only used as child models).</p>
+<p>The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).</p>
 <table>
 <thead>
 <tr>

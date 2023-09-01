@@ -17850,11 +17850,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Projects.AI.ModelAssets.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Projects.AI.ModelAssets.html",
+          "hash": "3aR7+vqMLHYTANWzhhEjkg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Projects.AI.ModelBuilds.md",
       "output": {
         ".html": {
           "relative_path": "entities/Projects.AI.ModelBuilds.html",
-          "hash": "7bdz7KcmEFM09PN9AjvY9Q=="
+          "hash": "bemqsJvsXrhCcHBEdh+gjw=="
         }
       },
       "is_incremental": false,
@@ -17866,7 +17878,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.AI.ModelQAs.html",
-          "hash": "T5OClJCtx5AeiYL2CWcNRQ=="
+          "hash": "ZKff39IaBxh6WoQUiKjYBw=="
         }
       },
       "is_incremental": false,
@@ -17878,7 +17890,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.AI.Models.html",
-          "hash": "VLEGL61EjNr93ey8f6VZaw=="
+          "hash": "nZn1Ybl3hoaTIB3XhsCaew=="
         }
       },
       "is_incremental": false,
@@ -17890,7 +17902,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.AI.html",
-          "hash": "YOPv8KskwlD9pBZVhuBAtg=="
+          "hash": "mVRWOWPgHBZnRuZO1exbIQ=="
         }
       },
       "is_incremental": false,
@@ -19354,7 +19366,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "ppHaF0zVWnamwPRiDEfrzg=="
+          "hash": "tOWdYACANCiOOVGJAS1wDg=="
         }
       },
       "is_incremental": false,
@@ -24408,7 +24420,19 @@
       "output": {
         ".html": {
           "relative_path": "tables/Llm.html",
-          "hash": "vzY0RuAu4atT4T8qRcFB7A=="
+          "hash": "6Z6A4sBiEWfygEvA5OyEww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Llm_Model_Assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Llm_Model_Assets.html",
+          "hash": "VSO8oYJMsuJJe/bQKxJlxA=="
         }
       },
       "is_incremental": false,
@@ -24420,7 +24444,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Llm_Model_Builds.html",
-          "hash": "kFh0REo11orsWfJjL5OAjg=="
+          "hash": "Aj8+y8Psx199Bp013NP/HA=="
         }
       },
       "is_incremental": false,
@@ -24432,7 +24456,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Llm_Model_QAs.html",
-          "hash": "AcE/Qxc6cEbHhMC0Kl7M8A=="
+          "hash": "a5SdLsISYj0wmKzU7lLIjA=="
         }
       },
       "is_incremental": false,
@@ -24444,7 +24468,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Llm_Models.html",
-          "hash": "aQB/3inemNOly0Wok6zknA=="
+          "hash": "Uw90Fnq0kSmrcb+K4k7yzQ=="
         }
       },
       "is_incremental": false,
@@ -27384,7 +27408,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/index.html",
-          "hash": "WXVTQW1/j5HBTPsP3Qruvg=="
+          "hash": "tWjFzLMz/sONhvFjtY//lQ=="
         }
       },
       "is_incremental": false,
@@ -27396,7 +27420,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/toc.html",
-          "hash": "HjCULawbq88b8r+g7pZ1Hw=="
+          "hash": "k4CBnlHxaivxokMfbxaIRg=="
         }
       },
       "is_incremental": false,
