@@ -31,13 +31,13 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [BuildCompletionTimeUtc](Projects.AI.ModelBuilds.md#buildcompletiontimeutc) | datetime __nullable__ | The time when the build was completed. `Filter(eq;ge;le)` `ReadOnly` 
 | [BuildLog](Projects.AI.ModelBuilds.md#buildlog) | string (max) __nullable__ | Build log, as returned by the model provider. `ReadOnly` 
-| [BuildStartTimeUtc](Projects.AI.ModelBuilds.md#buildstarttimeutc) | datetime | The time when the build job was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly` 
+| [BuildStartTimeUtc](Projects.AI.ModelBuilds.md#buildstarttimeutc) | datetime | The time when the build job was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ORD` `ReadOnly` 
 | [DisplayText](Projects.AI.ModelBuilds.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.ModelBuilds.md#id) | guid |  
 | [JobName](Projects.AI.ModelBuilds.md#jobname) | string (256) __nullable__ | The name of the build job in the provider cloud. null if the provider does not support job names. `Filter(eq;like)` `ReadOnly` `Introduced in version 24.1.1.94` 
 | [ObjectVersion](Projects.AI.ModelBuilds.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResultModelName](Projects.AI.ModelBuilds.md#resultmodelname) | string (256) __nullable__ | The name of the model, which was created by the build. Updated after the build job completes. `Filter(eq;like)` `ReadOnly` 
-| [Status](Projects.AI.ModelBuilds.md#status) | [Status](Projects.AI.ModelBuilds.md#status) | Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` `ReadOnly` 
+| [Status](Projects.AI.ModelBuilds.md#status) | [Status](Projects.AI.ModelBuilds.md#status) | Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` `Filter(multi eq)` `ReadOnly` 
 | [Success](Projects.AI.ModelBuilds.md#success) | boolean | Indicates whether the build was successfully built. `Required` `ReadOnly` 
 
 ## References
@@ -73,12 +73,13 @@ _Show in UI_: **ShownByDefault**
 
 ### BuildStartTimeUtc
 
-The time when the build job was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ReadOnly`
+The time when the build job was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ORD` `ReadOnly`
 
 _Type_: **datetime**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
 
@@ -135,7 +136,7 @@ _Show in UI_: **ShownByDefault**
 
 ### Status
 
-Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` `ReadOnly`
+Indicates the status of the build - New, Running or Completed. `Required` `Default("N")` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[Status](Projects.AI.ModelBuilds.md#status)**  
 _Category_: **System**  
@@ -148,7 +149,7 @@ _Allowed Values (Projects.AI.ModelBuildsRepository.Status Enum Members)_
 | Running | Running value. Stored as 'R'. <br /> _Database Value:_ 'R' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Running' |
 | Completed | Completed value. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Completed' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **New**  
 _Show in UI_: **ShownByDefault**  

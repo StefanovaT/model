@@ -189,7 +189,7 @@ Denotes whether to print the system-defined header for the document.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|True|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -225,7 +225,7 @@ Denotes whether to print the system-defined header for each row.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|True|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|

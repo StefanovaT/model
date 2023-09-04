@@ -144,12 +144,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Pos.FiscalReceiptTemplates.html#printsystemheader">PrintSystemHeader</a></td>
 <td>boolean</td>
-<td>Denotes whether to print the system-defined header for the document. <code>Required</code> <code>Filter(eq)</code></td>
+<td>Denotes whether to print the system-defined header for the document. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Pos.FiscalReceiptTemplates.html#printsystemrowheader">PrintSystemRowHeader</a></td>
 <td>boolean</td>
-<td>Denotes whether to print the system-defined header for each row. <code>Required</code> <code>Filter(eq)</code></td>
+<td>Denotes whether to print the system-defined header for each row. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Pos.FiscalReceiptTemplates.html#templatename">TemplateName</a></td>
@@ -212,18 +212,20 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="printsystemheader">PrintSystemHeader</h3>
-<p>Denotes whether to print the system-defined header for the document. <code>Required</code> <code>Filter(eq)</code></p>
+<p>Denotes whether to print the system-defined header for the document. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="printsystemrowheader">PrintSystemRowHeader</h3>
-<p>Denotes whether to print the system-defined header for each row. <code>Required</code> <code>Filter(eq)</code></p>
+<p>Denotes whether to print the system-defined header for each row. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="templatename">TemplateName</h3>
 <p>The unique name of the printing template. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>

@@ -145,12 +145,12 @@ _Allowed Values (Projects.AI.ModelQAsRepository.QAType Enum Members)_
 
 | Value | Description |
 | ---- | --- |
-| Training | Training value. Stored as 'Т'. <br /> _Database Value:_ 'Т' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Training' |
+| Training | Training value. Stored as 'T'. <br /> _Database Value:_ 'T' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Training' |
 | Validation | Validation value. Stored as 'V'. <br /> _Database Value:_ 'V' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Validation' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
-_Default Value_: **T**  
+_Default Value_: **Training**  
 _Show in UI_: **ShownByDefault**  
 
 ### Question

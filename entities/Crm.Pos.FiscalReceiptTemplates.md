@@ -34,8 +34,8 @@ Aggregate Tree
 | [DisplayText](Crm.Pos.FiscalReceiptTemplates.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Pos.FiscalReceiptTemplates.md#id) | guid |  
 | [ObjectVersion](Crm.Pos.FiscalReceiptTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [PrintSystemHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemheader) | boolean | Denotes whether to print the system-defined header for the document. `Required` `Filter(eq)` 
-| [PrintSystemRowHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemrowheader) | boolean | Denotes whether to print the system-defined header for each row. `Required` `Filter(eq)` 
+| [PrintSystemHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemheader) | boolean | Denotes whether to print the system-defined header for the document. `Required` `Default(true)` `Filter(eq)` 
+| [PrintSystemRowHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemrowheader) | boolean | Denotes whether to print the system-defined header for each row. `Required` `Default(true)` `Filter(eq)` 
 | [TemplateName](Crm.Pos.FiscalReceiptTemplates.md#templatename) | string (64) | The unique name of the printing template. `Required` `Filter(eq;like)` `ORD` 
 
 
@@ -115,22 +115,24 @@ _Show in UI_: **HiddenByDefault**
 
 ### PrintSystemHeader
 
-Denotes whether to print the system-defined header for the document. `Required` `Filter(eq)`
+Denotes whether to print the system-defined header for the document. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### PrintSystemRowHeader
 
-Denotes whether to print the system-defined header for each row. `Required` `Filter(eq)`
+Denotes whether to print the system-defined header for each row. `Required` `Default(true)` `Filter(eq)`
 
 _Type_: **boolean**  
 _Category_: **System**  
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### TemplateName

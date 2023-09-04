@@ -23,7 +23,7 @@ Questions and desired answers, forming the actual knowledge base of the model. E
 |[Model_Id](#model_id)|`uniqueidentifier` |The model to which the question belongs.|
 |[Model_QA_Id](#model_qa_id)|`uniqueidentifier` `PK`||
 |[Notes](#notes)|`nvarchar(max)` ||
-|[QA_Type](#qa_type)|`nvarchar(1)` Allowed: `Т`, `V`|Specifies whether the QA is training or validation. Validation QAs are used to test the correctness of the model and are only reported in the build logs.|
+|[QA_Type](#qa_type)|`nvarchar(1)` Allowed: `T`, `V`|Specifies whether the QA is training or validation. Validation QAs are used to test the correctness of the model and are only reported in the build logs.|
 |[Question](#question)|`nvarchar(max)` |User question.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Section](#section)|`nvarchar(128)` |Free text organizational section of the QA.|
@@ -317,7 +317,7 @@ Specifies whether the QA is training or validation. Validation QAs are used to t
 
 | Property | Value |
 | - | - |
-|Allowed Values|`Т`, `V`|
+|Allowed Values|`T`, `V`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|T|
