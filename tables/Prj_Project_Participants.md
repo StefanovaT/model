@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectParticipants](~/entities/Projects.ProjectParticipants.md)
+Entity: [Projects.Classic.ProjectParticipants](~/entities/Projects.Classic.ProjectParticipants.md)
 
 Represents participant in a project, with a specific role. The same participant can participate multiple times in different roles. Entity: Prj_Project_Participants
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectTaskDependancies](~/entities/Projects.ProjectTaskDependancies.md)
+Entity: [Projects.Classic.ProjectTaskDependancies](~/entities/Projects.Classic.ProjectTaskDependancies.md)
 
 Represents dependancy between project tasks. Entity: Prj_Project_Task_Dependancies
 

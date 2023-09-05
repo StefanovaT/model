@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TaskTypes](~/entities/Projects.TaskTypes.md)
+Entity: [Projects.Classic.TaskTypes](~/entities/Projects.Classic.TaskTypes.md)
 
 Represents the different types of tasks, which can be included in the projects. Entity: Prj_Task_Types
 

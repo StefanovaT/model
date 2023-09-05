@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.WorkReportMaterials](~/entities/Projects.WorkReportMaterials.md)
+Entity: [Projects.Classic.WorkReportMaterials](~/entities/Projects.Classic.WorkReportMaterials.md)
 
 Each record contains a consumed material, reported by the related Work Report. Entity: Prj_Work_Report_Materials
 

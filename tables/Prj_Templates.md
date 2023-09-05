@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.Templates](~/entities/Projects.Templates.md)
+Entity: [Projects.Classic.Templates](~/entities/Projects.Classic.Templates.md)
 
 Contains templates for creating new projects. Entity: Prj_Templates
 

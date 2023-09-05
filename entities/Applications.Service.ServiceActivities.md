@@ -106,7 +106,7 @@ Aggregate Tree
 | [OwnerParty](Applications.Service.ServiceActivities.md#ownerparty) | [Parties](General.Contacts.Parties.md) | The party that owns the task. Initially this is the party that has created the task. `Required` `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [Parent](Applications.Service.ServiceActivities.md#parent) | [Documents](General.Documents.md) (nullable) | In a multi-document tree, this is the direct parent document. If this is the root it is null. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [PrimeCauseDocument](Applications.Service.ServiceActivities.md#primecausedocument) | [Documents](General.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [ProjectTask](Applications.Service.ServiceActivities.md#projecttask) | [ProjectTasks](Projects.ProjectTasks.md) (nullable) | The project task for which the work is performed. null when the activity is not related to a project task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
+| [ProjectTask](Applications.Service.ServiceActivities.md#projecttask) | [ProjectTasks](Projects.Classic.ProjectTasks.md) (nullable) | The project task for which the work is performed. null when the activity is not related to a project task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ReceiverPerson](Applications.Service.ServiceActivities.md#receiverperson) | [Persons](General.Contacts.Persons.md) (nullable) | The id of the person from the customers company, that received and signed for the service. `Filter(multi eq)` |
 | [ResponsibleParty](Applications.Service.ServiceActivities.md#responsibleparty) | [Parties](General.Contacts.Parties.md) | Who is responsible for executing the task. Initially this is the owner of the task. `Required` `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md)) |
 | [ResponsiblePerson](Applications.Service.ServiceActivities.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -781,7 +781,7 @@ _Show in UI_: **HiddenByDefault**
 
 The project task for which the work is performed. null when the activity is not related to a project task. `Filter(multi eq)` (Inherited from [Activities](General.Contacts.Activities.md))
 
-_Type_: **[ProjectTasks](Projects.ProjectTasks.md) (nullable)**  
+_Type_: **[ProjectTasks](Projects.Classic.ProjectTasks.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

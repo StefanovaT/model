@@ -30,7 +30,7 @@ Aggregate Tree
     * [Applications.Fleet.VehicleSetVehicles](Applications.Fleet.VehicleSetVehicles.md)  
   * [General.Geography.MapPoints](General.Geography.MapPoints.md)  
   * [Finance.Vat.BGVATDeclaringPersons](Finance.Vat.BGVATDeclaringPersons.md)  
-  * [Projects.Resources](Projects.Resources.md)  
+  * [Projects.Classic.Resources](Projects.Classic.Resources.md)  
 
 ## Attributes
 
@@ -67,7 +67,7 @@ Aggregate Tree
 | BGVATDeclaringPersons | [BGVATDeclaringPersons](Finance.Vat.BGVATDeclaringPersons.md) | List of `BGVATDeclaringPerson`(Finance.Vat.BGVATDeclaringPersons.md) child objects, based on the `Finance.Vat.BGVATDeclaringPerson.EnterpriseCompany`(Finance.Vat.BGVATDeclaringPersons.md#enterprisecompany) back reference 
 | Crews | [Crews](Applications.Fleet.Crews.md) | List of `Crew`(Applications.Fleet.Crews.md) child objects, based on the `Applications.Fleet.Crew.EnterpriseCompany`(Applications.Fleet.Crews.md#enterprisecompany) back reference 
 | MapPoints | [MapPoints](General.Geography.MapPoints.md) | List of `MapPoint`(General.Geography.MapPoints.md) child objects, based on the `General.Geography.MapPoint.EnterpriseCompany`(General.Geography.MapPoints.md#enterprisecompany) back reference 
-| Resources | [Resources](Projects.Resources.md) | List of `Resource`(Projects.Resources.md) child objects, based on the `Projects.Resource.EnterpriseCompany`(Projects.Resources.md#enterprisecompany) back reference 
+| Resources | [Resources](Projects.Classic.Resources.md) | List of `Resource`(Projects.Classic.Resources.md) child objects, based on the `Projects.Classic.Resource.EnterpriseCompany`(Projects.Classic.Resources.md#enterprisecompany) back reference 
 | VehicleSets | [VehicleSets](Applications.Fleet.VehicleSets.md) | List of `VehicleSet`(Applications.Fleet.VehicleSets.md) child objects, based on the `Applications.Fleet.VehicleSet.EnterpriseCompany`(Applications.Fleet.VehicleSets.md#enterprisecompany) back reference 
 
 

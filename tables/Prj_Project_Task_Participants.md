@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectTaskParticipants](~/entities/Projects.ProjectTaskParticipants.md)
+Entity: [Projects.Classic.ProjectTaskParticipants](~/entities/Projects.Classic.ProjectTaskParticipants.md)
 
 Contains the participants in the project tasks. Entity: Prj_Project_Task_Participants
 

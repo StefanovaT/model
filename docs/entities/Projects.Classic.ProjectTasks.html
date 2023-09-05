@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Projects.Classic.ProjectTasks Entity | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Projects.Classic.ProjectTasks Entity | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Projects.Classic.ProjectTasks">
+<h1 id="projectsclassicprojecttasks-entity">Projects.Classic.ProjectTasks Entity</h1>
+
+<p><strong>Namespace:</strong> <a href="Projects.Classic.html">Projects.Classic</a></p>
+<p>Represents one task of a project. Entity: Prj_Project_Tasks</p>
+<h2 id="default-visualization">Default Visualization</h2>
+<p>Default Display Text Format:<br>
+<em>{TaskName}</em><br>
+Default Search Members:<br>
+<em>TaskName</em><br>
+Name Data Member:<br>
+<em>TaskName</em><br>
+Category:  <em>Definitions</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
+<h2 id="aggregate">Aggregate</h2>
+<p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="Projects.Classic.ProjectTasks.html">Projects.Classic.ProjectTasks</a>
+<ul>
+<li><a href="Projects.Classic.ProjectTaskDependancies.html">Projects.Classic.ProjectTaskDependancies</a></li>
+<li><a href="Projects.Classic.ProjectTaskMaterials.html">Projects.Classic.ProjectTaskMaterials</a></li>
+<li><a href="Projects.Classic.ProjectTaskParticipants.html">Projects.Classic.ProjectTaskParticipants</a></li>
+<li><a href="Projects.Classic.ProjectTaskResources.html">Projects.Classic.ProjectTaskResources</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#budgetlaboramount">BudgetLaborAmount</a></td>
+<td><a href="../data-types.html#amount">Amount (12, 2)</a> <strong>nullable</strong></td>
+<td>Budgeted amount for the labor for the task in the currency of the project. The material is calculated separately. null means that budgeting for the item is not calculated. <code>Currency: Project.BudgetingCurrency</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#displaytext">DisplayText</a></td>
+<td>string</td>
+<td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#finishdatetime">FinishDateTime</a></td>
+<td>datetime</td>
+<td>The date and time when the task is planned to finish. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#id">Id</a></td>
+<td>guid</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#notes">Notes</a></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>Notes for this ProjectTask.</td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#objectversion">ObjectVersion</a></td>
+<td>int32</td>
+<td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#planneddurationhours">PlannedDurationHours</a></td>
+<td>decimal (8, 2)</td>
+<td>Planned duration of the task in hours. The hours are allocated in the time interval between Start Date Time and Finish Date Time. <code>Required</code> <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#projecttaskno">ProjectTaskNo</a></td>
+<td>int32</td>
+<td>Consecutive task number, unique within the project. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#startdatetime">StartDateTime</a></td>
+<td>datetime</td>
+<td>The date and time when the task is planned to start. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#taskname">TaskName</a></td>
+<td>string (254)</td>
+<td>The short name of the task. It is best practice to contain the target of the task. <code>Required</code> <code>Filter(multi eq;like)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#activity">Activity</a></td>
+<td><a href="General.Contacts.Activities.html">Activities</a> (nullable)</td>
+<td>The Id of the Cm_Activity created for this task. null means that activity is still not created. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#project">Project</a></td>
+<td><a href="Projects.Classic.Projects.html">Projects</a></td>
+<td>The project, to which this task belongs. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#projectworkelement">ProjectWorkElement</a></td>
+<td><a href="Projects.Classic.ProjectWorkElements.html">ProjectWorkElements</a></td>
+<td>The work element under which the task is filed. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#resource">Resource</a></td>
+<td><a href="Projects.Classic.Resources.html">Resources</a> (nullable)</td>
+<td>The resource, which is required for the task. null means - do not plan any resource. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#responsibleparty">ResponsibleParty</a></td>
+<td><a href="General.Contacts.Parties.html">Parties</a> (nullable)</td>
+<td>The responsible party. Usually a person and usually one of the project participants. null means that responsible is not yet determined. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#tasktype">TaskType</a></td>
+<td><a href="Projects.Classic.TaskTypes.html">TaskTypes</a></td>
+<td>The type of the task. Determines the work type of the tasks, default billing rules, etc. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#worktype">WorkType</a></td>
+<td><a href="Projects.Classic.TypeWorkTypes.html">TypeWorkTypes</a> (nullable)</td>
+<td>Type of work to be done. null means that type of work is undetermined yet. <code>Filter(multi eq)</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="child-collections">Child Collections</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dependancies</td>
+<td><a href="Projects.Classic.ProjectTaskDependancies.html">ProjectTaskDependancies</a></td>
+<td>List of <code>ProjectTaskDependancy</code>(Projects.Classic.ProjectTaskDependancies.md) child objects, based on the <code>Projects.Classic.ProjectTaskDependancy.ProjectTask</code>(Projects.Classic.ProjectTaskDependancies.md#projecttask) back reference</td>
+</tr>
+<tr>
+<td>Materials</td>
+<td><a href="Projects.Classic.ProjectTaskMaterials.html">ProjectTaskMaterials</a></td>
+<td>List of <code>ProjectTaskMaterial</code>(Projects.Classic.ProjectTaskMaterials.md) child objects, based on the <code>Projects.Classic.ProjectTaskMaterial.ProjectTask</code>(Projects.Classic.ProjectTaskMaterials.md#projecttask) back reference</td>
+</tr>
+<tr>
+<td>Participants</td>
+<td><a href="Projects.Classic.ProjectTaskParticipants.html">ProjectTaskParticipants</a></td>
+<td>List of <code>ProjectTaskParticipant</code>(Projects.Classic.ProjectTaskParticipants.md) child objects, based on the <code>Projects.Classic.ProjectTaskParticipant.ProjectTask</code>(Projects.Classic.ProjectTaskParticipants.md#projecttask) back reference</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td><a href="Projects.Classic.ProjectTaskResources.html">ProjectTaskResources</a></td>
+<td>List of <code>ProjectTaskResource</code>(Projects.Classic.ProjectTaskResources.md) child objects, based on the <code>Projects.Classic.ProjectTaskResource.ProjectTask</code>(Projects.Classic.ProjectTaskResources.md#projecttask) back reference</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-details">Attribute Details</h2>
+<h3 id="budgetlaboramount">BudgetLaborAmount</h3>
+<p>Budgeted amount for the labor for the task in the currency of the project. The material is calculated separately. null means that budgeting for the item is not calculated. <code>Currency: Project.BudgetingCurrency</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (12, 2)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( ( obj.PlannedDurationHours != 0) AndAlso ( obj.WorkType != null)), obj.CalculateBudgetLaborAmount( ), new Amount( 0, obj.Project.BudgetingCurrency))</code></p>
+<h3 id="displaytext">DisplayText</h3>
+<p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="finishdatetime">FinishDateTime</h3>
+<p>The date and time when the task is planned to finish. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></p>
+<p><em>Type</em>: <strong>datetime</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>CurrentDateTime</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="id">Id</h3>
+<p><em>Type</em>: <strong>guid</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="notes">Notes</h3>
+<p>Notes for this ProjectTask.</p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="objectversion">ObjectVersion</h3>
+<p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>Extensible Data Object</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="planneddurationhours">PlannedDurationHours</h3>
+<p>Planned duration of the task in hours. The hours are allocated in the time interval between Start Date Time and Finish Date Time. <code>Required</code> <code>Default(0)</code></p>
+<p><em>Type</em>: <strong>decimal (8, 2)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="projecttaskno">ProjectTaskNo</h3>
+<p>Consecutive task number, unique within the project. <code>Required</code></p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="startdatetime">StartDateTime</h3>
+<p>The date and time when the task is planned to start. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></p>
+<p><em>Type</em>: <strong>datetime</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>CurrentDateTime</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="taskname">TaskName</h3>
+<p>The short name of the task. It is best practice to contain the target of the task. <code>Required</code> <code>Filter(multi eq;like)</code></p>
+<p><em>Type</em>: <strong>string (254)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h2 id="reference-details">Reference Details</h2>
+<h3 id="activity">Activity</h3>
+<p>The Id of the Cm_Activity created for this task. null means that activity is still not created. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="General.Contacts.Activities.html">Activities</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="project">Project</h3>
+<p>The project, to which this task belongs. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Classic.Projects.html">Projects</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="projectworkelement">ProjectWorkElement</h3>
+<p>The work element under which the task is filed. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Classic.ProjectWorkElements.html">ProjectWorkElements</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="resource">Resource</h3>
+<p>The resource, which is required for the task. null means - do not plan any resource. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Classic.Resources.html">Resources</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="responsibleparty">ResponsibleParty</h3>
+<p>The responsible party. Usually a person and usually one of the project participants. null means that responsible is not yet determined. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="tasktype">TaskType</h3>
+<p>The type of the task. Determines the work type of the tasks, default billing rules, etc. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Classic.TaskTypes.html">TaskTypes</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="worktype">WorkType</h3>
+<p>Type of work to be done. null means that type of work is undetermined yet. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Classic.TypeWorkTypes.html">TypeWorkTypes</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h2 id="api-methods">API Methods</h2>
+<p>Methods that can be invoked in public APIs.</p>
+<h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
+<p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>GET</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>customPropertyCode</strong><br>
+The code of the custom property<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>search</strong><br>
+The search text - searches by value or description. Can contain wildcard character %.<br>
+<em>Type</em>: string<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: null</p>
+</li>
+<li><p><strong>exactMatch</strong><br>
+If true the search text should be equal to the property value<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>orderByDescription</strong><br>
+If true the result is ordered by Description instead of Value. Note that ordering is not always possible.<br>
+<em>Type</em>: boolean<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: False</p>
+</li>
+<li><p><strong>top</strong><br>
+The top clause - default is 10<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 10</p>
+</li>
+<li><p><strong>skip</strong><br>
+The skip clause - default is 0<br>
+<em>Type</em>: int32<br>
+<em>Optional</em>: True<br>
+<em>Default Value</em>: 0</p>
+</li>
+</ul>
+<h3 id="createnotification">CreateNotification</h3>
+<p>Creates a notification and sends a real time event to the user.<br>
+<em>Return Type</em>: <strong>void</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<p><strong>Parameters</strong></p>
+<ul>
+<li><p><strong>user</strong><br>
+The user.<br>
+<em>Type</em>: <a href="Systems.Security.Users.html">Users</a></p>
+</li>
+<li><p><strong>notificationClass</strong><br>
+The notification class.<br>
+<em>Type</em>: string</p>
+</li>
+<li><p><strong>subject</strong><br>
+The subject.<br>
+<em>Type</em>: string</p>
+</li>
+</ul>
+<h3 id="createcopy">CreateCopy</h3>
+<p>Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.<br>
+<em>Return Type</em>: <strong>EntityObject</strong><br>
+<em>Declaring Type</em>: <strong>EntityObject</strong><br>
+<em>Domain API Request</em>: <strong>POST</strong></p>
+<h2 id="business-rules">Business Rules</h2>
+<p>None</p>
+<h2 id="front-end-business-rules">Front-End Business Rules</h2>
+<ul>
+<li><a href="../business-rules/R31398-1.html">R31398-1 Project Task - Set Budget Labor Amount (Recalc)</a></li>
+</ul>
+<h2 id="api">API</h2>
+<p>Domain API Query:
+<a href="https://demodb.my.erp.net/api/domain/odata/Projects_Classic_ProjectTasks?$top=10">https://demodb.my.erp.net/api/domain/odata/Projects_Classic_ProjectTasks?$top=10</a></p>
+<p>Domain API Query Builder:
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Projects_Classic_ProjectTasks?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Projects_Classic_ProjectTasks?$top=10</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Projects.Classic.ProjectTasks.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

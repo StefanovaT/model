@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.Resources](~/entities/Projects.Resources.md)
+Entity: [Projects.Classic.Resources](~/entities/Projects.Classic.Resources.md)
 
 Contains the enterprise resources, which are available for including in projects. Entity: Prj_Resources
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TemplateRisks](~/entities/Projects.TemplateRisks.md)
+Entity: [Projects.Classic.TemplateRisks](~/entities/Projects.Classic.TemplateRisks.md)
 
 Contains project risks, which will be copied to projects, based on the template. Entity: Prj_Template_Risks
 

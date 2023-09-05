@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TypeWorkElements](~/entities/Projects.TypeWorkElements.md)
+Entity: [Projects.Classic.TypeWorkElements](~/entities/Projects.Classic.TypeWorkElements.md)
 
 The work elements of the work breakdown structure of each project type. Entity: Prj_Type_Work_Elements
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectTaskResources](~/entities/Projects.ProjectTaskResources.md)
+Entity: [Projects.Classic.ProjectTaskResources](~/entities/Projects.Classic.ProjectTaskResources.md)
 
 Contains the resources, required by the project tasks. Entity: Prj_Project_Task_Resources
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectRisks](~/entities/Projects.ProjectRisks.md)
+Entity: [Projects.Classic.ProjectRisks](~/entities/Projects.Classic.ProjectRisks.md)
 
 Contains risks, associated to projects. Entity: Prj_Project_Risks
 

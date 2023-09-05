@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.Projects](~/entities/Projects.Projects.md)
+Entity: [Projects.Classic.Projects](~/entities/Projects.Classic.Projects.md)
 
 Contains the planned, running and completed projects of the enterprises. Entity: Prj_Projects
 

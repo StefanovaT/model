@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.WorkReportResources](~/entities/Projects.WorkReportResources.md)
+Entity: [Projects.Classic.WorkReportResources](~/entities/Projects.Classic.WorkReportResources.md)
 
 Each record contains usage of resource, reported by the related Work Report. Entity: Prj_Work_Report_Resources
 

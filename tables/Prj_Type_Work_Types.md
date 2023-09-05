@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TypeWorkTypes](~/entities/Projects.TypeWorkTypes.md)
+Entity: [Projects.Classic.TypeWorkTypes](~/entities/Projects.Classic.TypeWorkTypes.md)
 
 Contains the work types, that can be performed in projects of this project type. Entity: Prj_Type_Work_Types
 

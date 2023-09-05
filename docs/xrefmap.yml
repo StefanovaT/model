@@ -1615,6 +1615,75 @@ references:
 - uid: Projects.AI.Models
   name: Projects.AI.Models Entity
   href: entities/Projects.AI.Models.html
+- uid: Projects.Classic
+  name: Projects.Classic Namespace
+  href: entities/Projects.Classic.html
+- uid: Projects.Classic.ProjectParticipants
+  name: Projects.Classic.ProjectParticipants Entity
+  href: entities/Projects.Classic.ProjectParticipants.html
+- uid: Projects.Classic.ProjectRiskDiscussion
+  name: Projects.Classic.ProjectRiskDiscussion Entity
+  href: entities/Projects.Classic.ProjectRiskDiscussion.html
+- uid: Projects.Classic.ProjectRisks
+  name: Projects.Classic.ProjectRisks Entity
+  href: entities/Projects.Classic.ProjectRisks.html
+- uid: Projects.Classic.Projects
+  name: Projects.Classic.Projects Entity
+  href: entities/Projects.Classic.Projects.html
+- uid: Projects.Classic.ProjectTaskDependancies
+  name: Projects.Classic.ProjectTaskDependancies Entity
+  href: entities/Projects.Classic.ProjectTaskDependancies.html
+- uid: Projects.Classic.ProjectTaskMaterials
+  name: Projects.Classic.ProjectTaskMaterials Entity
+  href: entities/Projects.Classic.ProjectTaskMaterials.html
+- uid: Projects.Classic.ProjectTaskParticipants
+  name: Projects.Classic.ProjectTaskParticipants Entity
+  href: entities/Projects.Classic.ProjectTaskParticipants.html
+- uid: Projects.Classic.ProjectTaskResources
+  name: Projects.Classic.ProjectTaskResources Entity
+  href: entities/Projects.Classic.ProjectTaskResources.html
+- uid: Projects.Classic.ProjectTasks
+  name: Projects.Classic.ProjectTasks Entity
+  href: entities/Projects.Classic.ProjectTasks.html
+- uid: Projects.Classic.ProjectTypes
+  name: Projects.Classic.ProjectTypes Entity
+  href: entities/Projects.Classic.ProjectTypes.html
+- uid: Projects.Classic.ProjectWorkElements
+  name: Projects.Classic.ProjectWorkElements Entity
+  href: entities/Projects.Classic.ProjectWorkElements.html
+- uid: Projects.Classic.Resources
+  name: Projects.Classic.Resources Entity
+  href: entities/Projects.Classic.Resources.html
+- uid: Projects.Classic.TaskTypes
+  name: Projects.Classic.TaskTypes Entity
+  href: entities/Projects.Classic.TaskTypes.html
+- uid: Projects.Classic.TemplateRisks
+  name: Projects.Classic.TemplateRisks Entity
+  href: entities/Projects.Classic.TemplateRisks.html
+- uid: Projects.Classic.Templates
+  name: Projects.Classic.Templates Entity
+  href: entities/Projects.Classic.Templates.html
+- uid: Projects.Classic.TemplateWorkElements
+  name: Projects.Classic.TemplateWorkElements Entity
+  href: entities/Projects.Classic.TemplateWorkElements.html
+- uid: Projects.Classic.TypeRoles
+  name: Projects.Classic.TypeRoles Entity
+  href: entities/Projects.Classic.TypeRoles.html
+- uid: Projects.Classic.TypeWorkElements
+  name: Projects.Classic.TypeWorkElements Entity
+  href: entities/Projects.Classic.TypeWorkElements.html
+- uid: Projects.Classic.TypeWorkTypes
+  name: Projects.Classic.TypeWorkTypes Entity
+  href: entities/Projects.Classic.TypeWorkTypes.html
+- uid: Projects.Classic.WorkReportMaterials
+  name: Projects.Classic.WorkReportMaterials Entity
+  href: entities/Projects.Classic.WorkReportMaterials.html
+- uid: Projects.Classic.WorkReportResources
+  name: Projects.Classic.WorkReportResources Entity
+  href: entities/Projects.Classic.WorkReportResources.html
+- uid: Projects.Classic.WorkReports
+  name: Projects.Classic.WorkReports Entity
+  href: entities/Projects.Classic.WorkReports.html
 - uid: Projects.ProjectParticipants
   name: Projects.ProjectParticipants Entity
   href: entities/Projects.ProjectParticipants.html

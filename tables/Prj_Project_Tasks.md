@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectTasks](~/entities/Projects.ProjectTasks.md)
+Entity: [Projects.Classic.ProjectTasks](~/entities/Projects.Classic.ProjectTasks.md)
 
 Represents one task of a project. Entity: Prj_Project_Tasks
 

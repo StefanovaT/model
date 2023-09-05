@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TemplateWorkElements](~/entities/Projects.TemplateWorkElements.md)
+Entity: [Projects.Classic.TemplateWorkElements](~/entities/Projects.Classic.TemplateWorkElements.md)
 
 Contains project work elements, which shall be copied to projects, based on the specified template. Entity: Prj_Template_Work_Elements
 

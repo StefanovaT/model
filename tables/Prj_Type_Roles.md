@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.TypeRoles](~/entities/Projects.TypeRoles.md)
+Entity: [Projects.Classic.TypeRoles](~/entities/Projects.Classic.TypeRoles.md)
 
 Contains the roles of the participants of each project type. Entity: Prj_Type_Roles
 

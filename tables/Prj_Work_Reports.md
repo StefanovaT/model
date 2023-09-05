@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.WorkReports](~/entities/Projects.WorkReports.md)
+Entity: [Projects.Classic.WorkReports](~/entities/Projects.Classic.WorkReports.md)
 
 Contains project work report documents. Each work report contains consumed materials and resources. Entity: Prj_Work_Reports
 

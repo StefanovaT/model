@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectTypes](~/entities/Projects.ProjectTypes.md)
+Entity: [Projects.Classic.ProjectTypes](~/entities/Projects.Classic.ProjectTypes.md)
 
 Contains the types of projects, which can be executed by the enterprise company. Entity: Prj_Types
 

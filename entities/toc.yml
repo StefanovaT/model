@@ -1051,38 +1051,53 @@
       href: Projects.AI.ModelQAs.md
     - name: Models
       href: Projects.AI.Models.md
-  - name: ProjectParticipants
-    href: Projects.ProjectParticipants.md
-  - name: ProjectRiskDiscussion
-    href: Projects.ProjectRiskDiscussion.md
-  - name: ProjectRisks
-    href: Projects.ProjectRisks.md
-  - name: Projects
-    href: Projects.Projects.md
-  - name: ProjectTaskDependancies
-    href: Projects.ProjectTaskDependancies.md
-  - name: ProjectTaskMaterials
-    href: Projects.ProjectTaskMaterials.md
-  - name: ProjectTaskParticipants
-    href: Projects.ProjectTaskParticipants.md
-  - name: ProjectTaskResources
-    href: Projects.ProjectTaskResources.md
-  - name: ProjectTasks
-    href: Projects.ProjectTasks.md
-  - name: ProjectTypes
-    href: Projects.ProjectTypes.md
-  - name: ProjectWorkElements
-    href: Projects.ProjectWorkElements.md
-  - name: Resources
-    href: Projects.Resources.md
-  - name: TaskTypes
-    href: Projects.TaskTypes.md
-  - name: TemplateRisks
-    href: Projects.TemplateRisks.md
-  - name: Templates
-    href: Projects.Templates.md
-  - name: TemplateWorkElements
-    href: Projects.TemplateWorkElements.md
+  - name: Classic
+    href: Projects.Classic.md
+    items:
+    - name: ProjectParticipants
+      href: Projects.Classic.ProjectParticipants.md
+    - name: ProjectRiskDiscussion
+      href: Projects.Classic.ProjectRiskDiscussion.md
+    - name: ProjectRisks
+      href: Projects.Classic.ProjectRisks.md
+    - name: Projects
+      href: Projects.Classic.Projects.md
+    - name: ProjectTaskDependancies
+      href: Projects.Classic.ProjectTaskDependancies.md
+    - name: ProjectTaskMaterials
+      href: Projects.Classic.ProjectTaskMaterials.md
+    - name: ProjectTaskParticipants
+      href: Projects.Classic.ProjectTaskParticipants.md
+    - name: ProjectTaskResources
+      href: Projects.Classic.ProjectTaskResources.md
+    - name: ProjectTasks
+      href: Projects.Classic.ProjectTasks.md
+    - name: ProjectTypes
+      href: Projects.Classic.ProjectTypes.md
+    - name: ProjectWorkElements
+      href: Projects.Classic.ProjectWorkElements.md
+    - name: Resources
+      href: Projects.Classic.Resources.md
+    - name: TaskTypes
+      href: Projects.Classic.TaskTypes.md
+    - name: TemplateRisks
+      href: Projects.Classic.TemplateRisks.md
+    - name: Templates
+      href: Projects.Classic.Templates.md
+    - name: TemplateWorkElements
+      href: Projects.Classic.TemplateWorkElements.md
+    - name: TypeRoles
+      href: Projects.Classic.TypeRoles.md
+    - name: TypeWorkElements
+      href: Projects.Classic.TypeWorkElements.md
+    - name: TypeWorkTypes
+      href: Projects.Classic.TypeWorkTypes.md
+    - name: WorkReportMaterials
+      href: Projects.Classic.WorkReportMaterials.md
+    - name: WorkReportResources
+      href: Projects.Classic.WorkReportResources.md
+    - name: WorkReports
+      href: Projects.Classic.WorkReports.md
   - name: Todo
     href: Projects.Todo.md
     items:
@@ -1090,18 +1105,6 @@
       href: Projects.Todo.TaskItems.md
     - name: Tasks
       href: Projects.Todo.Tasks.md
-  - name: TypeRoles
-    href: Projects.TypeRoles.md
-  - name: TypeWorkElements
-    href: Projects.TypeWorkElements.md
-  - name: TypeWorkTypes
-    href: Projects.TypeWorkTypes.md
-  - name: WorkReportMaterials
-    href: Projects.WorkReportMaterials.md
-  - name: WorkReportResources
-    href: Projects.WorkReportResources.md
-  - name: WorkReports
-    href: Projects.WorkReports.md
 - name: Public
   href: Public.md
   items:

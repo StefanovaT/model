@@ -22,9 +22,9 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Projects.AI.Models](Projects.AI.Models.md)  
+  * [Projects.AI.ModelAssets](Projects.AI.ModelAssets.md)  
   * [Projects.AI.ModelBuilds](Projects.AI.ModelBuilds.md)  
   * [Projects.AI.ModelQAs](Projects.AI.ModelQAs.md)  
-  * [Projects.AI.ModelAssets](Projects.AI.ModelAssets.md)  
 
 ## Attributes
 

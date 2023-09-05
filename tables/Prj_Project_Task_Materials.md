@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Projects.ProjectTaskMaterials](~/entities/Projects.ProjectTaskMaterials.md)
+Entity: [Projects.Classic.ProjectTaskMaterials](~/entities/Projects.Classic.ProjectTaskMaterials.md)
 
 Contains the materials, which are required for a project task. Entity: Prj_Project_Task_Materials
 
