@@ -28,7 +28,7 @@ Determines the type and workflow of the cases. Entity: Apm_Case_Categories (Intr
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|NewGuid|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|

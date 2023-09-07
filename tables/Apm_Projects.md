@@ -175,7 +175,7 @@ The primary responsible user for the project.
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|NewGuid|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|

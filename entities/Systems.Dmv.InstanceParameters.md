@@ -25,7 +25,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ParameterName](Systems.Dmv.InstanceParameters.md#parametername) | string (256) | Name of parameter. `Required` 
+| [ParameterName](Systems.Dmv.InstanceParameters.md#parametername) | string (256) | Name of parameter. `Required` `Filter(multi eq)` 
 | [ParameterValue](Systems.Dmv.InstanceParameters.md#parametervalue) | string (256) | Value of parameter. `Required` 
 
 
@@ -33,11 +33,11 @@ Aggregate Tree
 
 ### ParameterName
 
-Name of parameter. `Required`
+Name of parameter. `Required` `Filter(multi eq)`
 
 _Type_: **string (256)**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
 _Show in UI_: **ShownByDefault**  
