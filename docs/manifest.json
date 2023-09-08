@@ -11552,6 +11552,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35262.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35262.html",
+          "hash": "DbqrLsWvzDX0dYLGpOxChw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R35268.md",
       "output": {
         ".html": {
@@ -14518,7 +14530,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Excise.ExciseStampLots.html",
-          "hash": "uHs8W5TpMgFnTTyXcD43KA=="
+          "hash": "t/yu4y1OU22Q2T5w9WUTPw=="
         }
       },
       "is_incremental": false,
@@ -22860,7 +22872,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Exc_Excise_Stamp_Lots.html",
-          "hash": "diXBQ5GLn6cggl7soP2lyQ=="
+          "hash": "SzuK6tzHwfVYUJ2qsAiqIQ=="
         }
       },
       "is_incremental": false,

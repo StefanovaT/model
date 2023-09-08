@@ -16,6 +16,7 @@ Sequence of excise stamps with same production batch and type, received with one
 |[Excise_Product_Type_Id](#excise_product_type_id)|`uniqueidentifier` |Specifies the Excise Product Type of the Excise Stamps in the lot.|
 |[Excise_Stamp_Lot_Id](#excise_stamp_lot_id)|`uniqueidentifier` `PK`||
 |[Is_Active](#is_active)|`bit` |Is Active|
+|[Prefix](#prefix)|`nvarchar(30)` |Specifies the prefix that is used in forming the value of the "BatchNumber" field.|
 |[Purchase_Lot_Number](#purchase_lot_number)|`nvarchar(30)` |Type and number of the document with which the excise stamps were received from the customs administration.|
 |[Quantity](#quantity)|`int` |Number of excise stamps in the lot.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -196,6 +197,42 @@ Is Active
 | - | - | - | - |
 |Equals|`True`|no|no|
 
+### Prefix
+
+
+Specifies the prefix that is used in forming the value of the "BatchNumber" field.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|30|
+|Order|10|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(30) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Prefix - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
+
 ### Purchase_Lot_Number
 
 
@@ -274,7 +311,7 @@ Number of excise stamps in the lot.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
