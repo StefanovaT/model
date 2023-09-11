@@ -19,7 +19,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Due_Time](#due_time)|`time` |Specified when the case has specific due time.|
 |[Estimated_Time_Hours](#estimated_time_hours)|`decimal(8, 2)` |Estimation of the required work effort in hours.|
 |[Parent_Case_Id](#parent_case_id)|`uniqueidentifier` |Specified when this is a sub-case to another case.|
-|[Priority](#priority)|`tinyint` |Priority of the case, on a scale from 1 (highest) to 7 (lowest).|
+|[Priority](#priority)|`tinyint` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`|Priority of the case, on a scale from 1 (highest) to 7 (lowest).|
 |[Project_Area_Id](#project_area_id)|`uniqueidentifier` |The are to which the case is assigned.|
 |[Project_Id](#project_id)|`uniqueidentifier` |The project to which the case is assigned.|
 |[Project_Milestone_Id](#project_milestone_id)|`uniqueidentifier` |Determines the milestone for which the case must be resolved.|
@@ -307,9 +307,10 @@ Priority of the case, on a scale from 1 (highest) to 7 (lowest).
 
 | Property | Value |
 | - | - |
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`|
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|7|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -540,7 +541,7 @@ The base state of the case.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### System_State - Supported Filters
 
@@ -572,7 +573,7 @@ Case short title.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(128) (MultiLanguage) (Allows NULL)|
+|Type|nvarchar(128) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

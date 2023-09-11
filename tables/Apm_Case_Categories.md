@@ -12,7 +12,7 @@ Determines the type and workflow of the cases. Entity: Apm_Case_Categories (Intr
 | Name | Type | Description |
 | - | - | --- |
 |[Case_Category_Id](#case_category_id)|`uniqueidentifier` `PK`||
-|[Case_Category_Name](#case_category_name)|`nvarchar(256)` `ML`|Multi-language name of the case category.|
+|[Case_Category_Name](#case_category_name)|`nvarchar(256)` `ML`|Use short, singular phrase to describe a category of cases|
 |[Icon](#icon)|`nvarchar(128)` |Icon name from the Font Awesome icon set.|
 |[Is_Active](#is_active)|`bit` |Specifies whether the category is active for new cases.|
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -58,7 +58,7 @@ Determines the type and workflow of the cases. Entity: Apm_Case_Categories (Intr
 ### Case_Category_Name
 
 
-Multi-language name of the case category.
+Use short, singular phrase to describe a category of cases
 
 | Property | Value |
 | - | - |

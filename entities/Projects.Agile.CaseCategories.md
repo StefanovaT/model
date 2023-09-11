@@ -14,7 +14,7 @@ Default Search Members:
 _Name_  
 Name Data Member:  
 _Name_  
-Category:  _Definitions_  
+Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
@@ -31,7 +31,7 @@ Aggregate Tree
 | [Icon](Projects.Agile.CaseCategories.md#icon) | string (128) __nullable__ | Icon name from the Font Awesome icon set. 
 | [Id](Projects.Agile.CaseCategories.md#id) | guid |  
 | [IsActive](Projects.Agile.CaseCategories.md#isactive) | boolean | Specifies whether the category is active for new cases. `Required` `Default(true)` `Filter(eq)` 
-| [Name](Projects.Agile.CaseCategories.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the case category. `Required` `Filter(like)` 
+| [Name](Projects.Agile.CaseCategories.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Use short, singular phrase to describe a category of cases. `Required` `Filter(like)` 
 | [Notes](Projects.Agile.CaseCategories.md#notes) | string (max) __nullable__ | Notes for this CaseCategory. 
 | [ObjectVersion](Projects.Agile.CaseCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Ord](Projects.Agile.CaseCategories.md#ord) | int32 | Display order of the category relative to other categories within the project type. `Required` `Default(1)` `Filter(eq)` 
@@ -88,7 +88,7 @@ _Show in UI_: **ShownByDefault**
 
 ### Name
 
-Multi-language name of the case category. `Required` `Filter(like)`
+Use short, singular phrase to describe a category of cases. `Required` `Filter(like)`
 
 _Type_: **[MultilanguageString (256)](../data-types.md#multilanguagestring)**  
 _Category_: **System**  

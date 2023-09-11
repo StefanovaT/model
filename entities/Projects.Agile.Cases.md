@@ -32,9 +32,9 @@ Aggregate Tree
 | [EstimatedTimeHours](Projects.Agile.Cases.md#estimatedtimehours) | decimal (8, 2) __nullable__ | Estimation of the required work effort in hours. 
 | [Id](Projects.Agile.Cases.md#id) | guid |  
 | [ObjectVersion](Projects.Agile.Cases.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Priority](Projects.Agile.Cases.md#priority) | byte | Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Filter(eq)` 
+| [Priority](Projects.Agile.Cases.md#priority) | [Priority](Projects.Agile.Cases.md#priority) | Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Default(7)` `Filter(eq)` 
 | [SystemState](Projects.Agile.Cases.md#systemstate) | [SystemState](Projects.Agile.Cases.md#systemstate) | The base state of the case. `Required` `Default("1")` `Filter(eq)` 
-| [Title](Projects.Agile.Cases.md#title) | [MultilanguageString (128)](../data-types.md#multilanguagestring) __nullable__ | Case short title. `Filter(like)` 
+| [Title](Projects.Agile.Cases.md#title) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | Case short title. `Required` `Filter(like)` 
 
 ## References
 
@@ -122,12 +122,26 @@ _Show in UI_: **HiddenByDefault**
 
 ### Priority
 
-Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Filter(eq)`
+Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Default(7)` `Filter(eq)`
 
-_Type_: **byte**  
+_Type_: **[Priority](Projects.Agile.Cases.md#priority)**  
 _Category_: **System**  
+Allowed values for the `Priority`(Projects.Agile.Cases.md#priority) data attribute  
+_Allowed Values (Projects.Agile.CasesRepository.Priority Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| Highest | Highest value. Stored as 1. <br /> _Database Value:_ 1 <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Highest' |
+| Two | Two value. Stored as 2. <br /> _Database Value:_ 2 <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Two' |
+| Three | Three value. Stored as 3. <br /> _Database Value:_ 3 <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Three' |
+| Four | Four value. Stored as 4. <br /> _Database Value:_ 4 <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Four' |
+| Five | Five value. Stored as 5. <br /> _Database Value:_ 5 <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'Five' |
+| Six | Six value. Stored as 6. <br /> _Database Value:_ 6 <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'Six' |
+| Lowest | Lowest value. Stored as 7. <br /> _Database Value:_ 7 <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'Lowest' |
+
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
+_Default Value_: **7**  
 _Show in UI_: **ShownByDefault**  
 
 ### SystemState
@@ -150,13 +164,13 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **ACTIVE**  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### Title
 
-Case short title. `Filter(like)`
+Case short title. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString (128)](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **[MultilanguageString (128)](../data-types.md#multilanguagestring)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  

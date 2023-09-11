@@ -141,8 +141,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 <tr>
 <td><a href="Projects.Agile.Cases.html#priority">Priority</a></td>
-<td>byte</td>
-<td>Priority of the case, on a scale from 1 (highest) to 7 (lowest). <code>Required</code> <code>Filter(eq)</code></td>
+<td><a href="Projects.Agile.Cases.html#priority">Priority</a></td>
+<td>Priority of the case, on a scale from 1 (highest) to 7 (lowest). <code>Required</code> <code>Default(7)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.Cases.html#systemstate">SystemState</a></td>
@@ -151,8 +151,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 <tr>
 <td><a href="Projects.Agile.Cases.html#title">Title</a></td>
-<td><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a> <strong>nullable</strong></td>
-<td>Case short title. <code>Filter(like)</code></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a></td>
+<td>Case short title. <code>Required</code> <code>Filter(like)</code></td>
 </tr>
 </tbody>
 </table>
@@ -254,11 +254,52 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="priority">Priority</h3>
-<p>Priority of the case, on a scale from 1 (highest) to 7 (lowest). <code>Required</code> <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>byte</strong><br>
+<p>Priority of the case, on a scale from 1 (highest) to 7 (lowest). <code>Required</code> <code>Default(7)</code> <code>Filter(eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Agile.Cases.html#priority">Priority</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+Allowed values for the <code>Priority</code>(Projects.Agile.Cases.md#priority) data attribute<br>
+<em>Allowed Values (Projects.Agile.CasesRepository.Priority Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Highest</td>
+<td>Highest value. Stored as 1. <br> <em>Database Value:</em> 1 <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Highest'</td>
+</tr>
+<tr>
+<td>Two</td>
+<td>Two value. Stored as 2. <br> <em>Database Value:</em> 2 <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Two'</td>
+</tr>
+<tr>
+<td>Three</td>
+<td>Three value. Stored as 3. <br> <em>Database Value:</em> 3 <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'Three'</td>
+</tr>
+<tr>
+<td>Four</td>
+<td>Four value. Stored as 4. <br> <em>Database Value:</em> 4 <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'Four'</td>
+</tr>
+<tr>
+<td>Five</td>
+<td>Five value. Stored as 5. <br> <em>Database Value:</em> 5 <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'Five'</td>
+</tr>
+<tr>
+<td>Six</td>
+<td>Six value. Stored as 6. <br> <em>Database Value:</em> 6 <br> <em>Model Value:</em> 6 <br> <em>Domain API Value:</em> 'Six'</td>
+</tr>
+<tr>
+<td>Lowest</td>
+<td>Lowest value. Stored as 7. <br> <em>Database Value:</em> 7 <br> <em>Model Value:</em> 7 <br> <em>Domain API Value:</em> 'Lowest'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>7</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="systemstate">SystemState</h3>
 <p>The base state of the case. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Filter(eq)</code></p>
@@ -299,10 +340,10 @@ Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemst
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>ACTIVE</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="title">Title</h3>
-<p>Case short title. <code>Filter(like)</code></p>
-<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a> <strong>nullable</strong></strong><br>
+<p>Case short title. <code>Required</code> <code>Filter(like)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>

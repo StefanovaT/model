@@ -134,7 +134,7 @@
 </tr>
 <tr>
 <td><a href="#priority">Priority</a></td>
-<td><code>tinyint</code></td>
+<td><code>tinyint</code> Allowed: <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code></td>
 <td>Priority of the case, on a scale from 1 (highest) to 7 (lowest).</td>
 </tr>
 <tr>
@@ -1092,6 +1092,10 @@
 </thead>
 <tbody>
 <tr>
+<td>Allowed Values</td>
+<td><code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code></td>
+</tr>
+<tr>
 <td>Auto Complete</td>
 <td>no</td>
 </tr>
@@ -1101,7 +1105,7 @@
 </tr>
 <tr>
 <td>Default Value</td>
-<td>None</td>
+<td>7</td>
 </tr>
 <tr>
 <td>Enter Stop</td>
@@ -1891,7 +1895,7 @@
 </tr>
 <tr>
 <td>Visible</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -1994,7 +1998,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>nvarchar(128) (MultiLanguage) (Allows NULL)</td>
+<td>nvarchar(128) (MultiLanguage)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
