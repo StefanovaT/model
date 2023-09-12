@@ -17862,6 +17862,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Projects.AI.CompilationAssets.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Projects.AI.CompilationAssets.html",
+          "hash": "pckx/Cz71tx2cZM+lHPC3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Projects.AI.Compilations.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Projects.AI.Compilations.html",
+          "hash": "XWju7/FCZmcgkupCz09yaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Projects.AI.ModelAssets.md",
       "output": {
         ".html": {
@@ -17914,7 +17938,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.AI.html",
-          "hash": "mVRWOWPgHBZnRuZO1exbIQ=="
+          "hash": "7tHU6TS2qgoOsaYc96RWHg=="
         }
       },
       "is_incremental": false,
@@ -19654,7 +19678,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "YKtcAqmdoEyghQVVYVVBkw=="
+          "hash": "zQS9QwDX+rpMdWY3uQIxSA=="
         }
       },
       "is_incremental": false,
@@ -24708,7 +24732,31 @@
       "output": {
         ".html": {
           "relative_path": "tables/Llm.html",
-          "hash": "6Z6A4sBiEWfygEvA5OyEww=="
+          "hash": "FsK1qjriPqNRxVs9By150g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Llm_Compilation_Assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Llm_Compilation_Assets.html",
+          "hash": "LvqQHaNaBeM5WQ6/xcaDaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Llm_Compilations.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Llm_Compilations.html",
+          "hash": "0ghMElq8hnfQMZOQMA/EMg=="
         }
       },
       "is_incremental": false,
@@ -27696,7 +27744,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/index.html",
-          "hash": "tWjFzLMz/sONhvFjtY//lQ=="
+          "hash": "vJ9WSoVxa/Umspb/1KeZLA=="
         }
       },
       "is_incremental": false,
@@ -27708,7 +27756,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/toc.html",
-          "hash": "k4CBnlHxaivxokMfbxaIRg=="
+          "hash": "cJn8x15ou/yLUHp+glQhjQ=="
         }
       },
       "is_incremental": false,

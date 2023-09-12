@@ -1043,6 +1043,10 @@
   - name: AI
     href: Projects.AI.md
     items:
+    - name: CompilationAssets
+      href: Projects.AI.CompilationAssets.md
+    - name: Compilations
+      href: Projects.AI.Compilations.md
     - name: ModelAssets
       href: Projects.AI.ModelAssets.md
     - name: ModelBuilds
