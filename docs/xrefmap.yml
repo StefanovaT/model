@@ -556,6 +556,12 @@ references:
 - uid: Crm.SalesPersons
   name: Crm.SalesPersons Entity
   href: entities/Crm.SalesPersons.html
+- uid: Crm.Subscriptions
+  name: Crm.Subscriptions Namespace
+  href: entities/Crm.Subscriptions.html
+- uid: Crm.Subscriptions.BillingCycles
+  name: Crm.Subscriptions.BillingCycles Entity
+  href: entities/Crm.Subscriptions.BillingCycles.html
 - uid: data-types
   name: Data Types
   href: data-types.html

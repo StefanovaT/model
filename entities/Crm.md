@@ -10,6 +10,7 @@ uid: Crm
 - [Presales](Crm.Presales.md)  
 - [Pricing](Crm.Pricing.md)  
 - [Sales](Crm.Sales.md)  
+- [Subscriptions](Crm.Subscriptions.md)  
 
 ## Entities
 - [CustomerProducts](Crm.CustomerProducts.md)  

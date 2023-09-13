@@ -21,6 +21,7 @@ Discount policies for sales documents. Entity: Crm_Line_Discounts
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, the policy is applied only for documents of the specified enterprise company |
 |[Enterprise_Company_Location_Id](#enterprise_company_location_id)|`uniqueidentifier` |When set, the policy is applied only for documents of the specified enterprise company location.|
 |[From_Date](#from_date)|`datetime` |Starting date of validity of the discount. NULL means no from date restriction|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Line Discount is active.|
 |[Line_Discount_Id](#line_discount_id)|`uniqueidentifier` `PK`||
 |[Max_Quantity](#max_quantity)|`decimal(18, 3)` |Apply the discount only if the quantity sold is equal to or less than the specified here.|
 |[Min_Quantity](#min_quantity)|`decimal(18, 3)` |Apply the discount only if the quantity sold is equal to or more than the specified here.|
@@ -402,6 +403,42 @@ Starting date of validity of the discount. NULL means no from date restriction
 | - | - | - | - |
 |Equals|`NULL`|yes|yes|
 |GreaterThanOrLessThan|None|yes|no|
+
+### Is_Active
+
+
+Indicates whether the current Line Discount is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|20|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Line_Discount_Id
 

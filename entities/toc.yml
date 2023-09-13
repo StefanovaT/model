@@ -366,6 +366,11 @@
       href: Crm.Sales.SalesOrdersOptions.md
   - name: SalesPersons
     href: Crm.SalesPersons.md
+  - name: Subscriptions
+    href: Crm.Subscriptions.md
+    items:
+    - name: BillingCycles
+      href: Crm.Subscriptions.BillingCycles.md
 - name: Finance
   href: Finance.md
   items:
