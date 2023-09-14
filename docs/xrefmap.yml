@@ -562,6 +562,12 @@ references:
 - uid: Crm.Subscriptions.BillingCycles
   name: Crm.Subscriptions.BillingCycles Entity
   href: entities/Crm.Subscriptions.BillingCycles.html
+- uid: Crm.Subscriptions.SubscriptionLines
+  name: Crm.Subscriptions.SubscriptionLines Entity
+  href: entities/Crm.Subscriptions.SubscriptionLines.html
+- uid: Crm.Subscriptions.Subscriptions
+  name: Crm.Subscriptions.Subscriptions Entity
+  href: entities/Crm.Subscriptions.Subscriptions.html
 - uid: data-types
   name: Data Types
   href: data-types.html

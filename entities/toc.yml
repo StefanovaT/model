@@ -371,6 +371,10 @@
     items:
     - name: BillingCycles
       href: Crm.Subscriptions.BillingCycles.md
+    - name: SubscriptionLines
+      href: Crm.Subscriptions.SubscriptionLines.md
+    - name: Subscriptions
+      href: Crm.Subscriptions.Subscriptions.md
 - name: Finance
   href: Finance.md
   items:

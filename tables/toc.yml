@@ -1105,6 +1105,10 @@
   items:
   - name: Sm_Billing_Cycles
     href: Sm_Billing_Cycles.md
+  - name: Sm_Subscription_Lines
+    href: Sm_Subscription_Lines.md
+  - name: Sm_Subscriptions
+    href: Sm_Subscriptions.md
 - name: Srv
   href: Srv.md
   items:
