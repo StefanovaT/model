@@ -82,7 +82,7 @@
 <tbody>
 <tr>
 <td>Code</td>
-<td>R33690</td>
+<td>R35463</td>
 </tr>
 <tr>
 <td>Entity</td>
@@ -114,7 +114,7 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = QTY Then ExciseAmountBase = ExciseQuantity;<br>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = QAS Then ExciseAmountBase = ExciseQuantity * ExciseAlcoholicStrength;<br>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = QAP Then ExciseAmountBase = ExciseQuantity * ExciseAlcoholicStrength / 100; <br>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = NOP Then ExciseAmountBase = Any;</td>
+<td>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = QTY Then ExciseAmountBase = Round(ExciseQuantity,4);<br>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = QAS Then ExciseAmountBase = Round(ExciseQuantity * ExciseAlcoholicStrength,4);<br>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = QAP Then ExciseAmountBase = Round(ExciseQuantity * ExciseAlcoholicStrength / 100,4); <br>IF ExciseProduct.ExciseProductCategory.CalculationAlgorithm = NOP Then ExciseAmountBase = Any;</td>
 </tr>
 <tr>
 <td>Description</td>
