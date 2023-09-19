@@ -108,6 +108,11 @@
 <td>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. NULL means the model could not be used for conversations.</td>
 </tr>
 <tr>
+<td><a href="#conversational_compilation_id">Conversational_Compilation_Id</a></td>
+<td><code>uniqueidentifier</code></td>
+<td>The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. NULL means the model cannot be used for conversations.</td>
+</tr>
+<tr>
 <td><a href="#model_id">Model_Id</a></td>
 <td><code>uniqueidentifier</code> <code>PK</code></td>
 <td></td>
@@ -190,7 +195,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>8</td>
+<td>9</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -455,6 +460,129 @@
 </tbody>
 </table>
 <h4 id="conversation_build_id---supported-filters">Conversation_Build_Id - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h3 id="conversational_compilation_id">Conversational_Compilation_Id</h3>
+<p>The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. NULL means the model cannot be used for conversations.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto Complete</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Data Filter</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Enter Stop</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Ignore for Insert Order</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Is Entity Name</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Max Length</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>Order</td>
+<td>9</td>
+</tr>
+<tr>
+<td>Ownership Reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Pasword</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Primary Key</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Readonly</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Referenced Table</td>
+<td><a href="Llm_Compilations.html">Llm_Compilations</a></td>
+</tr>
+<tr>
+<td>RTF</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Sortable</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Summary Type</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Supports EQUALS_IN</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>uniqueidentifier (Allows NULL)</td>
+</tr>
+<tr>
+<td>UI Memo Editor</td>
+<td>no</td>
+</tr>
+<tr>
+<td>UI Width</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>User Login</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="conversational_compilation_id---supported-filters">Conversational_Compilation_Id - Supported Filters</h4>
 <table>
 <thead>
 <tr>
@@ -749,7 +877,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>9</td>
+<td>10</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -1194,7 +1322,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>10</td>
+<td>11</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
