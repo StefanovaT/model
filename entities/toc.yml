@@ -721,8 +721,6 @@
     href: General.PrintoutLayouts.md
   - name: Printouts
     href: General.Printouts.md
-  - name: ProductGroupsLevelNames
-    href: General.ProductGroupsLevelNames.md
   - name: Products
     href: General.Products.md
     items:
