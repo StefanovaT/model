@@ -30,7 +30,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Applications.AssetManagement.ManagedAssetLocations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FromDate](Applications.AssetManagement.ManagedAssetLocations.md#fromdate) | date | The date on which the asset is assigned to the location. `Required` `Default(Now)` 
+| [FromDate](Applications.AssetManagement.ManagedAssetLocations.md#fromdate) | date | The date on which the asset is assigned to the location. `Required` `Default(Now)` `Filter(ge;le)` 
 | [Id](Applications.AssetManagement.ManagedAssetLocations.md#id) | guid |  
 | [Notes](Applications.AssetManagement.ManagedAssetLocations.md#notes) | string (max) __nullable__ | Might contain additional notes for the exact location of the asset within the enterprise company location. 
 | [ObjectVersion](Applications.AssetManagement.ManagedAssetLocations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -58,11 +58,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### FromDate
 
-The date on which the asset is assigned to the location. `Required` `Default(Now)`
+The date on which the asset is assigned to the location. `Required` `Default(Now)` `Filter(ge;le)`
 
 _Type_: **date**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

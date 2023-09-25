@@ -92,7 +92,7 @@ Desired answer.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(max)|
-|UI Memo Editor|no|
+|UI Memo Editor|yes|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
@@ -372,7 +372,7 @@ User question.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(max)|
-|UI Memo Editor|no|
+|UI Memo Editor|yes|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|

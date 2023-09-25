@@ -232,6 +232,12 @@ Date, when the asset is first deployed. Null if the asset is not deployed yet
 |User Login|no|
 |Visible|yes|
 
+#### Deployment_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Enterprise_Company_Id
 
 | Property | Value |
@@ -396,6 +402,12 @@ Original purchase date of the asset.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Purchase_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Row_Version
 

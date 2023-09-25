@@ -160,6 +160,12 @@ End date of the depreciation period accounted with this document
 |User Login|no|
 |Visible|yes|
 
+#### End_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Is_Released
 
 
@@ -288,5 +294,11 @@ Start date of the depreciation period accounted with this document
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

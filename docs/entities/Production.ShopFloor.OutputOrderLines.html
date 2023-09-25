@@ -107,7 +107,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Production.ShopFloor.OutputOrderLines.html#begindatetime"><s>BeginDateTime</s></a></td>
 <td>datetime <strong>nullable</strong></td>
-<td><strong>OBSOLETE! Do not use!</strong> Not used. <code>Obsolete</code> <code>Obsoleted in version 22.1.6.61</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> Not used. <code>Obsolete</code> <code>Filter(ge;le)</code> <code>Obsoleted in version 22.1.6.61</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.OutputOrderLines.html#displaytext">DisplayText</a></td>
@@ -167,7 +167,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Production.ShopFloor.OutputOrderLines.html#transactiontimestamp">TransactionTimestamp</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. <code>ReadOnly</code></td>
+<td>Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 </tbody>
 </table>
@@ -272,10 +272,10 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="begindatetime">BeginDateTime</h3>
-<p><strong>OBSOLETE! Do not use!</strong> Not used. <code>Obsolete</code> <code>Obsoleted in version 22.1.6.61</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> Not used. <code>Obsolete</code> <code>Filter(ge;le)</code> <code>Obsoleted in version 22.1.6.61</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="displaytext">DisplayText</h3>
@@ -374,10 +374,10 @@ Aggregate Root:<br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="transactiontimestamp">TransactionTimestamp</h3>
-<p>Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. <code>ReadOnly</code></p>
+<p>Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

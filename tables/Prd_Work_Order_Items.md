@@ -74,6 +74,12 @@ The date, when the item should be completed. NULL means that there is no constra
 |User Login|no|
 |Visible|no|
 
+#### Completion_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Id
 
 | Property | Value |
@@ -684,6 +690,12 @@ The date, when the item is released to production. NULL means that still there i
 |User Login|no|
 |Visible|no|
 
+#### Release_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Row_Version
 
 | Property | Value |
@@ -741,6 +753,12 @@ Date and time when the production of this item is scheduled to end
 |User Login|no|
 |Visible|no|
 
+#### Scheduled_End_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Scheduled_Start_Date_Time
 
 
@@ -770,6 +788,12 @@ Date and time when the production of this item is scheduled to begin
 |UI Width|100|
 |User Login|no|
 |Visible|no|
+
+#### Scheduled_Start_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Serial_Number_Id
 

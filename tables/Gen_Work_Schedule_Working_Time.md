@@ -84,6 +84,12 @@ End of working time period
 |User Login|no|
 |Visible|yes|
 
+#### End_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Id
 
 | Property | Value |
@@ -173,6 +179,12 @@ Start of working time period on the day, specified by Day_No
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Start_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Work_Schedule_Id
 

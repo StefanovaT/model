@@ -92,6 +92,12 @@ Date and time (in UTC), when the requested right was implemented by the responsi
 |User Login|no|
 |Visible|yes|
 
+#### Completed_On_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Created_By_User_Id
 
 
@@ -158,6 +164,12 @@ The date and time (in UTC), when the request was created.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Created_On_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Data_Subject_Right_Request_Id
 

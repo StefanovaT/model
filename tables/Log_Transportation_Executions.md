@@ -87,6 +87,12 @@ Specifies the execution date, if it is the same for all lines. NULL means that t
 |User Login|no|
 |Visible|yes|
 
+#### Execution_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Execution_Time
 
 
@@ -116,6 +122,12 @@ Specifies the execution time, if it is the same for all lines. NULL means that t
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Execution_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Geo_Point_Id
 

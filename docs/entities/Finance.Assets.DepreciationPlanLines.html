@@ -107,12 +107,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Assets.DepreciationPlanLines.html#depreciationenddate">DepreciationEndDate</a></td>
 <td>datetime</td>
-<td>End date of the depreciation plan for this asset. <code>Required</code></td>
+<td>End date of the depreciation plan for this asset. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Assets.DepreciationPlanLines.html#depreciationstartdate">DepreciationStartDate</a></td>
 <td>datetime</td>
-<td>Start date of the depreciation plan for this asset. <code>Required</code></td>
+<td>Start date of the depreciation plan for this asset. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Assets.DepreciationPlanLines.html#displaytext">DisplayText</a></td>
@@ -197,17 +197,17 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="depreciationenddate">DepreciationEndDate</h3>
-<p>End date of the depreciation plan for this asset. <code>Required</code></p>
+<p>End date of the depreciation plan for this asset. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="depreciationstartdate">DepreciationStartDate</h3>
-<p>Start date of the depreciation plan for this asset. <code>Required</code></p>
+<p>Start date of the depreciation plan for this asset. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>

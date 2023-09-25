@@ -170,6 +170,12 @@ Non-null when the timer is for specific single date and time. Mutually exclusive
 |User Login|no|
 |Visible|yes|
 
+#### Time_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Time_Duration
 
 

@@ -595,6 +595,12 @@ When selling a service valid only for a period, denotes the beginning of the per
 |User Login|no|
 |Visible|yes|
 
+#### From_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Intrastat_Transaction_Nature_Code
 
 
@@ -925,6 +931,12 @@ The date when the payment becomes due for documents with one installment. NULL w
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Payment_Due_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Payment_Type_Id
 
@@ -1459,5 +1471,11 @@ When selling a service valid only for a period, denotes the end of the period. N
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### To_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

@@ -27,7 +27,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CompletionDate](Production.ShopFloor.WorkOrderItems.md#completiondate) | datetime __nullable__ | The date, when the item should be completed. null means that there is no constraint for completion date. 
+| [CompletionDate](Production.ShopFloor.WorkOrderItems.md#completiondate) | datetime __nullable__ | The date, when the item should be completed. null means that there is no constraint for completion date. `Filter(ge;le)` 
 | [DisplayText](Production.ShopFloor.WorkOrderItems.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.ShopFloor.WorkOrderItems.md#id) | guid |  
 | [LineOrd](Production.ShopFloor.WorkOrderItems.md#lineord) | int32 | The order of the line within the work order. `Required` `Filter(eq;like)` 
@@ -40,9 +40,9 @@ Aggregate Root:
 | [ProducedQuantity](Production.ShopFloor.WorkOrderItems.md#producedquantity) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity produced in the operation. `Unit: ProducedQuantityUnit` `Required` `Default(1)` 
 | [ProducedQuantityBase](Production.ShopFloor.WorkOrderItems.md#producedquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Produced Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` 
 | [ProducedStandard<br />QuantityBase](Production.ShopFloor.WorkOrderItems.md#producedstandardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions of the product. Used to measure the execution. null means to take the value from Produced Quantity Base. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
-| [ReleaseDate](Production.ShopFloor.WorkOrderItems.md#releasedate) | datetime __nullable__ | The date, when the item is released to production. null means that still there is no plan when the item will be released to production. 
-| [ScheduledEndDateTime](Production.ShopFloor.WorkOrderItems.md#scheduledenddatetime) | datetime __nullable__ | Date and time when the production of this item is scheduled to end. 
-| [ScheduledStartDateTime](Production.ShopFloor.WorkOrderItems.md#scheduledstartdatetime) | datetime __nullable__ | Date and time when the production of this item is scheduled to begin. 
+| [ReleaseDate](Production.ShopFloor.WorkOrderItems.md#releasedate) | datetime __nullable__ | The date, when the item is released to production. null means that still there is no plan when the item will be released to production. `Filter(ge;le)` 
+| [ScheduledEndDateTime](Production.ShopFloor.WorkOrderItems.md#scheduledenddatetime) | datetime __nullable__ | Date and time when the production of this item is scheduled to end. `Filter(ge;le)` 
+| [ScheduledStartDateTime](Production.ShopFloor.WorkOrderItems.md#scheduledstartdatetime) | datetime __nullable__ | Date and time when the production of this item is scheduled to begin. `Filter(ge;le)` 
 
 ## References
 
@@ -71,11 +71,11 @@ Aggregate Root:
 
 ### CompletionDate
 
-The date, when the item should be completed. null means that there is no constraint for completion date.
+The date, when the item should be completed. null means that there is no constraint for completion date. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -238,11 +238,11 @@ _Front-End Recalc Expressions:_
 `IIF( ( ( ( obj.ProducedQuantity != null) AndAlso ( obj.ProducedQuantityUnit != null)) AndAlso ( obj.Product != null)), obj.ProducedQuantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.ProducedStandardQuantityBase)`
 ### ReleaseDate
 
-The date, when the item is released to production. null means that still there is no plan when the item will be released to production.
+The date, when the item is released to production. null means that still there is no plan when the item will be released to production. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -253,21 +253,21 @@ _Front-End Recalc Expressions:_
 `obj.WorkOrder.ReleaseDate`
 ### ScheduledEndDateTime
 
-Date and time when the production of this item is scheduled to end.
+Date and time when the production of this item is scheduled to end. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
 ### ScheduledStartDateTime
 
-Date and time when the production of this item is scheduled to begin.
+Date and time when the production of this item is scheduled to begin. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

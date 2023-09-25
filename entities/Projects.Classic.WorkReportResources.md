@@ -29,8 +29,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ActualEndTime](Projects.Classic.WorkReportResources.md#actualendtime) | datetime __nullable__ | Optionally, specifies the actual date and time when the resource usage ended. `Filter(eq;like)` 
-| [ActualStartTime](Projects.Classic.WorkReportResources.md#actualstarttime) | datetime __nullable__ | Optionally, specifies the actual date and time when the resource usage began. `Filter(eq;like)` 
+| [ActualEndTime](Projects.Classic.WorkReportResources.md#actualendtime) | datetime __nullable__ | Optionally, specifies the actual date and time when the resource usage ended. `Filter(eq;ge;le;like)` 
+| [ActualStartTime](Projects.Classic.WorkReportResources.md#actualstarttime) | datetime __nullable__ | Optionally, specifies the actual date and time when the resource usage began. `Filter(eq;ge;le;like)` 
 | [DisplayText](Projects.Classic.WorkReportResources.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Classic.WorkReportResources.md#id) | guid |  
 | [ObjectVersion](Projects.Classic.WorkReportResources.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -50,21 +50,21 @@ Aggregate Root:
 
 ### ActualEndTime
 
-Optionally, specifies the actual date and time when the resource usage ended. `Filter(eq;like)`
+Optionally, specifies the actual date and time when the resource usage ended. `Filter(eq;ge;le;like)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals, Like**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan, Like**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### ActualStartTime
 
-Optionally, specifies the actual date and time when the resource usage began. `Filter(eq;like)`
+Optionally, specifies the actual date and time when the resource usage began. `Filter(eq;ge;le;like)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals, Like**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan, Like**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

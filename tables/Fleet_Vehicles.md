@@ -76,6 +76,12 @@ The date and time, when the vehicle has been purchased or started to be managed.
 |User Login|no|
 |Visible|yes|
 
+#### Active_From - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Active_Till
 
 
@@ -105,6 +111,12 @@ The date and time, when the vehicle has been sold or has stopped being managed. 
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Active_Till - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Authority_Maximum_Laden_Mass_Kg
 

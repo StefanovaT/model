@@ -190,6 +190,12 @@ Date/time when the document last has been adjusted by corrective document
 |User Login|no|
 |Visible|no|
 
+#### Adjustment_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Adjustment_User
 
 
@@ -1490,6 +1496,12 @@ Date/time when the document has become void
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Void_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Void_User
 

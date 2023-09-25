@@ -124,7 +124,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Distribution.SalesPersonTargetLines.html#perioddate">PeriodDate</a></td>
 <td>datetime</td>
-<td>Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). <code>Required</code> <code>ReadOnly</code></td>
+<td>Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). <code>Required</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Distribution.SalesPersonTargetLines.html#periodmonth">PeriodMonth</a></td>
@@ -228,10 +228,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="perioddate">PeriodDate</h3>
-<p>Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). <code>Required</code> <code>ReadOnly</code></p>
+<p>Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). <code>Required</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="periodmonth">PeriodMonth</h3>

@@ -134,7 +134,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ResolvedConflicts.html#resolveconfirmedtime">ResolveConfirmedTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Time when the conflict resolution was confirmed by the user. <code>ReadOnly</code></td>
+<td>Time when the conflict resolution was confirmed by the user. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ResolvedConflicts.html#resolvedescription">ResolveDescription</a></td>
@@ -144,7 +144,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ResolvedConflicts.html#resolvedtime">ResolvedTime</a></td>
 <td>datetime</td>
-<td>Time when the resolution of the conflict was made. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></td>
+<td>Time when the resolution of the conflict was made. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ResolvedConflicts.html#revisedbyuser">RevisedByUser</a></td>
@@ -201,10 +201,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="resolveconfirmedtime">ResolveConfirmedTime</h3>
-<p>Time when the conflict resolution was confirmed by the user. <code>ReadOnly</code></p>
+<p>Time when the conflict resolution was confirmed by the user. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="resolvedescription">ResolveDescription</h3>
@@ -215,10 +215,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="resolvedtime">ResolvedTime</h3>
-<p>Time when the resolution of the conflict was made. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></p>
+<p>Time when the resolution of the conflict was made. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

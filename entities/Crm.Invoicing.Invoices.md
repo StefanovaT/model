@@ -40,15 +40,15 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AdjustmentNumber](Crm.Invoicing.Invoices.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [AdjustmentTime](Crm.Invoicing.Invoices.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [AdjustmentTime](Crm.Invoicing.Invoices.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [AdjustmentUser](Crm.Invoicing.Invoices.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ApplyDate](Crm.Invoicing.Invoices.md#applydate) | date | When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. `Required` 
+| [ApplyDate](Crm.Invoicing.Invoices.md#applydate) | date | When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. `Required` `Filter(ge;le)` 
 | [AutomaticOrderLinking](Crm.Invoicing.Invoices.md#automaticorderlinking) | boolean | Specifies whether to automatically set Lines.Invoice_Order_Line_Id by searching invoice orders upon first release. `Required` `Default(false)` 
 | [CompleteTime](Crm.Invoicing.Invoices.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Crm.Invoicing.Invoices.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationUser](Crm.Invoicing.Invoices.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreditNoteDescription](Crm.Invoicing.Invoices.md#creditnotedescription) | string (254) __nullable__ | Descriptions/reason for the credit note. 
-| [DeliveryDate](Crm.Invoicing.Invoices.md#deliverydate) | datetime __nullable__ | Date, when the delivery was effected. When null = document date. 
+| [DeliveryDate](Crm.Invoicing.Invoices.md#deliverydate) | datetime __nullable__ | Date, when the delivery was effected. When null = document date. `Filter(ge;le)` 
 | [DeliveryTermsCode](Crm.Invoicing.Invoices.md#deliverytermscode) | [DeliveryTerms](Crm.Invoicing.Invoices.md#deliverytermscode) __nullable__ | Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting. 
 | [DisplayText](Crm.Invoicing.Invoices.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DocumentDate](Crm.Invoicing.Invoices.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md)) 
@@ -65,8 +65,8 @@ Aggregate Tree
 | [Notes](Crm.Invoicing.Invoices.md#notes) | string (254) __nullable__ | Notes for this Invoice. 
 | [ObjectVersion](Crm.Invoicing.Invoices.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Crm.Invoicing.Invoices.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Crm.Invoicing.Invoices.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [PaymentDueDate](Crm.Invoicing.Invoices.md#paymentduedate) | datetime __nullable__ | When not null specifies due date for the payment. 
-| [PaymentDueStartDate](Crm.Invoicing.Invoices.md#paymentduestartdate) | datetime __nullable__ | The date when the payment becomes due for documents with one installment. 
+| [PaymentDueDate](Crm.Invoicing.Invoices.md#paymentduedate) | datetime __nullable__ | When not null specifies due date for the payment. `Filter(ge;le)` 
+| [PaymentDueStartDate](Crm.Invoicing.Invoices.md#paymentduestartdate) | datetime __nullable__ | The date when the payment becomes due for documents with one installment. `Filter(ge;le)` 
 | [PaymentTypeDescription](Crm.Invoicing.Invoices.md#paymenttypedescription) | [MultilanguageString (20)](../data-types.md#multilanguagestring) | Description of the payment type. Initially copied from the name of the Payment Type. `Required` 
 | [PlanningOnly](Crm.Invoicing.Invoices.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReadOnly](Crm.Invoicing.Invoices.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -78,7 +78,7 @@ Aggregate Tree
 | [VATNotes](Crm.Invoicing.Invoices.md#vatnotes) | string (254) __nullable__ | Description of the operation that will be entered in the VAT ledgers. 
 | [Void](Crm.Invoicing.Invoices.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidReason](Crm.Invoicing.Invoices.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidTime](Crm.Invoicing.Invoices.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [VoidTime](Crm.Invoicing.Invoices.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidUser](Crm.Invoicing.Invoices.md#voiduser) | string (64) __nullable__ | The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 
 ## References
@@ -142,11 +142,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### AdjustmentTime
 
-Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -163,11 +163,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ApplyDate
 
-When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. `Required`
+When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. `Required` `Filter(ge;le)`
 
 _Type_: **date**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -229,11 +229,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### DeliveryDate
 
-Date, when the delivery was effected. When null = document date.
+Date, when the delivery was effected. When null = document date. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -482,11 +482,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### PaymentDueDate
 
-When not null specifies due date for the payment.
+When not null specifies due date for the payment. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -494,11 +494,11 @@ _Front-End Recalc Expressions:_
 `obj.DocumentDate.AddDays( Convert( obj.Customer.DefaultPaymentTermDays, Double))`
 ### PaymentDueStartDate
 
-The date when the payment becomes due for documents with one installment.
+The date when the payment becomes due for documents with one installment. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -643,11 +643,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidTime
 
-Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

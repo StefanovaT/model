@@ -179,7 +179,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Products.ProductSupply.html#orderperiodstartdate">OrderPeriodStartDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Start date of the first period under fixed period replenishment system. null - not yet specified.</td>
+<td>Start date of the first period under fixed period replenishment system. null - not yet specified. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#orderpointquantitybase">OrderPointQuantityBase</a></td>
@@ -478,10 +478,10 @@ Allowed values for the <code>OrderLotSizingMethod</code>(General.Products.Produc
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="orderperiodstartdate">OrderPeriodStartDate</h3>
-<p>Start date of the first period under fixed period replenishment system. null - not yet specified.</p>
+<p>Start date of the first period under fixed period replenishment system. null - not yet specified. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="orderpointquantitybase">OrderPointQuantityBase</h3>

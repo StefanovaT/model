@@ -182,7 +182,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Presales.OfferLines.html#requireddeliverydate">RequiredDeliveryDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>Date, when the delivery is required. Alternative to Delivery Term Days. When null, Delivery Term Days is used.</td>
+<td>Date, when the delivery is required. Alternative to Delivery Term Days. When null, Delivery Term Days is used. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.OfferLines.html#standardquantitybase">StandardQuantityBase</a></td>
@@ -390,10 +390,10 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h3 id="requireddeliverydate">RequiredDeliveryDate</h3>
-<p>Date, when the delivery is required. Alternative to Delivery Term Days. When null, Delivery Term Days is used.</p>
+<p>Date, when the delivery is required. Alternative to Delivery Term Days. When null, Delivery Term Days is used. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>

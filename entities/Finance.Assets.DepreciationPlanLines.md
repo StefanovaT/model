@@ -27,8 +27,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DepreciationEndDate](Finance.Assets.DepreciationPlanLines.md#depreciationenddate) | datetime | End date of the depreciation plan for this asset. `Required` 
-| [DepreciationStartDate](Finance.Assets.DepreciationPlanLines.md#depreciationstartdate) | datetime | Start date of the depreciation plan for this asset. `Required` 
+| [DepreciationEndDate](Finance.Assets.DepreciationPlanLines.md#depreciationenddate) | datetime | End date of the depreciation plan for this asset. `Required` `Filter(ge;le)` 
+| [DepreciationStartDate](Finance.Assets.DepreciationPlanLines.md#depreciationstartdate) | datetime | Start date of the depreciation plan for this asset. `Required` `Filter(ge;le)` 
 | [DisplayText](Finance.Assets.DepreciationPlanLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Assets.DepreciationPlanLines.md#id) | guid |  
 | [LineNo](Finance.Assets.DepreciationPlanLines.md#lineno) | int32 | Consecutive number of the line within the depreciation plan. `Required` `Filter(eq)` 
@@ -56,21 +56,21 @@ Aggregate Root:
 
 ### DepreciationEndDate
 
-End date of the depreciation plan for this asset. `Required`
+End date of the depreciation plan for this asset. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### DepreciationStartDate
 
-Start date of the depreciation plan for this asset. `Required`
+Start date of the depreciation plan for this asset. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

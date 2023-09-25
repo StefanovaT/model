@@ -109,12 +109,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Classic.WorkReportResources.html#actualendtime">ActualEndTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Optionally, specifies the actual date and time when the resource usage ended. <code>Filter(eq;like)</code></td>
+<td>Optionally, specifies the actual date and time when the resource usage ended. <code>Filter(eq;ge;le;like)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.WorkReportResources.html#actualstarttime">ActualStartTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Optionally, specifies the actual date and time when the resource usage began. <code>Filter(eq;like)</code></td>
+<td>Optionally, specifies the actual date and time when the resource usage began. <code>Filter(eq;ge;le;like)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.WorkReportResources.html#displaytext">DisplayText</a></td>
@@ -172,17 +172,17 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="actualendtime">ActualEndTime</h3>
-<p>Optionally, specifies the actual date and time when the resource usage ended. <code>Filter(eq;like)</code></p>
+<p>Optionally, specifies the actual date and time when the resource usage ended. <code>Filter(eq;ge;le;like)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="actualstarttime">ActualStartTime</h3>
-<p>Optionally, specifies the actual date and time when the resource usage began. <code>Filter(eq;like)</code></p>
+<p>Optionally, specifies the actual date and time when the resource usage began. <code>Filter(eq;ge;le;like)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>

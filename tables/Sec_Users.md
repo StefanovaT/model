@@ -209,6 +209,12 @@ The date and time (in UTC), when the user was created.
 |User Login|no|
 |Visible|yes|
 
+#### Creation_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Default_Culture
 
 

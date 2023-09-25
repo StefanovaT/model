@@ -159,7 +159,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.Translations.html#updatetime">UpdateTime</a></td>
 <td>datetime</td>
-<td>When the translation was last updated. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></td>
+<td>When the translation was last updated. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 </tbody>
 </table>
@@ -286,10 +286,10 @@ Allowed values for the <code>ResourceType</code>(Systems.Core.Translations.md#re
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
-<p>When the translation was last updated. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></p>
+<p>When the translation was last updated. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

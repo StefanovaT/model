@@ -45,6 +45,12 @@ The exact time of day, when the workgroup shift will stop being available for ut
 |User Login|no|
 |Visible|yes|
 
+#### Available_End_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Available_Start_Time
 
 
@@ -75,6 +81,12 @@ The exact time of day, when the workgroup shift is available for utilisation
 |User Login|no|
 |Visible|yes|
 
+#### Available_Start_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Calendar_Date
 
 | Property | Value |
@@ -101,6 +113,12 @@ The exact time of day, when the workgroup shift is available for utilisation
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Calendar_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Id
 

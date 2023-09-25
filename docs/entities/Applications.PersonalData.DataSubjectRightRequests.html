@@ -107,12 +107,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Applications.PersonalData.DataSubjectRightRequests.html#completedonutc">CompletedOnUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented.</td>
+<td>Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Applications.PersonalData.DataSubjectRightRequests.html#createdonutc">CreatedOnUtc</a></td>
 <td>datetime</td>
-<td>The date and time (in UTC), when the request was created. <code>Required</code> <code>Default(Now)</code></td>
+<td>The date and time (in UTC), when the request was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Applications.PersonalData.DataSubjectRightRequests.html#displaytext">DisplayText</a></td>
@@ -180,17 +180,17 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="completedonutc">CompletedOnUtc</h3>
-<p>Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented.</p>
+<p>Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="createdonutc">CreatedOnUtc</h3>
-<p>The date and time (in UTC), when the request was created. <code>Required</code> <code>Default(Now)</code></p>
+<p>The date and time (in UTC), when the request was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

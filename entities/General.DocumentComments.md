@@ -30,7 +30,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Comment](General.DocumentComments.md#comment) | string (254) | The user comment. `Required` 
-| [CommentTimestamp](General.DocumentComments.md#commenttimestamp) | datetime | The exact timestamp of the comment. `Required` `Default(Now)` 
+| [CommentTimestamp](General.DocumentComments.md#commenttimestamp) | datetime | The exact timestamp of the comment. `Required` `Default(Now)` `Filter(ge;le)` 
 | [DisplayText](General.DocumentComments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.DocumentComments.md#id) | guid |  
 | [ObjectVersion](General.DocumentComments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -59,11 +59,11 @@ _Show in UI_: **ShownByDefault**
 
 ### CommentTimestamp
 
-The exact timestamp of the comment. `Required` `Default(Now)`
+The exact timestamp of the comment. `Required` `Default(Now)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

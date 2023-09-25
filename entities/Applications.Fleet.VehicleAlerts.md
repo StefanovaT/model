@@ -32,7 +32,7 @@ Aggregate Tree
 | [IsHidden](Applications.Fleet.VehicleAlerts.md#ishidden) | boolean | Specifies, whether the alert is hidden (e.g. managed by the responsible person). `Required` `Default(false)` 
 | [ObjectVersion](Applications.Fleet.VehicleAlerts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Source](Applications.Fleet.VehicleAlerts.md#source) | string (1) | The source of the alert. G=GPS, O=OBD, M=Maintenance. `Required` 
-| [Time](Applications.Fleet.VehicleAlerts.md#time) | datetime | The time of the alert. `Required` `ORD` 
+| [Time](Applications.Fleet.VehicleAlerts.md#time) | datetime | The time of the alert. `Required` `Filter(ge;le)` `ORD` 
 
 ## References
 
@@ -118,12 +118,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Time
 
-The time of the alert. `Required` `ORD`
+The time of the alert. `Required` `Filter(ge;le)` `ORD`
 
 _Type_: **datetime**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 

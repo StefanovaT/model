@@ -159,7 +159,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#refdocumentdate">RefDocumentDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date of the base document. null means that it is unknown.</td>
+<td>The date of the base document. null means that it is unknown. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#refdocumentno">RefDocumentNo</a></td>
@@ -169,12 +169,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#refinvoiceapplydate">RefInvoiceApplyDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown.</td>
+<td>The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#refinvoicedocumentdate">RefInvoiceDocumentDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown.</td>
+<td>The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#refinvoicedocumentno">RefInvoiceDocumentNo</a></td>
@@ -360,10 +360,10 @@ Allowed values for the <code>Direction</code>(Finance.Payments.BulkPaymentOrderL
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="refdocumentdate">RefDocumentDate</h3>
-<p>The date of the base document. null means that it is unknown.</p>
+<p>The date of the base document. null means that it is unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="refdocumentno">RefDocumentNo</h3>
@@ -375,17 +375,17 @@ Allowed values for the <code>Direction</code>(Finance.Payments.BulkPaymentOrderL
 <em>Maximum Length</em>: <strong>20</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="refinvoiceapplydate">RefInvoiceApplyDate</h3>
-<p>The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown.</p>
+<p>The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="refinvoicedocumentdate">RefInvoiceDocumentDate</h3>
-<p>The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown.</p>
+<p>The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="refinvoicedocumentno">RefInvoiceDocumentNo</h3>

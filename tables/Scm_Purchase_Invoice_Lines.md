@@ -104,6 +104,12 @@ Specifies in which period for Intrastat declaration must be included the current
 |User Login|no|
 |Visible|no|
 
+#### Intrastat_Apply_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Intrastat_Destination_Region_Id
 
 

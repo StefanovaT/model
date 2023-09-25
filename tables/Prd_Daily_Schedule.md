@@ -230,6 +230,12 @@ Time of day when the operation is expected to cease utilising the resource
 |User Login|no|
 |Visible|yes|
 
+#### Usage_End_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Usage_Quantity
 
 
@@ -289,6 +295,12 @@ Time of day when the operation is expected to start utilising the resource
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Usage_Start_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Work_Order_Item_Operation_Id
 

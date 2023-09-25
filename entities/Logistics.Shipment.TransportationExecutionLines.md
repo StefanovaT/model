@@ -28,8 +28,8 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Logistics.Shipment.TransportationExecutionLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [ExecutionDate](Logistics.Shipment.TransportationExecutionLines.md#executiondate) | date | The date when the operation was executed. `Required` 
-| [ExecutionTime](Logistics.Shipment.TransportationExecutionLines.md#executiontime) | time | The time when the operation was executed. `Required` 
+| [ExecutionDate](Logistics.Shipment.TransportationExecutionLines.md#executiondate) | date | The date when the operation was executed. `Required` `Filter(ge;le)` 
+| [ExecutionTime](Logistics.Shipment.TransportationExecutionLines.md#executiontime) | time | The time when the operation was executed. `Required` `Filter(ge;le)` 
 | [Id](Logistics.Shipment.TransportationExecutionLines.md#id) | guid |  
 | [LineNo](Logistics.Shipment.TransportationExecutionLines.md#lineno) | int32 | Consecutive line number within this execution. `Required` 
 | [Notes](Logistics.Shipment.TransportationExecutionLines.md#notes) | string (max) __nullable__ | Notes for this Transportation<br />ExecutionLine. 
@@ -64,11 +64,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ExecutionDate
 
-The date when the operation was executed. `Required`
+The date when the operation was executed. `Required` `Filter(ge;le)`
 
 _Type_: **date**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -79,11 +79,11 @@ _Front-End Recalc Expressions:_
 `obj.TransportationExecution.ExecutionDate`
 ### ExecutionTime
 
-The time when the operation was executed. `Required`
+The time when the operation was executed. `Required` `Filter(ge;le)`
 
 _Type_: **time**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

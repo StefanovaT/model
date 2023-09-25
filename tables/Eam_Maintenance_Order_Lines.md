@@ -230,6 +230,12 @@ Specifies, that the maintenance required a specific date for the next maintenanc
 |User Login|no|
 |Visible|yes|
 
+#### Next_Service_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Next_Service_Tracked_Parameter_Value
 
 

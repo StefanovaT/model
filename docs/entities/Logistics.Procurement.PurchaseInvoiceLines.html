@@ -122,7 +122,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseInvoiceLines.html#intrastatapplydate">IntrastatApplyDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used.</td>
+<td>Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseInvoiceLines.html#intrastattransactionnaturecode">IntrastatTransaction<br>NatureCode</a></td>
@@ -335,10 +335,10 @@ Generic enum type for DeliveryTerms properties<br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="intrastatapplydate">IntrastatApplyDate</h3>
-<p>Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used.</p>
+<p>Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="intrastattransactionnaturecode">IntrastatTransactionNatureCode</h3>

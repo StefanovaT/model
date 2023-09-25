@@ -50,6 +50,12 @@ The time, when the update procedure was executed.
 |User Login|no|
 |Visible|yes|
 
+#### Execute_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Result_Message
 
 

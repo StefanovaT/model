@@ -114,7 +114,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Applications.Service.ServiceAgreementServices.html#enddate">EndDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>End date to which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities.</td>
+<td>End date to which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Applications.Service.ServiceAgreementServices.html#id">Id</a></td>
@@ -139,7 +139,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Applications.Service.ServiceAgreementServices.html#startdate">StartDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Start date from which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities.</td>
+<td>Start date from which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities. <code>Filter(ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -184,10 +184,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="enddate">EndDate</h3>
-<p>End date to which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities.</p>
+<p>End date to which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
@@ -223,10 +223,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="startdate">StartDate</h3>
-<p>Start date from which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities.</p>
+<p>Start date from which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

@@ -31,10 +31,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [AvailableResources](General.Resources.ResourceAvailability.md#availableresources) | decimal (12, 2) | The quantity of the resource, available for the specified period. For non-discrete resources, this number can contain fractions. When several availability periods for a resource overlap, the total availability is the sum of all. `Required` `Default(1)` 
 | [DisplayText](General.Resources.ResourceAvailability.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FromDate](General.Resources.ResourceAvailability.md#fromdate) | date | The date from which availability starts. `Required` 
+| [FromDate](General.Resources.ResourceAvailability.md#fromdate) | date | The date from which availability starts. `Required` `Filter(ge;le)` 
 | [Id](General.Resources.ResourceAvailability.md#id) | guid |  
 | [ObjectVersion](General.Resources.ResourceAvailability.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ToDate](General.Resources.ResourceAvailability.md#todate) | date __nullable__ | The date to which the availability continues. When null, the availability continues infinitely. 
+| [ToDate](General.Resources.ResourceAvailability.md#todate) | date __nullable__ | The date to which the availability continues. When null, the availability continues infinitely. `Filter(ge;le)` 
 
 ## References
 
@@ -68,11 +68,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### FromDate
 
-The date from which availability starts. `Required`
+The date from which availability starts. `Required` `Filter(ge;le)`
 
 _Type_: **date**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -97,11 +97,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ToDate
 
-The date to which the availability continues. When null, the availability continues infinitely.
+The date to which the availability continues. When null, the availability continues infinitely. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

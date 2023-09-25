@@ -253,6 +253,12 @@ The date and time when the news article should appear to be published.
 |User Login|no|
 |Visible|yes|
 
+#### Publish_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Row_Version
 
 | Property | Value |

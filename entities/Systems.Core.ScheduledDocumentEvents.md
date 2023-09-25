@@ -26,12 +26,12 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Cancelled](Systems.Core.ScheduledDocumentEvents.md#cancelled) | boolean | When true, specifies that this document event has been cancelled (either manually or in respect to another event) and will not be executed. `Required` `Default(false)` `Filter(eq)` 
-| [CreationTime](Systems.Core.ScheduledDocumentEvents.md#creationtime) | datetime | Date and time when the ScheduledDocumentEvent was created. `Required` `Default(Now)` `ReadOnly` 
+| [CreationTime](Systems.Core.ScheduledDocumentEvents.md#creationtime) | datetime | Date and time when the ScheduledDocumentEvent was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` 
 | [DisplayText](Systems.Core.ScheduledDocumentEvents.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DocumentEvent](Systems.Core.ScheduledDocumentEvents.md#documentevent) | string (254) | The type of the document event that is scheduled to be processed. `Required` `ReadOnly` 
 | [Id](Systems.Core.ScheduledDocumentEvents.md#id) | guid |  
 | [LastProcessStatus](Systems.Core.ScheduledDocumentEvents.md#lastprocessstatus) | string (max) __nullable__ | Status/information of the last attemp to process the event. Usually shows the cause in case of failure. `ReadOnly` 
-| [LastProcessTime](Systems.Core.ScheduledDocumentEvents.md#lastprocesstime) | datetime __nullable__ | The time of the last attempt to process the event. `ReadOnly` 
+| [LastProcessTime](Systems.Core.ScheduledDocumentEvents.md#lastprocesstime) | datetime __nullable__ | The time of the last attempt to process the event. `Filter(ge;le)` `ReadOnly` 
 | [ObjectVersion](Systems.Core.ScheduledDocumentEvents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Processed](Systems.Core.ScheduledDocumentEvents.md#processed) | boolean | Indicates wheather the event is already processed or not. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [State](Systems.Core.ScheduledDocumentEvents.md#state) | [State](Systems.Core.ScheduledDocumentEvents.md#state) | The state of the document for which the event will be processed. `Required` `ReadOnly` 
@@ -59,11 +59,11 @@ _Show in UI_: **ShownByDefault**
 
 ### CreationTime
 
-Date and time when the ScheduledDocumentEvent was created. `Required` `Default(Now)` `ReadOnly`
+Date and time when the ScheduledDocumentEvent was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **HiddenByDefault**  
@@ -111,11 +111,11 @@ _Show in UI_: **ShownByDefault**
 
 ### LastProcessTime
 
-The time of the last attempt to process the event. `ReadOnly`
+The time of the last attempt to process the event. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

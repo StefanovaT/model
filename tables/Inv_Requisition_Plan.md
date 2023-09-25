@@ -102,6 +102,12 @@ The suggested by the program value equals Calendar_Date + Planning_Lead_Time_Day
 |User Login|no|
 |Visible|yes|
 
+#### Completion_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Confirm_Action
 
 
@@ -329,6 +335,12 @@ Indicates the date on which the plan is generated
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Generation_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Gross_Requirements
 
@@ -576,6 +588,12 @@ The suggested by the program value equals Calendar_Date; the release date of the
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Release_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Requisition_Plan_Item_Id
 

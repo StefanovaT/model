@@ -122,6 +122,12 @@ The exact timestamp of the comment
 |User Login|no|
 |Visible|yes|
 
+#### Comment_Timestamp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Document_Comment_Id
 
 | Property | Value |

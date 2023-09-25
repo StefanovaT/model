@@ -32,7 +32,7 @@ Aggregate Root:
 | [DisplayText](Crm.Distribution.SalesPersonTargetLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Distribution.SalesPersonTargetLines.md#id) | guid |  
 | [ObjectVersion](Crm.Distribution.SalesPersonTargetLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [PeriodDate](Crm.Distribution.SalesPersonTargetLines.md#perioddate) | datetime | Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `ReadOnly` 
+| [PeriodDate](Crm.Distribution.SalesPersonTargetLines.md#perioddate) | datetime | Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `Filter(ge;le)` `ReadOnly` 
 | [PeriodMonth](Crm.Distribution.SalesPersonTargetLines.md#periodmonth) | byte | Month of the period in which the target must be fulfilled (the period is determined by specifying a month and an year). `Required` `Filter(ge;le)` 
 | [PeriodYear](Crm.Distribution.SalesPersonTargetLines.md#periodyear) | int16 | Year of the period in which the target must be fulfilled (the period is determined by specifying a month and an year). `Required` `Filter(ge;le)` 
 | [TargetAmount](Crm.Distribution.SalesPersonTargetLines.md#targetamount) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | Target amount to be fulfilled by the specified sales person. Deprecated - use Target_Value. `Currency: TargetAmountCurrency` 
@@ -86,11 +86,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### PeriodDate
 
-Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `ReadOnly`
+Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

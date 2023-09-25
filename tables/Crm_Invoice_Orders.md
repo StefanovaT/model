@@ -68,6 +68,12 @@ Apply date to be passed to the invoice. When not NULL specifies that the VAT ent
 |User Login|no|
 |Visible|no|
 
+#### Apply_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Credit_Note_Description
 
 
@@ -276,6 +282,12 @@ Date, when the delivery was effected. When NULL = document date
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Delivery_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Document_Currency_Id
 
@@ -548,6 +560,12 @@ When not NULL specifies due date for the payment
 |User Login|no|
 |Visible|yes|
 
+#### Payment_Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Payment_Due_Start_Date
 
 
@@ -577,6 +595,12 @@ The date when the payment becomes due for documents with one installment.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Payment_Due_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Payment_Type_Description
 

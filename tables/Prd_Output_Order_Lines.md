@@ -74,6 +74,12 @@ Not used.
 |User Login|no|
 |Visible|no|
 
+#### Begin_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### End_Time
 
 
@@ -758,6 +764,12 @@ Sets the timestamp of the receipt store operations for this output order line. U
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Transaction_Timestamp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Work_Done_By_Party_Id
 

@@ -112,7 +112,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Core.ObjectFiles.html#creationtimeutc">CreationTimeUtc</a></td>
 <td>datetime</td>
-<td>Time (in UTC), when the file was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Introduced in version 20.1</code></td>
+<td>Time (in UTC), when the file was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ObjectFiles.html#displaytext">DisplayText</a></td>
@@ -147,7 +147,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Core.ObjectFiles.html#lastupdatetimeutc">LastUpdateTimeUtc</a></td>
 <td>datetime</td>
-<td>Time (in UTC), when the file was last updated. <code>Required</code> <code>Default(NowUtc)</code> <code>Introduced in version 20.1</code></td>
+<td>Time (in UTC), when the file was last updated. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ObjectFiles.html#linkedfilepath">LinkedFilePath</a></td>
@@ -252,10 +252,10 @@ Allowed values for the <code>ContentLocation</code>(Systems.Core.ObjectFiles.md#
 <em>Default Value</em>: <strong>Embedded</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
-<p>Time (in UTC), when the file was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Introduced in version 20.1</code></p>
+<p>Time (in UTC), when the file was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -303,10 +303,10 @@ Allowed values for the <code>ContentLocation</code>(Systems.Core.ObjectFiles.md#
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="lastupdatetimeutc">LastUpdateTimeUtc</h3>
-<p>Time (in UTC), when the file was last updated. <code>Required</code> <code>Default(NowUtc)</code> <code>Introduced in version 20.1</code></p>
+<p>Time (in UTC), when the file was last updated. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

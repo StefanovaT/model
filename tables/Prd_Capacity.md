@@ -56,6 +56,12 @@ End of availability period during Calendar_Date
 |User Login|no|
 |Visible|yes|
 
+#### Available_End_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Available_Quantity
 
 
@@ -115,6 +121,12 @@ Start of availability period during Calendar_Date
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Available_Start_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Calendar_Date
 

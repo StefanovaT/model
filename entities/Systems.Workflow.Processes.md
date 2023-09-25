@@ -27,7 +27,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreationTime](Systems.Workflow.Processes.md#creationtime) | datetime __nullable__ | Date and time when the Process was created. `ReadOnly` 
+| [CreationTime](Systems.Workflow.Processes.md#creationtime) | datetime __nullable__ | Date and time when the Process was created. `Filter(ge;le)` `ReadOnly` 
 | [CreationUser](Systems.Workflow.Processes.md#creationuser) | string (64) __nullable__ | Login name of the user, who created the Process. `ReadOnly` 
 | [DisplayText](Systems.Workflow.Processes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Workflow.Processes.md#id) | guid |  
@@ -40,7 +40,7 @@ Aggregate Tree
 | [StartEvent](Systems.Workflow.Processes.md#startevent) | string (3) __nullable__ | USR=User created; EML=Email receive (still not supported). null means that there is no starting event for this process. 
 | [StartRoleId](Systems.Workflow.Processes.md#startroleid) | guid __nullable__ | When Start_Event='USR' then specifies the role which the user must play in order to start the process. null when Start_Event&lt;&gt;'USR'. `Filter(multi eq)` 
 | [Thumbnail](Systems.Workflow.Processes.md#thumbnail) | byte[] __nullable__ | Contains the visual thumbnail of the presentation of the business process. It is stored in bitmap (BMP) format. 
-| [UpdateTime](Systems.Workflow.Processes.md#updatetime) | datetime __nullable__ | Date and time when the Process was last updated. `ReadOnly` 
+| [UpdateTime](Systems.Workflow.Processes.md#updatetime) | datetime __nullable__ | Date and time when the Process was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](Systems.Workflow.Processes.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Process. `ReadOnly` 
 
 
@@ -48,11 +48,11 @@ Aggregate Tree
 
 ### CreationTime
 
-Date and time when the Process was created. `ReadOnly`
+Date and time when the Process was created. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -183,11 +183,11 @@ _Show in UI_: **CannotBeShown**
 
 ### UpdateTime
 
-Date and time when the Process was last updated. `ReadOnly`
+Date and time when the Process was last updated. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

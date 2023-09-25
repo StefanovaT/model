@@ -30,14 +30,14 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Code](Finance.Assets.Assets.md#code) | string (20) | The unique code of the Asset. `Required` `Filter(eq;like)` `ORD` 
-| [DeploymentDate](Finance.Assets.Assets.md#deploymentdate) | datetime __nullable__ | Date, when the asset is first deployed. Null if the asset is not deployed yet. 
+| [DeploymentDate](Finance.Assets.Assets.md#deploymentdate) | datetime __nullable__ | Date, when the asset is first deployed. Null if the asset is not deployed yet. `Filter(ge;le)` 
 | [DisplayText](Finance.Assets.Assets.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Assets.Assets.md#id) | guid |  
 | [IsActive](Finance.Assets.Assets.md#isactive) | boolean | Checked if the assets is active and can be used in documents. The inactive assets can be used only for reports. `Required` `Default(true)` `Filter(eq)` 
 | [Name](Finance.Assets.Assets.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this Asset. `Required` `Filter(like)` 
 | [Notes](Finance.Assets.Assets.md#notes) | string (254) __nullable__ | Notes for this Asset. 
 | [ObjectVersion](Finance.Assets.Assets.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [PurchaseDate](Finance.Assets.Assets.md#purchasedate) | datetime | Original purchase date of the asset. `Required` 
+| [PurchaseDate](Finance.Assets.Assets.md#purchasedate) | datetime | Original purchase date of the asset. `Required` `Filter(ge;le)` 
 | [SerialNumber](Finance.Assets.Assets.md#serialnumber) | string (30) __nullable__ | Serial number of the asset. `Filter(eq)` 
 
 ## References
@@ -67,11 +67,11 @@ _Show in UI_: **ShownByDefault**
 
 ### DeploymentDate
 
-Date, when the asset is first deployed. Null if the asset is not deployed yet.
+Date, when the asset is first deployed. Null if the asset is not deployed yet. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -138,11 +138,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### PurchaseDate
 
-Original purchase date of the asset. `Required`
+Original purchase date of the asset. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

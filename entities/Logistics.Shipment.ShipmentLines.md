@@ -36,7 +36,7 @@ Aggregate Root:
 | [Id](Logistics.Shipment.ShipmentLines.md#id) | guid |  
 | [Lengthm](Logistics.Shipment.ShipmentLines.md#lengthm) | decimal (12, 3) __nullable__ | The length of the package in meters. null means unknown. 
 | [LineNo](Logistics.Shipment.ShipmentLines.md#lineno) | int32 | Line number, unique for the shipment. `Required` 
-| [LineRequiredDeliveryDate](Logistics.Shipment.ShipmentLines.md#linerequireddeliverydate) | datetime __nullable__ | Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly. 
+| [LineRequiredDeliveryDate](Logistics.Shipment.ShipmentLines.md#linerequireddeliverydate) | datetime __nullable__ | Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly. `Filter(ge;le)` 
 | [NetWeightkg](Logistics.Shipment.ShipmentLines.md#netweightkg) | decimal (12, 3) __nullable__ | The net weight of the entire batch of goods in kilograms. null means unknown. 
 | [Notes](Logistics.Shipment.ShipmentLines.md#notes) | string (max) __nullable__ | Specific notes for this line. 
 | [ObjectVersion](Logistics.Shipment.ShipmentLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -165,11 +165,11 @@ _Front-End Recalc Expressions:_
 `( obj.Shipment.Lines.Select( c => c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)`
 ### LineRequiredDeliveryDate
 
-Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly.
+Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

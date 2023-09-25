@@ -152,7 +152,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationLines.html#transactiontimestamp">TransactionTimestamp</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Exact time when the transaction occurred.</td>
+<td>Exact time when the transaction occurred. <code>Filter(ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -301,10 +301,10 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h3 id="transactiontimestamp">TransactionTimestamp</h3>
-<p>Exact time when the transaction occurred.</p>
+<p>Exact time when the transaction occurred. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

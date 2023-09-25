@@ -157,6 +157,12 @@ Explicitly specified payment due date. Must be filled if and only if Due_Date_Fo
 |User Login|no|
 |Visible|yes|
 
+#### Explicit_Payment_Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Explicit_Payment_Due_Start_Date
 
 
@@ -186,6 +192,12 @@ Explicitly specified date on which the payment becomes executable. Can be specif
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Explicit_Payment_Due_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Installment_Number
 

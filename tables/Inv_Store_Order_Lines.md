@@ -852,6 +852,12 @@ Exact time when the transaction for this store order line changes the cost of th
 |User Login|no|
 |Visible|no|
 
+#### Transaction_Timestamp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Unit_Cost
 
 

@@ -32,7 +32,7 @@ Aggregate Tree
 | [LastMaintenanceTripCount](Applications.Fleet.VehicleMaintenancePlanAssignments.md#lastmaintenancetripcount) | int32 __nullable__ | The trip count of the vehicle, when the last maintenance of this type occurred. Should be specified for plans, which trip count check. 
 | [Notes](Applications.Fleet.VehicleMaintenancePlanAssignments.md#notes) | string (max) __nullable__ | Notes for this VehicleMaintenance<br />PlanAssignment. 
 | [ObjectVersion](Applications.Fleet.VehicleMaintenancePlanAssignments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StartingDate](Applications.Fleet.VehicleMaintenancePlanAssignments.md#startingdate) | date | The date on which the periodic maintenance should start. `Required` 
+| [StartingDate](Applications.Fleet.VehicleMaintenancePlanAssignments.md#startingdate) | date | The date on which the periodic maintenance should start. `Required` `Filter(ge;le)` 
 
 ## References
 
@@ -117,11 +117,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### StartingDate
 
-The date on which the periodic maintenance should start. `Required`
+The date on which the periodic maintenance should start. `Required` `Filter(ge;le)`
 
 _Type_: **date**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

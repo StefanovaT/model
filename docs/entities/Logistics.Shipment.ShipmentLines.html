@@ -152,7 +152,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Shipment.ShipmentLines.html#linerequireddeliverydate">LineRequiredDeliveryDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly.</td>
+<td>Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.ShipmentLines.html#netweightkg">NetWeightkg</a></td>
@@ -340,10 +340,10 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>( obj.Shipment.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
 <h3 id="linerequireddeliverydate">LineRequiredDeliveryDate</h3>
-<p>Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly.</p>
+<p>Required delivery date for this lines. Depending on the shipment route travel time, the shipment should be released accordingly. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>

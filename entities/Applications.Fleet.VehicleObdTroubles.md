@@ -33,7 +33,7 @@ Aggregate Tree
 | [Id](Applications.Fleet.VehicleObdTroubles.md#id) | guid |  
 | [ManufacturerTroubleCode](Applications.Fleet.VehicleObdTroubles.md#manufacturertroublecode) | string (16) __nullable__ | Non-standard manufacturer-specific trouble code. null when it is not available. 
 | [ObjectVersion](Applications.Fleet.VehicleObdTroubles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [OccurenceDateTime](Applications.Fleet.VehicleObdTroubles.md#occurencedatetime) | datetime | Date and time (UTC) when the trouble was detected. `Required` 
+| [OccurenceDateTime](Applications.Fleet.VehicleObdTroubles.md#occurencedatetime) | datetime | Date and time (UTC) when the trouble was detected. `Required` `Filter(ge;le)` 
 
 ## References
 
@@ -108,11 +108,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### OccurenceDateTime
 
-Date and time (UTC) when the trouble was detected. `Required`
+Date and time (UTC) when the trouble was detected. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

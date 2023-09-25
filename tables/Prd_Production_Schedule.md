@@ -154,6 +154,12 @@ The date, when the item should be ready for shipment
 |User Login|no|
 |Visible|yes|
 
+#### Need_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Notes
 
 
@@ -210,6 +216,12 @@ Short note from the scheduler
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Order_Date_Temp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Order_Number_Temp
 

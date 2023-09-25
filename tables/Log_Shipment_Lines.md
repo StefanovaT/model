@@ -294,6 +294,12 @@ Required delivery date for this lines. Depending on the shipment route travel ti
 |User Login|no|
 |Visible|no|
 
+#### Line_Required_Delivery_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Lot_Id
 
 

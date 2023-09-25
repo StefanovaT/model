@@ -132,7 +132,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Contacts.ActivityTemplates.html#remindertime">ReminderTime</a></td>
 <td>time <strong>nullable</strong></td>
-<td>Time of the day for the reminder.</td>
+<td>Time of the day for the reminder. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.ActivityTemplates.html#sourcedatefield">SourceDateField</a></td>
@@ -142,7 +142,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Contacts.ActivityTemplates.html#starttime">StartTime</a></td>
 <td>time</td>
-<td>The time of the day when the activity starts. <code>Required</code></td>
+<td>The time of the day when the activity starts. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -207,10 +207,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="remindertime">ReminderTime</h3>
-<p>Time of the day for the reminder.</p>
+<p>Time of the day for the reminder. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>time <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -224,10 +224,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="starttime">StartTime</h3>
-<p>The time of the day when the activity starts. <code>Required</code></p>
+<p>The time of the day when the activity starts. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>time</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

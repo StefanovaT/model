@@ -33,7 +33,7 @@ Aggregate Root:
 | [HistoricalDataJson](Crm.Sales.SalesOrderLines.md#historicaldatajson) | string (max) __nullable__ | Used only for lines, which are returns. It is a JSON-formatted string, containing data from the original sale. `Introduced in version 19.1` 
 | [HistoricalUnitCost](Crm.Sales.SalesOrderLines.md#historicalunitcost) | [Amount (14, 5)](../data-types.md#amount) __nullable__ | Used for returning of goods that are sold before the exploitation of the system. `Currency: SalesOrder.DocumentCurrency` `Filter(eq;ge;le)` 
 | [Id](Crm.Sales.SalesOrderLines.md#id) | guid |  
-| [IntrastatApplyDate](Crm.Sales.SalesOrderLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83` 
+| [IntrastatApplyDate](Crm.Sales.SalesOrderLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Filter(ge;le)` `Introduced in version 21.1.3.83` 
 | [IntrastatTransaction<br />NatureCode](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
 | [IntrastatTransportModeCode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) | [TransportMode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) __nullable__ | Transport mode; used for Intrastat reporting. 
 | [Level1DiscountPercent](Crm.Sales.SalesOrderLines.md#level1discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56` 
@@ -41,10 +41,10 @@ Aggregate Root:
 | [Level3DiscountPercent](Crm.Sales.SalesOrderLines.md#level3discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
 | [LineAmount](Crm.Sales.SalesOrderLines.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)` 
 | [LineCustomDiscountPercent](Crm.Sales.SalesOrderLines.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)` 
-| [LineFromDate](Crm.Sales.SalesOrderLines.md#linefromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
+| [LineFromDate](Crm.Sales.SalesOrderLines.md#linefromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1` 
 | [LineNo](Crm.Sales.SalesOrderLines.md#lineno) | int32 | Consecutive number of the line within the sales order. `Required` `Filter(eq)` `ORD` 
 | [LineStandardDiscount<br />Percent](Crm.Sales.SalesOrderLines.md#linestandarddiscountpercent) | decimal (7, 6) | Standard discount percent for the line. It is calculated by accumulating in cascade the line discounts at all levels. `Required` `Default(0)` `ReadOnly` 
-| [LineToDate](Crm.Sales.SalesOrderLines.md#linetodate) | date __nullable__ | When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
+| [LineToDate](Crm.Sales.SalesOrderLines.md#linetodate) | date __nullable__ | When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1` 
 | [Notes](Crm.Sales.SalesOrderLines.md#notes) | string (max) __nullable__ | Notes for this SalesOrderLine. 
 | [ObjectVersion](Crm.Sales.SalesOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineNo](Crm.Sales.SalesOrderLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. `Filter(eq)` 
@@ -176,11 +176,11 @@ _Show in UI_: **CannotBeShown**
 
 ### IntrastatApplyDate
 
-Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Introduced in version 21.1.3.83`
+Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Filter(ge;le)` `Introduced in version 21.1.3.83`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -318,11 +318,11 @@ _Show in UI_: **ShownByDefault**
 
 ### LineFromDate
 
-When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1`
+When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -364,11 +364,11 @@ _Front-End Recalc Expressions:_
 `obj.DetermineLineStandardDiscountPercent( obj.Product, obj.LineDiscount, obj.BonusProgram, obj.PromotionalPackage, obj.ReturnForSalesOrderLine, obj.Level1Discount, obj.Level2Discount, obj.Level3Discount)`
 ### LineToDate
 
-When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1`
+When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

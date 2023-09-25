@@ -85,6 +85,12 @@ The date from which availability starts.
 |User Login|no|
 |Visible|yes|
 
+#### From_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Resource_Availability_Id
 
 | Property | Value |
@@ -211,5 +217,11 @@ The date to which the availability continues. When NULL, the availability contin
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### To_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

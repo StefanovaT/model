@@ -51,6 +51,12 @@ The exact server time (in UTC), when the reaction was created.
 |User Login|no|
 |Visible|yes|
 
+#### Creation_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Data_Object_Id
 
 

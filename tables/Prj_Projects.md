@@ -170,6 +170,7 @@ The drop dead date of the project, e.g. the date when the project should be fini
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Notes
 
@@ -476,5 +477,6 @@ Expected date, when the execution of the tasks will start. NULL means that the s
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 
 

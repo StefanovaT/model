@@ -29,7 +29,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreateDate](Projects.Classic.ProjectRisks.md#createdate) | date | The creation date of the project risk. `Required` `Default(Now)` `Filter(eq)` 
+| [CreateDate](Projects.Classic.ProjectRisks.md#createdate) | date | The creation date of the project risk. `Required` `Default(Now)` `Filter(eq;ge;le)` 
 | [Description](Projects.Classic.ProjectRisks.md#description) | string (max) __nullable__ | The description of this ProjectRisk. `Filter(like)` 
 | [DisplayText](Projects.Classic.ProjectRisks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Classic.ProjectRisks.md#id) | guid |  
@@ -38,7 +38,7 @@ Aggregate Root:
 | [ProbabilityPercent](Projects.Classic.ProjectRisks.md#probabilitypercent) | decimal (3, 2) | The probability of the risk occurring. `Required` `Default(0)` 
 | [ResolutionStrategy](Projects.Classic.ProjectRisks.md#resolutionstrategy) | string (max) __nullable__ | The strategy chosen to handle the risk. `Filter(eq)` 
 | [Resolved](Projects.Classic.ProjectRisks.md#resolved) | boolean | True if the risk is resolved. `Required` `Default(false)` `Filter(eq)` 
-| [ResolveDate](Projects.Classic.ProjectRisks.md#resolvedate) | date __nullable__ | The date on which the risk is resolved. `Filter(eq)` 
+| [ResolveDate](Projects.Classic.ProjectRisks.md#resolvedate) | date __nullable__ | The date on which the risk is resolved. `Filter(eq;ge;le)` 
 | [RiskName](Projects.Classic.ProjectRisks.md#riskname) | string (254) | The short name of the risk. `Required` `Filter(multi eq)` 
 
 ## References
@@ -59,11 +59,11 @@ Aggregate Root:
 
 ### CreateDate
 
-The creation date of the project risk. `Required` `Default(Now)` `Filter(eq)`
+The creation date of the project risk. `Required` `Default(Now)` `Filter(eq;ge;le)`
 
 _Type_: **date**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
@@ -154,11 +154,11 @@ _Show in UI_: **ShownByDefault**
 
 ### ResolveDate
 
-The date on which the risk is resolved. `Filter(eq)`
+The date on which the risk is resolved. `Filter(eq;ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

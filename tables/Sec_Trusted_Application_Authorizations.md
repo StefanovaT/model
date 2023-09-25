@@ -95,6 +95,12 @@ The time (in UTC) when the authorization was granted.
 |User Login|no|
 |Visible|yes|
 
+#### Grant_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Granting_User_Id
 
 
@@ -316,6 +322,12 @@ The start of the validitiy of the authorization. NULL means that there is no res
 |User Login|no|
 |Visible|yes|
 
+#### Valid_From_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Valid_Until_Utc
 
 
@@ -345,5 +357,11 @@ The time (in UTC) when the grant expires. NULL means that there is no time restr
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Valid_Until_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

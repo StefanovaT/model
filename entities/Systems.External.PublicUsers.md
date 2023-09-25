@@ -39,7 +39,7 @@ Aggregate Tree
 | [City](Systems.External.PublicUsers.md#city) | string (64) __nullable__ | The state of residence of the user. Can be specified with latin or local letters. `Filter(like)` 
 | [CompanyName](Systems.External.PublicUsers.md#companyname) | string (64) __nullable__ | The name of the company, for which the user works, as specified by the user. `Filter(like)` 
 | [Country](Systems.External.PublicUsers.md#country) | string (64) __nullable__ | The country of residence of the user, with latin letters. `Filter(like)` 
-| [CreatedOn](Systems.External.PublicUsers.md#createdon) | datetime __nullable__ | The date and time when the user was created. `Default(Now)` 
+| [CreatedOn](Systems.External.PublicUsers.md#createdon) | datetime __nullable__ | The date and time when the user was created. `Default(Now)` `Filter(ge;le)` 
 | [DisplayText](Systems.External.PublicUsers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Email](Systems.External.PublicUsers.md#email) | string (64) | The primary email of the user. Used for notifications and password restore. `Required` `Filter(like)` 
 | [FirstName](Systems.External.PublicUsers.md#firstname) | string (64) | First name of the user. `Required` `Filter(like)` 
@@ -51,7 +51,7 @@ Aggregate Tree
 | [PasswordAlgorithm](Systems.External.PublicUsers.md#passwordalgorithm) | string (16) | Uniquely specifies the password storage algorithm among some system recognized algorithms. Usually specifies the hashing and the stretching functions. For example, 'PBKDF2-SHA1'. `Required` `Filter(like)` 
 | [PasswordHash](Systems.External.PublicUsers.md#passwordhash) | string (128) | Actual password storage. The format of the contents is determined by Password Algorithm. `Required` `Filter(like)` 
 | [PasswordRecoveryCode](Systems.External.PublicUsers.md#passwordrecoverycode) | guid __nullable__ | Automatically generated unique code for the last password recovery attempt. `Filter(multi eq)` `ReadOnly` 
-| [PasswordRecovery<br />CreationTime](Systems.External.PublicUsers.md#passwordrecoverycreationtime) | datetime __nullable__ | Date and time when the last password recovery code was created. `ReadOnly` 
+| [PasswordRecovery<br />CreationTime](Systems.External.PublicUsers.md#passwordrecoverycreationtime) | datetime __nullable__ | Date and time when the last password recovery code was created. `Filter(ge;le)` `ReadOnly` 
 | [PhoneNumber](Systems.External.PublicUsers.md#phonenumber) | string (16) __nullable__ | The primary phone number of the user. `Filter(like)` 
 | [PostalCode](Systems.External.PublicUsers.md#postalcode) | string (16) __nullable__ | The postal code of the default address of the user. `Filter(like)` 
 | [ProfilePicture](Systems.External.PublicUsers.md#profilepicture) | byte[] __nullable__ | Profile picture of the user. 
@@ -63,7 +63,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Company](Systems.External.PublicUsers.md#company) | [Companies](General.Contacts.Companies.md) (nullable) | Link to an internal company record, specified by internal employee. `Filter(multi eq)` |
 | [Person](Systems.External.PublicUsers.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | Link to an internal person record. Usually specified by internal employee, but can also be an automated process. `Filter(multi eq)` |
-| [<s>PublicUserList</s>](Systems.External.PublicUsers.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) | **OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.13` `Obsolete` |
+| [<s>PublicUserList</s>](Systems.External.PublicUsers.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) | **OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.17` `Obsolete` |
 
 
 ## Attribute Details
@@ -136,11 +136,11 @@ _Show in UI_: **ShownByDefault**
 
 ### CreatedOn
 
-The date and time when the user was created. `Default(Now)`
+The date and time when the user was created. `Default(Now)` `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
@@ -262,11 +262,11 @@ _Show in UI_: **ShownByDefault**
 
 ### PasswordRecoveryCreationTime
 
-Date and time when the last password recovery code was created. `ReadOnly`
+Date and time when the last password recovery code was created. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -336,7 +336,7 @@ _Show in UI_: **ShownByDefault**
 
 ### PublicUserList
 
-**OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.13` `Obsolete`
+**OBSOLETE! Do not use!** The list in which the user account is saved. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.17` `Obsolete`
 
 _Type_: **[PublicUserLists](Systems.External.PublicUserLists.md)**  
 _Category_: **System**  

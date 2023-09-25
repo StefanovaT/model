@@ -143,6 +143,12 @@ The number of days that will be added to the date in the Header_Date_Field. The 
 |User Login|no|
 |Visible|yes|
 
+#### Reminder_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Responsible_Party_Id
 
 
@@ -300,5 +306,11 @@ The time of the day when the activity starts
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Start_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

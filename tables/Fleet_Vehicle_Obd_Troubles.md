@@ -140,6 +140,12 @@ Date and time (UTC) when the trouble was detected.
 |User Login|no|
 |Visible|yes|
 
+#### Occurence_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Vehicle_Id
 
 

@@ -127,7 +127,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.EnterpriseCompanies.html#bistartdate">BIStartDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Defines the period for which BI extracts data. BI includes documents with &quot;Document Date&quot; greater than or equal to &quot;BI Start Date&quot;. <code>Filter(eq)</code> <code>Introduced in version 18.2</code></td>
+<td>Defines the period for which BI extracts data. BI includes documents with &quot;Document Date&quot; greater than or equal to &quot;BI Start Date&quot;. <code>Filter(eq;ge;le)</code> <code>Introduced in version 18.2</code></td>
 </tr>
 <tr>
 <td><a href="General.EnterpriseCompanies.html#defaultcostingmethod">DefaultCostingMethod</a></td>
@@ -152,7 +152,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.EnterpriseCompanies.html#editperiodstartdate">EditPeriodStartDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Start date of the priod when the documents can be edited.</td>
+<td>Start date of the priod when the documents can be edited. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="General.EnterpriseCompanies.html#id">Id</a></td>
@@ -267,10 +267,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="bistartdate">BIStartDate</h3>
-<p>Defines the period for which BI extracts data. BI includes documents with &quot;Document Date&quot; greater than or equal to &quot;BI Start Date&quot;. <code>Filter(eq)</code> <code>Introduced in version 18.2</code></p>
+<p>Defines the period for which BI extracts data. BI includes documents with &quot;Document Date&quot; greater than or equal to &quot;BI Start Date&quot;. <code>Filter(eq;ge;le)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="defaultcostingmethod">DefaultCostingMethod</h3>
@@ -348,10 +348,10 @@ Allowed values for the <code>DefaultLanguage</code>(General.EnterpriseCompanies.
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="editperiodstartdate">EditPeriodStartDate</h3>
-<p>Start date of the priod when the documents can be edited.</p>
+<p>Start date of the priod when the documents can be edited. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>

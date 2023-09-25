@@ -119,7 +119,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Marketing.Campaigns.html#enddate">EndDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>End date of the campaign. null means that the end date is still unknown.</td>
+<td>End date of the campaign. null means that the end date is still unknown. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Marketing.Campaigns.html#forecastedcost">ForecastedCost</a></td>
@@ -144,7 +144,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Marketing.Campaigns.html#startdate">StartDate</a></td>
 <td>datetime</td>
-<td>Starting date of the campaign. <code>Required</code> <code>Default(Today)</code></td>
+<td>Starting date of the campaign. <code>Required</code> <code>Default(Today)</code> <code>Filter(ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -165,10 +165,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="enddate">EndDate</h3>
-<p>End date of the campaign. null means that the end date is still unknown.</p>
+<p>End date of the campaign. null means that the end date is still unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="forecastedcost">ForecastedCost</h3>
@@ -203,10 +203,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="startdate">StartDate</h3>
-<p>Starting date of the campaign. <code>Required</code> <code>Default(Today)</code></p>
+<p>Starting date of the campaign. <code>Required</code> <code>Default(Today)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDate</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

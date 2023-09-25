@@ -39,10 +39,10 @@ Aggregate Root:
 | [IsAmountWithVAT](Finance.Payments.BulkPaymentOrderLines.md#isamountwithvat) | boolean | Is_Amount_With_VAT=true if the requested amount includes VAT. `Required` `Default(true)` `Filter(eq)` 
 | [Notes](Finance.Payments.BulkPaymentOrderLines.md#notes) | string (254) __nullable__ | Notes for this BulkPaymentOrderLine. 
 | [ObjectVersion](Finance.Payments.BulkPaymentOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [RefDocumentDate](Finance.Payments.BulkPaymentOrderLines.md#refdocumentdate) | datetime __nullable__ | The date of the base document. null means that it is unknown. 
+| [RefDocumentDate](Finance.Payments.BulkPaymentOrderLines.md#refdocumentdate) | datetime __nullable__ | The date of the base document. null means that it is unknown. `Filter(ge;le)` 
 | [RefDocumentNo](Finance.Payments.BulkPaymentOrderLines.md#refdocumentno) | string (20) | The number of the document which is the basis for the payment. `Required` 
-| [RefInvoiceApplyDate](Finance.Payments.BulkPaymentOrderLines.md#refinvoiceapplydate) | datetime __nullable__ | The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown. 
-| [RefInvoiceDocumentDate](Finance.Payments.BulkPaymentOrderLines.md#refinvoicedocumentdate) | datetime __nullable__ | The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown. 
+| [RefInvoiceApplyDate](Finance.Payments.BulkPaymentOrderLines.md#refinvoiceapplydate) | datetime __nullable__ | The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown. `Filter(ge;le)` 
+| [RefInvoiceDocumentDate](Finance.Payments.BulkPaymentOrderLines.md#refinvoicedocumentdate) | datetime __nullable__ | The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown. `Filter(ge;le)` 
 | [RefInvoiceDocumentNo](Finance.Payments.BulkPaymentOrderLines.md#refinvoicedocumentno) | string (20) __nullable__ | The number of the invoice which is related and is the basis for the payment. null means that the payment order isn't created or related to any invoice. 
 | [TotalAmount](Finance.Payments.BulkPaymentOrderLines.md#totalamount) | [Amount (18, 2)](../data-types.md#amount) | Total amount that should be payed. `Currency: TotalAmountCurrency` `Required` `Default(0)` 
 
@@ -183,11 +183,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### RefDocumentDate
 
-The date of the base document. null means that it is unknown.
+The date of the base document. null means that it is unknown. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -204,21 +204,21 @@ _Show in UI_: **ShownByDefault**
 
 ### RefInvoiceApplyDate
 
-The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown.
+The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### RefInvoiceDocumentDate
 
-The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown.
+The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

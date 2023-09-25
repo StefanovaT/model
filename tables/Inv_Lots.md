@@ -260,6 +260,12 @@ When the lot was created in an excise controlled environment, specifies the meas
 |User Login|no|
 |Visible|yes|
 
+#### Expiry_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### License_No
 
 
@@ -495,6 +501,12 @@ The date of the first receipt of products in this lot.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Receipt_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Receipt_Store_Transaction_Id
 

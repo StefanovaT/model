@@ -92,6 +92,12 @@ The date on which the asset is assigned to the location.
 |User Login|no|
 |Visible|yes|
 
+#### From_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Managed_Asset_Id
 
 

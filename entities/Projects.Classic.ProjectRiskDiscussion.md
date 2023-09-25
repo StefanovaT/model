@@ -29,10 +29,10 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ContributionTime](Projects.Classic.ProjectRiskDiscussion.md#contributiontime) | datetime | The time, when the message was contributed. `Required` `Default(Now)` `Filter(eq)` `ReadOnly` 
+| [ContributionTime](Projects.Classic.ProjectRiskDiscussion.md#contributiontime) | datetime | The time, when the message was contributed. `Required` `Default(Now)` `Filter(eq;ge;le)` `ReadOnly` 
 | [DisplayText](Projects.Classic.ProjectRiskDiscussion.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Classic.ProjectRiskDiscussion.md#id) | guid |  
-| [LastEditTime](Projects.Classic.ProjectRiskDiscussion.md#lastedittime) | datetime __nullable__ | Contains the last edit time of the message. null if the message was never edited. `Filter(eq)` `ReadOnly` 
+| [LastEditTime](Projects.Classic.ProjectRiskDiscussion.md#lastedittime) | datetime __nullable__ | Contains the last edit time of the message. null if the message was never edited. `Filter(eq;ge;le)` `ReadOnly` 
 | [Message](Projects.Classic.ProjectRiskDiscussion.md#message) | string (max) | The contents of the message. `Required` 
 | [ObjectVersion](Projects.Classic.ProjectRiskDiscussion.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
@@ -48,11 +48,11 @@ Aggregate Root:
 
 ### ContributionTime
 
-The time, when the message was contributed. `Required` `Default(Now)` `Filter(eq)` `ReadOnly`
+The time, when the message was contributed. `Required` `Default(Now)` `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
@@ -78,11 +78,11 @@ _Show in UI_: **CannotBeShown**
 
 ### LastEditTime
 
-Contains the last edit time of the message. null if the message was never edited. `Filter(eq)` `ReadOnly`
+Contains the last edit time of the message. null if the message was never edited. `Filter(eq;ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

@@ -109,7 +109,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Classic.ProjectRisks.html#createdate">CreateDate</a></td>
 <td>date</td>
-<td>The creation date of the project risk. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq)</code></td>
+<td>The creation date of the project risk. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.ProjectRisks.html#description">Description</a></td>
@@ -154,7 +154,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Classic.ProjectRisks.html#resolvedate">ResolveDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>The date on which the risk is resolved. <code>Filter(eq)</code></td>
+<td>The date on which the risk is resolved. <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.ProjectRisks.html#riskname">RiskName</a></td>
@@ -204,10 +204,10 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="createdate">CreateDate</h3>
-<p>The creation date of the project risk. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq)</code></p>
+<p>The creation date of the project risk. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -273,10 +273,10 @@ Aggregate Root:<br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="resolvedate">ResolveDate</h3>
-<p>The date on which the risk is resolved. <code>Filter(eq)</code></p>
+<p>The date on which the risk is resolved. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="riskname">RiskName</h3>

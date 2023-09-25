@@ -162,6 +162,12 @@ The date from which to start looking for transactions, needing cost correction. 
 |User Login|no|
 |Visible|yes|
 
+#### From_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Is_Released
 
 
@@ -357,5 +363,11 @@ The date at which to stop looking for transactions, needing cost correction. It 
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Thru_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

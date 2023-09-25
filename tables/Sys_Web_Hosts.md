@@ -88,6 +88,7 @@ The expiry date of the certificate. Can be used to track the expiration of the w
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|yes|
 
 ### Certificate_Original_Filename
 

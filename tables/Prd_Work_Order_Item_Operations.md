@@ -70,6 +70,12 @@ The date/time when the operation has completed. NULL means that the operation is
 |User Login|no|
 |Visible|yes|
 
+#### Actual_End_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Actual_Start_Date_Time
 
 
@@ -99,6 +105,12 @@ The date/time when the operation has started. NULL means that the has not starte
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Actual_Start_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Id
 
@@ -414,6 +426,12 @@ The date/time when the operation is scheduled to complete. NULL means that there
 |User Login|no|
 |Visible|yes|
 
+#### Scheduled_End_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Scheduled_Start_Date_Time
 
 
@@ -443,6 +461,12 @@ The date/time when the operation is planned to start. NULL means that there is s
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Scheduled_Start_Date_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Scrap_Rate
 

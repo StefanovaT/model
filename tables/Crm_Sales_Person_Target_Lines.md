@@ -101,6 +101,12 @@ Calculated date representation of the target period (used for grouping, filterin
 |User Login|no|
 |Visible|yes|
 
+#### Period_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Period_Month
 
 

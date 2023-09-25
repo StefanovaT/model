@@ -29,8 +29,8 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ActiveFrom](Applications.Fleet.Vehicles.md#activefrom) | datetime __nullable__ | The date and time, when the vehicle has been purchased or started to be managed. Null when the date and time are unknown. `Introduced in version 18.2` 
-| [ActiveTill](Applications.Fleet.Vehicles.md#activetill) | datetime __nullable__ | The date and time, when the vehicle has been sold or has stopped being managed. Null when the date and time are unknown. `Introduced in version 18.2` 
+| [ActiveFrom](Applications.Fleet.Vehicles.md#activefrom) | datetime __nullable__ | The date and time, when the vehicle has been purchased or started to be managed. Null when the date and time are unknown. `Filter(ge;le)` `Introduced in version 18.2` 
+| [ActiveTill](Applications.Fleet.Vehicles.md#activetill) | datetime __nullable__ | The date and time, when the vehicle has been sold or has stopped being managed. Null when the date and time are unknown. `Filter(ge;le)` `Introduced in version 18.2` 
 | [AuthorityMaximum<br />LadenMassKg](Applications.Fleet.Vehicles.md#authoritymaximumladenmasskg) | int32 __nullable__ | Maximum permissible laden mass, as determined by the registration authority. 
 | [CrewCount](Applications.Fleet.Vehicles.md#crewcount) | int32 __nullable__ | Crew members count. For road vehicles = 1; for trailers, coaches and wagons =0; air and water vehicles may have higher counts. `Default(1)` `Filter(eq;ge;le)` 
 | [DisplayText](Applications.Fleet.Vehicles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
@@ -80,21 +80,21 @@ Aggregate Tree
 
 ### ActiveFrom
 
-The date and time, when the vehicle has been purchased or started to be managed. Null when the date and time are unknown. `Introduced in version 18.2`
+The date and time, when the vehicle has been purchased or started to be managed. Null when the date and time are unknown. `Filter(ge;le)` `Introduced in version 18.2`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### ActiveTill
 
-The date and time, when the vehicle has been sold or has stopped being managed. Null when the date and time are unknown. `Introduced in version 18.2`
+The date and time, when the vehicle has been sold or has stopped being managed. Null when the date and time are unknown. `Filter(ge;le)` `Introduced in version 18.2`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

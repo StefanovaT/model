@@ -127,7 +127,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Offers.html#acceptedon">AcceptedOn</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown.</td>
+<td>The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Offers.html#adjustmentnumber">AdjustmentNumber</a></td>
@@ -137,7 +137,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Offers.html#adjustmenttime">AdjustmentTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Offers.html#adjustmentuser">AdjustmentUser</a></td>
@@ -222,7 +222,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Offers.html#paymentduedate">PaymentDueDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The last term for payment.</td>
+<td>The last term for payment. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Offers.html#planningonly">PlanningOnly</a></td>
@@ -252,7 +252,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Offers.html#requireddeliverydate">RequiredDeliveryDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null.</td>
+<td>When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Offers.html#state">State</a></td>
@@ -277,7 +277,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Offers.html#voidtime">VoidTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Offers.html#voiduser">VoidUser</a></td>
@@ -502,10 +502,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="acceptedon">AcceptedOn</h3>
-<p>The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown.</p>
+<p>The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="adjustmentnumber">AdjustmentNumber</h3>
@@ -517,10 +517,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmenttime">AdjustmentTime</h3>
-<p>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmentuser">AdjustmentUser</h3>
@@ -674,10 +674,10 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="paymentduedate">PaymentDueDate</h3>
-<p>The last term for payment.</p>
+<p>The last term for payment. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -722,10 +722,10 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="requireddeliverydate">RequiredDeliveryDate</h3>
-<p>When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null.</p>
+<p>When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -804,10 +804,10 @@ Enumeration of document system states<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidtime">VoidTime</h3>
-<p>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voiduser">VoidUser</h3>

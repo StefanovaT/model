@@ -112,7 +112,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.RequisitionPlan.html#completiondate">CompletionDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The suggested by the program value equals Calendar_Date + Planning_Lead_Time_Days of the default product supply for this store; the completion date of the purchase orders to be generated.</td>
+<td>The suggested by the program value equals Calendar_Date + Planning_Lead_Time_Days of the default product supply for this store; the completion date of the purchase orders to be generated. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.RequisitionPlan.html#confirmaction">ConfirmAction</a></td>
@@ -142,7 +142,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.RequisitionPlan.html#generationdate">GenerationDate</a></td>
 <td>datetime</td>
-<td>Indicates the date on which the plan is generated. <code>Required</code> <code>Default(Now)</code></td>
+<td>Indicates the date on which the plan is generated. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.RequisitionPlan.html#grossrequirements">GrossRequirements</a></td>
@@ -187,7 +187,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.RequisitionPlan.html#releasedate">ReleaseDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The suggested by the program value equals Calendar_Date; the release date of the purchase orders to be generated.</td>
+<td>The suggested by the program value equals Calendar_Date; the release date of the purchase orders to be generated. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.RequisitionPlan.html#scheduledreceipts">ScheduledReceipts</a></td>
@@ -242,10 +242,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="completiondate">CompletionDate</h3>
-<p>The suggested by the program value equals Calendar_Date + Planning_Lead_Time_Days of the default product supply for this store; the completion date of the purchase orders to be generated.</p>
+<p>The suggested by the program value equals Calendar_Date + Planning_Lead_Time_Days of the default product supply for this store; the completion date of the purchase orders to be generated. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="confirmaction">ConfirmAction</h3>
@@ -288,10 +288,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="generationdate">GenerationDate</h3>
-<p>Indicates the date on which the plan is generated. <code>Required</code> <code>Default(Now)</code></p>
+<p>Indicates the date on which the plan is generated. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
@@ -357,10 +357,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="releasedate">ReleaseDate</h3>
-<p>The suggested by the program value equals Calendar_Date; the release date of the purchase orders to be generated.</p>
+<p>The suggested by the program value equals Calendar_Date; the release date of the purchase orders to be generated. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="scheduledreceipts">ScheduledReceipts</h3>

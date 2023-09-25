@@ -25,7 +25,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreationTimeUtc](Communities.Social.Reactions.md#creationtimeutc) | datetime | The exact server time (in UTC), when the reaction was created. `Required` `Default(NowUtc)` 
+| [CreationTimeUtc](Communities.Social.Reactions.md#creationtimeutc) | datetime | The exact server time (in UTC), when the reaction was created. `Required` `Default(NowUtc)` `Filter(ge;le)` 
 | [DisplayText](Communities.Social.Reactions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.Social.Reactions.md#id) | guid |  
 | [ObjectVersion](Communities.Social.Reactions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -44,11 +44,11 @@ Aggregate Tree
 
 ### CreationTimeUtc
 
-The exact server time (in UTC), when the reaction was created. `Required` `Default(NowUtc)`
+The exact server time (in UTC), when the reaction was created. `Required` `Default(NowUtc)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  

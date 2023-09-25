@@ -735,6 +735,12 @@ Date, when the delivery is required. Alternative to Delivery Term Days. When NUL
 |User Login|no|
 |Visible|no|
 
+#### Required_Delivery_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Row_Version
 
 | Property | Value |

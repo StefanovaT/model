@@ -41,7 +41,7 @@ Aggregate Tree
 | [OrderMinimum](General.Products.ProductSupply.md#orderminimum) | [Quantity (18, 3)](../data-types.md#quantity) | Minimum order quantity both for buying and making. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(eq;ge;le)` 
 | [OrderMultiple](General.Products.ProductSupply.md#ordermultiple) | boolean | True if the order qty should be multiple of lot size when buying or making. `Required` `Default(false)` 
 | [OrderPeriodPlanningDays](General.Products.ProductSupply.md#orderperiodplanningdays) | int32 __nullable__ | For how many days in the future should be planned - for fixed period replenishment system. null - not yet specified. 
-| [OrderPeriodStartDate](General.Products.ProductSupply.md#orderperiodstartdate) | datetime __nullable__ | Start date of the first period under fixed period replenishment system. null - not yet specified. 
+| [OrderPeriodStartDate](General.Products.ProductSupply.md#orderperiodstartdate) | datetime __nullable__ | Start date of the first period under fixed period replenishment system. null - not yet specified. `Filter(ge;le)` 
 | [OrderPointQuantityBase](General.Products.ProductSupply.md#orderpointquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Order point quantity under the OP replenishment system. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(eq;ge;le)` 
 | [OrderPolicy](General.Products.ProductSupply.md#orderpolicy) | [OrderPolicy](General.Products.ProductSupply.md#orderpolicy) | Order policy/replenishment system. OPS=Order Point System; OPT=Order Point System with Time planning; PRS=Periodic Review System/Periods Of Supply; MRP = Material Requirements Planning. `Required` `Default("OPS")` `Filter(eq)` 
 | [PlanningAnnual<br />CarryingCostPercent](General.Products.ProductSupply.md#planningannualcarryingcostpercent) | decimal (5, 4) __nullable__ | The expected carrying cost as percentage of inventory cost. null means unknown. 
@@ -245,11 +245,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### OrderPeriodStartDate
 
-Start date of the first period under fixed period replenishment system. null - not yet specified.
+Start date of the first period under fixed period replenishment system. null - not yet specified. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

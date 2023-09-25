@@ -49,6 +49,12 @@ The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) 
 |User Login|no|
 |Visible|yes|
 
+#### Last_Interaction_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Notes
 
 | Property | Value |

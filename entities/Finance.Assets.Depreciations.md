@@ -40,7 +40,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AdjustmentNumber](Finance.Assets.Depreciations.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [AdjustmentTime](Finance.Assets.Depreciations.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [AdjustmentTime](Finance.Assets.Depreciations.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [AdjustmentUser](Finance.Assets.Depreciations.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CompleteTime](Finance.Assets.Depreciations.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Finance.Assets.Depreciations.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -51,7 +51,7 @@ Aggregate Tree
 | [DocumentNo](Finance.Assets.Depreciations.md#documentno) | string (20) | Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.md)) 
 | [DocumentNotes](Finance.Assets.Depreciations.md#documentnotes) | string (max) __nullable__ | Notes for this Document. (Inherited from [Documents](General.Documents.md)) 
 | [DocumentVersion](Finance.Assets.Depreciations.md#documentversion) | int32 | Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [EndDate](Finance.Assets.Depreciations.md#enddate) | datetime | End date of the depreciation period accounted with this document. `Required` 
+| [EndDate](Finance.Assets.Depreciations.md#enddate) | datetime | End date of the depreciation period accounted with this document. `Required` `Filter(ge;le)` 
 | [EntityName](Finance.Assets.Depreciations.md#entityname) | string (64) | The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [Id](Finance.Assets.Depreciations.md#id) | guid |  
 | [<s>IsReleased</s>](Finance.Assets.Depreciations.md#isreleased) | boolean | **OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` 
@@ -63,11 +63,11 @@ Aggregate Tree
 | [ReferenceDate](Finance.Assets.Depreciations.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDocumentNo](Finance.Assets.Depreciations.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
 | [ReleaseTime](Finance.Assets.Depreciations.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [StartDate](Finance.Assets.Depreciations.md#startdate) | datetime | Start date of the depreciation period accounted with this document. `Required` 
+| [StartDate](Finance.Assets.Depreciations.md#startdate) | datetime | Start date of the depreciation period accounted with this document. `Required` `Filter(ge;le)` 
 | [State](Finance.Assets.Depreciations.md#state) | [DocumentState](Finance.Assets.Depreciations.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [Void](Finance.Assets.Depreciations.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidReason](Finance.Assets.Depreciations.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidTime](Finance.Assets.Depreciations.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [VoidTime](Finance.Assets.Depreciations.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidUser](Finance.Assets.Depreciations.md#voiduser) | string (64) __nullable__ | The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 
 ## References
@@ -124,11 +124,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### AdjustmentTime
 
-Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -252,11 +252,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### EndDate
 
-End date of the depreciation period accounted with this document. `Required`
+End date of the depreciation period accounted with this document. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -388,11 +388,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### StartDate
 
-Start date of the depreciation period accounted with this document. `Required`
+Start date of the depreciation period accounted with this document. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -445,11 +445,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidTime
 
-Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

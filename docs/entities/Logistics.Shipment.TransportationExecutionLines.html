@@ -112,12 +112,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutionLines.html#executiondate">ExecutionDate</a></td>
 <td>date</td>
-<td>The date when the operation was executed. <code>Required</code></td>
+<td>The date when the operation was executed. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutionLines.html#executiontime">ExecutionTime</a></td>
 <td>time</td>
-<td>The time when the operation was executed. <code>Required</code></td>
+<td>The time when the operation was executed. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutionLines.html#id">Id</a></td>
@@ -207,10 +207,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="executiondate">ExecutionDate</h3>
-<p>The date when the operation was executed. <code>Required</code></p>
+<p>The date when the operation was executed. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
@@ -218,10 +218,10 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.TransportationExecution.ExecutionDate</code></p>
 <h3 id="executiontime">ExecutionTime</h3>
-<p>The time when the operation was executed. <code>Required</code></p>
+<p>The time when the operation was executed. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>time</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>

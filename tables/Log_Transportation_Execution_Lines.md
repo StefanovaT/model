@@ -62,6 +62,12 @@ The date when the operation was executed.
 |User Login|no|
 |Visible|yes|
 
+#### Execution_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Execution_Of_Transportation_Order_Line_Id
 
 
@@ -128,6 +134,12 @@ The time when the operation was executed.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Execution_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Geo_Point_Id
 

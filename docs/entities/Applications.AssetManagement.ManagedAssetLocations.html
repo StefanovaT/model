@@ -114,7 +114,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Applications.AssetManagement.ManagedAssetLocations.html#fromdate">FromDate</a></td>
 <td>date</td>
-<td>The date on which the asset is assigned to the location. <code>Required</code> <code>Default(Now)</code></td>
+<td>The date on which the asset is assigned to the location. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.ManagedAssetLocations.html#id">Id</a></td>
@@ -169,10 +169,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="fromdate">FromDate</h3>
-<p>The date on which the asset is assigned to the location. <code>Required</code> <code>Default(Now)</code></p>
+<p>The date on which the asset is assigned to the location. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

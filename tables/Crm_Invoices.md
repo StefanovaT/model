@@ -74,6 +74,12 @@ When not NULL specifies that the VAT entry for this invoice should be applied fo
 |User Login|no|
 |Visible|yes|
 
+#### Apply_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Automatic_Order_Linking
 
 
@@ -275,6 +281,12 @@ Date, when the delivery was effected. When NULL = document date
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Delivery_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Delivery_Terms_Code
 
@@ -707,6 +719,12 @@ When not NULL specifies due date for the payment
 |User Login|no|
 |Visible|yes|
 
+#### Payment_Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Payment_Due_Start_Date
 
 | Property | Value |
@@ -733,6 +751,12 @@ When not NULL specifies due date for the payment
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Payment_Due_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Payment_Type_Description
 

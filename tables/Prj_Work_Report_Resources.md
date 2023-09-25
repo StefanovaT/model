@@ -63,6 +63,7 @@ Optionally, specifies the actual date and time when the resource usage ended.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 |Like|None|no|no|
 
 ### Actual_Start_Time
@@ -100,6 +101,7 @@ Optionally, specifies the actual date and time when the resource usage began.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 |Like|None|no|no|
 
 ### Project_Task_Id

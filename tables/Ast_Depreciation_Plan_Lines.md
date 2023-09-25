@@ -96,6 +96,12 @@ End date of the depreciation plan for this asset
 |User Login|no|
 |Visible|yes|
 
+#### Depreciation_End_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Depreciation_Method_Id
 
 
@@ -229,6 +235,12 @@ Start date of the depreciation plan for this asset
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Depreciation_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Line_No
 

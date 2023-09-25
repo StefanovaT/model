@@ -38,7 +38,7 @@ Aggregate Tree
 | [Active](Systems.Security.Users.md#active) | boolean | True when the login is currently active and the user can log in. `Required` `Default(true)` `Filter(eq)` 
 | [BasicAuthenticationAllowed](Systems.Security.Users.md#basicauthenticationallowed) | boolean | If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.1.35` 
 | [CompanyName](Systems.Security.Users.md#companyname) | string (64) __nullable__ | Name of the company in which the user claims they are working. `Introduced in version 22.1.6.61` 
-| [CreationTimeUtc](Systems.Security.Users.md#creationtimeutc) | datetime | The date and time (in UTC), when the user was created. `Required` `Default(Now)` `ReadOnly` `Introduced in version 18.2` 
+| [CreationTimeUtc](Systems.Security.Users.md#creationtimeutc) | datetime | The date and time (in UTC), when the user was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` `Introduced in version 18.2` 
 | [DefaultCulture](Systems.Security.Users.md#defaultculture) | string (15) __nullable__ | The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1` 
 | [DisplayText](Systems.Security.Users.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Email](Systems.Security.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `ORD` `Introduced in version 18.2` 
@@ -126,11 +126,11 @@ _Show in UI_: **ShownByDefault**
 
 ### CreationTimeUtc
 
-The date and time (in UTC), when the user was created. `Required` `Default(Now)` `ReadOnly` `Introduced in version 18.2`
+The date and time (in UTC), when the user was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

@@ -134,7 +134,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#adjustmenttime">AdjustmentTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#adjustmentuser">AdjustmentUser</a></td>
@@ -214,7 +214,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#fromdate">FromDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. <code>Introduced in version 20.1</code></td>
+<td>When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#id">Id</a></td>
@@ -269,7 +269,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#paymentduestartdate">PaymentDueStartDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date when the payment becomes due for documents with one installment. null when the document is with multiple installments.</td>
+<td>The date when the payment becomes due for documents with one installment. null when the document is with multiple installments. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#planningonly">PlanningOnly</a></td>
@@ -309,7 +309,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#todate">ToDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. <code>Introduced in version 20.1</code></td>
+<td>When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#void">Void</a></td>
@@ -324,7 +324,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#voidtime">VoidTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrders.html#voiduser">VoidUser</a></td>
@@ -622,10 +622,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmenttime">AdjustmentTime</h3>
-<p>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmentuser">AdjustmentUser</h3>
@@ -811,10 +811,10 @@ Generic enum type for DeliveryTerms properties<br>
 <em>Maximum Length</em>: <strong>32</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="fromdate">FromDate</h3>
-<p>When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. <code>Introduced in version 20.1</code></p>
+<p>When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -1056,10 +1056,10 @@ Relationship between parent and child documents<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DocumentDate.AddDays( Convert( IIF( ( obj.ShipToCustomer.DefaultPaymentTermDays != 0), obj.ShipToCustomer.DefaultPaymentTermDays, obj.Customer.DefaultPaymentTermDays), Double))</code></p>
 <h3 id="paymentduestartdate">PaymentDueStartDate</h3>
-<p>The date when the payment becomes due for documents with one installment. null when the document is with multiple installments.</p>
+<p>The date when the payment becomes due for documents with one installment. null when the document is with multiple installments. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -1162,10 +1162,10 @@ Enumeration of document system states<br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="todate">ToDate</h3>
-<p>When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. <code>Introduced in version 20.1</code></p>
+<p>When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. <code>Filter(ge;le)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -1188,10 +1188,10 @@ Enumeration of document system states<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidtime">VoidTime</h3>
-<p>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voiduser">VoidUser</h3>

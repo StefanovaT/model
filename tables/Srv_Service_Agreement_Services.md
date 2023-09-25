@@ -59,6 +59,12 @@ End date to which the agreedment for the service or product is valid. For the ag
 |User Login|no|
 |Visible|yes|
 
+#### End_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Line_No
 
 
@@ -354,5 +360,11 @@ Start date from which the agreedment for the service or product is valid. For th
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

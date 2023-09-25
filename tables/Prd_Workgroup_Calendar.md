@@ -44,6 +44,12 @@
 |User Login|no|
 |Visible|yes|
 
+#### Calendar_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Is_Working_Day
 
 

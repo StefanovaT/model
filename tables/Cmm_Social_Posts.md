@@ -51,6 +51,12 @@ The exact server time (in UTC), when the post was created.
 |User Login|no|
 |Visible|yes|
 
+#### Creation_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Last_Interaction_Time_Utc
 
 
@@ -80,6 +86,12 @@ The server time (in UTC) of the last interaction with the post, including commen
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Last_Interaction_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Post_Text
 

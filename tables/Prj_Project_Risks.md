@@ -65,6 +65,7 @@ The creation date of the project risk.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Description
 
@@ -304,6 +305,7 @@ The date on which the risk is resolved
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Resolved
 

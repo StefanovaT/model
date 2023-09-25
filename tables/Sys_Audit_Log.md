@@ -177,6 +177,12 @@ Not used.
 |User Login|no|
 |Visible|yes|
 
+#### Operation_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Operation_Type
 
 

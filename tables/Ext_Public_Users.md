@@ -320,6 +320,12 @@ The date and time when the user was created.
 |User Login|no|
 |Visible|yes|
 
+#### Created_On - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|yes|no|
+
 ### Email
 
 
@@ -622,6 +628,12 @@ Actual password storage. The format of the contents is determined by Password Al
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Password_Recovery_Creation_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Person_Id
 

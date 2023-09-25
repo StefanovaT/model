@@ -95,6 +95,12 @@ The ending date and time of the travel on the segment
 |User Login|no|
 |Visible|yes|
 
+#### Ending_Timestamp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Mileage
 
 
@@ -248,6 +254,12 @@ The starting date and time of the travel on the segment
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Starting_Timestamp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Trip_Id
 

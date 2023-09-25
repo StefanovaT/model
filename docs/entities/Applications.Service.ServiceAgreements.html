@@ -134,7 +134,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Applications.Service.ServiceAgreements.html#adjustmenttime">AdjustmentTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.Service.ServiceAgreements.html#adjustmentuser">AdjustmentUser</a></td>
@@ -264,7 +264,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Applications.Service.ServiceAgreements.html#voidtime">VoidTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.Service.ServiceAgreements.html#voiduser">VoidUser</a></td>
@@ -462,10 +462,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmenttime">AdjustmentTime</h3>
-<p>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmentuser">AdjustmentUser</h3>
@@ -733,10 +733,10 @@ Enumeration of document system states<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidtime">VoidTime</h3>
-<p>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voiduser">VoidUser</h3>

@@ -30,13 +30,13 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Systems.Security.TrustedApplicationAuthorizations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [GrantTimeUtc](Systems.Security.TrustedApplicationAuthorizations.md#granttimeutc) | datetime | The time (in UTC) when the authorization was granted. `Required` `Default(NowUtc)` 
+| [GrantTimeUtc](Systems.Security.TrustedApplicationAuthorizations.md#granttimeutc) | datetime | The time (in UTC) when the authorization was granted. `Required` `Default(NowUtc)` `Filter(ge;le)` 
 | [Id](Systems.Security.TrustedApplicationAuthorizations.md#id) | guid |  
 | [IsRevoked](Systems.Security.TrustedApplicationAuthorizations.md#isrevoked) | boolean | Specifies whether the grant is explicitly revoked. `Required` `Default(false)` 
 | [Notes](Systems.Security.TrustedApplicationAuthorizations.md#notes) | string (max) __nullable__ | Notes for this TrustedApplication<br />Authorization. 
 | [ObjectVersion](Systems.Security.TrustedApplicationAuthorizations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ValidFromUtc](Systems.Security.TrustedApplicationAuthorizations.md#validfromutc) | datetime __nullable__ | The start of the validitiy of the authorization. null means that there is no restriction. 
-| [ValidUntilUtc](Systems.Security.TrustedApplicationAuthorizations.md#validuntilutc) | datetime __nullable__ | The time (in UTC) when the grant expires. null means that there is no time restriction. 
+| [ValidFromUtc](Systems.Security.TrustedApplicationAuthorizations.md#validfromutc) | datetime __nullable__ | The start of the validitiy of the authorization. null means that there is no restriction. `Filter(ge;le)` 
+| [ValidUntilUtc](Systems.Security.TrustedApplicationAuthorizations.md#validuntilutc) | datetime __nullable__ | The time (in UTC) when the grant expires. null means that there is no time restriction. `Filter(ge;le)` 
 
 ## References
 
@@ -61,11 +61,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### GrantTimeUtc
 
-The time (in UTC) when the authorization was granted. `Required` `Default(NowUtc)`
+The time (in UTC) when the authorization was granted. `Required` `Default(NowUtc)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
@@ -113,21 +113,21 @@ _Show in UI_: **HiddenByDefault**
 
 ### ValidFromUtc
 
-The start of the validitiy of the authorization. null means that there is no restriction.
+The start of the validitiy of the authorization. null means that there is no restriction. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### ValidUntilUtc
 
-The time (in UTC) when the grant expires. null means that there is no time restriction.
+The time (in UTC) when the grant expires. null means that there is no time restriction. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

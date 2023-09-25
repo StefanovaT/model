@@ -88,6 +88,12 @@ When true, specifies that this document event has been cancelled (either manuall
 |User Login|no|
 |Visible|no|
 
+#### Creation_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Document_Event
 
 
@@ -215,6 +221,12 @@ The time of the last attempt to process the event
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Last_Process_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Processed
 

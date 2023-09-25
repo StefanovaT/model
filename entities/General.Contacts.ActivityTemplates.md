@@ -30,9 +30,9 @@ Aggregate Tree
 | [DisplayText](General.Contacts.ActivityTemplates.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.Contacts.ActivityTemplates.md#id) | guid |  
 | [ObjectVersion](General.Contacts.ActivityTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ReminderTime](General.Contacts.ActivityTemplates.md#remindertime) | time __nullable__ | Time of the day for the reminder. 
+| [ReminderTime](General.Contacts.ActivityTemplates.md#remindertime) | time __nullable__ | Time of the day for the reminder. `Filter(ge;le)` 
 | [SourceDateField](General.Contacts.ActivityTemplates.md#sourcedatefield) | string (64) | A name of a field from the header or the document table of the source document in the specified route, that will be used along with Additional_Days to set the Start_Time of the generated activity. `Required` 
-| [StartTime](General.Contacts.ActivityTemplates.md#starttime) | time | The time of the day when the activity starts. `Required` 
+| [StartTime](General.Contacts.ActivityTemplates.md#starttime) | time | The time of the day when the activity starts. `Required` `Filter(ge;le)` 
 
 ## References
 
@@ -97,11 +97,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ReminderTime
 
-Time of the day for the reminder.
+Time of the day for the reminder. `Filter(ge;le)`
 
 _Type_: **time __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -120,11 +120,11 @@ _Show in UI_: **ShownByDefault**
 
 ### StartTime
 
-The time of the day when the activity starts. `Required`
+The time of the day when the activity starts. `Required` `Filter(ge;le)`
 
 _Type_: **time**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

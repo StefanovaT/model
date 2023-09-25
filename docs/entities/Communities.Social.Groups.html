@@ -123,7 +123,7 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Communities.Social.Groups.html#lastinteractiontimeutc">LastInteractionTimeUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. null means the group did not have any interactions yet. <code>ORD</code> <code>ReadOnly</code> <code>Introduced in version 22.1.6.61</code></td>
+<td>The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. null means the group did not have any interactions yet. <code>Filter(ge;le)</code> <code>ORD</code> <code>ReadOnly</code> <code>Introduced in version 22.1.6.61</code></td>
 </tr>
 <tr>
 <td><a href="Communities.Social.Groups.html#name">Name</a></td>
@@ -175,11 +175,11 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lastinteractiontimeutc">LastInteractionTimeUtc</h3>
-<p>The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. null means the group did not have any interactions yet. <code>ORD</code> <code>ReadOnly</code> <code>Introduced in version 22.1.6.61</code></p>
+<p>The time (in UTC) of the last interaction of any kind (comment, reaction, etc.) in the group. null means the group did not have any interactions yet. <code>Filter(ge;le)</code> <code>ORD</code> <code>ReadOnly</code> <code>Introduced in version 22.1.6.61</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>

@@ -174,6 +174,7 @@ Defines the period for which BI extracts data. BI includes documents with "Docum
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Company_Id
 
@@ -337,6 +338,12 @@ Start date of the priod when the documents can be edited
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Edit_Period_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Enterprise_Company_Id
 

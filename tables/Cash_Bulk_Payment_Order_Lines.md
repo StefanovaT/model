@@ -554,6 +554,12 @@ The date of the base document. NULL means that it is unknown
 |User Login|no|
 |Visible|yes|
 
+#### Ref_Document_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Ref_Document_No
 
 
@@ -651,6 +657,12 @@ The apply date of the related invoice. Not specified when the payment order isn'
 |User Login|no|
 |Visible|yes|
 
+#### Ref_Invoice_Apply_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Ref_Invoice_Document_Date
 
 
@@ -680,6 +692,12 @@ The date of the related invoice. NULL means that the payment order isn't related
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Ref_Invoice_Document_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Ref_Invoice_Document_No
 

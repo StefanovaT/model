@@ -132,7 +132,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#adjustmenttime">AdjustmentTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#adjustmentuser">AdjustmentUser</a></td>
@@ -187,12 +187,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#executiondate">ExecutionDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>Specifies the execution date, if it is the same for all lines. null means that the lines have different execution dates.</td>
+<td>Specifies the execution date, if it is the same for all lines. null means that the lines have different execution dates. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#executiontime">ExecutionTime</a></td>
 <td>time <strong>nullable</strong></td>
-<td>Specifies the execution time, if it is the same for all lines. null means that the lines have different execution times.</td>
+<td>Specifies the execution time, if it is the same for all lines. null means that the lines have different execution times. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#id">Id</a></td>
@@ -252,7 +252,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#voidtime">VoidTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationExecutions.html#voiduser">VoidUser</a></td>
@@ -440,10 +440,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmenttime">AdjustmentTime</h3>
-<p>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmentuser">AdjustmentUser</h3>
@@ -528,19 +528,19 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="executiondate">ExecutionDate</h3>
-<p>Specifies the execution date, if it is the same for all lines. null means that the lines have different execution dates.</p>
+<p>Specifies the execution date, if it is the same for all lines. null means that the lines have different execution dates. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Lines.Select( c =&gt; TransportationExecutionLinesRepository.ExecutionDateAttribute.GetUntypedValue( c, False)).Distinct( ).OnlyIfSingle( )</code></p>
 <h3 id="executiontime">ExecutionTime</h3>
-<p>Specifies the execution time, if it is the same for all lines. null means that the lines have different execution times.</p>
+<p>Specifies the execution time, if it is the same for all lines. null means that the lines have different execution times. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>time <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -695,10 +695,10 @@ Enumeration of document system states<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidtime">VoidTime</h3>
-<p>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voiduser">VoidUser</h3>

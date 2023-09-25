@@ -104,6 +104,12 @@ Time (in UTC), when the file was created.
 |User Login|no|
 |Visible|yes|
 
+#### Creation_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Creation_User_Id
 
 
@@ -297,6 +303,12 @@ Time (in UTC), when the file was last updated.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Last_Update_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Last_Update_User_Id
 

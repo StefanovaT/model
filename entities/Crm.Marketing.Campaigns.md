@@ -29,12 +29,12 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Description](Crm.Marketing.Campaigns.md#description) | string (254) __nullable__ | Campaign description. 
 | [DisplayText](Crm.Marketing.Campaigns.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [EndDate](Crm.Marketing.Campaigns.md#enddate) | datetime __nullable__ | End date of the campaign. null means that the end date is still unknown. 
+| [EndDate](Crm.Marketing.Campaigns.md#enddate) | datetime __nullable__ | End date of the campaign. null means that the end date is still unknown. `Filter(ge;le)` 
 | [ForecastedCost](Crm.Marketing.Campaigns.md#forecastedcost) | decimal (18, 0) | Forecasted total cost of the campaign. `Required` `Default(0)` 
 | [Id](Crm.Marketing.Campaigns.md#id) | guid |  
 | [Name](Crm.Marketing.Campaigns.md#name) | string (64) | Short name of the campaign. `Required` `Filter(like)` `ORD` 
 | [ObjectVersion](Crm.Marketing.Campaigns.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StartDate](Crm.Marketing.Campaigns.md#startdate) | datetime | Starting date of the campaign. `Required` `Default(Today)` 
+| [StartDate](Crm.Marketing.Campaigns.md#startdate) | datetime | Starting date of the campaign. `Required` `Default(Today)` `Filter(ge;le)` 
 
 
 ## Attribute Details
@@ -62,11 +62,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### EndDate
 
-End date of the campaign. null means that the end date is still unknown.
+End date of the campaign. null means that the end date is still unknown. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -114,11 +114,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### StartDate
 
-Starting date of the campaign. `Required` `Default(Today)`
+Starting date of the campaign. `Required` `Default(Today)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
 _Show in UI_: **ShownByDefault**  

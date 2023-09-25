@@ -114,7 +114,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.WebHosts.html#certificateexpirydate">CertificateExpiryDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. <code>Filter(multi eq)</code></td>
+<td>The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. <code>Filter(multi eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.WebHosts.html#certificateoriginalfilename">CertificateOriginal<br>Filename</a></td>
@@ -167,10 +167,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="certificateexpirydate">CertificateExpiryDate</h3>
-<p>The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. <code>Filter(multi eq)</code></p>
+<p>The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. <code>Filter(multi eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="certificateoriginalfilename">CertificateOriginalFilename</h3>

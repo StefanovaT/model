@@ -171,6 +171,12 @@ The time of the alert.
 |User Login|no|
 |Visible|yes|
 
+#### Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Vehicle_Alert_Id
 
 | Property | Value |

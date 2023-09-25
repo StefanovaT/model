@@ -363,4 +363,10 @@ When the translation was last updated
 |User Login|no|
 |Visible|yes|
 
+#### Update_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|yes|yes|
+
 

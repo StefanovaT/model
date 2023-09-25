@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Systems.Core.UpdateProcedureExecutes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [ExecuteTime](Systems.Core.UpdateProcedureExecutes.md#executetime) | datetime | The time, when the update procedure was executed. `Required` `Default(Now)` 
+| [ExecuteTime](Systems.Core.UpdateProcedureExecutes.md#executetime) | datetime | The time, when the update procedure was executed. `Required` `Default(Now)` `Filter(ge;le)` 
 | [Id](Systems.Core.UpdateProcedureExecutes.md#id) | guid |  
 | [ObjectVersion](Systems.Core.UpdateProcedureExecutes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResultMessage](Systems.Core.UpdateProcedureExecutes.md#resultmessage) | string (1024) __nullable__ | Error or success message. 
@@ -48,11 +48,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ExecuteTime
 
-The time, when the update procedure was executed. `Required` `Default(Now)`
+The time, when the update procedure was executed. `Required` `Default(Now)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

@@ -25,8 +25,8 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CompletedOnUtc](Applications.PersonalData.DataSubjectRightRequests.md#completedonutc) | datetime __nullable__ | Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented. 
-| [CreatedOnUtc](Applications.PersonalData.DataSubjectRightRequests.md#createdonutc) | datetime | The date and time (in UTC), when the request was created. `Required` `Default(Now)` 
+| [CompletedOnUtc](Applications.PersonalData.DataSubjectRightRequests.md#completedonutc) | datetime __nullable__ | Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented. `Filter(ge;le)` 
+| [CreatedOnUtc](Applications.PersonalData.DataSubjectRightRequests.md#createdonutc) | datetime | The date and time (in UTC), when the request was created. `Required` `Default(Now)` `Filter(ge;le)` 
 | [DisplayText](Applications.PersonalData.DataSubjectRightRequests.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.PersonalData.DataSubjectRightRequests.md#id) | guid |  
 | [Notes](Applications.PersonalData.DataSubjectRightRequests.md#notes) | string (max) __nullable__ | This should usually contain detailed implementation notes. 
@@ -48,21 +48,21 @@ Aggregate Tree
 
 ### CompletedOnUtc
 
-Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented.
+Date and time (in UTC), when the requested right was implemented by the responsible entity. Null if the request is still not implemented. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### CreatedOnUtc
 
-The date and time (in UTC), when the request was created. `Required` `Default(Now)`
+The date and time (in UTC), when the request was created. `Required` `Default(Now)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

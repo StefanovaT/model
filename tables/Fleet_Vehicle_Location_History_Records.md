@@ -140,6 +140,12 @@ The time, for which the location is stored.
 |User Login|no|
 |Visible|yes|
 
+#### Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Vehicle_Id
 
 

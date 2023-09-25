@@ -109,7 +109,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Workflow.Processes.html#creationtime">CreationTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the Process was created. <code>ReadOnly</code></td>
+<td>Date and time when the Process was created. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.Processes.html#creationuser">CreationUser</a></td>
@@ -174,7 +174,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Workflow.Processes.html#updatetime">UpdateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the Process was last updated. <code>ReadOnly</code></td>
+<td>Date and time when the Process was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.Processes.html#updateuser">UpdateUser</a></td>
@@ -185,10 +185,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="creationtime">CreationTime</h3>
-<p>Date and time when the Process was created. <code>ReadOnly</code></p>
+<p>Date and time when the Process was created. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creationuser">CreationUser</h3>
@@ -282,10 +282,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
-<p>Date and time when the Process was last updated. <code>ReadOnly</code></p>
+<p>Date and time when the Process was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="updateuser">UpdateUser</h3>

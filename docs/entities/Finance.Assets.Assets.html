@@ -116,7 +116,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Finance.Assets.Assets.html#deploymentdate">DeploymentDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date, when the asset is first deployed. Null if the asset is not deployed yet.</td>
+<td>Date, when the asset is first deployed. Null if the asset is not deployed yet. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Assets.Assets.html#displaytext">DisplayText</a></td>
@@ -151,7 +151,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Finance.Assets.Assets.html#purchasedate">PurchaseDate</a></td>
 <td>datetime</td>
-<td>Original purchase date of the asset. <code>Required</code></td>
+<td>Original purchase date of the asset. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Assets.Assets.html#serialnumber">SerialNumber</a></td>
@@ -208,10 +208,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>20</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="deploymentdate">DeploymentDate</h3>
-<p>Date, when the asset is first deployed. Null if the asset is not deployed yet.</p>
+<p>Date, when the asset is first deployed. Null if the asset is not deployed yet. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
@@ -259,10 +259,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="purchasedate">PurchaseDate</h3>
-<p>Original purchase date of the asset. <code>Required</code></p>
+<p>Original purchase date of the asset. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="serialnumber">SerialNumber</h3>

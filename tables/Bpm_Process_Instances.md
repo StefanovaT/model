@@ -51,6 +51,7 @@ The date and time, when the process instance was created.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Finish_Time
 
@@ -87,6 +88,7 @@ The date and time, when the process instance has finished its execution. NULL wh
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Process_Id
 
@@ -220,6 +222,7 @@ The date and time, when the process instance was started.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### State
 

@@ -27,8 +27,8 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Description](Projects.Agile.Cases.md#description) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Description of the required work. `Filter(like)` 
 | [DisplayText](Projects.Agile.Cases.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [DueDate](Projects.Agile.Cases.md#duedate) | date __nullable__ | Specified when the case has specific due date. 
-| [DueTime](Projects.Agile.Cases.md#duetime) | time __nullable__ | Specified when the case has specific due time. 
+| [DueDate](Projects.Agile.Cases.md#duedate) | date __nullable__ | Specified when the case has specific due date. `Filter(ge;le)` 
+| [DueTime](Projects.Agile.Cases.md#duetime) | time __nullable__ | Specified when the case has specific due time. `Filter(ge;le)` 
 | [EstimatedTimeHours](Projects.Agile.Cases.md#estimatedtimehours) | decimal (8, 2) __nullable__ | Estimation of the required work effort in hours. 
 | [Id](Projects.Agile.Cases.md#id) | guid |  
 | [ObjectVersion](Projects.Agile.Cases.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -73,21 +73,21 @@ _Show in UI_: **HiddenByDefault**
 
 ### DueDate
 
-Specified when the case has specific due date.
+Specified when the case has specific due date. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### DueTime
 
-Specified when the case has specific due time.
+Specified when the case has specific due time. `Filter(ge;le)`
 
 _Type_: **time __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

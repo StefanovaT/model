@@ -54,6 +54,12 @@ The exact server time (in UTC), when the user joined the group.
 |User Login|no|
 |Visible|yes|
 
+#### Join_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Role
 
 

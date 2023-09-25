@@ -588,6 +588,12 @@ Start date of the first period under fixed period replenishment system. NULL - n
 |User Login|no|
 |Visible|no|
 
+#### Order_Period_Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Order_Point_Quantity_Base
 
 

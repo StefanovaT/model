@@ -107,7 +107,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItems.html#completiondate">CompletionDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date, when the item should be completed. null means that there is no constraint for completion date.</td>
+<td>The date, when the item should be completed. null means that there is no constraint for completion date. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItems.html#displaytext">DisplayText</a></td>
@@ -172,17 +172,17 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItems.html#releasedate">ReleaseDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date, when the item is released to production. null means that still there is no plan when the item will be released to production.</td>
+<td>The date, when the item is released to production. null means that still there is no plan when the item will be released to production. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItems.html#scheduledenddatetime">ScheduledEndDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the production of this item is scheduled to end.</td>
+<td>Date and time when the production of this item is scheduled to end. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItems.html#scheduledstartdatetime">ScheduledStartDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the production of this item is scheduled to begin.</td>
+<td>Date and time when the production of this item is scheduled to begin. <code>Filter(ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -272,10 +272,10 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="completiondate">CompletionDate</h3>
-<p>The date, when the item should be completed. null means that there is no constraint for completion date.</p>
+<p>The date, when the item should be completed. null means that there is no constraint for completion date. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
@@ -418,10 +418,10 @@ Allowed values for the <code>Priority</code>(Production.ShopFloor.WorkOrderItems
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.ProducedQuantity != null) AndAlso ( obj.ProducedQuantityUnit != null)) AndAlso ( obj.Product != null)), obj.ProducedQuantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.ProducedStandardQuantityBase)</code></p>
 <h3 id="releasedate">ReleaseDate</h3>
-<p>The date, when the item is released to production. null means that still there is no plan when the item will be released to production.</p>
+<p>The date, when the item is released to production. null means that still there is no plan when the item will be released to production. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
@@ -429,17 +429,17 @@ Allowed values for the <code>Priority</code>(Production.ShopFloor.WorkOrderItems
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.WorkOrder.ReleaseDate</code></p>
 <h3 id="scheduledenddatetime">ScheduledEndDateTime</h3>
-<p>Date and time when the production of this item is scheduled to end.</p>
+<p>Date and time when the production of this item is scheduled to end. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="scheduledstartdatetime">ScheduledStartDateTime</h3>
-<p>Date and time when the production of this item is scheduled to begin.</p>
+<p>Date and time when the production of this item is scheduled to begin. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

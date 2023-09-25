@@ -182,7 +182,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Inventory.StoreOrderLines.html#transactiontimestamp">TransactionTimestamp</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Exact time when the transaction for this store order line changes the cost of the product. <code>ReadOnly</code></td>
+<td>Exact time when the transaction for this store order line changes the cost of the product. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.StoreOrderLines.html#unitcost">UnitCost</a></td>
@@ -380,10 +380,10 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h3 id="transactiontimestamp">TransactionTimestamp</h3>
-<p>Exact time when the transaction for this store order line changes the cost of the product. <code>ReadOnly</code></p>
+<p>Exact time when the transaction for this store order line changes the cost of the product. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="unitcost">UnitCost</h3>

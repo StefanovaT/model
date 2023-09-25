@@ -32,9 +32,9 @@ Aggregate Tree
 | [Id](Systems.Core.ResolvedConflicts.md#id) | guid |  
 | [ObjectVersion](Systems.Core.ResolvedConflicts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResolveConfirmedByUser](Systems.Core.ResolvedConflicts.md#resolveconfirmedbyuser) | boolean | True, when the conflict resolution was manually confirmed by user. `Required` `Default(false)` `Filter(eq)` 
-| [ResolveConfirmedTime](Systems.Core.ResolvedConflicts.md#resolveconfirmedtime) | datetime __nullable__ | Time when the conflict resolution was confirmed by the user. `ReadOnly` 
+| [ResolveConfirmedTime](Systems.Core.ResolvedConflicts.md#resolveconfirmedtime) | datetime __nullable__ | Time when the conflict resolution was confirmed by the user. `Filter(ge;le)` `ReadOnly` 
 | [ResolveDescription](Systems.Core.ResolvedConflicts.md#resolvedescription) | [MultilanguageString (400)](../data-types.md#multilanguagestring) | Description of the resolution of the conflict. `Required` `ReadOnly` 
-| [ResolvedTime](Systems.Core.ResolvedConflicts.md#resolvedtime) | datetime | Time when the resolution of the conflict was made. `Required` `Default(Now)` `ReadOnly` 
+| [ResolvedTime](Systems.Core.ResolvedConflicts.md#resolvedtime) | datetime | Time when the resolution of the conflict was made. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` 
 | [RevisedByUser](Systems.Core.ResolvedConflicts.md#revisedbyuser) | boolean | True, when the conflict resolution was revised (reviewed) manually by user. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [TableName](Systems.Core.ResolvedConflicts.md#tablename) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | Name of the table in which the conflict has occurred. `Required` `Filter(like)` `ReadOnly` 
 | [URL](Systems.Core.ResolvedConflicts.md#url) | string (254) | URL of the item (the row) for which the conflict occurred. `Required` `ReadOnly` 
@@ -94,11 +94,11 @@ _Show in UI_: **ShownByDefault**
 
 ### ResolveConfirmedTime
 
-Time when the conflict resolution was confirmed by the user. `ReadOnly`
+Time when the conflict resolution was confirmed by the user. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -114,11 +114,11 @@ _Show in UI_: **ShownByDefault**
 
 ### ResolvedTime
 
-Time when the resolution of the conflict was made. `Required` `Default(Now)` `ReadOnly`
+Time when the resolution of the conflict was made. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

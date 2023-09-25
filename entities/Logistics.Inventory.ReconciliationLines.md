@@ -36,7 +36,7 @@ Aggregate Root:
 | [Quantity](Logistics.Inventory.ReconciliationLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity found at the reconciliation, . `Unit: QuantityUnit` `Required` `Filter(ge;le)` 
 | [QuantityBase](Logistics.Inventory.ReconciliationLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity found at the reconciliation, expressed in base measurement units. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(ge;le)` 
 | [StandardQuantityBase](Logistics.Inventory.ReconciliationLines.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
-| [TransactionTimestamp](Logistics.Inventory.ReconciliationLines.md#transactiontimestamp) | datetime __nullable__ | Exact time when the transaction occurred. 
+| [TransactionTimestamp](Logistics.Inventory.ReconciliationLines.md#transactiontimestamp) | datetime __nullable__ | Exact time when the transaction occurred. `Filter(ge;le)` 
 
 ## References
 
@@ -164,11 +164,11 @@ _Front-End Recalc Expressions:_
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
 ### TransactionTimestamp
 
-Exact time when the transaction occurred.
+Exact time when the transaction occurred. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

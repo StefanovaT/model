@@ -266,6 +266,12 @@ Specifies in which period for Intrastat declaration must be included the current
 |User Login|no|
 |Visible|no|
 
+#### Intrastat_Apply_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Intrastat_Transaction_Nature_Code
 
 
@@ -778,6 +784,12 @@ When selling a service valid only for a period, denotes the beginning of the per
 |User Login|no|
 |Visible|no|
 
+#### Line_From_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Line_No
 
 
@@ -913,6 +925,12 @@ When selling a service valid only for a period, denotes the end of the period. N
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Line_To_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Lot_Id
 

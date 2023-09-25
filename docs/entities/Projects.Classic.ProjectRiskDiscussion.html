@@ -109,7 +109,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Classic.ProjectRiskDiscussion.html#contributiontime">ContributionTime</a></td>
 <td>datetime</td>
-<td>The time, when the message was contributed. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq)</code> <code>ReadOnly</code></td>
+<td>The time, when the message was contributed. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.ProjectRiskDiscussion.html#displaytext">DisplayText</a></td>
@@ -124,7 +124,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Classic.ProjectRiskDiscussion.html#lastedittime">LastEditTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Contains the last edit time of the message. null if the message was never edited. <code>Filter(eq)</code> <code>ReadOnly</code></td>
+<td>Contains the last edit time of the message. null if the message was never edited. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.ProjectRiskDiscussion.html#message">Message</a></td>
@@ -162,10 +162,10 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="contributiontime">ContributionTime</h3>
-<p>The time, when the message was contributed. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq)</code> <code>ReadOnly</code></p>
+<p>The time, when the message was contributed. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -184,10 +184,10 @@ Aggregate Root:<br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="lastedittime">LastEditTime</h3>
-<p>Contains the last edit time of the message. null if the message was never edited. <code>Filter(eq)</code> <code>ReadOnly</code></p>
+<p>Contains the last edit time of the message. null if the message was never edited. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="message">Message</h3>

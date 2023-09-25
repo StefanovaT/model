@@ -203,6 +203,12 @@ Specified when the case has specific due date.
 |User Login|no|
 |Visible|yes|
 
+#### Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Due_Time
 
 
@@ -232,6 +238,12 @@ Specified when the case has specific due time.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Due_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Estimated_Time_Hours
 

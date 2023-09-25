@@ -114,7 +114,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Applications.Fleet.TripSegments.html#endingtimestamp">EndingTimestamp</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The ending date and time of the travel on the segment.</td>
+<td>The ending date and time of the travel on the segment. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Applications.Fleet.TripSegments.html#id">Id</a></td>
@@ -139,7 +139,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Applications.Fleet.TripSegments.html#startingtimestamp">StartingTimestamp</a></td>
 <td>datetime</td>
-<td>The starting date and time of the travel on the segment. <code>Required</code></td>
+<td>The starting date and time of the travel on the segment. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -179,10 +179,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="endingtimestamp">EndingTimestamp</h3>
-<p>The ending date and time of the travel on the segment.</p>
+<p>The ending date and time of the travel on the segment. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
@@ -215,10 +215,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="startingtimestamp">StartingTimestamp</h3>
-<p>The starting date and time of the travel on the segment. <code>Required</code></p>
+<p>The starting date and time of the travel on the segment. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

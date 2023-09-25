@@ -112,7 +112,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ScheduledDocumentEvents.html#creationtime">CreationTime</a></td>
 <td>datetime</td>
-<td>Date and time when the ScheduledDocumentEvent was created. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></td>
+<td>Date and time when the ScheduledDocumentEvent was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ScheduledDocumentEvents.html#displaytext">DisplayText</a></td>
@@ -137,7 +137,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ScheduledDocumentEvents.html#lastprocesstime">LastProcessTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The time of the last attempt to process the event. <code>ReadOnly</code></td>
+<td>The time of the last attempt to process the event. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ScheduledDocumentEvents.html#objectversion">ObjectVersion</a></td>
@@ -188,10 +188,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="creationtime">CreationTime</h3>
-<p>Date and time when the ScheduledDocumentEvent was created. <code>Required</code> <code>Default(Now)</code> <code>ReadOnly</code></p>
+<p>Date and time when the ScheduledDocumentEvent was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -226,10 +226,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lastprocesstime">LastProcessTime</h3>
-<p>The time of the last attempt to process the event. <code>ReadOnly</code></p>
+<p>The time of the last attempt to process the event. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>

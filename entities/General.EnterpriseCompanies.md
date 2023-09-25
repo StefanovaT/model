@@ -36,12 +36,12 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BIStartDate](General.EnterpriseCompanies.md#bistartdate) | datetime __nullable__ | Defines the period for which BI extracts data. BI includes documents with "Document Date" greater than or equal to "BI Start Date". `Filter(eq)` `Introduced in version 18.2` 
+| [BIStartDate](General.EnterpriseCompanies.md#bistartdate) | datetime __nullable__ | Defines the period for which BI extracts data. BI includes documents with "Document Date" greater than or equal to "BI Start Date". `Filter(eq;ge;le)` `Introduced in version 18.2` 
 | [DefaultCostingMethod](General.EnterpriseCompanies.md#defaultcostingmethod) | [DefaultCostingMethod](General.EnterpriseCompanies.md#defaultcostingmethod) | Default method for cost evaluation (if not specified in the product). Currently supported: EXP - Explicit lot specifying; AVG - Average cost. `Required` `Default("AVG")` 
 | [DefaultCustomer<br />CreditLimitBase](General.EnterpriseCompanies.md#defaultcustomercreditlimitbase) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | Customer credit limit, which is used by default when creating new customers. It is specified in the base currency of the enterprise company. `Currency: BaseCurrency` `Filter(eq;like)` 
 | [DefaultLanguage](General.EnterpriseCompanies.md#defaultlanguage) | [DefaultLanguage](General.EnterpriseCompanies.md#defaultlanguage) __nullable__ | The default language for multi-language names in the definitions (like Customer_Name, Product_Name, ...). `Default("en")` 
 | [DisplayText](General.EnterpriseCompanies.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [EditPeriodStartDate](General.EnterpriseCompanies.md#editperiodstartdate) | datetime __nullable__ | Start date of the priod when the documents can be edited. 
+| [EditPeriodStartDate](General.EnterpriseCompanies.md#editperiodstartdate) | datetime __nullable__ | Start date of the priod when the documents can be edited. `Filter(ge;le)` 
 | [Id](General.EnterpriseCompanies.md#id) | guid |  
 | [IsActive](General.EnterpriseCompanies.md#isactive) | boolean | Indicates whether the current Enterprise company  is active. `Required` `Default(true)` `Filter(multi eq)` `Introduced in version 20.1` 
 | [ObjectVersion](General.EnterpriseCompanies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -75,11 +75,11 @@ Aggregate Tree
 
 ### BIStartDate
 
-Defines the period for which BI extracts data. BI includes documents with "Document Date" greater than or equal to "BI Start Date". `Filter(eq)` `Introduced in version 18.2`
+Defines the period for which BI extracts data. BI includes documents with "Document Date" greater than or equal to "BI Start Date". `Filter(eq;ge;le)` `Introduced in version 18.2`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -144,11 +144,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### EditPeriodStartDate
 
-Start date of the priod when the documents can be edited.
+Start date of the priod when the documents can be edited. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

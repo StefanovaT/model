@@ -142,7 +142,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Applications.Fleet.VehicleAlerts.html#time">Time</a></td>
 <td>datetime</td>
-<td>The time of the alert. <code>Required</code> <code>ORD</code></td>
+<td>The time of the alert. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 </tbody>
 </table>
@@ -218,11 +218,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="time">Time</h3>
-<p>The time of the alert. <code>Required</code> <code>ORD</code></p>
+<p>The time of the alert. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

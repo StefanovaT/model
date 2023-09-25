@@ -60,6 +60,12 @@ End date to which the agreedment for the material is valid. For the agreement pe
 |User Login|no|
 |Visible|no|
 
+#### End_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Line_No
 
 
@@ -378,5 +384,11 @@ Start date from which the agreedment for the material is valid. For the agreemen
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

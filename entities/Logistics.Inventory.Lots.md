@@ -30,14 +30,14 @@ Aggregate Tree
 | [AlcoholicStrength](Logistics.Inventory.Lots.md#alcoholicstrength) | decimal (5, 2) | Percentage of pure alcohol used in excise duty reporting. `Required` `Default(0)` `Introduced in version 22.1.6.66` 
 | [Description](Logistics.Inventory.Lots.md#description) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The description of this Lot. 
 | [DisplayText](Logistics.Inventory.Lots.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [ExpiryDate](Logistics.Inventory.Lots.md#expirydate) | datetime __nullable__ | Expiry date for this lot. 
+| [ExpiryDate](Logistics.Inventory.Lots.md#expirydate) | datetime __nullable__ | Expiry date for this lot. `Filter(ge;le)` 
 | [Id](Logistics.Inventory.Lots.md#id) | guid |  
 | [LicenseNo](Logistics.Inventory.Lots.md#licenseno) | string (50) __nullable__ | The license number for this lot. Null when license number is N/A or unknown. 
 | [Number](Logistics.Inventory.Lots.md#number) | string (30) | The unique number of the Lot. May contain characters, if required. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Logistics.Inventory.Lots.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProductionBatchId](Logistics.Inventory.Lots.md#productionbatchid) | guid __nullable__ | Non-null if the production batch is known. Production batches are automatically created for internal production, but can also be used for specifying production batches for purchased goods. `Filter(multi eq)` 
 | [PurchaseLotNumber](Logistics.Inventory.Lots.md#purchaselotnumber) | string (30) __nullable__ | Identification of the purchase lost with which the products from this store lot are received. E.g. the document number of the Receiving order. `Filter(like)` 
-| [ReceiptDate](Logistics.Inventory.Lots.md#receiptdate) | date __nullable__ | The date of the first receipt of products in this lot. `ReadOnly` 
+| [ReceiptDate](Logistics.Inventory.Lots.md#receiptdate) | date __nullable__ | The date of the first receipt of products in this lot. `Filter(ge;le)` `ReadOnly` 
 | [Status](Logistics.Inventory.Lots.md#status) | [Status](Logistics.Inventory.Lots.md#status) | Status of the warehouse lot. Minus statuses describe blocked conditions. -3 blocked for document (sales or service order) -2 blocked for party -1 blocked for inspection 0 free to use. `Required` `Default(0)` `Filter(multi eq)` 
 
 ## References
@@ -87,11 +87,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ExpiryDate
 
-Expiry date for this lot.
+Expiry date for this lot. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -158,11 +158,11 @@ _Show in UI_: **ShownByDefault**
 
 ### ReceiptDate
 
-The date of the first receipt of products in this lot. `ReadOnly`
+The date of the first receipt of products in this lot. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

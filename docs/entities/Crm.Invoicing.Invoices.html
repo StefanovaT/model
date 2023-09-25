@@ -132,7 +132,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#adjustmenttime">AdjustmentTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#adjustmentuser">AdjustmentUser</a></td>
@@ -142,7 +142,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#applydate">ApplyDate</a></td>
 <td>date</td>
-<td>When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. <code>Required</code></td>
+<td>When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#automaticorderlinking">AutomaticOrderLinking</a></td>
@@ -172,7 +172,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#deliverydate">DeliveryDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date, when the delivery was effected. When null = document date.</td>
+<td>Date, when the delivery was effected. When null = document date. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#deliverytermscode">DeliveryTermsCode</a></td>
@@ -257,12 +257,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#paymentduedate">PaymentDueDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>When not null specifies due date for the payment.</td>
+<td>When not null specifies due date for the payment. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#paymentduestartdate">PaymentDueStartDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date when the payment becomes due for documents with one installment.</td>
+<td>The date when the payment becomes due for documents with one installment. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#paymenttypedescription">PaymentTypeDescription</a></td>
@@ -322,7 +322,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#voidtime">VoidTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.Invoices.html#voiduser">VoidUser</a></td>
@@ -540,10 +540,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmenttime">AdjustmentTime</h3>
-<p>Date/time when the document last has been adjusted by corrective document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmentuser">AdjustmentUser</h3>
@@ -555,10 +555,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="applydate">ApplyDate</h3>
-<p>When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. <code>Required</code></p>
+<p>When not null specifies that the VAT entry for this invoice should be applied for a different period than that specified by the document date. <code>Required</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -603,10 +603,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="deliverydate">DeliveryDate</h3>
-<p>Date, when the delivery was effected. When null = document date.</p>
+<p>Date, when the delivery was effected. When null = document date. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="deliverytermscode">DeliveryTermsCode</h3>
@@ -956,19 +956,19 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="paymentduedate">PaymentDueDate</h3>
-<p>When not null specifies due date for the payment.</p>
+<p>When not null specifies due date for the payment. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.DocumentDate.AddDays( Convert( obj.Customer.DefaultPaymentTermDays, Double))</code></p>
 <h3 id="paymentduestartdate">PaymentDueStartDate</h3>
-<p>The date when the payment becomes due for documents with one installment.</p>
+<p>The date when the payment becomes due for documents with one installment. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
@@ -1105,10 +1105,10 @@ Enumeration of document system states<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidtime">VoidTime</h3>
-<p>Date/time when the document has become void. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voiduser">VoidUser</h3>

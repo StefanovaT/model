@@ -33,8 +33,8 @@ Aggregate Root:
 | [AmountPercent](Crm.Sales.SalesOrderPaymentPlans.md#amountpercent) | decimal (7, 6) __nullable__ | Percent of the sales order amount to be payed. 
 | [DisplayText](Crm.Sales.SalesOrderPaymentPlans.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DueDateFormMethod](Crm.Sales.SalesOrderPaymentPlans.md#duedateformmethod) | [PaymentPlanDueDateSource](Crm.Sales.SalesOrderPaymentPlans.md#duedateformmethod) | Method to determine the payment due date. SLS = Use sales order date, INV = Use invoice date, EXP = Specify the date explicitly, SDD = Sales order due date, IDD = Invoice due date. `Required` 
-| [ExplicitPaymentDueDate](Crm.Sales.SalesOrderPaymentPlans.md#explicitpaymentduedate) | datetime __nullable__ | Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'. 
-| [ExplicitPayment<br />DueStartDate](Crm.Sales.SalesOrderPaymentPlans.md#explicitpaymentduestartdate) | date __nullable__ | Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'. 
+| [ExplicitPaymentDueDate](Crm.Sales.SalesOrderPaymentPlans.md#explicitpaymentduedate) | datetime __nullable__ | Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'. `Filter(ge;le)` 
+| [ExplicitPayment<br />DueStartDate](Crm.Sales.SalesOrderPaymentPlans.md#explicitpaymentduestartdate) | date __nullable__ | Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'. `Filter(ge;le)` 
 | [Id](Crm.Sales.SalesOrderPaymentPlans.md#id) | guid |  
 | [InstallmentNumber](Crm.Sales.SalesOrderPaymentPlans.md#installmentnumber) | int32 | Consequtive installment number. Used for identifying different payments generated according this payment plan. `Required` 
 | [Notes](Crm.Sales.SalesOrderPaymentPlans.md#notes) | string (254) __nullable__ | Notes for this SalesOrderPaymentPlan. 
@@ -107,11 +107,11 @@ _Show in UI_: **ShownByDefault**
 
 ### ExplicitPaymentDueDate
 
-Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'.
+Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -119,11 +119,11 @@ _Front-End Recalc Expressions:_
 `IIF( ( Convert( obj.DueDateFormMethod, Int32) != 0), null, obj.ExplicitPaymentDueDate)`
 ### ExplicitPaymentDueStartDate
 
-Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'.
+Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

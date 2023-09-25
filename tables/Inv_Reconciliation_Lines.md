@@ -655,6 +655,12 @@ Exact time when the transaction occurred
 |User Login|no|
 |Visible|no|
 
+#### Transaction_Timestamp - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Warehouse_Transaction_Id
 
 

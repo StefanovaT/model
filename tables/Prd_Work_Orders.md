@@ -62,6 +62,12 @@ Scheduled date of completion. Specifies the date when the workorder was complete
 |User Login|no|
 |Visible|yes|
 
+#### Completion_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Default_Materials_Store_Id
 
 
@@ -202,6 +208,12 @@ The final due date, when the production should be ready.
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Duration_Hour
 
@@ -435,6 +447,12 @@ Scheduled release date. Specifies the date when the order is planned/released to
 |UI Width|100|
 |User Login|no|
 |Visible|yes|
+
+#### Release_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Row_Version
 

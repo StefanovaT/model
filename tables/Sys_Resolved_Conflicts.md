@@ -121,6 +121,12 @@ Time when the conflict resolution was confirmed by the user.
 |User Login|no|
 |Visible|yes|
 
+#### Resolve_Confirmed_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Resolve_Description
 
 
@@ -217,6 +223,12 @@ Time when the resolution of the conflict was made.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Resolved_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Revised_By_User
 

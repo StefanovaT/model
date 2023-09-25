@@ -114,7 +114,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.DocumentComments.html#commenttimestamp">CommentTimestamp</a></td>
 <td>datetime</td>
-<td>The exact timestamp of the comment. <code>Required</code> <code>Default(Now)</code></td>
+<td>The exact timestamp of the comment. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="General.DocumentComments.html#displaytext">DisplayText</a></td>
@@ -170,10 +170,10 @@ Aggregate Root:<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="commenttimestamp">CommentTimestamp</h3>
-<p>The exact timestamp of the comment. <code>Required</code> <code>Default(Now)</code></p>
+<p>The exact timestamp of the comment. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

@@ -131,7 +131,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.Classic.Projects.html#finishdate">FinishDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>The drop dead date of the project, e.g. the date when the project should be finished. null means that the finish date is unknown. <code>Filter(eq)</code></td>
+<td>The drop dead date of the project, e.g. the date when the project should be finished. null means that the finish date is unknown. <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.Projects.html#id">Id</a></td>
@@ -161,7 +161,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.Classic.Projects.html#startdate">StartDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>Expected date, when the execution of the tasks will start. null means that the start date is still unknown. <code>Filter(eq)</code></td>
+<td>Expected date, when the execution of the tasks will start. null means that the start date is still unknown. <code>Filter(eq;ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -247,10 +247,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="finishdate">FinishDate</h3>
-<p>The drop dead date of the project, e.g. the date when the project should be finished. null means that the finish date is unknown. <code>Filter(eq)</code></p>
+<p>The drop dead date of the project, e.g. the date when the project should be finished. null means that the finish date is unknown. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
@@ -336,10 +336,10 @@ Allowed values for the <code>ProjectStatus</code>(Projects.Classic.Projects.md#p
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="startdate">StartDate</h3>
-<p>Expected date, when the execution of the tasks will start. null means that the start date is still unknown. <code>Filter(eq)</code></p>
+<p>Expected date, when the execution of the tasks will start. null means that the start date is still unknown. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

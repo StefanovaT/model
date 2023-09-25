@@ -39,9 +39,9 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AcceptedOn](Crm.Presales.Offers.md#acceptedon) | datetime __nullable__ | The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown. 
+| [AcceptedOn](Crm.Presales.Offers.md#acceptedon) | datetime __nullable__ | The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown. `Filter(ge;le)` 
 | [AdjustmentNumber](Crm.Presales.Offers.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [AdjustmentTime](Crm.Presales.Offers.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [AdjustmentTime](Crm.Presales.Offers.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [AdjustmentUser](Crm.Presales.Offers.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CompleteTime](Crm.Presales.Offers.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Crm.Presales.Offers.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -58,18 +58,18 @@ Aggregate Tree
 | [Notes](Crm.Presales.Offers.md#notes) | string (254) __nullable__ | Notes for this Offer. 
 | [ObjectVersion](Crm.Presales.Offers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Crm.Presales.Offers.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Crm.Presales.Offers.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [PaymentDueDate](Crm.Presales.Offers.md#paymentduedate) | datetime __nullable__ | The last term for payment. 
+| [PaymentDueDate](Crm.Presales.Offers.md#paymentduedate) | datetime __nullable__ | The last term for payment. `Filter(ge;le)` 
 | [PlanningOnly](Crm.Presales.Offers.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReadOnly](Crm.Presales.Offers.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDate](Crm.Presales.Offers.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDocumentNo](Crm.Presales.Offers.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
 | [ReleaseTime](Crm.Presales.Offers.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [RequiredDeliveryDate](Crm.Presales.Offers.md#requireddeliverydate) | date __nullable__ | When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null. 
+| [RequiredDeliveryDate](Crm.Presales.Offers.md#requireddeliverydate) | date __nullable__ | When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null. `Filter(ge;le)` 
 | [State](Crm.Presales.Offers.md#state) | [DocumentState](Crm.Presales.Offers.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ValidTill](Crm.Presales.Offers.md#validtill) | datetime __nullable__ | Last date when the offer is valid. null means the offer has no specific validity date. `Filter(ge;le)` 
 | [Void](Crm.Presales.Offers.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidReason](Crm.Presales.Offers.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidTime](Crm.Presales.Offers.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [VoidTime](Crm.Presales.Offers.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidUser](Crm.Presales.Offers.md#voiduser) | string (64) __nullable__ | The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 
 ## References
@@ -125,11 +125,11 @@ Aggregate Tree
 
 ### AcceptedOn
 
-The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown.
+The date on which the customer accepted the offer. null if the offer is not yet accepted or the date is unknown. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -146,11 +146,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### AdjustmentTime
 
-Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -338,11 +338,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### PaymentDueDate
 
-The last term for payment.
+The last term for payment. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -404,11 +404,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### RequiredDeliveryDate
 
-When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null.
+When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null. `Filter(ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -474,11 +474,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidTime
 
-Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

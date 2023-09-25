@@ -42,7 +42,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AdjustmentNumber](Crm.Sales.SalesOrders.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [AdjustmentTime](Crm.Sales.SalesOrders.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [AdjustmentTime](Crm.Sales.SalesOrders.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [AdjustmentUser](Crm.Sales.SalesOrders.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CompleteTime](Crm.Sales.SalesOrders.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [CreationTime](Crm.Sales.SalesOrders.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -58,7 +58,7 @@ Aggregate Tree
 | [DocumentVersion](Crm.Sales.SalesOrders.md#documentversion) | int32 | Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [EntityName](Crm.Sales.SalesOrders.md#entityname) | string (64) | The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [FiscalSalesNumber](Crm.Sales.SalesOrders.md#fiscalsalesnumber) | string (32) __nullable__ | Unique number of the sale, assigned for fiscal reporting purposes. The format is according to the applicable legislation. null means that there is no requirement for fiscal sales number for this document or it is unknown. `Filter(multi eq;like)` `ReadOnly` `Introduced in version 19.1` 
-| [FromDate](Crm.Sales.SalesOrders.md#fromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
+| [FromDate](Crm.Sales.SalesOrders.md#fromdate) | date __nullable__ | When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1` 
 | [Id](Crm.Sales.SalesOrders.md#id) | guid |  
 | [IntrastatTransaction<br />NatureCode](Crm.Sales.SalesOrders.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Sales.SalesOrders.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
 | [IntrastatTransportModeCode](Crm.Sales.SalesOrders.md#intrastattransportmodecode) | [TransportMode](Crm.Sales.SalesOrders.md#intrastattransportmodecode) __nullable__ | Transport mode; used for Intrastat reporting. 
@@ -69,7 +69,7 @@ Aggregate Tree
 | [ObjectVersion](Crm.Sales.SalesOrders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Crm.Sales.SalesOrders.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Crm.Sales.SalesOrders.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [PaymentDueDate](Crm.Sales.SalesOrders.md#paymentduedate) | datetime __nullable__ | The last term for the payment of the sales order. `Filter(ge;le)` 
-| [PaymentDueStartDate](Crm.Sales.SalesOrders.md#paymentduestartdate) | datetime __nullable__ | The date when the payment becomes due for documents with one installment. null when the document is with multiple installments. 
+| [PaymentDueStartDate](Crm.Sales.SalesOrders.md#paymentduestartdate) | datetime __nullable__ | The date when the payment becomes due for documents with one installment. null when the document is with multiple installments. `Filter(ge;le)` 
 | [PlanningOnly](Crm.Sales.SalesOrders.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReadOnly](Crm.Sales.SalesOrders.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDate](Crm.Sales.SalesOrders.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
@@ -77,10 +77,10 @@ Aggregate Tree
 | [ReleaseTime](Crm.Sales.SalesOrders.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [RequiredDeliveryDate](Crm.Sales.SalesOrders.md#requireddeliverydate) | date __nullable__ | The required delivery date for all lines in the sales order. Initially calculated, based on either the Ship To Customer or Customer delivery term. `Filter(ge;le)` 
 | [State](Crm.Sales.SalesOrders.md#state) | [DocumentState](Crm.Sales.SalesOrders.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ToDate](Crm.Sales.SalesOrders.md#todate) | date __nullable__ | When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1` 
+| [ToDate](Crm.Sales.SalesOrders.md#todate) | date __nullable__ | When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1` 
 | [Void](Crm.Sales.SalesOrders.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidReason](Crm.Sales.SalesOrders.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidTime](Crm.Sales.SalesOrders.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [VoidTime](Crm.Sales.SalesOrders.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidUser](Crm.Sales.SalesOrders.md#voiduser) | string (64) __nullable__ | The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 
 ## References
@@ -160,11 +160,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### AdjustmentTime
 
-Date/time when the document last has been adjusted by corrective document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 
@@ -355,11 +355,11 @@ _Show in UI_: **ShownByDefault**
 
 ### FromDate
 
-When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Introduced in version 20.1`
+When selling a service valid only for a period, denotes the beginning of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -524,11 +524,11 @@ _Front-End Recalc Expressions:_
 `obj.DocumentDate.AddDays( Convert( IIF( ( obj.ShipToCustomer.DefaultPaymentTermDays != 0), obj.ShipToCustomer.DefaultPaymentTermDays, obj.Customer.DefaultPaymentTermDays), Double))`
 ### PaymentDueStartDate
 
-The date when the payment becomes due for documents with one installment. null when the document is with multiple installments.
+The date when the payment becomes due for documents with one installment. null when the document is with multiple installments. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -627,11 +627,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ToDate
 
-When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Introduced in version 20.1`
+When selling a service valid only for a period, denotes the end of the period. null means that it is unknown or N/A. `Filter(ge;le)` `Introduced in version 20.1`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -662,11 +662,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidTime
 
-Date/time when the document has become void. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

@@ -27,7 +27,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>BeginDateTime</s>](Production.ShopFloor.OutputOrderLines.md#begindatetime) | datetime __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Obsoleted in version 22.1.6.61` 
+| [<s>BeginDateTime</s>](Production.ShopFloor.OutputOrderLines.md#begindatetime) | datetime __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Filter(ge;le)` `Obsoleted in version 22.1.6.61` 
 | [DisplayText](Production.ShopFloor.OutputOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EndTime](Production.ShopFloor.OutputOrderLines.md#endtime) | datetime | Date and time when the operation has ended. `Required` `Default(Now)` `Filter(ge;le)` 
 | [Finished](Production.ShopFloor.OutputOrderLines.md#finished) | boolean | True if this output entry completes the operation. false if there might be more entries. `Required` `Default(false)` `Filter(eq)` 
@@ -39,7 +39,7 @@ Aggregate Root:
 | [ProducedQuantityBase](Production.ShopFloor.OutputOrderLines.md#producedquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Produced Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` 
 | [ProducedStandard<br />QuantityBase](Production.ShopFloor.OutputOrderLines.md#producedstandardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. null means to convert the value from Quantity using the measurement ratios. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
 | [StartTime](Production.ShopFloor.OutputOrderLines.md#starttime) | datetime | Date and time when the operation has began. `Required` `Default(Now)` `Filter(ge;le)` 
-| [TransactionTimestamp](Production.ShopFloor.OutputOrderLines.md#transactiontimestamp) | datetime __nullable__ | Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. `ReadOnly` 
+| [TransactionTimestamp](Production.ShopFloor.OutputOrderLines.md#transactiontimestamp) | datetime __nullable__ | Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. `Filter(ge;le)` `ReadOnly` 
 
 ## References
 
@@ -71,11 +71,11 @@ Aggregate Root:
 
 ### BeginDateTime
 
-**OBSOLETE! Do not use!** Not used. `Obsolete` `Obsoleted in version 22.1.6.61`
+**OBSOLETE! Do not use!** Not used. `Obsolete` `Filter(ge;le)` `Obsoleted in version 22.1.6.61`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **CannotBeShown**  
 
@@ -211,11 +211,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### TransactionTimestamp
 
-Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. `ReadOnly`
+Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **HiddenByDefault**  
 

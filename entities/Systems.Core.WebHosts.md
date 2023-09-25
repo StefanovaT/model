@@ -28,7 +28,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CertificateContents](Systems.Core.WebHosts.md#certificatecontents) | byte[] __nullable__ | The contents of the web host certificate. null means to use the server system certificate. 
-| [CertificateExpiryDate](Systems.Core.WebHosts.md#certificateexpirydate) | date __nullable__ | The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. `Filter(multi eq)` 
+| [CertificateExpiryDate](Systems.Core.WebHosts.md#certificateexpirydate) | date __nullable__ | The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. `Filter(multi eq;ge;le)` 
 | [CertificateOriginal<br />Filename](Systems.Core.WebHosts.md#certificateoriginalfilename) | string (254) __nullable__ | The original name of the file, used to upload the certificate. Used only for reference purposes. When null, means that the user did not provide that information when uploading the certificate. `Filter(eq;like)` 
 | [CertificatePassword](Systems.Core.WebHosts.md#certificatepassword) | string (max) __nullable__ | The password, which should be used to decrypt the certificate. null when the certificate has no password or the system certificate is used. 
 | [CertificateType](Systems.Core.WebHosts.md#certificatetype) | string (3) | The type of certificate uploaded. Currently, only PFX is supported. `Required` `Default("PFX")` `Filter(multi eq)` 
@@ -53,11 +53,11 @@ _Show in UI_: **ShownByDefault**
 
 ### CertificateExpiryDate
 
-The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. `Filter(multi eq)`
+The expiry date of the certificate. Can be used to track the expiration of the web host certificates. When null, the expiry date was not provided by the user, when uploading the certificate. `Filter(multi eq;ge;le)`
 
 _Type_: **date __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

@@ -31,10 +31,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [DayNo](General.Resources.WorkScheduleWorkingTime.md#dayno) | int32 | Consequtive day in the work schedule recurrence, starting at 1. `Required` 
 | [DisplayText](General.Resources.WorkScheduleWorkingTime.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [EndTime](General.Resources.WorkScheduleWorkingTime.md#endtime) | time | End of working time period. `Required` 
+| [EndTime](General.Resources.WorkScheduleWorkingTime.md#endtime) | time | End of working time period. `Required` `Filter(ge;le)` 
 | [Id](General.Resources.WorkScheduleWorkingTime.md#id) | guid |  
 | [ObjectVersion](General.Resources.WorkScheduleWorkingTime.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StartTime](General.Resources.WorkScheduleWorkingTime.md#starttime) | time | Start of working time period on the day, specified by Day_No. `Required` 
+| [StartTime](General.Resources.WorkScheduleWorkingTime.md#starttime) | time | Start of working time period on the day, specified by Day_No. `Required` `Filter(ge;le)` 
 
 ## References
 
@@ -67,11 +67,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### EndTime
 
-End of working time period. `Required`
+End of working time period. `Required` `Filter(ge;le)`
 
 _Type_: **time**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -96,11 +96,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### StartTime
 
-Start of working time period on the day, specified by Day_No. `Required`
+Start of working time period on the day, specified by Day_No. `Required` `Filter(ge;le)`
 
 _Type_: **time**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

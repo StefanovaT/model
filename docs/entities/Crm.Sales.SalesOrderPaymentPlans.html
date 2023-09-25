@@ -129,12 +129,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Sales.SalesOrderPaymentPlans.html#explicitpaymentduedate">ExplicitPaymentDueDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'.</td>
+<td>Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderPaymentPlans.html#explicitpaymentduestartdate">ExplicitPayment<br>DueStartDate</a></td>
 <td>date <strong>nullable</strong></td>
-<td>Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'.</td>
+<td>Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderPaymentPlans.html#id">Id</a></td>
@@ -262,19 +262,19 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="explicitpaymentduedate">ExplicitPaymentDueDate</h3>
-<p>Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'.</p>
+<p>Explicitly specified payment due date. Must be filled if and only if Due_Date_Form_Method = 'EXP'. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( Convert( obj.DueDateFormMethod, Int32) != 0), null, obj.ExplicitPaymentDueDate)</code></p>
 <h3 id="explicitpaymentduestartdate">ExplicitPaymentDueStartDate</h3>
-<p>Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'.</p>
+<p>Explicitly specified date on which the payment becomes executable. Can be specified only when date formation method is 'Set explicit date'. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>

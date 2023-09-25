@@ -30,12 +30,12 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Applications.Fleet.TripSegments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [EndingTimestamp](Applications.Fleet.TripSegments.md#endingtimestamp) | datetime __nullable__ | The ending date and time of the travel on the segment. 
+| [EndingTimestamp](Applications.Fleet.TripSegments.md#endingtimestamp) | datetime __nullable__ | The ending date and time of the travel on the segment. `Filter(ge;le)` 
 | [Id](Applications.Fleet.TripSegments.md#id) | guid |  
 | [Mileage](Applications.Fleet.TripSegments.md#mileage) | decimal (9, 0) __nullable__ | Mileage of the route segment. The mileage is measured in the operational units of the vehicle even when it is not miles or kilometers. null means unknown mileage. 
 | [Notes](Applications.Fleet.TripSegments.md#notes) | string (254) __nullable__ | Notes for the segment. 
 | [ObjectVersion](Applications.Fleet.TripSegments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StartingTimestamp](Applications.Fleet.TripSegments.md#startingtimestamp) | datetime | The starting date and time of the travel on the segment. `Required` 
+| [StartingTimestamp](Applications.Fleet.TripSegments.md#startingtimestamp) | datetime | The starting date and time of the travel on the segment. `Required` `Filter(ge;le)` 
 
 ## References
 
@@ -60,11 +60,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### EndingTimestamp
 
-The ending date and time of the travel on the segment.
+The ending date and time of the travel on the segment. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -110,11 +110,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### StartingTimestamp
 
-The starting date and time of the travel on the segment. `Required`
+The starting date and time of the travel on the segment. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

@@ -37,14 +37,14 @@ Aggregate Tree
 | [IsPublished](Applications.Cms.NewsWebModuleArticles.md#ispublished) | boolean | Specifies whether the article is published for display on web. `Required` `Default(false)` 
 | [LanguageCode](Applications.Cms.NewsWebModuleArticles.md#languagecode) | string (8) | The language code of the article text. `Required` 
 | [ObjectVersion](Applications.Cms.NewsWebModuleArticles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [PublishDate](Applications.Cms.NewsWebModuleArticles.md#publishdate) | datetime | The date and time when the news article should appear to be published. `Required` `Default(Now)` 
+| [PublishDate](Applications.Cms.NewsWebModuleArticles.md#publishdate) | datetime | The date and time when the news article should appear to be published. `Required` `Default(Now)` `Filter(ge;le)` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>AuthorPublicUser</s>](Applications.Cms.NewsWebModuleArticles.md#authorpublicuser) | [PublicUsers](Systems.External.PublicUsers.md) | **OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.13` `Obsolete` |
-| [<s>NewsWebModule</s>](Applications.Cms.NewsWebModuleArticles.md#newswebmodule) | [NewsWebModules](Applications.Cms.NewsWebModules.md) | **OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.13` `Obsolete` |
+| [<s>AuthorPublicUser</s>](Applications.Cms.NewsWebModuleArticles.md#authorpublicuser) | [PublicUsers](Systems.External.PublicUsers.md) | **OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.17` `Obsolete` |
+| [<s>NewsWebModule</s>](Applications.Cms.NewsWebModuleArticles.md#newswebmodule) | [NewsWebModules](Applications.Cms.NewsWebModules.md) | **OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.17` `Obsolete` |
 
 
 ## Attribute Details
@@ -113,11 +113,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### PublishDate
 
-The date and time when the news article should appear to be published. `Required` `Default(Now)`
+The date and time when the news article should appear to be published. `Required` `Default(Now)` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
@@ -127,7 +127,7 @@ _Show in UI_: **ShownByDefault**
 
 ### AuthorPublicUser
 
-**OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.13` `Obsolete`
+**OBSOLETE! Do not use!** The author of the news article. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.17` `Obsolete`
 
 _Type_: **[PublicUsers](Systems.External.PublicUsers.md)**  
 _Category_: **System**  
@@ -136,7 +136,7 @@ _Show in UI_: **ShownByDefault**
 
 ### NewsWebModule
 
-**OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.13` `Obsolete`
+**OBSOLETE! Do not use!** The News Web Module, to which the current article is added. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.2.17` `Obsolete`
 
 _Type_: **[NewsWebModules](Applications.Cms.NewsWebModules.md)**  
 _Category_: **System**  

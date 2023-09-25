@@ -145,7 +145,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.External.PublicUsers.html#createdon">CreatedOn</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date and time when the user was created. <code>Default(Now)</code></td>
+<td>The date and time when the user was created. <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.External.PublicUsers.html#displaytext">DisplayText</a></td>
@@ -205,7 +205,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.External.PublicUsers.html#passwordrecoverycreationtime">PasswordRecovery<br>CreationTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the last password recovery code was created. <code>ReadOnly</code></td>
+<td>Date and time when the last password recovery code was created. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.External.PublicUsers.html#phonenumber">PhoneNumber</a></td>
@@ -252,7 +252,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.External.PublicUsers.html#publicuserlist"><s>PublicUserList</s></a></td>
 <td><a href="Systems.External.PublicUserLists.html">PublicUserLists</a></td>
-<td><strong>OBSOLETE! Do not use!</strong> The list in which the user account is saved. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 24.1.2.13</code> <code>Obsolete</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The list in which the user account is saved. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 24.1.2.17</code> <code>Obsolete</code></td>
 </tr>
 </tbody>
 </table>
@@ -306,10 +306,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="createdon">CreatedOn</h3>
-<p>The date and time when the user was created. <code>Default(Now)</code></p>
+<p>The date and time when the user was created. <code>Default(Now)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -397,10 +397,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="passwordrecoverycreationtime">PasswordRecoveryCreationTime</h3>
-<p>Date and time when the last password recovery code was created. <code>ReadOnly</code></p>
+<p>Date and time when the last password recovery code was created. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="phonenumber">PhoneNumber</h3>
@@ -448,7 +448,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="publicuserlist">PublicUserList</h3>
-<p><strong>OBSOLETE! Do not use!</strong> The list in which the user account is saved. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 24.1.2.13</code> <code>Obsolete</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> The list in which the user account is saved. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 24.1.2.17</code> <code>Obsolete</code></p>
 <p><em>Type</em>: <strong><a href="Systems.External.PublicUserLists.html">PublicUserLists</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

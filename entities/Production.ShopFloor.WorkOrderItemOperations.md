@@ -29,8 +29,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ActualEndDateTime](Production.ShopFloor.WorkOrderItemOperations.md#actualenddatetime) | datetime __nullable__ | The date/time when the operation has completed. null means that the operation is not completed. 
-| [ActualStartDateTime](Production.ShopFloor.WorkOrderItemOperations.md#actualstartdatetime) | datetime __nullable__ | The date/time when the operation has started. null means that the has not started yet. 
+| [ActualEndDateTime](Production.ShopFloor.WorkOrderItemOperations.md#actualenddatetime) | datetime __nullable__ | The date/time when the operation has completed. null means that the operation is not completed. `Filter(ge;le)` 
+| [ActualStartDateTime](Production.ShopFloor.WorkOrderItemOperations.md#actualstartdatetime) | datetime __nullable__ | The date/time when the operation has started. null means that the has not started yet. `Filter(ge;le)` 
 | [DisplayText](Production.ShopFloor.WorkOrderItemOperations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.ShopFloor.WorkOrderItemOperations.md#id) | guid |  
 | [LineOrd](Production.ShopFloor.WorkOrderItemOperations.md#lineord) | int32 | Order of the line within the work order routing. `Required` `Filter(eq;like)` 
@@ -40,8 +40,8 @@ Aggregate Root:
 | [ObjectVersion](Production.ShopFloor.WorkOrderItemOperations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OperationDescription](Production.ShopFloor.WorkOrderItemOperations.md#operationdescription) | string (max) __nullable__ | The short description of the operation. 
 | [RunTimeMinutes](Production.ShopFloor.WorkOrderItemOperations.md#runtimeminutes) | int32 | Time for production of one lot of the produced item in minutes. `Required` `Default(0)` 
-| [ScheduledEndDateTime](Production.ShopFloor.WorkOrderItemOperations.md#scheduledenddatetime) | datetime __nullable__ | The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only). 
-| [ScheduledStartDateTime](Production.ShopFloor.WorkOrderItemOperations.md#scheduledstartdatetime) | datetime __nullable__ | The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders). 
+| [ScheduledEndDateTime](Production.ShopFloor.WorkOrderItemOperations.md#scheduledenddatetime) | datetime __nullable__ | The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only). `Filter(ge;le)` 
+| [ScheduledStartDateTime](Production.ShopFloor.WorkOrderItemOperations.md#scheduledstartdatetime) | datetime __nullable__ | The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders). `Filter(ge;le)` 
 | [ScrapRate](Production.ShopFloor.WorkOrderItemOperations.md#scraprate) | decimal (7, 6) | Projected scrap rate of the operation. `Required` `Default(0)` 
 | [SetupTimeMinutes](Production.ShopFloor.WorkOrderItemOperations.md#setuptimeminutes) | int32 | Time needed to setup the equipment in minutes. `Required` `Default(0)` 
 | [Tooling](Production.ShopFloor.WorkOrderItemOperations.md#tooling) | string (max) __nullable__ | The tools needed for the routing step. 
@@ -67,21 +67,21 @@ Aggregate Root:
 
 ### ActualEndDateTime
 
-The date/time when the operation has completed. null means that the operation is not completed.
+The date/time when the operation has completed. null means that the operation is not completed. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### ActualStartDateTime
 
-The date/time when the operation has started. null means that the has not started yet.
+The date/time when the operation has started. null means that the has not started yet. `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -187,21 +187,21 @@ _Show in UI_: **ShownByDefault**
 
 ### ScheduledEndDateTime
 
-The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only).
+The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only). `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### ScheduledStartDateTime
 
-The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders).
+The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders). `Filter(ge;le)`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

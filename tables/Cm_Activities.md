@@ -522,6 +522,12 @@ When to snooze to the owner to remind him for the task. This default reminder is
 |User Login|no|
 |Visible|yes|
 
+#### Reminder_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Responsible_Party_Id
 
 

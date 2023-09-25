@@ -31,7 +31,7 @@ Aggregate Tree
 | [Latitude](Applications.Fleet.VehicleLocationHistoryRecords.md#latitude) | decimal (10, 7) | Latitude of the vehicle at the specified time. Latitude is the vertical angle from equator to the pole of the point. Positive values denote points north of the equator. The value is in the range `-90, 90`. `Required` 
 | [Longitude](Applications.Fleet.VehicleLocationHistoryRecords.md#longitude) | decimal (10, 7) | Longitude of the vehicle at the specified time. Longitude is angle from the prime meridian (in England) in east-west direction. Positive values denote east and negative - west. The value is in the range `-180, 180`. `Required` 
 | [ObjectVersion](Applications.Fleet.VehicleLocationHistoryRecords.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Time](Applications.Fleet.VehicleLocationHistoryRecords.md#time) | datetime | The time, for which the location is stored. `Required` 
+| [Time](Applications.Fleet.VehicleLocationHistoryRecords.md#time) | datetime | The time, for which the location is stored. `Required` `Filter(ge;le)` 
 
 ## References
 
@@ -103,11 +103,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### Time
 
-The time, for which the location is stored. `Required`
+The time, for which the location is stored. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

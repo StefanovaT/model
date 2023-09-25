@@ -68,6 +68,12 @@ The date on which the customer accepted the offer. NULL if the offer is not yet 
 |User Login|no|
 |Visible|yes|
 
+#### Accepted_On - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Customer_Id
 
 
@@ -413,6 +419,12 @@ The last term for payment
 |User Login|no|
 |Visible|yes|
 
+#### Payment_Due_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Payment_Type_Id
 
 
@@ -553,6 +565,12 @@ When not NULL, specifies required delivery date for all offer lines. When the li
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Required_Delivery_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Row_Version
 

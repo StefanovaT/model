@@ -151,6 +151,12 @@ End date of the campaign. NULL means that the end date is still unknown
 |User Login|no|
 |Visible|yes|
 
+#### End_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Forecasted_Cost
 
 
@@ -237,5 +243,11 @@ Starting date of the campaign
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Start_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 

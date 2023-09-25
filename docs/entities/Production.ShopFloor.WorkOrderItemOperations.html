@@ -109,12 +109,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#actualenddatetime">ActualEndDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date/time when the operation has completed. null means that the operation is not completed.</td>
+<td>The date/time when the operation has completed. null means that the operation is not completed. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#actualstartdatetime">ActualStartDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date/time when the operation has started. null means that the has not started yet.</td>
+<td>The date/time when the operation has started. null means that the has not started yet. <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#displaytext">DisplayText</a></td>
@@ -164,12 +164,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#scheduledenddatetime">ScheduledEndDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only).</td>
+<td>The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only). <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#scheduledstartdatetime">ScheduledStartDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders).</td>
+<td>The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders). <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#scraprate">ScrapRate</a></td>
@@ -244,17 +244,17 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="actualenddatetime">ActualEndDateTime</h3>
-<p>The date/time when the operation has completed. null means that the operation is not completed.</p>
+<p>The date/time when the operation has completed. null means that the operation is not completed. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="actualstartdatetime">ActualStartDateTime</h3>
-<p>The date/time when the operation has started. null means that the has not started yet.</p>
+<p>The date/time when the operation has started. null means that the has not started yet. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
@@ -331,17 +331,17 @@ Aggregate Root:<br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="scheduledenddatetime">ScheduledEndDateTime</h3>
-<p>The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only).</p>
+<p>The date/time when the operation is scheduled to complete. null means that there is still no plan when the operation will finish (for new orders only). <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="scheduledstartdatetime">ScheduledStartDateTime</h3>
-<p>The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders).</p>
+<p>The date/time when the operation is planned to start. null means that there is still no plan when to start the operaion (only for new work orders). <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="scraprate">ScrapRate</h3>

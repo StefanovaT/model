@@ -25,10 +25,10 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreationTimeUtc](Communities.Social.Posts.md#creationtimeutc) | datetime | The exact server time (in UTC), when the post was created. `Required` 
+| [CreationTimeUtc](Communities.Social.Posts.md#creationtimeutc) | datetime | The exact server time (in UTC), when the post was created. `Required` `Filter(ge;le)` 
 | [DisplayText](Communities.Social.Posts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.Social.Posts.md#id) | guid |  
-| [LastInteractionTimeUtc](Communities.Social.Posts.md#lastinteractiontimeutc) | datetime | The server time (in UTC) of the last interaction with the post, including comments, replies, likes, etc. `Required` 
+| [LastInteractionTimeUtc](Communities.Social.Posts.md#lastinteractiontimeutc) | datetime | The server time (in UTC) of the last interaction with the post, including comments, replies, likes, etc. `Required` `Filter(ge;le)` 
 | [ObjectVersion](Communities.Social.Posts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PostText](Communities.Social.Posts.md#posttext) | string (max) | The post contents in clear text. `Required` 
 
@@ -44,11 +44,11 @@ Aggregate Tree
 
 ### CreationTimeUtc
 
-The exact server time (in UTC), when the post was created. `Required`
+The exact server time (in UTC), when the post was created. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -73,11 +73,11 @@ _Show in UI_: **ShownByDefault**
 
 ### LastInteractionTimeUtc
 
-The server time (in UTC) of the last interaction with the post, including comments, replies, likes, etc. `Required`
+The server time (in UTC) of the last interaction with the post, including comments, replies, likes, etc. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

@@ -29,9 +29,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AvailableEndTime](Production.Resources.Capacity.md#availableendtime) | datetime | End of availability period during Calendar_Date. `Required` 
+| [AvailableEndTime](Production.Resources.Capacity.md#availableendtime) | datetime | End of availability period during Calendar_Date. `Required` `Filter(ge;le)` 
 | [AvailableQuantity](Production.Resources.Capacity.md#availablequantity) | [Quantity (9, 0)](../data-types.md#quantity) | Quantity of the resource, available to production. `Unit: WorkgroupResource.Resource.PrimaryUnit` `Required` 
-| [AvailableStartTime](Production.Resources.Capacity.md#availablestarttime) | datetime | Start of availability period during Calendar_Date. `Required` 
+| [AvailableStartTime](Production.Resources.Capacity.md#availablestarttime) | datetime | Start of availability period during Calendar_Date. `Required` `Filter(ge;le)` 
 | [CalendarDate](Production.Resources.Capacity.md#calendardate) | datetime | Date of the availability period. `Required` `Filter(ge;le)` 
 | [DisplayText](Production.Resources.Capacity.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.Resources.Capacity.md#id) | guid |  
@@ -48,11 +48,11 @@ Aggregate Root:
 
 ### AvailableEndTime
 
-End of availability period during Calendar_Date. `Required`
+End of availability period during Calendar_Date. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -68,11 +68,11 @@ _Show in UI_: **ShownByDefault**
 
 ### AvailableStartTime
 
-Start of availability period during Calendar_Date. `Required`
+Start of availability period during Calendar_Date. `Required` `Filter(ge;le)`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

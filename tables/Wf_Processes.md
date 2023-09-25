@@ -55,6 +55,12 @@ Contains the business process diagrams. Entity: Wf_Processes
 |User Login|no|
 |Visible|no|
 
+#### Creation_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Creation_User
 
 | Property | Value |
@@ -416,6 +422,12 @@ Contains the visual thumbnail of the presentation of the business process. It is
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+#### Update_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Update_User
 

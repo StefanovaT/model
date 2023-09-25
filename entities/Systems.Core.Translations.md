@@ -37,7 +37,7 @@ Aggregate Tree
 | [ResourceId](Systems.Core.Translations.md#resourceid) | string (800) | The unique identifier of the translated resource. Should use ASCII/English chars only. Shorter strings are suggested. Depending on Text_Type: T:TableName; C:ColumnName; H:TableName.ColumnName; E,M,S: Application specific code. `Required` `Filter(eq;like)` 
 | [ResourceType](Systems.Core.Translations.md#resourcetype) | [ResourceType](Systems.Core.Translations.md#resourcetype) | T=Table (entity) Name; C=Column Name; H=Column Hint; R=Meta Resource; E=Error; M=Message; S=Other application specific String. `Required` `Default("S")` `Filter(eq)` 
 | [TranslationField](Systems.Core.Translations.md#translationfield) | string (max) | The translated text. `Required` 
-| [UpdateTime](Systems.Core.Translations.md#updatetime) | datetime | When the translation was last updated. `Required` `Default(Now)` `ReadOnly` 
+| [UpdateTime](Systems.Core.Translations.md#updatetime) | datetime | When the translation was last updated. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` 
 
 
 ## Attribute Details
@@ -167,11 +167,11 @@ _Show in UI_: **ShownByDefault**
 
 ### UpdateTime
 
-When the translation was last updated. `Required` `Default(Now)` `ReadOnly`
+When the translation was last updated. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  

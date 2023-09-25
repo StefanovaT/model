@@ -98,6 +98,7 @@ The time, when the message was contributed.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Last_Edit_Time
 
@@ -134,6 +135,7 @@ Contains the last edit time of the message. NULL if the message was never edited
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Message
 

@@ -208,4 +208,10 @@ The date and time when the step execution started.
 |User Login|no|
 |Visible|yes|
 
+#### Start_Time - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 
