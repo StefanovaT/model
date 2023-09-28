@@ -11660,6 +11660,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35497.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35497.html",
+          "hash": "JBF5/EsEOz2tHjvNBhexmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -20232,7 +20244,7 @@
       "output": {
         ".html": {
           "relative_path": "reference/common-business-rules/all-entities.html",
-          "hash": "aIsjTbTHGALKo8ylBZNjMw=="
+          "hash": "Sr+pyxW9/8CiLzYW/Zb+tQ=="
         }
       },
       "is_incremental": false,
