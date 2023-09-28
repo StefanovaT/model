@@ -17,7 +17,7 @@ Billable products within a subscription. Entity: Sm_Subscription_Lines (Introduc
 | - | - | --- |
 |[Line_No](#line_no)|`int` |Consecutive number of the line within the subscription.|
 |[Notes](#notes)|`nvarchar(max)` ||
-|[Product_Id](#product_id)|`uniqueidentifier` |The product for this line of the subscription.|
+|[Product_Id](#product_id)|`uniqueidentifier` |The product to be billed|
 |[Quantity](#quantity)|`decimal(12, 3)` |The quantity, which should be billed.|
 |[Quantity_Unit_Id](#quantity_unit_id)|`uniqueidentifier` |The measurement unit of Quantity.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -94,7 +94,7 @@ Consecutive number of the line within the subscription.
 ### Product_Id
 
 
-The product for this line of the subscription.
+The product to be billed
 
 | Property | Value |
 | - | - |

@@ -41,7 +41,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Product](Crm.Subscriptions.SubscriptionLines.md#product) | [Products](General.Products.Products.md) | The product for this line of the subscription. `Required` `Filter(multi eq)` |
+| [Product](Crm.Subscriptions.SubscriptionLines.md#product) | [Products](General.Products.Products.md) | The product to be billed. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Crm.Subscriptions.SubscriptionLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [Subscription](Crm.Subscriptions.SubscriptionLines.md#subscription) | [Subscriptions](Crm.Subscriptions.Subscriptions.md) | The <see cref="Subscription"/> to which this SubscriptionLine belongs. `Required` `Filter(multi eq)` `Owner` |
 
@@ -129,7 +129,7 @@ _Show in UI_: **ShownByDefault**
 
 ### Product
 
-The product for this line of the subscription. `Required` `Filter(multi eq)`
+The product to be billed. `Required` `Filter(multi eq)`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  

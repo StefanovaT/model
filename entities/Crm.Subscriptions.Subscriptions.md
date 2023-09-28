@@ -9,7 +9,7 @@ Agreements with customers for periodic delivery of services and billing. Entity:
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {EnterpriseCompanyId}_  
+_{Customer.Party.PartyName:T} - {BillingCycle.Name:T}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  

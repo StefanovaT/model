@@ -156,13 +156,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.TransferOrders.html#defaultduedatein">DefaultDueDateIn</a></td>
-<td>datetime <strong>nullable</strong></td>
-<td>The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. <code>Default(Today)</code> <code>Filter(ge;le)</code></td>
+<td>datetime</td>
+<td>The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. <code>Required</code> <code>Default(Today)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.TransferOrders.html#defaultduedateout">DefaultDueDateOut</a></td>
-<td>datetime <strong>nullable</strong></td>
-<td>The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. <code>Default(Today)</code> <code>Filter(ge;le)</code></td>
+<td>datetime</td>
+<td>The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. <code>Required</code> <code>Default(Today)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.TransferOrders.html#displaytext">DisplayText</a></td>
@@ -503,8 +503,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="defaultduedatein">DefaultDueDateIn</h3>
-<p>The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. <code>Default(Today)</code> <code>Filter(ge;le)</code></p>
-<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<p>The date, when the goods are expected to be received in the destination warehouse. null, means that the lines have different Due Dates In. <code>Required</code> <code>Default(Today)</code> <code>Filter(ge;le)</code></p>
+<p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
@@ -513,8 +513,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Lines.Select( c =&gt; TransferOrderLinesRepository.DueDateInAttribute.GetUntypedValue( c, False)).Distinct( ).OnlyIfSingle( )</code></p>
 <h3 id="defaultduedateout">DefaultDueDateOut</h3>
-<p>The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. <code>Default(Today)</code> <code>Filter(ge;le)</code></p>
-<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<p>The date, when the transfer is scheduled to issue the goods from the source warehouse. null, means that the lines have different Due Dates Out. <code>Required</code> <code>Default(Today)</code> <code>Filter(ge;le)</code></p>
+<p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
