@@ -37,7 +37,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [PrimaryUser](Projects.Agile.ProjectAreas.md#primaryuser) | [Users](Systems.Security.Users.md) (nullable) | Specified, when there is primary user for the area. `Filter(multi eq)` |
+| [PrimaryUser](Projects.Agile.ProjectAreas.md#primaryuser) | [Users](Systems.Security.Users.md) (nullable) | Specified, when there is a primary user for the area. `Filter(multi eq)` |
 | [Project](Projects.Agile.ProjectAreas.md#project) | [Projects](Projects.Agile.Projects.md) (nullable) | Specified for local project areas. null means that the area is global and assignable for all projects. `Filter(multi eq)` |
 
 
@@ -98,7 +98,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### PrimaryUser
 
-Specified, when there is primary user for the area. `Filter(multi eq)`
+Specified, when there is a primary user for the area. `Filter(multi eq)`
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Indexed_: **True**  

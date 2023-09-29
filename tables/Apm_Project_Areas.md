@@ -12,7 +12,7 @@ Area of a project. Can be applicable to a single project or all projects. Entity
 | Name | Type | Description |
 | - | - | --- |
 |[Is_Active](#is_active)|`bit` |Specifies whether the project area is active for new projects|
-|[Primary_User_Id](#primary_user_id)|`uniqueidentifier` |Specified, when there is primary user for the area|
+|[Primary_User_Id](#primary_user_id)|`uniqueidentifier` |Specified, when there is a primary user for the area|
 |[Project_Area_Id](#project_area_id)|`uniqueidentifier` `PK`||
 |[Project_Area_Name](#project_area_name)|`nvarchar(256)` `ML`|Multi-language name of the project area|
 |[Project_Id](#project_id)|`uniqueidentifier` |Specified for local project areas. NULL means that the area is global and assignable for all projects.|
@@ -59,7 +59,7 @@ Specifies whether the project area is active for new projects
 ### Primary_User_Id
 
 
-Specified, when there is primary user for the area
+Specified, when there is a primary user for the area
 
 | Property | Value |
 | - | - |

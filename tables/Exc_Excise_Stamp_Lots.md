@@ -204,7 +204,7 @@ Specifies the prefix that is used in forming the value of the "BatchNumber" fiel
 
 | Property | Value |
 | - | - |
-|Auto Complete|no|
+|Auto Complete|yes|
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
@@ -231,6 +231,7 @@ Specifies the prefix that is used in forming the value of the "BatchNumber" fiel
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|yes|no|
 |Like|None|no|no|
 
 ### Purchase_Lot_Number

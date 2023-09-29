@@ -33,7 +33,7 @@ Aggregate Tree
 | [Id](Finance.Excise.ExciseStampLots.md#id) | guid |  
 | [IsActive](Finance.Excise.ExciseStampLots.md#isactive) | boolean | Is Active. `Required` `Default(true)` `Filter(eq)` 
 | [ObjectVersion](Finance.Excise.ExciseStampLots.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Prefix](Finance.Excise.ExciseStampLots.md#prefix) | string (30) __nullable__ | Specifies the prefix that is used in forming the value of the "BatchNumber" field. `Filter(like)` `Introduced in version 24.1.2.1` 
+| [Prefix](Finance.Excise.ExciseStampLots.md#prefix) | string (30) __nullable__ | Specifies the prefix that is used in forming the value of the "BatchNumber" field. `Filter(eq;like)` `Introduced in version 24.1.2.1` 
 | [PurchaseLotNumber](Finance.Excise.ExciseStampLots.md#purchaselotnumber) | string (30) | Type and number of the document with which the excise stamps were received from the customs administration. `Required` `Filter(eq;like)` 
 | [Quantity](Finance.Excise.ExciseStampLots.md#quantity) | int32 | Number of excise stamps in the lot. `Required` `Default(0)` 
 | [StartNumber](Finance.Excise.ExciseStampLots.md#startnumber) | string (30) | Start number of the lot. `Required` 
@@ -116,11 +116,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### Prefix
 
-Specifies the prefix that is used in forming the value of the "BatchNumber" field. `Filter(like)` `Introduced in version 24.1.2.1`
+Specifies the prefix that is used in forming the value of the "BatchNumber" field. `Filter(eq;like)` `Introduced in version 24.1.2.1`
 
 _Type_: **string (30) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  

@@ -15,8 +15,8 @@ Orders for stock transfers between stores. Entity: Inv_Transfer_Orders
 
 | Name | Type | Description |
 | - | - | --- |
-|[Default_Due_Date_In](#default_due_date_in)|`datetime` |The date, when the goods are expected to be received in the destination warehouse. NULL, means that the lines have different Due Dates In.|
-|[Default_Due_Date_Out](#default_due_date_out)|`datetime` |The date, when the transfer is scheduled to issue the goods from the source warehouse. NULL, means that the lines have different Due Dates Out.|
+|[Default_Due_Date_In](#default_due_date_in)|`datetime` |The date, when the goods are expected to be received in the destination warehouse|
+|[Default_Due_Date_Out](#default_due_date_out)|`datetime` |The date, when the transfer is scheduled to issue the goods from the source warehouse|
 |[Document_Id](#document_id)|`uniqueidentifier` |The unique stock transfer order id, as per documents table|
 |[From_Store_Id](#from_store_id)|`uniqueidentifier` |Specifies the store, from which the goods will be issued.|
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
@@ -32,7 +32,7 @@ Orders for stock transfers between stores. Entity: Inv_Transfer_Orders
 ### Default_Due_Date_In
 
 
-The date, when the goods are expected to be received in the destination warehouse. NULL, means that the lines have different Due Dates In.
+The date, when the goods are expected to be received in the destination warehouse
 
 | Property | Value |
 | - | - |
@@ -68,7 +68,7 @@ The date, when the goods are expected to be received in the destination warehous
 ### Default_Due_Date_Out
 
 
-The date, when the transfer is scheduled to issue the goods from the source warehouse. NULL, means that the lines have different Due Dates Out.
+The date, when the transfer is scheduled to issue the goods from the source warehouse
 
 | Property | Value |
 | - | - |
