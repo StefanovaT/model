@@ -22,8 +22,6 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Projects.AI.Models](Projects.AI.Models.md)  
-  * [Projects.AI.ModelAssets](Projects.AI.ModelAssets.md)  
-  * [Projects.AI.ModelBuilds](Projects.AI.ModelBuilds.md)  
   * [Projects.AI.ModelQAs](Projects.AI.ModelQAs.md)  
 
 ## Attributes
@@ -45,7 +43,6 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ConversationalCompilation](Projects.AI.Models.md#conversationalcompilation) | [Compilations](Projects.AI.Compilations.md) (nullable) | The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. `Filter(multi eq)` `Introduced in version 24.1.2.11` |
-| [ConversationBuild](Projects.AI.Models.md#conversationbuild) | [ModelBuilds](Projects.AI.ModelBuilds.md) (nullable) | The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. `Filter(multi eq)` |
 | [Parent](Projects.AI.Models.md#parent) | [Models](Projects.AI.Models.md) (nullable) | A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. `Filter(multi eq)` |
 | [VirtualUser](Projects.AI.Models.md#virtualuser) | [Users](Systems.Security.Users.md) (nullable) | The virtual user, which will answer in chats on behalf of the model. null means the model cannot be used in chat. Each model should have different virtual user. `Filter(multi eq)` |
 
@@ -53,8 +50,6 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Assets | [ModelAssets](Projects.AI.ModelAssets.md) | List of `ModelAsset`(Projects.AI.ModelAssets.md) child objects, based on the `Projects.AI.ModelAsset.Model`(Projects.AI.ModelAssets.md#model) back reference 
-| Builds | [ModelBuilds](Projects.AI.ModelBuilds.md) | List of `ModelBuild`(Projects.AI.ModelBuilds.md) child objects, based on the `Projects.AI.ModelBuild.Model`(Projects.AI.ModelBuilds.md#model) back reference 
 | QAs | [ModelQAs](Projects.AI.ModelQAs.md) | List of `ModelQA`(Projects.AI.ModelQAs.md) child objects, based on the `Projects.AI.ModelQA.Model`(Projects.AI.ModelQAs.md#model) back reference 
 
 
@@ -169,16 +164,6 @@ _Show in UI_: **ShownByDefault**
 The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. `Filter(multi eq)` `Introduced in version 24.1.2.11`
 
 _Type_: **[Compilations](Projects.AI.Compilations.md) (nullable)**  
-_Indexed_: **True**  
-_Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **ShownByDefault**  
-
-### ConversationBuild
-
-The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. `Filter(multi eq)`
-
-_Type_: **[ModelBuilds](Projects.AI.ModelBuilds.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

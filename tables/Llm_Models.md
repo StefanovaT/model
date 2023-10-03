@@ -13,7 +13,6 @@ Language models, which will be enriched with domain specific knowledge. Entity: 
 | - | - | --- |
 |[Auto_Update_To_Latest_Build](#auto_update_to_latest_build)|`bit` |Indicates whether to automatically update Conversation Build to the latest successful build.|
 |[Base_Provider_Model](#base_provider_model)|`nvarchar(64)` |Provider-specific base model, to which we will add domain specific knowledge (for example "gpt-3.5-turbo-0613"). NULL for non-buildable models (only used as child models).|
-|[Conversation_Build_Id](#conversation_build_id)|`uniqueidentifier` |The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. NULL means the model could not be used for conversations.|
 |[Conversational_Compilation_Id](#conversational_compilation_id)|`uniqueidentifier` |The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. NULL means the model cannot be used for conversations.|
 |[Model_Id](#model_id)|`uniqueidentifier` `PK`||
 |[Name](#name)|`nvarchar(256)` `ML`|Multi-language name of the model.|
@@ -85,43 +84,6 @@ Provider-specific base model, to which we will add domain specific knowledge (fo
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
-
-### Conversation_Build_Id
-
-
-The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. NULL means the model could not be used for conversations.
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|-1|
-|Order|7|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|Referenced Table|[Llm_Model_Builds](Llm_Model_Builds.md)|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|uniqueidentifier (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
-#### Conversation_Build_Id - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Equals|`NULL`|yes|no|
 
 ### Conversational_Compilation_Id
 

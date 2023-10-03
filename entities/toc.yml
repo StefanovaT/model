@@ -1054,10 +1054,6 @@
       href: Projects.AI.CompilationAssets.md
     - name: Compilations
       href: Projects.AI.Compilations.md
-    - name: ModelAssets
-      href: Projects.AI.ModelAssets.md
-    - name: ModelBuilds
-      href: Projects.AI.ModelBuilds.md
     - name: ModelQAs
       href: Projects.AI.ModelQAs.md
     - name: Models

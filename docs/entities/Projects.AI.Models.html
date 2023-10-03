@@ -96,8 +96,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <ul>
 <li><a href="Projects.AI.Models.html">Projects.AI.Models</a>
 <ul>
-<li><a href="Projects.AI.ModelAssets.html">Projects.AI.ModelAssets</a></li>
-<li><a href="Projects.AI.ModelBuilds.html">Projects.AI.ModelBuilds</a></li>
 <li><a href="Projects.AI.ModelQAs.html">Projects.AI.ModelQAs</a></li>
 </ul>
 </li>
@@ -175,11 +173,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.2.11</code></td>
 </tr>
 <tr>
-<td><a href="Projects.AI.Models.html#conversationbuild">ConversationBuild</a></td>
-<td><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a> (nullable)</td>
-<td>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
 <td><a href="Projects.AI.Models.html#parent">Parent</a></td>
 <td><a href="Projects.AI.Models.html">Models</a> (nullable)</td>
 <td>A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. <code>Filter(multi eq)</code></td>
@@ -201,16 +194,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Assets</td>
-<td><a href="Projects.AI.ModelAssets.html">ModelAssets</a></td>
-<td>List of <code>ModelAsset</code>(Projects.AI.ModelAssets.md) child objects, based on the <code>Projects.AI.ModelAsset.Model</code>(Projects.AI.ModelAssets.md#model) back reference</td>
-</tr>
-<tr>
-<td>Builds</td>
-<td><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a></td>
-<td>List of <code>ModelBuild</code>(Projects.AI.ModelBuilds.md) child objects, based on the <code>Projects.AI.ModelBuild.Model</code>(Projects.AI.ModelBuilds.md#model) back reference</td>
-</tr>
 <tr>
 <td>QAs</td>
 <td><a href="Projects.AI.ModelQAs.html">ModelQAs</a></td>
@@ -307,13 +290,6 @@ Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) dat
 <h3 id="conversationalcompilation">ConversationalCompilation</h3>
 <p>The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.2.11</code></p>
 <p><em>Type</em>: <strong><a href="Projects.AI.Compilations.html">Compilations</a> (nullable)</strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="conversationbuild">ConversationBuild</h3>
-<p>The build, which should be used, when conversing on behalf of the model. Usually, updated to the latest successful build. null means the model could not be used for conversations. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="Projects.AI.ModelBuilds.html">ModelBuilds</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

@@ -14,7 +14,7 @@ Default Search Members:
 _TemplateName_  
 Name Data Member:  
 _TemplateName_  
-Category:  _Definitions_  
+Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
