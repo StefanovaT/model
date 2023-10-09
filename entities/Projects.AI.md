@@ -8,4 +8,5 @@ uid: Projects.AI
 - [Compilations](Projects.AI.Compilations.md)  
 - [ModelQAs](Projects.AI.ModelQAs.md)  
 - [Models](Projects.AI.Models.md)  
+- [Providers](Projects.AI.Providers.md)  
 
