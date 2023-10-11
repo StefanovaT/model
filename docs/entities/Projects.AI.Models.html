@@ -146,14 +146,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
-<td><a href="Projects.AI.Models.html#provider">Provider</a></td>
-<td><a href="Projects.AI.Models.html#provider">Provider</a> <strong>nullable</strong></td>
-<td>The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
 <td><a href="Projects.AI.Models.html#providerapikey">ProviderApiKey</a></td>
 <td>string (128) <strong>nullable</strong></td>
 <td>The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).</td>
+</tr>
+<tr>
+<td><a href="Projects.AI.Models.html#providername">ProviderName</a></td>
+<td><a href="Projects.AI.Models.html#providername">ProviderName</a> <strong>nullable</strong></td>
+<td>The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 </tbody>
 </table>
@@ -176,6 +176,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.AI.Models.html#parent">Parent</a></td>
 <td><a href="Projects.AI.Models.html">Models</a> (nullable)</td>
 <td>A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.AI.Models.html#provider">Provider</a></td>
+<td><a href="Projects.AI.Providers.html">Providers</a> (nullable)</td>
+<td>The provider and base model, which should be fine-tuned with the domain specific knowledge. null means that this model cannot by compiled and can only be used as a child for another model. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.3.3</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.Models.html#virtualuser">VirtualUser</a></td>
@@ -254,12 +259,20 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
-<h3 id="provider">Provider</h3>
-<p>The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong><a href="Projects.AI.Models.html#provider">Provider</a> <strong>nullable</strong></strong><br>
+<h3 id="providerapikey">ProviderApiKey</h3>
+<p>The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).</p>
+<p><em>Type</em>: <strong>string (128) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) data attribute<br>
-<em>Allowed Values (Projects.AI.ModelsRepository.Provider Enum Members)</em></p>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>128</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="providername">ProviderName</h3>
+<p>The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). <code>Default(&quot;OpenAI&quot;)</code> <code>Filter(eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.AI.Models.html#providername">ProviderName</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>ProviderName</code>(Projects.AI.Models.md#providername) data attribute<br>
+<em>Allowed Values (Projects.AI.ModelsRepository.ProviderName Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -278,14 +291,6 @@ Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) dat
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>OpenAI</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="providerapikey">ProviderApiKey</h3>
-<p>The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).</p>
-<p><em>Type</em>: <strong>string (128) <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>128</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="conversationalcompilation">ConversationalCompilation</h3>
 <p>The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.2.11</code></p>
@@ -297,6 +302,13 @@ Allowed values for the <code>Provider</code>(Projects.AI.Models.md#provider) dat
 <h3 id="parent">Parent</h3>
 <p>A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.AI.Models.html">Models</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="provider">Provider</h3>
+<p>The provider and base model, which should be fine-tuned with the domain specific knowledge. null means that this model cannot by compiled and can only be used as a child for another model. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.3.3</code></p>
+<p><em>Type</em>: <strong><a href="Projects.AI.Providers.html">Providers</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

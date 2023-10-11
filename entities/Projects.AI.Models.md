@@ -35,8 +35,8 @@ Aggregate Tree
 | [Name](Projects.AI.Models.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the model. `Required` `Filter(like)` 
 | [Notes](Projects.AI.Models.md#notes) | string (max) __nullable__ | Notes for this Model. 
 | [ObjectVersion](Projects.AI.Models.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Provider](Projects.AI.Models.md#provider) | [Provider](Projects.AI.Models.md#provider) __nullable__ | The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)` 
 | [ProviderApiKey](Projects.AI.Models.md#providerapikey) | string (128) __nullable__ | The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models). 
+| [ProviderName](Projects.AI.Models.md#providername) | [ProviderName](Projects.AI.Models.md#providername) __nullable__ | The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)` 
 
 ## References
 
@@ -44,6 +44,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [ConversationalCompilation](Projects.AI.Models.md#conversationalcompilation) | [Compilations](Projects.AI.Compilations.md) (nullable) | The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. `Filter(multi eq)` `Introduced in version 24.1.2.11` |
 | [Parent](Projects.AI.Models.md#parent) | [Models](Projects.AI.Models.md) (nullable) | A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. `Filter(multi eq)` |
+| [Provider](Projects.AI.Models.md#provider) | [Providers](Projects.AI.Providers.md) (nullable) | The provider and base model, which should be fine-tuned with the domain specific knowledge. null means that this model cannot by compiled and can only be used as a child for another model. `Filter(multi eq)` `Introduced in version 24.1.3.3` |
 | [VirtualUser](Projects.AI.Models.md#virtualuser) | [Users](Systems.Security.Users.md) (nullable) | The virtual user, which will answer in chats on behalf of the model. null means the model cannot be used in chat. Each model should have different virtual user. `Filter(multi eq)` |
 
 ## Child Collections
@@ -127,24 +128,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
-### Provider
-
-The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)`
-
-_Type_: **[Provider](Projects.AI.Models.md#provider) __nullable__**  
-_Category_: **System**  
-Allowed values for the `Provider`(Projects.AI.Models.md#provider) data attribute  
-_Allowed Values (Projects.AI.ModelsRepository.Provider Enum Members)_  
-
-| Value | Description |
-| ---- | --- |
-| OpenAI | OpenAI value. Stored as 'OpenAI'. <br /> _Database Value:_ 'OpenAI' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OpenAI' |
-
-_Supported Filters_: **Equals**  
-_Supports Order By_: **False**  
-_Default Value_: **OpenAI**  
-_Show in UI_: **ShownByDefault**  
-
 ### ProviderApiKey
 
 The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).
@@ -154,6 +137,24 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
+
+### ProviderName
+
+The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)`
+
+_Type_: **[ProviderName](Projects.AI.Models.md#providername) __nullable__**  
+_Category_: **System**  
+Allowed values for the `ProviderName`(Projects.AI.Models.md#providername) data attribute  
+_Allowed Values (Projects.AI.ModelsRepository.ProviderName Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| OpenAI | OpenAI value. Stored as 'OpenAI'. <br /> _Database Value:_ 'OpenAI' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OpenAI' |
+
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **OpenAI**  
 _Show in UI_: **ShownByDefault**  
 
 
@@ -174,6 +175,16 @@ _Show in UI_: **ShownByDefault**
 A model, which contains the current model. When building a parent model, it will consume all QAs from all child models. `Filter(multi eq)`
 
 _Type_: **[Models](Projects.AI.Models.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### Provider
+
+The provider and base model, which should be fine-tuned with the domain specific knowledge. null means that this model cannot by compiled and can only be used as a child for another model. `Filter(multi eq)` `Introduced in version 24.1.3.3`
+
+_Type_: **[Providers](Projects.AI.Providers.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

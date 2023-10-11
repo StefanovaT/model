@@ -18,8 +18,9 @@ Language models, which will be enriched with domain specific knowledge. Entity: 
 |[Name](#name)|`nvarchar(256)` `ML`|Multi-language name of the model.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Parent_Model_Id](#parent_model_id)|`uniqueidentifier` |A model, which contains the current model. When building a parent model, it will consume all QAs from all child models.|
-|[Provider](#provider)|`nvarchar(64)` Allowed: `OpenAI`|The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).|
 |[Provider_Api_Key](#provider_api_key)|`nvarchar(128)` |The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).|
+|[Provider_Id](#provider_id)|`uniqueidentifier` |The provider and base model, which should be fine-tuned with the domain specific knowledge. NULL means that this model cannot by compiled and can only be used as a child for another model.|
+|[Provider_Name](#provider_name)|`nvarchar(64)` Allowed: `OpenAI`|The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Virtual_User_Id](#virtual_user_id)|`uniqueidentifier` |The virtual user, which will answer in chats on behalf of the model. NULL means the model cannot be used in chat. Each model should have different virtual user.|
 
@@ -255,7 +256,74 @@ A model, which contains the current model. When building a parent model, it will
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
-### Provider
+### Provider_Api_Key
+
+
+The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|128|
+|Order|4|
+|Ownership Reference|no|
+|Pasword|yes|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(128) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### Provider_Id
+
+
+The provider and base model, which should be fine-tuned with the domain specific knowledge. NULL means that this model cannot by compiled and can only be used as a child for another model.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|12|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Llm_Providers](Llm_Providers.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Provider_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Provider_Name
 
 
 The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).
@@ -286,41 +354,11 @@ The provider of the base models. Currently, only OpenAI is supported. NULL for n
 |User Login|no|
 |Visible|yes|
 
-#### Provider - Supported Filters
+#### Provider_Name - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
-
-### Provider_Api_Key
-
-
-The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|128|
-|Order|4|
-|Ownership Reference|no|
-|Pasword|yes|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|nvarchar(128) (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
 
 ### Row_Version
 
