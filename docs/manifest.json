@@ -11604,7 +11604,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R35328.html",
-          "hash": "siLuPREe+vDpD6rG1VB1nQ=="
+          "hash": "x2KBHc6ccKS/2pWG2t//Ig=="
         }
       },
       "is_incremental": false,
@@ -11676,7 +11676,19 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R35543.html",
-          "hash": "e5ASM7fsvN0moFZSPc1vDQ=="
+          "hash": "yoa+hqcWh/NkucpsIeR/bw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R35557.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35557.html",
+          "hash": "rv7i2JClwi3v73kQ1kSDMQ=="
         }
       },
       "is_incremental": false,
@@ -14674,7 +14686,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Excise.ExciseStampOperationLines.html",
-          "hash": "1nJ4M94fYge5qPTdvofcPw=="
+          "hash": "Wm9mibpV7zWNxmKqfxfQnA=="
         }
       },
       "is_incremental": false,
