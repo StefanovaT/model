@@ -12,15 +12,12 @@ Language models, which will be enriched with domain specific knowledge. Entity: 
 | Name | Type | Description |
 | - | - | --- |
 |[Auto_Update_To_Latest_Build](#auto_update_to_latest_build)|`bit` |Indicates whether to automatically update Conversation Build to the latest successful build.|
-|[Base_Provider_Model](#base_provider_model)|`nvarchar(64)` |Provider-specific base model, to which we will add domain specific knowledge (for example "gpt-3.5-turbo-0613"). NULL for non-buildable models (only used as child models).|
 |[Conversational_Compilation_Id](#conversational_compilation_id)|`uniqueidentifier` |The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. NULL means the model cannot be used for conversations.|
 |[Model_Id](#model_id)|`uniqueidentifier` `PK`||
 |[Name](#name)|`nvarchar(256)` `ML`|Multi-language name of the model.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Parent_Model_Id](#parent_model_id)|`uniqueidentifier` |A model, which contains the current model. When building a parent model, it will consume all QAs from all child models.|
-|[Provider_Api_Key](#provider_api_key)|`nvarchar(128)` |The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).|
 |[Provider_Id](#provider_id)|`uniqueidentifier` |The provider and base model, which should be fine-tuned with the domain specific knowledge. NULL means that this model cannot by compiled and can only be used as a child for another model.|
-|[Provider_Name](#provider_name)|`nvarchar(64)` Allowed: `OpenAI`|The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Virtual_User_Id](#virtual_user_id)|`uniqueidentifier` |The virtual user, which will answer in chats on behalf of the model. NULL means the model cannot be used in chat. Each model should have different virtual user.|
 
@@ -51,36 +48,6 @@ Indicates whether to automatically update Conversation Build to the latest succe
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|bit|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
-### Base_Provider_Model
-
-
-Provider-specific base model, to which we will add domain specific knowledge (for example "gpt-3.5-turbo-0613"). NULL for non-buildable models (only used as child models).
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|64|
-|Order|5|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|nvarchar(64) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -256,36 +223,6 @@ A model, which contains the current model. When building a parent model, it will
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
-### Provider_Api_Key
-
-
-The API key (provided by the model provider), which should be used to access the provider API. NULL for non-buildable models (only used as child models).
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|128|
-|Order|4|
-|Ownership Reference|no|
-|Pasword|yes|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|nvarchar(128) (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
 ### Provider_Id
 
 
@@ -318,43 +255,6 @@ The provider and base model, which should be fine-tuned with the domain specific
 |Visible|yes|
 
 #### Provider_Id - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Equals|`NULL`|yes|no|
-
-### Provider_Name
-
-
-The provider of the base models. Currently, only OpenAI is supported. NULL for non-buildable models (only used as child models).
-
-| Property | Value |
-| - | - |
-|Allowed Values|`OpenAI`|
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|OpenAI|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|64|
-|Order|3|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|nvarchar(64) (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
-#### Provider_Name - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

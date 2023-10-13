@@ -29,14 +29,11 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AutoUpdateToLatestBuild](Projects.AI.Models.md#autoupdatetolatestbuild) | boolean | Indicates whether to automatically update Conversation Build to the latest successful build. `Required` `Default(true)` 
-| [BaseProviderModel](Projects.AI.Models.md#baseprovidermodel) | string (64) __nullable__ | Provider-specific base model, to which we will add domain specific knowledge (for example "gpt-3.5-turbo-0613"). null for non-buildable models (only used as child models). 
 | [DisplayText](Projects.AI.Models.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.Models.md#id) | guid |  
 | [Name](Projects.AI.Models.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the model. `Required` `Filter(like)` 
 | [Notes](Projects.AI.Models.md#notes) | string (max) __nullable__ | Notes for this Model. 
 | [ObjectVersion](Projects.AI.Models.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ProviderApiKey](Projects.AI.Models.md#providerapikey) | string (128) __nullable__ | The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models). 
-| [ProviderName](Projects.AI.Models.md#providername) | [ProviderName](Projects.AI.Models.md#providername) __nullable__ | The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)` 
 
 ## References
 
@@ -65,17 +62,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
-_Show in UI_: **ShownByDefault**  
-
-### BaseProviderModel
-
-Provider-specific base model, to which we will add domain specific knowledge (for example "gpt-3.5-turbo-0613"). null for non-buildable models (only used as child models).
-
-_Type_: **string (64) __nullable__**  
-_Category_: **System**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: **False**  
-_Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText
@@ -127,35 +113,6 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
-
-### ProviderApiKey
-
-The API key (provided by the model provider), which should be used to access the provider API. null for non-buildable models (only used as child models).
-
-_Type_: **string (128) __nullable__**  
-_Category_: **System**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: **False**  
-_Maximum Length_: **128**  
-_Show in UI_: **ShownByDefault**  
-
-### ProviderName
-
-The provider of the base models. Currently, only OpenAI is supported. null for non-buildable models (only used as child models). `Default("OpenAI")` `Filter(eq)`
-
-_Type_: **[ProviderName](Projects.AI.Models.md#providername) __nullable__**  
-_Category_: **System**  
-Allowed values for the `ProviderName`(Projects.AI.Models.md#providername) data attribute  
-_Allowed Values (Projects.AI.ModelsRepository.ProviderName Enum Members)_  
-
-| Value | Description |
-| ---- | --- |
-| OpenAI | OpenAI value. Stored as 'OpenAI'. <br /> _Database Value:_ 'OpenAI' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OpenAI' |
-
-_Supported Filters_: **Equals**  
-_Supports Order By_: **False**  
-_Default Value_: **OpenAI**  
-_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
