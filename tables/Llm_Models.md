@@ -19,6 +19,7 @@ Language models, which will be enriched with domain specific knowledge. Entity: 
 |[Parent_Model_Id](#parent_model_id)|`uniqueidentifier` |A model, which contains the current model. When building a parent model, it will consume all QAs from all child models.|
 |[Provider_Id](#provider_id)|`uniqueidentifier` |The provider and base model, which should be fine-tuned with the domain specific knowledge. NULL means that this model cannot by compiled and can only be used as a child for another model.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[System_Message](#system_message)|`nvarchar(max)` |Provides system message to the chat bot. The system message sets the mood and is the primary instruction for the bot.|
 |[Virtual_User_Id](#virtual_user_id)|`uniqueidentifier` |The virtual user, which will answer in chats on behalf of the model. NULL means the model cannot be used in chat. Each model should have different virtual user.|
 
 ## Columns
@@ -286,6 +287,36 @@ The provider and base model, which should be fine-tuned with the domain specific
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### System_Message
+
+
+Provides system message to the chat bot. The system message sets the mood and is the primary instruction for the bot.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|2147483647|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(max) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Virtual_User_Id
 

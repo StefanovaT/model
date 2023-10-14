@@ -34,6 +34,7 @@ Aggregate Tree
 | [Name](Projects.AI.Models.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the model. `Required` `Filter(like)` 
 | [Notes](Projects.AI.Models.md#notes) | string (max) __nullable__ | Notes for this Model. 
 | [ObjectVersion](Projects.AI.Models.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [SystemMessage](Projects.AI.Models.md#systemmessage) | string (max) __nullable__ | Provides system message to the chat bot. The system message sets the mood and is the primary instruction for the bot. `Introduced in version 24.1.3.7` 
 
 ## References
 
@@ -113,6 +114,17 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### SystemMessage
+
+Provides system message to the chat bot. The system message sets the mood and is the primary instruction for the bot. `Introduced in version 24.1.3.7`
+
+_Type_: **string (max) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details

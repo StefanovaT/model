@@ -140,6 +140,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
+<tr>
+<td><a href="Projects.AI.Models.html#systemmessage">SystemMessage</a></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>Provides system message to the chat bot. The system message sets the mood and is the primary instruction for the bot. <code>Introduced in version 24.1.3.7</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="references">References</h2>
@@ -236,6 +241,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="systemmessage">SystemMessage</h3>
+<p>Provides system message to the chat bot. The system message sets the mood and is the primary instruction for the bot. <code>Introduced in version 24.1.3.7</code></p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="conversationalcompilation">ConversationalCompilation</h3>
 <p>The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. null means the model cannot be used for conversations. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.2.11</code></p>
