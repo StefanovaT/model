@@ -12,7 +12,7 @@ Contains entities, which have secured access. Entity: Sys_Entities
 | Name | Type | Description |
 | - | - | --- |
 |[Access_Key_Id](#access_key_id)|`uniqueidentifier` |The access key, required to access the secured entity.|
-|[Display_Text_Format](#display_text_format)|`nvarchar(64)` |Interpolated string, containing the default format for displaying values of the entity. NULL means to use the system-wide default.|
+|[Display_Text_Format](#display_text_format)|`nvarchar(128)` |Interpolated string, containing the default format for displaying values of the entity. NULL means to use the system-wide default.|
 |[Entity_Id](#entity_id)|`uniqueidentifier` `PK`||
 |[Entity_Name](#entity_name)|`nvarchar(64)` |The system name of the entity, which is being secured.|
 |[Log_Create](#log_create)|`bit` |Specifies whether to log every insert for this entity.|
@@ -39,7 +39,7 @@ The access key, required to access the secured entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -75,8 +75,8 @@ Interpolated string, containing the default format for displaying values of the 
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|64|
-|Order|2147483647|
+|Max Length|128|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -86,7 +86,7 @@ Interpolated string, containing the default format for displaying values of the 
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(64) (Allows NULL)|
+|Type|nvarchar(128) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -103,7 +103,7 @@ Interpolated string, containing the default format for displaying values of the 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -139,7 +139,7 @@ The system name of the entity, which is being secured.
 |Ignore for Insert Order|no|
 |Is Entity Name|yes|
 |Max Length|64|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -176,7 +176,7 @@ Specifies whether to log every insert for this entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -206,7 +206,7 @@ Specifies whether to log every delete for this entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -236,7 +236,7 @@ Specifies whether to log every load by Id for this entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -266,7 +266,7 @@ Specifies whether to log every load of many records for this entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -296,7 +296,7 @@ Specifies whether to log every update for this entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -323,7 +323,7 @@ Specifies whether to log every update for this entity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -354,7 +354,7 @@ The track changes level for the entity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

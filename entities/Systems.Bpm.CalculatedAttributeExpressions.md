@@ -163,6 +163,8 @@ _Allowed Values (Systems.Bpm.ExpressionOperator Enum Members)_
 | TOUPPER | TOUPPER(String) => Returns the string, converted to upper-case.. Stored as 'TOUPPER'. <br /> _Database Value:_ 'TOUPPER' <br /> _Model Value:_ 43 <br /> _Domain API Value:_ 'TOUPPER' |
 | WHERE | WHERE(Condition1, Condition2) => Clause, which filters by Condition1 AND Condition2.. Stored as 'WHERE'. <br /> _Database Value:_ 'WHERE' <br /> _Model Value:_ 44 <br /> _Domain API Value:_ 'WHERE' |
 | INTERPOLATE | INTERPOLATE(Object?, InterpolatedString) => Performs string interpolation, according to the context of the passed object.. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 45 <br /> _Domain API Value:_ 'INTERPOLATE' |
+| DATEDIFF | DATEDIFF(DateTime, DateTime, Interval?) => Returns the difference between dates as the date difference for the specified interval type.. Stored as 'DATEDIFF'. <br /> _Database Value:_ 'DATEDIFF' <br /> _Model Value:_ 46 <br /> _Domain API Value:_ 'DATEDIFF' |
+| DATESPAN | DATESPAN(DateTime, DateTime, Interval?) => Returns the difference between dates as a duration in the specified interval type. The interval is fulfilled when the same date and time is reached in the next interval.. Stored as 'DATESPAN'. <br /> _Database Value:_ 'DATESPAN' <br /> _Model Value:_ 47 <br /> _Domain API Value:_ 'DATESPAN' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
