@@ -115,8 +115,8 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>IIF((((ConfirmedQuantity == null) OrElse (QuantityUnit == null)) OrElse (Product == null)),
-ConfirmedStandardQuantityBase, ConfirmedQuantity.ConvertTo(Product.BaseUnit, Product))</td>
+<td>IIF((ConfirmedQuantity == null), null, IIF(((QuantityUnit == null) OrElse (Product == null))
+, ConfirmedStandardQuantityBase, ConfirmedQuantity.ConvertTo(Product.BaseUnit, Product)))</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
