@@ -149,6 +149,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td></td>
 </tr>
 <tr>
+<td><a href="General.CustomProperties.html#isactive">IsActive</a></td>
+<td>boolean</td>
+<td>Indicates whether this custom property is active. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.19</code></td>
+</tr>
+<tr>
 <td><a href="General.CustomProperties.html#keyorder">KeyOrder</a></td>
 <td>byte <strong>nullable</strong></td>
 <td>When not null, indicates, that the property is a key property and contains the property consequtive position withing the entity. Used for BI and other analysis.</td>
@@ -289,6 +294,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="isactive">IsActive</h3>
+<p>Indicates whether this custom property is active. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.19</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="keyorder">KeyOrder</h3>
 <p>When not null, indicates, that the property is a key property and contains the property consequtive position withing the entity. Used for BI and other analysis.</p>
 <p><em>Type</em>: <strong>byte <strong>nullable</strong></strong><br>

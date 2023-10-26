@@ -17,6 +17,7 @@ User-defined properties, which can supplement the system properties of almost al
 |[Allowed_Values_Property_Id](#allowed_values_property_id)|`uniqueidentifier` |When not null, specifies that the current property can have the same allowed values as the specified property. Also, this makes the current and the specified property copy-compatible.|
 |[Entity_Name](#entity_name)|`nvarchar(64)` |The entity for which the property is applicable.|
 |[Hint](#hint)|`nvarchar(max)` `ML`|The hint, which is displayed alongside the property.|
+|[Is_Active](#is_active)|`bit` |Indicates whether this custom property is active|
 |[Key_Order](#key_order)|`tinyint` |When not null, indicates, that the property is a key property and contains the property consequtive position withing the entity. Used for BI and other analysis|
 |[Limit_To_Allowed_Values](#limit_to_allowed_values)|`bit` |When true, allows the property to be set only to allowed value. When false, the property can have any value.|
 |[Mask_Length](#mask_length)|`smallint` |Limits te length of the property value to the specified number of characters. Null means no limitation|
@@ -44,7 +45,7 @@ When not NULL, specifies that the allowed values are retrieved from the specifie
 |Ignore for Insert Order|no|
 |Is Entity Name|yes|
 |Max Length|64|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -80,7 +81,7 @@ When not NULL specifies the filter to apply when extracting allowed values from 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -110,7 +111,7 @@ Specifies the user defined property, which is used for filtering the allowed val
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -147,7 +148,7 @@ When not null, specifies that the current property can have the same allowed val
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -184,7 +185,7 @@ The entity for which the property is applicable.
 |Ignore for Insert Order|no|
 |Is Entity Name|yes|
 |Max Length|64|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -220,7 +221,7 @@ The hint, which is displayed alongside the property.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -243,6 +244,42 @@ The hint, which is displayed alongside the property.
 |Equals|`NULL`|yes|no|
 |Like|None|no|no|
 
+### Is_Active
+
+
+Indicates whether this custom property is active
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|16|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Key_Order
 
 
@@ -257,7 +294,7 @@ When not null, indicates, that the property is a key property and contains the p
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -287,7 +324,7 @@ When true, allows the property to be set only to allowed value. When false, the 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -323,7 +360,7 @@ Limits te length of the property value to the specified number of characters. Nu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -350,7 +387,7 @@ Limits te length of the property value to the specified number of characters. Nu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -380,7 +417,7 @@ When not null, categorizes the property under a category.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -417,7 +454,7 @@ Unique property code.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|40|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -451,7 +488,7 @@ Unique property code.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -484,7 +521,7 @@ Unique property code.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -521,7 +558,7 @@ Type of property values. 'T' - text; 'P' - picture; 'N' - number; 'D' - date.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -548,7 +585,7 @@ Type of property values. 'T' - text; 'P' - picture; 'N' - number; 'D' - date.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

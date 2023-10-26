@@ -38,6 +38,7 @@ Aggregate Tree
 | [EntityName](General.CustomProperties.md#entityname) | string (64) | The entity for which the property is applicable. `Required` `Filter(eq)` `ORD` 
 | [Hint](General.CustomProperties.md#hint) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | The hint, which is displayed alongside the property. `Filter(multi eq;like)` `Introduced in version 20.1` 
 | [Id](General.CustomProperties.md#id) | guid |  
+| [IsActive](General.CustomProperties.md#isactive) | boolean | Indicates whether this custom property is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.3.19` 
 | [KeyOrder](General.CustomProperties.md#keyorder) | byte __nullable__ | When not null, indicates, that the property is a key property and contains the property consequtive position withing the entity. Used for BI and other analysis. 
 | [LimitToAllowedValues](General.CustomProperties.md#limittoallowedvalues) | boolean | When true, allows the property to be set only to allowed value. When false, the property can have any value. `Required` `Default(false)` `Filter(eq)` 
 | [MaskLength](General.CustomProperties.md#masklength) | int16 __nullable__ | Limits te length of the property value to the specified number of characters. Null means no limitation. 
@@ -137,6 +138,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether this custom property is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.3.19`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### KeyOrder
 
