@@ -132,12 +132,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#externalid">ExternalId</a></td>
 <td>string (254) <strong>nullable</strong></td>
-<td>The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. <code>ORD</code> <code>Introduced in version 24.1.0.89</code></td>
+<td>The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. <code>Filter(multi eq)</code> <code>ORD</code> <code>Introduced in version 24.1.0.89</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#externalsystem">ExternalSystem</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>The name of the external system from which the object is imported/synchronized. <code>Introduced in version 24.1.0.89</code></td>
+<td>The name of the external system from which the object is imported/synchronized. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.0.89</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#id">Id</a></td>
@@ -242,19 +242,19 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: ** **<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="externalid">ExternalId</h3>
-<p>The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. <code>ORD</code> <code>Introduced in version 24.1.0.89</code></p>
+<p>The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. <code>Filter(multi eq)</code> <code>ORD</code> <code>Introduced in version 24.1.0.89</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="externalsystem">ExternalSystem</h3>
-<p>The name of the external system from which the object is imported/synchronized. <code>Introduced in version 24.1.0.89</code></p>
+<p>The name of the external system from which the object is imported/synchronized. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.0.89</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

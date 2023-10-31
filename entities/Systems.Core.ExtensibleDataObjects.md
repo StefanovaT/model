@@ -31,8 +31,8 @@ Aggregate Tree
 | [DisplayText](Systems.Core.ExtensibleDataObjects.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityItemId](Systems.Core.ExtensibleDataObjects.md#entityitemid) | guid | The Id of the primary row to which the object is bound. `Required` `Filter(multi eq)` 
 | [EntityType](Systems.Core.ExtensibleDataObjects.md#entitytype) | string (64) | The entity type of the row to which the object is bound. `Required` `Default(" ")` `Filter(eq)` `ORD` 
-| [ExternalId](Systems.Core.ExtensibleDataObjects.md#externalid) | string (254) __nullable__ | The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. `ORD` `Introduced in version 24.1.0.89` 
-| [ExternalSystem](Systems.Core.ExtensibleDataObjects.md#externalsystem) | string (64) __nullable__ | The name of the external system from which the object is imported/synchronized. `Introduced in version 24.1.0.89` 
+| [ExternalId](Systems.Core.ExtensibleDataObjects.md#externalid) | string (254) __nullable__ | The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. `Filter(multi eq)` `ORD` `Introduced in version 24.1.0.89` 
+| [ExternalSystem](Systems.Core.ExtensibleDataObjects.md#externalsystem) | string (64) __nullable__ | The name of the external system from which the object is imported/synchronized. `Filter(multi eq)` `Introduced in version 24.1.0.89` 
 | [Id](Systems.Core.ExtensibleDataObjects.md#id) | guid |  
 | [IsDeleted](Systems.Core.ExtensibleDataObjects.md#isdeleted) | boolean | Specifies whether the object represented by this system object is deleted. After deletion of the original object, the system object remains in the system, but can be purged later by some cleanup processes. `Required` `Default(false)` `Filter(eq)` `Introduced in version 19.1` 
 | [LastUpdateTimeUtc](Systems.Core.ExtensibleDataObjects.md#lastupdatetimeutc) | datetime __nullable__ | The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. `Filter(ge;le)` `Introduced in version 19.1` 
@@ -100,23 +100,23 @@ _Show in UI_: **ShownByDefault**
 
 ### ExternalId
 
-The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. `ORD` `Introduced in version 24.1.0.89`
+The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. `Filter(multi eq)` `ORD` `Introduced in version 24.1.0.89`
 
 _Type_: **string (254) __nullable__**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
 
 ### ExternalSystem
 
-The name of the external system from which the object is imported/synchronized. `Introduced in version 24.1.0.89`
+The name of the external system from which the object is imported/synchronized. `Filter(multi eq)` `Introduced in version 24.1.0.89`
 
 _Type_: **string (64) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
