@@ -42,6 +42,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DefaultFiscalPrinter<br />PosDevice](Crm.Pos.Terminals.md#defaultfiscalprinterposdevice) | [Devices](Crm.Pos.Devices.md) (nullable) | The POS Fiscal Device which is set by default in documents when the POS Terminal is selected. `Filter(multi eq)` `Introduced in version 20.1` |
+| [FiscalReceiptTemplate](Crm.Pos.Terminals.md#fiscalreceipttemplate) | [FiscalReceiptTemplates](Crm.Pos.FiscalReceiptTemplates.md) (nullable) | Template for customizing the printout of fiscal receipt. null means use default receipt. `Filter(multi eq)` `Introduced in version 24.1.3.24` |
 | [PosLocation](Crm.Pos.Terminals.md#poslocation) | [Locations](Crm.Pos.Locations.md) | The POS location, where the terminal is located. `Required` `Filter(multi eq)` |
 
 ## Child Collections
@@ -122,6 +123,15 @@ _Show in UI_: **ShownByDefault**
 The POS Fiscal Device which is set by default in documents when the POS Terminal is selected. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[Devices](Crm.Pos.Devices.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### FiscalReceiptTemplate
+
+Template for customizing the printout of fiscal receipt. null means use default receipt. `Filter(multi eq)` `Introduced in version 24.1.3.24`
+
+_Type_: **[FiscalReceiptTemplates](Crm.Pos.FiscalReceiptTemplates.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -82,6 +82,9 @@ _Allowed Values (Systems.Bpm.UserBusinessRuleActionsRepository.ActionType Enum M
 | WARNING | WARNING value. Stored as 'WARNING'. <br /> _Database Value:_ 'WARNING' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'WARNING' |
 | NOTIFYUSER | NOTIFYUSER value. Stored as 'NOTIFYUSER'. <br /> _Database Value:_ 'NOTIFYUSER' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'NOTIFYUSER' |
 | WEBHOOK | WEBHOOK value. Stored as 'WEBHOOK'. <br /> _Database Value:_ 'WEBHOOK' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'WEBHOOK' |
+| AISET | AISET value. Stored as 'AISET'. <br /> _Database Value:_ 'AISET' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'AISET' |
+| AIVALIDATE | AIVALIDATE value. Stored as 'AIVALIDATE'. <br /> _Database Value:_ 'AIVALIDATE' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'AIVALIDATE' |
+| AIWARNING | AIWARNING value. Stored as 'AIWARNING'. <br /> _Database Value:_ 'AIWARNING' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'AIWARNING' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  

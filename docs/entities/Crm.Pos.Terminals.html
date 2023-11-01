@@ -160,6 +160,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The POS Fiscal Device which is set by default in documents when the POS Terminal is selected. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></td>
 </tr>
 <tr>
+<td><a href="Crm.Pos.Terminals.html#fiscalreceipttemplate">FiscalReceiptTemplate</a></td>
+<td><a href="Crm.Pos.FiscalReceiptTemplates.html">FiscalReceiptTemplates</a> (nullable)</td>
+<td>Template for customizing the printout of fiscal receipt. null means use default receipt. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.3.24</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Pos.Terminals.html#poslocation">PosLocation</a></td>
 <td><a href="Crm.Pos.Locations.html">Locations</a></td>
 <td>The POS location, where the terminal is located. <code>Required</code> <code>Filter(multi eq)</code></td>
@@ -232,6 +237,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h3 id="defaultfiscalprinterposdevice">DefaultFiscalPrinterPosDevice</h3>
 <p>The POS Fiscal Device which is set by default in documents when the POS Terminal is selected. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Pos.Devices.html">Devices</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="fiscalreceipttemplate">FiscalReceiptTemplate</h3>
+<p>Template for customizing the printout of fiscal receipt. null means use default receipt. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.3.24</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Pos.FiscalReceiptTemplates.html">FiscalReceiptTemplates</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

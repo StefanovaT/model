@@ -126,6 +126,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td></td>
 </tr>
 <tr>
+<td><a href="Projects.AI.Models.html#isdefault">IsDefault</a></td>
+<td>boolean</td>
+<td>Specifies whether this is the default model which will handle AI prompts. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.23</code></td>
+</tr>
+<tr>
 <td><a href="Projects.AI.Models.html#name">Name</a></td>
 <td><a href="../data-types.html#multilanguagestring">MultilanguageString (256)</a></td>
 <td>Multi-language name of the model. <code>Required</code> <code>Filter(like)</code></td>
@@ -219,6 +224,15 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="isdefault">IsDefault</h3>
+<p>Specifies whether this is the default model which will handle AI prompts. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.23</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>Multi-language name of the model. <code>Required</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (256)</a></strong><br>

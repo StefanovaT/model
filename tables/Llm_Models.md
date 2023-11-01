@@ -13,6 +13,7 @@ Language models, which will be enriched with domain specific knowledge. Entity: 
 | - | - | --- |
 |[Auto_Update_To_Latest_Build](#auto_update_to_latest_build)|`bit` |Indicates whether to automatically update Conversation Build to the latest successful build.|
 |[Conversational_Compilation_Id](#conversational_compilation_id)|`uniqueidentifier` |The compilation which should be used when conversing with the model. Usually, updated to the latest successful compilation. NULL means the model cannot be used for conversations.|
+|[Is_Default](#is_default)|`bit` |Specifies whether this is the default model which will handle AI prompts.|
 |[Model_Id](#model_id)|`uniqueidentifier` `PK`||
 |[Name](#name)|`nvarchar(256)` `ML`|Multi-language name of the model.|
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -90,6 +91,42 @@ The compilation which should be used when conversing with the model. Usually, up
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Is_Default
+
+
+Specifies whether this is the default model which will handle AI prompts.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|False|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Default - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Model_Id
 
