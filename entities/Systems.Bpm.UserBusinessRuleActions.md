@@ -135,6 +135,7 @@ _Allowed Values (Systems.Bpm.ActionParameterType Enum Members)_
 | Reference | Reference value. Stored as 'REF'. <br /> _Database Value:_ 'REF' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Reference' |
 | ChildList | ChildList value. Stored as 'CHILD'. <br /> _Database Value:_ 'CHILD' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'ChildList' |
 | FormattedString | FormattedString value. Stored as 'FMTSTR'. <br /> _Database Value:_ 'FMTSTR' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'FormattedString' |
+| Interpolate | Interpolate value. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'Interpolate' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -167,6 +168,7 @@ _Allowed Values (Systems.Bpm.ActionParameterType Enum Members)_
 | Reference | Reference value. Stored as 'REF'. <br /> _Database Value:_ 'REF' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Reference' |
 | ChildList | ChildList value. Stored as 'CHILD'. <br /> _Database Value:_ 'CHILD' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'ChildList' |
 | FormattedString | FormattedString value. Stored as 'FMTSTR'. <br /> _Database Value:_ 'FMTSTR' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'FormattedString' |
+| Interpolate | Interpolate value. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'Interpolate' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -199,6 +201,7 @@ _Allowed Values (Systems.Bpm.ActionParameterType Enum Members)_
 | Reference | Reference value. Stored as 'REF'. <br /> _Database Value:_ 'REF' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Reference' |
 | ChildList | ChildList value. Stored as 'CHILD'. <br /> _Database Value:_ 'CHILD' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'ChildList' |
 | FormattedString | FormattedString value. Stored as 'FMTSTR'. <br /> _Database Value:_ 'FMTSTR' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'FormattedString' |
+| Interpolate | Interpolate value. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'Interpolate' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
