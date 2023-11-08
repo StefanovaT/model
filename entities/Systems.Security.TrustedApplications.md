@@ -40,7 +40,7 @@ Aggregate Tree
 | [ImpersonateLoginUrl](Systems.Security.TrustedApplications.md#impersonateloginurl) | string (254) __nullable__ | The login Url used when an application is impersonated as (usually community) user. 
 | [ImpersonateLogoutUrl](Systems.Security.TrustedApplications.md#impersonatelogouturl) | string (254) __nullable__ | The logout Url used when an application is impersonated as (usually community) user. 
 | [IsEnabled](Systems.Security.TrustedApplications.md#isenabled) | boolean | Specifies whether the application is enabled for login. `Required` `Default(true)` `Filter(eq)` 
-| [Name](Systems.Security.TrustedApplications.md#name) | string (254) | The multi-language name of the application. `Required` `Filter(eq;like)` 
+| [Name](Systems.Security.TrustedApplications.md#name) | string (254) | The multi-language name of the application. `Required` `Filter(eq;like)` `ORD` 
 | [Notes](Systems.Security.TrustedApplications.md#notes) | string (max) __nullable__ | Notes for this TrustedApplication. 
 | [ObjectVersion](Systems.Security.TrustedApplications.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Scope](Systems.Security.TrustedApplications.md#scope) | string (max) __nullable__ | The scope (according to RFC 6749) for which the application was trusted. The scope is an unordered list of space-delimited case-sensitive strings. Each string denotes a permission (see docs for possible values). `Introduced in version 20.1` 
@@ -201,12 +201,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Name
 
-The multi-language name of the application. `Required` `Filter(eq;like)`
+The multi-language name of the application. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (254)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
 
