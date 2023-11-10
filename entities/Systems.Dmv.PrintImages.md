@@ -31,6 +31,7 @@ Aggregate Tree
 | [SizeMB](Systems.Dmv.PrintImages.md#sizemb) | decimal (12, 3) | Total size of the print in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
 | [TypeName](Systems.Dmv.PrintImages.md#typename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the document type. `Required` `Filter(eq;like)` `ORD` 
 | [UnitSizeMB](Systems.Dmv.PrintImages.md#unitsizemb) | decimal (12, 3) | Average print size in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
+| [Year](Systems.Dmv.PrintImages.md#year) | string (30) | The year to which the current data refers. `Required` `Filter(eq;like)` `ORD` `Introduced in version 24.1.3.32` 
 
 
 ## Attribute Details
@@ -95,6 +96,17 @@ _Type_: **decimal (12, 3)**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
+
+### Year
+
+The year to which the current data refers. `Required` `Filter(eq;like)` `ORD` `Introduced in version 24.1.3.32`
+
+_Type_: **string (30)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **True**  
+_Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
 
 

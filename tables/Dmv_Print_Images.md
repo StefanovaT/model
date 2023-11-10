@@ -17,6 +17,7 @@ Information about print sizes, grouped by document type and print type. Entity: 
 |[Size_MB](#size_mb)|`decimal(12, 3)` |Total size of the print in megabytes.|
 |[Type_Name](#type_name)|`nvarchar(254)` `ML`|Name of the document type.|
 |[Unit_Size_MB](#unit_size_mb)|`decimal(12, 3)` |Average print size in megabytes.|
+|[Year](#year)|`nvarchar(30)` |The year to which the current data refers.|
 
 ## Columns
 
@@ -241,5 +242,42 @@ Average print size in megabytes.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 |GreaterThanOrLessThan|None|no|no|
+
+### Year
+
+
+The year to which the current data refers.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|30|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|yes|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(30)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Year - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|Like|None|no|no|
 
 

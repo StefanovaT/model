@@ -28,6 +28,7 @@ Aggregate Tree
 | [Count](Systems.Dmv.InformationMessages.md#count) | int32 | Total number of messages. `Required` `Filter(eq;ge;le)` `ORD` 
 | [Process](Systems.Dmv.InformationMessages.md#process) | string (254) | Process description for message. `Required` `Filter(eq;like)` `ORD` 
 | [SizeMB](Systems.Dmv.InformationMessages.md#sizemb) | int64 | Total used size for message type in Megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
+| [Year](Systems.Dmv.InformationMessages.md#year) | string (30) | The year to which the current data refers. `Required` `Filter(eq;like)` `ORD` `Introduced in version 24.1.3.32` 
 
 
 ## Attribute Details
@@ -61,6 +62,17 @@ _Type_: **int64**
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
+_Show in UI_: **ShownByDefault**  
+
+### Year
+
+The year to which the current data refers. `Required` `Filter(eq;like)` `ORD` `Introduced in version 24.1.3.32`
+
+_Type_: **string (30)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **True**  
+_Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
 
 
