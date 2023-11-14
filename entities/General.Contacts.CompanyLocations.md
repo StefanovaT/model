@@ -171,6 +171,9 @@ _Supports Order By_: **True**
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.PartyCode, null, "00000")`
+
 ### PartyCreationTime
 
 Date and time when the Party was created. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md))

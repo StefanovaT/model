@@ -505,6 +505,8 @@ Allowed values for the <code>Gender</code>(General.Contacts.Persons.md#gender) d
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>16</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.IncMax( o =&gt; o.PartyCode, null, &quot;00000&quot;)</code></p>
 <h3 id="partycreationtime">PartyCreationTime</h3>
 <p>Date and time when the Party was created. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
