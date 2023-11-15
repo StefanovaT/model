@@ -50,7 +50,7 @@ Aggregate Tree
 | [IsActive](General.Contacts.Persons.md#isactive) | boolean | Specifies whether the current party is active in the system or not. `Required` `Default(true)` `Filter(eq)` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [LastName](General.Contacts.Persons.md#lastname) | [MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__ | Last name of the person. `Filter(eq;like)` 
 | [MiddleName](General.Contacts.Persons.md#middlename) | [MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__ | Middle name of the person. `Filter(eq;like)` 
-| [NationalNumber](General.Contacts.Persons.md#nationalnumber) | string (14) __nullable__ | Government assigned unique personal number. null means unknown. `Filter(eq;like)` 
+| [NationalNumber](General.Contacts.Persons.md#nationalnumber) | string (16) __nullable__ | Government assigned unique personal number. null means unknown. `Filter(eq;like)` 
 | [Notes](General.Contacts.Persons.md#notes) | string (254) __nullable__ | Internal notes for the person. 
 | [ObjectVersion](General.Contacts.Persons.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PartyCode](General.Contacts.Persons.md#partycode) | string (16) | The unique code of the party. `Required` `Filter(eq;like)` `ORD` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
@@ -231,11 +231,11 @@ _Show in UI_: **ShownByDefault**
 
 Government assigned unique personal number. null means unknown. `Filter(eq;like)`
 
-_Type_: **string (14) __nullable__**  
+_Type_: **string (16) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
-_Maximum Length_: **14**  
+_Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
 
 ### Notes

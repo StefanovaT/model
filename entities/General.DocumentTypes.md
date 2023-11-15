@@ -66,6 +66,7 @@ Aggregate Tree
 | [Notes](General.DocumentTypes.md#notes) | string (254) __nullable__ | Notes for this DocumentType. 
 | [ObjectVersion](General.DocumentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SchemaXML](General.DocumentTypes.md#schemaxml) | string (max) __nullable__ | Obsolete. Not used. 
+| [TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges) | [TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges) | Enable/disable attributes change tracking for documents from this type. "Default" means that changes will be tracked for all documents, except transit and adjustment documents. `Required` `Default("DEF")` `Filter(eq)` `Introduced in version 24.1.3.37` 
 | [TransitionalDocument](General.DocumentTypes.md#transitionaldocument) | boolean | If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. `Required` `Default(false)` 
 | [TypeName](General.DocumentTypes.md#typename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Description of the document type. `Required` `Filter(like)` 
 
@@ -232,6 +233,26 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **CannotBeShown**  
+
+### TrackAttributeChanges
+
+Enable/disable attributes change tracking for documents from this type. "Default" means that changes will be tracked for all documents, except transit and adjustment documents. `Required` `Default("DEF")` `Filter(eq)` `Introduced in version 24.1.3.37`
+
+_Type_: **[TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges)**  
+_Category_: **System**  
+Allowed values for the `TrackAttributeChanges`(General.DocumentTypes.md#trackattributechanges) data attribute  
+_Allowed Values (General.DocumentTypesRepository.TrackAttributeChanges Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| Default | Default. Stored as 'DEF'. <br /> _Database Value:_ 'DEF' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Default' |
+| ForceEnable | Force Enable. Stored as 'ENA'. <br /> _Database Value:_ 'ENA' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ForceEnable' |
+| ForceDisable | Force Disable. Stored as 'DIS'. <br /> _Database Value:_ 'DIS' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ForceDisable' |
+
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **Default**  
+_Show in UI_: **ShownByDefault**  
 
 ### TransitionalDocument
 

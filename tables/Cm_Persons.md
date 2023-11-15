@@ -23,7 +23,7 @@ Personal records. Requires related party record. Entity: Cm_Persons (Introduced 
 |[Gender](#gender)|`nvarchar(1)` Allowed: `F`, `M`, `O`, `N`|Person gender. M=Male;F=Female;O=Other;N=Prefer not to say;NULL=not known/not provided|
 |[Last_Name](#last_name)|`nvarchar(64)` `ML`|Last name of the person.|
 |[Middle_Name](#middle_name)|`nvarchar(64)` `ML`|Middle name of the person.|
-|[National_Number](#national_number)|`nvarchar(14)` |Government assigned unique personal number. NULL means unknown|
+|[National_Number](#national_number)|`nvarchar(16)` |Government assigned unique personal number. NULL means unknown|
 |[Nationality](#nationality)|`uniqueidentifier` |Person's nationality. NULL means the default (same as enterprise) nationality|
 |[Notes](#notes)|`nvarchar(254)` |Internal notes for the person|
 |[Party_Id](#party_id)|`uniqueidentifier` |The Id of the party record for this person. The party stores the person's full name|
@@ -336,7 +336,7 @@ Government assigned unique personal number. NULL means unknown
 |Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|14|
+|Max Length|16|
 |Order|7|
 |Ownership Reference|no|
 |Pasword|no|
@@ -347,7 +347,7 @@ Government assigned unique personal number. NULL means unknown
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(14) (Allows NULL)|
+|Type|nvarchar(16) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
