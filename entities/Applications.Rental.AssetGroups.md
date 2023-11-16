@@ -35,7 +35,7 @@ Aggregate Tree
 | [Notes](Applications.Rental.AssetGroups.md#notes) | string (max) __nullable__ | Notes for this AssetGroup. 
 | [ObjectVersion](Applications.Rental.AssetGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentFullPath](Applications.Rental.AssetGroups.md#parentfullpath) | string (25) __nullable__ | The full path of the parent node. `Filter(eq)` 
-| [RentalAssetGroupCode](Applications.Rental.AssetGroups.md#rentalassetgroupcode) | string (3) | Asset group code, unique within the parent node. `Required` `Filter(eq;like)` 
+| [RentalAssetGroupCode](Applications.Rental.AssetGroups.md#rentalassetgroupcode) | string (3) | Asset group code, unique within the parent node. `Required` `Filter(eq;like)` `ORD` 
 | [RentalAssetGroupName](Applications.Rental.AssetGroups.md#rentalassetgroupname) | string (254) | Asset group name, unique within the parent node. `Required` `Filter(eq;like)` 
 
 
@@ -106,14 +106,17 @@ _Show in UI_: **ShownByDefault**
 
 ### RentalAssetGroupCode
 
-Asset group code, unique within the parent node. `Required` `Filter(eq;like)`
+Asset group code, unique within the parent node. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (3)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **3**  
 _Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.RentalAssetGroupCode, o => ( o.ParentFullPath == obj.ParentFullPath), "000")`
 
 ### RentalAssetGroupName
 

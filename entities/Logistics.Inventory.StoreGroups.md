@@ -29,7 +29,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Code](Logistics.Inventory.StoreGroups.md#code) | string (16) | The unique code of the StoreGroup. `Required` `Filter(eq;like)` 
+| [Code](Logistics.Inventory.StoreGroups.md#code) | string (16) | The unique code of the StoreGroup. `Required` `Filter(eq;like)` `ORD` 
 | [DisplayText](Logistics.Inventory.StoreGroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [<s>FullPath</s>](Logistics.Inventory.StoreGroups.md#fullpath) | string (25) __nullable__ | **OBSOLETE! Do not use!** The full path to the store group in a dot separated, non-leading dot format. For example: 001.005.008. `Obsolete` `Filter(eq;like)` `ORD` `ReadOnly` `Obsoleted in version 23.1.2.3` 
 | [Id](Logistics.Inventory.StoreGroups.md#id) | guid |  
@@ -50,14 +50,17 @@ Aggregate Tree
 
 ### Code
 
-The unique code of the StoreGroup. `Required` `Filter(eq;like)`
+The unique code of the StoreGroup. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (16)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.Code, o => ( o.Parent == obj.Parent), "000")`
 
 ### DisplayText
 

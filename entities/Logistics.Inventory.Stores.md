@@ -121,6 +121,9 @@ _Supports Order By_: **True**
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.Code, null, "00000")`
+
 ### CreationTime
 
 Date and time when the Store was created. `Filter(ge;le)` `ReadOnly`

@@ -111,7 +111,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.Contacts.CompanyEmployees.html#contractcode">ContractCode</a></td>
 <td>string (16) <strong>nullable</strong></td>
-<td>Contract number or code, unique within the company. One employee can have more than one contract. <code>Filter(eq)</code></td>
+<td>Contract number or code, unique within the company. One employee can have more than one contract. <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.CompanyEmployees.html#contractenddate">ContractEndDate</a></td>
@@ -174,13 +174,15 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="contractcode">ContractCode</h3>
-<p>Contract number or code, unique within the company. One employee can have more than one contract. <code>Filter(eq)</code></p>
+<p>Contract number or code, unique within the company. One employee can have more than one contract. <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (16) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>16</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.IncMax( o =&gt; o.ContractCode, e =&gt; ( e.Company == obj.Company), &quot;00000&quot;)</code></p>
 <h3 id="contractenddate">ContractEndDate</h3>
 <p>End date of the employee contract, null if the contract is still valid. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>

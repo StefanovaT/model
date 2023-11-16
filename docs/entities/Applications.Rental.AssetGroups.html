@@ -141,7 +141,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Applications.Rental.AssetGroups.html#rentalassetgroupcode">RentalAssetGroupCode</a></td>
 <td>string (3)</td>
-<td>Asset group code, unique within the parent node. <code>Required</code> <code>Filter(eq;like)</code></td>
+<td>Asset group code, unique within the parent node. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Applications.Rental.AssetGroups.html#rentalassetgroupname">RentalAssetGroupName</a></td>
@@ -198,13 +198,15 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>25</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="rentalassetgroupcode">RentalAssetGroupCode</h3>
-<p>Asset group code, unique within the parent node. <code>Required</code> <code>Filter(eq;like)</code></p>
+<p>Asset group code, unique within the parent node. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (3)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>3</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.IncMax( o =&gt; o.RentalAssetGroupCode, o =&gt; ( o.ParentFullPath == obj.ParentFullPath), &quot;000&quot;)</code></p>
 <h3 id="rentalassetgroupname">RentalAssetGroupName</h3>
 <p>Asset group name, unique within the parent node. <code>Required</code> <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>

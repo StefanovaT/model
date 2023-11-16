@@ -91,6 +91,9 @@ _Supports Order By_: **True**
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.ValuationGroupCode, null, "00000")`
+
 ### ValuationGroupName
 
 The name of the product valuation group. `Required` `Filter(eq;like)`

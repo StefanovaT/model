@@ -98,6 +98,9 @@ _Supports Order By_: **True**
 _Maximum Length_: **40**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.Code, null, "00000")`
+
 ### DisplayText
 
 Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.

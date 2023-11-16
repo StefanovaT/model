@@ -31,7 +31,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ContractCode](General.Contacts.CompanyEmployees.md#contractcode) | string (16) __nullable__ | Contract number or code, unique within the company. One employee can have more than one contract. `Filter(eq)` 
+| [ContractCode](General.Contacts.CompanyEmployees.md#contractcode) | string (16) __nullable__ | Contract number or code, unique within the company. One employee can have more than one contract. `Filter(eq;like)` `ORD` 
 | [ContractEndDate](General.Contacts.CompanyEmployees.md#contractenddate) | datetime __nullable__ | End date of the employee contract, null if the contract is still valid. `Filter(ge;le)` 
 | [ContractStartDate](General.Contacts.CompanyEmployees.md#contractstartdate) | datetime __nullable__ | Start date of the employee contract. Null if it is unkown. `Filter(ge;le)` 
 | [DisplayText](General.Contacts.CompanyEmployees.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
@@ -52,14 +52,17 @@ Aggregate Root:
 
 ### ContractCode
 
-Contract number or code, unique within the company. One employee can have more than one contract. `Filter(eq)`
+Contract number or code, unique within the company. One employee can have more than one contract. `Filter(eq;like)` `ORD`
 
 _Type_: **string (16) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
-_Supports Order By_: **False**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **True**  
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.ContractCode, e => ( e.Company == obj.Company), "00000")`
 
 ### ContractEndDate
 

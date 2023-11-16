@@ -111,7 +111,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.StoreGroups.html#code">Code</a></td>
 <td>string (16)</td>
-<td>The unique code of the StoreGroup. <code>Required</code> <code>Filter(eq;like)</code></td>
+<td>The unique code of the StoreGroup. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.StoreGroups.html#displaytext">DisplayText</a></td>
@@ -174,13 +174,15 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="code">Code</h3>
-<p>The unique code of the StoreGroup. <code>Required</code> <code>Filter(eq;like)</code></p>
+<p>The unique code of the StoreGroup. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (16)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>16</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.IncMax( o =&gt; o.Code, o =&gt; ( o.Parent == obj.Parent), &quot;000&quot;)</code></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>

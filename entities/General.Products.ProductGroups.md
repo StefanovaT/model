@@ -98,7 +98,7 @@ _Maximum Length_: **16**
 _Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
-`obj.Transaction.Query( ).Where( pg => ( ( ( pg.ParentGroup == obj.ParentGroup) AndAlso pg.Code.Like( "%[0-9]")) AndAlso ( pg.Active == True))).ToList( ).Max( p => p.Code).IncrementNumberInString( ( IIF( ( obj.ParentGroup == null), "A", obj.ParentGroup.Code) + "00"))`
+`obj.IncMax( o => o.Code, o => ( o.ParentGroup == obj.ParentGroup), IIF( ( obj.ParentGroup == null), "000", ( obj.ParentGroup.Code + "00")))`
 
 ### ConfiguratorCreatesRecipe
 

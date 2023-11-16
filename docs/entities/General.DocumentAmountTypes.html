@@ -305,6 +305,8 @@ Allowed values for the <code>AllowedDirections</code>(General.DocumentAmountType
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>16</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.IncMax( o =&gt; o.AmountTypeCode, null, &quot;000&quot;)</code></p>
 <h3 id="amounttypename">AmountTypeName</h3>
 <p>The name of the amount type. <code>Required</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a></strong><br>

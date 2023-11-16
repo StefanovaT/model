@@ -130,6 +130,9 @@ _Supports Order By_: **True**
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.AmountTypeCode, null, "000")`
+
 ### AmountTypeName
 
 The name of the amount type. `Required` `Filter(like)`

@@ -126,6 +126,9 @@ _Supports Order By_: **False**
 _Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.IncMax( o => o.Number, null, "00000")`
+
 ### ObjectVersion
 
 The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.

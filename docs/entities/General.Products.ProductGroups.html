@@ -294,7 +294,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>16</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Back-End Default Expression:</em><br>
-<code>obj.Transaction.Query( ).Where( pg =&gt; ( ( ( pg.ParentGroup == obj.ParentGroup) AndAlso pg.Code.Like( &quot;%[0-9]&quot;)) AndAlso ( pg.Active == True))).ToList( ).Max( p =&gt; p.Code).IncrementNumberInString( ( IIF( ( obj.ParentGroup == null), &quot;A&quot;, obj.ParentGroup.Code) + &quot;00&quot;))</code></p>
+<code>obj.IncMax( o =&gt; o.Code, o =&gt; ( o.ParentGroup == obj.ParentGroup), IIF( ( obj.ParentGroup == null), &quot;000&quot;, ( obj.ParentGroup.Code + &quot;00&quot;)))</code></p>
 <h3 id="configuratorcreatesrecipe">ConfiguratorCreatesRecipe</h3>
 <p>Whether the product configurator should create one default recipe. true=yes;false=no. <code>Required</code> <code>Default(false)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>

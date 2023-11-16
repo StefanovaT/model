@@ -156,7 +156,7 @@ Contract number or code, unique within the company. One employee can have more t
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(16) (Allows NULL)|
@@ -170,6 +170,7 @@ Contract number or code, unique within the company. One employee can have more t
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Contract_End_Date
 
