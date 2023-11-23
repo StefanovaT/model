@@ -14,7 +14,7 @@ Purpose codes specify the different purposes recognized by the authorities for d
 |[Code](#code)|`nvarchar(32)` ||
 |[Excise_Purpose_Code_Id](#excise_purpose_code_id)|`uniqueidentifier` `PK`||
 |[Is_Default](#is_default)|`bit` |Excise Purpose Codes which is the default for documents.|
-|[Name](#name)|`nvarchar(254)` `ML`||
+|[Name](#name)|`nvarchar(500)` `ML`||
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
 
@@ -133,7 +133,7 @@ Excise Purpose Codes which is the default for documents.
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|254|
+|Max Length|500|
 |Order|2|
 |Ownership Reference|no|
 |Pasword|no|
@@ -144,7 +144,7 @@ Excise Purpose Codes which is the default for documents.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254) (MultiLanguage)|
+|Type|nvarchar(500) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

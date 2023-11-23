@@ -14,7 +14,7 @@ Excise product codes are defined by the taxation and customs authorities. For EU
 |[Code](#code)|`nvarchar(32)` ||
 |[Excise_Product_Category_Id](#excise_product_category_id)|`uniqueidentifier` |The category of the excise product.|
 |[Excise_Product_Id](#excise_product_id)|`uniqueidentifier` `PK`||
-|[Name](#name)|`nvarchar(254)` `ML`|Multilanguage string|
+|[Name](#name)|`nvarchar(500)` `ML`|Multilanguage string|
 |[Row_Version](#row_version)|`timestamp` ||
 
 ## Columns
@@ -136,7 +136,7 @@ Multilanguage string
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|254|
+|Max Length|500|
 |Order|2|
 |Ownership Reference|no|
 |Pasword|no|
@@ -147,7 +147,7 @@ Multilanguage string
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254) (MultiLanguage)|
+|Type|nvarchar(500) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

@@ -33,7 +33,7 @@ Aggregate Tree
 | [DisplayText](Finance.Excise.ExcisePurposeCodes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Excise.ExcisePurposeCodes.md#id) | guid |  
 | [IsDefault](Finance.Excise.ExcisePurposeCodes.md#isdefault) | boolean | Excise Purpose Codes which is the default for documents. `Required` `Default(false)` `Filter(eq)` `Introduced in version 21.1.4.0` 
-| [Name](Finance.Excise.ExcisePurposeCodes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this ExcisePurposeCode. `Required` `Filter(like)` 
+| [Name](Finance.Excise.ExcisePurposeCodes.md#name) | [MultilanguageString (500)](../data-types.md#multilanguagestring) | The name of this ExcisePurposeCode. `Required` `Filter(like)` 
 | [Notes](Finance.Excise.ExcisePurposeCodes.md#notes) | string (max) __nullable__ | Notes for this ExcisePurposeCode. 
 | [ObjectVersion](Finance.Excise.ExcisePurposeCodes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
@@ -87,7 +87,7 @@ _Show in UI_: **ShownByDefault**
 
 The name of this ExcisePurposeCode. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (500)](../data-types.md#multilanguagestring)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  

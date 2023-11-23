@@ -278,7 +278,7 @@ Indicates whether this custom property is active
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`True`|no|no|
 
 ### Key_Order
 

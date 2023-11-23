@@ -32,7 +32,7 @@ Aggregate Tree
 | [Code](Finance.Excise.ExciseProducts.md#code) | string (32) | The unique code of the ExciseProduct. `Required` `Filter(multi eq;like)` `ORD` 
 | [DisplayText](Finance.Excise.ExciseProducts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Excise.ExciseProducts.md#id) | guid |  
-| [Name](Finance.Excise.ExciseProducts.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multilanguage string. `Required` `Filter(like)` 
+| [Name](Finance.Excise.ExciseProducts.md#name) | [MultilanguageString (500)](../data-types.md#multilanguagestring) | Multilanguage string. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Excise.ExciseProducts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
@@ -79,7 +79,7 @@ _Show in UI_: **CannotBeShown**
 
 Multilanguage string. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Type_: **[MultilanguageString (500)](../data-types.md#multilanguagestring)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
