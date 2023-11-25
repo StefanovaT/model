@@ -367,6 +367,8 @@
 - name: Dmv
   href: Dmv.md
   items:
+  - name: Dmv_Audit_Log_Entries
+    href: Dmv_Audit_Log_Entries.md
   - name: Dmv_Current_Sessions
     href: Dmv_Current_Sessions.md
   - name: Dmv_Exec_Stats
@@ -701,6 +703,8 @@
     href: Inv_Product_Default_Store_Bins.md
   - name: Inv_Product_Valuation_Groups
     href: Inv_Product_Valuation_Groups.md
+  - name: Inv_Reconciliation_Counts
+    href: Inv_Reconciliation_Counts.md
   - name: Inv_Reconciliation_Lines
     href: Inv_Reconciliation_Lines.md
   - name: Inv_Reconciliation_Order_Lines

@@ -1249,6 +1249,9 @@ references:
 - uid: Logistics.Inventory.ProductValuationGroups
   name: Logistics.Inventory.ProductValuationGroups Entity
   href: entities/Logistics.Inventory.ProductValuationGroups.html
+- uid: Logistics.Inventory.ReconciliationCounts
+  name: Logistics.Inventory.ReconciliationCounts Entity
+  href: entities/Logistics.Inventory.ReconciliationCounts.html
 - uid: Logistics.Inventory.ReconciliationLines
   name: Logistics.Inventory.ReconciliationLines Entity
   href: entities/Logistics.Inventory.ReconciliationLines.html
@@ -1930,6 +1933,9 @@ references:
 - uid: Systems.Dmv
   name: Systems.Dmv Namespace
   href: entities/Systems.Dmv.html
+- uid: Systems.Dmv.AuditLogEntries
+  name: Systems.Dmv.AuditLogEntries View
+  href: entities/Systems.Dmv.AuditLogEntries.html
 - uid: Systems.Dmv.CurrentSessions
   name: Systems.Dmv.CurrentSessions View
   href: entities/Systems.Dmv.CurrentSessions.html

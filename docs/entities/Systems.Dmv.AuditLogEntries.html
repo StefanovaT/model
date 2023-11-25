@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Systems.Dmv.AuditLogEntries View | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Systems.Dmv.AuditLogEntries View | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Systems.Dmv.AuditLogEntries">
+<h1 id="systemsdmvauditlogentries-view">Systems.Dmv.AuditLogEntries View</h1>
+
+<p><strong>Namespace:</strong> <a href="Systems.Dmv.html">Systems.Dmv</a></p>
+<p>Information about the count and the size of audit log entries, grouped by application name, event class, entity name and event time. Entity: Dmv_Audit_Log_Entries (Introduced in version 24.1.3.48)</p>
+<h2 id="default-visualization">Default Visualization</h2>
+<p>Default Display Text Format:<br>
+<em>{ApplicationName}: {EventClass}</em><br>
+Default Search Members:<br>
+__<br>
+Category:  <em>Views</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
+<h2 id="aggregate">Aggregate</h2>
+<p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="Systems.Dmv.AuditLogEntries.html">Systems.Dmv.AuditLogEntries</a></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Systems.Dmv.AuditLogEntries.html#applicationname">ApplicationName</a></td>
+<td>string (64)</td>
+<td>The client application that triggered the events. Null when unknown or N/A. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Dmv.AuditLogEntries.html#entityname">EntityName</a></td>
+<td>string (64)</td>
+<td>The entity, which is being referenced by the events. Null when unknown or N/A. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Dmv.AuditLogEntries.html#entriescount">EntriesCount</a></td>
+<td>int32</td>
+<td>Total number of audit log entries. <code>Required</code> <code>Filter(eq;ge;le)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Dmv.AuditLogEntries.html#eventclass">EventClass</a></td>
+<td>string (1)</td>
+<td>The event primary classification, which shows the source of the events. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Dmv.AuditLogEntries.html#totalsizemb">TotalSizeMB</a></td>
+<td>int64</td>
+<td>Total size of the audit log entries in megabytes. <code>Required</code> <code>Filter(eq;ge;le)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Dmv.AuditLogEntries.html#year">Year</a></td>
+<td>string (30)</td>
+<td>Year when the events occurred. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-details">Attribute Details</h2>
+<h3 id="applicationname">ApplicationName</h3>
+<p>The client application that triggered the events. Null when unknown or N/A. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>string (64)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="entityname">EntityName</h3>
+<p>The entity, which is being referenced by the events. Null when unknown or N/A. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>string (64)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="entriescount">EntriesCount</h3>
+<p>Total number of audit log entries. <code>Required</code> <code>Filter(eq;ge;le)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="eventclass">EventClass</h3>
+<p>The event primary classification, which shows the source of the events. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>string (1)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Maximum Length</em>: <strong>1</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="totalsizemb">TotalSizeMB</h3>
+<p>Total size of the audit log entries in megabytes. <code>Required</code> <code>Filter(eq;ge;le)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>int64</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="year">Year</h3>
+<p>Year when the events occurred. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
+<p><em>Type</em>: <strong>string (30)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Maximum Length</em>: <strong>30</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h2 id="api">API</h2>
+<p>Domain API Query:
+<a href="https://demodb.my.erp.net/api/domain/odata/Systems_Dmv_AuditLogEntries?$top=10">https://demodb.my.erp.net/api/domain/odata/Systems_Dmv_AuditLogEntries?$top=10</a></p>
+<p>Domain API Query Builder:
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Systems_Dmv_AuditLogEntries?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Systems_Dmv_AuditLogEntries?$top=10</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Systems.Dmv.AuditLogEntries.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

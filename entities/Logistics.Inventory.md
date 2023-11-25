@@ -13,6 +13,7 @@ uid: Logistics.Inventory
 - [Lots](Logistics.Inventory.Lots.md)  
 - [ProductDefaultStoreBins](Logistics.Inventory.ProductDefaultStoreBins.md)  
 - [ProductValuationGroups](Logistics.Inventory.ProductValuationGroups.md)  
+- [ReconciliationCounts](Logistics.Inventory.ReconciliationCounts.md)  
 - [ReconciliationLines](Logistics.Inventory.ReconciliationLines.md)  
 - [Reconciliations](Logistics.Inventory.Reconciliations.md)  
 - [RequisitionPlan](Logistics.Inventory.RequisitionPlan.md)  

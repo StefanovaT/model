@@ -9,6 +9,7 @@
 * [Inv_Lots](Inv_Lots.md)
 * [Inv_Product_Default_Store_Bins](Inv_Product_Default_Store_Bins.md)
 * [Inv_Product_Valuation_Groups](Inv_Product_Valuation_Groups.md)
+* [Inv_Reconciliation_Counts](Inv_Reconciliation_Counts.md)
 * [Inv_Reconciliation_Lines](Inv_Reconciliation_Lines.md)
 * [Inv_Reconciliation_Order_Lines](Inv_Reconciliation_Order_Lines.md)
 * [Inv_Reconciliation_Orders](Inv_Reconciliation_Orders.md)

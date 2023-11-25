@@ -816,6 +816,8 @@
       href: Logistics.Inventory.ProductDefaultStoreBins.md
     - name: ProductValuationGroups
       href: Logistics.Inventory.ProductValuationGroups.md
+    - name: ReconciliationCounts
+      href: Logistics.Inventory.ReconciliationCounts.md
     - name: ReconciliationLines
       href: Logistics.Inventory.ReconciliationLines.md
     - name: Reconciliations
@@ -1187,6 +1189,8 @@
   - name: Dmv
     href: Systems.Dmv.md
     items:
+    - name: AuditLogEntries
+      href: Systems.Dmv.AuditLogEntries.md
     - name: CurrentSessions
       href: Systems.Dmv.CurrentSessions.md
     - name: ExecStats
@@ -1195,6 +1199,8 @@
       href: Systems.Dmv.InformationMessages.md
     - name: InstanceParameters
       href: Systems.Dmv.InstanceParameters.md
+    - name: ObjectFiles
+      href: Systems.Dmv.ObjectFiles.md
     - name: PrintImages
       href: Systems.Dmv.PrintImages.md
     - name: ProcedureStatusInfo
