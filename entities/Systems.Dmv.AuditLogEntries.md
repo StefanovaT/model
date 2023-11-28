@@ -28,7 +28,7 @@ Aggregate Tree
 | [ApplicationName](Systems.Dmv.AuditLogEntries.md#applicationname) | string (64) | The client application that triggered the events. Null when unknown or N/A. `Required` `Filter(eq;like)` `ORD` 
 | [EntityName](Systems.Dmv.AuditLogEntries.md#entityname) | string (64) | The entity, which is being referenced by the events. Null when unknown or N/A. `Required` `Filter(eq;like)` `ORD` 
 | [EntriesCount](Systems.Dmv.AuditLogEntries.md#entriescount) | int32 | Total number of audit log entries. `Required` `Filter(eq;ge;le)` `ORD` 
-| [EventClass](Systems.Dmv.AuditLogEntries.md#eventclass) | string (1) | The event primary classification, which shows the source of the events. `Required` `Filter(eq;like)` `ORD` 
+| [EventClass](Systems.Dmv.AuditLogEntries.md#eventclass) | [EventClass](Systems.Dmv.AuditLogEntries.md#eventclass) | The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events. `Required` `Filter(multi eq;like)` `ORD` `Inherited from Sys_Audit_Log_<br />Entries_Table.Event_Class` 
 | [TotalSizeMB](Systems.Dmv.AuditLogEntries.md#totalsizemb) | int64 | Total size of the audit log entries in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
 | [Year](Systems.Dmv.AuditLogEntries.md#year) | string (30) | Year when the events occurred. `Required` `Filter(eq;like)` `ORD` 
 
@@ -69,13 +69,22 @@ _Show in UI_: **ShownByDefault**
 
 ### EventClass
 
-The event primary classification, which shows the source of the events. `Required` `Filter(eq;like)` `ORD`
+The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events. `Required` `Filter(multi eq;like)` `ORD` `Inherited from Sys_Audit_Log_Entries_Table.Event_Class`
 
-_Type_: **string (1)**  
+_Type_: **[EventClass](Systems.Dmv.AuditLogEntries.md#eventclass)**  
 _Category_: **System**  
-_Supported Filters_: **Equals, Like**  
+Allowed values for the `EventClass`(Systems.Core.AuditLogEntries.md#eventclass) data attribute  
+_Allowed Values (Systems.Core.AuditLogEntriesRepository.EventClass Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| Entity | Entity value. Stored as 'E'. <br /> _Database Value:_ 'E' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Entity' |
+| Authentication | Authentication value. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Authentication' |
+| Server | Server value. Stored as 'S'. <br /> _Database Value:_ 'S' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Server' |
+
+_Inherited From_: **Sys_Audit_Log_Entries_Table.Event_Class**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **True**  
-_Maximum Length_: **1**  
 _Show in UI_: **ShownByDefault**  
 
 ### TotalSizeMB

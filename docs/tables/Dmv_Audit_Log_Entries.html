@@ -109,8 +109,8 @@
 </tr>
 <tr>
 <td><a href="#event_class">Event_Class</a></td>
-<td><code>nvarchar(1)</code></td>
-<td>The event primary classification, which shows the source of the events.</td>
+<td><code>nvarchar(1)</code> Allowed: <code>E</code>, <code>A</code>, <code>S</code></td>
+<td>The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events.</td>
 </tr>
 <tr>
 <td><a href="#total_size_mb">Total_Size_MB</a></td>
@@ -501,7 +501,7 @@
 </tbody>
 </table>
 <h3 id="event_class">Event_Class</h3>
-<p>The event primary classification, which shows the source of the events.</p>
+<p>The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events.</p>
 <table>
 <thead>
 <tr>
@@ -510,6 +510,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Allowed Values</td>
+<td><code>E</code>, <code>A</code>, <code>S</code></td>
+</tr>
 <tr>
 <td>Auto Complete</td>
 <td>no</td>
@@ -576,7 +580,7 @@
 </tr>
 <tr>
 <td>Supports EQUALS_IN</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Type</td>
