@@ -15,7 +15,7 @@ Information about the count and the size of audit log entries, grouped by applic
 |[Entity_Name](#entity_name)|`nvarchar(64)` |The entity, which is being referenced by the events. Null when unknown or N/A.|
 |[Entries_Count](#entries_count)|`int` |Total number of audit log entries.|
 |[Event_Class](#event_class)|`nvarchar(1)` Allowed: `E`, `A`, `S`|The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events.|
-|[Total_Size_MB](#total_size_mb)|`bigint` |Total size of the audit log entries in megabytes.|
+|[Total_Size_MB](#total_size_mb)|`decimal(12, 3)` |Total size of the audit log entries in megabytes.|
 |[Year](#year)|`nvarchar(30)` |Year when the events occurred.|
 
 ## Columns
@@ -105,6 +105,7 @@ Total number of audit log entries.
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
+|Format|N0|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -180,6 +181,7 @@ Total size of the audit log entries in megabytes.
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
+|Format|N2|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -193,7 +195,7 @@ Total size of the audit log entries in megabytes.
 |Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|bigint|
+|Type|decimal(12, 3)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

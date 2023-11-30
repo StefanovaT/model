@@ -29,7 +29,7 @@ Aggregate Tree
 | [EntityName](Systems.Dmv.AuditLogEntries.md#entityname) | string (64) | The entity, which is being referenced by the events. Null when unknown or N/A. `Required` `Filter(eq;like)` `ORD` 
 | [EntriesCount](Systems.Dmv.AuditLogEntries.md#entriescount) | int32 | Total number of audit log entries. `Required` `Filter(eq;ge;le)` `ORD` 
 | [EventClass](Systems.Dmv.AuditLogEntries.md#eventclass) | [EventClass](Systems.Dmv.AuditLogEntries.md#eventclass) | The event primary classification, which shows the source of the event. E=Entity methods; A=Auth events; S=Server events. `Required` `Filter(multi eq;like)` `ORD` `Inherited from Sys_Audit_Log_<br />Entries_Table.Event_Class` 
-| [TotalSizeMB](Systems.Dmv.AuditLogEntries.md#totalsizemb) | int64 | Total size of the audit log entries in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
+| [TotalSizeMB](Systems.Dmv.AuditLogEntries.md#totalsizemb) | decimal (12, 3) | Total size of the audit log entries in megabytes. `Required` `Filter(eq;ge;le)` `ORD` 
 | [Year](Systems.Dmv.AuditLogEntries.md#year) | string (30) | Year when the events occurred. `Required` `Filter(eq;like)` `ORD` 
 
 
@@ -91,7 +91,7 @@ _Show in UI_: **ShownByDefault**
 
 Total size of the audit log entries in megabytes. `Required` `Filter(eq;ge;le)` `ORD`
 
-_Type_: **int64**  
+_Type_: **decimal (12, 3)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **True**  
