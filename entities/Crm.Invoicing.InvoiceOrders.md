@@ -561,6 +561,7 @@ _Show in UI_: **ShownByDefault**
 When the invoice is a credit note, can specify the original Invoice Order, on which this is based. null for normal invoice orders or when the original document is unknown. `Filter(multi eq)`
 
 _Type_: **[InvoiceOrders](Crm.Invoicing.InvoiceOrders.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **CannotBeShown**  
@@ -725,6 +726,7 @@ _Show in UI_: **HiddenByDefault**
 Default value and filter for the lines. Used to differenciate the invoice order for each sales order. `Filter(multi eq)`
 
 _Type_: **[SalesOrders](Crm.Sales.SalesOrders.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

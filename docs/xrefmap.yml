@@ -1951,6 +1951,9 @@ references:
 - uid: Systems.Dmv.InstanceParameters
   name: Systems.Dmv.InstanceParameters View
   href: entities/Systems.Dmv.InstanceParameters.html
+- uid: Systems.Dmv.Licenses
+  name: Systems.Dmv.Licenses View
+  href: entities/Systems.Dmv.Licenses.html
 - uid: Systems.Dmv.ObjectFiles
   name: Systems.Dmv.ObjectFiles View
   href: entities/Systems.Dmv.ObjectFiles.html

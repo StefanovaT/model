@@ -615,6 +615,7 @@ _Show in UI_: **ShownByDefault**
 Destination address where the goods should be shipped. `Required` `Filter(multi eq)`
 
 _Type_: **[PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -263,6 +263,7 @@ _Show in UI_: **ShownByDefault**
 When not null, categorizes the property under a category. `Filter(multi eq)`
 
 _Type_: **[PropertiesCategories](General.PropertiesCategories.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

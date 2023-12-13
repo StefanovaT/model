@@ -1028,6 +1028,7 @@ _Front-End Recalc Expressions:_
 The contact mechanism (address) to whih to ship the sales order. `Filter(multi eq)`
 
 _Type_: **[PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

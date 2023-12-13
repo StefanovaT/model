@@ -604,6 +604,7 @@ _Show in UI_: **HiddenByDefault**
 Transaction that determines which transactions need cost correction. The corrected transactions are those that depend on the specified cost in the source transaction. `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[StoreTransactions](Logistics.Inventory.StoreTransactions.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

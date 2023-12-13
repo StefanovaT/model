@@ -803,6 +803,7 @@ _Show in UI_: **HiddenByDefault**
 The purchase order that was sent to the supplier and is the base for the invoice. null means there is no linked PO and 3 way check won't be performed. `Filter(multi eq)`
 
 _Type_: **[PurchaseOrders](Logistics.Procurement.PurchaseOrders.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

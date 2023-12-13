@@ -185,6 +185,7 @@ _Show in UI_: **HiddenByDefault**
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
 _Type_: **[Documents](General.Documents.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

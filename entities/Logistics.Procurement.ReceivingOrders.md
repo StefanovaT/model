@@ -664,6 +664,7 @@ _Show in UI_: **HiddenByDefault**
 The purchase order which is received with this receiving order. `Filter(multi eq)`
 
 _Type_: **[PurchaseOrders](Logistics.Procurement.PurchaseOrders.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

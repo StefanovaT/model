@@ -864,6 +864,7 @@ Enumeration of document system states<br>
 <h3 id="creditnoteoriginalinvoiceorder">CreditNoteOriginalInvoiceOrder</h3>
 <p>When the invoice is a credit note, can specify the original Invoice Order, on which this is based. null for normal invoice orders or when the original document is unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrders.html">InvoiceOrders</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
@@ -977,6 +978,7 @@ Enumeration of document system states<br>
 <h3 id="salesorder">SalesOrder</h3>
 <p>Default value and filter for the lines. Used to differenciate the invoice order for each sales order. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrders.html">SalesOrders</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>

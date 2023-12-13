@@ -275,6 +275,7 @@ _Show in UI_: **ShownByDefault**
 The intrastat declaration, to which this line belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Declarations](Finance.Intrastat.Declarations.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

@@ -618,6 +618,7 @@ _Show in UI_: **HiddenByDefault**
 The Work Order for which this Output Order is storing data. `Filter(multi eq)`
 
 _Type_: **[WorkOrders](Production.ShopFloor.WorkOrders.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

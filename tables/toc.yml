@@ -377,6 +377,8 @@
     href: Dmv_Information_Messages.md
   - name: Dmv_Instance_Parameters
     href: Dmv_Instance_Parameters.md
+  - name: Dmv_Licenses
+    href: Dmv_Licenses.md
   - name: Dmv_Object_Files
     href: Dmv_Object_Files.md
   - name: Dmv_Print_Images

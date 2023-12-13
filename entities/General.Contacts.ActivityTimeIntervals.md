@@ -160,6 +160,7 @@ _Show in UI_: **ShownByDefault**
 The activity for which the time interval is recorded. `Required` `Filter(multi eq)`
 
 _Type_: **[Activities](General.Contacts.Activities.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

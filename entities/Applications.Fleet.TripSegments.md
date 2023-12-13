@@ -144,6 +144,7 @@ _Show in UI_: **ShownByDefault**
 The trip for which the segment is defined. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Trips](Applications.Fleet.Trips.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

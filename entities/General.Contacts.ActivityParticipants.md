@@ -104,6 +104,7 @@ _Show in UI_: **ShownByDefault**
 The <see cref="Activity"/> to which this ActivityParticipant belongs. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Activities](General.Contacts.Activities.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
@@ -114,6 +115,7 @@ _Show in UI_: **ShownByDefault**
 The person, participating in an activity. `Required` `Filter(multi eq)`
 
 _Type_: **[Persons](General.Contacts.Persons.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

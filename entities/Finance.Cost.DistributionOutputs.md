@@ -118,6 +118,7 @@ _Show in UI_: **ShownByDefault**
 The store transaction line, for which costs will be distributed. `Required` `Filter(multi eq)`
 
 _Type_: **[StoreTransactionLines](Logistics.Inventory.StoreTransactionLines.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

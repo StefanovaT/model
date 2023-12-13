@@ -273,6 +273,7 @@ _Show in UI_: **ShownByDefault**
 If non-null, contains the specific lot to use for the movement. `Filter(multi eq)`
 
 _Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

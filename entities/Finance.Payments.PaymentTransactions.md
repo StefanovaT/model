@@ -639,6 +639,7 @@ _Show in UI_: **HiddenByDefault**
 Original Payment Transaction. `Filter(multi eq)` `Introduced in version 20.1`
 
 _Type_: **[PaymentTransactions](Finance.Payments.PaymentTransactions.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

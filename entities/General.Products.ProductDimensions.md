@@ -143,6 +143,7 @@ _Show in UI_: **ShownByDefault**
 The measurement category of Source Quantity Unit. For each product, only one conversion ratio can be specified for a measurement category. `Required` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[MeasurementCategories](General.MeasurementCategories.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
