@@ -46,3 +46,5 @@ The current validation is referred here:
 - [R27170 FinancialStatement - Check Code](~/business-rules/R27170.md)
 - [R26759 FinancialStatementNode - Financial Statement Node Code](~/business-rules/R26759.md)
 - [R32332 Accounting Voucher Lines - Item Key (Code)](~/business-rules/R32332.md)
+- [R33548 Service - Services Code](~/business-rules/R33548.md)
+
