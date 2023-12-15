@@ -221,6 +221,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>True - the document is read only; false - the document is not read only. <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
+<td><a href="Logistics.Inventory.Reconciliations.html#reconciliationtype">ReconciliationType</a></td>
+<td><a href="Logistics.Inventory.Reconciliations.html#reconciliationtype">ReconciliationType</a> <strong>nullable</strong></td>
+<td>Specifies how to treat the data in the Counted table, when creating the reconciliation lines. Under Full reconciliation, products which are not counted are considered missing. Under partial, products that are not counted are not reconciled. <code>Filter(eq)</code> <code>Introduced in version 24.1.3.67</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.Inventory.Reconciliations.html#referencedate">ReferenceDate</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
@@ -625,6 +630,33 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="reconciliationtype">ReconciliationType</h3>
+<p>Specifies how to treat the data in the Counted table, when creating the reconciliation lines. Under Full reconciliation, products which are not counted are considered missing. Under partial, products that are not counted are not reconciled. <code>Filter(eq)</code> <code>Introduced in version 24.1.3.67</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.Reconciliations.html#reconciliationtype">ReconciliationType</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>ReconciliationType</code>(Logistics.Inventory.Reconciliations.md#reconciliationtype) data attribute<br>
+<em>Allowed Values (Logistics.Inventory.ReconciliationsRepository.ReconciliationType Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full</td>
+<td>Full. Stored as 'F'. <br> <em>Database Value:</em> 'F' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Full'</td>
+</tr>
+<tr>
+<td>Partial</td>
+<td>Partial. Stored as 'P'. <br> <em>Database Value:</em> 'P' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Partial'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="referencedate">ReferenceDate</h3>
 <p>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>

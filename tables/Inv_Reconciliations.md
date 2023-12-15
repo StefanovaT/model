@@ -23,6 +23,7 @@ Store reconciliations (physical counting). Usefull for real-world reconciliation
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
 |[Is_Single_Execution](#is_single_execution)|`bit` Readonly|Specifies whether the document is a single execution of its order document.|
 |[Reconciliation_Id](#reconciliation_id)|`uniqueidentifier` `PK`||
+|[Reconciliation_Type](#reconciliation_type)|`nvarchar(1)` Allowed: `F`, `P`|Specifies how to treat the data in the Counted table, when creating the reconciliation lines. Under Full reconciliation, products which are not counted are considered missing. Under partial, products that are not counted are not reconciled.|
 |[Row_Version](#row_version)|`timestamp` ||
 
 ## Columns
@@ -41,7 +42,7 @@ When not null is used to filter the product chooser for the lines.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -78,7 +79,7 @@ The default store bin for the lines. When null, lines can specify different bins
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -115,7 +116,7 @@ Default (but not mandatory) store for the lines. NULL means that the store shoul
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -149,7 +150,7 @@ Default (but not mandatory) store for the lines. NULL means that the store shoul
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -183,7 +184,7 @@ Default (but not mandatory) store for the lines. NULL means that the store shoul
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -220,7 +221,7 @@ True if the document is not void and its state is released or greater. Deprecate
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -256,7 +257,7 @@ Specifies whether the document is a single execution of its order document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -289,7 +290,7 @@ Specifies whether the document is a single execution of its order document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -311,6 +312,43 @@ Specifies whether the document is a single execution of its order document.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Reconciliation_Type
+
+
+Specifies how to treat the data in the Counted table, when creating the reconciliation lines. Under Full reconciliation, products which are not counted are considered missing. Under partial, products that are not counted are not reconciled.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`F`, `P`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(1) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Reconciliation_Type - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Row_Version
 
 | Property | Value |
@@ -322,7 +360,7 @@ Specifies whether the document is a single execution of its order document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
