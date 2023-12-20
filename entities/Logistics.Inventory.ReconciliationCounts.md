@@ -29,7 +29,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreationTimeUtc](Logistics.Inventory.ReconciliationCounts.md#creationtimeutc) | datetime | The exact time (UTC) the product was counted. `Required` `Filter(ge;le)` 
+| [CreationTimeUtc](Logistics.Inventory.ReconciliationCounts.md#creationtimeutc) | datetime | The exact time (UTC) the product was counted. `Required` `Default(NowUtc)` `Filter(ge;le)` `ReadOnly` 
 | [DisplayText](Logistics.Inventory.ReconciliationCounts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Inventory.ReconciliationCounts.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.ReconciliationCounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -39,7 +39,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` |
+| [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](Logistics.Inventory.ReconciliationCounts.md#product) | [Products](General.Products.Products.md) | The product which is currently counted. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
 | [Reconcilation](Logistics.Inventory.ReconciliationCounts.md#reconcilation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Owner` |
@@ -49,12 +49,13 @@ Aggregate Root:
 
 ### CreationTimeUtc
 
-The exact time (UTC) the product was counted. `Required` `Filter(ge;le)`
+The exact time (UTC) the product was counted. `Required` `Default(NowUtc)` `Filter(ge;le)` `ReadOnly`
 
 _Type_: **datetime**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText
@@ -100,7 +101,7 @@ _Show in UI_: **ShownByDefault**
 
 ### CreationUser
 
-The user who performed the count. `Required` `Filter(multi eq)`
+The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[Users](Systems.Security.Users.md)**  
 _Category_: **System**  

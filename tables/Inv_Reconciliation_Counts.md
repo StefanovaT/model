@@ -16,8 +16,8 @@ Used for planned reconciliations to count product quantities from multiple devic
 
 | Name | Type | Description |
 | - | - | --- |
-|[Creation_Time_Utc](#creation_time_utc)|`datetime` |The exact time (UTC) the product was counted|
-|[Creation_User_Id](#creation_user_id)|`uniqueidentifier` |The user who performed the count|
+|[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact time (UTC) the product was counted|
+|[Creation_User_Id](#creation_user_id)|`uniqueidentifier` Readonly|The user who performed the count|
 |[Id](#id)|`uniqueidentifier` `PK`|Unique Id|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product which is currently counted|
 |[Quantity](#quantity)|`decimal(12, 3)` |The counted quantity in the default measurement unit of the product|
@@ -36,7 +36,7 @@ The exact time (UTC) the product was counted
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|None|
+|Default Value|CurrentDateTimeUtc|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -46,7 +46,7 @@ The exact time (UTC) the product was counted
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -82,7 +82,7 @@ The user who performed the count
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[Sec_Users](Sec_Users.md)|
 |RTF|no|
 |Sortable|no|

@@ -109,7 +109,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationCounts.html#creationtimeutc">CreationTimeUtc</a></td>
 <td>datetime</td>
-<td>The exact time (UTC) the product was counted. <code>Required</code> <code>Filter(ge;le)</code></td>
+<td>The exact time (UTC) the product was counted. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationCounts.html#displaytext">DisplayText</a></td>
@@ -146,7 +146,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationCounts.html#creationuser">CreationUser</a></td>
 <td><a href="Systems.Security.Users.html">Users</a></td>
-<td>The user who performed the count. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The user who performed the count. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationCounts.html#product">Product</a></td>
@@ -167,11 +167,12 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
-<p>The exact time (UTC) the product was counted. <code>Required</code> <code>Filter(ge;le)</code></p>
+<p>The exact time (UTC) the product was counted. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
@@ -202,7 +203,7 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="creationuser">CreationUser</h3>
-<p>The user who performed the count. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The user who performed the count. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

@@ -229,7 +229,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Security.Users.html#usertype">UserType</a></td>
 <td><a href="Systems.Security.Users.html#usertype">UserType</a></td>
-<td>Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application. <code>Required</code> <code>Default(&quot;INT&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></td>
+<td>Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application (No lofin); INI=Invitation Internal (No login); INE=Invitation External (No login). <code>Required</code> <code>Default(&quot;INT&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Security.Users.html#voiceextensionnumbers">VoiceExtensionNumbers</a></td>
@@ -497,7 +497,7 @@ Allowed values for the <code>PasswordFormat</code>(Systems.Security.Users.md#pas
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="usertype">UserType</h3>
-<p>Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application. <code>Required</code> <code>Default(&quot;INT&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></p>
+<p>Specifies the user type. INT=Internal; EXT=External (community); VIR=Virtual (No login); SYS=System; APP=Application (No lofin); INI=Invitation Internal (No login); INE=Invitation External (No login). <code>Required</code> <code>Default(&quot;INT&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html#usertype">UserType</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>UserType</code>(Systems.Security.Users.md#usertype) data attribute<br>
@@ -529,6 +529,14 @@ Allowed values for the <code>UserType</code>(Systems.Security.Users.md#usertype)
 <tr>
 <td>ApplicationUserNoLogin</td>
 <td>Application users are used by applications. They do not have a password, but login by providing application credentials.. Stored as 'APP'. <br> <em>Database Value:</em> 'APP' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'ApplicationUserNoLogin'</td>
+</tr>
+<tr>
+<td>InvitationInternalNoLogin</td>
+<td>InvitationInternalNoLogin value. Stored as 'INI'. <br> <em>Database Value:</em> 'INI' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'InvitationInternalNoLogin'</td>
+</tr>
+<tr>
+<td>InvitationExternalNoLogin</td>
+<td>InvitationExternalNoLogin value. Stored as 'INE'. <br> <em>Database Value:</em> 'INE' <br> <em>Model Value:</em> 6 <br> <em>Domain API Value:</em> 'InvitationExternalNoLogin'</td>
 </tr>
 </tbody>
 </table>
