@@ -11768,6 +11768,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35900.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35900.html",
+          "hash": "TZJLdoAl7TRcqkuVr8o6mw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -15922,7 +15934,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Documents.html",
-          "hash": "rA78nWzTWclN39KZAmPcFQ=="
+          "hash": "Ki/a+34ZvueuC/YSPVd6Dw=="
         }
       },
       "is_incremental": false,
@@ -20388,7 +20400,7 @@
       "output": {
         ".html": {
           "relative_path": "reference/common-business-rules/all-documents.html",
-          "hash": "Nh0fi05BCfqMWqHxio1pQw=="
+          "hash": "zLPfh52v991GKneybhiL6g=="
         }
       },
       "is_incremental": false,
