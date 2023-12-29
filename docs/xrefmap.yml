@@ -1600,6 +1600,9 @@ references:
 - uid: Projects.Agile.CaseCategories
   name: Projects.Agile.CaseCategories Entity
   href: entities/Projects.Agile.CaseCategories.html
+- uid: Projects.Agile.CaseDevelopments
+  name: Projects.Agile.CaseDevelopments Entity
+  href: entities/Projects.Agile.CaseDevelopments.html
 - uid: Projects.Agile.Cases
   name: Projects.Agile.Cases Entity
   href: entities/Projects.Agile.Cases.html

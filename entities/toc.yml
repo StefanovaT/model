@@ -1039,6 +1039,8 @@
     items:
     - name: CaseCategories
       href: Projects.Agile.CaseCategories.md
+    - name: CaseDevelopments
+      href: Projects.Agile.CaseDevelopments.md
     - name: Cases
       href: Projects.Agile.Cases.md
     - name: ProjectAreas

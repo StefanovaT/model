@@ -5,6 +5,7 @@ uid: Projects.Agile
 
 ## Entities
 - [CaseCategories](Projects.Agile.CaseCategories.md)  
+- [CaseDevelopments](Projects.Agile.CaseDevelopments.md)  
 - [Cases](Projects.Agile.Cases.md)  
 - [ProjectAreas](Projects.Agile.ProjectAreas.md)  
 - [ProjectMilestones](Projects.Agile.ProjectMilestones.md)  

@@ -11772,7 +11772,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R35900.html",
-          "hash": "qSx45he/vQzjOx4TE8+Htg=="
+          "hash": "nHR3gueHN3wreOMbQ0V4oQ=="
         }
       },
       "is_incremental": false,
@@ -18210,6 +18210,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Projects.Agile.CaseDevelopments.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Projects.Agile.CaseDevelopments.html",
+          "hash": "rSQbzbOwbwp/Fi5NRfHy0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Projects.Agile.Cases.md",
       "output": {
         ".html": {
@@ -18274,7 +18286,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.Agile.html",
-          "hash": "JkCUguQjHyr+AQgs1DzQjw=="
+          "hash": "qMdvlLvGQsOuOdhs7jEoCg=="
         }
       },
       "is_incremental": false,
@@ -19966,7 +19978,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "96W5HilH1xLUMQuFmbT30A=="
+          "hash": "y4iA7Aqc3JYJbx+hirqG/g=="
         }
       },
       "is_incremental": false,
@@ -20796,7 +20808,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Apm.html",
-          "hash": "hzp+Mgu/KUMIZ+AaRV+zcg=="
+          "hash": "ZOIMtQD2GUtQQq5uPYQXNQ=="
         }
       },
       "is_incremental": false,
@@ -20809,6 +20821,18 @@
         ".html": {
           "relative_path": "tables/Apm_Case_Categories.html",
           "hash": "mUC64j4vwjcHLJe1KurexQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Apm_Case_Developments.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Apm_Case_Developments.html",
+          "hash": "mP6EJsW05BE99xcXqvcTHA=="
         }
       },
       "is_incremental": false,
@@ -28104,7 +28128,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/index.html",
-          "hash": "bpyUeHT0rYCMoFHRmxKI3g=="
+          "hash": "S8988RfNEt9CHd++GY4AEA=="
         }
       },
       "is_incremental": false,
@@ -28116,7 +28140,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/toc.html",
-          "hash": "hAAlSrhh2f5bZynevmYaZQ=="
+          "hash": "j0/cIyQmwVgbUgGpODorlQ=="
         }
       },
       "is_incremental": false,
