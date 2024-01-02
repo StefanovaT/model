@@ -27,10 +27,10 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [CreationTimeUtc](Projects.Agile.CaseDevelopments.md#creationtimeutc) | datetime | The exact date and time (in UTC) when the development was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `ReadOnly` 
 | [Description](Projects.Agile.CaseDevelopments.md#description) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Detailed description of the development. `Filter(like)` 
-| [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)` 
+| [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)` `ReadOnly` 
 | [DisplayText](Projects.Agile.CaseDevelopments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Agile.CaseDevelopments.md#id) | guid |  
-| [NewSystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) | string (1) __nullable__ | When the development incurred changing the state of the case, contains the new state. `Filter(eq)` 
+| [NewSystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) | [SystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) __nullable__ | When the development incurred changing the state of the case, contains the new state. `Filter(eq)` 
 | [ObjectVersion](Projects.Agile.CaseDevelopments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
@@ -68,7 +68,7 @@ _Show in UI_: **ShownByDefault**
 
 ### DevelopmentType
 
-Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)`
+Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype)**  
 _Category_: **System**  
@@ -109,11 +109,21 @@ _Show in UI_: **CannotBeShown**
 
 When the development incurred changing the state of the case, contains the new state. `Filter(eq)`
 
-_Type_: **string (1) __nullable__**  
+_Type_: **[SystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) __nullable__**  
 _Category_: **System**  
+Allowed values for the `SystemState`(Projects.Agile.Cases.md#systemstate) data attribute  
+_Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| QUEUED | QUEUED value. Stored as '0'. <br /> _Database Value:_ '0' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'QUEUED' |
+| ACTIVE | ACTIVE value. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ACTIVE' |
+| WAITING | WAITING value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'WAITING' |
+| RESOLVED | RESOLVED value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'RESOLVED' |
+| CLOSED | CLOSED value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'CLOSED' |
+
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
-_Maximum Length_: **1**  
 _Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion

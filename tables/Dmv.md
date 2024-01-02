@@ -1,6 +1,7 @@
 # Dmv
 
 * [Dmv_Audit_Log_Entries](Dmv_Audit_Log_Entries.md)
+* [Dmv_Current_License](Dmv_Current_License.md)
 * [Dmv_Current_Sessions](Dmv_Current_Sessions.md)
 * [Dmv_Exec_Stats](Dmv_Exec_Stats.md)
 * [Dmv_Information_Messages](Dmv_Information_Messages.md)

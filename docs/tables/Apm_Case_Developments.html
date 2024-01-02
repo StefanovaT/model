@@ -105,7 +105,7 @@
 <tr>
 <td><a href="#case_id">Case_Id</a></td>
 <td><code>uniqueidentifier</code></td>
-<td></td>
+<td>Case</td>
 </tr>
 <tr>
 <td><a href="#creation_time_utc">Creation_Time_Utc</a></td>
@@ -124,12 +124,12 @@
 </tr>
 <tr>
 <td><a href="#development_type">Development_Type</a></td>
-<td><code>nvarchar(3)</code> Allowed: <code>EDT</code>, <code>ASN</code>, <code>STA</code></td>
+<td><code>nvarchar(3)</code> Allowed: <code>EDT</code>, <code>ASN</code>, <code>STA</code>, Readonly</td>
 <td>Type of the development - Edit, Assignment, Resolve, etc.</td>
 </tr>
 <tr>
 <td><a href="#new_system_state">New_System_State</a></td>
-<td><code>nvarchar(1)</code></td>
+<td><code>nvarchar(1)</code> Allowed: <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code></td>
 <td>When the development incurred changing the state of the case, contains the new state.</td>
 </tr>
 <tr>
@@ -383,6 +383,7 @@
 </tbody>
 </table>
 <h3 id="case_id">Case_Id</h3>
+<p>Case</p>
 <table>
 <thead>
 <tr>
@@ -929,7 +930,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -998,6 +999,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Allowed Values</td>
+<td><code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code></td>
+</tr>
 <tr>
 <td>Auto Complete</td>
 <td>no</td>

@@ -117,7 +117,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.Agile.CaseDevelopments.html#developmenttype">DevelopmentType</a></td>
 <td><a href="Projects.Agile.CaseDevelopments.html#developmenttype">DevelopmentType</a></td>
-<td>Type of the development - Edit, Assignment, Resolve, etc. <code>Required</code> <code>Default(&quot;EDT&quot;)</code> <code>Filter(multi eq)</code></td>
+<td>Type of the development - Edit, Assignment, Resolve, etc. <code>Required</code> <code>Default(&quot;EDT&quot;)</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.CaseDevelopments.html#displaytext">DisplayText</a></td>
@@ -131,7 +131,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 <tr>
 <td><a href="Projects.Agile.CaseDevelopments.html#newsystemstate">NewSystemState</a></td>
-<td>string (1) <strong>nullable</strong></td>
+<td><a href="Projects.Agile.CaseDevelopments.html#newsystemstate">SystemState</a> <strong>nullable</strong></td>
 <td>When the development incurred changing the state of the case, contains the new state. <code>Filter(eq)</code></td>
 </tr>
 <tr>
@@ -186,7 +186,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="developmenttype">DevelopmentType</h3>
-<p>Type of the development - Edit, Assignment, Resolve, etc. <code>Required</code> <code>Default(&quot;EDT&quot;)</code> <code>Filter(multi eq)</code></p>
+<p>Type of the development - Edit, Assignment, Resolve, etc. <code>Required</code> <code>Default(&quot;EDT&quot;)</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Agile.CaseDevelopments.html#developmenttype">DevelopmentType</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>DevelopmentType</code>(Projects.Agile.CaseDevelopments.md#developmenttype) data attribute<br>
@@ -233,11 +233,42 @@ Allowed values for the <code>DevelopmentType</code>(Projects.Agile.CaseDevelopme
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="newsystemstate">NewSystemState</h3>
 <p>When the development incurred changing the state of the case, contains the new state. <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>string (1) <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="Projects.Agile.CaseDevelopments.html#newsystemstate">SystemState</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemstate) data attribute<br>
+<em>Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>QUEUED</td>
+<td>QUEUED value. Stored as '0'. <br> <em>Database Value:</em> '0' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'QUEUED'</td>
+</tr>
+<tr>
+<td>ACTIVE</td>
+<td>ACTIVE value. Stored as '1'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'ACTIVE'</td>
+</tr>
+<tr>
+<td>WAITING</td>
+<td>WAITING value. Stored as '2'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'WAITING'</td>
+</tr>
+<tr>
+<td>RESOLVED</td>
+<td>RESOLVED value. Stored as '3'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'RESOLVED'</td>
+</tr>
+<tr>
+<td>CLOSED</td>
+<td>CLOSED value. Stored as '4'. <br> <em>Database Value:</em> '4' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'CLOSED'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>

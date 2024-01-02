@@ -371,6 +371,8 @@
   items:
   - name: Dmv_Audit_Log_Entries
     href: Dmv_Audit_Log_Entries.md
+  - name: Dmv_Current_License
+    href: Dmv_Current_License.md
   - name: Dmv_Current_Sessions
     href: Dmv_Current_Sessions.md
   - name: Dmv_Exec_Stats
@@ -779,6 +781,10 @@
     href: Llm_Models.md
   - name: Llm_Providers
     href: Llm_Providers.md
+  - name: Llm_Training_Conversation_Messages
+    href: Llm_Training_Conversation_Messages.md
+  - name: Llm_Training_Conversations
+    href: Llm_Training_Conversations.md
 - name: Log
   href: Log.md
   items:

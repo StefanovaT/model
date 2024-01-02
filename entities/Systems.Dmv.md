@@ -5,6 +5,7 @@ uid: Systems.Dmv
 
 ## Entities
 - [AuditLogEntries](Systems.Dmv.AuditLogEntries.md)  
+- [CurrentLicense](Systems.Dmv.CurrentLicense.md)  
 - [CurrentSessions](Systems.Dmv.CurrentSessions.md)  
 - [ExecStats](Systems.Dmv.ExecStats.md)  
 - [InformationMessages](Systems.Dmv.InformationMessages.md)  

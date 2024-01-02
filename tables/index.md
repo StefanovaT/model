@@ -201,6 +201,7 @@
 ## [Dmv](Dmv.md)
 
 * [Dmv_Audit_Log_Entries](Dmv_Audit_Log_Entries.md)
+* [Dmv_Current_License](Dmv_Current_License.md)
 * [Dmv_Current_Sessions](Dmv_Current_Sessions.md)
 * [Dmv_Exec_Stats](Dmv_Exec_Stats.md)
 * [Dmv_Information_Messages](Dmv_Information_Messages.md)
@@ -420,6 +421,8 @@
 * [Llm_Model_QAs](Llm_Model_QAs.md)
 * [Llm_Models](Llm_Models.md)
 * [Llm_Providers](Llm_Providers.md)
+* [Llm_Training_Conversation_Messages](Llm_Training_Conversation_Messages.md)
+* [Llm_Training_Conversations](Llm_Training_Conversations.md)
 
 ## [Log](Log.md)
 

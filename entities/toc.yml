@@ -1193,6 +1193,8 @@
     items:
     - name: AuditLogEntries
       href: Systems.Dmv.AuditLogEntries.md
+    - name: CurrentLicense
+      href: Systems.Dmv.CurrentLicense.md
     - name: CurrentSessions
       href: Systems.Dmv.CurrentSessions.md
     - name: ExecStats
