@@ -132,7 +132,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.Agile.CaseDevelopments.html#newsystemstate">NewSystemState</a></td>
 <td><a href="Projects.Agile.CaseDevelopments.html#newsystemstate">SystemState</a> <strong>nullable</strong></td>
-<td>When the development incurred changing the state of the case, contains the new state. <code>Filter(eq)</code></td>
+<td>When the development incurred changing the state of the case, contains the new state. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.CaseDevelopments.html#objectversion">ObjectVersion</a></td>
@@ -232,7 +232,7 @@ Allowed values for the <code>DevelopmentType</code>(Projects.Agile.CaseDevelopme
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="newsystemstate">NewSystemState</h3>
-<p>When the development incurred changing the state of the case, contains the new state. <code>Filter(eq)</code></p>
+<p>When the development incurred changing the state of the case, contains the new state. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Agile.CaseDevelopments.html#newsystemstate">SystemState</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemstate) data attribute<br>
@@ -267,7 +267,7 @@ Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemst
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>Equals</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>

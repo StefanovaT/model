@@ -14,6 +14,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Assigned_To_User_Id](#assigned_to_user_id)|`uniqueidentifier` |The internal user to which the case is assigned.|
 |[Case_Category_Id](#case_category_id)|`uniqueidentifier` |The category of the case. This also determines the workflow for the case.|
 |[Case_Id](#case_id)|`uniqueidentifier` `PK`||
+|[Case_Number](#case_number)|`int` Readonly||
 |[Description](#description)|`nvarchar(max)` `ML`|Description of the required work.|
 |[Due_Date](#due_date)|`date` |Specified when the case has specific due date.|
 |[Due_Time](#due_time)|`time` |Specified when the case has specific due time.|
@@ -132,6 +133,39 @@ The category of the case. This also determines the workflow for the case.
 |Visible|no|
 
 #### Case_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Case_Number
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Case_Number - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

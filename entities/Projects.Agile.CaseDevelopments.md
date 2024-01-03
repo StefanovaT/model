@@ -30,7 +30,7 @@ Aggregate Tree
 | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)` `ReadOnly` 
 | [DisplayText](Projects.Agile.CaseDevelopments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Agile.CaseDevelopments.md#id) | guid |  
-| [NewSystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) | [SystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) __nullable__ | When the development incurred changing the state of the case, contains the new state. `Filter(eq)` 
+| [NewSystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) | [SystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) __nullable__ | When the development incurred changing the state of the case, contains the new state. `Filter(multi eq)` 
 | [ObjectVersion](Projects.Agile.CaseDevelopments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
 ## References
@@ -107,7 +107,7 @@ _Show in UI_: **CannotBeShown**
 
 ### NewSystemState
 
-When the development incurred changing the state of the case, contains the new state. `Filter(eq)`
+When the development incurred changing the state of the case, contains the new state. `Filter(multi eq)`
 
 _Type_: **[SystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) __nullable__**  
 _Category_: **System**  
@@ -122,7 +122,7 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 | RESOLVED | RESOLVED value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'RESOLVED' |
 | CLOSED | CLOSED value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'CLOSED' |
 
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

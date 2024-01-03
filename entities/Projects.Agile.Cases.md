@@ -31,6 +31,7 @@ Aggregate Tree
 | [DueTime](Projects.Agile.Cases.md#duetime) | time __nullable__ | Specified when the case has specific due time. `Filter(ge;le)` 
 | [EstimatedTimeHours](Projects.Agile.Cases.md#estimatedtimehours) | decimal (8, 2) __nullable__ | Estimation of the required work effort in hours. 
 | [Id](Projects.Agile.Cases.md#id) | guid |  
+| [Number](Projects.Agile.Cases.md#number) | int32 | The unique number of the Case. `Required` `Filter(eq)` `ReadOnly` `Introduced in version 24.1.3.86` 
 | [ObjectVersion](Projects.Agile.Cases.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](Projects.Agile.Cases.md#priority) | [Priority](Projects.Agile.Cases.md#priority) | Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Default(7)` `Filter(eq)` 
 | [SystemState](Projects.Agile.Cases.md#systemstate) | [SystemState](Projects.Agile.Cases.md#systemstate) | The base state of the case. `Required` `Default("1")` `Filter(eq)` 
@@ -109,6 +110,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### Number
+
+The unique number of the Case. `Required` `Filter(eq)` `ReadOnly` `Introduced in version 24.1.3.86`
+
+_Type_: **int32**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 

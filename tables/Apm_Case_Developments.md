@@ -303,7 +303,7 @@ When the development incurred changing the state of the case, contains the new s
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|no|
+|Supports EQUALS_IN|yes|
 |Type|nvarchar(1) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
