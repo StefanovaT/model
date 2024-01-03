@@ -11804,6 +11804,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35917.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35917.html",
+          "hash": "wDX28jKlckidApqVizh42g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -16762,7 +16774,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Inventory.ReconciliationCounts.html",
-          "hash": "SO7SSAPChsBQ8lS5fGeTBA=="
+          "hash": "s3900E5c/Z+sa2aE4P2gpQ=="
         }
       },
       "is_incremental": false,
