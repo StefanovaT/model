@@ -5,11 +5,11 @@ uid: Systems.Dmv
 
 ## Entities
 - [AuditLogEntries](Systems.Dmv.AuditLogEntries.md)  
-- [CurrentLicense](Systems.Dmv.CurrentLicense.md)  
 - [CurrentSessions](Systems.Dmv.CurrentSessions.md)  
 - [ExecStats](Systems.Dmv.ExecStats.md)  
 - [InformationMessages](Systems.Dmv.InformationMessages.md)  
 - [InstanceParameters](Systems.Dmv.InstanceParameters.md)  
+- [LicenseHistory](Systems.Dmv.LicenseHistory.md)  
 - [Licenses](Systems.Dmv.Licenses.md)  
 - [ObjectFiles](Systems.Dmv.ObjectFiles.md)  
 - [PrintImages](Systems.Dmv.PrintImages.md)  

@@ -5,23 +5,53 @@
 
 Entity: [Systems.Dmv.Licenses](~/entities/Systems.Dmv.Licenses.md)
 
-Dynaimc management view, providing license information. Entity: Dmv_Licenses (Introduced in version 24.1.3.66)
+The currently active licenses for the instance. Entity: Dmv_Licenses (Introduced in version 24.1.3.66)
 
 ## Summary
 
 | Name | Type | Description |
 | - | - | --- |
-|[Expiry_Date](#expiry_date)|`datetime` |When the license expires.|
-|[Is_Active](#is_active)|`bit` |True if the license is active.|
-|[LicenseString](#licensestring)|`nvarchar(max)` |The license string.|
-|[Start_Date](#start_date)|`datetime` |The start date of the license.|
+|[License_Code](#license_code)|`nvarchar(64)` |The code of the module or functionality, which is licensed.|
+|[License_Count](#license_count)|`int` |The current count (as of now) of active licenses.|
+|[License_Description](#license_description)|`nvarchar(max)` |Description of the license code.|
+|[License_Scale_Type](#license_scale_type)|`nvarchar(64)` |Denotes whether the license supports counts, different from 0 and 1.|
 
 ## Columns
 
-### Expiry_Date
+### License_Code
 
 
-When the license expires.
+The code of the module or functionality, which is licensed.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|64|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(64)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### License_Count
+
+
+The current count (as of now) of active licenses.
 
 | Property | Value |
 | - | - |
@@ -42,52 +72,16 @@ When the license expires.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|int|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
 
-#### Expiry_Date - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|GreaterThanOrLessThan|None|no|no|
-
-### Is_Active
+### License_Description
 
 
-True if the license is active.
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|-1|
-|Order|2147483647|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|no|
-|Type|bit|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
-### LicenseString
-
-
-The license string.
+Description of the license code.
 
 | Property | Value |
 | - | - |
@@ -114,10 +108,10 @@ The license string.
 |User Login|no|
 |Visible|yes|
 
-### Start_Date
+### License_Scale_Type
 
 
-The start date of the license.
+Denotes whether the license supports counts, different from 0 and 1.
 
 | Property | Value |
 | - | - |
@@ -127,7 +121,7 @@ The start date of the license.
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|-1|
+|Max Length|64|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -138,16 +132,10 @@ The start date of the license.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|datetime|
+|Type|nvarchar(64)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
-
-#### Start_Date - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|GreaterThanOrLessThan|None|no|no|
 
 

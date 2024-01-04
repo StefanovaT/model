@@ -1957,6 +1957,9 @@ references:
 - uid: Systems.Dmv.InstanceParameters
   name: Systems.Dmv.InstanceParameters View
   href: entities/Systems.Dmv.InstanceParameters.html
+- uid: Systems.Dmv.LicenseHistory
+  name: Systems.Dmv.LicenseHistory View
+  href: entities/Systems.Dmv.LicenseHistory.html
 - uid: Systems.Dmv.Licenses
   name: Systems.Dmv.Licenses View
   href: entities/Systems.Dmv.Licenses.html

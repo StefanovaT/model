@@ -13,7 +13,7 @@ Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81
 | - | - | --- |
 |[Assigned_To_User_Id](#assigned_to_user_id)|`uniqueidentifier` |When the development incurred re-assignment, specifies the new user, to which the case is assigned.|
 |[Case_Development_Id](#case_development_id)|`uniqueidentifier` `PK`|Case Development|
-|[Case_Id](#case_id)|`uniqueidentifier` |Case|
+|[Case_Id](#case_id)|`uniqueidentifier` |The case of the case development|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact date and time (in UTC) when the development was created|
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` Readonly|The user, who created the development.|
 |[Description](#description)|`nvarchar(max)` `ML`|Detailed description of the development.|
@@ -99,7 +99,7 @@ Case Development
 ### Case_Id
 
 
-Case
+The case of the case development
 
 | Property | Value |
 | - | - |

@@ -371,8 +371,6 @@
   items:
   - name: Dmv_Audit_Log_Entries
     href: Dmv_Audit_Log_Entries.md
-  - name: Dmv_Current_License
-    href: Dmv_Current_License.md
   - name: Dmv_Current_Sessions
     href: Dmv_Current_Sessions.md
   - name: Dmv_Exec_Stats
@@ -381,6 +379,8 @@
     href: Dmv_Information_Messages.md
   - name: Dmv_Instance_Parameters
     href: Dmv_Instance_Parameters.md
+  - name: Dmv_License_History
+    href: Dmv_License_History.md
   - name: Dmv_Licenses
     href: Dmv_Licenses.md
   - name: Dmv_Object_Files

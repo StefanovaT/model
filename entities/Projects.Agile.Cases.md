@@ -9,7 +9,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 
 ## Default Visualization
 Default Display Text Format:  
-_{Title}_  
+_{Number}: {Title:T}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  

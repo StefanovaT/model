@@ -38,7 +38,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AssignedToUser](Projects.Agile.CaseDevelopments.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | When the development incurred re-assignment, specifies the new user, to which the case is assigned. `Filter(multi eq)` |
-| [Case](Projects.Agile.CaseDevelopments.md#case) | [Cases](Projects.Agile.Cases.md) | Case. `Required` `Filter(multi eq)` |
+| [Case](Projects.Agile.CaseDevelopments.md#case) | [Cases](Projects.Agile.Cases.md) | The case of the case development. `Required` `Filter(multi eq)` |
 | [CreationUser](Projects.Agile.CaseDevelopments.md#creationuser) | [Users](Systems.Security.Users.md) | The user, who created the development. `Required` `Filter(multi eq)` `ReadOnly` |
 
 
@@ -151,7 +151,7 @@ _Show in UI_: **ShownByDefault**
 
 ### Case
 
-Case. `Required` `Filter(multi eq)`
+The case of the case development. `Required` `Filter(multi eq)`
 
 _Type_: **[Cases](Projects.Agile.Cases.md)**  
 _Indexed_: **True**  
