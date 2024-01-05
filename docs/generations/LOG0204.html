@@ -135,7 +135,7 @@
 <p>The generation procedure is used to generate VAT sales ledger entries in cases of VAT-self-accruement, when the VAT data is part of the Store Transaction and it does not reach the invoices.
 These records contain the VAT amount and its base from the current store transaction and the deal type is specified in the document route.
 The records are used to create data for the current document in the sales VAT register in the VAT declaration of the respective month.</p>
-<p>VAT amount and VAT base for the specified deal type are calculated as described in <a class="xref" href="https://erpnetdocs.github.io/tech/modules/financials/VAT/defining-vat-and-base-for-vat-entries.html">Defining VAT And Base For VAT Entries</a>.
+<p>VAT amount and VAT base for the specified deal type are calculated as described in <a href="xref:defining-vat-and-base-for-vat-entries">Defining VAT And Base For VAT Entries</a>.
 The deal type is part of the TransactionEntryTemplate table.
 The algorithm forms a list of deal types and for each deal type there are two values - <strong>AmountBase</strong> (the VAT base) and <strong>VATAmountBase</strong> (the VAT amount).</p>
 <p>Also, the To Party attribute from the Store Transaction provide the <strong>RegistrationVATNumber</strong> and the <strong>RegistrationNumber</strong> of the Entry.

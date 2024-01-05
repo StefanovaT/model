@@ -136,7 +136,7 @@
 For the rest of the products, the Store Orders are created from the Shipment Orders documents.
 However, products that are not shipped does not participate in the Shipment Orders, for this reason, the current generation procedure needed in order for these products to be issued from the warehouse as well.</p>
 <p>Different lines in the Sales Order may have different Stores or Required Delivery Dates, and for different values in these fields - different Store Orders should be created.
-Therefore, at the beginning of the generation procedure, all combinations of Store and Required Delivery Date from the Sales Order Lines are determined (but only for the lines that are not used for returning goods according to the classification in topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-order-row-types.html">Sales Order Row Types</a> and whose products are not shipped and are stocked).</p>
+Therefore, at the beginning of the generation procedure, all combinations of Store and Required Delivery Date from the Sales Order Lines are determined (but only for the lines that are not used for returning goods according to the classification in topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-concepts/sales-order-row-types.html">Sales Order Row Types</a> and whose products are not shipped and are stocked).</p>
 <p>For each of these combinations of <strong>Store</strong> and <strong>Required Delivery Date</strong>, a separate Store Order is created. The Store Order’s header is created based on the Sales Order’s header as follows:</p>
 <pre><code>StoreOrder.Store = Store
 

@@ -156,7 +156,7 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This Generation is used to create Shipment Orders for the products of the current Sales Order that are shipped (a product &quot;Is Shipped&quot; if it belongs to a Product Type in whose definition &quot;Is Shipped = True&quot;) and which reflect a &quot;normal&quot; Sale (ie there are no return lines, for more information see <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-order-row-types.html">Sales Order Row Types</a>).
+<p>This Generation is used to create Shipment Orders for the products of the current Sales Order that are shipped (a product &quot;Is Shipped&quot; if it belongs to a Product Type in whose definition &quot;Is Shipped = True&quot;) and which reflect a &quot;normal&quot; Sale (ie there are no return lines, for more information see <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-concepts/sales-order-row-types.html">Sales Order Row Types</a>).
 For the rest of the products, no Shipment Orders are created, and the Store Orders and Shipment Orders are created directly from the Sales Order.</p>
 <p>Before the sub-document is created, certain Validations of the data in the current Sales Order are performed.</p>
 <p>Validations assure that the fields Lines Store, Required Delivery Date and Ship To Party Contact Mechanism have values in all lines for which the generation procedure is used. If any of fields SalesOrder.SalesOrderLine.LineStore or SalesOrder.SalesOrderLine.RequiredDeliveryDate or SalesOrder.SalesOrderLine.ShipToPartyContactMechanism is equal to &quot;NULL&quot; in any of those lines an error message is thrown:</p>
@@ -171,7 +171,7 @@ or
 &gt; The field 'Ship To Party Contact Mechanism' in line number '{LineNo}' in document '{DocumentText}' must have a value.
 </code></pre>
 <p>Different lines in the Sales Order may have different Stores or Required Delivery Dates, and for different values in these fields - different Shipment Orders should be created.
-Therefore, at the beginning of the generation procedure, all combinations of Store and Required Delivery Date from the Sales Order Lines are determined (but only for the lines that are not used for returning goods according to the classification in topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-order-row-types.html">Sales Order Row Types</a> and whose products are shipped).</p>
+Therefore, at the beginning of the generation procedure, all combinations of Store and Required Delivery Date from the Sales Order Lines are determined (but only for the lines that are not used for returning goods according to the classification in topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-concepts/sales-order-row-types.html">Sales Order Row Types</a> and whose products are shipped).</p>
 <p>For each of these combinations of <strong>Store</strong> and <strong>Required Delivery Date</strong>, a separate Shipment Order is created. The Shipment Order’s header is created based on the Sales Order’s header as follows:</p>
 <pre><code>ShipmentOrder.Customer = SalesOrder.Customer
 
@@ -191,7 +191,7 @@ ShipmentOrder.IssuedByPerson =
 
 </code></pre>
 <p>The lines of the new document are created based on the data for the Fulfilled Part of quantities by Shipment Oders that are already created (for more information, see topic <a href="../reference/discrepancy-system.html">Discrepancy System</a>).
-For example, for each SalesOrderLine of Sales Order for the current <strong>Store</strong> and <strong>Required Delivery Date</strong> combination, which is not a return line (see topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-order-row-types.html">Sales Order Row Types</a>), and in which the product Is Shipped, the unfulfilled quantities of <strong>ShipmentOrderRemainingQuantity</strong> and <strong>ShipmentOrderRemainingQuantityBase</strong> are determined. Thus, if at least one of the two values is different from 0, a new line of ShipmentOrderLine is created:</p>
+For example, for each SalesOrderLine of Sales Order for the current <strong>Store</strong> and <strong>Required Delivery Date</strong> combination, which is not a return line (see topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-concepts/sales-order-row-types.html">Sales Order Row Types</a>), and in which the product Is Shipped, the unfulfilled quantities of <strong>ShipmentOrderRemainingQuantity</strong> and <strong>ShipmentOrderRemainingQuantityBase</strong> are determined. Thus, if at least one of the two values is different from 0, a new line of ShipmentOrderLine is created:</p>
 <pre><code>ShipmentOrderLine.LineNo = SalesOrderLine.LineNo
 
 ShipmentOrderLine.ParentSalesOrderLine = SalesOrderLine

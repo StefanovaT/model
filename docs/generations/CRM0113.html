@@ -201,11 +201,11 @@ Currently, for the Generation there are three available settings (set in &quot;S
 <p>The creation of the Payment Orders begins with the calculation of the Amounts of instalments of the current Sales Order.
 These amounts are then being broken down by the Invoices that have been created for Sales Order.
 Calculation of amounts depends on the &quot;Create For Not Invoiced Amounts&quot; and &quot;Create For Invoiced Amounts&quot; settings.
-This is detailed in the topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-order-payment-plan.html">Sales Order Payment Plan</a>.
+This is detailed in the topic <a href="xref:sales-order-payment-plan">Sales Order Payment Plan</a>.
 Thus, for the current Sales Order is determined a list of Amounts.
 Then for each Amount are calculated the amounts of the metrics that are not yet fulfilled by other Payment Orders that have already been created (for more information, see topic <a href="../reference/discrepancy-system.html">Discrepancy System</a> and <a href="../reference/metrics.html">Metrics</a>).
 If for an Amount any of the Metrics with &quot;New Record = YES&quot; is different from 0, then for this Amount is created a new Payment Order.</p>
-<p>The new Payment Order is created as follows (the determination of the Amount's attributes' values is described in the topic <a class="xref" href="https://erpnetdocs.github.io/tech/modules/crm/sales/sales-order-payment-plan.html">Sales Order Payment Plan</a>):</p>
+<p>The new Payment Order is created as follows (the determination of the Amount's attributes' values is described in the topic <a href="xref:sales-order-payment-plan">Sales Order Payment Plan</a>):</p>
 <pre><code>PaymentOder.Notes = Amount.DocumentNotes
 PaymentOder.Party = Amount.Party
 PaymentOder.Direction = Income
