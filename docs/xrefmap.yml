@@ -1642,6 +1642,12 @@ references:
 - uid: Projects.AI.Providers
   name: Projects.AI.Providers Entity
   href: entities/Projects.AI.Providers.html
+- uid: Projects.AI.TrainingConversationMessages
+  name: Projects.AI.TrainingConversationMessages Entity
+  href: entities/Projects.AI.TrainingConversationMessages.html
+- uid: Projects.AI.TrainingConversations
+  name: Projects.AI.TrainingConversations Entity
+  href: entities/Projects.AI.TrainingConversations.html
 - uid: Projects.Classic
   name: Projects.Classic Namespace
   href: entities/Projects.Classic.html

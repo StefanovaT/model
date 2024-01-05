@@ -107,12 +107,12 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensecode">LicenseCode</a></td>
 <td>string (64)</td>
-<td>The code of the module or functionality, which is licensed. <code>Required</code> <code>Filter(eq;like)</code></td>
+<td>The code of the module or functionality, which is licensed. <code>Required</code> <code>Filter(multi eq;like)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensecount">LicenseCount</a></td>
 <td>int32</td>
-<td>The number of licenses given (+) or taken (-). <code>Required</code></td>
+<td>The number of licenses given (+) or taken (-). <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensedescription">LicenseDescription</a></td>
@@ -122,7 +122,7 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licenseenddate">LicenseEndDate</a></td>
 <td>date</td>
-<td>The date (inclusive), until the license is active. <code>Required</code> <code>Filter(ge;le)</code></td>
+<td>The date (inclusive), until the license is active. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensescaletype">LicenseScaleType</a></td>
@@ -132,12 +132,12 @@ Show in UI:  <em>CannotBeShown</em></p>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensestartdate">LicenseStartDate</a></td>
 <td>date</td>
-<td>The date (inclusive), from which the license is active. <code>Required</code> <code>Filter(ge;le)</code></td>
+<td>The date (inclusive), from which the license is active. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensingdate">LicensingDate</a></td>
 <td>date</td>
-<td>The date, when the license was issued. <code>Required</code> <code>Filter(ge;le)</code></td>
+<td>The date, when the license was issued. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Dmv.LicenseHistory.html#licensingevent">LicensingEvent</a></td>
@@ -148,18 +148,18 @@ Show in UI:  <em>CannotBeShown</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="licensecode">LicenseCode</h3>
-<p>The code of the module or functionality, which is licensed. <code>Required</code> <code>Filter(eq;like)</code></p>
+<p>The code of the module or functionality, which is licensed. <code>Required</code> <code>Filter(multi eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licensecount">LicenseCount</h3>
-<p>The number of licenses given (+) or taken (-). <code>Required</code></p>
+<p>The number of licenses given (+) or taken (-). <code>Required</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licensedescription">LicenseDescription</h3>
@@ -171,10 +171,10 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licenseenddate">LicenseEndDate</h3>
-<p>The date (inclusive), until the license is active. <code>Required</code> <code>Filter(ge;le)</code></p>
+<p>The date (inclusive), until the license is active. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licensescaletype">LicenseScaleType</h3>
@@ -186,17 +186,17 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licensestartdate">LicenseStartDate</h3>
-<p>The date (inclusive), from which the license is active. <code>Required</code> <code>Filter(ge;le)</code></p>
+<p>The date (inclusive), from which the license is active. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licensingdate">LicensingDate</h3>
-<p>The date, when the license was issued. <code>Required</code> <code>Filter(ge;le)</code></p>
+<p>The date, when the license was issued. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="licensingevent">LicensingEvent</h3>

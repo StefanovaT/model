@@ -45,7 +45,7 @@ The code of the module or functionality, which is licensed.
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|no|
+|Supports EQUALS_IN|yes|
 |Type|nvarchar(64)|
 |UI Memo Editor|no|
 |UI Width|Medium|
@@ -88,6 +88,13 @@ The number of licenses given (+) or taken (-).
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### License_Count - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### License_Description
 
@@ -153,6 +160,7 @@ The date (inclusive), until the license is active.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |GreaterThanOrLessThan|None|no|no|
 
 ### License_Scale_Type
@@ -219,6 +227,7 @@ The date (inclusive), from which the license is active.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |GreaterThanOrLessThan|None|no|no|
 
 ### Licensing_Date
@@ -255,6 +264,7 @@ The date, when the license was issued.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |GreaterThanOrLessThan|None|no|no|
 
 ### Licensing_Event

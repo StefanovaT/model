@@ -41,12 +41,19 @@ The code of the module or functionality, which is licensed.
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|no|
+|Supports EQUALS_IN|yes|
 |Type|nvarchar(64)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### License_Code - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|Like|None|no|no|
 
 ### License_Count
 
@@ -77,6 +84,13 @@ The current count (as of now) of active licenses.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### License_Count - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### License_Description
 

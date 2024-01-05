@@ -9,4 +9,6 @@ uid: Projects.AI
 - [ModelQAs](Projects.AI.ModelQAs.md)  
 - [Models](Projects.AI.Models.md)  
 - [Providers](Projects.AI.Providers.md)  
+- [TrainingConversationMessages](Projects.AI.TrainingConversationMessages.md)  
+- [TrainingConversations](Projects.AI.TrainingConversations.md)  
 
