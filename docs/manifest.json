@@ -4216,30 +4216,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "business-rules/R30178.md",
       "output": {
         ".html": {
           "relative_path": "business-rules/R30178.html",
-          "hash": "2r26xghQj8fov+oVOJqvsA=="
+          "hash": "kvy0IeUg38wnlI4OJpHBVw=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "business-rules/R30181.md",
       "output": {
         ".html": {
           "relative_path": "business-rules/R30181.html",
-          "hash": "DtnMAh6ewxTIhv9JMnKcyA=="
+          "hash": "MG9S7VYa7oIhkEjsCN0Jqw=="
         }
       },
       "is_incremental": false,
@@ -4318,15 +4312,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "business-rules/R30224.md",
       "output": {
         ".html": {
           "relative_path": "business-rules/R30224.html",
-          "hash": "gjXc3b6fOk2oDhDKg43WIQ=="
+          "hash": "mPAm4dzQSKVfassLfJxDTQ=="
         }
       },
       "is_incremental": false,
@@ -5005,15 +4996,12 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "business-rules/R30398.md",
       "output": {
         ".html": {
           "relative_path": "business-rules/R30398.html",
-          "hash": "6sbuaCpD4+x/xCxesR8R+w=="
+          "hash": "L38Y4HynH4b9sQAqrmB4Vw=="
         }
       },
       "is_incremental": false,
@@ -5536,30 +5524,24 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "business-rules/R30440.md",
       "output": {
         ".html": {
           "relative_path": "business-rules/R30440.html",
-          "hash": "hqhMoNiNQWY5SHB6dfOMfg=="
+          "hash": "uqyIpsOrwrz+fPNxDflibQ=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "UidNotFound"
-      ],
       "type": "Conceptual",
       "source_relative_path": "business-rules/R30441.md",
       "output": {
         ".html": {
           "relative_path": "business-rules/R30441.html",
-          "hash": "vWfEt/tvcQJAByemKWEaow=="
+          "hash": "uBQ5dTCiMPUyDqljM9lpoQ=="
         }
       },
       "is_incremental": false,
@@ -28387,12 +28369,10 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "NoAvailableBuildCache"
+        "skipped_file_count": 0
       },
       "processors": {
         "ConceptualDocumentProcessor": {
