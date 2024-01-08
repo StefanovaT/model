@@ -11864,6 +11864,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35940.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35940.html",
+          "hash": "UzKELi14atvSlHg8orSySg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -16018,7 +16030,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Documents.html",
-          "hash": "paL9tkHnH9Yc3VajkRQ/MA=="
+          "hash": "Y+0qBZlHU0jVihMJQrFIzQ=="
         }
       },
       "is_incremental": false,
@@ -20559,7 +20571,7 @@
       "output": {
         ".html": {
           "relative_path": "reference/common-business-rules/all-documents.html",
-          "hash": "sEsMAUQkvaeaXNOYcoLZkA=="
+          "hash": "AW/vWWlt+q4xxEAkk5s3mA=="
         }
       },
       "is_incremental": false,
