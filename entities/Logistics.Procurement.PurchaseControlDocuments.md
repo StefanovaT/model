@@ -435,7 +435,7 @@ The user to which this document is assigned for handling. null means that the do
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### CurrencyDirectory
 

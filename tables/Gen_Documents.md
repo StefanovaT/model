@@ -255,7 +255,7 @@ The user to which this document is assigned for handling. NULL means that the do
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|no|
+|Visible|yes|
 
 #### Assigned_To_User_Id - Supported Filters
 
