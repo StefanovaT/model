@@ -67,6 +67,7 @@ Aggregate Tree
 | [ObjectVersion](General.DocumentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SchemaXML](General.DocumentTypes.md#schemaxml) | string (max) __nullable__ | Obsolete. Not used. 
 | [TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges) | [TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges) | Enable/disable attributes change tracking for documents from this type. "Default" means that changes will be tracked for all documents, except transit and adjustment documents. `Required` `Default("DEF")` `Filter(eq)` `Introduced in version 24.1.3.37` 
+| [TrackPrintImages](General.DocumentTypes.md#trackprintimages) | [TrackPrintImages](General.DocumentTypes.md#trackprintimages) | Enable/disable print images tracking for documents from this type. `Required` `Default("SDC")` `Filter(eq)` `Introduced in version 24.1.3.95` 
 | [TransitionalDocument](General.DocumentTypes.md#transitionaldocument) | boolean | If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. `Required` `Default(false)` 
 | [TypeName](General.DocumentTypes.md#typename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Description of the document type. `Required` `Filter(like)` 
 
@@ -252,6 +253,25 @@ _Allowed Values (General.DocumentTypesRepository.TrackAttributeChanges Enum Memb
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **Default**  
+_Show in UI_: **ShownByDefault**  
+
+### TrackPrintImages
+
+Enable/disable print images tracking for documents from this type. `Required` `Default("SDC")` `Filter(eq)` `Introduced in version 24.1.3.95`
+
+_Type_: **[TrackPrintImages](General.DocumentTypes.md#trackprintimages)**  
+_Category_: **System**  
+Allowed values for the `TrackPrintImages`(General.DocumentTypes.md#trackprintimages) data attribute  
+_Allowed Values (General.DocumentTypesRepository.TrackPrintImages Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| DoNotTrack | DoNotTrack value. Stored as 'DNT'. <br /> _Database Value:_ 'DNT' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'DoNotTrack' |
+| SaveSourceDataCompressed | SaveSourceDataCompressed value. Stored as 'SDC'. <br /> _Database Value:_ 'SDC' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'SaveSourceDataCompressed' |
+
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **SaveSourceDataCompressed**  
 _Show in UI_: **ShownByDefault**  
 
 ### TransitionalDocument

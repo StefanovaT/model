@@ -211,6 +211,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>Enable/disable attributes change tracking for documents from this type. &quot;Default&quot; means that changes will be tracked for all documents, except transit and adjustment documents. <code>Required</code> <code>Default(&quot;DEF&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.37</code></td>
 </tr>
 <tr>
+<td><a href="General.DocumentTypes.html#trackprintimages">TrackPrintImages</a></td>
+<td><a href="General.DocumentTypes.html#trackprintimages">TrackPrintImages</a></td>
+<td>Enable/disable print images tracking for documents from this type. <code>Required</code> <code>Default(&quot;SDC&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.95</code></td>
+</tr>
+<tr>
 <td><a href="General.DocumentTypes.html#transitionaldocument">TransitionalDocument</a></td>
 <td>boolean</td>
 <td>If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. <code>Required</code> <code>Default(false)</code></td>
@@ -474,6 +479,34 @@ Allowed values for the <code>TrackAttributeChanges</code>(General.DocumentTypes.
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Default</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="trackprintimages">TrackPrintImages</h3>
+<p>Enable/disable print images tracking for documents from this type. <code>Required</code> <code>Default(&quot;SDC&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.95</code></p>
+<p><em>Type</em>: <strong><a href="General.DocumentTypes.html#trackprintimages">TrackPrintImages</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>TrackPrintImages</code>(General.DocumentTypes.md#trackprintimages) data attribute<br>
+<em>Allowed Values (General.DocumentTypesRepository.TrackPrintImages Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DoNotTrack</td>
+<td>DoNotTrack value. Stored as 'DNT'. <br> <em>Database Value:</em> 'DNT' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'DoNotTrack'</td>
+</tr>
+<tr>
+<td>SaveSourceDataCompressed</td>
+<td>SaveSourceDataCompressed value. Stored as 'SDC'. <br> <em>Database Value:</em> 'SDC' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'SaveSourceDataCompressed'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>SaveSourceDataCompressed</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="transitionaldocument">TransitionalDocument</h3>
 <p>If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. <code>Required</code> <code>Default(false)</code></p>
