@@ -289,7 +289,7 @@ If checked specifies that lots are automatically created by the receiving orders
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(16)|
@@ -303,6 +303,7 @@ If checked specifies that lots are automatically created by the receiving orders
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|Like|None|no|no|
 
 ### Product_Type_Id
 

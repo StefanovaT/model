@@ -193,6 +193,7 @@ A code that can be used to uniquely identify the additional amount. Can also be 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|Like|None|no|no|
 
 ### Amount_Type_Name
 

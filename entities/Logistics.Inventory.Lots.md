@@ -33,7 +33,7 @@ Aggregate Tree
 | [ExpiryDate](Logistics.Inventory.Lots.md#expirydate) | datetime __nullable__ | Expiry date for this lot. `Filter(ge;le)` 
 | [Id](Logistics.Inventory.Lots.md#id) | guid |  
 | [LicenseNo](Logistics.Inventory.Lots.md#licenseno) | string (50) __nullable__ | The license number for this lot. Null when license number is N/A or unknown. 
-| [Number](Logistics.Inventory.Lots.md#number) | string (30) | The unique number of the Lot. May contain characters, if required. `Required` `Filter(eq;like)` 
+| [Number](Logistics.Inventory.Lots.md#number) | string (30) | The unique number of the Lot. May contain characters, if required. `Required` `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Logistics.Inventory.Lots.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProductionBatchId](Logistics.Inventory.Lots.md#productionbatchid) | guid __nullable__ | Non-null if the production batch is known. Production batches are automatically created for internal production, but can also be used for specifying production batches for purchased goods. `Filter(multi eq)` 
 | [PurchaseLotNumber](Logistics.Inventory.Lots.md#purchaselotnumber) | string (30) __nullable__ | Identification of the purchase lost with which the products from this store lot are received. E.g. the document number of the Receiving order. `Filter(like)` 
@@ -117,12 +117,13 @@ _Show in UI_: **ShownByDefault**
 
 ### Number
 
-The unique number of the Lot. May contain characters, if required. `Required` `Filter(eq;like)`
+The unique number of the Lot. May contain characters, if required. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (30)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
 

@@ -31,7 +31,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Code](General.Products.ProductTypes.md#code) | string (16) | The unique code of the ProductType. `Required` `Filter(eq)` 
+| [Code](General.Products.ProductTypes.md#code) | string (16) | The unique code of the ProductType. `Required` `Filter(eq;like)` `ORD` 
 | [DisplayText](General.Products.ProductTypes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.Products.ProductTypes.md#id) | guid |  
 | [IsDefault](General.Products.ProductTypes.md#isdefault) | boolean | When checked specifies that this type is set by default for new products unless another type is specified in the product groups. `Required` `Default(false)` `Filter(eq)` 
@@ -56,12 +56,13 @@ Aggregate Tree
 
 ### Code
 
-The unique code of the ProductType. `Required` `Filter(eq)`
+The unique code of the ProductType. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (16)**  
+_Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
-_Supports Order By_: **False**  
+_Supported Filters_: **Equals, Like**  
+_Supports Order By_: **True**  
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
 
