@@ -11996,6 +11996,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35963.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35963.html",
+          "hash": "weorVWxJLTHuEpwd5/EQLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -13894,7 +13906,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Presales.Deals.html",
-          "hash": "pR3dH/Wg370xai0RqRwDvQ=="
+          "hash": "nFjFL4PMFQlgS+WEh+/F5Q=="
         }
       },
       "is_incremental": false,
