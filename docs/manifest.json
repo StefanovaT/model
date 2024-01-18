@@ -12020,6 +12020,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R35980.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R35980.html",
+          "hash": "b0PK/g2PppfzpHqnvGGt3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -13942,7 +13954,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Presales.Leads.html",
-          "hash": "C2roAH+7f0jGwcvC0i9Yyw=="
+          "hash": "VJ5rGBk9yibsIf0D+t3JyQ=="
         }
       },
       "is_incremental": false,
