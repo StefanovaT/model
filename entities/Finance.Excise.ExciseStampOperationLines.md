@@ -184,6 +184,7 @@ _Front-End Recalc Expressions:_
 The lot of the excise stamps. `Filter(multi eq)`
 
 _Type_: **[ExciseStampLots](Finance.Excise.ExciseStampLots.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
