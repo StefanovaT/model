@@ -15,7 +15,7 @@ _DocumentNo_
 Code Data Member:  
 _DocumentNo_  
 Category:  _Definitions_  
-Show in UI:  _CannotBeShown_  
+Show in UI:  _HiddenByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
