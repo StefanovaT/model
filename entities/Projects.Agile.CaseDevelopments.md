@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CreationTimeUtc](Projects.Agile.CaseDevelopments.md#creationtimeutc) | datetime | The exact date and time (in UTC) when the development was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `ReadOnly` 
-| [Description](Projects.Agile.CaseDevelopments.md#description) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Detailed description of the development. `Filter(like)` 
+| [Description](Projects.Agile.CaseDevelopments.md#description) | string (max) __nullable__ | Detailed description of the development. `Filter(like)` 
 | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)` `ReadOnly` 
 | [DisplayText](Projects.Agile.CaseDevelopments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Agile.CaseDevelopments.md#id) | guid |  
@@ -60,10 +60,11 @@ _Show in UI_: **ShownByDefault**
 
 Detailed description of the development. `Filter(like)`
 
-_Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
 
 ### DevelopmentType

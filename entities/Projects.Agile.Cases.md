@@ -25,7 +25,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Description](Projects.Agile.Cases.md#description) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Description of the required work. `Filter(like)` 
+| [Description](Projects.Agile.Cases.md#description) | string (max) __nullable__ | Description of the required work. `Filter(like)` 
 | [DisplayText](Projects.Agile.Cases.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [DueDate](Projects.Agile.Cases.md#duedate) | date __nullable__ | Specified when the case has specific due date. `Filter(ge;le)` 
 | [DueTime](Projects.Agile.Cases.md#duetime) | time __nullable__ | Specified when the case has specific due time. `Filter(ge;le)` 
@@ -56,10 +56,11 @@ Aggregate Tree
 
 Description of the required work. `Filter(like)`
 
-_Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText
