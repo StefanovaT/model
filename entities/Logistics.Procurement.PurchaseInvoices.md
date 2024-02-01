@@ -171,6 +171,9 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.DocumentDate`
+
 _Front-End Recalc Expressions:_  
 `obj.DocumentDate`
 ### CompleteTime
