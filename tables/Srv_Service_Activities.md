@@ -22,7 +22,7 @@ Contains service activity headers. The service activities are the actual actions
 |[Default_Service_Object_Id](#default_service_object_id)|`uniqueidentifier` |Default service object for materials and services lines|
 |[Location_Party_Contact_Mechanism_Id](#location_party_contact_mechanism_id)|`uniqueidentifier` |The location where or the communication line used to conduct the work|
 |[Receiver_Person_Id](#receiver_person_id)|`uniqueidentifier` |The id of the person from the customers company, that received and signed for the service|
-|[Receiver_Person_Name](#receiver_person_name)|`nvarchar(254)` |Copy of the name of the receiver at the time the activity was signed|
+|[Receiver_Person_Name](#receiver_person_name)|`nvarchar(254)` `ML`|Copy of the name of the receiver at the time the activity was signed|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Service_Activity_Id](#service_activity_id)|`uniqueidentifier` `PK`||
 |[Service_Agreement_Id](#service_agreement_id)|`uniqueidentifier` |The service agreement under which the work was done|
@@ -276,7 +276,7 @@ Copy of the name of the receiver at the time the activity was signed
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254) (Allows NULL)|
+|Type|nvarchar(254) (MultiLanguage) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|

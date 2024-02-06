@@ -71,7 +71,7 @@ Aggregate Tree
 | [Priority](Applications.Service.ServiceActivities.md#priority) | [Priority](Applications.Service.ServiceActivities.md#priority) | Priority on the scale from 1 (least important) to 5 (very important). `Required` `Default(3)` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [Private](Applications.Service.ServiceActivities.md#private) | boolean | True if the task is visible only to its owner; false if this is publicly visible task. `Required` `Default(false)` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [ReadOnly](Applications.Service.ServiceActivities.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ReceiverPersonName](Applications.Service.ServiceActivities.md#receiverpersonname) | string (254) __nullable__ | Copy of the name of the receiver at the time the activity was signed. `Filter(like)` 
+| [ReceiverPersonName](Applications.Service.ServiceActivities.md#receiverpersonname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | Copy of the name of the receiver at the time the activity was signed. `Filter(like)` 
 | [ReferenceDate](Applications.Service.ServiceActivities.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
 | [ReferenceDocumentNo](Applications.Service.ServiceActivities.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
 | [ReleaseTime](Applications.Service.ServiceActivities.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -446,11 +446,10 @@ _Show in UI_: **HiddenByDefault**
 
 Copy of the name of the receiver at the time the activity was signed. `Filter(like)`
 
-_Type_: **string (254) __nullable__**  
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
-_Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
