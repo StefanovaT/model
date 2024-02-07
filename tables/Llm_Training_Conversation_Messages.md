@@ -51,7 +51,7 @@ Contents of the message. Can be formatted using MarkDown.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(max)|
-|UI Memo Editor|no|
+|UI Memo Editor|yes|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
