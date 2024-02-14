@@ -4,7 +4,6 @@ uid: Applications.Cms.ProductCatalogWebModules
 # Applications.Cms.ProductCatalogWebModules Entity
 
 **Namespace:** [Applications.Cms](Applications.Cms.md)  
-**Inherited From:** [Applications.Cms.WebModules](Applications.Cms.WebModules.md)  
 
 A web module, which presents a whole product catalog. Entity: Cms_Product_Catalog_Web_Modules (Obsoleted in version 22.1.6.73)
 
