@@ -4,6 +4,7 @@ uid: Applications.Cms.ProductCatalogWebModules
 # Applications.Cms.ProductCatalogWebModules Entity
 
 **Namespace:** [Applications.Cms](Applications.Cms.md)  
+**Inherited From:** [Applications.Cms.WebModules](Applications.Cms.WebModules.md)  
 
 A web module, which presents a whole product catalog. Entity: Cms_Product_Catalog_Web_Modules (Obsoleted in version 22.1.6.73)
 
@@ -46,9 +47,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>Parent</s>](Applications.Cms.ProductCatalogWebModules.md#parent) | [WebModules](Applications.Cms.WebModules.md) (nullable) | **OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.3.60` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
+| [<s>Parent</s>](Applications.Cms.ProductCatalogWebModules.md#parent) | [WebModules](Applications.Cms.WebModules.md) (nullable) | **OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.4.28` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
 | [ProductCatalog](Applications.Cms.ProductCatalogWebModules.md#productcatalog) | [ProductCatalogs](General.Products.ProductCatalogs.md) | The product catalog, which is represented by this web module. `Required` `Filter(multi eq)` |
-| [<s>WebSite</s>](Applications.Cms.ProductCatalogWebModules.md#website) | [WebSites](Applications.Cms.WebSites.md) | **OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.3.60` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
+| [<s>WebSite</s>](Applications.Cms.ProductCatalogWebModules.md#website) | [WebSites](Applications.Cms.WebSites.md) | **OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.4.28` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
 
 
 ## Attribute Details
@@ -149,7 +150,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Parent
 
-**OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.3.60` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md))
+**OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.4.28` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md))
 
 _Type_: **[WebModules](Applications.Cms.WebModules.md) (nullable)**  
 _Category_: **System**  
@@ -167,7 +168,7 @@ _Show in UI_: **ShownByDefault**
 
 ### WebSite
 
-**OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.3.60` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md))
+**OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.4.28` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md))
 
 _Type_: **[WebSites](Applications.Cms.WebSites.md)**  
 _Category_: **System**  

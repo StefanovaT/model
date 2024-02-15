@@ -687,7 +687,7 @@ _Domain API Request_: **POST**
 
 ### GetPrintout
 
-Gets a document printout as a file. The returned value is Base64 string representation of the file contents.  
+Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates `DocumentPrint`(General.DocumentPrints.md).  
 _Return Type_: **string**  
 _Declaring Type_: **[Documents](General.Documents.md)**  
 _Domain API Request_: **POST**  

@@ -109,6 +109,7 @@ The number of times the operation is executed since last statistics reset.
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
+|Format|N0|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|

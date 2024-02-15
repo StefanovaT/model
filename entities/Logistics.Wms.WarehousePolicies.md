@@ -154,6 +154,7 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | RequireProductScan | Require scanning of the product. Stored as 'RPS'. <br /> _Database Value:_ 'RPS' <br /> _Model Value:_ 10 <br /> _Domain API Value:_ 'RequireProductScan' |
 | RequireSourceScan | Require scanning of the source location when moving/dispatching. Stored as 'RSS'. <br /> _Database Value:_ 'RSS' <br /> _Model Value:_ 11 <br /> _Domain API Value:_ 'RequireSourceScan' |
 | ZoneType | Specifies the type of zone. Eg for receiving, shipping, packing, etc.. Stored as 'ZTY'. <br /> _Database Value:_ 'ZTY' <br /> _Model Value:_ 12 <br /> _Domain API Value:_ 'ZoneType' |
+| CustomRouting | Specifies a custom routing, based on a user-defined attribute of the locations. The policy specifies the code of the user-defined attribute, whose values contain the sequence of the route. The custom routing is employed by the Suggest Routing function and can be defined only at warehouse level.. Stored as 'CRO'. <br /> _Database Value:_ 'CRO' <br /> _Model Value:_ 13 <br /> _Domain API Value:_ 'CustomRouting' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

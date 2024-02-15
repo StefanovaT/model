@@ -318,6 +318,10 @@ Allowed values for the <code>PolicyKind</code>(Logistics.Wms.WarehousePolicies.m
 <td>ZoneType</td>
 <td>Specifies the type of zone. Eg for receiving, shipping, packing, etc.. Stored as 'ZTY'. <br> <em>Database Value:</em> 'ZTY' <br> <em>Model Value:</em> 12 <br> <em>Domain API Value:</em> 'ZoneType'</td>
 </tr>
+<tr>
+<td>CustomRouting</td>
+<td>Specifies a custom routing, based on a user-defined attribute of the locations. The policy specifies the code of the user-defined attribute, whose values contain the sequence of the route. The custom routing is employed by the Suggest Routing function and can be defined only at warehouse level.. Stored as 'CRO'. <br> <em>Database Value:</em> 'CRO' <br> <em>Model Value:</em> 13 <br> <em>Domain API Value:</em> 'CustomRouting'</td>
+</tr>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
