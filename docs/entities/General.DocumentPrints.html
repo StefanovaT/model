@@ -144,7 +144,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="General.DocumentPrints.html#printtime">PrintTime</a></td>
 <td>datetime</td>
-<td>The time when the document was printed or exported. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
+<td>The time when the document was printed or exported. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="General.DocumentPrints.html#printuser">PrintUser</a></td>
@@ -261,11 +261,11 @@ Allowed values for the <code>PrintoutType</code>(General.DocumentPrints.md#print
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="printtime">PrintTime</h3>
-<p>The time when the document was printed or exported. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></p>
+<p>The time when the document was printed or exported. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="printuser">PrintUser</h3>
@@ -296,6 +296,7 @@ Allowed values for the <code>PrintoutType</code>(General.DocumentPrints.md#print
 <h3 id="documentprintimage">DocumentPrintImage</h3>
 <p>Points to the actual contents of the printed document. <code>Filter(multi eq;like)</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentPrintImages.html">DocumentPrintImages</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
