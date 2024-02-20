@@ -9,7 +9,7 @@ Contains purchase prices of the products. Used for automatically loading unit pr
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {MaxQuantityValue}_  
+_{Price} - {FromDate}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
