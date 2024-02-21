@@ -16,6 +16,7 @@ Actual tracked changes to one object. Entity: Sys_Object_Changes (Introduced in 
 | Name | Type | Description |
 | - | - | --- |
 |[Change_Type](#change_type)|`nvarchar(1)` Allowed: `C`, `U`, `D`|Type of change - Create, Update or Delete.|
+|[Changes_Json_Compressed](#changes_json_compressed)|`varbinary` |Contains JSON formatted attribute values. GZip compressed.|
 |[Entity_Item_Id](#entity_item_id)|`uniqueidentifier` |The id of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object.|
 |[Object_Change_Id](#object_change_id)|`uniqueidentifier` `PK`||
 |[Object_Changeset_Id](#object_changeset_id)|`uniqueidentifier` |The changeset containing this change.|
@@ -52,6 +53,36 @@ Type of change - Create, Update or Delete.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(1)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### Changes_Json_Compressed
+
+
+Contains JSON formatted attribute values. GZip compressed.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|varbinary (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

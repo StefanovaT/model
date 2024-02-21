@@ -29,6 +29,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [ChangesJsonCompressed](Systems.Core.ObjectChanges.md#changesjsoncompressed) | byte[] __nullable__ | Contains JSON formatted attribute values. GZip compressed. `Introduced in version 24.1.4.29` 
 | [ChangeType](Systems.Core.ObjectChanges.md#changetype) | [ChangeType](Systems.Core.ObjectChanges.md#changetype) | Type of change - Create, Update or Delete. `Required` 
 | [DisplayText](Systems.Core.ObjectChanges.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityItemId](Systems.Core.ObjectChanges.md#entityitemid) | guid | The id of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. `Required` `Filter(multi eq)` 
@@ -46,6 +47,16 @@ Aggregate Root:
 
 
 ## Attribute Details
+
+### ChangesJsonCompressed
+
+Contains JSON formatted attribute values. GZip compressed. `Introduced in version 24.1.4.29`
+
+_Type_: **byte[] __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### ChangeType
 

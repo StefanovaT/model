@@ -13,6 +13,7 @@ Contains purchase prices of the products. Used for automatically loading unit pr
 | - | - | --- |
 |[Currency_Id](#currency_id)|`uniqueidentifier` |The currency of the price|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
+|[Enterprise_Company_Location_Id](#enterprise_company_location_id)|`uniqueidentifier` |Specifies the Enterprise Company Location for which the price is valid for. If the field is blank, the price is valid for all Enterprise Company Locations|
 |[From_Date](#from_date)|`datetime` |Starting date of validity of the price|
 |[Max_Quantity](#max_quantity)|`decimal(18, 3)` |Maximum quantity for which this price is valid in the Price_Quantity_Measurement_Unit|
 |[Min_Quantity](#min_quantity)|`decimal(18, 3)` |Minimal quantity required to use this price (in the Price_Quantity_Measurement_Unit)|
@@ -96,6 +97,43 @@ The currency of the price
 |Visible|no|
 
 #### Enterprise_Company_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Enterprise_Company_Location_Id
+
+
+Specifies the Enterprise Company Location for which the price is valid for. If the field is blank, the price is valid for all Enterprise Company Locations
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Cm_Company_Locations](Cm_Company_Locations.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Enterprise_Company_Location_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
