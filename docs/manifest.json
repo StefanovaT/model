@@ -12044,6 +12044,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36144.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36144.html",
+          "hash": "ddolmeESM/DN7UKH+spJOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -13606,7 +13618,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.LineDiscounts.html",
-          "hash": "JL3APDI3EIrPAEwsJTwmgw=="
+          "hash": "DCst8oEL6+cJtId4h8WFtA=="
         }
       },
       "is_incremental": false,
