@@ -152,7 +152,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Presales.OfferLines.html#linestandarddiscountpercent">LineStandardDiscount<br>Percent</a></td>
 <td>decimal (7, 6)</td>
-<td>The discount percentage, applied through the standard discount policy. <code>Required</code> <code>Default(0)</code></td>
+<td>The discount percentage, applied through the standard discount policy. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.OfferLines.html#notes">Notes</a></td>
@@ -333,7 +333,7 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>( obj.Offer.Lines.Select( c =&gt; c.LineNo).DefaultIfEmpty( 0).Max( ) + 10)</code></p>
 <h3 id="linestandarddiscountpercent">LineStandardDiscountPercent</h3>
-<p>The discount percentage, applied through the standard discount policy. <code>Required</code> <code>Default(0)</code></p>
+<p>The discount percentage, applied through the standard discount policy. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>

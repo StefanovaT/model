@@ -9,7 +9,7 @@ Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {CaseId}_  
+_{Case} - {DevelopmentType} - {CreationTimeUtc}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  

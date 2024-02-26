@@ -25,7 +25,7 @@ Detail records (lines) of Offers. Entity: Crm_Offer_Lines
 |[Line_Discount_Id](#line_discount_id)|`uniqueidentifier` |When not NULL, contains the discount policy selected for this line.|
 |[Line_End_Customer_Party_Id](#line_end_customer_party_id)|`uniqueidentifier` |The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party.|
 |[Line_No](#line_no)|`int` ||
-|[Line_Standard_Discount_Percent](#line_standard_discount_percent)|`decimal(7, 6)` |The discount percentage, applied through the standard discount policy.|
+|[Line_Standard_Discount_Percent](#line_standard_discount_percent)|`decimal(7, 6)` Readonly|The discount percentage, applied through the standard discount policy.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Offer_Id](#offer_id)|`uniqueidentifier` ||
 |[Offer_Line_Id](#offer_line_id)|`uniqueidentifier` `PK`||
@@ -354,7 +354,7 @@ The discount percentage, applied through the standard discount policy.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
