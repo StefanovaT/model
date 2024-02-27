@@ -352,6 +352,7 @@ _Show in UI_: **ShownByDefault**
 Name of the item. `Required` `Filter(eq;like)`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  

@@ -5,7 +5,7 @@
 
 | Name | Type | Description |
 | - | - | --- |
-|[CPU_Utilization](#cpu_utilization)|`float` |CPU utilization by the process in percent|
+|[CPU_Utilization](#cpu_utilization)|`float` |CPU utilization by the process in percents|
 |[Memory_MB](#memory_mb)|`decimal(12, 3)` |The memory used by the process in Megabytes|
 |[Process_Id](#process_id)|`int` |The id of process|
 |[Process_Name](#process_name)|`nvarchar(256)` |The name of process|
@@ -15,7 +15,7 @@
 ### CPU_Utilization
 
 
-CPU utilization by the process in percent
+CPU utilization by the process in percents
 
 | Property | Value |
 | - | - |
@@ -23,6 +23,7 @@ CPU utilization by the process in percent
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
+|Format|N1|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -33,7 +34,7 @@ CPU utilization by the process in percent
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|float|
@@ -60,6 +61,7 @@ The memory used by the process in Megabytes
 |Data Filter|no|
 |Default Value|None|
 |Enter Stop|yes|
+|Format|N1|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -70,7 +72,7 @@ The memory used by the process in Megabytes
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|decimal(12, 3)|
@@ -143,7 +145,7 @@ The name of process
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(256)|
