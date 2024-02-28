@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>LOG0209 Create Warehouse Requisitions for further execution (manual) | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="LOG0209 Create Warehouse Requisitions for further execution (manual) | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="log0209-create-warehouse-requisitions-for-further-execution-manual">LOG0209 Create Warehouse Requisitions for further execution (manual)</h1>
+
+<p>Basic Information</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Module</th>
+<th>Logistics.Inventory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Code</td>
+<td>LOG0209</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent Document</td>
+<td>Store Order</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sub-document</td>
+<td>Warehouse Requisition</td>
+</tr>
+<tr>
+<td style="text-align: left;">Full Name</td>
+<td>Create Warehouse Requisitions for further execution (manual)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Status</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/generation-procedures.html">NEW</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Deterministic</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Supports Transitional Documents</td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Supports Single Execution</td>
+<td>No</td>
+</tr>
+<tr>
+<td style="text-align: left;">Replaces</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Orphan Rows</td>
+<td>Ignore</td>
+</tr>
+<tr>
+<td style="text-align: left;">Split Function</td>
+<td>-</td>
+</tr>
+<tr>
+<td style="text-align: left;">Version</td>
+<td>Introduced: 2024.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Date of Suspension</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="business-logic">Business Logic</h2>
+<p>This Generation is used to create Warehouse Requisitions from Store Orders for further execution.</p>
+<p>This generation is intended to operate only in manual mode, where a responsible person assesses whether and when it is necessary to complete a previously incomplete Store Orders.</p>
+<p><strong>The Warehouse Requisition’s header is created based on the Store Order’s header as follows:</strong></p>
+<pre><code>WarehouseRequisition.DocumentDate = StoreOrder.DocumentDate
+
+WarehouseRequisition.ManagedWarehouse = StoreOrder.Store.ManagedWarehouse
+
+WarehouseRequisition.RequisitionType = if( StoreOrder.MovementType = Receipt) 
+
+                                   , then Transaction.RequisitionType = Inbound
+
+                                   , else Transaction.RequisitionType = Outbound
+
+WarehouseRequisition.ExpectedDate = ISNULL(StoreOrder.PlannedReleaseDate, StoreOrder.DocumentDate)
+
+WarehouseRequisition.ExpectedTime = null
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The attributes which are not specified here are filled in as described in <strong><a href="../reference/standard-document-attributes.html">Standard Document Attributes</a></strong></p>
+</div>
+<p><strong>If StoreOrder.Store.ManagedWarehouse = NULL, throw an error:</strong></p>
+<pre><code>No Managed Warehouse is specified for store '{Store.StoreName}'.
+Please check if the store is correct and if the field 'Managed Warehouse' in its definition has a value.
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The new Warehouse Requisition is saved then and only when there is at least one line in it.</p>
+</div>
+<h2 id="fulfillments">Fulfillments</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fulfilment Name</th>
+<th>StoreOrderLineToWarehouseRequisitionLine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Fulfilment Tracking Type</td>
+<td>Fulfilment Table</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent</td>
+<td>StoreOrderLine</td>
+</tr>
+<tr>
+<td style="text-align: left;">Child</td>
+<td>DocumentFulfillments(where 'DocumentLineId = StoreOrderLineId' AND  'FulfillmentType = Completed' AND 'DestinationEntityName =  Wms_Warehouse_Requisition_Lines')</td>
+</tr>
+<tr>
+<td style="text-align: left;">Parent/ Child Relationship</td>
+<td>StoreOrderLine = ChildDocumentFulfillment</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics"><a href="../reference/metrics.html">Metrics</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fulfilment Name</th>
+<th style="text-align: center;">Metric Name</th>
+<th style="text-align: center;">Measurement Unit</th>
+<th style="text-align: left;">Parent Value</th>
+<th style="text-align: left;">Fulfilment Table Value</th>
+<th style="text-align: left;">New Record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">StoreOrderLineToWarehouseRequisitionLine</td>
+<td style="text-align: center;">MQuantityBase</td>
+<td style="text-align: center;">StoreOrderLine.Product.BaseMeasurementUnit</td>
+<td style="text-align: left;">StoreOrderLine.QuantityBase</td>
+<td style="text-align: left;">DocumentFulfillment.QuantityBase</td>
+<td style="text-align: left;">NO</td>
+</tr>
+<tr>
+<td style="text-align: left;">StoreOrderLineToWarehouseRequisitionLine</td>
+<td style="text-align: center;">MStandardQuantity</td>
+<td style="text-align: center;">StoreOrderLine.Product.BaseMeasurementUnit</td>
+<td style="text-align: left;">StoreOrderLine.StandardQuantityBase</td>
+<td style="text-align: left;">DocumentFulfillment.StandardQuantity</td>
+<td style="text-align: left;">YES</td>
+</tr>
+</tbody>
+</table>
+<p><br><br>
+The lines of the new document are created based on the data of StoreOrderLine AND the Fulfilled Part of quantities by the Warehouse Requisitions which have already been Completed.</p>
+<p>StoreOrder.StandardQuantity - ChildDocumentFulfillment.StandardQuantity</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Note that for the calculation of the Fulfilled Part are taken into account only the recods whoose Fulfillment Type is Completed.</p>
+</div>
+<br>
+<p><strong>The new Warehouse Requisition Line is created as follows:</strong></p>
+<pre><code>WarehouseRequisitionLine.LineNo = StoreOrderLine.LineNo
+
+WarehouseRequisitionLine.Product = StoreOrderLine.Product
+
+WarehouseRequisitionLine.Lot = StoreOrderLine.Lot
+
+WarehouseRequisitionLine.SerialNumber = StoreOrderLine.SerialNumber
+
+WarehouseRequisitionLine.ProductVariant = StoreOrderLine.ProductVariant
+
+WarehouseRequisitionLine.QuantityBase = StoreOrderLine.REMAINING(MQuantityBase)
+
+WarehouseRequisitionLine.StandardQuantity = StoreOrderLine.REMAINING(MStandardQuantity)
+
+WarehouseRequisitionLine.QuantityUnit = StoreOrderLine.QuantityUnit
+
+WarehouseRequisitionLine.Quantity = If there are no records in the Document Fulfillment table for the current StoreOrderLine
+
+                                , then WarehouseRequisitionLine.Quantity = StoreOrderLine.Quantity
+
+                                , else CONVERT(WarehouseRequisitionLine.StandardQuantity, WarehouseRequisitionLine.QuantityUnit)
+
+WarehouseRequisitionLine.Notes = StoreOrderLine.Notes
+
+WarehouseRequisitionLine.ParentDocument = StoreOrder
+
+WarehouseRequisitionLine.ParentLineNo = StoreOrderLine.LineNo
+</code></pre>
+<br>
+After the line is created, the generation generates records in the Document Fulfillment table. 
+After the line is created, the generation should NOT create records forDocument Fulfillment table. This is because the generation is only for further execution, and the planned part will not change.
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/LOG0209.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -17158,7 +17158,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Inventory.StoreOrders.html",
-          "hash": "3JkOc0oAXjvxin7idpI8lw=="
+          "hash": "xsSFpoawn4lWHt709m+UvA=="
         }
       },
       "is_incremental": false,
@@ -20678,6 +20678,18 @@
         ".html": {
           "relative_path": "generations/LOG0208.html",
           "hash": "KPP0gRFJxyXhH4nS6swE2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "generations/LOG0209.md",
+      "output": {
+        ".html": {
+          "relative_path": "generations/LOG0209.html",
+          "hash": "2cQZ7fIvM5ckgtgI1B1MaQ=="
         }
       },
       "is_incremental": false,
