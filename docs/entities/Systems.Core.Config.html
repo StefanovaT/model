@@ -107,7 +107,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.Config.html#description">Description</a></td>
 <td>string (254) <strong>nullable</strong></td>
-<td>The description of this Config.</td>
+<td>The description of this Config. <code>Filter(like)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.Config.html#displaytext">DisplayText</a></td>
@@ -127,12 +127,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.Config.html#keypath">KeyPath</a></td>
 <td>string (128)</td>
-<td>Full path of the configuration option. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code></td>
+<td>Full path of the configuration option. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.Config.html#keyvalue">KeyValue</a></td>
 <td>string (max) <strong>nullable</strong></td>
-<td>The value of the configuration option.</td>
+<td>The value of the configuration option. <code>Filter(eq;like)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.Config.html#objectversion">ObjectVersion</a></td>
@@ -142,21 +142,21 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.Config.html#userlogin">UserLogin</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>If not null, the configuration option is specific to the user. <code>Filter(eq)</code></td>
+<td>If not null, the configuration option is specific to the user. <code>Filter(eq;like)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.Config.html#usermachine">UserMachine</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>If not null, the configuration option is specific to the machine. <code>Filter(eq)</code></td>
+<td>If not null, the configuration option is specific to the machine. <code>Filter(eq;like)</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="description">Description</h3>
-<p>The description of this Config.</p>
+<p>The description of this Config. <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -183,19 +183,19 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="keypath">KeyPath</h3>
-<p>Full path of the configuration option. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code></p>
+<p>Full path of the configuration option. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (128)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>128</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="keyvalue">KeyValue</h3>
-<p>The value of the configuration option.</p>
+<p>The value of the configuration option. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -207,18 +207,18 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="userlogin">UserLogin</h3>
-<p>If not null, the configuration option is specific to the user. <code>Filter(eq)</code></p>
+<p>If not null, the configuration option is specific to the user. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="usermachine">UserMachine</h3>
-<p>If not null, the configuration option is specific to the machine. <code>Filter(eq)</code></p>
+<p>If not null, the configuration option is specific to the machine. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

@@ -83,6 +83,12 @@ Hierarchical repository of configuration options. Entity: Gen_Config
 |User Login|no|
 |Visible|yes|
 
+#### Description - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
+
 ### Is_Active
 
 
@@ -154,6 +160,7 @@ Full path of the configuration option
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+|Like|None|no|no|
 
 ### Key_Value
 
@@ -184,6 +191,13 @@ The value of the configuration option
 |UI Width|Long|
 |User Login|no|
 |Visible|yes|
+
+#### Key_Value - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Row_Version
 
@@ -247,6 +261,7 @@ If not NULL, the configuration option is specific to the user
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### User_Machine
 
@@ -283,5 +298,6 @@ If not NULL, the configuration option is specific to the machine
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 

@@ -1,6 +1,12 @@
 # View Dmv_Process_Info
 
 
+## Entity
+
+Entity: [Systems.Dmv.ProcessInfo](~/entities/Systems.Dmv.ProcessInfo.md)
+
+Process information dynamic management view. Entity: Dmv_Process_Info (Introduced in version 24.1.4.36)
+
 ## Summary
 
 | Name | Type | Description |
