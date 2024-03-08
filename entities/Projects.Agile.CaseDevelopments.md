@@ -9,7 +9,7 @@ Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81
 
 ## Default Visualization
 Default Display Text Format:  
-_{Case} - {DevelopmentType} - {CreationTimeUtc}_  
+_{Case.Number}: {ActionDescription} by {CreationUser} {CreationTimeUtc}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -25,6 +25,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [ActionDescription](Projects.Agile.CaseDevelopments.md#actiondescription) | string | Specifies the latest action, dependent on DevelopmentType. 
 | [CreationTimeUtc](Projects.Agile.CaseDevelopments.md#creationtimeutc) | datetime | The exact date and time (in UTC) when the development was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `ReadOnly` 
 | [Description](Projects.Agile.CaseDevelopments.md#description) | string (max) __nullable__ | Detailed description of the development. `Filter(like)` 
 | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | [DevelopmentType](Projects.Agile.CaseDevelopments.md#developmenttype) | Type of the development - Edit, Assignment, Resolve, etc. `Required` `Default("EDT")` `Filter(multi eq)` `ReadOnly` 
@@ -43,6 +44,16 @@ Aggregate Tree
 
 
 ## Attribute Details
+
+### ActionDescription
+
+Specifies the latest action, dependent on DevelopmentType.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### CreationTimeUtc
 
