@@ -83,19 +83,17 @@
 <p>Used for planned reconciliations to count product quantities from multiple devices. Entity: Inv_Reconciliation_Counts (Introduced in version 24.1.3.48)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Reconciliation.EntityName}</em><br>
+<em>{ProductId}: {Quantity}</em><br>
 Default Search Members:<br>
-<em>Reconciliation.EntityName</em><br>
-Name Data Member:<br>
-<em>Reconciliation.EntityName</em><br>
+__<br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Parent:<br>
-<a href="Logistics.Inventory.Reconciliations.html">Logistics.Inventory.Reconciliations</a><br>
-Aggregate Root:<br>
-<a href="Logistics.Inventory.Reconciliations.html">Logistics.Inventory.Reconciliations</a></p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="Logistics.Inventory.ReconciliationCounts.html">Logistics.Inventory.ReconciliationCounts</a></li>
+</ul>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -161,7 +159,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationCounts.html#reconciliation">Reconciliation</a></td>
 <td><a href="Logistics.Inventory.Reconciliations.html">Reconciliations</a></td>
-<td>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.50</code> <code>Owner</code></td>
+<td>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.51</code></td>
 </tr>
 </tbody>
 </table>
@@ -187,7 +185,7 @@ Aggregate Root:<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
-<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
@@ -222,13 +220,11 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="reconciliation">Reconciliation</h3>
-<p>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.50</code> <code>Owner</code></p>
+<p>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.51</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Reconciliations.html">Reconciliations</a></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

@@ -23,7 +23,6 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Logistics.Inventory.Reconciliations](Logistics.Inventory.Reconciliations.md)  
-  * [Logistics.Inventory.ReconciliationCounts](Logistics.Inventory.ReconciliationCounts.md)  
   * [Logistics.Inventory.ReconciliationLines](Logistics.Inventory.ReconciliationLines.md)  
   * [General.DocumentAmounts](General.DocumentAmounts.md)  
     * [General.DocumentAmountReferencedDocuments](General.DocumentAmountReferencedDocuments.md)  
@@ -101,7 +100,6 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | Comments | [DocumentComments](General.DocumentComments.md) | List of `DocumentComment`(General.DocumentComments.md) child objects, based on the `General.DocumentComment.Document`(General.DocumentComments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| Counts | [ReconciliationCounts](Logistics.Inventory.ReconciliationCounts.md) | List of `ReconciliationCount`(Logistics.Inventory.ReconciliationCounts.md) child objects, based on the `Logistics.Inventory.ReconciliationCount.Reconciliation`(Logistics.Inventory.ReconciliationCounts.md#reconciliation) back reference 
 | DistributedAmounts | [DocumentDistributedAmounts](General.DocumentDistributedAmounts.md) | List of `DocumentDistributed<br />Amount`(General.DocumentDistributedAmounts.md) child objects, based on the `General.DocumentDistributedAmount.Document`(General.DocumentDistributedAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | DocumentAmounts | [DocumentAmounts](General.DocumentAmounts.md) | List of `DocumentAmount`(General.DocumentAmounts.md) child objects, based on the `General.DocumentAmount.Document`(General.DocumentAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
 | FileAttachments | [DocumentFileAttachments](General.DocumentFileAttachments.md) | List of `DocumentFileAttachment`(General.DocumentFileAttachments.md) child objects, based on the `General.DocumentFileAttachment.Document`(General.DocumentFileAttachments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 

@@ -9,21 +9,17 @@ Used for planned reconciliations to count product quantities from multiple devic
 
 ## Default Visualization
 Default Display Text Format:  
-_{Reconciliation.EntityName}_  
+_{ProductId}: {Quantity}_  
 Default Search Members:  
-_Reconciliation.EntityName_  
-Name Data Member:  
-_Reconciliation.EntityName_  
+__  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[Logistics.Inventory.Reconciliations](Logistics.Inventory.Reconciliations.md)  
-Aggregate Root:  
-[Logistics.Inventory.Reconciliations](Logistics.Inventory.Reconciliations.md)  
+Aggregate Tree  
+* [Logistics.Inventory.ReconciliationCounts](Logistics.Inventory.ReconciliationCounts.md)  
 
 ## Attributes
 
@@ -42,7 +38,7 @@ Aggregate Root:
 | [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](Logistics.Inventory.ReconciliationCounts.md#product) | [Products](General.Products.Products.md) | The product which is currently counted. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
-| [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.50` `Owner` |
+| [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` |
 
 
 ## Attribute Details
@@ -75,7 +71,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -129,14 +125,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Reconciliation
 
-The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.50` `Owner`
+The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51`
 
 _Type_: **[Reconciliations](Logistics.Inventory.Reconciliations.md)**  
-_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
-_Show in UI_: **HiddenByDefault**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods
