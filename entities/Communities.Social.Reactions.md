@@ -9,7 +9,7 @@ Reaction of a user to any social comment to an object of the system. Entity: Cmm
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {DataObjectId}_  
+_{Id}: {DataObjectId}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -30,6 +30,7 @@ Aggregate Tree
 | [Id](Communities.Social.Reactions.md#id) | guid |  
 | [ObjectVersion](Communities.Social.Reactions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ReactionType](Communities.Social.Reactions.md#reactiontype) | [ReactionType](Communities.Social.Reactions.md#reactiontype) | The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. `Required` `Filter(multi eq)` 
+| [StateTagsAttribute](Communities.Social.Reactions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -103,6 +104,16 @@ _Allowed Values (Communities.Social.ReactionsRepository.ReactionType Enum Member
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

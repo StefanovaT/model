@@ -83,7 +83,7 @@
 <p>Contains the business process diagrams. Entity: Wf_Processes</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}</em><br>
+<em>{Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -165,6 +165,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Workflow.Processes.html#startroleid">StartRoleId</a></td>
 <td>guid <strong>nullable</strong></td>
 <td>When Start_Event='USR' then specifies the role which the user must play in order to start the process. null when Start_Event&lt;&gt;'USR'. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Workflow.Processes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.Processes.html#thumbnail">Thumbnail</a></td>
@@ -274,6 +279,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="thumbnail">Thumbnail</h3>
 <p>Contains the visual thumbnail of the presentation of the business process. It is stored in bitmap (BMP) format.</p>
 <p><em>Type</em>: <strong>byte[] <strong>nullable</strong></strong><br>

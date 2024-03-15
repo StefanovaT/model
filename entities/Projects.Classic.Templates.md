@@ -9,7 +9,7 @@ Contains templates for creating new projects. Entity: Prj_Templates
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProjectTemplateName}_  
+_{ProjectTemplateName}{StateTagsAttribute}_  
 Default Search Members:  
 _ProjectTemplateName_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Tree
 | [Notes](Projects.Classic.Templates.md#notes) | string (max) __nullable__ | Notes for this Template. 
 | [ObjectVersion](Projects.Classic.Templates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProjectTemplateName](Projects.Classic.Templates.md#projecttemplatename) | string (254) | The name of the project template. `Required` 
+| [StateTagsAttribute](Projects.Classic.Templates.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -95,6 +96,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

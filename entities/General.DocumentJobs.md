@@ -10,7 +10,7 @@ Represents jobs, which change state of documents. Entity: Gen_Document_Jobs (Int
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -38,6 +38,7 @@ Aggregate Tree
 | [Notes](General.DocumentJobs.md#notes) | string (max) __nullable__ | Notes for this Job. (Inherited from [Jobs](Systems.Core.Jobs.md)) 
 | [ObjectVersion](General.DocumentJobs.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RunOnIdle](General.DocumentJobs.md#runonidle) | boolean | Specifies whether to automatically run the job when the server is idle. `Required` `Default(true)` `Filter(eq)` (Inherited from [Jobs](Systems.Core.Jobs.md)) 
+| [StateTagsAttribute](General.DocumentJobs.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -178,6 +179,16 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Detail records (lines) of the marketing activities. Entity: Crm_Marketing_Activi
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {MarketingActivity.DocumentNo} {MarketingActivity.DocumentType.TypeName:T}_  
+_{LineNo}. {MarketingActivity.DocumentNo} {MarketingActivity.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _MarketingActivity.DocumentNo_  
 Category:  _Definitions_  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [Notes](Crm.Marketing.MarketingActivityLines.md#notes) | string (max) __nullable__ | Notes for this MarketingActivityLine. 
 | [ObjectVersion](Crm.Marketing.MarketingActivityLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrderQuantity](Crm.Marketing.MarketingActivityLines.md#orderquantity) | [Quantity (15, 3)](../data-types.md#quantity) __nullable__ | Recommended quantity (in Quantity Unit) for  new order as a result of the marketing activity. null means that there is no specific recommendation. `Unit: OrderQuantityUnit` `Filter(eq;ge;le)` 
+| [StateTagsAttribute](Crm.Marketing.MarketingActivityLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -157,6 +158,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

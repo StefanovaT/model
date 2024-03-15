@@ -83,7 +83,7 @@
 <p>Serial numbers, used by the items. Rows are created on first occurrence of the serial number in a document. Rows can be deleted after deleting the last occurence of the serial number in a document. Entity: Inv_Serial_Numbers</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{SerialNumberField}</em><br>
+<em>{SerialNumberField}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>SerialNumberField</em><br>
 Category:  <em>Definitions</em><br>
@@ -123,6 +123,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Inventory.SerialNumbers.html#serialnumberfield">SerialNumberField</a></td>
 <td>string (40)</td>
 <td>The serial number text. <code>Required</code> <code>Filter(multi eq;like)</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.SerialNumbers.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -173,6 +178,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>40</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="product">Product</h3>
 <p>The product, to which the serial number is bound. <code>Required</code> <code>Filter(multi eq)</code></p>

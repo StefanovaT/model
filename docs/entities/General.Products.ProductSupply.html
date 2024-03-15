@@ -83,7 +83,7 @@
 <p>Contains supply rules, which are used by the procurement planning system. Entity: Gen_Product_Supply</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ProcurementType} {Product.PartNumber}: {Product.Name:T} ({Store.Name:T})</em><br>
+<em>{ProcurementType} {Product.PartNumber}: {Product.Name:T} ({Store.Name:T}){StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Product.PartNumber; Product.Name</em><br>
 Category:  <em>Definitions</em><br>
@@ -243,6 +243,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Products.ProductSupply.html#standardcostperlot">StandardCostPerLot</a></td>
 <td><a href="../data-types.html#amount">Amount (18, 4)</a></td>
 <td>Standard cost for one lot of the product. <code>Currency: Product.CostingCurrency</code> <code>Required</code> <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="General.Products.ProductSupply.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#supplyschemaid">SupplySchemaId</a></td>
@@ -634,6 +639,13 @@ Allowed values for the <code>ProcurementType</code>(General.Products.ProductSupp
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="supplyschemaid">SupplySchemaId</h3>
 <p>The supply schema to use for the distribution of the product among warehouses. <code>Filter(multi eq)</code></p>

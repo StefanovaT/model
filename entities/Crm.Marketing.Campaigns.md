@@ -9,7 +9,7 @@ Marketing campaigns. Used to treat target groups with marketing messages, plan b
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [Name](Crm.Marketing.Campaigns.md#name) | string (64) | Short name of the campaign. `Required` `Filter(like)` `ORD` 
 | [ObjectVersion](Crm.Marketing.Campaigns.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartDate](Crm.Marketing.Campaigns.md#startdate) | datetime | Starting date of the campaign. `Required` `Default(Today)` `Filter(ge;le)` 
+| [StateTagsAttribute](Crm.Marketing.Campaigns.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -122,6 +123,16 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

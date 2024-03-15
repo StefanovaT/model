@@ -83,7 +83,7 @@
 <p>Represents processes, which process personal data, regulated by GDPR and other applicable laws. Entity: Pdm_Personal_Data_Processes (Introduced in version 18.2)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}</em><br>
+<em>{Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -212,6 +212,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.PersonalData.PersonalDataProcesses.html#retentionperiodmonths">RetentionPeriodMonths</a></td>
 <td>int32 <strong>nullable</strong></td>
 <td>The period in months, for which the data is kept. Null when the period is unknown or N/A. <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.PersonalData.PersonalDataProcesses.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Applications.PersonalData.PersonalDataProcesses.html#thirdcountrytransferssafeguards">ThirdCountryTransfers<br>Safeguards</a></td>
@@ -512,6 +517,13 @@ Allowed values for the <code>ProcessingRole</code>(Applications.PersonalData.Per
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="thirdcountrytransferssafeguards">ThirdCountryTransfersSafeguards</h3>
 <p>Description of safeguards, taken to protect personal data in case of third country transfers. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>

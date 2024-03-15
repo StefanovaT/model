@@ -83,7 +83,7 @@
 <p>Represents one task of a project. Entity: Prj_Project_Tasks</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{TaskName}</em><br>
+<em>{TaskName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>TaskName</em><br>
 Name Data Member:<br>
@@ -157,6 +157,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.Classic.ProjectTasks.html#startdatetime">StartDateTime</a></td>
 <td>datetime</td>
 <td>The date and time when the task is planned to start. <code>Required</code> <code>Default(Now)</code> <code>Filter(eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.ProjectTasks.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.ProjectTasks.html#taskname">TaskName</a></td>
@@ -314,6 +319,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="taskname">TaskName</h3>
 <p>The short name of the task. It is best practice to contain the target of the task. <code>Required</code> <code>Filter(multi eq;like)</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>

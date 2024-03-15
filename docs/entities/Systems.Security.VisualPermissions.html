@@ -83,7 +83,7 @@
 <p>Contains permissions, which are honored only by client applications and are used to provide access to (primarily show/hide) different elements of the user interface. Entity: Sec_Visual_Permissions</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ApplicationName}</em><br>
+<em>{ApplicationName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ApplicationName</em><br>
 Name Data Member:<br>
@@ -145,6 +145,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Security.VisualPermissions.html#panelname">PanelName</a></td>
 <td>string (128) <strong>nullable</strong></td>
 <td>Optionally, the panel from the form which will be secured. <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Security.VisualPermissions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -227,6 +232,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>128</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="accesskey">AccessKey</h3>
 <p>The security access key which controls the access to the visual permission. <code>Filter(multi eq)</code></p>

@@ -9,7 +9,7 @@ Sequence of excise stamps with same production batch and type, received with one
 
 ## Default Visualization
 Default Display Text Format:  
-_{BatchNumber} {StartNumber}_  
+_{BatchNumber} {StartNumber}{StateTagsAttribute}_  
 Default Search Members:  
 _BatchNumber_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Tree
 | [PurchaseLotNumber](Finance.Excise.ExciseStampLots.md#purchaselotnumber) | string (30) | Type and number of the document with which the excise stamps were received from the customs administration. `Required` `Filter(eq;like)` 
 | [Quantity](Finance.Excise.ExciseStampLots.md#quantity) | int32 | Number of excise stamps in the lot. `Required` `Default(0)` 
 | [StartNumber](Finance.Excise.ExciseStampLots.md#startnumber) | string (30) | Start number of the lot. `Required` 
+| [StateTagsAttribute](Finance.Excise.ExciseStampLots.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -157,6 +158,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **30**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

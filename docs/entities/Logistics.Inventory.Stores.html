@@ -84,7 +84,7 @@
 <p>Represents the physical warehouses. Entity: Inv_Stores</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PartyName:T}</em><br>
+<em>{PartyName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; PartyName</em><br>
 Code Data Member:<br>
@@ -229,6 +229,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Inventory.Stores.html#schemaxml">SchemaXML</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>Obsolete. Not used.</td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.Stores.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.Stores.html#unmanaged">Unmanaged</a></td>
@@ -587,6 +592,13 @@ Allowed values for the PartyType data attribute<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="unmanaged">Unmanaged</h3>
 <p>If false the system will expect the user to process the store transactions. If true the system will auto-generate them. <code>Required</code> <code>Default(true)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>

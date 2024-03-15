@@ -83,7 +83,7 @@
 <p>Contains the data of a printout of a document as it was obtained from the data source in the moment of printing. Entity: Gen_Document_Print_Images</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {PrintoutLayoutId}</em><br>
+<em>{Id}: {PrintoutLayoutId}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -128,6 +128,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.DocumentPrintImages.html#printimageformat">PrintImageFormat</a></td>
 <td>string (3)</td>
 <td>The format, which is used to represent the print image. Currently, only 'CDS' = Compressed Data Set is supported. <code>Required</code> <code>Default(&quot;CDS&quot;)</code></td>
+</tr>
+<tr>
+<td><a href="General.DocumentPrintImages.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -186,6 +191,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>3</strong><br>
 <em>Default Value</em>: <strong>CDS</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="printoutlayout">PrintoutLayout</h3>
 <p>The print layout, which was used for the current printout. <code>Required</code> <code>Filter(multi eq)</code></p>

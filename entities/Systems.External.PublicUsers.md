@@ -13,7 +13,7 @@ uid: Systems.External.PublicUsers
 
 ## Default Visualization
 Default Display Text Format:  
-_{CompanyName}_  
+_{CompanyName}{StateTagsAttribute}_  
 Default Search Members:  
 _PhoneNumber; CompanyName_  
 Code Data Member:  
@@ -56,6 +56,7 @@ Aggregate Tree
 | [PostalCode](Systems.External.PublicUsers.md#postalcode) | string (16) __nullable__ | The postal code of the default address of the user. `Filter(like)` 
 | [ProfilePicture](Systems.External.PublicUsers.md#profilepicture) | byte[] __nullable__ | Profile picture of the user. 
 | [State](Systems.External.PublicUsers.md#state) | string (64) __nullable__ | The state of residence of the user within the country. Can be specified with latin or local characters. `Filter(like)` 
+| [StateTagsAttribute](Systems.External.PublicUsers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -312,6 +313,16 @@ _Supported Filters_: **Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

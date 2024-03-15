@@ -9,7 +9,7 @@ A sub-item of a "to do" task. Entity: Gen_Todo_Task_Items (Introduced in version
 
 ## Default Visualization
 Default Display Text Format:  
-_{Task}_  
+_{Task}{StateTagsAttribute}_  
 Default Search Members:  
 _Task_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [IsCompleted](Projects.Todo.TaskItems.md#iscompleted) | boolean | Indicates whether the task item is completed. `Required` `Default(false)` `Filter(eq)` 
 | [Notes](Projects.Todo.TaskItems.md#notes) | string (max) __nullable__ | Notes for this TaskItem. `Introduced in version 23.1.1.48` 
 | [ObjectVersion](Projects.Todo.TaskItems.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Projects.Todo.TaskItems.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Title](Projects.Todo.TaskItems.md#title) | string (254) | A brief description of the task item. `Required` `Filter(like)` 
 
 ## References
@@ -115,6 +116,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

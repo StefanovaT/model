@@ -9,7 +9,7 @@ Contains the characteristics of operations used to create products. Entity: Prd_
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -43,6 +43,7 @@ Aggregate Tree
 | [ProduceQuantity](Production.Technologies.Recipes.md#producequantity) | [Quantity (18, 3)](../data-types.md#quantity) | Lot size. This is the produced quantity in one production run. The quantity is measured in the primary unit of Product_Id. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(1)` 
 | [ReleaseDate](Production.Technologies.Recipes.md#releasedate) | datetime | The date, when the recipe was released to production. `Required` `Default(Today)` `Filter(ge;le)` 
 | [ScrapRate](Production.Technologies.Recipes.md#scraprate) | decimal (7, 6) | The percentage (0..1) of scrap usually occurring during the operation. Specifying this leads to inflated requirements of all raw materials for this recipe. `Required` `Default(0)` 
+| [StateTagsAttribute](Production.Technologies.Recipes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UpdateTime](Production.Technologies.Recipes.md#updatetime) | datetime __nullable__ | Date and time when the Recipe was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](Production.Technologies.Recipes.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Recipe. `Filter(like)` `ReadOnly` 
 
@@ -212,6 +213,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### UpdateTime
 

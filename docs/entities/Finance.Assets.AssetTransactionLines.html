@@ -83,7 +83,7 @@
 <p>Asset value transaction lines. Each line changes the values of one asset in one valuation model. Entity: Ast_Asset_Transaction_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{AssetTransaction.EntityName}</em><br>
+<em>{AssetTransaction.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>AssetTransaction.EntityName</em><br>
 Name Data Member:<br>
@@ -175,6 +175,11 @@ Aggregate Root:<br>
 <td><a href="Finance.Assets.AssetTransactionLines.html#salvagevaluebase">SalvageValueBase</a></td>
 <td><a href="../data-types.html#amount">Amount (14, 2)</a></td>
 <td>Change in the salvage value of the asset (in the currency of the enterprise company). <code>Currency: Asset.EnterpriseCompany.BaseCurrency</code> <code>Required</code> <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Assets.AssetTransactionLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -367,6 +372,13 @@ Allowed values for the <code>OperationType</code>(Finance.Assets.AssetTransactio
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalvageValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="asset">Asset</h3>
 <p>Asset for which changes in values have occurred. <code>Required</code> <code>Filter(multi eq)</code></p>

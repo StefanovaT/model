@@ -9,7 +9,7 @@ Billing cycles contain information when to issue new bills. Entity: Sm_Billing_C
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Tree
 | [NumberOfMonths](Crm.Subscriptions.BillingCycles.md#numberofmonths) | byte | Number of months between billings. `Required` `Default(1)` `Filter(eq;ge;le)` 
 | [ObjectVersion](Crm.Subscriptions.BillingCycles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartingDayOfMonth](Crm.Subscriptions.BillingCycles.md#startingdayofmonth) | byte | On which date of the month the bills are issued. `Required` `Default(1)` `Filter(eq;ge;le)` 
+| [StateTagsAttribute](Crm.Subscriptions.BillingCycles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -115,6 +116,16 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **1**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

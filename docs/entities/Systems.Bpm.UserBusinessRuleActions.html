@@ -83,7 +83,7 @@
 <p>Represents an action within a business rule. Entity: Sys_User_Business_Rule_Actions</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{UserBusinessRule.Name:T}</em><br>
+<em>{UserBusinessRule.Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>UserBusinessRule.Name</em><br>
 Name Data Member:<br>
@@ -160,6 +160,11 @@ Aggregate Root:<br>
 <td><a href="Systems.Bpm.UserBusinessRuleActions.html#parameter3value">Parameter3Value</a></td>
 <td>string (256) <strong>nullable</strong></td>
 <td>The actual value of the parameter.</td>
+</tr>
+<tr>
+<td><a href="Systems.Bpm.UserBusinessRuleActions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -421,6 +426,13 @@ Generic enum type for ActionParameterType properties<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>256</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="userbusinessrule">UserBusinessRule</h3>
 <p>The business rule, for which the action is defined. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

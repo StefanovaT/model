@@ -83,7 +83,7 @@
 <p>Mass payment amount. Each record generates one payment transaction. Entity: Cash_Payment_Slip_Amounts</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PartyName:T}</em><br>
+<em>{PartyName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>PartyName</em><br>
 Name Data Member:<br>
@@ -150,6 +150,11 @@ Aggregate Root:<br>
 <td><a href="Finance.Payments.PaymentSlipAmounts.html#paymentdate">PaymentDate</a></td>
 <td>datetime</td>
 <td>The date on which the payment is done. <code>Required</code> <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Payments.PaymentSlipAmounts.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Finance.Payments.PaymentSlipAmounts.html#totalamount">TotalAmount</a></td>
@@ -296,6 +301,13 @@ Allowed values for the <code>Direction</code>(Finance.Payments.PaymentOrders.md#
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.PaymentSlip.DocumentDate</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="totalamount">TotalAmount</h3>
 <p>The total amount payed. The distribution of the amount amongst the payment orders for this party is specified with payment slip lines. If null the total amount is calculated as sum of the amounts in the payment slip lines. <code>Currency: PaymentSlip.DocumentCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (18, 2)</a> <strong>nullable</strong></strong><br>

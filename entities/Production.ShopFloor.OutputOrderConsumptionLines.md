@@ -9,7 +9,7 @@ The internal production consumption of materials. Used only for control purposes
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}_  
+_{LineNo}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _OutputOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [LineNo](Production.ShopFloor.OutputOrderConsumptionLines.md#lineno) | int32 | Line number, unique within the OutputOrder. Usually is increasing number like 10, 20, 30, ... when initially entering the OutputOrder (in order to allow insertions with adjustment documents). `Required` 
 | [Notes](Production.ShopFloor.OutputOrderConsumptionLines.md#notes) | string (max) __nullable__ | Notes for this OutputOrderConsumptionLine. 
 | [ObjectVersion](Production.ShopFloor.OutputOrderConsumptionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Production.ShopFloor.OutputOrderConsumptionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -136,6 +137,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

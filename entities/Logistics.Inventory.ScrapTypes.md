@@ -9,7 +9,7 @@ Types of scrap. Used in store transactions to categorize scrap, when it occurs. 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {Description}_  
+_{Id}: {Description}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Settings_  
@@ -30,6 +30,7 @@ Aggregate Tree
 | [Id](Logistics.Inventory.ScrapTypes.md#id) | guid |  
 | [IsPlanned](Logistics.Inventory.ScrapTypes.md#isplanned) | boolean | True=Planned (expected) scrap. Scrap of this type will be used to refine planned scrap for future operations. 2=Unexpected scrap. `Required` `Default(true)` `Filter(eq)` 
 | [ObjectVersion](Logistics.Inventory.ScrapTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Logistics.Inventory.ScrapTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -81,6 +82,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

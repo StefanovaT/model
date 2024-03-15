@@ -9,7 +9,7 @@ Contains scheduled operations usage of the resources. Entity: Prd_Load
 
 ## Default Visualization
 Default Display Text Format:  
-_{WorkOrderItemOperation.WorkOrderItem.WorkOrder.EntityName}_  
+_{WorkOrderItemOperation.WorkOrderItem.WorkOrder.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _WorkOrderItemOperation.WorkOrderItem.WorkOrder.EntityName_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Id](Production.Resources.Load.md#id) | guid |  
 | [ObjectVersion](Production.Resources.Load.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](Production.Resources.Load.md#priority) | [Priority](Production.Resources.Load.md#priority) | Priority of the allocation. 1=Lowest ... 5=Highest. `Required` `Default(3)` 
+| [StateTagsAttribute](Production.Resources.Load.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TimeType](Production.Resources.Load.md#timetype) | [TimeType](Production.Resources.Load.md#timetype) | S=Setup; R=Run; W=Wait; M=Move. `Required` `Default("R")` 
 | [UsageEndTime](Production.Resources.Load.md#usageendtime) | datetime | The ending time of the planned usage. `Required` `Filter(ge;le)` 
 | [UsageQuantity](Production.Resources.Load.md#usagequantity) | [Quantity (9, 0)](../data-types.md#quantity) | Quantity of the resource, which will be used for production. `Unit: WorkgroupResource.Resource.PrimaryUnit` `Required` `Default(1)` `Filter(ge;le)` 
@@ -110,6 +111,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **3**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TimeType
 

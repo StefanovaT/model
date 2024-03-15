@@ -10,7 +10,7 @@ Represents shipments of sales orders to customers. Entity: Log_Shipments
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.TypeName:T} {DocumentNo}_  
+_{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentNo_  
 Code Data Member:  
@@ -63,6 +63,7 @@ Aggregate Tree
 | [ReleaseTime](Logistics.Shipment.Shipments.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [RequiredDeliveryDate](Logistics.Shipment.Shipments.md#requireddeliverydate) | datetime __nullable__ | Required delivery date. Depending on the shipment route travel time, the shipment should be released accordingly. When null means that the required delivery date is unknown or the document contains many required delivery dates (e.g. in the lines). `Filter(ge;le)` 
 | [State](Logistics.Shipment.Shipments.md#state) | [DocumentState](Logistics.Shipment.Shipments.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [StateTagsAttribute](Logistics.Shipment.Shipments.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Void](Logistics.Shipment.Shipments.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidReason](Logistics.Shipment.Shipments.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidTime](Logistics.Shipment.Shipments.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -393,6 +394,16 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### Void

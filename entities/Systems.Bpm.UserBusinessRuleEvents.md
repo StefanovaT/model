@@ -9,7 +9,7 @@ Represents event registration of a business rule. Entity: Sys_User_Business_Rule
 
 ## Default Visualization
 Default Display Text Format:  
-_{UserBusinessRule.Name:T}_  
+_{UserBusinessRule.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _UserBusinessRule.Name_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [Id](Systems.Bpm.UserBusinessRuleEvents.md#id) | guid |  
 | [Layer](Systems.Bpm.UserBusinessRuleEvents.md#layer) | [Layer](Systems.Bpm.UserBusinessRuleEvents.md#layer) | Specifies the layer on which to register the event. Allowed values = FTE-FrontEnd, BKE-BackEnd. `Required` `Default("BKE")` 
 | [ObjectVersion](Systems.Bpm.UserBusinessRuleEvents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Systems.Bpm.UserBusinessRuleEvents.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -150,6 +151,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

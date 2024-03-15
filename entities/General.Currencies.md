@@ -9,7 +9,7 @@ List of user-defined currencies. Entity: Gen_Currencies
 
 ## Default Visualization
 Default Display Text Format:  
-_{CurrencySign}_  
+_{CurrencySign}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Tree
 | [Name](General.Currencies.md#name) | string (50) | The name of this Currency. `Required` `Filter(like)` 
 | [ObjectVersion](General.Currencies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ShowOrder](General.Currencies.md#showorder) | int32 | The order in which to show the currency in combo boxes, etc. `Required` `Default(0)` 
+| [StateTagsAttribute](General.Currencies.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -99,6 +100,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

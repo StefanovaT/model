@@ -9,7 +9,7 @@ Options for user-defined Work Order document types. Entity: Prd_Work_Order_Docum
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}_  
+_{DocumentType.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  
@@ -32,6 +32,7 @@ Aggregate Root:
 | [DisplayText](Production.WorkOrderDocumentTypesOptions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.WorkOrderDocumentTypesOptions.md#id) | guid |  
 | [ObjectVersion](Production.WorkOrderDocumentTypesOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Production.WorkOrderDocumentTypesOptions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -68,6 +69,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

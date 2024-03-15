@@ -83,7 +83,7 @@
 <p>Contains the folders inside the mailboxes. Entity: Mail_Box_Folders</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{FolderName:T}</em><br>
+<em>{FolderName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>FolderName</em><br>
 Name Data Member:<br>
@@ -130,6 +130,11 @@ Aggregate Root:<br>
 <td><a href="Applications.Mail.BoxFolders.html#serverfolderid">ServerFolderID</a></td>
 <td>string (256) <strong>nullable</strong></td>
 <td>ID of the folder on the mail server in the format of the mail server. <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Mail.BoxFolders.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Applications.Mail.BoxFolders.html#syncstate">SyncState</a></td>
@@ -202,6 +207,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>256</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="syncstate">SyncState</h3>
 <p>The synchronization state for the folder. The format of the contents is dependant on the server type. For IMAP, this is last message Id, for Exchange - this is SyncState.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>

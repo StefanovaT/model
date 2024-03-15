@@ -9,7 +9,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 
 ## Default Visualization
 Default Display Text Format:  
-_{Number}: {Title:T}_  
+_{Number}: {Title:T}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -34,6 +34,7 @@ Aggregate Tree
 | [Number](Projects.Agile.Cases.md#number) | int32 | The unique number of the Case. `Required` `Filter(eq)` `ReadOnly` `Introduced in version 24.1.3.86` 
 | [ObjectVersion](Projects.Agile.Cases.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](Projects.Agile.Cases.md#priority) | [Priority](Projects.Agile.Cases.md#priority) | Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Default(7)` `Filter(eq)` 
+| [StateTagsAttribute](Projects.Agile.Cases.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemState](Projects.Agile.Cases.md#systemstate) | [SystemState](Projects.Agile.Cases.md#systemstate) | The base state of the case. `Required` `Default("1")` `Filter(eq)` 
 | [Title](Projects.Agile.Cases.md#title) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | Case short title. `Required` `Filter(like)` 
 
@@ -155,6 +156,16 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **7**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### SystemState
 

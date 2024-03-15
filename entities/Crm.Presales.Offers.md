@@ -10,7 +10,7 @@ Offers (quotes) for sales of products. Can contain variants and choice groups. T
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.TypeName:T} {DocumentNo}_  
+_{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentNo_  
 Code Data Member:  
@@ -66,6 +66,7 @@ Aggregate Tree
 | [ReleaseTime](Crm.Presales.Offers.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [RequiredDeliveryDate](Crm.Presales.Offers.md#requireddeliverydate) | date __nullable__ | When not null, specifies required delivery date for all offer lines. When the lines contain different delivery dates, this is null. `Filter(ge;le)` 
 | [State](Crm.Presales.Offers.md#state) | [DocumentState](Crm.Presales.Offers.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [StateTagsAttribute](Crm.Presales.Offers.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ValidTill](Crm.Presales.Offers.md#validtill) | datetime __nullable__ | Last date when the offer is valid. null means the offer has no specific validity date. `Filter(ge;le)` 
 | [Void](Crm.Presales.Offers.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [VoidReason](Crm.Presales.Offers.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -437,6 +438,16 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### ValidTill

@@ -9,7 +9,7 @@ History of document state changes. Entity: Gen_Document_State_Changes
 
 ## Default Visualization
 Default Display Text Format:  
-_{Document.EntityName}_  
+_{Document.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _Document.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [Id](General.DocumentStateChanges.md#id) | guid |  
 | [NewState](General.DocumentStateChanges.md#newstate) | [NewState](General.DocumentStateChanges.md#newstate) | The new state after the change. `Required` `Filter(eq)` 
 | [ObjectVersion](General.DocumentStateChanges.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.DocumentStateChanges.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemInitiated](General.DocumentStateChanges.md#systeminitiated) | boolean | Specifies whether the state change was caused by system process or from user action. `Required` `Default(false)` `ReadOnly` 
 | [UpdateTime](General.DocumentStateChanges.md#updatetime) | datetime | The time when the change took effect. `Required` `Filter(ge;le)` `ORD` 
 | [UpdateUser](General.DocumentStateChanges.md#updateuser) | string (64) | The login name of the user, who made the status change. `Required` `Filter(eq)` 
@@ -96,6 +97,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

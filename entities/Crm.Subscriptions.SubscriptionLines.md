@@ -9,7 +9,7 @@ Billable products within a subscription. Entity: Sm_Subscription_Lines (Introduc
 
 ## Default Visualization
 Default Display Text Format:  
-_{Subscription}_  
+_{Subscription}{StateTagsAttribute}_  
 Default Search Members:  
 _Subscription_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [ObjectVersion](Crm.Subscriptions.SubscriptionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Crm.Subscriptions.SubscriptionLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity, which should be billed. `Unit: QuantityUnit` `Required` `Filter(ge;le)` 
 | [SpecificDiscountPercent](Crm.Subscriptions.SubscriptionLines.md#specificdiscountpercent) | decimal (7, 6) __nullable__ | The specific discount to apply for this line. `Default(0)` 
+| [StateTagsAttribute](Crm.Subscriptions.SubscriptionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -123,6 +124,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

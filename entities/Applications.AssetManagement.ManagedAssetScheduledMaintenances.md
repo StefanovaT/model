@@ -9,7 +9,7 @@ Contains the scheduled maintenances for the managed assets. Each maintenance can
 
 ## Default Visualization
 Default Display Text Format:  
-_{ManagedAsset.Name:T}_  
+_{ManagedAsset.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _ManagedAsset.Name_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [IsDismissed](Applications.AssetManagement.ManagedAssetScheduledMaintenances.md#isdismissed) | boolean | Specifies whether the notification for the maintenance is dismissed and the planner has decided the course of action. `Required` `Default(false)` `Filter(multi eq)` 
 | [Notes](Applications.AssetManagement.ManagedAssetScheduledMaintenances.md#notes) | string (max) __nullable__ | Notes for this ManagedAssetScheduled<br />Maintenance. 
 | [ObjectVersion](Applications.AssetManagement.ManagedAssetScheduledMaintenances.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.AssetManagement.ManagedAssetScheduledMaintenances.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TrackedParameterValue](Applications.AssetManagement.ManagedAssetScheduledMaintenances.md#trackedparametervalue) | int32 __nullable__ | The value of the tracked parameter (as specified in the maintenance type) at which the maintenance will be performed. For example, for a car, we can schedule maintenance at 20,000 km mileage. null means, that the maintenance is not planned based on parameter, but rather only for date. If both date and parameter are specified, the maintenance is performed when any of the conditions is met. `Filter(multi eq;ge;le)` 
 
 ## References
@@ -104,6 +105,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

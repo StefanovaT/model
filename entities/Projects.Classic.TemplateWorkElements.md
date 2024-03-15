@@ -9,7 +9,7 @@ Contains project work elements, which shall be copied to projects, based on the 
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProjectTemplate.ProjectTemplateName}_  
+_{ProjectTemplate.ProjectTemplateName}{StateTagsAttribute}_  
 Default Search Members:  
 _ProjectTemplate.ProjectTemplateName_  
 Name Data Member:  
@@ -32,6 +32,7 @@ Aggregate Root:
 | [DisplayText](Projects.Classic.TemplateWorkElements.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Classic.TemplateWorkElements.md#id) | guid |  
 | [ObjectVersion](Projects.Classic.TemplateWorkElements.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Projects.Classic.TemplateWorkElements.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -68,6 +69,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

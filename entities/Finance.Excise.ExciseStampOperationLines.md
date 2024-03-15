@@ -9,7 +9,7 @@ Excise Stamp Operation Lines. Entity: Exc_Excise_Stamp_Operation_Lines (Introduc
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {ExciseStampOperation.DocumentNo} {ExciseStampOperation.DocumentType.TypeName:T}_  
+_{LineNo}. {ExciseStampOperation.DocumentNo} {ExciseStampOperation.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _ExciseStampOperation.DocumentNo_  
 Category:  _Definitions_  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [ParentLineNo](Finance.Excise.ExciseStampOperationLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute line. `Introduced in version 22.1.6.32` 
 | [Quantity](Finance.Excise.ExciseStampOperationLines.md#quantity) | int32 __nullable__ | The number of excise stamps that are processed with the current operation. `Default(0)` 
 | [StartNumber](Finance.Excise.ExciseStampOperationLines.md#startnumber) | string (30) __nullable__ | The start number of the sequence of excise stamps that are processed with the current operation. 
+| [StateTagsAttribute](Finance.Excise.ExciseStampOperationLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -155,6 +156,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `obj.ExciseStampLot.StartNumber`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

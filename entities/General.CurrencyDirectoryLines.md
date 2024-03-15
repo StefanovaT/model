@@ -9,7 +9,7 @@ Contains exchange rate for a currency against the main currency of currency dire
 
 ## Default Visualization
 Default Display Text Format:  
-_{CurrencyDirectory.Name}_  
+_{CurrencyDirectory.Name}{StateTagsAttribute}_  
 Default Search Members:  
 _CurrencyDirectory.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [ObjectVersion](General.CurrencyDirectoryLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RateDivisor](General.CurrencyDirectoryLines.md#ratedivisor) | decimal (18, 6) | The divisor for conversion from From_Currency to Directory.To_Currency. `Required` `Default(1)` 
 | [RateMultiplier](General.CurrencyDirectoryLines.md#ratemultiplier) | decimal (18, 6) | The multiplier for conversion from From_Currency to Directory.To_Currency. `Required` `Default(1)` 
+| [StateTagsAttribute](General.CurrencyDirectoryLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -95,6 +96,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **1**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

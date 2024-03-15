@@ -9,7 +9,7 @@ Party pictures - photos, logos, etc. Entity: Gen_Party_Pictures
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}_  
+_{Party.PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Party.PartyName_  
 Name Data Member:  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [ObjectVersion](General.Contacts.PartyPictures.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Picture](General.Contacts.PartyPictures.md#picture) | byte[] __nullable__ | The actual party picture data. Can be null if we insert only some comments. 
 | [PictureNo](General.Contacts.PartyPictures.md#pictureno) | int32 | Unique picture number within the party. Also used for sorting. `Required` `Filter(eq)` 
+| [StateTagsAttribute](General.Contacts.PartyPictures.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -136,6 +137,16 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `( obj.Party.Pictures.Select( c => c.PictureNo).DefaultIfEmpty( 0).Max( ) + 1)`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

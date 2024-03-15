@@ -9,7 +9,7 @@ Contains the data measures of the General data warehouse. Entity: Dw_Data_Measur
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -38,6 +38,7 @@ Aggregate Tree
 | [Notes](Applications.DataWarehouse.DataMeasures.md#notes) | string (max) __nullable__ | Notes for this DataMeasure. 
 | [ObjectVersion](Applications.DataWarehouse.DataMeasures.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Period](Applications.DataWarehouse.DataMeasures.md#period) | [Period](Applications.DataWarehouse.DataMeasures.md#period) | The period for which the data is collected. D=Day, M=Month, Q=Quarter, Y=Year. `Required` `Default("Q")` `Filter(eq)` 
+| [StateTagsAttribute](Applications.DataWarehouse.DataMeasures.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -153,6 +154,16 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **Quarter**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

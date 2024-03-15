@@ -13,7 +13,7 @@ Obsolete. Not used. Entity: Inv_Supply_Schema_Routes (Obsoleted in version 22.1.
 
 ## Default Visualization
 Default Display Text Format:  
-_{SupplySchema.Name}_  
+_{SupplySchema.Name}{StateTagsAttribute}_  
 Default Search Members:  
 _SupplySchema.Name_  
 Name Data Member:  
@@ -38,6 +38,7 @@ Aggregate Root:
 | [Notes](Logistics.Inventory.SupplySchemaRoutes.md#notes) | string (254) __nullable__ | Notes for this SupplySchemaRoute. 
 | [ObjectVersion](Logistics.Inventory.SupplySchemaRoutes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SchemaXML](Logistics.Inventory.SupplySchemaRoutes.md#schemaxml) | string (max) __nullable__ | Obsolete. Not used. (Used by the schematic control). 
+| [StateTagsAttribute](Logistics.Inventory.SupplySchemaRoutes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TransitTimeDays](Logistics.Inventory.SupplySchemaRoutes.md#transittimedays) | int32 | Obsolete. Not used. (Time needed for the delivery of the goods using this route). `Required` `Default(0)` 
 
 ## References
@@ -101,6 +102,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TransitTimeDays
 

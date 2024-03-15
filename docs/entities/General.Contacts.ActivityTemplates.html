@@ -83,7 +83,7 @@
 <p>Templates for automatical generation of activity from any document. Entity: Cm_Activity_Templates</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {RouteId}</em><br>
+<em>{Id}: {RouteId}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Settings</em><br>
@@ -143,6 +143,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Contacts.ActivityTemplates.html#starttime">StartTime</a></td>
 <td>time</td>
 <td>The time of the day when the activity starts. <code>Required</code> <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="General.Contacts.ActivityTemplates.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -230,6 +235,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="responsibleparty">ResponsibleParty</h3>
 <p>If Null the user that starts the generation route is responsible party of the activity. <code>Filter(multi eq)</code></p>

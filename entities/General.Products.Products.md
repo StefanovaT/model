@@ -9,7 +9,7 @@ Products are the different items in the enterprise, which can be purchased, stor
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _PartNumber; Name_  
 Code Data Member:  
@@ -68,6 +68,7 @@ Aggregate Tree
 | [StandardCostPerLot](General.Products.Products.md#standardcostperlot) | [Amount (18, 4)](../data-types.md#amount) | Standard cost for one standard lot of the product in the currency, specified by Costing_Currency_Id. `Currency: ProductCurrency` `Required` `Default(0)` 
 | [StandardLotSizeBase](General.Products.Products.md#standardlotsizebase) | [Quantity (18, 3)](../data-types.md#quantity) | The size of a standard lot, expressed in the base measurement unit of the product. Used for Standard_Cost and Standard_Price. `Unit: BaseMeasurementCategory.BaseUnit` `Required` `Default(1)` 
 | [StandardPricePerLot](General.Products.Products.md#standardpriceperlot) | [Amount (18, 4)](../data-types.md#amount) | Standard sales price (used if no special price is defined) for one standard lot of the product in the currency, specified by Costing_Currency_Id. `Currency: ProductCurrency` `Required` `Default(0)` 
+| [StateTagsAttribute](General.Products.Products.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SupplySchemaId](General.Products.Products.md#supplyschemaid) | guid __nullable__ | The supply schema to use for the distribution of the product among warehouses. `Filter(multi eq)` 
 | [UpdateTime](General.Products.Products.md#updatetime) | datetime __nullable__ | Date and time when the Product was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](General.Products.Products.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Product. `Filter(like)` `ReadOnly` 
@@ -475,6 +476,16 @@ _Supports Order By_: **False**
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
 
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### SupplySchemaId
 
 The supply schema to use for the distribution of the product among warehouses. `Filter(multi eq)`
@@ -634,6 +645,9 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`obj.ProductGroup.GetDefaultProductTypeForNewProduct( )`
 
 _Front-End Recalc Expressions:_  
 `obj.ProductGroup.GetDefaultProductTypeForNewProduct( )`

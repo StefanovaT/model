@@ -83,7 +83,7 @@
 <p>Depreciation methods. Contains both system-defined and user-defined methods. Entity: Ast_Depreciation_Methods</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}</em><br>
+<em>{Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -155,6 +155,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Finance.Assets.DepreciationMethods.html#startfromnextmonth">StartFromNextMonth</a></td>
 <td>boolean</td>
 <td>When true, denotes that the depreciation starts from the month, following the month of deployment. When false, the depreciation starts from the same month. <code>Required</code> <code>Default(true)</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Assets.DepreciationMethods.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -286,6 +291,13 @@ Allowed values for the <code>PeriodDeterminationMethod</code>(Finance.Assets.Dep
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

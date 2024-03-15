@@ -83,7 +83,7 @@
 <p>Resource types available to production. Entity: Prd_Resources</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -155,6 +155,11 @@ Aggregate Root:<br>
 <td><a href="Production.Resources.Resources.html#standardpriceperhour">StandardPricePerHour</a></td>
 <td><a href="../data-types.html#amount">Amount (18, 6)</a> <strong>nullable</strong></td>
 <td>Standard price per hour for this resource. It participates in the calculation of standard price for production recipes in which the current resource is used. <code>Currency: ResourceCurrency</code></td>
+</tr>
+<tr>
+<td><a href="Production.Resources.Resources.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -283,6 +288,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="primaryunit">PrimaryUnit</h3>
 <p>Primary measurement unit for quantities of the resource. <code>Required</code> <code>Filter(multi eq)</code></p>

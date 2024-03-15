@@ -9,7 +9,7 @@ Theoretical or actual content of a logistic unit. Entity: Log_Logistic_Unit_Cont
 
 ## Default Visualization
 Default Display Text Format:  
-_{LogisticUnit.SerialCode}_  
+_{LogisticUnit.SerialCode}{StateTagsAttribute}_  
 Default Search Members:  
 _LotNumber; LogisticUnit.SerialCode_  
 Code Data Member:  
@@ -42,6 +42,7 @@ Aggregate Root:
 | [ObjectVersion](Logistics.LogisticUnitContents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Logistics.LogisticUnitContents.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | Quantity of the product in the logistic unit. Expressed in the specified measurement unit. `Unit: QuantityUnit` `Required` `Filter(multi eq;ge;le)` 
 | [StandardQuantity](Logistics.LogisticUnitContents.md#standardquantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity, expessed in the standard measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(eq;ge;le)` 
+| [StateTagsAttribute](Logistics.LogisticUnitContents.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -177,6 +178,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.BaseQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

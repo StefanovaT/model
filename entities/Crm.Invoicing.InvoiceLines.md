@@ -9,7 +9,7 @@ Detail records (lines) of the invoices. Entity: Crm_Invoice_Lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {Invoice.DocumentNo} {Invoice.DocumentType.TypeName:T}_  
+_{LineNo}. {Invoice.DocumentNo} {Invoice.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Invoice.DocumentNo_  
 Category:  _Definitions_  
@@ -46,6 +46,7 @@ Aggregate Root:
 | [QuantityBase](Crm.Invoicing.InvoiceLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The equivalent of Quantity in the base measurement unit of the Product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` 
 | [SalesOrderAmount](Crm.Invoicing.InvoiceLines.md#salesorderamount) | decimal (14, 2) __nullable__ | Specifies what portion of the amount of the sales order is invoiced with this line. The amount is calculated with respect to the trade conditions (prices, discounts, etc.) from the sales order. Can be different from the total amount of the line when the trade conditions from the sales order have changed before invoicing. 
 | [StandardQuantityBase](Crm.Invoicing.InvoiceLines.md#standardquantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
+| [StateTagsAttribute](Crm.Invoicing.InvoiceLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UnitPrice](Crm.Invoicing.InvoiceLines.md#unitprice) | [Amount (14, 5)](../data-types.md#amount) | The unit selling price of Quantity. `Currency: Invoice.DocumentCurrency` `Required` `Default(0)` 
 
 ## References
@@ -366,6 +367,16 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### UnitPrice
 
 The unit selling price of Quantity. `Currency: Invoice.DocumentCurrency` `Required` `Default(0)`

@@ -83,7 +83,7 @@
 <p>The work elements of the work breakdown structure of each project type. Entity: Prj_Type_Work_Elements</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{WorkElementName}</em><br>
+<em>{WorkElementName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>WorkElementCode; WorkElementName</em><br>
 Code Data Member:<br>
@@ -137,6 +137,11 @@ Aggregate Root:<br>
 <td><a href="Projects.Classic.TypeWorkElements.html#parentfullpath">ParentFullPath</a></td>
 <td>string (25) <strong>nullable</strong></td>
 <td>The full path of the parent work element in this project type. null when this is root element. <code>Filter(eq;like)</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Classic.TypeWorkElements.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Projects.Classic.TypeWorkElements.html#workelementcode">WorkElementCode</a></td>
@@ -213,6 +218,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>25</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="workelementcode">WorkElementCode</h3>
 <p>The code of the work element, unique among the sibling elements within the parent work element. <code>Required</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (3)</strong><br>

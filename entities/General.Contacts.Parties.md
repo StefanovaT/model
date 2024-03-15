@@ -9,7 +9,7 @@ Contains base data for different kind of parties - companies, persons, departmen
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName:T}_  
+_{PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _PartyCode; PartyName_  
 Code Data Member:  
@@ -49,6 +49,7 @@ Aggregate Tree
 | [PartyUniqueNumber](General.Contacts.Parties.md#partyuniquenumber) | string (16) __nullable__ | Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` 
 | [PartyUpdateTime](General.Contacts.Parties.md#partyupdatetime) | datetime __nullable__ | Date and time when the Party was last updated. `Filter(ge;le)` `ReadOnly` 
 | [PartyUpdateUser](General.Contacts.Parties.md#partyupdateuser) | string (64) __nullable__ | Login name of the user, who last updated the Party. `Filter(like)` `ReadOnly` 
+| [StateTagsAttribute](General.Contacts.Parties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -237,6 +238,16 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 

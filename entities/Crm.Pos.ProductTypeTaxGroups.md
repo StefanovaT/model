@@ -9,7 +9,7 @@ Contains the tax group codes for the product types. The tax group codes are used
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProductType.Name:T}_  
+_{ProductType.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _ProductType.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Id](Crm.Pos.ProductTypeTaxGroups.md#id) | guid |  
 | [Notes](Crm.Pos.ProductTypeTaxGroups.md#notes) | string (max) __nullable__ | Notes for this ProductTypeTaxGroup. `Filter(eq;like)` 
 | [ObjectVersion](Crm.Pos.ProductTypeTaxGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Crm.Pos.ProductTypeTaxGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TaxGroup](Crm.Pos.ProductTypeTaxGroups.md#taxgroup) | [TaxGroup](Crm.Pos.ProductTypeTaxGroups.md#taxgroup) | The tax group of the product type within the specified applicable legislation. `Required` `Filter(multi eq)` 
 
 ## References
@@ -122,6 +123,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

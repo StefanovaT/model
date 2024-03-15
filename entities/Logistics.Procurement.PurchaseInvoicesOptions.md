@@ -9,7 +9,7 @@ Contains purchase invoice specific options for the different document types. Ent
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}_  
+_{DocumentType.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [Id](Logistics.Procurement.PurchaseInvoicesOptions.md#id) | guid |  
 | [ObjectVersion](Logistics.Procurement.PurchaseInvoicesOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SignRestriction](Logistics.Procurement.PurchaseInvoicesOptions.md#signrestriction) | [SignRestriction](Logistics.Procurement.PurchaseInvoicesOptions.md#signrestriction) | This option can restrict the sign of the Line Amounts for each detail line in purchase invoices of the specified document type. `Required` `Default(0)` 
+| [StateTagsAttribute](Logistics.Procurement.PurchaseInvoicesOptions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalAmountSignRestriction](Logistics.Procurement.PurchaseInvoicesOptions.md#totalamountsignrestriction) | [TotalAmountSignRestriction](Logistics.Procurement.PurchaseInvoicesOptions.md#totalamountsignrestriction) | This option can restrict the sign of the Total Amounts of the purchase invoices of the specified document type. The restriction is applied upon document Release. `Required` `Default(0)` 
 
 ## References
@@ -92,6 +93,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TotalAmountSignRestriction
 

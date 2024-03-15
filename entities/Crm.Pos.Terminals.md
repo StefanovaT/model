@@ -9,7 +9,7 @@ Represents a POS workplace for 1 person, with all the attached devices. (Not to 
 
 ## Default Visualization
 Default Display Text Format:  
-_{PosTerminalName:T}_  
+_{PosTerminalName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _PosTerminalCode; PosTerminalName_  
 Code Data Member:  
@@ -36,6 +36,7 @@ Aggregate Tree
 | [ObjectVersion](Crm.Pos.Terminals.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PosTerminalCode](Crm.Pos.Terminals.md#posterminalcode) | string (16) | Unique (within the location) code of the POS terminal. `Required` `Filter(eq;like)` 
 | [PosTerminalName](Crm.Pos.Terminals.md#posterminalname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The multi-language name of the terminal, like "Cash 1", "Self-checkout 5", etc. `Required` `Filter(multi eq;like)` 
+| [StateTagsAttribute](Crm.Pos.Terminals.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -114,6 +115,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

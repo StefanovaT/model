@@ -9,7 +9,7 @@ Details records of Transactions. Each detail contains the movement for one produ
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {TransactionObj.DocumentNo} {TransactionObj.DocumentType.TypeName:T}_  
+_{LineNo}. {TransactionObj.DocumentNo} {TransactionObj.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _TransactionObj.DocumentNo_  
 Category:  _Definitions_  
@@ -45,6 +45,7 @@ Aggregate Root:
 | [Quantity](Logistics.Inventory.StoreTransactionLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity received/issued in the measurement unit, specified in Quantity_Unit_Id. null means that the quantity is specified only in base measurement unit. `Unit: QuantityUnit` `Required` `Default(0)` 
 | [QuantityBase](Logistics.Inventory.StoreTransactionLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity of the stock received/issued in base measurement unit. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(ge;le)` 
 | [StandardQuantityBase](Logistics.Inventory.StoreTransactionLines.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
+| [StateTagsAttribute](Logistics.Inventory.StoreTransactionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TempOrderNo](Logistics.Inventory.StoreTransactionLines.md#temporderno) | string (50) __nullable__ | Obsolete. Not used. `Filter(eq)` 
 | [TransactionTimestamp](Logistics.Inventory.StoreTransactionLines.md#transactiontimestamp) | datetime __nullable__ | Exact time when the transaction changes the cost of the product. `Filter(ge;le)` `ORD` 
 | [UnitCost](Logistics.Inventory.StoreTransactionLines.md#unitcost) | [Amount (14, 5)](../data-types.md#amount) | Cost for 1 of the specified quantity. `Currency: TransactionObj.DocumentCurrency` `Required` `Default(0)` 
@@ -275,6 +276,16 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### TempOrderNo
 
 Obsolete. Not used. `Filter(eq)`

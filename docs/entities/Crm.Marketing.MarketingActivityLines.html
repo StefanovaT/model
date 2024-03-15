@@ -83,7 +83,7 @@
 <p>Detail records (lines) of the marketing activities. Entity: Crm_Marketing_Activity_Lines (Introduced in version 22.1.5.56)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {MarketingActivity.DocumentNo} {MarketingActivity.DocumentType.TypeName:T}</em><br>
+<em>{LineNo}. {MarketingActivity.DocumentNo} {MarketingActivity.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>MarketingActivity.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -153,6 +153,11 @@ Aggregate Root:<br>
 <td><a href="Crm.Marketing.MarketingActivityLines.html#orderquantity">OrderQuantity</a></td>
 <td><a href="../data-types.html#quantity">Quantity (15, 3)</a> <strong>nullable</strong></td>
 <td>Recommended quantity (in Quantity Unit) for  new order as a result of the marketing activity. null means that there is no specific recommendation. <code>Unit: OrderQuantityUnit</code> <code>Filter(eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Marketing.MarketingActivityLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -275,6 +280,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="competitor">Competitor</h3>
 <p>Competitor where marketing activity was held. <code>Filter(multi eq)</code></p>

@@ -83,7 +83,7 @@
 <p>Contains the serviceable objects. The service objects can be covered by service agreements, serviced in service activities, etc. Entity: Srv_Service_Objects</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>SerialNumber; Name</em><br>
 Code Data Member:<br>
@@ -142,6 +142,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Service.ServiceObjects.html#serialnumber">SerialNumber</a></td>
 <td>string (32) <strong>nullable</strong></td>
 <td>The serial number of the item, that is being serviced. <code>Filter(like)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Service.ServiceObjects.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -240,6 +245,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.SerialNumberObj != null), null, obj.SerialNumber)</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The Enterprise Company to which this ServiceObject applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></p>

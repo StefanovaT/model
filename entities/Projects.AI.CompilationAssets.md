@@ -9,7 +9,7 @@ Key-value store for additional data, related to the build process of the compila
 
 ## Default Visualization
 Default Display Text Format:  
-_{Compilation.CompiledModelName}_  
+_{Compilation.CompiledModelName}{StateTagsAttribute}_  
 Default Search Members:  
 _Compilation.CompiledModelName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [DisplayText](Projects.AI.CompilationAssets.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.CompilationAssets.md#id) | guid |  
 | [ObjectVersion](Projects.AI.CompilationAssets.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Projects.AI.CompilationAssets.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Value](Projects.AI.CompilationAssets.md#value) | string (max) __nullable__ | The value of the data asset. `Filter(eq;like)` `ReadOnly` 
 
 ## References
@@ -80,6 +81,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

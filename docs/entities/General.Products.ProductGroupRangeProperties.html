@@ -83,7 +83,7 @@
 <p>When specified for a product group, provides a way for automatical creation of new products, based on altering a set of values of some user-defined properties. Each value combination is used to create a new, unique product within the group. Entity: Gen_Product_Group_Range_Properties</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ProductGroup.Name:T}</em><br>
+<em>{ProductGroup.Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ProductGroup.Name</em><br>
 Name Data Member:<br>
@@ -135,6 +135,11 @@ Aggregate Root:<br>
 <td><a href="General.Products.ProductGroupRangeProperties.html#rangetype">RangeType</a></td>
 <td><a href="General.Products.ProductGroupRangeProperties.html#rangetype">RangeType</a></td>
 <td>Specifies the method of the creation of the value set: R - by range from-to; E - by enumeration of all values;. <code>Required</code> <code>Default(&quot;R&quot;)</code></td>
+</tr>
+<tr>
+<td><a href="General.Products.ProductGroupRangeProperties.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductGroupRangeProperties.html#topropertyvalue">ToPropertyValue</a></td>
@@ -231,6 +236,13 @@ Allowed values for the <code>RangeType</code>(General.Products.ProductGroupRange
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Range</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="topropertyvalue">ToPropertyValue</h3>
 <p>Ending value of the range of alternative values. Used only when Rage Type = R (range).</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>

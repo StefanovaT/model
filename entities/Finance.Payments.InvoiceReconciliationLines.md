@@ -13,7 +13,7 @@ Obsolete. Not used. Entity: Cash_Invoice_Reconciliation_Lines (Obsoleted in vers
 
 ## Default Visualization
 Default Display Text Format:  
-_{InvoiceReconciliation.EntityName}_  
+_{InvoiceReconciliation.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _InvoiceReconciliation.EntityName_  
 Name Data Member:  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [DisplayText](Finance.Payments.InvoiceReconciliationLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Payments.InvoiceReconciliationLines.md#id) | guid |  
 | [ObjectVersion](Finance.Payments.InvoiceReconciliationLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Payments.InvoiceReconciliationLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -85,6 +86,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

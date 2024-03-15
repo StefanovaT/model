@@ -83,7 +83,7 @@
 <p>Defines company profit centers and their relative weight for automatic balance transfers from cost centers. Entity: Acc_Profit_Centers</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -140,6 +140,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Finance.Accounting.ProfitCenters.html#relativeweight">RelativeWeight</a></td>
 <td>decimal (18, 4)</td>
 <td>The weight of this profit center, relative to the other profit centers within the same parent. The weight is used during profit distribution calculations. The sum of weights of all profit centers within a parent does not need to be 100, the ratio of total weight over weight is used. <code>Required</code> <code>Default(1)</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Accounting.ProfitCenters.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -215,6 +220,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="parent">Parent</h3>
 <p>Parent profit center, null if this is root profit center. <code>Filter(multi eq)</code></p>

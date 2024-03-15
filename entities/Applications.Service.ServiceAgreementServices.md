@@ -9,7 +9,7 @@ Contains the free services, included in the service agreement. Entity: Srv_Servi
 
 ## Default Visualization
 Default Display Text Format:  
-_{ServiceAgreement.EntityName}_  
+_{ServiceAgreement.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _ServiceAgreement.EntityName_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [ObjectVersion](Applications.Service.ServiceAgreementServices.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Applications.Service.ServiceAgreementServices.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity of the agreed servcice or product. `Unit: QuantityUnit` `Required` 
 | [StartDate](Applications.Service.ServiceAgreementServices.md#startdate) | datetime __nullable__ | Start date from which the agreedment for the service or product is valid. For the agreement period, the service could be performed free of charge in service activities. `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Service.ServiceAgreementServices.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -122,6 +123,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

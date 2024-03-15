@@ -9,7 +9,7 @@ Contains alerts, specific to one vehicle. Alerts are created based on many sourc
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {VehicleId}_  
+_{Id}: {VehicleId}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -32,6 +32,7 @@ Aggregate Tree
 | [IsHidden](Applications.Fleet.VehicleAlerts.md#ishidden) | boolean | Specifies, whether the alert is hidden (e.g. managed by the responsible person). `Required` `Default(false)` 
 | [ObjectVersion](Applications.Fleet.VehicleAlerts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Source](Applications.Fleet.VehicleAlerts.md#source) | string (1) | The source of the alert. G=GPS, O=OBD, M=Maintenance. `Required` 
+| [StateTagsAttribute](Applications.Fleet.VehicleAlerts.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Time](Applications.Fleet.VehicleAlerts.md#time) | datetime | The time of the alert. `Required` `Filter(ge;le)` `ORD` 
 
 ## References
@@ -115,6 +116,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **1**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### Time
 

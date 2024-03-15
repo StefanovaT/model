@@ -9,7 +9,7 @@ The different items that are produced with a work order. Entity: Prd_Work_Order_
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}_  
+_{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _WorkOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -43,6 +43,7 @@ Aggregate Root:
 | [ReleaseDate](Production.ShopFloor.WorkOrderItems.md#releasedate) | datetime __nullable__ | The date, when the item is released to production. null means that still there is no plan when the item will be released to production. `Filter(ge;le)` 
 | [ScheduledEndDateTime](Production.ShopFloor.WorkOrderItems.md#scheduledenddatetime) | datetime __nullable__ | Date and time when the production of this item is scheduled to end. `Filter(ge;le)` 
 | [ScheduledStartDateTime](Production.ShopFloor.WorkOrderItems.md#scheduledstartdatetime) | datetime __nullable__ | Date and time when the production of this item is scheduled to begin. `Filter(ge;le)` 
+| [StateTagsAttribute](Production.ShopFloor.WorkOrderItems.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -269,6 +270,16 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 

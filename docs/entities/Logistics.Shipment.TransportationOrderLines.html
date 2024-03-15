@@ -83,7 +83,7 @@
 <p>Different cargoes of a transportation order. Entity: Log_Transportation_Order_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {TransportationOrder.DocumentNo} {TransportationOrder.DocumentType.TypeName:T}</em><br>
+<em>{LineNo}. {TransportationOrder.DocumentNo} {TransportationOrder.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>TransportationOrder.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -143,6 +143,11 @@ Aggregate Root:<br>
 <td><a href="Logistics.Shipment.TransportationOrderLines.html#parentlineno">ParentLineNo</a></td>
 <td>int32 <strong>nullable</strong></td>
 <td>The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Shipment.TransportationOrderLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Shipment.TransportationOrderLines.html#volumecbm">VolumeCbm</a></td>
@@ -251,6 +256,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="volumecbm">VolumeCbm</h3>
 <p>The volume of the cargo, in CBM (cubic meters). null when it is unknown.</p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>

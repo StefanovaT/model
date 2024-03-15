@@ -83,7 +83,7 @@
 <p>Contains alerts, specific to one vehicle. Alerts are created based on many sources and stay active, until excplicitly hidden. Entity: Fleet_Vehicle_Alerts</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {VehicleId}</em><br>
+<em>{Id}: {VehicleId}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -138,6 +138,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Fleet.VehicleAlerts.html#source">Source</a></td>
 <td>string (1)</td>
 <td>The source of the alert. G=GPS, O=OBD, M=Maintenance. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Fleet.VehicleAlerts.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Applications.Fleet.VehicleAlerts.html#time">Time</a></td>
@@ -217,6 +222,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="time">Time</h3>
 <p>The time of the alert. <code>Required</code> <code>Filter(ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>

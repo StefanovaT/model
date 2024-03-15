@@ -9,7 +9,7 @@ Represents the hierarchy of the groups of maintenance types. Entity: Eam_Mainten
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [Name](Applications.AssetManagement.MaintenanceTypeGroups.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multilanguage name of the group. `Required` `Filter(eq;like)` 
 | [Notes](Applications.AssetManagement.MaintenanceTypeGroups.md#notes) | string (max) __nullable__ | Notes for this MaintenanceTypeGroup. 
 | [ObjectVersion](Applications.AssetManagement.MaintenanceTypeGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.AssetManagement.MaintenanceTypeGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -103,6 +104,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

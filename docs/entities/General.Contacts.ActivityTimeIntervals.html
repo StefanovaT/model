@@ -83,7 +83,7 @@
 <p>History of work efforts for executing activities (timesheet). Entity: Cm_Activity_Time_Intervals</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {ActivityId}</em><br>
+<em>{Id}: {ActivityId}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -148,6 +148,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Contacts.ActivityTimeIntervals.html#state">State</a></td>
 <td><a href="General.Contacts.ActivityTimeIntervals.html#state">DocumentState</a> <strong>nullable</strong></td>
 <td>The state of the primary activity in the moment the time interval was created. null when the state is unknown.</td>
+</tr>
+<tr>
+<td><a href="General.Contacts.ActivityTimeIntervals.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -286,6 +291,13 @@ Enumeration of document system states<br>
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="activity">Activity</h3>
 <p>The activity for which the time interval is recorded. <code>Required</code> <code>Filter(multi eq)</code></p>

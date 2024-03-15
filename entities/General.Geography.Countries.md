@@ -9,7 +9,7 @@ List of countries, listed by their internet suffix code. Entity: Gen_Countries
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [IntrastatCode](General.Geography.Countries.md#intrastatcode) | string (2) __nullable__ | This code is used when creating the Intrastat Declaration. If the field is empty, then the value from the 'Code' field is used. `Introduced in version 20.1` 
 | [Name](General.Geography.Countries.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the country. `Required` `Filter(like)` 
 | [ObjectVersion](General.Geography.Countries.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.Geography.Countries.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -97,6 +98,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ Contains details of executions of transportation order lines. Entity: Log_Transp
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {TransportationExecution.DocumentNo} {TransportationExecution.DocumentType.TypeName:T}_  
+_{LineNo}. {TransportationExecution.DocumentNo} {TransportationExecution.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _TransportationExecution.DocumentNo_  
 Category:  _Definitions_  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [OperationType](Logistics.Shipment.TransportationExecutionLines.md#operationtype) | [OperationType](Logistics.Shipment.TransportationExecutionLines.md#operationtype) | The type of operation being executed. L=Loading; U=Unloading; O=Other. `Required` 
 | [PalletNumber](Logistics.Shipment.TransportationExecutionLines.md#palletnumber) | string (32) __nullable__ | Pallet number, when applicable. null when unknown or not applicable. 
 | [PalletsCount](Logistics.Shipment.TransportationExecutionLines.md#palletscount) | int32 __nullable__ | Number of pallets affected by this operation. null when unknown or N/A. 
+| [StateTagsAttribute](Logistics.Shipment.TransportationExecutionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [VolumeCbm](Logistics.Shipment.TransportationExecutionLines.md#volumecbm) | int32 __nullable__ | Cargo volume in cubic meters, affected by this operation. null when unknown or N/A. 
 | [WeightKg](Logistics.Shipment.TransportationExecutionLines.md#weightkg) | int32 __nullable__ | Cargo weight in kg, affected by this operation. null when unknown or N/A. 
 
@@ -176,6 +177,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### VolumeCbm
 

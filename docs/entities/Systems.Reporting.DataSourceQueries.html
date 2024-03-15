@@ -83,7 +83,7 @@
 <p>Represents a query within a data source. Entity: Sys_Data_Source_Queries</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{TableName}</em><br>
+<em>{TableName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>TableName</em><br>
 Name Data Member:<br>
@@ -145,6 +145,11 @@ Aggregate Root:<br>
 <td><a href="Systems.Reporting.DataSourceQueries.html#referencepath">ReferencePath</a></td>
 <td>string (max)</td>
 <td>A sequence of table names and foreign key columns that define how the data will be loaded by this query. For example - Gen_Documents/<br>Enterprise_Company_<br>Id/Company_Id - will load the definition of the company for the enterprise company of a document. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Reporting.DataSourceQueries.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Reporting.DataSourceQueries.html#tablename">TableName</a></td>
@@ -260,6 +265,13 @@ Allowed values for the <code>DependsOnChildRows</code>(Systems.Reporting.DataSou
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tablename">TableName</h3>
 <p>The name of the report query. A Reference_Path can participate more than one time in the report but with different Report_Query_Name. This can be used to specify different filter for the same query. Can be null.</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>

@@ -9,7 +9,7 @@ Defines the types of relationships possible between the parties. Entity: Cm_Part
 
 ## Default Visualization
 Default Display Text Format:  
-_{RelationshipTypeName}_  
+_{RelationshipTypeName}{StateTagsAttribute}_  
 Default Search Members:  
 _RelationshipTypeName_  
 Name Data Member:  
@@ -32,6 +32,7 @@ Aggregate Tree
 | [Notes](General.Contacts.PartyRelationshipTypes.md#notes) | string (254) __nullable__ | Notes for this PartyRelationshipType. 
 | [ObjectVersion](General.Contacts.PartyRelationshipTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RelationshipTypeName](General.Contacts.PartyRelationshipTypes.md#relationshiptypename) | string (50) | The name of the relationship type. `Required` `Filter(like)` 
+| [StateTagsAttribute](General.Contacts.PartyRelationshipTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -86,6 +87,16 @@ _Supported Filters_: **Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **50**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

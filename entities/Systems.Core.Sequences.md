@@ -9,7 +9,7 @@ Provides numbering sequences, applicable for use in a multi-threaded environment
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Tree
 | [Name](Systems.Core.Sequences.md#name) | string (50) | The name of this Sequence. `Required` `Filter(like)` 
 | [ObjectVersion](Systems.Core.Sequences.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SimultaneousTransactions](Systems.Core.Sequences.md#simultaneoustransactions) | boolean | When false, specifies that the users will wait in a queue for a single numbering sequence generator. When true, the system will allow parallel numbering, by using any of the available sequence generators. However, parallel numbering has the drawback that, if no sequence generator is free, it will immediately throw exception, instead of waiting. So before setting to true, make sure that enough sequence generators are available. `Required` `Default(false)` 
+| [StateTagsAttribute](Systems.Core.Sequences.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -93,6 +94,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

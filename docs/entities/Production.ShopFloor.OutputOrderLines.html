@@ -83,7 +83,7 @@
 <p>Detail records of output orders. Entity: Prd_Output_Order_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineOrd}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}</em><br>
+<em>{LineOrd}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>OutputOrder.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -163,6 +163,11 @@ Aggregate Root:<br>
 <td><a href="Production.ShopFloor.OutputOrderLines.html#starttime">StartTime</a></td>
 <td>datetime</td>
 <td>Date and time when the operation has began. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Production.ShopFloor.OutputOrderLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.OutputOrderLines.html#transactiontimestamp">TransactionTimestamp</a></td>
@@ -372,6 +377,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="transactiontimestamp">TransactionTimestamp</h3>
 <p>Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>

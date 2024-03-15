@@ -9,7 +9,7 @@ Contains the enterprise resources, which are available for including in projects
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Id](Projects.Classic.Resources.md#id) | guid |  
 | [Name](Projects.Classic.Resources.md#name) | string (254) | The name of this Resource. `Required` 
 | [ObjectVersion](Projects.Classic.Resources.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Projects.Classic.Resources.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -91,6 +92,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

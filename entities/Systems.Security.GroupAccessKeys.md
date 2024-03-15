@@ -9,7 +9,7 @@ Specifies the access keys for which the user groups have permissions. The exista
 
 ## Default Visualization
 Default Display Text Format:  
-_{Group.Name:T}_  
+_{Group.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Group.Name_  
 Name Data Member:  
@@ -45,6 +45,7 @@ Aggregate Root:
 | [Permission7](Systems.Security.GroupAccessKeys.md#permission7) | boolean | When true, the group is granted with entity-specific permission for the entity, protected by the access key. `Required` `Default(false)` 
 | [Permission8](Systems.Security.GroupAccessKeys.md#permission8) | boolean | When true, the group is granted with entity-specific permission for the entity, protected by the access key. `Required` `Default(false)` 
 | [Permission9](Systems.Security.GroupAccessKeys.md#permission9) | boolean | When true, the group is granted with entity-specific permission for the entity, protected by the access key. `Required` `Default(false)` 
+| [StateTagsAttribute](Systems.Security.GroupAccessKeys.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -225,6 +226,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

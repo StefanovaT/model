@@ -9,7 +9,7 @@ Groups the rentable assets in hierarchy of logical groups. Entity: Rent_Asset_Gr
 
 ## Default Visualization
 Default Display Text Format:  
-_{RentalAssetGroupName}_  
+_{RentalAssetGroupName}{StateTagsAttribute}_  
 Default Search Members:  
 _RentalAssetGroupCode; RentalAssetGroupName_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Tree
 | [ParentFullPath](Applications.Rental.AssetGroups.md#parentfullpath) | string (25) __nullable__ | The full path of the parent node. `Filter(eq)` 
 | [RentalAssetGroupCode](Applications.Rental.AssetGroups.md#rentalassetgroupcode) | string (3) | Asset group code, unique within the parent node. `Required` `Filter(eq;like)` `ORD` 
 | [RentalAssetGroupName](Applications.Rental.AssetGroups.md#rentalassetgroupname) | string (254) | Asset group name, unique within the parent node. `Required` `Filter(eq;like)` 
+| [StateTagsAttribute](Applications.Rental.AssetGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -128,6 +129,16 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

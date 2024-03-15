@@ -83,7 +83,7 @@
 <p>Represents the segments which comprise the route of the trips. Entity: Fleet_Trip_Segments</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Trip.EntityName}</em><br>
+<em>{Trip.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Trip.EntityName</em><br>
 Name Data Member:<br>
@@ -140,6 +140,11 @@ Aggregate Root:<br>
 <td><a href="Applications.Fleet.TripSegments.html#startingtimestamp">StartingTimestamp</a></td>
 <td>datetime</td>
 <td>The starting date and time of the travel on the segment. <code>Required</code> <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Fleet.TripSegments.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -221,6 +226,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="endingmappoint">EndingMapPoint</h3>
 <p>The ending geographical point of the route segment. <code>Required</code> <code>Filter(multi eq)</code></p>

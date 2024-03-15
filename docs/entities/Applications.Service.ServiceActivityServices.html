@@ -83,7 +83,7 @@
 <p>Contains the services, which were actually performed during the service activity (repair). Entity: Srv_Service_Activity_Services</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {ServiceActivity.DocumentNo} {Service}</em><br>
+<em>{LineNo}. {ServiceActivity.DocumentNo} {Service}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ServiceActivity.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -143,6 +143,11 @@ Aggregate Root:<br>
 <td><a href="Applications.Service.ServiceActivityServices.html#servicename">ServiceName</a></td>
 <td>string (254)</td>
 <td>Description of the conducted service. The description may vary (contain additional information) from the standart name of the service. <code>Required</code> <code>Filter(like)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Service.ServiceActivityServices.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -267,6 +272,13 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Service.Name</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The <see cref="ServiceActivity"></see> to which this ServiceActivityService belongs. <code>Required</code> <code>Filter(multi eq)</code></p>

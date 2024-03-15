@@ -9,7 +9,7 @@ The jobs, which are configured in the system. Entity: Sys_Jobs (Introduced in ve
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [Notes](Systems.Core.Jobs.md#notes) | string (max) __nullable__ | Notes for this Job. 
 | [ObjectVersion](Systems.Core.Jobs.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RunOnIdle](Systems.Core.Jobs.md#runonidle) | boolean | Specifies whether to automatically run the job when the server is idle. `Required` `Default(true)` `Filter(eq)` 
+| [StateTagsAttribute](Systems.Core.Jobs.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -135,6 +136,16 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

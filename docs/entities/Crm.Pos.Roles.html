@@ -83,7 +83,7 @@
 <p>Represents a role, which can be assigned to POS operators (like Cashier, Manager, etc.). The role indicates the operations, which are allowed to be performed by the operators. Entity: Pos_Roles (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PosRoleName:T}</em><br>
+<em>{PosRoleName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>PosRoleCode; PosRoleName</em><br>
 Code Data Member:<br>
@@ -143,6 +143,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
 <td>Multi-language name of the POS role. <code>Required</code> <code>Filter(multi eq;like)</code></td>
 </tr>
+<tr>
+<td><a href="Crm.Pos.Roles.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
@@ -199,6 +204,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

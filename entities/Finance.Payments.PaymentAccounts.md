@@ -9,7 +9,7 @@ Payment accounts are cash, bank and other accounts, which are used in payments. 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [IsActive](Finance.Payments.PaymentAccounts.md#isactive) | boolean | Indicates wheather the payment account is currently used (active). `Required` `Default(true)` `Filter(eq)` 
 | [Name](Finance.Payments.PaymentAccounts.md#name) | [MultilanguageString (50)](../data-types.md#multilanguagestring) | The name of this PaymentAccount. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Payments.PaymentAccounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Payments.PaymentAccounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -111,6 +112,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

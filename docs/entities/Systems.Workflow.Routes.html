@@ -83,7 +83,7 @@
 <p>Contains document routes, which specify which document generation procedures will be run upon document events. Entity: Wf_Routes</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ProcedureName}</em><br>
+<em>{ProcedureName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ProcedureName</em><br>
 Name Data Member:<br>
@@ -200,6 +200,11 @@ Aggregate Root:<br>
 <td><a href="Systems.Workflow.Routes.html#schemaxml"><s>SchemaXML</s></a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td><strong>OBSOLETE! Do not use!</strong> Not used. <code>Obsolete</code> <code>Obsoleted in version 22.1.6.61</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Workflow.Routes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -585,6 +590,13 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="conditionenterprisecompany">ConditionEnterpriseCompany</h3>
 <p>The enterprise company for which this route is activated. <code>Filter(multi eq)</code></p>

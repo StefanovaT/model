@@ -9,7 +9,7 @@ Hierarchical structure of the company departments. The departments and divisions
 
 ## Default Visualization
 Default Display Text Format:  
-_{DepartmentName}_  
+_{DepartmentName}{StateTagsAttribute}_  
 Default Search Members:  
 _DepartmentName_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Id](General.Contacts.CompanyDepartments.md#id) | guid |  
 | [Notes](General.Contacts.CompanyDepartments.md#notes) | string (max) __nullable__ | Notes for this CompanyDepartment. 
 | [ObjectVersion](General.Contacts.CompanyDepartments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.Contacts.CompanyDepartments.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -92,6 +93,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

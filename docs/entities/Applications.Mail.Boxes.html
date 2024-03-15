@@ -83,7 +83,7 @@
 <p>Represents user mailboxes. Entity: Mail_Boxes</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{SentItemsFolderName}</em><br>
+<em>{SentItemsFolderName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>SentItemsFolderName</em><br>
 Name Data Member:<br>
@@ -164,6 +164,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Mail.Boxes.html#signaturehtml">SignatureHtml</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>Html text of the default signature, when creating new emails from this mailbox. When is null, a default generic signature is attached.</td>
+</tr>
+<tr>
+<td><a href="Applications.Mail.Boxes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Applications.Mail.Boxes.html#syncpassword">SyncPassword</a></td>
@@ -307,6 +312,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="syncpassword">SyncPassword</h3>
 <p>The password to supply to the server when retrieving email. null when the connection is not setup or the server does not require user name.</p>
 <p><em>Type</em>: <strong>string (512) <strong>nullable</strong></strong><br>

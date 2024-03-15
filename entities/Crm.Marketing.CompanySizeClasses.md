@@ -9,7 +9,7 @@ Categorization of company sizes for marketing purposes. Size classes might depen
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Tree
 | [Name](Crm.Marketing.CompanySizeClasses.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Company size class name (multi-language). `Required` `Filter(eq;like)` 
 | [Notes](Crm.Marketing.CompanySizeClasses.md#notes) | string (max) __nullable__ | Notes for this CompanySizeClass. 
 | [ObjectVersion](Crm.Marketing.CompanySizeClasses.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Crm.Marketing.CompanySizeClasses.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToEmployees](Crm.Marketing.CompanySizeClasses.md#toemployees) | int32 __nullable__ | Maximum number of employees for this size class. null if this is not relevant to this size class. `Filter(eq)` 
 | [ToRevenue](Crm.Marketing.CompanySizeClasses.md#torevenue) | decimal (15, 0) __nullable__ | Maximal revenue for this size class. Currency is Revenue Currency. null if this is not relevant to this size class. `Filter(eq)` 
 
@@ -127,6 +128,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

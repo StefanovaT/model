@@ -9,7 +9,7 @@ Additional product codes, categorized by coding systems. Entity: Gen_Product_Cod
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProductCodeField}_  
+_{ProductCodeField}{StateTagsAttribute}_  
 Default Search Members:  
 _ProductCodeField_  
 Code Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Id](General.Products.ProductCodes.md#id) | guid |  
 | [ObjectVersion](General.Products.ProductCodes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProductCodeField](General.Products.ProductCodes.md#productcodefield) | string (32) | The code of the product in the specified coding system. `Required` `Filter(eq;like)` 
+| [StateTagsAttribute](General.Products.ProductCodes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -95,6 +96,16 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

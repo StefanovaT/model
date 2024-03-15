@@ -9,7 +9,7 @@ Groups of resource types. Entity: Prd_Resource_Groups
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [Name](Production.Resources.ResourceGroups.md#name) | string (64) | Name of resource group. `Required` `Filter(like)` 
 | [ObjectVersion](Production.Resources.ResourceGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Parent](Production.Resources.ResourceGroups.md#parent) | string (254) | Dot-separated list of parent groups. It also contains leading and trailing dot. `Required` `Default("/")` `Filter(like)` `ORD` 
+| [StateTagsAttribute](Production.Resources.ResourceGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -109,6 +110,16 @@ _Supports Order By_: **True**
 _Maximum Length_: **254**  
 _Default Value_: **/**  
 _Show in UI_: **CannotBeShown**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

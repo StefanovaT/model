@@ -9,7 +9,7 @@ Contains the approved commodity codes for each period from The Combined Nomencla
 
 ## Default Visualization
 Default Display Text Format:  
-_{CommodityCodeField}_  
+_{CommodityCodeField}{StateTagsAttribute}_  
 Default Search Members:  
 _CommodityCodeField_  
 Category:  _Settings_  
@@ -30,6 +30,7 @@ Aggregate Tree
 | [DisplayText](Finance.Intrastat.CommodityCodes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Intrastat.CommodityCodes.md#id) | guid |  
 | [ObjectVersion](Finance.Intrastat.CommodityCodes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Intrastat.CommodityCodes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SupplementaryUnit](Finance.Intrastat.CommodityCodes.md#supplementaryunit) | string (16) | If not null, the related product should have additional measurement unit with the same code as specified in this field. The additional unit will be used for the purposes of the Intrastat declarations. `Required` 
 | [ValidFrom](Finance.Intrastat.CommodityCodes.md#validfrom) | date __nullable__ | The starting date of validity of this code. `Filter(ge;le)` 
 | [ValidTo](Finance.Intrastat.CommodityCodes.md#validto) | date __nullable__ | The ending date of validity of this code. `Filter(ge;le)` 
@@ -84,6 +85,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

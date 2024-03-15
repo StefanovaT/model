@@ -9,7 +9,7 @@ Templates for customizing the printouts of fiscal receipts. Entity: Pos_Fiscal_R
 
 ## Default Visualization
 Default Display Text Format:  
-_{TemplateName}_  
+_{TemplateName}{StateTagsAttribute}_  
 Default Search Members:  
 _TemplateName_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Tree
 | [ObjectVersion](Crm.Pos.FiscalReceiptTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PrintSystemHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemheader) | boolean | Denotes whether to print the system-defined header for the document. `Required` `Default(true)` `Filter(eq)` 
 | [PrintSystemRowHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemrowheader) | boolean | Denotes whether to print the system-defined header for each row. `Required` `Default(true)` `Filter(eq)` 
+| [StateTagsAttribute](Crm.Pos.FiscalReceiptTemplates.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TemplateName](Crm.Pos.FiscalReceiptTemplates.md#templatename) | string (64) | The unique name of the printing template. `Required` `Filter(eq;like)` `ORD` 
 
 
@@ -134,6 +135,16 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TemplateName
 

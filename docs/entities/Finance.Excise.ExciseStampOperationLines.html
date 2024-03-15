@@ -83,7 +83,7 @@
 <p>Excise Stamp Operation Lines. Entity: Exc_Excise_Stamp_Operation_Lines (Introduced in version 22.1.6.17)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {ExciseStampOperation.DocumentNo} {ExciseStampOperation.DocumentType.TypeName:T}</em><br>
+<em>{LineNo}. {ExciseStampOperation.DocumentNo} {ExciseStampOperation.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ExciseStampOperation.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -148,6 +148,11 @@ Aggregate Root:<br>
 <td><a href="Finance.Excise.ExciseStampOperationLines.html#startnumber">StartNumber</a></td>
 <td>string (30) <strong>nullable</strong></td>
 <td>The start number of the sequence of excise stamps that are processed with the current operation.</td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampOperationLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -271,6 +276,13 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.ExciseStampLot.StartNumber</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The <see cref="ExciseStampOperation"></see> to which this ExciseStampOperationLine belongs. <code>Required</code> <code>Filter(multi eq)</code></p>

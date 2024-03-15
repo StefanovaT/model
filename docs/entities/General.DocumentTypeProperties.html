@@ -83,7 +83,7 @@
 <p>Default user-defined properties, which should be added to new documents. Entity: Gen_Document_Type_Properties</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.EntityName}</em><br>
+<em>{DocumentType.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentType.EntityName</em><br>
 Name Data Member:<br>
@@ -155,6 +155,11 @@ Aggregate Root:<br>
 <td><a href="General.DocumentTypeProperties.html#requiredthrudate">RequiredThruDate</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>When not null, specifies a date, up to which the property is required for the current document type. The date is compared against the document date. <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="General.DocumentTypeProperties.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -261,6 +266,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
 <p>The document type, for which to add user-defined properties. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

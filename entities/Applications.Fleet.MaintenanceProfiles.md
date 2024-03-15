@@ -9,7 +9,7 @@ Profiles contain multiple maintenance plans and can be assigned directly to a ve
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Tree
 | [Name](Applications.Fleet.MaintenanceProfiles.md#name) | string (254) | Name of the maintenance profile (Multilanguage). `Required` 
 | [Notes](Applications.Fleet.MaintenanceProfiles.md#notes) | string (max) __nullable__ | Notes for this MaintenanceProfile. 
 | [ObjectVersion](Applications.Fleet.MaintenanceProfiles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.Fleet.MaintenanceProfiles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -116,6 +117,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

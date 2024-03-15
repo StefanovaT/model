@@ -9,7 +9,7 @@ Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81
 
 ## Default Visualization
 Default Display Text Format:  
-_{Case.Number}: {ActionDescription} by {CreationUser} {CreationTimeUtc}_  
+_{Case.Number}: {ActionDescription} by {CreationUser} {CreationTimeUtc}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -33,6 +33,7 @@ Aggregate Tree
 | [Id](Projects.Agile.CaseDevelopments.md#id) | guid |  
 | [NewSystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) | [SystemState](Projects.Agile.CaseDevelopments.md#newsystemstate) __nullable__ | When the development incurred changing the state of the case, contains the new state. `Filter(multi eq)` 
 | [ObjectVersion](Projects.Agile.CaseDevelopments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Projects.Agile.CaseDevelopments.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -144,6 +145,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

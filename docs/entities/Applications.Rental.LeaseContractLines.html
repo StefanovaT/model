@@ -83,7 +83,7 @@
 <p>The detail lines of rental contracts. Each line contains rental conditions for one asset of the rental contract. Entity: Rent_Lease_Contract_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LeaseContract.EntityName}</em><br>
+<em>{LeaseContract.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>LeaseContract.EntityName</em><br>
 Name Data Member:<br>
@@ -145,6 +145,11 @@ Aggregate Root:<br>
 <td><a href="Applications.Rental.LeaseContractLines.html#startdate">StartDate</a></td>
 <td>date</td>
 <td>Starting date of lease for this asset. <code>Required</code> <code>Filter(multi eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Rental.LeaseContractLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -257,6 +262,13 @@ Aggregate Root:<br>
 <code>obj.LeaseContract.StartDate</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.LeaseContract.StartDate</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="leasecontract">LeaseContract</h3>
 <p>The <see cref="LeaseContract"></see> to which this LeaseContractLine belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

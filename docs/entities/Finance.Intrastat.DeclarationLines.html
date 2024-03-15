@@ -83,7 +83,7 @@
 <p>Contains the details of the Intrastat declarations, issued by the enterprise companies. Entity: Its_Declaration_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{IntrastatDeclaration.EntityName}</em><br>
+<em>{IntrastatDeclaration.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>IntrastatDeclaration.EntityName</em><br>
 Name Data Member:<br>
@@ -150,6 +150,11 @@ Aggregate Root:<br>
 <td><a href="Finance.Intrastat.DeclarationLines.html#quantitysupplementaryunit">QuantitySupplementaryUnit</a></td>
 <td>decimal (10, 0) <strong>nullable</strong></td>
 <td>Quantity of the goods in the supplementary unit. null when no supplementary unit is specified.</td>
+</tr>
+<tr>
+<td><a href="Finance.Intrastat.DeclarationLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Finance.Intrastat.DeclarationLines.html#statisticalvalueamountbase">StatisticalValueAmountBase</a></td>
@@ -372,6 +377,13 @@ Allowed values for the <code>LineAction</code>(Finance.Intrastat.DeclarationLine
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="statisticalvalueamountbase">StatisticalValueAmountBase</h3>
 <p>Statistical value of the goods in the base currency. <code>Currency: IntrastatDeclaration.EnterpriseCompany.BaseCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (10, 0)</a> <strong>nullable</strong></strong><br>

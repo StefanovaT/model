@@ -9,7 +9,7 @@ The work elements of the work breakdown structure of each project type. Entity: 
 
 ## Default Visualization
 Default Display Text Format:  
-_{WorkElementName}_  
+_{WorkElementName}{StateTagsAttribute}_  
 Default Search Members:  
 _WorkElementCode; WorkElementName_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [Notes](Projects.Classic.TypeWorkElements.md#notes) | string (max) __nullable__ | Notes for this TypeWorkElement. 
 | [ObjectVersion](Projects.Classic.TypeWorkElements.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentFullPath](Projects.Classic.TypeWorkElements.md#parentfullpath) | string (25) __nullable__ | The full path of the parent work element in this project type. null when this is root element. `Filter(eq;like)` 
+| [StateTagsAttribute](Projects.Classic.TypeWorkElements.md#statetagsattribute) | string | Specifies the state of the document. 
 | [WorkElementCode](Projects.Classic.TypeWorkElements.md#workelementcode) | string (3) | The code of the work element, unique among the sibling elements within the parent work element. `Required` `Filter(eq)` 
 | [WorkElementName](Projects.Classic.TypeWorkElements.md#workelementname) | string (254) | The name of the work element, unique among the sibling elements within the parent work element. `Required` `Filter(eq)` 
 
@@ -110,6 +111,16 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### WorkElementCode
 

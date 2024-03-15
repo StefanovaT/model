@@ -9,7 +9,7 @@ Contains the memnbers of vehicle crews. Entity: Fleet_Crew_Members
 
 ## Default Visualization
 Default Display Text Format:  
-_{Crew.Name:T}_  
+_{Crew.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Crew.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Notes](Applications.Fleet.CrewMembers.md#notes) | string (254) __nullable__ | Notes for this CrewMember. 
 | [ObjectVersion](Applications.Fleet.CrewMembers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrdinalPos](Applications.Fleet.CrewMembers.md#ordinalpos) | int32 __nullable__ | Ordinal position. Ordinal_Pos=0 has special meaning - this is the crew leader. 
+| [StateTagsAttribute](Applications.Fleet.CrewMembers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,6 +95,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

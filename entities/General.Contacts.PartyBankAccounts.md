@@ -9,7 +9,7 @@ The bank accounts of a party. Entity: Gen_Party_Bank_Accounts
 
 ## Default Visualization
 Default Display Text Format:  
-_{BankBranchName:T}_  
+_{BankBranchName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _BankAccountCode; BankBranchName_  
 Code Data Member:  
@@ -41,6 +41,7 @@ Aggregate Root:
 | [IsDefault](General.Contacts.PartyBankAccounts.md#isdefault) | boolean | True if the this is the default account for the party. Only one default per party is allowed. `Required` `Default(false)` `Filter(eq)` 
 | [Notes](General.Contacts.PartyBankAccounts.md#notes) | string (254) __nullable__ | Notes for this PartyBankAccount. 
 | [ObjectVersion](General.Contacts.PartyBankAccounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.Contacts.PartyBankAccounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -150,6 +151,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

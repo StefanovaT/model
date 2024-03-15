@@ -9,7 +9,7 @@ One piece of training data for fine-tuning AI models. Entity: Llm_Training_Conve
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {ModelId}_  
+_{Id}: {ModelId}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -33,6 +33,7 @@ Aggregate Tree
 | [Notes](Projects.AI.TrainingConversations.md#notes) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Notes for this TrainingConversation. 
 | [ObjectVersion](Projects.AI.TrainingConversations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Origin](Projects.AI.TrainingConversations.md#origin) | [Origin](Projects.AI.TrainingConversations.md#origin) | Denotes how (based on what other object) was the conversation initially created. Possible values - User-entered, Chat, Calendar, etc. `Required` `Default("USR")` `Filter(multi eq)` `ReadOnly` 
+| [StateTagsAttribute](Projects.AI.TrainingConversations.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -132,6 +133,16 @@ _Supported Filters_: **Equals, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **UserEntered**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

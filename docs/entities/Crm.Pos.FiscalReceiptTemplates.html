@@ -83,7 +83,7 @@
 <p>Templates for customizing the printouts of fiscal receipts. Entity: Pos_Fiscal_Receipt_Templates (Introduced in version 24.1.1.50)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{TemplateName}</em><br>
+<em>{TemplateName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>TemplateName</em><br>
 Name Data Member:<br>
@@ -150,6 +150,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.Pos.FiscalReceiptTemplates.html#printsystemrowheader">PrintSystemRowHeader</a></td>
 <td>boolean</td>
 <td>Denotes whether to print the system-defined header for each row. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Pos.FiscalReceiptTemplates.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.Pos.FiscalReceiptTemplates.html#templatename">TemplateName</a></td>
@@ -227,6 +232,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="templatename">TemplateName</h3>
 <p>The unique name of the printing template. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>

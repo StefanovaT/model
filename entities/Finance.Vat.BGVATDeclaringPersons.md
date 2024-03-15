@@ -9,7 +9,7 @@ National data: Contains the persons, which are authorized to issue and sign VAT 
 
 ## Default Visualization
 Default Display Text Format:  
-_{EnterpriseCompany.Company.PartyName:T}_  
+_{EnterpriseCompany.Company.PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _EnterpriseCompany.Company.PartyName_  
 Name Data Member:  
@@ -38,6 +38,7 @@ Aggregate Root:
 | [Id](Finance.Vat.BGVATDeclaringPersons.md#id) | guid |  
 | [IsDefault](Finance.Vat.BGVATDeclaringPersons.md#isdefault) | boolean | True if this is the default person, which issues VAT declarations for this Enterprise Company. `Required` `Default(true)` 
 | [ObjectVersion](Finance.Vat.BGVATDeclaringPersons.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Vat.BGVATDeclaringPersons.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -149,6 +150,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

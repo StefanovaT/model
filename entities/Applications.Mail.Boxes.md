@@ -9,7 +9,7 @@ Represents user mailboxes. Entity: Mail_Boxes
 
 ## Default Visualization
 Default Display Text Format:  
-_{SentItemsFolderName}_  
+_{SentItemsFolderName}{StateTagsAttribute}_  
 Default Search Members:  
 _SentItemsFolderName_  
 Name Data Member:  
@@ -39,6 +39,7 @@ Aggregate Tree
 | [SendServerAddress](Applications.Mail.Boxes.md#sendserveraddress) | string (254) __nullable__ | The address of the server to use for sending mail. The same credentials as the sync server are used. When null, the mail will be sent using the default server, which is setup at the application server. 
 | [SentItemsFolderName](Applications.Mail.Boxes.md#sentitemsfoldername) | string (254) __nullable__ | The name of the SentItems folder. It is left empty, EnterpriseOne won't save the sent mail in any folder (but it is still possible that the actual mail server would nevertheless save the mail in a sent items folder, independently from EnterpriseOne). 
 | [SignatureHtml](Applications.Mail.Boxes.md#signaturehtml) | string (max) __nullable__ | Html text of the default signature, when creating new emails from this mailbox. When is null, a default generic signature is attached. 
+| [StateTagsAttribute](Applications.Mail.Boxes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SyncPassword](Applications.Mail.Boxes.md#syncpassword) | string (512) __nullable__ | The password to supply to the server when retrieving email. null when the connection is not setup or the server does not require user name. 
 | [SyncProtocol](Applications.Mail.Boxes.md#syncprotocol) | [SyncProtocol](Applications.Mail.Boxes.md#syncprotocol) __nullable__ | Synchronization protocol, 'POP3' or 'IMAP'. null means that syncrhonization is not setup. 
 | [SyncServerAddress](Applications.Mail.Boxes.md#syncserveraddress) | string (254) __nullable__ | Incoming and outgoing mail server internet address. null when synchronization is not setup. 
@@ -175,6 +176,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### SyncPassword
 

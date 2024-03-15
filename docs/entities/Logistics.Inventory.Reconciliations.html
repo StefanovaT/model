@@ -84,7 +84,7 @@
 <p>Store reconciliations (physical counting). Usefull for real-world reconciliations and for opening balance. Entity: Inv_Reconciliations</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.TypeName:T} {DocumentNo}</em><br>
+<em>{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentNo</em><br>
 Code Data Member:<br>
@@ -97,6 +97,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <ul>
 <li><a href="Logistics.Inventory.Reconciliations.html">Logistics.Inventory.Reconciliations</a>
 <ul>
+<li><a href="Logistics.Inventory.ReconciliationCounts.html">Logistics.Inventory.ReconciliationCounts</a></li>
 <li><a href="Logistics.Inventory.ReconciliationLines.html">Logistics.Inventory.ReconciliationLines</a></li>
 <li><a href="General.DocumentAmounts.html">General.DocumentAmounts</a>
 <ul>
@@ -243,6 +244,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Inventory.Reconciliations.html#state">State</a></td>
 <td><a href="Logistics.Inventory.Reconciliations.html#state">DocumentState</a></td>
 <td>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.Reconciliations.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.Reconciliations.html#void">Void</a></td>
@@ -402,6 +408,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>Comments</td>
 <td><a href="General.DocumentComments.html">DocumentComments</a></td>
 <td>List of <code>DocumentComment</code>(General.DocumentComments.md) child objects, based on the <code>General.DocumentComment.Document</code>(General.DocumentComments.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+</tr>
+<tr>
+<td>Counts</td>
+<td><a href="Logistics.Inventory.ReconciliationCounts.html">ReconciliationCounts</a></td>
+<td>List of <code>ReconciliationCount</code>(Logistics.Inventory.ReconciliationCounts.md) child objects, based on the <code>Logistics.Inventory.ReconciliationCount.Reconciliation</code>(Logistics.Inventory.ReconciliationCounts.md#reconciliation) back reference</td>
 </tr>
 <tr>
 <td>DistributedAmounts</td>
@@ -721,6 +732,13 @@ Enumeration of document system states<br>
 <p><em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="void">Void</h3>
 <p>True if the document is null and void. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>

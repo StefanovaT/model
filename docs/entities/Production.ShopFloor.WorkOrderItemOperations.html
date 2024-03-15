@@ -83,7 +83,7 @@
 <p>The operations that are performed to produce the product. Entity: Prd_Work_Order_Item_Operations</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{WorkOrderItem.WorkOrder.EntityName}</em><br>
+<em>{WorkOrderItem.WorkOrder.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>WorkOrderItem.WorkOrder.EntityName</em><br>
 Name Data Member:<br>
@@ -180,6 +180,11 @@ Aggregate Root:<br>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#setuptimeminutes">SetupTimeMinutes</a></td>
 <td>int32</td>
 <td>Time needed to setup the equipment in minutes. <code>Required</code> <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Production.ShopFloor.WorkOrderItemOperations.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemOperations.html#tooling">Tooling</a></td>
@@ -360,6 +365,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tooling">Tooling</h3>
 <p>The tools needed for the routing step.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>

@@ -83,17 +83,19 @@
 <p>Used for planned reconciliations to count product quantities from multiple devices. Entity: Inv_Reconciliation_Counts (Introduced in version 24.1.3.48)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ProductId}: {Quantity}</em><br>
+<em>{Reconciliation.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
-__<br>
+<em>Reconciliation.EntityName</em><br>
+Name Data Member:<br>
+<em>Reconciliation.EntityName</em><br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Tree</p>
-<ul>
-<li><a href="Logistics.Inventory.ReconciliationCounts.html">Logistics.Inventory.ReconciliationCounts</a></li>
-</ul>
+<p>Aggregate Parent:<br>
+<a href="Logistics.Inventory.Reconciliations.html">Logistics.Inventory.Reconciliations</a><br>
+Aggregate Root:<br>
+<a href="Logistics.Inventory.Reconciliations.html">Logistics.Inventory.Reconciliations</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -129,6 +131,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>decimal (12, 3)</td>
 <td>The counted quantity in the default measurement unit of the product. <code>Required</code> <code>Filter(ge;le)</code></td>
 </tr>
+<tr>
+<td><a href="Logistics.Inventory.ReconciliationCounts.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="references">References</h2>
@@ -159,7 +166,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Logistics.Inventory.ReconciliationCounts.html#reconciliation">Reconciliation</a></td>
 <td><a href="Logistics.Inventory.Reconciliations.html">Reconciliations</a></td>
-<td>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.51</code></td>
+<td>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.51</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
@@ -200,6 +207,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="creationuser">CreationUser</h3>
 <p>The user who performed the count. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
@@ -220,10 +234,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="reconciliation">Reconciliation</h3>
-<p>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.51</code></p>
+<p>The planned reconciliation for which to execute the current counting. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.51</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Reconciliations.html">Reconciliations</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>

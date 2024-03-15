@@ -9,7 +9,7 @@ Forecast items form demand in MRP calculations. Entity: Crm_Forecast_Items
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {QuantityValue}_  
+_{Id}: {QuantityValue}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -30,6 +30,7 @@ Aggregate Tree
 | [Id](Crm.Marketing.ForecastItems.md#id) | guid |  
 | [ObjectVersion](Crm.Marketing.ForecastItems.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Crm.Marketing.ForecastItems.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The forecasted sales quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `Filter(ge;le)` 
+| [StateTagsAttribute](Crm.Marketing.ForecastItems.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,6 +95,16 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

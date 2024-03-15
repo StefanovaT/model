@@ -83,7 +83,7 @@
 <p>Detail records (lines) of the deals. Entity: Crm_Deal_Lines (Introduced in version 22.1.4.53)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {Deal.DocumentNo} {Deal.DocumentType.TypeName:T}</em><br>
+<em>{LineNo}. {Deal.DocumentNo} {Deal.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Deal.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -133,6 +133,11 @@ Aggregate Root:<br>
 <td><a href="Crm.Presales.DealLines.html#quantity">Quantity</a></td>
 <td><a href="../data-types.html#quantity">Quantity (12, 3)</a> <strong>nullable</strong></td>
 <td>When not null, specifies the quantity, which the client can potentially buy (with measurement unit specified in Quantity Unit). <code>Unit: QuantityUnit</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Presales.DealLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -216,6 +221,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="deal">Deal</h3>
 <p>Deal. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

@@ -83,7 +83,7 @@
 <p>Application, which is trusted to access the ERP data. Entity: Sec_Trusted_Applications (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -189,6 +189,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Security.TrustedApplications.html#scope">Scope</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>The scope (according to RFC 6749) for which the application was trusted. The scope is an unordered list of space-delimited case-sensitive strings. Each string denotes a permission (see docs for possible values). <code>Introduced in version 20.1</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Security.TrustedApplications.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Security.TrustedApplications.html#systemuserallowed">SystemUserAllowed</a></td>
@@ -382,6 +387,13 @@ Allowed values for the <code>ClientType</code>(Systems.Security.TrustedApplicati
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="systemuserallowed">SystemUserAllowed</h3>
 <p>Allows this application to logon as a service. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>

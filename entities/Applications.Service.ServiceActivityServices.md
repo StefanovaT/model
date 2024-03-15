@@ -9,7 +9,7 @@ Contains the services, which were actually performed during the service activity
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {ServiceActivity.DocumentNo} {Service}_  
+_{LineNo}. {ServiceActivity.DocumentNo} {Service}{StateTagsAttribute}_  
 Default Search Members:  
 _ServiceActivity.DocumentNo_  
 Category:  _Definitions_  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [ObjectVersion](Applications.Service.ServiceActivityServices.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Applications.Service.ServiceActivityServices.md#quantity) | [Quantity (9, 2)](../data-types.md#quantity) | The quantity of the service in the measurement unit of the service. `Unit: Service.MeasurementUnit` `Required` `Default(1)` 
 | [ServiceName](Applications.Service.ServiceActivityServices.md#servicename) | string (254) | Description of the conducted service. The description may vary (contain additional information) from the standart name of the service. `Required` `Filter(like)` 
+| [StateTagsAttribute](Applications.Service.ServiceActivityServices.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -145,6 +146,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `obj.Service.Name`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

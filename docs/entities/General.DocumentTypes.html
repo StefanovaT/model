@@ -83,7 +83,7 @@
 <p>List of user-defined document types. Each type has associated system entity (object class). Entity: Gen_Document_Types</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{TypeName:T}</em><br>
+<em>{TypeName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; TypeName</em><br>
 Code Data Member:<br>
@@ -204,6 +204,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.DocumentTypes.html#schemaxml">SchemaXML</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>Obsolete. Not used.</td>
+</tr>
+<tr>
+<td><a href="General.DocumentTypes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.DocumentTypes.html#trackattributechanges">TrackAttributeChanges</a></td>
@@ -448,6 +453,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="trackattributechanges">TrackAttributeChanges</h3>
 <p>Enable/disable attributes change tracking for documents from this type. &quot;Default&quot; means that changes will be tracked for all documents, except transit and adjustment documents. <code>Required</code> <code>Default(&quot;DEF&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 24.1.3.37</code></p>
 <p><em>Type</em>: <strong><a href="General.DocumentTypes.html#trackattributechanges">TrackAttributeChanges</a></strong><br>

@@ -9,7 +9,7 @@ Contains the available valuation groups for products. They are used in reconcili
 
 ## Default Visualization
 Default Display Text Format:  
-_{ValuationGroupName:T}_  
+_{ValuationGroupName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _ValuationGroupCode; ValuationGroupName_  
 Code Data Member:  
@@ -33,6 +33,7 @@ Aggregate Tree
 | [DisplayText](Logistics.Inventory.ProductValuationGroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Inventory.ProductValuationGroups.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.ProductValuationGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Logistics.Inventory.ProductValuationGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ValuationGroupCode](Logistics.Inventory.ProductValuationGroups.md#valuationgroupcode) | string (64) | The unique code of the product valuation group. `Required` `Filter(eq;like)` `ORD` 
 | [ValuationGroupName](Logistics.Inventory.ProductValuationGroups.md#valuationgroupname) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | The name of the product valuation group. `Required` `Filter(eq;like)` 
 
@@ -75,6 +76,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

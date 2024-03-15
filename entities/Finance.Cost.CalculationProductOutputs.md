@@ -9,7 +9,7 @@ Represents costs allocated to product outputs. Entity: Cost_Calculation_Product_
 
 ## Default Visualization
 Default Display Text Format:  
-_{Calculation.EntityName}_  
+_{Calculation.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _Calculation.EntityName_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [ObjectVersion](Finance.Cost.CalculationProductOutputs.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProjectId](Finance.Cost.CalculationProductOutputs.md#projectid) | guid __nullable__ | The Project, which absorbed the cost. `Filter(multi eq)` 
 | [Quantity](Finance.Cost.CalculationProductOutputs.md#quantity) | decimal (18, 3) | The quantity produced. `Required` `Default(0)` 
+| [StateTagsAttribute](Finance.Cost.CalculationProductOutputs.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -115,6 +116,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

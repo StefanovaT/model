@@ -9,7 +9,7 @@ Contains the resources availability for the different periods. Each period is a 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Resource.Name:T}_  
+_{Resource.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Resource.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [FromDate](General.Resources.ResourceAvailability.md#fromdate) | date | The date from which availability starts. `Required` `Filter(ge;le)` 
 | [Id](General.Resources.ResourceAvailability.md#id) | guid |  
 | [ObjectVersion](General.Resources.ResourceAvailability.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.Resources.ResourceAvailability.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDate](General.Resources.ResourceAvailability.md#todate) | date __nullable__ | The date to which the availability continues. When null, the availability continues infinitely. `Filter(ge;le)` 
 
 ## References
@@ -91,6 +92,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

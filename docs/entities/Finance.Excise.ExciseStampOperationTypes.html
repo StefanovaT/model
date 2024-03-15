@@ -83,7 +83,7 @@
 <p>Specifies the type of the Excise Stamp operation. Entity: Exc_Excise_Stamp_Operation_Types (Introduced in version 22.1.5.85)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Code}: {Name}</em><br>
+<em>{Code}: {Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -157,6 +157,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#requireproduct">RequireProduct</a></td>
 <td>boolean <strong>nullable</strong></td>
 <td>Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.91</code></td>
+</tr>
+<tr>
+<td><a href="Finance.Excise.ExciseStampOperationTypes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Finance.Excise.ExciseStampOperationTypes.html#tracksequence">TrackSequence</a></td>
@@ -313,6 +318,13 @@ Generic enum type for ExciseStampOperationTypeEnum properties<br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tracksequence">TrackSequence</h3>
 <p>Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. <code>Filter(eq)</code> <code>Introduced in version 24.1.1.82</code></p>
 <p><em>Type</em>: <strong>boolean <strong>nullable</strong></strong><br>

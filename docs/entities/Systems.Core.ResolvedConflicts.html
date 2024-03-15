@@ -83,7 +83,7 @@
 <p>Contains records of conflicts, which were automatically resolved by update procedures. Entity: Sys_Resolved_Conflicts</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{TableName:T}</em><br>
+<em>{TableName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>TableName</em><br>
 Name Data Member:<br>
@@ -152,6 +152,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>True, when the conflict resolution was revised (reviewed) manually by user. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
+<td><a href="Systems.Core.ResolvedConflicts.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
+</tr>
+<tr>
 <td><a href="Systems.Core.ResolvedConflicts.html#tablename">TableName</a></td>
 <td><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a></td>
 <td>Name of the table in which the conflict has occurred. <code>Required</code> <code>Filter(like)</code> <code>ReadOnly</code></td>
@@ -207,6 +212,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>DateTime.Now</code></p>
 <h3 id="resolvedescription">ResolveDescription</h3>
 <p>Description of the resolution of the conflict. <code>Required</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (400)</a></strong><br>
@@ -230,6 +237,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tablename">TableName</h3>
 <p>Name of the table in which the conflict has occurred. <code>Required</code> <code>Filter(like)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a></strong><br>

@@ -9,7 +9,7 @@ Options per document type for the transfer orders. Entity: Inv_Transfer_Orders_O
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}_  
+_{DocumentType.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [DisplayText](Logistics.Inventory.TransferOrdersOptions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Inventory.TransferOrdersOptions.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.TransferOrdersOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Logistics.Inventory.TransferOrdersOptions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -79,6 +80,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

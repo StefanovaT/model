@@ -83,7 +83,7 @@
 <p>Party pictures - photos, logos, etc. Entity: Gen_Party_Pictures</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Party.PartyName:T}</em><br>
+<em>{Party.PartyName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Party.PartyName</em><br>
 Name Data Member:<br>
@@ -145,6 +145,11 @@ Aggregate Root:<br>
 <td><a href="General.Contacts.PartyPictures.html#pictureno">PictureNo</a></td>
 <td>int32</td>
 <td>Unique picture number within the party. Also used for sorting. <code>Required</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="General.Contacts.PartyPictures.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -231,6 +236,13 @@ Aggregate Root:<br>
 <code>( obj.Party.Pictures.Select( c =&gt; c.PictureNo).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>( obj.Party.Pictures.Select( c =&gt; c.PictureNo).DefaultIfEmpty( 0).Max( ) + 1)</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="party">Party</h3>
 <p>The <see cref="Party"></see> to which this PartyPicture belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

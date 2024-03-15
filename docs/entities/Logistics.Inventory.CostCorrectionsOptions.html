@@ -83,7 +83,7 @@
 <p>Options per document type for the cost corrections. Entity: Inv_Cost_Corrections_Options</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.EntityName}</em><br>
+<em>{DocumentType.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentType.EntityName</em><br>
 Name Data Member:<br>
@@ -130,6 +130,11 @@ Aggregate Root:<br>
 <td><a href="Logistics.Inventory.CostCorrectionsOptions.html#scheduledocumentevents">ScheduleDocumentEvents</a></td>
 <td>boolean</td>
 <td>Indicates wheather the document events caused by the cost correction should be scheduled for later procession. <code>Required</code> <code>Default(false)</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.CostCorrectionsOptions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -188,6 +193,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
 <p>The document type for which we specify the options. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

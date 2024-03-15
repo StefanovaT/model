@@ -83,7 +83,7 @@
 <p>Contains the rentable assets. Entity: Rent_Assets</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{RentalAssetName}</em><br>
+<em>{RentalAssetName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>RentalAssetCode; RentalAssetName</em><br>
 Code Data Member:<br>
@@ -151,6 +151,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Rental.Assets.html#standardguaranteeamount">StandardGuaranteeAmount</a></td>
 <td><a href="../data-types.html#amount">Amount (14, 2)</a> <strong>nullable</strong></td>
 <td>Standard default amount of the guarantee that is set for this asset when leased. <code>Currency: StandardGuarantee&lt;br /&gt;AmountCurrency</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Rental.Assets.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Applications.Rental.Assets.html#timeperiodtype">TimePeriodType</a></td>
@@ -295,6 +300,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="timeperiodtype">TimePeriodType</h3>
 <p>Specifies the unit by which the periods of renting of this asset are measured. Possible values are: 'by days' or 'by months'. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Applications.Rental.Assets.html#timeperiodtype">TimePeriodType</a> <strong>nullable</strong></strong><br>

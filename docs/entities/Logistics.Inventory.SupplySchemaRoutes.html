@@ -87,7 +87,7 @@
 </div>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{SupplySchema.Name}</em><br>
+<em>{SupplySchema.Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>SupplySchema.Name</em><br>
 Name Data Member:<br>
@@ -134,6 +134,11 @@ Aggregate Root:<br>
 <td><a href="Logistics.Inventory.SupplySchemaRoutes.html#schemaxml">SchemaXML</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>Obsolete. Not used. (Used by the schematic control).</td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.SupplySchemaRoutes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.SupplySchemaRoutes.html#transittimedays">TransitTimeDays</a></td>
@@ -207,6 +212,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="transittimedays">TransitTimeDays</h3>
 <p>Obsolete. Not used. (Time needed for the delivery of the goods using this route). <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>

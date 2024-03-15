@@ -83,7 +83,7 @@
 <p>Leads are potential customers for your products. Because leads are usually processed in a hurry or imported from external lists, personal and company information is saved in a less structured way. With the advancement of the qualification process (including deduplication), the information is structured in the usual Person and Company entities. When successfully processed, leads can be converted to Opportunities. Entity: Crm_Leads (Introduced in version 21.1.3.78)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PersonFirstName} {PersonLastName}</em><br>
+<em>{PersonFirstName} {PersonLastName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>CompanyName</em><br>
 Name Data Member:<br>
@@ -180,6 +180,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.Presales.Leads.html#sqltimestamputc">SQLTimestampUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>System assigned date and time (in UTC), when the lead was first promoted to Sales Qualified Lead. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Presales.Leads.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Leads.html#systemstage">SystemStage</a></td>
@@ -382,6 +387,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="systemstage">SystemStage</h3>
 <p>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). <code>Required</code> <code>Default(&quot;NEW&quot;)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Presales.Leads.html#systemstage">SystemStage</a></strong><br>

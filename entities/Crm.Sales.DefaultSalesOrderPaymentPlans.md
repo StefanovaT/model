@@ -9,7 +9,7 @@ Default payment plan for new documents of the specified document type. Entity: C
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}_  
+_{DocumentType.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [ObjectVersion](Crm.Sales.DefaultSalesOrderPaymentPlans.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PaymentTermDays](Crm.Sales.DefaultSalesOrderPaymentPlans.md#paymenttermdays) | int32 | Payment term in days, which are to be added to form the payment due date. 0 means that the date determined by Due_Date_Form_Method and Explicit_Payment_Due_Date is taken as due date. `Required` `Default(0)` 
 | [Remainder](Crm.Sales.DefaultSalesOrderPaymentPlans.md#remainder) | boolean | Indicates wheather this amount is the remainder of the document. Amount = Total amount of the sales order - explicitly specified amounts in the plan (by Amount_Percent). `Required` `Default(false)` 
+| [StateTagsAttribute](Crm.Sales.DefaultSalesOrderPaymentPlans.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -157,6 +158,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.AmountPercent != null), False, obj.Remainder)`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

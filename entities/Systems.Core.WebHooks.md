@@ -9,7 +9,7 @@ Webhook templates. Activated by business rules or other means. Entity: Sys_Web_H
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -39,6 +39,7 @@ Aggregate Tree
 | [ObjectVersion](Systems.Core.WebHooks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RepositoryName](Systems.Core.WebHooks.md#repositoryname) | string (128) | The name of the repository for which the webhook is setup. All interpolated strings will be evaluated in the context of entities of the specified type. `Required` `Filter(eq;like)` 
 | [RetryLogic](Systems.Core.WebHooks.md#retrylogic) | [RetryLogic](Systems.Core.WebHooks.md#retrylogic) | 0=Don't retry (default); 3=Retry up to 3 times. `Required` `Default("0")` 
+| [StateTagsAttribute](Systems.Core.WebHooks.md#statetagsattribute) | string | Specifies the state of the document. 
 | [URL](Systems.Core.WebHooks.md#url) | string (2000) | The destination URL, which should be called by the webhook (interpolated string). `Required` 
 
 
@@ -157,6 +158,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **NoRetry**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### URL
 

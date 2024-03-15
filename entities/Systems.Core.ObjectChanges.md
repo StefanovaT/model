@@ -9,7 +9,7 @@ Actual tracked changes to one object. Entity: Sys_Object_Changes (Introduced in 
 
 ## Default Visualization
 Default Display Text Format:  
-_{RepositoryName}_  
+_{RepositoryName}{StateTagsAttribute}_  
 Default Search Members:  
 _RepositoryName_  
 Name Data Member:  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [ObjectVersion](Systems.Core.ObjectChanges.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [<s>OldValuesJson</s>](Systems.Core.ObjectChanges.md#oldvaluesjson) | string (max) __nullable__ | **OBSOLETE! Do not use!** Old values in a name-value Json format. Only changed data attributes are recorded. Old values are recorded for update and delete. `Obsolete` `Obsoleted in version 22.1.6.61` 
 | [RepositoryName](Systems.Core.ObjectChanges.md#repositoryname) | string (64) | The repository of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. `Required` `Filter(multi eq;like)` 
+| [StateTagsAttribute](Systems.Core.ObjectChanges.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -137,6 +138,16 @@ _Supported Filters_: **Equals, Like, EqualsIn**
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

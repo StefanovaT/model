@@ -9,7 +9,7 @@ Agreements with customers for periodic delivery of services and billing. Entity:
 
 ## Default Visualization
 Default Display Text Format:  
-_{Customer.Party.PartyName:T} - {BillingCycle.Name:T}_  
+_{Customer.Party.PartyName:T} - {BillingCycle.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -31,6 +31,7 @@ Aggregate Tree
 | [Id](Crm.Subscriptions.Subscriptions.md#id) | guid |  
 | [Notes](Crm.Subscriptions.Subscriptions.md#notes) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Notes for this Subscription. `Filter(like)` 
 | [ObjectVersion](Crm.Subscriptions.Subscriptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Crm.Subscriptions.Subscriptions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDate](Crm.Subscriptions.Subscriptions.md#todate) | date __nullable__ | The final date of the subscription if it is time fenced. null means that the subscription is currently open-ended. `Filter(eq;ge;le)` 
 
 ## References
@@ -96,6 +97,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

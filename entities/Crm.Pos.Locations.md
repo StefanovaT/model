@@ -9,7 +9,7 @@ Defines a company location as POS enabled location. Entity: Pos_Locations (Intro
 
 ## Default Visualization
 Default Display Text Format:  
-_{PosLocationCode}_  
+_{PosLocationCode}{StateTagsAttribute}_  
 Default Search Members:  
 _PosLocationCode_  
 Code Data Member:  
@@ -32,6 +32,7 @@ Aggregate Tree
 | [IsActive](Crm.Pos.Locations.md#isactive) | boolean __nullable__ | Indicates whether the POS location is currently active and can be chosen in drop-downs, etc. `Default(true)` `Filter(eq)` 
 | [ObjectVersion](Crm.Pos.Locations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PosLocationCode](Crm.Pos.Locations.md#poslocationcode) | string (16) | Unique (with the enterprise company) code of this POS location. `Required` `Filter(multi eq;like)` 
+| [StateTagsAttribute](Crm.Pos.Locations.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -93,6 +94,16 @@ _Supported Filters_: **Equals, Like, EqualsIn**
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

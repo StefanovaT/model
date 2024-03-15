@@ -9,7 +9,7 @@ The companies in the enterprise that issue documents. Entity: Gen_Enterprise_Com
 
 ## Default Visualization
 Default Display Text Format:  
-_{Company.PartyName:T}_  
+_{Company.PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Company.RegistrationNumber; Company.PartyName_  
 Code Data Member:  
@@ -46,6 +46,7 @@ Aggregate Tree
 | [IsActive](General.EnterpriseCompanies.md#isactive) | boolean | Indicates whether the current Enterprise company  is active. `Required` `Default(true)` `Filter(multi eq)` `Introduced in version 20.1` 
 | [ObjectVersion](General.EnterpriseCompanies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PrintImagesRetentionMonths](General.EnterpriseCompanies.md#printimagesretentionmonths) | int32 | A period of months for which the printed images of the documents will be kept. `Required` `Default(60)` `Filter(multi eq;ge;le)` `Introduced in version 20.1` 
+| [StateTagsAttribute](General.EnterpriseCompanies.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UIBaseColor](General.EnterpriseCompanies.md#uibasecolor) | int32 __nullable__ | When not null, specifies the background color to use for visualization of the UI when the current enterprise company is selected. The color is in RGBA color format. `Introduced in version 18.2` 
 
 ## References
@@ -192,6 +193,16 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **60**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### UIBaseColor
 

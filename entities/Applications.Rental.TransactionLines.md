@@ -9,7 +9,7 @@ Contains all transactions of Record of Handover / Handing-Over Record lines. Ent
 
 ## Default Visualization
 Default Display Text Format:  
-_{RentTransaction.EntityName}_  
+_{RentTransaction.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _RentTransaction.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [Id](Applications.Rental.TransactionLines.md#id) | guid |  
 | [Notes](Applications.Rental.TransactionLines.md#notes) | string (max) __nullable__ | Notes. 
 | [ObjectVersion](Applications.Rental.TransactionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.Rental.TransactionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TransactionTimestamp](Applications.Rental.TransactionLines.md#transactiontimestamp) | datetime | Transaction Timestamp. `Required` `Filter(multi eq;ge;le)` 
 | [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | Transaction Type. `Required` `Filter(eq;like)` 
 
@@ -84,6 +85,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ Contains one debit or credit posting within an accounting voucher. Entity: Acc_V
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {Voucher.DocumentNo} {Voucher.DocumentType.TypeName:T}_  
+_{LineNo}. {Voucher.DocumentNo} {Voucher.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Voucher.DocumentNo_  
 Category:  _Definitions_  
@@ -40,6 +40,7 @@ Aggregate Root:
 | [ObjectVersion](Finance.Accounting.AccountingVoucherLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RateDivisor](Finance.Accounting.AccountingVoucherLines.md#ratedivisor) | decimal (18, 6) | The divisor for conversion from Debit/Credit to base currency. `Required` `Default(1)` 
 | [RateMultiplier](Finance.Accounting.AccountingVoucherLines.md#ratemultiplier) | decimal (18, 6) | The multiplier for conversion from Debit/Credit to base currency. `Required` `Default(1)` 
+| [StateTagsAttribute](Finance.Accounting.AccountingVoucherLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -196,6 +197,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 

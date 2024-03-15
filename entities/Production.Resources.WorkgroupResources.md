@@ -9,7 +9,7 @@ Describes the availability of resources in the active workgroups. Entity: Prd_Wo
 
 ## Default Visualization
 Default Display Text Format:  
-_{Workgroup.Name}_  
+_{Workgroup.Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Workgroup.Name_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [Id](Production.Resources.WorkgroupResources.md#id) | guid |  
 | [Notes](Production.Resources.WorkgroupResources.md#notes) | string (254) __nullable__ | User notes for the workgroup resource. 
 | [ObjectVersion](Production.Resources.WorkgroupResources.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Production.Resources.WorkgroupResources.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -110,6 +111,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -83,7 +83,7 @@
 <p>Contains the properties, that are required to be set, when creating new products in the category and its sub-categories. Entity: Gen_Product_Group_Required_Properties</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ProductGroup.Name:T}</em><br>
+<em>{ProductGroup.Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ProductGroup.Name</em><br>
 Name Data Member:<br>
@@ -145,6 +145,11 @@ Aggregate Root:<br>
 <td><a href="General.Products.ProductGroupRequiredProperties.html#required">Required</a></td>
 <td>boolean</td>
 <td>Specifies whether the property is required (or only suggested) to be set for new products. Suggested properties are used by product configuration and other product creation services. true=Required, false=Suggested. <code>Required</code> <code>Default(false)</code></td>
+</tr>
+<tr>
+<td><a href="General.Products.ProductGroupRequiredProperties.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -234,6 +239,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="productgroup">ProductGroup</h3>
 <p>The <see cref="ProductGroup"></see> to which this ProductGroupRequiredProperty belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

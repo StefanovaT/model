@@ -83,7 +83,7 @@
 <p>Customer contracts list. For each combination of Enterprise Company and external Party there can be zero or one records of this. Entity: Crm_Customers</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Party.PartyName:T}</em><br>
+<em>{Party.PartyName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Number; Party.PartyName</em><br>
 Code Data Member:<br>
@@ -191,6 +191,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.Customers.html#persistsalesorderslots">PersistSalesOrdersLots</a></td>
 <td>boolean</td>
 <td>If checked, specifies that the lots set in the Sales orders for this customer, cannot be changed during the execution of the Store transactions for these Sales orders. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Customers.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.Customers.html#thrudate">ThruDate</a></td>
@@ -424,6 +429,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="thrudate">ThruDate</h3>
 <p>The date of customer relationship termination. null for active customers. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>

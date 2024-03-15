@@ -9,7 +9,7 @@ Represents a query within a data source. Entity: Sys_Data_Source_Queries
 
 ## Default Visualization
 Default Display Text Format:  
-_{TableName}_  
+_{TableName}{StateTagsAttribute}_  
 Default Search Members:  
 _TableName_  
 Name Data Member:  
@@ -37,6 +37,7 @@ Aggregate Root:
 | [Id](Systems.Reporting.DataSourceQueries.md#id) | guid |  
 | [ObjectVersion](Systems.Reporting.DataSourceQueries.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ReferencePath](Systems.Reporting.DataSourceQueries.md#referencepath) | string (max) | A sequence of table names and foreign key columns that define how the data will be loaded by this query. For example - Gen_Documents/<br />Enterprise_Company_<br />Id/Company_Id - will load the definition of the company for the enterprise company of a document. `Required` 
+| [StateTagsAttribute](Systems.Reporting.DataSourceQueries.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TableName](Systems.Reporting.DataSourceQueries.md#tablename) | string (64) __nullable__ | The name of the report query. A Reference_Path can participate more than one time in the report but with different Report_Query_Name. This can be used to specify different filter for the same query. Can be null. 
 | [UniqueName](Systems.Reporting.DataSourceQueries.md#uniquename) | string (64) __nullable__ | The name of the data table in the printout datasource. If null the Reference_Path is used. 
 
@@ -140,6 +141,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TableName
 

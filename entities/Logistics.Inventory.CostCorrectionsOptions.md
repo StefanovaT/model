@@ -9,7 +9,7 @@ Options per document type for the cost corrections. Entity: Inv_Cost_Corrections
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}_  
+_{DocumentType.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [ObjectVersion](Logistics.Inventory.CostCorrectionsOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResetTransactions<br />StateOnReleasing](Logistics.Inventory.CostCorrectionsOptions.md#resettransactionsstateonreleasing) | boolean | When true, the stock transactions state are re-set when the cost correction is released. The idea is to notify these documents, so that they have chance to re-generate their sub-documents. `Required` `Default(false)` `Filter(eq)` 
 | [ScheduleDocumentEvents](Logistics.Inventory.CostCorrectionsOptions.md#scheduledocumentevents) | boolean | Indicates wheather the document events caused by the cost correction should be scheduled for later procession. `Required` `Default(false)` 
+| [StateTagsAttribute](Logistics.Inventory.CostCorrectionsOptions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,6 +95,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

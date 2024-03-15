@@ -83,7 +83,7 @@
 <p>Contains one or more sequence generators for each sequence. Many sequence generators for one sequence are used when the generators must be selected conditionally or when more generators are needed for parallel numbering. Entity: Gen_Sequence_Generators</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Sequence.Name}</em><br>
+<em>{Sequence.Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Sequence.Name</em><br>
 Name Data Member:<br>
@@ -135,6 +135,11 @@ Aggregate Root:<br>
 <td><a href="General.SequenceGenerators.html#sequencepriority">SequencePriority</a></td>
 <td>int32</td>
 <td>The priority in which the sequence is used, compared to other similar sequences. Used only for sequences, for which Simultaneous Transactions=True. <code>Required</code> <code>Default(1)</code></td>
+</tr>
+<tr>
+<td><a href="General.SequenceGenerators.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -217,6 +222,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The Enterprise Company to which this SequenceGenerator applies. <code>Required</code> <code>Filter(multi eq)</code></p>

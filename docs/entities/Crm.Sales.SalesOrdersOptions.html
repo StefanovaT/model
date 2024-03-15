@@ -83,7 +83,7 @@
 <p>Options for sales orders of specific user defined document type. Entity: Crm_Sales_Orders_Options</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.EntityName}</em><br>
+<em>{DocumentType.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentType.EntityName</em><br>
 Name Data Member:<br>
@@ -140,6 +140,11 @@ Aggregate Root:<br>
 <td><a href="Crm.Sales.SalesOrdersOptions.html#shipmentallowance">ShipmentAllowance</a></td>
 <td><a href="Crm.Sales.SalesOrdersOptions.html#shipmentallowance">ShipmentAllowance</a></td>
 <td>Terms on which the shipment of the products in the sales order is allowed. <code>Required</code> <code>Default(&quot;A&quot;)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.SalesOrdersOptions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -280,6 +285,13 @@ Allowed values for the <code>ShipmentAllowance</code>(Crm.Sales.SalesOrdersOptio
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>AlwaysAllow</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="dealdocumenttype">DealDocumentType</h3>
 <p>If filled then new opportunities (deals) from the specified type are created automatically by the sales orders that aren't assigned to existing opportunities. <code>Filter(multi eq)</code></p>

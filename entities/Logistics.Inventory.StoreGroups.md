@@ -9,7 +9,7 @@ Hierarchy of store groups. Entity: Inv_Store_Groups
 
 ## Default Visualization
 Default Display Text Format:  
-_{Code}: {Name}_  
+_{Code}: {Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -36,6 +36,7 @@ Aggregate Tree
 | [Name](Logistics.Inventory.StoreGroups.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this StoreGroup. `Required` `Filter(like)` 
 | [ObjectVersion](Logistics.Inventory.StoreGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [<s>ParentFullPath</s>](Logistics.Inventory.StoreGroups.md#parentfullpath) | string (25) __nullable__ | **OBSOLETE! Do not use!** The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005. `Obsolete` `Filter(eq;like)` `ReadOnly` `Obsoleted in version 23.1.2.3` 
+| [StateTagsAttribute](Logistics.Inventory.StoreGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -122,6 +123,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 

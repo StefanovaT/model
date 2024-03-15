@@ -9,7 +9,7 @@ The price lists, which are updated by the pricing model. Entity: Crm_Pricing_Mod
 
 ## Default Visualization
 Default Display Text Format:  
-_{PricingModel.Name}_  
+_{PricingModel.Name}{StateTagsAttribute}_  
 Default Search Members:  
 _PricingModel.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [LineNo](Crm.Pricing.PricingModelPriceLists.md#lineno) | int32 | The consecutive number of this price list within the pricing model. `Required` 
 | [MarginPercent](Crm.Pricing.PricingModelPriceLists.md#marginpercent) | decimal (6, 5) __nullable__ | Used, when the price will be automatically calculated as percentage difference from standard price. It is usually a negative value. null, when the price will not be automatically calculated in this way. 
 | [ObjectVersion](Crm.Pricing.PricingModelPriceLists.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Crm.Pricing.PricingModelPriceLists.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -95,6 +96,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

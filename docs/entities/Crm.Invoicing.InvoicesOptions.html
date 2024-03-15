@@ -83,7 +83,7 @@
 <p>Default options for user document types for Invoices. Entity: Crm_Invoices_Options</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.EntityName}</em><br>
+<em>{DocumentType.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentType.EntityName</em><br>
 Name Data Member:<br>
@@ -130,6 +130,11 @@ Aggregate Root:<br>
 <td><a href="Crm.Invoicing.InvoicesOptions.html#signrestriction">SignRestriction</a></td>
 <td><a href="Crm.Invoicing.InvoicesOptions.html#signrestriction">SignRestriction</a></td>
 <td>Restricts the sign of the line amounts of the invoices. -1 =allow only negative, 0=allow all, 1=allow only positive amounts. <code>Required</code> <code>Default(0)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoicesOptions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoicesOptions.html#totalamountsignrestriction">TotalAmountSignRestriction</a></td>
@@ -227,6 +232,13 @@ Generic enum type for SignRestriction properties<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="totalamountsignrestriction">TotalAmountSignRestriction</h3>
 <p>Restricts the sign of the total amount (amount to pay) of the invoices. -1 =allow only negative, 0=allow all, 1=allow only positive amounts. <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoicesOptions.html#totalamountsignrestriction">SignRestriction</a></strong><br>

@@ -9,7 +9,7 @@ Contains the actual and history of equipment, installed on the vehicles. Entity:
 
 ## Default Visualization
 Default Display Text Format:  
-_{Vehicle.EngineIdentificationNumber}_  
+_{Vehicle.EngineIdentificationNumber}{StateTagsAttribute}_  
 Default Search Members:  
 _Vehicle.EngineIdentificationNumber_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [ObjectVersion](Applications.Fleet.VehicleEquipment.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Applications.Fleet.VehicleEquipment.md#quantity) | int32 | Quantity of the equipment. `Required` `Default(1)` `Filter(ge;le)` 
 | [StartDate](Applications.Fleet.VehicleEquipment.md#startdate) | date | The installation date of the equipment. `Required` `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Fleet.VehicleEquipment.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -117,6 +118,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

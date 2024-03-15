@@ -9,7 +9,7 @@ Bulk payment order document line. Each line usually creates one payment order. E
 
 ## Default Visualization
 Default Display Text Format:  
-_{BulkPaymentOrder.EntityName}_  
+_{BulkPaymentOrder.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _BulkPaymentOrder.EntityName_  
 Name Data Member:  
@@ -44,6 +44,7 @@ Aggregate Root:
 | [RefInvoiceApplyDate](Finance.Payments.BulkPaymentOrderLines.md#refinvoiceapplydate) | datetime __nullable__ | The apply date of the related invoice. Not specified when the payment order isn't related to any invoice or the apply date is unknown. `Filter(ge;le)` 
 | [RefInvoiceDocumentDate](Finance.Payments.BulkPaymentOrderLines.md#refinvoicedocumentdate) | datetime __nullable__ | The date of the related invoice. null means that the payment order isn't related to any invoice or the date is unknown. `Filter(ge;le)` 
 | [RefInvoiceDocumentNo](Finance.Payments.BulkPaymentOrderLines.md#refinvoicedocumentno) | string (20) __nullable__ | The number of the invoice which is related and is the basis for the payment. null means that the payment order isn't created or related to any invoice. 
+| [StateTagsAttribute](Finance.Payments.BulkPaymentOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalAmount](Finance.Payments.BulkPaymentOrderLines.md#totalamount) | [Amount (18, 2)](../data-types.md#amount) | Total amount that should be payed. `Currency: TotalAmountCurrency` `Required` `Default(0)` 
 
 ## References
@@ -231,6 +232,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **20**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### TotalAmount

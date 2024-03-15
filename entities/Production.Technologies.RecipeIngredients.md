@@ -9,7 +9,7 @@ Contains the materials of a recipe that make up the product. Entity: Prd_Recipe_
 
 ## Default Visualization
 Default Display Text Format:  
-_{Recipe.Name}_  
+_{Recipe.Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Recipe.Name_  
 Name Data Member:  
@@ -38,6 +38,7 @@ Aggregate Root:
 | [ObjectVersion](Production.Technologies.RecipeIngredients.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Price](Production.Technologies.RecipeIngredients.md#price) | [Amount (18, 4)](../data-types.md#amount) | Total price of the ingredient. `Currency: Recipe.Product.CostingCurrency` `Required` `Default(0)` `Filter(ge;le)` 
 | [ScrapRate](Production.Technologies.RecipeIngredients.md#scraprate) | decimal (7, 6) | The usual percentage (0..1) of scrap of the raw material; inflates the requirements of this material for this recipe. `Required` `Default(0)` 
+| [StateTagsAttribute](Production.Technologies.RecipeIngredients.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UnitCost](Production.Technologies.RecipeIngredients.md#unitcost) | [Amount (18, 6)](../data-types.md#amount) | Cost of 1 of Usage_Unit_Id. `Currency: Recipe.Product.CostingCurrency` `Required` `Default(0)` `Filter(ge;le)` 
 | [UnitPrice](Production.Technologies.RecipeIngredients.md#unitprice) | [Amount (18, 6)](../data-types.md#amount) | Price for 1 of Usage_Unit_Id. `Currency: Recipe.Product.CostingCurrency` `Required` `Default(0)` `Filter(ge;le)` 
 | [UsageQuantity](Production.Technologies.RecipeIngredients.md#usagequantity) | [Quantity (18, 6)](../data-types.md#quantity) __nullable__ | Quantity of the material, consumed in the operation. The measurement unit is the primary unit of Material_Item_Id. `Unit: UsageUnit` `Default(1.000)` `Filter(ge;le)` 
@@ -154,6 +155,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### UnitCost
 

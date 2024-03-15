@@ -9,7 +9,7 @@ When specified for a product type, contains the suggested user-defined propertie
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProductType.Name:T}_  
+_{ProductType.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _ProductType.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [ObjectVersion](General.Products.ProductTypePurchaseInvoiceLineProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PropertyNo](General.Products.ProductTypePurchaseInvoiceLineProperties.md#propertyno) | int32 | The consecutive number (position) of the property within the current product type. `Required` 
 | [Required](General.Products.ProductTypePurchaseInvoiceLineProperties.md#required) | boolean | True when the property is required, when creating new purchase invoice lines. False when this only suggests the usage of the property. `Required` `Default(false)` 
+| [StateTagsAttribute](General.Products.ProductTypePurchaseInvoiceLineProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -99,6 +100,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

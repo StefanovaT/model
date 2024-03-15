@@ -9,7 +9,7 @@ Serial numbers, used by the items. Rows are created on first occurrence of the s
 
 ## Default Visualization
 Default Display Text Format:  
-_{SerialNumberField}_  
+_{SerialNumberField}{StateTagsAttribute}_  
 Default Search Members:  
 _SerialNumberField_  
 Category:  _Definitions_  
@@ -29,6 +29,7 @@ Aggregate Tree
 | [Id](Logistics.Inventory.SerialNumbers.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.SerialNumbers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SerialNumberField](Logistics.Inventory.SerialNumbers.md#serialnumberfield) | string (40) | The serial number text. `Required` `Filter(multi eq;like)` 
+| [StateTagsAttribute](Logistics.Inventory.SerialNumbers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -78,6 +79,16 @@ _Supported Filters_: **Equals, Like, EqualsIn**
 _Supports Order By_: **False**  
 _Maximum Length_: **40**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

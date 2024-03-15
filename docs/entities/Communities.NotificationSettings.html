@@ -83,7 +83,7 @@
 <p>User notification settings for the different notification classes. Entity: Cmm_Notification_Settings (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {UserId}</em><br>
+<em>{Id}: {UserId}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -138,6 +138,11 @@ Show in UI:  <em>CannotBeShown</em></p>
 <td><a href="Communities.NotificationSettings.html#receivesms">ReceiveSms</a></td>
 <td>boolean</td>
 <td>True if the user should receive SMS. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Communities.NotificationSettings.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -212,6 +217,13 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="user">User</h3>
 <p>The user for whom the notification setting is about. <code>Required</code> <code>Filter(multi eq)</code></p>

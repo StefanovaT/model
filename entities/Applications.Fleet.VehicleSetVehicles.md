@@ -9,7 +9,7 @@ Contains lists of vehicles in the vehicle sets. Entity: Fleet_Vehicle_Set_Vehicl
 
 ## Default Visualization
 Default Display Text Format:  
-_{VehicleSet.Name:T}_  
+_{VehicleSet.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _VehicleSet.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Notes](Applications.Fleet.VehicleSetVehicles.md#notes) | string (254) __nullable__ | Notes for this VehicleSetVehicle. `Filter(like)` 
 | [ObjectVersion](Applications.Fleet.VehicleSetVehicles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrdinalPos](Applications.Fleet.VehicleSetVehicles.md#ordinalpos) | int32 __nullable__ | Ordinal position of the vehicle within the vehicle set. Position 0 has special meaning - this is the leading vehicle. `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Fleet.VehicleSetVehicles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,6 +95,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

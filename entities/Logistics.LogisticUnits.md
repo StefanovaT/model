@@ -9,7 +9,7 @@ Composition of products established for transport and/or storage which needs to 
 
 ## Default Visualization
 Default Display Text Format:  
-_{SerialCode}_  
+_{SerialCode}{StateTagsAttribute}_  
 Default Search Members:  
 _SerialCode_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Tree
 | [Notes](Logistics.LogisticUnits.md#notes) | string (max) __nullable__ | Notes for this LogisticUnit. `Filter(like)` 
 | [ObjectVersion](Logistics.LogisticUnits.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SerialCode](Logistics.LogisticUnits.md#serialcode) | string (32) | Unique serial code of the logistic unit. If GS1 coding is used, this is the SSCC. `Required` `Filter(multi eq;like)` `ORD` 
+| [StateTagsAttribute](Logistics.LogisticUnits.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -138,6 +139,16 @@ _Supported Filters_: **Equals, Like, EqualsIn**
 _Supports Order By_: **True**  
 _Maximum Length_: **32**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

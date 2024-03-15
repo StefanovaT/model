@@ -83,7 +83,7 @@
 <p>Bulk payment order document line. Each line usually creates one payment order. Entity: Cash_Bulk_Payment_Order_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{BulkPaymentOrder.EntityName}</em><br>
+<em>{BulkPaymentOrder.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>BulkPaymentOrder.EntityName</em><br>
 Name Data Member:<br>
@@ -180,6 +180,11 @@ Aggregate Root:<br>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#refinvoicedocumentno">RefInvoiceDocumentNo</a></td>
 <td>string (20) <strong>nullable</strong></td>
 <td>The number of the invoice which is related and is the basis for the payment. null means that the payment order isn't created or related to any invoice.</td>
+</tr>
+<tr>
+<td><a href="Finance.Payments.BulkPaymentOrderLines.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Finance.Payments.BulkPaymentOrderLines.html#totalamount">TotalAmount</a></td>
@@ -395,6 +400,13 @@ Allowed values for the <code>Direction</code>(Finance.Payments.BulkPaymentOrderL
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>20</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="totalamount">TotalAmount</h3>
 <p>Total amount that should be payed. <code>Currency: TotalAmountCurrency</code> <code>Required</code> <code>Default(0)</code></p>

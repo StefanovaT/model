@@ -9,7 +9,7 @@ Represents the hierarchy of the function groups. They group the multitude of res
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Tree
 | [Name](Production.Resources.FunctionGroups.md#name) | string (64) | The name of this FunctionGroup. `Required` `Filter(like)` 
 | [ObjectVersion](Production.Resources.FunctionGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Parent](Production.Resources.FunctionGroups.md#parent) | string (254) | The path of the parent item. `Required` `Default("/")` `Filter(eq;like)` `ORD` 
+| [StateTagsAttribute](Production.Resources.FunctionGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -108,6 +109,16 @@ _Supports Order By_: **True**
 _Maximum Length_: **254**  
 _Default Value_: **/**  
 _Show in UI_: **CannotBeShown**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

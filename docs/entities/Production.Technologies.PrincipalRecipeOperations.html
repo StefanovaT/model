@@ -83,7 +83,7 @@
 <p>Contains the operations within a principal recipe. Entity: Prd_Principal_Recipe_Operations</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PrincipalRecipe.Name}</em><br>
+<em>{PrincipalRecipe.Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>PrincipalRecipe.Name</em><br>
 Name Data Member:<br>
@@ -170,6 +170,11 @@ Aggregate Root:<br>
 <td><a href="Production.Technologies.PrincipalRecipeOperations.html#setuptimeminutes">SetupTimeMinutes</a></td>
 <td>int32</td>
 <td>Time needed to setup the equipment. <code>Required</code> <code>Default(0)</code> <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Production.Technologies.PrincipalRecipeOperations.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Production.Technologies.PrincipalRecipeOperations.html#tooling">Tooling</a></td>
@@ -341,6 +346,13 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Operation.SetupTimeMinutes</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tooling">Tooling</h3>
 <p>The tools needed for the routing step.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>

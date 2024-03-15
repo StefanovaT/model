@@ -9,7 +9,7 @@ Represents the different types of additional amounts which are calculated for th
 
 ## Default Visualization
 Default Display Text Format:  
-_{AmountTypeName:T}_  
+_{AmountTypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _AmountTypeCode; AmountTypeName_  
 Code Data Member:  
@@ -47,6 +47,7 @@ Aggregate Tree
 | [ObjectVersion](General.DocumentAmountTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PercentInputAllowed](General.DocumentAmountTypes.md#percentinputallowed) | boolean | True when the user is allowed to input percent of total for distribution. `Required` `Default(true)` `Filter(eq)` 
 | [RoundScale](General.DocumentAmountTypes.md#roundscale) | int32 __nullable__ | The amounts should be rounded with the specified number of digits after the decimal point. null means to use the currency default. 
+| [StateTagsAttribute](General.DocumentAmountTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UnitAmountInputAllowed](General.DocumentAmountTypes.md#unitamountinputallowed) | boolean | Specifies whether the user is allowed to input fixed unit amount for the calculation of the amount. `Required` `Default(false)` `Filter(eq)` 
 
 ## References
@@ -259,6 +260,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### UnitAmountInputAllowed
 

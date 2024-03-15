@@ -9,7 +9,7 @@ A set of changes, performed in one request. Entity: Sys_Object_Changesets (Intro
 
 ## Default Visualization
 Default Display Text Format:  
-_{User} {TimeUtc}_  
+_{User} {TimeUtc}{StateTagsAttribute}_  
 Default Search Members:  
 _ApplicationName_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Tree
 | [Id](Systems.Core.ObjectChangesets.md#id) | guid |  
 | [ObjectVersion](Systems.Core.ObjectChangesets.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ServerVersion](Systems.Core.ObjectChangesets.md#serverversion) | string (16) | The version of the application server at the time of the change. `Required` 
+| [StateTagsAttribute](Systems.Core.ObjectChangesets.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TimeUtc](Systems.Core.ObjectChangesets.md#timeutc) | datetime | Date and time (in Utc) when the changeset was processed by the server. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ORD` 
 
 ## References
@@ -101,6 +102,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **16**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TimeUtc
 

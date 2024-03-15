@@ -13,7 +13,7 @@ Obsolete. Not used. Entity: Sec_User_Access_Keys (Obsoleted in version 22.1.6.60
 
 ## Default Visualization
 Default Display Text Format:  
-_{User.Name:T}_  
+_{User.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _User.Name_  
 Name Data Member:  
@@ -48,6 +48,7 @@ Aggregate Root:
 | [Permission7](Systems.Security.UserAccessKeys.md#permission7) | boolean | Obsolete. Not used. `Required` `Default(false)` 
 | [Permission8](Systems.Security.UserAccessKeys.md#permission8) | boolean | Obsolete. Not used. `Required` `Default(false)` 
 | [Permission9](Systems.Security.UserAccessKeys.md#permission9) | boolean | Obsolete. Not used. `Required` `Default(false)` 
+| [StateTagsAttribute](Systems.Security.UserAccessKeys.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -217,6 +218,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

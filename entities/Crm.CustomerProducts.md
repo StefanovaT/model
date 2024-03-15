@@ -9,7 +9,7 @@ Contains the products, that are contracted (listed) with a customer. Entity: Crm
 
 ## Default Visualization
 Default Display Text Format:  
-_{Customer.Party.PartyName:T}_  
+_{Customer.Party.PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Customer.Party.PartyName_  
 Name Data Member:  
@@ -39,6 +39,7 @@ Aggregate Root:
 | [Notes](Crm.CustomerProducts.md#notes) | string (254) __nullable__ | Notes for the listing. 
 | [ObjectVersion](Crm.CustomerProducts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrderMultiple](Crm.CustomerProducts.md#ordermultiple) | [Quantity (10, 3)](../data-types.md#quantity) __nullable__ | Determines the step when the system offers a quantity to order. `Unit: InStoreQuantityUnit` `Filter(eq;ge;le)` 
+| [StateTagsAttribute](Crm.CustomerProducts.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDate](Crm.CustomerProducts.md#todate) | date __nullable__ | The final date of the listing. null when the final date is unknown. `Filter(eq;ge;le)` 
 
 ## References
@@ -155,6 +156,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### ToDate
 

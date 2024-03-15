@@ -9,7 +9,7 @@ Contains the results of a cost distribution calculation. Entity: Cost_Distributi
 
 ## Default Visualization
 Default Display Text Format:  
-_{CostDistribution.EntityName}_  
+_{CostDistribution.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _CostDistribution.EntityName_  
 Name Data Member:  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [LineNo](Finance.Cost.DistributionResults.md#lineno) | int32 | Consecutive line number (within the cost distribution document) of the result. `Required` 
 | [ObjectVersion](Finance.Cost.DistributionResults.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OutputLineNo](Finance.Cost.DistributionResults.md#outputlineno) | int32 | The line number (within the document) of the output over which the cost is distributed. `Required` 
+| [StateTagsAttribute](Finance.Cost.DistributionResults.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -109,6 +110,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

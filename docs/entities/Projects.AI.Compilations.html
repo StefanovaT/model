@@ -83,7 +83,7 @@
 <p>Compilation is created, when a Model is being compiled through the AI provider into a conversational model. Entity: Llm_Compilations (Introduced in version 24.1.2.4)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{CompiledModelName}</em><br>
+<em>{CompiledModelName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>CompiledModelName</em><br>
 Name Data Member:<br>
@@ -154,6 +154,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.AI.Compilations.html#starttimeutc">StartTimeUtc</a></td>
 <td>datetime</td>
 <td>The time, when the compilation was started. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="Projects.AI.Compilations.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Projects.AI.Compilations.html#status">Status</a></td>
@@ -271,6 +276,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="status">Status</h3>
 <p>The status of the build job of the compilation. Building the compilation runs through New, Running and Completed. Deleting the compilation from the providers space marks it as Deleted. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Projects.AI.Compilations.html#status">Status</a></strong><br>

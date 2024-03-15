@@ -9,7 +9,7 @@ User-defined models for cost allocation. Entity: Cost_Allocation_Models
 
 ## Default Visualization
 Default Display Text Format:  
-_{CostAllocationModelName}_  
+_{CostAllocationModelName}{StateTagsAttribute}_  
 Default Search Members:  
 _CostAllocationModelName_  
 Name Data Member:  
@@ -31,6 +31,7 @@ Aggregate Tree
 | [DisplayText](Finance.Cost.AllocationModels.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Cost.AllocationModels.md#id) | guid |  
 | [ObjectVersion](Finance.Cost.AllocationModels.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Cost.AllocationModels.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -77,6 +78,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

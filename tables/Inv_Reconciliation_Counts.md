@@ -7,6 +7,11 @@ Entity: [Logistics.Inventory.ReconciliationCounts](~/entities/Logistics.Inventor
 
 Used for planned reconciliations to count product quantities from multiple devices. Entity: Inv_Reconciliation_Counts (Introduced in version 24.1.3.48)
 
+## Owner Tables Hierarchy
+
+* [Inv_Reconciliations](Inv_Reconciliations.md)
+* [Gen_Documents](Gen_Documents.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -253,7 +258,7 @@ The planned reconciliation for which to execute the current counting.
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

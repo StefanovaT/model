@@ -83,7 +83,7 @@
 <p>Warehouse lots. They contain one row for each specific product, status, production batch and other specific warehousing conditions. Lot status can block certain operations. Entity: Inv_Lots</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Number}</em><br>
+<em>{Number}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Number</em><br>
 Code Data Member:<br>
@@ -160,6 +160,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Inventory.Lots.html#receiptdate">ReceiptDate</a></td>
 <td>date <strong>nullable</strong></td>
 <td>The date of the first receipt of products in this lot. <code>Filter(ge;le)</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.Lots.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.Lots.html#status">Status</a></td>
@@ -294,6 +299,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="status">Status</h3>
 <p>Status of the warehouse lot. Minus statuses describe blocked conditions. -3 blocked for document (sales or service order) -2 blocked for party -1 blocked for inspection 0 free to use. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html#status">Status</a></strong><br>

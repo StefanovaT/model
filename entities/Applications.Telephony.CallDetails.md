@@ -9,7 +9,7 @@ Contains call detail records. Calls are phone calls, video calls and SMS message
 
 ## Default Visualization
 Default Display Text Format:  
-_{CalledPartyNumber}_  
+_{CalledPartyNumber}{StateTagsAttribute}_  
 Default Search Members:  
 _CalledPartyNumber_  
 Code Data Member:  
@@ -36,6 +36,7 @@ Aggregate Tree
 | [Id](Applications.Telephony.CallDetails.md#id) | guid |  
 | [ObjectVersion](Applications.Telephony.CallDetails.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartTime](Applications.Telephony.CallDetails.md#starttime) | datetime | The starting date and time of the call. `Required` `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Telephony.CallDetails.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -151,6 +152,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

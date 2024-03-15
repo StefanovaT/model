@@ -9,7 +9,7 @@ Contains data about the execution of Upgrade Procedures. Contains status message
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {UpdateProcedure}_  
+_{Id}: {UpdateProcedure}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -30,6 +30,7 @@ Aggregate Tree
 | [Id](Systems.Core.UpdateProcedureExecutes.md#id) | guid |  
 | [ObjectVersion](Systems.Core.UpdateProcedureExecutes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResultMessage](Systems.Core.UpdateProcedureExecutes.md#resultmessage) | string (1024) __nullable__ | Error or success message. 
+| [StateTagsAttribute](Systems.Core.UpdateProcedureExecutes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Successful](Systems.Core.UpdateProcedureExecutes.md#successful) | boolean | True when the execution was successfull. `Required` `Default(true)` 
 | [UpdateProcedure](Systems.Core.UpdateProcedureExecutes.md#updateprocedure) | string (128) | The system name of the executed update procedure. `Required` 
 
@@ -86,6 +87,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **1024**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### Successful
 

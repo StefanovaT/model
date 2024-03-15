@@ -9,7 +9,7 @@ Specifies additional options for document routes, generating Rental Transactions
 
 ## Default Visualization
 Default Display Text Format:  
-_{Route.ProcedureName}_  
+_{Route.ProcedureName}{StateTagsAttribute}_  
 Default Search Members:  
 _Route.ProcedureName_  
 Name Data Member:  
@@ -32,6 +32,7 @@ Aggregate Root:
 | [DisplayText](Applications.Rental.TransactionTemplates.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Rental.TransactionTemplates.md#id) | guid |  
 | [ObjectVersion](Applications.Rental.TransactionTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.Rental.TransactionTemplates.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TransactionType](Applications.Rental.TransactionTemplates.md#transactiontype) | [TransactionType](Applications.Rental.TransactionTemplates.md#transactiontype) | Transaction type for the rent transaction that is to be created. `Required` 
 
 ## References
@@ -68,6 +69,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

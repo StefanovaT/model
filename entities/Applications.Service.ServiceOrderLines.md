@@ -9,7 +9,7 @@ Contains the details and problem symptoms for each object, which requires servic
 
 ## Default Visualization
 Default Display Text Format:  
-_{ServiceOrder.EntityName}_  
+_{ServiceOrder.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _ServiceOrder.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [Id](Applications.Service.ServiceOrderLines.md#id) | guid |  
 | [LineNo](Applications.Service.ServiceOrderLines.md#lineno) | int32 | Consecutive line number, unique within the document. Usually is increasing in steps of 10, like in 10, 20, 30, etc. `Required` `Filter(eq)` 
 | [ObjectVersion](Applications.Service.ServiceOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.Service.ServiceOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SymptomDescription](Applications.Service.ServiceOrderLines.md#symptomdescription) | string (254) __nullable__ | Description or synopsis of the symptoms of the failed object. `Filter(like)` 
 
 ## References
@@ -85,6 +86,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

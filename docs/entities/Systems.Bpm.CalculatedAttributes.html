@@ -83,7 +83,7 @@
 <p>User-defined read-only calculated attribute. Entity: Sys_Calculated_Attributes</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -159,6 +159,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Bpm.CalculatedAttributes.html#startingexpressionno">StartingExpressionNo</a></td>
 <td>int32</td>
 <td>The expression, from which the calculation starts. The result of the expression gives the value of the calculated attribute. <code>Required</code> <code>Default(10)</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Bpm.CalculatedAttributes.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -256,6 +261,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>10</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

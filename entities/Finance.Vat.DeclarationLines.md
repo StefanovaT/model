@@ -9,7 +9,7 @@ Contains the VAT declaration lines for declaration, issued by the enterprise com
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {Declaration.DocumentNo} {Declaration.DocumentType.TypeName:T}_  
+_{LineNo}. {Declaration.DocumentNo} {Declaration.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Declaration.DocumentNo_  
 Category:  _Definitions_  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [LineNo](Finance.Vat.DeclarationLines.md#lineno) | int32 | Consecutive line number within the document. `Required` 
 | [Notes](Finance.Vat.DeclarationLines.md#notes) | string (max) __nullable__ | Notes for this DeclarationLine. 
 | [ObjectVersion](Finance.Vat.DeclarationLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Vat.DeclarationLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -107,6 +108,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

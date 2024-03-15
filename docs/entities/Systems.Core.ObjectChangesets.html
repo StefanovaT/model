@@ -83,7 +83,7 @@
 <p>A set of changes, performed in one request. Entity: Sys_Object_Changesets (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{User} {TimeUtc}</em><br>
+<em>{User} {TimeUtc}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ApplicationName</em><br>
 Name Data Member:<br>
@@ -138,6 +138,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.ObjectChangesets.html#serverversion">ServerVersion</a></td>
 <td>string (16)</td>
 <td>The version of the application server at the time of the change. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Core.ObjectChangesets.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ObjectChangesets.html#timeutc">TimeUtc</a></td>
@@ -218,6 +223,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>16</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="timeutc">TimeUtc</h3>
 <p>Date and time (in Utc) when the changeset was processed by the server. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>

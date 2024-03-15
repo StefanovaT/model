@@ -83,7 +83,7 @@
 <p>Template for material usage of a principal recipe. Entity: Prd_Principal_Recipe_Ingredients</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{IngredientName}</em><br>
+<em>{IngredientName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>IngredientName</em><br>
 Name Data Member:<br>
@@ -155,6 +155,11 @@ Aggregate Root:<br>
 <td><a href="Production.Technologies.PrincipalRecipeIngredients.html#scraprate">ScrapRate</a></td>
 <td>decimal (7, 6)</td>
 <td>The usual percentage (0..1) of scrap of the raw material; inflates the requirements of this material for this recipe. <code>Required</code> <code>Default(0)</code> <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Production.Technologies.PrincipalRecipeIngredients.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Production.Technologies.PrincipalRecipeIngredients.html#usagequantity">UsageQuantity</a></td>
@@ -306,6 +311,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="usagequantity">UsageQuantity</h3>
 <p>Quantity to be consumed from the material. null means that the quantity is specified with formula. <code>Unit: UsageUnit</code> <code>Default(1)</code> <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 6)</a> <strong>nullable</strong></strong><br>

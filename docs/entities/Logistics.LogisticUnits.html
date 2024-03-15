@@ -83,7 +83,7 @@
 <p>Composition of products established for transport and/or storage which needs to be managed through the supply chain. Entity: Log_Logistic_Units (Introduced in version 21.1.0.77)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{SerialCode}</em><br>
+<em>{SerialCode}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>SerialCode</em><br>
 Code Data Member:<br>
@@ -150,6 +150,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.LogisticUnits.html#serialcode">SerialCode</a></td>
 <td>string (32)</td>
 <td>Unique serial code of the logistic unit. If GS1 coding is used, this is the SSCC. <code>Required</code> <code>Filter(multi eq;like)</code> <code>ORD</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.LogisticUnits.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -263,6 +268,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>32</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="cargotype">CargoType</h3>
 <p>General type of the cargo of the logistic unit. null means unknown or N/A. <code>Filter(multi eq)</code></p>

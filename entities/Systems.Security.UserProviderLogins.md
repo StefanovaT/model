@@ -9,7 +9,7 @@ External login providers. Entity: Sec_User_Provider_Logins (Introduced in versio
 
 ## Default Visualization
 Default Display Text Format:  
-_{User.Name:T}_  
+_{User.Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _User.Name_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [ObjectVersion](Systems.Security.UserProviderLogins.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProviderKey](Systems.Security.UserProviderLogins.md#providerkey) | string (450) | The key, which the provider provided for logging the user. `Required` `Filter(multi eq)` 
 | [ProviderName](Systems.Security.UserProviderLogins.md#providername) | [ProviderName](Systems.Security.UserProviderLogins.md#providername) | The system name of the authentication provider. It should be already registered for the domain. `Required` `Filter(eq)` `Introduced in version 20.1` 
+| [StateTagsAttribute](Systems.Security.UserProviderLogins.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -103,6 +104,16 @@ _Allowed Values (Systems.Security.DomainProvidersRepository.ProviderName Enum Me
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

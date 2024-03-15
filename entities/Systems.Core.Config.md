@@ -9,7 +9,7 @@ Hierarchical repository of configuration options. Entity: Gen_Config
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {KeyPath}_  
+_{Id}: {KeyPath}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Settings_  
@@ -32,6 +32,7 @@ Aggregate Tree
 | [KeyPath](Systems.Core.Config.md#keypath) | string (128) | Full path of the configuration option. `Required` `Filter(eq;like)` `ORD` 
 | [KeyValue](Systems.Core.Config.md#keyvalue) | string (max) __nullable__ | The value of the configuration option. `Filter(eq;like)` 
 | [ObjectVersion](Systems.Core.Config.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Systems.Core.Config.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UserLogin](Systems.Core.Config.md#userlogin) | string (64) __nullable__ | If not null, the configuration option is specific to the user. `Filter(eq;like)` 
 | [UserMachine](Systems.Core.Config.md#usermachine) | string (64) __nullable__ | If not null, the configuration option is specific to the machine. `Filter(eq;like)` 
 
@@ -108,6 +109,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

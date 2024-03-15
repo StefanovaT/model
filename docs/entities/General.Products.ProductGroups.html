@@ -83,7 +83,7 @@
 <p>Hierarchical categorization of the products. Entity: Gen_Product_Groups</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}</em><br>
+<em>{Name:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -203,6 +203,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Products.ProductGroups.html#productnamemask">ProductNameMask</a></td>
 <td><a href="../data-types.html#multilanguagestring">MultilanguageString (1000)</a> <strong>nullable</strong></td>
 <td>When not null specifies mask for new product names for this group and its sub-groups. The mask substitutes {0}..{n} with the appropriate custom attributes.</td>
+</tr>
+<tr>
+<td><a href="General.Products.ProductGroups.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductGroups.html#uselots">UseLots</a></td>
@@ -440,6 +445,13 @@ Allowed values for the <code>ConfiguratorStatus</code>(General.Products.ProductG
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="uselots">UseLots</h3>
 <p>Specifies whether for the products from this group and its sub-groups the use of lots in store documents is required or is unallowed or is allowed while not required.</p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductGroups.html#uselots">UseLots</a> <strong>nullable</strong></strong><br>

@@ -83,7 +83,7 @@
 <p>Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {EnterpriseCompanyId}</em><br>
+<em>{Id}: {EnterpriseCompanyId}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Settings</em><br>
@@ -143,6 +143,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.WebSites.html#settingsjson">SettingsJson</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>The field specifies the JSON settings for this website. null means that there are no specific settings for this website. <code>Introduced in version 23.1.0.37</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Core.WebSites.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.WebSites.html#websitetype">WebSiteType</a></td>
@@ -240,6 +245,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="websitetype">WebSiteType</h3>
 <p>The type of web site - Api, Client Center, Id, etc. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.WebSites.html#websitetype">WebSiteType</a></strong><br>

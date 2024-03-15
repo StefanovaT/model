@@ -83,7 +83,7 @@
 <p>Contains history of saved version of the managed objects. Entity: Sys_Object_Versions</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Object}</em><br>
+<em>{Object}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Object</em><br>
 Name Data Member:<br>
@@ -130,6 +130,11 @@ Aggregate Root:<br>
 <td><a href="Systems.Core.ObjectVersions.html#serverversion">ServerVersion</a></td>
 <td>string (15) <strong>nullable</strong></td>
 <td>The version of the EnterpriseOne server, which created the version. The version should be in the form (9.9.9.9). null means the version is unknown.</td>
+</tr>
+<tr>
+<td><a href="Systems.Core.ObjectVersions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ObjectVersions.html#version">Version</a></td>
@@ -207,6 +212,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>15</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="version">Version</h3>
 <p>The version number of the version, stored in the current row, starting from 1. <code>Required</code> <code>Filter(multi eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>

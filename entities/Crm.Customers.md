@@ -9,7 +9,7 @@ Customer contracts list. For each combination of Enterprise Company and external
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}_  
+_{Party.PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Number; Party.PartyName_  
 Code Data Member:  
@@ -46,6 +46,7 @@ Aggregate Tree
 | [Number](Crm.Customers.md#number) | string (16) __nullable__ | Unique customer number. `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Crm.Customers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PersistSalesOrdersLots](Crm.Customers.md#persistsalesorderslots) | boolean | If checked, specifies that the lots set in the Sales orders for this customer, cannot be changed during the execution of the Store transactions for these Sales orders. `Required` `Default(false)` `Filter(eq)` 
+| [StateTagsAttribute](Crm.Customers.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ThruDate](Crm.Customers.md#thrudate) | datetime __nullable__ | The date of customer relationship termination. null for active customers. `Filter(ge;le)` 
 | [UpdateTime](Crm.Customers.md#updatetime) | datetime __nullable__ | Date and time when the Customer was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](Crm.Customers.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Customer. `Filter(like)` `ReadOnly` 
@@ -253,6 +254,16 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### ThruDate
 

@@ -13,7 +13,7 @@ Represents an article in a news web module. Entity: Cms_News_Web_Module_Articles
 
 ## Default Visualization
 Default Display Text Format:  
-_{LanguageCode}_  
+_{LanguageCode}{StateTagsAttribute}_  
 Default Search Members:  
 _LanguageCode_  
 Code Data Member:  
@@ -38,6 +38,7 @@ Aggregate Tree
 | [LanguageCode](Applications.Cms.NewsWebModuleArticles.md#languagecode) | string (8) | The language code of the article text. `Required` 
 | [ObjectVersion](Applications.Cms.NewsWebModuleArticles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PublishDate](Applications.Cms.NewsWebModuleArticles.md#publishdate) | datetime | The date and time when the news article should appear to be published. `Required` `Default(Now)` `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Cms.NewsWebModuleArticles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -121,6 +122,16 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

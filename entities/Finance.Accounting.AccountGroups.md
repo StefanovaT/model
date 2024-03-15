@@ -9,7 +9,7 @@ Hierarchical chart of account groups. Entity: Acc_Account_Groups
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}_  
+_{Name:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Number; Name_  
 Code Data Member:  
@@ -37,6 +37,7 @@ Aggregate Tree
 | [Name](Finance.Accounting.AccountGroups.md#name) | [MultilanguageString (160)](../data-types.md#multilanguagestring) | Account group name, required. Must be unique within the parent group. `Required` `Filter(like)` 
 | [Number](Finance.Accounting.AccountGroups.md#number) | string (30) | Unique account group number. May contain characters, if required. `Required` `Filter(like)` `ORD` 
 | [ObjectVersion](Finance.Accounting.AccountGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Accounting.AccountGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -126,6 +127,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

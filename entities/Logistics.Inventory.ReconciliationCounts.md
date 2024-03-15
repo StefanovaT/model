@@ -9,17 +9,21 @@ Used for planned reconciliations to count product quantities from multiple devic
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProductId}: {Quantity}_  
+_{Reconciliation.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
-__  
+_Reconciliation.EntityName_  
+Name Data Member:  
+_Reconciliation.EntityName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Tree  
-* [Logistics.Inventory.ReconciliationCounts](Logistics.Inventory.ReconciliationCounts.md)  
+Aggregate Parent:  
+[Logistics.Inventory.Reconciliations](Logistics.Inventory.Reconciliations.md)  
+Aggregate Root:  
+[Logistics.Inventory.Reconciliations](Logistics.Inventory.Reconciliations.md)  
 
 ## Attributes
 
@@ -30,6 +34,7 @@ Aggregate Tree
 | [Id](Logistics.Inventory.ReconciliationCounts.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.ReconciliationCounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Logistics.Inventory.ReconciliationCounts.md#quantity) | decimal (12, 3) | The counted quantity in the default measurement unit of the product. `Required` `Filter(ge;le)` 
+| [StateTagsAttribute](Logistics.Inventory.ReconciliationCounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -38,7 +43,7 @@ Aggregate Tree
 | [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](Logistics.Inventory.ReconciliationCounts.md#product) | [Products](General.Products.Products.md) | The product which is currently counted. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
-| [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` |
+| [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` `Owner` |
 
 
 ## Attribute Details
@@ -93,6 +98,16 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 
@@ -125,11 +140,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Reconciliation
 
-The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51`
+The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` `Owner`
 
 _Type_: **[Reconciliations](Logistics.Inventory.Reconciliations.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 

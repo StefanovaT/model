@@ -83,7 +83,7 @@
 <p>Contains base data for different kind of parties - companies, persons, departments, etc. Entity: Gen_Parties</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PartyName:T}</em><br>
+<em>{PartyName:T}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>PartyCode; PartyName</em><br>
 Code Data Member:<br>
@@ -186,6 +186,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Contacts.Parties.html#partyupdateuser">PartyUpdateUser</a></td>
 <td>string (64) <strong>nullable</strong></td>
 <td>Login name of the user, who last updated the Party. <code>Filter(like)</code> <code>ReadOnly</code></td>
+</tr>
+<tr>
+<td><a href="General.Contacts.Parties.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -407,6 +412,13 @@ Allowed values for the PartyType data attribute<br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="administrativeregion">AdministrativeRegion</h3>

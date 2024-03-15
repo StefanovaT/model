@@ -10,7 +10,7 @@ Contains company definitions. Entity: Cm_Companies
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName:T}_  
+_{PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _PartyCode; Name_  
 Code Data Member:  
@@ -63,6 +63,7 @@ Aggregate Tree
 | [RegistrationType](General.Contacts.Companies.md#registrationtype) | [MultilanguageString (16)](../data-types.md#multilanguagestring) __nullable__ | Legal registration type - like LTD., PLC, etc. null means unknown. `Filter(eq)` 
 | [RegistrationVATNumber](General.Contacts.Companies.md#registrationvatnumber) | string (16) __nullable__ | VAT registration number where applicable. null means that VAT number is not applicable or unknown. `Filter(eq)` `ORD` 
 | [ResponsiblePersonName](General.Contacts.Companies.md#responsiblepersonname) | [MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__ | Primary responsible person of the company. null means unknown. `Filter(like)` 
+| [StateTagsAttribute](General.Contacts.Companies.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UpdateTime](General.Contacts.Companies.md#updatetime) | datetime __nullable__ | Date and time when the Company was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](General.Contacts.Companies.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Company. `Filter(like)` `ReadOnly` 
 
@@ -384,6 +385,16 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### UpdateTime
 

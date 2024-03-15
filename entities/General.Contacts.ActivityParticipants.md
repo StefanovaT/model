@@ -9,7 +9,7 @@ Contains the additional participants in the activities. These are the participat
 
 ## Default Visualization
 Default Display Text Format:  
-_{Activity.EntityName}_  
+_{Activity.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _Activity.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [Id](General.Contacts.ActivityParticipants.md#id) | guid |  
 | [Notes](General.Contacts.ActivityParticipants.md#notes) | string (255) __nullable__ | Notes for this ActivityParticipant. 
 | [ObjectVersion](General.Contacts.ActivityParticipants.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.Contacts.ActivityParticipants.md#statetagsattribute) | string | Specifies the state of the document. 
 | [WorkLoadPercent](General.Contacts.ActivityParticipants.md#workloadpercent) | decimal (3, 2) | The planned work load of the participant for this activity. `Required` `Default(1)` 
 
 ## References
@@ -81,6 +82,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

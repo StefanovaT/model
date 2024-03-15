@@ -83,7 +83,7 @@
 <p>Contains user-defined translations for non-english languages of the user interface and program messages. Entity: Sys_Translations</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ApplicationName}</em><br>
+<em>{ApplicationName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ApplicationName</em><br>
 Name Data Member:<br>
@@ -150,6 +150,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.Translations.html#resourcetype">ResourceType</a></td>
 <td><a href="Systems.Core.Translations.html#resourcetype">ResourceType</a></td>
 <td>T=Table (entity) Name; C=Column Name; H=Column Hint; R=Meta Resource; E=Error; M=Message; S=Other application specific String. <code>Required</code> <code>Default(&quot;S&quot;)</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Core.Translations.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.Translations.html#translationfield">TranslationField</a></td>
@@ -277,6 +282,13 @@ Allowed values for the <code>ResourceType</code>(Systems.Core.Translations.md#re
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>OtherApplicationSpecific</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="translationfield">TranslationField</h3>
 <p>The translated text. <code>Required</code></p>
 <p><em>Type</em>: <strong>string (max)</strong><br>

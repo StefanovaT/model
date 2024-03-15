@@ -9,7 +9,7 @@ Represents a role, which can be assigned to POS operators (like Cashier, Manager
 
 ## Default Visualization
 Default Display Text Format:  
-_{PosRoleName:T}_  
+_{PosRoleName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _PosRoleCode; PosRoleName_  
 Code Data Member:  
@@ -36,6 +36,7 @@ Aggregate Tree
 | [ObjectVersion](Crm.Pos.Roles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PosRoleCode](Crm.Pos.Roles.md#posrolecode) | string (16) | Unique role code. `Required` `Filter(multi eq;like)` `ORD` 
 | [PosRoleName](Crm.Pos.Roles.md#posrolename) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language name of the POS role. `Required` `Filter(multi eq;like)` 
+| [StateTagsAttribute](Crm.Pos.Roles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -112,6 +113,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

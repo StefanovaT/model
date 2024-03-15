@@ -83,7 +83,7 @@
 <p>Hierarchy of store groups. Entity: Inv_Store_Groups</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Code}: {Name}</em><br>
+<em>{Code}: {Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -142,6 +142,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Inventory.StoreGroups.html#parentfullpath"><s>ParentFullPath</s></a></td>
 <td>string (25) <strong>nullable</strong></td>
 <td><strong>OBSOLETE! Do not use!</strong> The full path to the parent store group. It is stored in a dot separated, non-leading dot format. For example: 001.005. <code>Obsolete</code> <code>Filter(eq;like)</code> <code>ReadOnly</code> <code>Obsoleted in version 23.1.2.3</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Inventory.StoreGroups.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -227,6 +232,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>25</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>

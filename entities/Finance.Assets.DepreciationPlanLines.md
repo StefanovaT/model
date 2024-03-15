@@ -9,7 +9,7 @@ Each record contains one depreciation plan for one valuation model of one asset.
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {DepreciationPlan.DocumentNo} {DepreciationPlan.DocumentType.TypeName:T}_  
+_{LineNo}. {DepreciationPlan.DocumentNo} {DepreciationPlan.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _DepreciationPlan.DocumentNo_  
 Category:  _Definitions_  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [LineNo](Finance.Assets.DepreciationPlanLines.md#lineno) | int32 | Consecutive number of the line within the depreciation plan. `Required` `Filter(eq)` 
 | [ObjectVersion](Finance.Assets.DepreciationPlanLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PlanDepreciationValue](Finance.Assets.DepreciationPlanLines.md#plandepreciationvalue) | [Amount (14, 2)](../data-types.md#amount) | The part of the total amount of the asset (in the currency of the asset), which is due for depreciation. `Currency: Asset.ValuationCurrency` `Required` `Default(0)` 
+| [StateTagsAttribute](Finance.Assets.DepreciationPlanLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -128,6 +129,16 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

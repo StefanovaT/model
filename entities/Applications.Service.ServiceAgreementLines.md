@@ -9,7 +9,7 @@ Service agreement lines represent the individual serviced objects that are cover
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}. {ServiceAgreement.DocumentNo} {ServiceAgreement.DocumentType.TypeName:T}_  
+_{Id}. {ServiceAgreement.DocumentNo} {ServiceAgreement.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _ServiceAgreement.DocumentNo_  
 Name Data Member:  
@@ -38,6 +38,7 @@ Aggregate Root:
 | [ObjectVersion](Applications.Service.ServiceAgreementLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineNo](Applications.Service.ServiceAgreementLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute another line. `Introduced in version 22.1.5.18` 
 | [Quantity](Applications.Service.ServiceAgreementLines.md#quantity) | decimal (14, 3) | The quantity of the service object that is included in the agreement. `Required` `Default(1)` `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Service.ServiceAgreementLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -157,6 +158,16 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **1**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

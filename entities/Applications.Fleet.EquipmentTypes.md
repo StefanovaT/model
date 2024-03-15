@@ -9,7 +9,7 @@ Contains types of equipment, which can be installed on the vehicles. Entity: Fle
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name}{StateTagsAttribute}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -31,6 +31,7 @@ Aggregate Tree
 | [Id](Applications.Fleet.EquipmentTypes.md#id) | guid |  
 | [Name](Applications.Fleet.EquipmentTypes.md#name) | string (254) | Name of the equipment type. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Applications.Fleet.EquipmentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Applications.Fleet.EquipmentTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -71,6 +72,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

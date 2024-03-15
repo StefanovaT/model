@@ -9,7 +9,7 @@ Contains the output data for the specified period. This is the output on which c
 
 ## Default Visualization
 Default Display Text Format:  
-_{CostDistribution.EntityName}_  
+_{CostDistribution.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _CostDistribution.EntityName_  
 Name Data Member:  
@@ -33,6 +33,7 @@ Aggregate Root:
 | [Id](Finance.Cost.DistributionOutputs.md#id) | guid |  
 | [LineNo](Finance.Cost.DistributionOutputs.md#lineno) | int32 | Unique (within the document), consecutive line number of the output. `Required` 
 | [ObjectVersion](Finance.Cost.DistributionOutputs.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Finance.Cost.DistributionOutputs.md#statetagsattribute) | string | Specifies the state of the document. 
 | [WeightCoefficient](Finance.Cost.DistributionOutputs.md#weightcoefficient) | decimal (12, 5) | The weight coefficient for prorate distribution of cost over the current line. `Required` `Default(1)` 
 
 ## References
@@ -85,6 +86,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

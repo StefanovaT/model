@@ -83,7 +83,7 @@
 <p>Warehouse Policies is a hierarchical system for applying policies to warehouse operations. Entity: Wms_Warehouse_Policies (Introduced in version 22.1.4.23)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Warehouse} {Code}</em><br>
+<em>{Warehouse} {Code}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Code; Warehouse.Name</em><br>
 Code Data Member:<br>
@@ -147,6 +147,11 @@ Aggregate Root:<br>
 <td><a href="Logistics.Wms.WarehousePolicies.html#policykind">PolicyKind</a></td>
 <td><a href="Logistics.Wms.WarehousePolicies.html#policykind">PolicyKind</a></td>
 <td>The kind of policy, which is being applied. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Logistics.Wms.WarehousePolicies.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Wms.WarehousePolicies.html#todate">ToDate</a></td>
@@ -327,6 +332,13 @@ Allowed values for the <code>PolicyKind</code>(Logistics.Wms.WarehousePolicies.m
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="todate">ToDate</h3>
 <p>When set, specifies the de-activation date of the policy. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>

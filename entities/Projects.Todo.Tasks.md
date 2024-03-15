@@ -9,7 +9,7 @@ Represents a task, such as a piece of work or personal item, that can be tracked
 
 ## Default Visualization
 Default Display Text Format:  
-_{Title}_  
+_{Title}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [ObjectVersion](Projects.Todo.Tasks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RemindTimeUtc](Projects.Todo.Tasks.md#remindtimeutc) | datetime __nullable__ | When to remind the assigned user for the task (in UTC). `Filter(eq;ge;le)` `Introduced in version 23.1.1.51` 
 | [State](Projects.Todo.Tasks.md#state) | [State](Projects.Todo.Tasks.md#state) | Indicates the current task state. `Required` `Default("N")` `Filter(multi eq)` 
+| [StateTagsAttribute](Projects.Todo.Tasks.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Title](Projects.Todo.Tasks.md#title) | string (254) | A brief description of the task. `Required` `Filter(like)` 
 
 ## References
@@ -162,6 +163,16 @@ _Allowed Values (Projects.Todo.TasksRepository.State Enum Members)_
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **New**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### Title

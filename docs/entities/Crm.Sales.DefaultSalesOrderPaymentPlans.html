@@ -83,7 +83,7 @@
 <p>Default payment plan for new documents of the specified document type. Entity: Crm_Default_Sales_Order_Payment_Plans</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.EntityName}</em><br>
+<em>{DocumentType.EntityName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentType.EntityName</em><br>
 Name Data Member:<br>
@@ -145,6 +145,11 @@ Aggregate Root:<br>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#remainder">Remainder</a></td>
 <td>boolean</td>
 <td>Indicates wheather this amount is the remainder of the document. Amount = Total amount of the sales order - explicitly specified amounts in the plan (by Amount_Percent). <code>Required</code> <code>Default(false)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -288,6 +293,13 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.AmountPercent != null), False, obj.Remainder)</code></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
 <p>The <see cref="General.DocumentType"></see> to which this DefaultSalesOrderPaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

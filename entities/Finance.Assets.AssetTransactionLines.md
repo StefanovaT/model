@@ -9,7 +9,7 @@ Asset value transaction lines. Each line changes the values of one asset in one 
 
 ## Default Visualization
 Default Display Text Format:  
-_{AssetTransaction.EntityName}_  
+_{AssetTransaction.EntityName}{StateTagsAttribute}_  
 Default Search Members:  
 _AssetTransaction.EntityName_  
 Name Data Member:  
@@ -43,6 +43,7 @@ Aggregate Root:
 | [PurchaseValueBase](Finance.Assets.AssetTransactionLines.md#purchasevaluebase) | [Amount (14, 2)](../data-types.md#amount) | Change in the purchase value of the asset (in the currency of the enterprise company). `Currency: Asset.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` 
 | [SalvageValue](Finance.Assets.AssetTransactionLines.md#salvagevalue) | [Amount (14, 2)](../data-types.md#amount) | Change in the salvage value of the asset (in the currency of the asset). `Currency: Asset.ValuationCurrency` `Required` `Default(0)` 
 | [SalvageValueBase](Finance.Assets.AssetTransactionLines.md#salvagevaluebase) | [Amount (14, 2)](../data-types.md#amount) | Change in the salvage value of the asset (in the currency of the enterprise company). `Currency: Asset.EnterpriseCompany.BaseCurrency` `Required` `Default(0)` 
+| [StateTagsAttribute](Finance.Assets.AssetTransactionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -236,6 +237,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `obj.SalvageValue.ConvertTo( obj.Asset.EnterpriseCompany.BaseCurrency, obj.AssetTransaction.CurrencyDirectory)`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

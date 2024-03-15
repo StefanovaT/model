@@ -9,7 +9,7 @@ Store reconciliations (physical counting) detail lines. Each line contains the r
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineOrd}. {Reconciliation.DocumentNo} {Reconciliation.DocumentType.TypeName:T}_  
+_{LineOrd}. {Reconciliation.DocumentNo} {Reconciliation.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Reconciliation.DocumentNo_  
 Category:  _Definitions_  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [Quantity](Logistics.Inventory.ReconciliationLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity found at the reconciliation, . `Unit: QuantityUnit` `Required` `Filter(ge;le)` 
 | [QuantityBase](Logistics.Inventory.ReconciliationLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity found at the reconciliation, expressed in base measurement units. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(ge;le)` 
 | [StandardQuantityBase](Logistics.Inventory.ReconciliationLines.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
+| [StateTagsAttribute](Logistics.Inventory.ReconciliationLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TransactionTimestamp](Logistics.Inventory.ReconciliationLines.md#transactiontimestamp) | datetime __nullable__ | Exact time when the transaction occurred. `Filter(ge;le)` 
 
 ## References
@@ -162,6 +163,16 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### TransactionTimestamp
 
 Exact time when the transaction occurred. `Filter(ge;le)`

@@ -83,7 +83,7 @@
 <p>Consents of data subjects for processing of their personal data. Entity: Pdm_Processing_Consents (Introduced in version 18.2)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ParentName}</em><br>
+<em>{ParentName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>ParentName</em><br>
 Name Data Member:<br>
@@ -200,6 +200,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.PersonalData.ProcessingConsents.html#retractedonutc">RetractedOnUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>The date and time (in Utc), when the consent was retracted. Null if the consent is not retracted. <code>Filter(ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.PersonalData.ProcessingConsents.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -412,6 +417,13 @@ Allowed values for the <code>ConsentType</code>(Applications.PersonalData.Proces
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="person">Person</h3>
 <p>The person, for which the consent is given. Null when the consent is given by an online user, which is still not linked to a specific person record. <code>Filter(multi eq)</code></p>

@@ -9,7 +9,7 @@ Consents of data subjects for processing of their personal data. Entity: Pdm_Pro
 
 ## Default Visualization
 Default Display Text Format:  
-_{ParentName}_  
+_{ParentName}{StateTagsAttribute}_  
 Default Search Members:  
 _ParentName_  
 Name Data Member:  
@@ -46,6 +46,7 @@ Aggregate Tree
 | [ParentName](Applications.PersonalData.ProcessingConsents.md#parentname) | string (50) __nullable__ | When a parental rights holder gives a consent for a child, contains the name of the parent. `Filter(eq;like)` 
 | [ParentPhone](Applications.PersonalData.ProcessingConsents.md#parentphone) | string (50) __nullable__ | When a parental rights holder gives a consent for a child, contains the phone number of the parent. `Filter(like)` 
 | [RetractedOnUtc](Applications.PersonalData.ProcessingConsents.md#retractedonutc) | datetime __nullable__ | The date and time (in Utc), when the consent was retracted. Null if the consent is not retracted. `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.PersonalData.ProcessingConsents.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -270,6 +271,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

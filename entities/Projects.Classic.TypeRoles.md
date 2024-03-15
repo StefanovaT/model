@@ -9,7 +9,7 @@ Contains the roles of the participants of each project type. Entity: Prj_Type_Ro
 
 ## Default Visualization
 Default Display Text Format:  
-_{RoleName}_  
+_{RoleName}{StateTagsAttribute}_  
 Default Search Members:  
 _RoleName_  
 Name Data Member:  
@@ -34,6 +34,7 @@ Aggregate Root:
 | [Id](Projects.Classic.TypeRoles.md#id) | guid |  
 | [ObjectVersion](Projects.Classic.TypeRoles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RoleName](Projects.Classic.TypeRoles.md#rolename) | string (255) | The name of the participant role. `Required` `Filter(multi eq;like)` 
+| [StateTagsAttribute](Projects.Classic.TypeRoles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,6 +95,16 @@ _Supported Filters_: **Equals, Like, EqualsIn**
 _Supports Order By_: **False**  
 _Maximum Length_: **255**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Represents one operator (person) in one POS location. Entity: Pos_Operators (Int
 
 ## Default Visualization
 Default Display Text Format:  
-_{PosOperatorCode}_  
+_{PosOperatorCode}{StateTagsAttribute}_  
 Default Search Members:  
 _PosOperatorCode_  
 Code Data Member:  
@@ -33,6 +33,7 @@ Aggregate Tree
 | [ObjectVersion](Crm.Pos.Operators.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PosOperatorCode](Crm.Pos.Operators.md#posoperatorcode) | string (16) | Operator code. Unique within the Pos Location. `Required` `Filter(multi eq;like)` `ORD` 
 | [StartingDate](Crm.Pos.Operators.md#startingdate) | date | The first date, when the operator has started working for this POS location. `Required` `Filter(multi eq;ge;le)` 
+| [StateTagsAttribute](Crm.Pos.Operators.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TerminationDate](Crm.Pos.Operators.md#terminationdate) | date __nullable__ | The date, when the operator has ceased working in this POS location. null means, that the operator is still working or the termination date is still unknown. `Filter(multi eq;ge;le)` 
 
 ## References
@@ -107,6 +108,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### TerminationDate
 

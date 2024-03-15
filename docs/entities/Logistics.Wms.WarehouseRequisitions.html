@@ -84,7 +84,7 @@
 <p>Contains request for warehouse operation created from another module. Entity: Wms_Warehouse_Requisitions (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DocumentType.TypeName:T} {DocumentNo}</em><br>
+<em>{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentNo</em><br>
 Code Data Member:<br>
@@ -243,6 +243,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Wms.WarehouseRequisitions.html#state">State</a></td>
 <td><a href="Logistics.Wms.WarehouseRequisitions.html#state">DocumentState</a></td>
 <td>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+</tr>
+<tr>
+<td><a href="Logistics.Wms.WarehouseRequisitions.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Wms.WarehouseRequisitions.html#void">Void</a></td>
@@ -705,6 +710,13 @@ Enumeration of document system states<br>
 <p><em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="void">Void</h3>
 <p>True if the document is null and void. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>

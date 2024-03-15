@@ -9,7 +9,7 @@ Represents a carrier agreement. One actual carrier can have different agreements
 
 ## Default Visualization
 Default Display Text Format:  
-_{Code}: {Supplier.Party.PartyName:T}_  
+_{Code}: {Supplier.Party.PartyName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _Code_  
 Code Data Member:  
@@ -35,6 +35,7 @@ Aggregate Tree
 | [IsActive](Logistics.Shipment.Carriers.md#isactive) | boolean | Specifies whether the carrier agreement is active. `Required` `Default(true)` `Filter(eq)` 
 | [Notes](Logistics.Shipment.Carriers.md#notes) | string (max) __nullable__ | Notes for this Carrier. 
 | [ObjectVersion](Logistics.Shipment.Carriers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Logistics.Shipment.Carriers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -126,6 +127,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

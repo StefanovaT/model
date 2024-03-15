@@ -83,7 +83,7 @@
 <p>User logins. Entity: Sec_Users</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Login}</em><br>
+<em>{Login}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Login; Name</em><br>
 Code Data Member:<br>
@@ -220,6 +220,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Security.Users.html#registrationmessage">RegistrationMessage</a></td>
 <td>string (254) <strong>nullable</strong></td>
 <td>Message from the user to the registration operator, regarding the desired permissions and assignment. <code>Introduced in version 22.1.6.61</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Security.Users.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Security.Users.html#twofactorenabled">TwoFactorEnabled</a></td>
@@ -488,6 +493,13 @@ Allowed values for the <code>PasswordFormat</code>(Systems.Security.Users.md#pas
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="twofactorenabled">TwoFactorEnabled</h3>
 <p>Indicates whether two-factor authentication has been enabled. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>

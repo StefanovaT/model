@@ -83,7 +83,7 @@
 <p>Contains files attached to objects. Entity: Sys_Object_Files</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{FileName}</em><br>
+<em>{FileName}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>FileName</em><br>
 Category:  <em>Definitions</em><br>
@@ -188,6 +188,11 @@ Aggregate Root:<br>
 <td><a href="Systems.Core.ObjectFiles.html#section">Section</a></td>
 <td>string (64) <strong>nullable</strong></td>
 <td>A section name used to group files. <code>Introduced in version 21.1.1.84</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Core.ObjectFiles.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -371,6 +376,13 @@ Allowed values for the <code>ContentLocation</code>(Systems.Core.ObjectFiles.md#
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="creationuser">CreationUser</h3>
 <p>The user, who created the file record. null if it is unknown. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>

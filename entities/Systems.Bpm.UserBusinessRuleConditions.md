@@ -9,7 +9,7 @@ Represents one condition for the execution of a business rule. Entity: Sys_User_
 
 ## Default Visualization
 Default Display Text Format:  
-_{AttributeName}_  
+_{AttributeName}{StateTagsAttribute}_  
 Default Search Members:  
 _AttributeName_  
 Name Data Member:  
@@ -36,6 +36,7 @@ Aggregate Root:
 | [Id](Systems.Bpm.UserBusinessRuleConditions.md#id) | guid |  
 | [Notes](Systems.Bpm.UserBusinessRuleConditions.md#notes) | string (max) __nullable__ | Notes for this UserBusinessRuleCondition. `Introduced in version 20.1` 
 | [ObjectVersion](Systems.Bpm.UserBusinessRuleConditions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](Systems.Bpm.UserBusinessRuleConditions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Value](Systems.Bpm.UserBusinessRuleConditions.md#value) | string (254) __nullable__ | The value against which the data attribute will be tested. 
 
 ## References
@@ -132,6 +133,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

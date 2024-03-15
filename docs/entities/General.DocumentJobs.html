@@ -84,7 +84,7 @@
 <p>Represents jobs, which change state of documents. Entity: Gen_Document_Jobs (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -156,6 +156,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.DocumentJobs.html#runonidle">RunOnIdle</a></td>
 <td>boolean</td>
 <td>Specifies whether to automatically run the job when the server is idle. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> (Inherited from <a href="Systems.Core.Jobs.html">Jobs</a>)</td>
+</tr>
+<tr>
+<td><a href="General.DocumentJobs.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -337,6 +342,13 @@ Enumeration of document system states<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
 <p>The type of the document, whose state will be changed. <code>Required</code> <code>Filter(multi eq)</code></p>

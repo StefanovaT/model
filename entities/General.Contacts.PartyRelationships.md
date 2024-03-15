@@ -9,7 +9,7 @@ Defines the relationships between the parties. The data is preserved over time. 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {FromPartyId}_  
+_{Id}: {FromPartyId}{StateTagsAttribute}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -30,6 +30,7 @@ Aggregate Tree
 | [Id](General.Contacts.PartyRelationships.md#id) | guid |  
 | [Notes](General.Contacts.PartyRelationships.md#notes) | string (254) __nullable__ | Notes for this PartyRelationship. 
 | [ObjectVersion](General.Contacts.PartyRelationships.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [StateTagsAttribute](General.Contacts.PartyRelationships.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDate](General.Contacts.PartyRelationships.md#todate) | datetime __nullable__ | The ending date of the relationship. null means the relationship is still active. `Filter(ge;le)` 
 
 ## References
@@ -89,6 +90,16 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

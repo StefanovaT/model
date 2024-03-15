@@ -9,7 +9,7 @@ Different cargoes of a transportation order. Entity: Log_Transportation_Order_Li
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {TransportationOrder.DocumentNo} {TransportationOrder.DocumentType.TypeName:T}_  
+_{LineNo}. {TransportationOrder.DocumentNo} {TransportationOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _TransportationOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -35,6 +35,7 @@ Aggregate Root:
 | [ObjectVersion](Logistics.Shipment.TransportationOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PalletsCount](Logistics.Shipment.TransportationOrderLines.md#palletscount) | int32 __nullable__ | Number of palettes comprising the cargo. null when it is unknown. 
 | [ParentLineNo](Logistics.Shipment.TransportationOrderLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute parent line. `Filter(eq)` 
+| [StateTagsAttribute](Logistics.Shipment.TransportationOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [VolumeCbm](Logistics.Shipment.TransportationOrderLines.md#volumecbm) | int32 __nullable__ | The volume of the cargo, in CBM (cubic meters). null when it is unknown. 
 | [WeightKg](Logistics.Shipment.TransportationOrderLines.md#weightkg) | int32 __nullable__ | The weight of the cargo, in KG (kilogramms). null when it is unknown. 
 
@@ -135,6 +136,16 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### VolumeCbm
 

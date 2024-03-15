@@ -9,7 +9,7 @@ Contains supply rules, which are used by the procurement planning system. Entity
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProcurementType} {Product.PartNumber}: {Product.Name:T} ({Store.Name:T})_  
+_{ProcurementType} {Product.PartNumber}: {Product.Name:T} ({Store.Name:T}){StateTagsAttribute}_  
 Default Search Members:  
 _Product.PartNumber; Product.Name_  
 Category:  _Definitions_  
@@ -53,6 +53,7 @@ Aggregate Tree
 | [PlanningTimeFenceDays](General.Products.ProductSupply.md#planningtimefencedays) | int32 | Period in the future inside of which changes to the MPS are carefully evaluated to prevent costly schedule disruption. Demand for the period between DTF and PTF is calculated as the bigger of customer orders and sales forecast. Abbr. - PTF. `Required` `Default(1)` 
 | [ProcurementType](General.Products.ProductSupply.md#procurementtype) | [ProcurementType](General.Products.ProductSupply.md#procurementtype) | M=Make; B=Buy; T=Transfer.  Identifies whether the product is produced or externally bought. `Required` `Default("B")` `Filter(eq)` 
 | [StandardCostPerLot](General.Products.ProductSupply.md#standardcostperlot) | [Amount (18, 4)](../data-types.md#amount) | Standard cost for one lot of the product. `Currency: Product.CostingCurrency` `Required` `Default(0)` 
+| [StateTagsAttribute](General.Products.ProductSupply.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SupplySchemaId](General.Products.ProductSupply.md#supplyschemaid) | guid __nullable__ | The supply schema to use for the distribution of the product among warehouses. `Filter(multi eq)` 
 
 ## References
@@ -408,6 +409,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### SupplySchemaId

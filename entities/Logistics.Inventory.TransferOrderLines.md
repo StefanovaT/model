@@ -9,7 +9,7 @@ Details of Transfer Orders. Each line contains order for the movement of one pro
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineOrd}. {TransferOrder.DocumentNo} {TransferOrder.DocumentType.TypeName:T}_  
+_{LineOrd}. {TransferOrder.DocumentNo} {TransferOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
 Default Search Members:  
 _TransferOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -38,6 +38,7 @@ Aggregate Root:
 | [QuantityBase](Logistics.Inventory.TransferOrderLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity in the base (default) measurement unit of the Item (calculated at the time of last update of the current store order line). Should be updated in parallel with each Quantity update. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Filter(ge;le)` 
 | [StandardQuantityBase](Logistics.Inventory.TransferOrderLines.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
 | [StandardUnitPrice](Logistics.Inventory.TransferOrderLines.md#standardunitprice) | [Amount (14, 5)](../data-types.md#amount) __nullable__ | Standard unit price of the product during the creation of the transfer order line. `Currency: TransferOrder.DocumentCurrency` 
+| [StateTagsAttribute](Logistics.Inventory.TransferOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -195,6 +196,16 @@ _Show in UI_: **HiddenByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.Product != null) AndAlso ( obj.QuantityUnit != null)), obj.Product.GetStandardUnitPrice( obj.QuantityUnit, obj.TransferOrder.ToStore.Currency, obj.TransferOrder.CurrencyDirectory), obj.StandardUnitPrice)`
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 
 ## Reference Details
 

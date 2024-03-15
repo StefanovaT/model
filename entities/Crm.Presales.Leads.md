@@ -9,7 +9,7 @@ Leads are potential customers for your products. Because leads are usually proce
 
 ## Default Visualization
 Default Display Text Format:  
-_{PersonFirstName} {PersonLastName}_  
+_{PersonFirstName} {PersonLastName}{StateTagsAttribute}_  
 Default Search Members:  
 _CompanyName_  
 Name Data Member:  
@@ -42,6 +42,7 @@ Aggregate Tree
 | [PersonWorkPhone](Crm.Presales.Leads.md#personworkphone) | string (32) __nullable__ | The work phone of the sales lead person. `Filter(like)` 
 | [RoleInCompany](Crm.Presales.Leads.md#roleincompany) | string (32) __nullable__ | The role of the person in the company. `Filter(eq;like)` 
 | [SQLTimestampUtc](Crm.Presales.Leads.md#sqltimestamputc) | datetime __nullable__ | System assigned date and time (in UTC), when the lead was first promoted to Sales Qualified Lead. `Filter(ge;le)` `ReadOnly` 
+| [StateTagsAttribute](Crm.Presales.Leads.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemStage](Crm.Presales.Leads.md#systemstage) | [SystemStage](Crm.Presales.Leads.md#systemstage) | The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). `Required` `Default("NEW")` `Filter(multi eq)` 
 
 ## References
@@ -225,6 +226,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### SystemStage
 

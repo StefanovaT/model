@@ -9,7 +9,7 @@ Contains troubles, reported by the on-board diagnostics (OBD) of the vehicle. En
 
 ## Default Visualization
 Default Display Text Format:  
-_{DiagnosticTroubleCode}_  
+_{DiagnosticTroubleCode}{StateTagsAttribute}_  
 Default Search Members:  
 _DiagnosticTroubleCode_  
 Code Data Member:  
@@ -34,6 +34,7 @@ Aggregate Tree
 | [ManufacturerTroubleCode](Applications.Fleet.VehicleObdTroubles.md#manufacturertroublecode) | string (16) __nullable__ | Non-standard manufacturer-specific trouble code. null when it is not available. 
 | [ObjectVersion](Applications.Fleet.VehicleObdTroubles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OccurenceDateTime](Applications.Fleet.VehicleObdTroubles.md#occurencedatetime) | datetime | Date and time (UTC) when the trouble was detected. `Required` `Filter(ge;le)` 
+| [StateTagsAttribute](Applications.Fleet.VehicleObdTroubles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -115,6 +116,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
