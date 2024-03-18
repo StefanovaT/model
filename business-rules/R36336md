@@ -1,0 +1,44 @@
+---
+erp.type: front-end-business-rule
+erp.entity: General.Contacts.Activities
+---
+
+# R36336 Activity - Check User Rights On Activity Creation
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Code**                    | R36336                                                                                |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Entity**                  | @General.Contacts.Activities                                                          |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Name**                    | CheckUserRightsOnActivityCreation                                                     |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Attribute**               | Creation User                                                                         |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Layer**                   | Back-End                                                                              |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Events**                  | Commit                                                                                |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Priority**                | Normal                                                                                |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Modify**                  | NO                                                                                    |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Applicable                | [ALL // no condition needed                                                           |
+| Legislations**              | ](xref:applicable-legislations)                                                       |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Action**                  | If the Social.GroupMember.Role of the CreationUser >='Member'<br>                     |
+|                             | for the selected General.Contacts.Activitie.SocialGroup, <br>                         |
+|                             | then Activity creation is allowed.                                                    |             
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Description**             | This rule ensures that only users with sufficient permissions <br>                    |
+|                             | within the specified SocialGroup (Member or Admin) can create Activities.             |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Message**                 | Уou do not have permission to create activities in the selected social group.<br>     |
+|                             | Only users with ‘Member‘ or ‘Admin’ roles are allowed to create activities. <br>      |
+|                             | Please contact an administrator if activity creation is required.                     |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Version**                 | Introduced: v.                                                                        |
++-----------------------------+---------------------------------------------------------------------------------------+
+| **Revocable**               | NO                                                                                    |
++-----------------------------+---------------------------------------------------------------------------------------+
+
+*\* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic [System Business Rules](../templates/template-description-system-business-rules.md).*
