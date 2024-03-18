@@ -83,7 +83,7 @@
 <p>Contains user layouts of the screen forms. Entity: Sys_Form_Layouts</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ApplicationName}{StateTagsAttribute}</em><br>
+<em>{ApplicationName}</em><br>
 Default Search Members:<br>
 <em>ApplicationName</em><br>
 Name Data Member:<br>
@@ -165,11 +165,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.UI.FormLayouts.html#panelname">PanelName</a></td>
 <td>string (64)</td>
 <td>The visual panel, for which the layout is applied. <code>Required</code> <code>Default(&quot;Form&quot;)</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.UI.FormLayouts.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.UI.FormLayouts.html#username">UserName</a></td>
@@ -319,13 +314,6 @@ Allowed values for the <code>LayoutFormat</code>(Systems.UI.FormLayouts.md#layou
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Default Value</em>: <strong>Form</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="username">UserName</h3>
 <p>The user for which the layout is applied. null means that the layout is applied for all users. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>

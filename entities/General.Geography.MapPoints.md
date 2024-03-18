@@ -9,7 +9,7 @@ Geographical map points are used as points of interest on the map. They are used
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [Longitude](General.Geography.MapPoints.md#longitude) | decimal (10, 7) | Longitude is angle from the prime meridian (in England) in east-west direction. Positive values denote east and negative - west. The value is in the range `-180, 180`. `Required` `Default(0)` 
 | [Name](General.Geography.MapPoints.md#name) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | Map point short name (Multilanguage). `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.Geography.MapPoints.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.Geography.MapPoints.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -115,16 +114,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

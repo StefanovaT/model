@@ -9,7 +9,7 @@ Organizational hierarchy of asset groups. Entity: Eam_Managed_Asset_Groups (Intr
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [Name](Applications.AssetManagement.ManagedAssetGroups.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the asset group (multi-language). `Required` `Filter(eq;like)` 
 | [Notes](Applications.AssetManagement.ManagedAssetGroups.md#notes) | string (max) __nullable__ | Notes for this ManagedAssetGroup. 
 | [ObjectVersion](Applications.AssetManagement.ManagedAssetGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.AssetManagement.ManagedAssetGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -104,16 +103,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

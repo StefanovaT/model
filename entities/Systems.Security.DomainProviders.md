@@ -9,7 +9,7 @@ The external authentication providers, linked to the domain. Contains data about
 
 ## Default Visualization
 Default Display Text Format:  
-_{DisplayName:T}{StateTagsAttribute}_  
+_{DisplayName:T}_  
 Default Search Members:  
 _DisplayName_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [Notes](Systems.Security.DomainProviders.md#notes) | string (max) __nullable__ | Notes for this DomainProvider. 
 | [ObjectVersion](Systems.Security.DomainProviders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProviderName](Systems.Security.DomainProviders.md#providername) | [ProviderName](Systems.Security.DomainProviders.md#providername) | The system name of the user authentication provider. For example GOOGLE, FACEBOOK, MICROSOFT, AZUREAD, ERPNET, etc. `Required` `Filter(eq)` 
-| [StateTagsAttribute](Systems.Security.DomainProviders.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TenantID](Systems.Security.DomainProviders.md#tenantid) | string (254) __nullable__ | When the authentication provider is multi-tenant, this specifies the tenant ID. For example, Google, Facebook and Microsoft are singe-tenant, while AzureAD is multi-tenant. 
 
 ## References
@@ -152,16 +151,6 @@ _Allowed Values (Systems.Security.DomainProvidersRepository.ProviderName Enum Me
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TenantID
 

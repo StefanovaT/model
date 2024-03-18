@@ -9,7 +9,7 @@ Stores the last issued fiscal sales number for each POS device. Entity: Pos_Sequ
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {PosDeviceId}{StateTagsAttribute}_  
+_{Id}: {PosDeviceId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -31,7 +31,6 @@ Aggregate Tree
 | [MaxNo](Crm.Pos.Sequences.md#maxno) | string (16) __nullable__ | Specifies the maximum number allowed in the sequence. null means that the sequence will grow unlimited. `Filter(multi eq;ge;le)` 
 | [NextNo](Crm.Pos.Sequences.md#nextno) | string (16) | The next consecutive number which will be assigned on the next request. `Required` `Filter(multi eq;ge;le)` 
 | [ObjectVersion](Crm.Pos.Sequences.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Pos.Sequences.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -100,16 +99,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

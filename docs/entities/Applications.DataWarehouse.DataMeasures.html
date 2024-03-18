@@ -83,7 +83,7 @@
 <p>Contains the data measures of the General data warehouse. Entity: Dw_Data_Measures (Introduced in version 18.2)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}{StateTagsAttribute}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -152,11 +152,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.DataWarehouse.DataMeasures.html#period">Period</a></td>
 <td><a href="Applications.DataWarehouse.DataMeasures.html#period">Period</a></td>
 <td>The period for which the data is collected. D=Day, M=Month, Q=Quarter, Y=Year. <code>Required</code> <code>Default(&quot;Q&quot;)</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Applications.DataWarehouse.DataMeasures.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -276,13 +271,6 @@ Allowed values for the <code>Period</code>(Applications.DataWarehouse.DataMeasur
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Quarter</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="datameasuregroup">DataMeasureGroup</h3>
 <p>The group to which this measure belongs. <code>Required</code> <code>Filter(multi eq)</code></p>

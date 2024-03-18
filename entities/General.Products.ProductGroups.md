@@ -9,7 +9,7 @@ Hierarchical categorization of the products. Entity: Gen_Product_Groups
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -51,7 +51,6 @@ Aggregate Tree
 | [PictureLastUpdateTime](General.Products.ProductGroups.md#picturelastupdatetime) | datetime __nullable__ | Last update time of the Picture. `Filter(ge;le)` `ReadOnly` 
 | [ProductDescriptionMask](General.Products.ProductGroups.md#productdescriptionmask) | [MultilanguageString (1000)](../data-types.md#multilanguagestring) __nullable__ | When not null specifies mask for new product descriptions for this group and its sub-groups. The mask substitutes {0}..{n} with the appropriate custom attributes. 
 | [ProductNameMask](General.Products.ProductGroups.md#productnamemask) | [MultilanguageString (1000)](../data-types.md#multilanguagestring) __nullable__ | When not null specifies mask for new product names for this group and its sub-groups. The mask substitutes {0}..{n} with the appropriate custom attributes. 
-| [StateTagsAttribute](General.Products.ProductGroups.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UseLots](General.Products.ProductGroups.md#uselots) | [UseLots](General.Products.ProductGroups.md#uselots) __nullable__ | Specifies whether for the products from this group and its sub-groups the use of lots in store documents is required or is unallowed or is allowed while not required. 
 
 ## References
@@ -275,16 +274,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### UseLots
 

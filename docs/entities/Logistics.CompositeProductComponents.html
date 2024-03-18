@@ -83,7 +83,7 @@
 <p>Separate components of a product which are packaged and stored individually. Used when a single product is stored in multiple packages. Entity: Log_Composite_Product_Components (Introduced in version 23.1.0.15)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ComponentNo}: {ComponentProduct}{StateTagsAttribute}</em><br>
+<em>{ComponentNo}: {ComponentProduct}</em><br>
 Default Search Members:<br>
 <em>CompositeProduct.Name</em><br>
 Name Data Member:<br>
@@ -145,11 +145,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.CompositeProductComponents.html#quantity">Quantity</a></td>
 <td>decimal (12, 3)</td>
 <td>The number of packages of this component that are needed to compose the product. <code>Required</code> <code>Default(1)</code> <code>Filter(multi eq;ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.CompositeProductComponents.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.CompositeProductComponents.html#todate">ToDate</a></td>
@@ -244,13 +239,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="todate">ToDate</h3>
 <p>Ending date (inclusive) of the validity of the component. Null means that the component does not have a deactivation date. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>

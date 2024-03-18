@@ -83,7 +83,7 @@
 <p>Cost correction detail lines. One line is created for each corrected transaction line. Entity: Inv_Cost_Correction_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}. {CostCorrection.DocumentNo} {CostCorrection.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{Id}. {CostCorrection.DocumentNo} {CostCorrection.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>CostCorrection.DocumentNo</em><br>
 Name Data Member:<br>
@@ -135,11 +135,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.Inventory.CostCorrectionLines.html#productcostadjustment">ProductCostAdjustment</a></td>
 <td><a href="../data-types.html#amount">Amount (14, 2)</a></td>
 <td>The amount of correction (plus or minus) for the Product Cost field of the transaction line. <code>Currency: TransactionLine.Product.CostingCurrency</code> <code>Required</code> <code>Default(0)</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.Inventory.CostCorrectionLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.CostCorrectionLines.html#storecostadjustment">StoreCostAdjustment</a></td>
@@ -221,13 +216,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="storecostadjustment">StoreCostAdjustment</h3>
 <p>The amount of correction (plus or minus) for the Store Cost field of the transaction line. <code>Currency: TransactionLine.TransactionObj.Store.Currency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>

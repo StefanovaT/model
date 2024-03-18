@@ -9,7 +9,7 @@ Competitors to our marketing solutions. Entity: Crm_Competitors (Introduced in v
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [Name](Crm.Marketing.Competitors.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this Competitor. `Required` `Filter(like)` 
 | [Notes](Crm.Marketing.Competitors.md#notes) | string (max) __nullable__ | Notes for this Competitor. 
 | [ObjectVersion](Crm.Marketing.Competitors.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Marketing.Competitors.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -97,16 +96,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

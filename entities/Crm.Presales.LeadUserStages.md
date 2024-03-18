@@ -9,7 +9,7 @@ User-defined stages of the lead processing workflow. Entity: Crm_Lead_User_Stage
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [Name](Crm.Presales.LeadUserStages.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language name of the user stage. `Required` `Filter(like)` 
 | [Notes](Crm.Presales.LeadUserStages.md#notes) | string (max) __nullable__ | Notes for this LeadUserStage. 
 | [ObjectVersion](Crm.Presales.LeadUserStages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Presales.LeadUserStages.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemStage](Crm.Presales.LeadUserStages.md#systemstage) | [SystemStage](Crm.Presales.LeadUserStages.md#systemstage) | The system stage, on which the user stage is based. System stages are New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). `Required` `Filter(multi eq)` 
 
 
@@ -111,16 +110,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

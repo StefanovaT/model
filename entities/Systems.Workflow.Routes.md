@@ -48,7 +48,6 @@ Aggregate Root:
 | [ProcessEvent](Systems.Workflow.Routes.md#processevent) | string (254) | Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required` 
 | [ReadOnly](Systems.Workflow.Routes.md#readonly) | boolean | Indicates wheather the destination document shoul be read only. true - the destination document is read only. `Required` `Default(false)` 
 | [<s>SchemaXML</s>](Systems.Workflow.Routes.md#schemaxml) | string (max) __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Obsoleted in version 22.1.6.61` 
-| [StateTagsAttribute](Systems.Workflow.Routes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -328,16 +327,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **CannotBeShown**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

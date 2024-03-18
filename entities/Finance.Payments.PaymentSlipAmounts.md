@@ -9,7 +9,7 @@ Mass payment amount. Each record generates one payment transaction. Entity: Cash
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName:T}{StateTagsAttribute}_  
+_{PartyName:T}_  
 Default Search Members:  
 _PartyName_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [ObjectVersion](Finance.Payments.PaymentSlipAmounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PartyName](Finance.Payments.PaymentSlipAmounts.md#partyname) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | The name of the party that is paying or receiving the money. The column can be left blank if there is no party involved (e.g. the amount is fee). 
 | [PaymentDate](Finance.Payments.PaymentSlipAmounts.md#paymentdate) | datetime | The date on which the payment is done. `Required` `Filter(ge;le)` 
-| [StateTagsAttribute](Finance.Payments.PaymentSlipAmounts.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalAmount](Finance.Payments.PaymentSlipAmounts.md#totalamount) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | The total amount payed. The distribution of the amount amongst the payment orders for this party is specified with payment slip lines. If null the total amount is calculated as sum of the amounts in the payment slip lines. `Currency: PaymentSlip.DocumentCurrency` 
 
 ## References
@@ -166,16 +165,6 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `obj.PaymentSlip.DocumentDate`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 ### TotalAmount
 
 The total amount payed. The distribution of the amount amongst the payment orders for this party is specified with payment slip lines. If null the total amount is calculated as sum of the amounts in the payment slip lines. `Currency: PaymentSlip.DocumentCurrency`

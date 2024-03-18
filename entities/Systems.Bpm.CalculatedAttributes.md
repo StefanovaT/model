@@ -9,7 +9,7 @@ User-defined read-only calculated attribute. Entity: Sys_Calculated_Attributes
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Tree
 | [ObjectVersion](Systems.Bpm.CalculatedAttributes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RepositoryName](Systems.Bpm.CalculatedAttributes.md#repositoryname) | string (128) | The repository, for which the attribute is defined. `Required` `Filter(multi eq)` `ORD` 
 | [StartingExpressionNo](Systems.Bpm.CalculatedAttributes.md#startingexpressionno) | int32 | The expression, from which the calculation starts. The result of the expression gives the value of the calculated attribute. `Required` `Default(10)` 
-| [StateTagsAttribute](Systems.Bpm.CalculatedAttributes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -153,16 +152,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **10**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

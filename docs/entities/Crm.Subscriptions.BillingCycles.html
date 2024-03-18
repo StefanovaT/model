@@ -83,7 +83,7 @@
 <p>Billing cycles contain information when to issue new bills. Entity: Sm_Billing_Cycles (Introduced in version 24.1.2.5)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}{StateTagsAttribute}</em><br>
+<em>{Name:T}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -140,11 +140,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.Subscriptions.BillingCycles.html#startingdayofmonth">StartingDayOfMonth</a></td>
 <td>byte</td>
 <td>On which date of the month the bills are issued. <code>Required</code> <code>Default(1)</code> <code>Filter(eq;ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.Subscriptions.BillingCycles.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -218,13 +213,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>Specifies the enterprise company for which the cycle will be valid. null means that it is valid for all enterprise companies. <code>Filter(multi eq)</code></p>

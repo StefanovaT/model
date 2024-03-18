@@ -9,7 +9,7 @@ Contains the materials, which were actually used during the service activity (re
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {ServiceActivity.DocumentNo} {Product}{StateTagsAttribute}_  
+_{LineNo}. {ServiceActivity.DocumentNo} {Product}_  
 Default Search Members:  
 _ServiceActivity.DocumentNo_  
 Category:  _Definitions_  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [Quantity](Applications.Service.ServiceActivityMaterials.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity of the product, that was used. `Unit: QuantityUnit` `Required` 
 | [QuantityBase](Applications.Service.ServiceActivityMaterials.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Quantity in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` 
 | [StandardQuantityBase](Applications.Service.ServiceActivityMaterials.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
-| [StateTagsAttribute](Applications.Service.ServiceActivityMaterials.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -152,16 +151,6 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 
 ## Reference Details
 

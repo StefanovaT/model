@@ -83,7 +83,7 @@
 <p>Contains convertion ratios between the supported measument categories for each product. Does not contain a record for the default category of the products, for which the convertion ratio is defined as equal to 1. Entity: Gen_Product_Dimensions</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Product.Name:T}{StateTagsAttribute}</em><br>
+<em>{Product.Name:T}</em><br>
 Default Search Members:<br>
 <em>Product.Name</em><br>
 Name Data Member:<br>
@@ -140,11 +140,6 @@ Aggregate Root:<br>
 <td><a href="General.Products.ProductDimensions.html#sourcequantity">SourceQuantity</a></td>
 <td><a href="../data-types.html#quantity">Quantity (9, 3)</a></td>
 <td>The quantity in the non-base unit. <code>Unit: SourceQuantityUnit</code> <code>Required</code> <code>Default(1)</code></td>
-</tr>
-<tr>
-<td><a href="General.Products.ProductDimensions.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -236,13 +231,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="destquantityunit">DestQuantityUnit</h3>
 <p>The measurement unit of Dest_Quantity. Should be one of the units of the base measurement category of the product. <code>Required</code> <code>Filter(multi eq)</code></p>

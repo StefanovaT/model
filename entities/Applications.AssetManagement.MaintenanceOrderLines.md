@@ -9,7 +9,7 @@ Contains the types of maintenance and maintained assets in the maintenance order
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {MaintenanceOrder.DocumentNo} {MaintenanceOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineNo}. {MaintenanceOrder.DocumentNo} {MaintenanceOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _MaintenanceOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [NextServiceTracked<br />ParameterValue](Applications.AssetManagement.MaintenanceOrderLines.md#nextservicetrackedparametervalue) | int32 __nullable__ | Specifies, that the maintenance required the next maintenance to be performed on a specific value of the tracked parameter. null means that default scheduling should be used. 
 | [Notes](Applications.AssetManagement.MaintenanceOrderLines.md#notes) | string (max) __nullable__ | Notes for this MaintenanceOrderLine. 
 | [ObjectVersion](Applications.AssetManagement.MaintenanceOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.AssetManagement.MaintenanceOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -119,16 +118,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

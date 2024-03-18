@@ -9,7 +9,7 @@ Contains convertion ratios between the supported measument categories for each p
 
 ## Default Visualization
 Default Display Text Format:  
-_{Product.Name:T}{StateTagsAttribute}_  
+_{Product.Name:T}_  
 Default Search Members:  
 _Product.Name_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [Id](General.Products.ProductDimensions.md#id) | guid |  
 | [ObjectVersion](General.Products.ProductDimensions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SourceQuantity](General.Products.ProductDimensions.md#sourcequantity) | [Quantity (9, 3)](../data-types.md#quantity) | The quantity in the non-base unit. `Unit: SourceQuantityUnit` `Required` `Default(1)` 
-| [StateTagsAttribute](General.Products.ProductDimensions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -126,16 +125,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

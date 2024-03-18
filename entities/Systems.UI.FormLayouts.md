@@ -9,7 +9,7 @@ Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 
 ## Default Visualization
 Default Display Text Format:  
-_{ApplicationName}{StateTagsAttribute}_  
+_{ApplicationName}_  
 Default Search Members:  
 _ApplicationName_  
 Name Data Member:  
@@ -39,7 +39,6 @@ Aggregate Tree
 | [<s>MachineName</s>](Systems.UI.FormLayouts.md#machinename) | string (128) __nullable__ | **OBSOLETE! Do not use!** The machine name - not used. `Obsolete` `Filter(eq;like)` `Obsoleted in version 22.1.6.61` 
 | [ObjectVersion](Systems.UI.FormLayouts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PanelName](Systems.UI.FormLayouts.md#panelname) | string (64) | The visual panel, for which the layout is applied. `Required` `Default("Form")` `Filter(eq)` 
-| [StateTagsAttribute](Systems.UI.FormLayouts.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UserName](Systems.UI.FormLayouts.md#username) | string (64) __nullable__ | The user for which the layout is applied. null means that the layout is applied for all users. `Filter(eq;like)` 
 
 ## References
@@ -189,16 +188,6 @@ _Supports Order By_: **False**
 _Maximum Length_: **64**  
 _Default Value_: **Form**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### UserName
 

@@ -9,7 +9,7 @@ Area of a project. Can be applicable to a single project or all projects. Entity
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -32,7 +32,6 @@ Aggregate Tree
 | [IsActive](Projects.Agile.ProjectAreas.md#isactive) | boolean | Specifies whether the project area is active for new projects. `Required` `Default(true)` `Filter(eq)` 
 | [Name](Projects.Agile.ProjectAreas.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the project area. `Required` `Filter(like)` 
 | [ObjectVersion](Projects.Agile.ProjectAreas.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Projects.Agile.ProjectAreas.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -90,16 +89,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

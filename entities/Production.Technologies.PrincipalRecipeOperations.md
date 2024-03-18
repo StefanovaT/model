@@ -9,7 +9,7 @@ Contains the operations within a principal recipe. Entity: Prd_Principal_Recipe_
 
 ## Default Visualization
 Default Display Text Format:  
-_{PrincipalRecipe.Name}{StateTagsAttribute}_  
+_{PrincipalRecipe.Name}_  
 Default Search Members:  
 _PrincipalRecipe.Name_  
 Name Data Member:  
@@ -42,7 +42,6 @@ Aggregate Root:
 | [RunTimeMinutes](Production.Technologies.PrincipalRecipeOperations.md#runtimeminutes) | int32 | Duration of the operation for one piece in the standard measurement unit of the product. `Required` `Default(0)` `Filter(ge;le)` 
 | [ScrapRate](Production.Technologies.PrincipalRecipeOperations.md#scraprate) | decimal (7, 6) | Standard rate of scrap during the operation. `Required` `Default(0)` 
 | [SetupTimeMinutes](Production.Technologies.PrincipalRecipeOperations.md#setuptimeminutes) | int32 | Time needed to setup the equipment. `Required` `Default(0)` `Filter(ge;le)` 
-| [StateTagsAttribute](Production.Technologies.PrincipalRecipeOperations.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Tooling](Production.Technologies.PrincipalRecipeOperations.md#tooling) | string (254) __nullable__ | The tools needed for the routing step. 
 | [UseQuantity](Production.Technologies.PrincipalRecipeOperations.md#usequantity) | [Quantity (9, 3)](../data-types.md#quantity) | Quantity of the workgroup resource that should be allocated for the operation. `Unit: UseQuantityUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [WaitTimeMinutes](Production.Technologies.PrincipalRecipeOperations.md#waittimeminutes) | int32 | Wait time (drying, cooling, etc.) after the operation in minutes. `Required` `Default(0)` `Filter(ge;le)` 
@@ -210,16 +209,6 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `obj.Operation.SetupTimeMinutes`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 ### Tooling
 
 The tools needed for the routing step.

@@ -83,7 +83,7 @@
 <p>Sequence of excise stamps with same production batch and type, received with one delivery. Entity: Exc_Excise_Stamp_Lots (Introduced in version 22.1.6.13)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{BatchNumber} {StartNumber}{StateTagsAttribute}</em><br>
+<em>{BatchNumber} {StartNumber}</em><br>
 Default Search Members:<br>
 <em>BatchNumber</em><br>
 Code Data Member:<br>
@@ -155,11 +155,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Finance.Excise.ExciseStampLots.html#startnumber">StartNumber</a></td>
 <td>string (30)</td>
 <td>Start number of the lot. <code>Required</code></td>
-</tr>
-<tr>
-<td><a href="Finance.Excise.ExciseStampLots.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -263,13 +258,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>30</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="exciseproducttype">ExciseProductType</h3>
 <p>Specifies the Excise Product Type of the Excise Stamps in the lot. <code>Filter(multi eq)</code> <code>Introduced in version 22.1.6.53</code></p>

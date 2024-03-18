@@ -83,7 +83,7 @@
 <p>Contains data about the execution of Upgrade Procedures. Contains status messages and ensures that each procedure is executed only once. Entity: Sys_Update_Procedure_Executes</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {UpdateProcedure}{StateTagsAttribute}</em><br>
+<em>{Id}: {UpdateProcedure}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -128,11 +128,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.UpdateProcedureExecutes.html#resultmessage">ResultMessage</a></td>
 <td>string (1024) <strong>nullable</strong></td>
 <td>Error or success message.</td>
-</tr>
-<tr>
-<td><a href="Systems.Core.UpdateProcedureExecutes.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.UpdateProcedureExecutes.html#successful">Successful</a></td>
@@ -184,13 +179,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>1024</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="successful">Successful</h3>
 <p>True when the execution was successfull. <code>Required</code> <code>Default(true)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>

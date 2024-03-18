@@ -9,7 +9,7 @@ Contains options for generation of payment orders. Each option set is assigned t
 
 ## Default Visualization
 Default Display Text Format:  
-_{Route.ProcedureName}{StateTagsAttribute}_  
+_{Route.ProcedureName}_  
 Default Search Members:  
 _Route.ProcedureName_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [Id](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#id) | guid |  
 | [IsAmountWithVAT](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#isamountwithvat) | boolean | True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = true. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. `Required` 
 | [ObjectVersion](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UpdateForInvoices](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#updateforinvoices) | boolean | Update the payment order when invoices are issued for any of the sales orders lines. `Required` 
 
 ## References
@@ -102,16 +101,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

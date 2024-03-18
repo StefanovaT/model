@@ -9,7 +9,7 @@ Warehouse Policies is a hierarchical system for applying policies to warehouse o
 
 ## Default Visualization
 Default Display Text Format:  
-_{Warehouse} {Code}{StateTagsAttribute}_  
+_{Warehouse} {Code}_  
 Default Search Members:  
 _Code; Warehouse.Name_  
 Code Data Member:  
@@ -39,7 +39,6 @@ Aggregate Root:
 | [Note](Logistics.Wms.WarehousePolicies.md#note) | string (max) __nullable__ | Notes. 
 | [ObjectVersion](Logistics.Wms.WarehousePolicies.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PolicyKind](Logistics.Wms.WarehousePolicies.md#policykind) | [PolicyKind](Logistics.Wms.WarehousePolicies.md#policykind) | The kind of policy, which is being applied. `Required` `Filter(multi eq)` 
-| [StateTagsAttribute](Logistics.Wms.WarehousePolicies.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDate](Logistics.Wms.WarehousePolicies.md#todate) | date __nullable__ | When set, specifies the de-activation date of the policy. `Filter(eq;ge;le)` 
 | [Value](Logistics.Wms.WarehousePolicies.md#value) | string (64) | The value specified for the policy. For boolean policies, allowed values are "true" and "false". `Required` `Filter(eq;ge;le)` 
 
@@ -160,16 +159,6 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### ToDate
 

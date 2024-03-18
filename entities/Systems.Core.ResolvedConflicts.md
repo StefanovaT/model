@@ -9,7 +9,7 @@ Contains records of conflicts, which were automatically resolved by update proce
 
 ## Default Visualization
 Default Display Text Format:  
-_{TableName:T}{StateTagsAttribute}_  
+_{TableName:T}_  
 Default Search Members:  
 _TableName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [ResolveDescription](Systems.Core.ResolvedConflicts.md#resolvedescription) | [MultilanguageString (400)](../data-types.md#multilanguagestring) | Description of the resolution of the conflict. `Required` `ReadOnly` 
 | [ResolvedTime](Systems.Core.ResolvedConflicts.md#resolvedtime) | datetime | Time when the resolution of the conflict was made. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` 
 | [RevisedByUser](Systems.Core.ResolvedConflicts.md#revisedbyuser) | boolean | True, when the conflict resolution was revised (reviewed) manually by user. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
-| [StateTagsAttribute](Systems.Core.ResolvedConflicts.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TableName](Systems.Core.ResolvedConflicts.md#tablename) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | Name of the table in which the conflict has occurred. `Required` `Filter(like)` `ReadOnly` 
 | [URL](Systems.Core.ResolvedConflicts.md#url) | string (254) | URL of the item (the row) for which the conflict occurred. `Required` `ReadOnly` 
 
@@ -137,16 +136,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TableName
 

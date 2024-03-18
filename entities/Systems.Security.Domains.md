@@ -9,7 +9,7 @@ Represents one user domain. The users in a domain have different emails. But one
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [IsDefault](Systems.Security.Domains.md#isdefault) | boolean | Specifies whether this is the default domain for the database. `Required` `Default(true)` `Filter(eq)` 
 | [Name](Systems.Security.Domains.md#name) | string (64) | The name of the domain (restricted for URL usage). `Required` `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Systems.Security.Domains.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Systems.Security.Domains.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -115,16 +114,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

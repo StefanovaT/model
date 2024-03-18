@@ -9,7 +9,7 @@ Contains the properties, that are required to be set, when creating new products
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProductGroup.Name:T}{StateTagsAttribute}_  
+_{ProductGroup.Name:T}_  
 Default Search Members:  
 _ProductGroup.Name_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [ObjectVersion](General.Products.ProductGroupRequiredProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PropertyNo](General.Products.ProductGroupRequiredProperties.md#propertyno) | int32 | The consecutive number (position) of the property within the product group and its subgroups. The parent groups of each leaf group should contain only unique property numbers. `Required` `Default(0)` 
 | [Required](General.Products.ProductGroupRequiredProperties.md#required) | boolean | Specifies whether the property is required (or only suggested) to be set for new products. Suggested properties are used by product configuration and other product creation services. true=Required, false=Suggested. `Required` `Default(false)` 
-| [StateTagsAttribute](General.Products.ProductGroupRequiredProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -135,16 +134,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

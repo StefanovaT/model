@@ -83,7 +83,7 @@
 <p>User-defined reports. Reports retrieve data from data sources and present it in a user-defined layout. Entity: Sys_Reports</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}{StateTagsAttribute}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -155,11 +155,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Reporting.Reports.html#reportlayout">ReportLayout</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>The textual representation of the printout layout, when the format requires text representation. Alternative to Report_Binary_Layout.</td>
-</tr>
-<tr>
-<td><a href="Systems.Reporting.Reports.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Reporting.Reports.html#templatefilterxml">TemplateFilterXml</a></td>
@@ -267,13 +262,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="templatefilterxml">TemplateFilterXml</h3>
 <p>Specifies the filter condition, which must be satisfied in order for this report to be prioritized for printing as a template sub-report. null when the current report cannot be used as template sub-report.</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>

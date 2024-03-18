@@ -13,7 +13,7 @@ Obsolete. Not used. Entity: Gen_Link_Types (Obsoleted in version 22.1.6.60)
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [Id](General.LinkTypes.md#id) | guid |  
 | [Name](General.LinkTypes.md#name) | string (254) | Obsolete. Not used. `Required` 
 | [ObjectVersion](General.LinkTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.LinkTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDocTypeId](General.LinkTypes.md#todoctypeid) | guid __nullable__ | To what type of documents the link points. null means that it might point to any document type. `Filter(multi eq)` 
 
 
@@ -86,16 +85,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ Contains files attached to objects. Entity: Sys_Object_Files
 
 ## Default Visualization
 Default Display Text Format:  
-_{FileName}{StateTagsAttribute}_  
+_{FileName}_  
 Default Search Members:  
 _FileName_  
 Category:  _Definitions_  
@@ -44,7 +44,6 @@ Aggregate Root:
 | [ObjectVersion](Systems.Core.ObjectFiles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PurposeCode](Systems.Core.ObjectFiles.md#purposecode) | string (32) __nullable__ | Code, designating the usage purpose of the file. The meaning of each code is up to the application with the exception of 'default/image', which is standartised as the default image for many types of objects. `Filter(eq)` 
 | [Section](Systems.Core.ObjectFiles.md#section) | string (64) __nullable__ | A section name used to group files. `Introduced in version 21.1.1.84` 
-| [StateTagsAttribute](Systems.Core.ObjectFiles.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -243,16 +242,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

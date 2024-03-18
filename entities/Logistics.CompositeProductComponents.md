@@ -9,7 +9,7 @@ Separate components of a product which are packaged and stored individually. Use
 
 ## Default Visualization
 Default Display Text Format:  
-_{ComponentNo}: {ComponentProduct}{StateTagsAttribute}_  
+_{ComponentNo}: {ComponentProduct}_  
 Default Search Members:  
 _CompositeProduct.Name_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [Notes](Logistics.CompositeProductComponents.md#notes) | string (max) __nullable__ | Notes for this composite product component. 
 | [ObjectVersion](Logistics.CompositeProductComponents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Logistics.CompositeProductComponents.md#quantity) | decimal (12, 3) | The number of packages of this component that are needed to compose the product. `Required` `Default(1)` `Filter(multi eq;ge;le)` 
-| [StateTagsAttribute](Logistics.CompositeProductComponents.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToDate](Logistics.CompositeProductComponents.md#todate) | date __nullable__ | Ending date (inclusive) of the validity of the component. Null means that the component does not have a deactivation date. `Filter(eq;ge;le)` 
 
 ## References
@@ -136,16 +135,6 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **1**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### ToDate
 

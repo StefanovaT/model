@@ -83,7 +83,7 @@
 <p>Theoretical or actual content of a logistic unit. Entity: Log_Logistic_Unit_Contents (Introduced in version 21.1.0.77)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LogisticUnit.SerialCode}{StateTagsAttribute}</em><br>
+<em>{LogisticUnit.SerialCode}</em><br>
 Default Search Members:<br>
 <em>LotNumber; LogisticUnit.SerialCode</em><br>
 Code Data Member:<br>
@@ -162,11 +162,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.LogisticUnitContents.html#standardquantity">StandardQuantity</a></td>
 <td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
 <td>The quantity, expessed in the standard measurement unit of the product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.LogisticUnitContents.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -300,13 +295,6 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.BaseQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="logisticunit">LogisticUnit</h3>
 <p>The containing logistic unit. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

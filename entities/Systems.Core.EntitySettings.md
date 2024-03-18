@@ -9,7 +9,7 @@ Contains entities, which have secured access. Entity: Sys_Entities
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Tree
 | [LogUpdate](Systems.Core.EntitySettings.md#logupdate) | boolean | Specifies whether to log every update for this entity. `Required` `Default(false)` `Introduced in version 18.2` 
 | [Name](Systems.Core.EntitySettings.md#name) | string (64) | The system name of the entity, which is being secured. `Required` `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Systems.Core.EntitySettings.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Systems.Core.EntitySettings.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TrackChangesLevel](Systems.Core.EntitySettings.md#trackchangeslevel) | [TrackChangesLevel](Systems.Core.EntitySettings.md#trackchangeslevel) | The track changes level for the entity. `Required` `Default(0)` `Filter(multi eq)` `Introduced in version 19.1` 
 
 ## References
@@ -152,16 +151,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

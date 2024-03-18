@@ -9,7 +9,7 @@ Contains one or more sequence generators for each sequence. Many sequence genera
 
 ## Default Visualization
 Default Display Text Format:  
-_{Sequence.Name}{StateTagsAttribute}_  
+_{Sequence.Name}_  
 Default Search Members:  
 _Sequence.Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [NextValue](General.SequenceGenerators.md#nextvalue) | string (16) | The next number that will be issued by the sequence. `Required` `Default("0000000001")` 
 | [ObjectVersion](General.SequenceGenerators.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SequencePriority](General.SequenceGenerators.md#sequencepriority) | int32 | The priority in which the sequence is used, compared to other similar sequences. Used only for sequences, for which Simultaneous Transactions=True. `Required` `Default(1)` 
-| [StateTagsAttribute](General.SequenceGenerators.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -111,16 +110,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **1**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

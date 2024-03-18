@@ -9,7 +9,7 @@ Agile project, used to logically group cases. Entity: Apm_Projects (Introduced i
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [IsTemplate](Projects.Agile.Projects.md#istemplate) | boolean | Specifies whether the project is template for new projects of the same type. Template projects can be managed as normal projects. Only one project can be template for any given project type. Cases and other data are copied from the template project when creating a new project. `Required` `Default(false)` `Filter(eq)` 
 | [Name](Projects.Agile.Projects.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the project. `Required` `Filter(like)` 
 | [ObjectVersion](Projects.Agile.Projects.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Projects.Agile.Projects.md#statetagsattribute) | string | Specifies the state of the document. 
 | [WipLimit](Projects.Agile.Projects.md#wiplimit) | int32 __nullable__ | When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to Active state. `Filter(eq)` 
 
 ## References
@@ -104,16 +103,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

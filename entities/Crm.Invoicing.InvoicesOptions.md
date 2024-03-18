@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](Crm.Invoicing.InvoicesOptions.md#id) | guid |  
 | [ObjectVersion](Crm.Invoicing.InvoicesOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SignRestriction](Crm.Invoicing.InvoicesOptions.md#signrestriction) | [SignRestriction](Crm.Invoicing.InvoicesOptions.md#signrestriction) | Restricts the sign of the line amounts of the invoices. -1 =allow only negative, 0=allow all, 1=allow only positive amounts. `Required` `Default(0)` 
-| [StateTagsAttribute](Crm.Invoicing.InvoicesOptions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalAmountSignRestriction](Crm.Invoicing.InvoicesOptions.md#totalamountsignrestriction) | [SignRestriction](Crm.Invoicing.InvoicesOptions.md#totalamountsignrestriction) | Restricts the sign of the total amount (amount to pay) of the invoices. -1 =allow only negative, 0=allow all, 1=allow only positive amounts. `Required` `Default(0)` 
 
 ## References
@@ -107,16 +106,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TotalAmountSignRestriction
 

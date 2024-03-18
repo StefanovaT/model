@@ -9,7 +9,7 @@ Hierarchical structure of the legally defined administrative regions. Administra
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [Name](General.Geography.AdministrativeRegions.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of country territorial subdivision. `Required` `Filter(like)` 
 | [ObjectVersion](General.Geography.AdministrativeRegions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentFullPath](General.Geography.AdministrativeRegions.md#parentfullpath) | string (254) __nullable__ | Parent region of the current territorial subdivision. `Filter(eq;like)` 
-| [StateTagsAttribute](General.Geography.AdministrativeRegions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ValidFrom](General.Geography.AdministrativeRegions.md#validfrom) | date __nullable__ | Start date of validity of this administrative division. null when the starting date is unknown in the past. `Filter(ge;le)` 
 | [ValidTo](General.Geography.AdministrativeRegions.md#validto) | date __nullable__ | End date of validity of this administative division. null when the division is still active or ending date is unknown. `Filter(ge;le)` 
 
@@ -120,16 +119,6 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### ValidFrom
 

@@ -9,7 +9,7 @@ Product Category is defined by the taxation and customs authorities. Also specif
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [Id](Finance.Excise.ExciseProductCategories.md#id) | guid |  
 | [Name](Finance.Excise.ExciseProductCategories.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multilanguage String. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Excise.ExciseProductCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Excise.ExciseProductCategories.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -107,16 +106,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

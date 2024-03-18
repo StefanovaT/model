@@ -9,7 +9,7 @@ Transaction of product input or output, measured with specialized measuring devi
 
 ## Default Visualization
 Default Display Text Format:  
-_{TransactionNumber}: {MeasuringDeviceCode}{StateTagsAttribute}_  
+_{TransactionNumber}: {MeasuringDeviceCode}_  
 Default Search Members:  
 _MeasuringDeviceCode_  
 Code Data Member:  
@@ -39,7 +39,6 @@ Aggregate Tree
 | [ObjectVersion](Finance.Excise.MeasuringTransactions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Finance.Excise.MeasuringTransactions.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity of the product, measured with this transaction. `Unit: QuantityUnit` `Required` `Filter(eq;ge;le)` 
 | [StartTimeUtc](Finance.Excise.MeasuringTransactions.md#starttimeutc) | datetime | Starting time of the transaction (in UTC time). `Required` `Filter(eq;ge;le)` 
-| [StateTagsAttribute](Finance.Excise.MeasuringTransactions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalCounterEnd](Finance.Excise.MeasuringTransactions.md#totalcounterend) | decimal (12, 3) __nullable__ | Total counter value at the end of the transaction. `Introduced in version 23.1.1.42` 
 | [TotalCounterStart](Finance.Excise.MeasuringTransactions.md#totalcounterstart) | decimal (12, 3) __nullable__ | Total counter value at the start of the transaction. `Introduced in version 23.1.1.42` 
 | [TransactionNumber](Finance.Excise.MeasuringTransactions.md#transactionnumber) | string (32) | Transaction number, unique for the measuring device. `Required` `Filter(multi eq;like)` 
@@ -184,16 +183,6 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TotalCounterEnd
 

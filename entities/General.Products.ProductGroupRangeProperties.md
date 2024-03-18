@@ -9,7 +9,7 @@ When specified for a product group, provides a way for automatical creation of n
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProductGroup.Name:T}{StateTagsAttribute}_  
+_{ProductGroup.Name:T}_  
 Default Search Members:  
 _ProductGroup.Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [ObjectVersion](General.Products.ProductGroupRangeProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PropertyValuesList](General.Products.ProductGroupRangeProperties.md#propertyvalueslist) | string (max) __nullable__ | Contains the enumeration of all values in the alternating value set. Used only when Rage Type = E (enumeratio). 
 | [RangeType](General.Products.ProductGroupRangeProperties.md#rangetype) | [RangeType](General.Products.ProductGroupRangeProperties.md#rangetype) | Specifies the method of the creation of the value set: R - by range from-to; E - by enumeration of all values;. `Required` `Default("R")` 
-| [StateTagsAttribute](General.Products.ProductGroupRangeProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ToPropertyValue](General.Products.ProductGroupRangeProperties.md#topropertyvalue) | string (254) __nullable__ | Ending value of the range of alternative values. Used only when Rage Type = R (range). 
 
 ## References
@@ -117,16 +116,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **Range**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### ToPropertyValue
 

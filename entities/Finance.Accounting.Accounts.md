@@ -9,7 +9,7 @@ Contains the leaf level of the chart of accounts. Entity: Acc_Accounts
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Number; Name_  
 Code Data Member:  
@@ -39,7 +39,6 @@ Aggregate Tree
 | [Name](Finance.Accounting.Accounts.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The account name. `Required` `Filter(like)` 
 | [Number](Finance.Accounting.Accounts.md#number) | string (30) | The number of the account, unique within the account group. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Accounting.Accounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Accounting.Accounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -159,16 +158,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

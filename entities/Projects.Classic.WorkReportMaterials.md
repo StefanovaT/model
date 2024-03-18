@@ -9,7 +9,7 @@ Each record contains a consumed material, reported by the related Work Report. E
 
 ## Default Visualization
 Default Display Text Format:  
-_{WorkReport.EntityName}{StateTagsAttribute}_  
+_{WorkReport.EntityName}_  
 Default Search Members:  
 _WorkReport.EntityName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [ObjectVersion](Projects.Classic.WorkReportMaterials.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Projects.Classic.WorkReportMaterials.md#quantity) | decimal (9, 3) | The consumed quantity of the material. `Required` `Default(0)` `Filter(eq;like)` 
 | [QuantityBase](Projects.Classic.WorkReportMaterials.md#quantitybase) | decimal (9, 3) | The equivalence of Quantity in the base measurement unit of the Material. `Required` `Default(0)` `Filter(eq;like)` `ReadOnly` 
-| [StateTagsAttribute](Projects.Classic.WorkReportMaterials.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -101,16 +100,6 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.QuantityUnit != null) AndAlso ( obj.MaterialProduct != null)), new Quantity( obj.Quantity, obj.QuantityUnit).ConvertTo( obj.MaterialProduct.BaseUnit, obj.MaterialProduct).Value, obj.QuantityBase)`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 
 ## Reference Details
 

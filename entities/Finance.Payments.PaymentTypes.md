@@ -9,7 +9,7 @@ Describes the way of payment. For example: in cash, by bank transfer, with credi
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [IsActive](Finance.Payments.PaymentTypes.md#isactive) | boolean | Indicates wheather the payment type is active and usable for choosing in new documents. `Required` `Default(true)` `Filter(eq)` `Introduced in version 19.1` 
 | [Name](Finance.Payments.PaymentTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this PaymentType. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Payments.PaymentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Payments.PaymentTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemType](Finance.Payments.PaymentTypes.md#systemtype) | [SystemType](Finance.Payments.PaymentTypes.md#systemtype) __nullable__ | Not null only when this is one of the system payment types. CS=Cash; CD=By Card; BT=Bank Transfer. 
 
 ## References
@@ -110,16 +109,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

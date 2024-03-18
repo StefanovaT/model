@@ -9,7 +9,7 @@ Message in a training conversation. Entity: Llm_Training_Conversation_Messages (
 
 ## Default Visualization
 Default Display Text Format:  
-_{ParticipantName}{StateTagsAttribute}_  
+_{ParticipantName}_  
 Default Search Members:  
 _ParticipantName_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [ObjectVersion](Projects.AI.TrainingConversationMessages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParticipantName](Projects.AI.TrainingConversationMessages.md#participantname) | string (64) __nullable__ | Name of the participant, who created the message. Name is optional, but gives more context to the message. 
 | [ParticipantRole](Projects.AI.TrainingConversationMessages.md#participantrole) | [ParticipantRole](Projects.AI.TrainingConversationMessages.md#participantrole) | Role of the participant. Can be System - for system mood messages; User - for user messages; Assistant - for AI-created message. `Required` `Default("U")` `Filter(multi eq)` 
-| [StateTagsAttribute](Projects.AI.TrainingConversationMessages.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -144,16 +143,6 @@ _Supported Filters_: **Equals, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **User**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

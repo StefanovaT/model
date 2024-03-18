@@ -9,7 +9,7 @@ Represents concrete instances of resources. Entity: Gen_Resource_Instances
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [Name](General.Resources.ResourceInstances.md#name) | string (max) | Multilanguage resource instance name. `Required` `Filter(eq;like)` 
 | [Notes](General.Resources.ResourceInstances.md#notes) | string (max) __nullable__ | Notes for this ResourceInstance. 
 | [ObjectVersion](General.Resources.ResourceInstances.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.Resources.ResourceInstances.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -108,16 +107,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

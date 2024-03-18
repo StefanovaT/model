@@ -83,7 +83,7 @@
 <p>Represents one POS device, attached to a POS terminal. Entity: Pos_Devices (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PosTerminal.PosTerminalName:T}{StateTagsAttribute}</em><br>
+<em>{PosTerminal.PosTerminalName:T}</em><br>
 Default Search Members:<br>
 <em>PosTerminal.PosTerminalName</em><br>
 Name Data Member:<br>
@@ -150,11 +150,6 @@ Aggregate Root:<br>
 <td><a href="Crm.Pos.Devices.html#settingsjson">SettingsJson</a></td>
 <td>string (max) <strong>nullable</strong></td>
 <td>Settings and operator access codes for the POS device. The data is stored as Json, encrypted for the current application server instance. null means that there are no settings for this device.</td>
-</tr>
-<tr>
-<td><a href="Crm.Pos.Devices.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -288,13 +283,6 @@ Allowed values for the <code>ProtocolName</code>(Crm.Pos.Devices.md#protocolname
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="posterminal">PosTerminal</h3>
 <p>The POS terminal, to which this device is attached. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

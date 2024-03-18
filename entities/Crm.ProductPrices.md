@@ -9,7 +9,7 @@ Specific prices of products. A price is applied after matching the specified cri
 
 ## Default Visualization
 Default Display Text Format:  
-_{Price} - {FromDate}{StateTagsAttribute}_  
+_{Price} - {FromDate}_  
 Default Search Members:  
 _Notes_  
 Category:  _Definitions_  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [Price](Crm.ProductPrices.md#price) | [Amount (13, 5)](../data-types.md#amount) | Price in the specified currency and for the specified quantity. `Currency: Currency` `Required` `Default(0)` `Filter(eq;ge;le)` 
 | [PriceQuantity](Crm.ProductPrices.md#pricequantity) | [Quantity (10, 3)](../data-types.md#quantity) | The quantity of the product for which the price is specified. `Unit: PriceQuantityMeasurement<br />Unit` `Required` `Default(1)` `Filter(ge;le)` 
 | [Priority](Crm.ProductPrices.md#priority) | [Priority](Crm.ProductPrices.md#priority) | Priority of the price comparative to other prices. Only the highest priority price is applied. `Required` `Default(2)` `Filter(multi eq)` 
-| [StateTagsAttribute](Crm.ProductPrices.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ThruDate](Crm.ProductPrices.md#thrudate) | date __nullable__ | Ending date (inclusive) of the validity of the price. `Filter(eq;ge;le)` 
 
 ## References
@@ -171,16 +170,6 @@ _Supported Filters_: **Equals, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **2**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### ThruDate
 

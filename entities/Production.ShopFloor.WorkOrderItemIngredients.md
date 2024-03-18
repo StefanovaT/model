@@ -9,7 +9,7 @@ The materials consumed in the production order operations. Entity: Prd_Work_Orde
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _WorkOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [LineOrd](Production.ShopFloor.WorkOrderItemIngredients.md#lineord) | int32 | The order of the line within the item. `Required` `Filter(eq;like)` 
 | [Notes](Production.ShopFloor.WorkOrderItemIngredients.md#notes) | string (254) __nullable__ | Notes for this WorkOrderItemIngredient. 
 | [ObjectVersion](Production.ShopFloor.WorkOrderItemIngredients.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Production.ShopFloor.WorkOrderItemIngredients.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UsedQuantity](Production.ShopFloor.WorkOrderItemIngredients.md#usedquantity) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity of the material consumed in the operation. `Unit: UsedQuantityUnit` `Required` `Default(1)` 
 | [UsedQuantityBase](Production.ShopFloor.WorkOrderItemIngredients.md#usedquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Used Quantity in the base measurement category of the material. `Unit: Material.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` 
 | [UsedStandardQuantityBase](Production.ShopFloor.WorkOrderItemIngredients.md#usedstandardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions of the product. Used to measure the execution. null means to take the value from Used Quantity Base. `Unit: Material.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
@@ -143,16 +142,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

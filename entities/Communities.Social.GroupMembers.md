@@ -9,7 +9,7 @@ Represents the membership of a user in a social group. Entity: Cmm_Social_Group_
 
 ## Default Visualization
 Default Display Text Format:  
-_{SocialGroup.Name}{StateTagsAttribute}_  
+_{SocialGroup.Name}_  
 Default Search Members:  
 _SocialGroup.Name_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [JoinTimeUtc](Communities.Social.GroupMembers.md#jointimeutc) | datetime | The exact server time (in UTC), when the user joined the group. `Required` `Default(NowUtc)` `Filter(ge;le)` 
 | [ObjectVersion](Communities.Social.GroupMembers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Role](Communities.Social.GroupMembers.md#role) | [Role](Communities.Social.GroupMembers.md#role) | Member role in a group. Defaults to member. `Required` `Default("M")` `Filter(eq)` `Introduced in version 23.1.1.95` 
-| [StateTagsAttribute](Communities.Social.GroupMembers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -105,16 +104,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **Member**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

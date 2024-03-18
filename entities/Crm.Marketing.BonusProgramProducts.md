@@ -9,7 +9,7 @@ Provides a way to specify additional (to the one specified in Bonus Program.Cond
 
 ## Default Visualization
 Default Display Text Format:  
-_{BonusProgram.Name:T}{StateTagsAttribute}_  
+_{BonusProgram.Name:T}_  
 Default Search Members:  
 _BonusProgram.Name_  
 Name Data Member:  
@@ -32,7 +32,6 @@ Aggregate Root:
 | [DisplayText](Crm.Marketing.BonusProgramProducts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Marketing.BonusProgramProducts.md#id) | guid |  
 | [ObjectVersion](Crm.Marketing.BonusProgramProducts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Marketing.BonusProgramProducts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -69,16 +68,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ Represents the different working schedules, used by the employees and resources.
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [NumberOfDays](General.Resources.WorkSchedules.md#numberofdays) | int16 __nullable__ | Number of days in a recurring period. Valid only when Recurrence_Type=D. 
 | [ObjectVersion](General.Resources.WorkSchedules.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RecurrenceType](General.Resources.WorkSchedules.md#recurrencetype) | [RecurrenceType](General.Resources.WorkSchedules.md#recurrencetype) | D=recurring each X days; W=recurring each week; M=recurring each month. `Required` `Filter(multi eq)` 
-| [StateTagsAttribute](General.Resources.WorkSchedules.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -113,16 +112,6 @@ _Allowed Values (General.Resources.WorkSchedulesRepository.RecurrenceType Enum M
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

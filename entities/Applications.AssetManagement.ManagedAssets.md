@@ -9,7 +9,7 @@ Contains the managed assets. The management of assets include maintenance planni
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -40,7 +40,6 @@ Aggregate Tree
 | [Notes](Applications.AssetManagement.ManagedAssets.md#notes) | string (max) __nullable__ | Notes for this ManagedAsset. 
 | [ObjectVersion](Applications.AssetManagement.ManagedAssets.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RegistrationNumber](Applications.AssetManagement.ManagedAssets.md#registrationnumber) | string (32) __nullable__ | Registration number of the asset with the national registration authorities. null means the registation number is unknown or N/A. `Filter(eq;like)` 
-| [StateTagsAttribute](Applications.AssetManagement.ManagedAssets.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -133,16 +132,6 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **32**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

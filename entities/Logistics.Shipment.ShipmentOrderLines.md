@@ -9,7 +9,7 @@ Represents detail lines of orders for shipment of sales orders to customers. Eac
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {ShipmentOrder.DocumentNo} {ShipmentOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineNo}. {ShipmentOrder.DocumentNo} {ShipmentOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _ShipmentOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -45,7 +45,6 @@ Aggregate Root:
 | [Quantity](Logistics.Shipment.ShipmentOrderLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity to be shipped. `Unit: QuantityUnit` `Required` `Default(1)` 
 | [QuantityBase](Logistics.Shipment.ShipmentOrderLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The equivalence of Quantity in the base measurement category of the product. `Unit: ParentSalesOrderLine.Product.BaseMeasurementCategory.BaseUnit` `Required` 
 | [StandardQuantityBase](Logistics.Shipment.ShipmentOrderLines.md#standardquantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: ParentSalesOrderLine.Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
-| [StateTagsAttribute](Logistics.Shipment.ShipmentOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Volumel](Logistics.Shipment.ShipmentOrderLines.md#volumel) | decimal (12, 3) __nullable__ | The volume in litres of the whole batch. null means unknown. 
 | [Widthm](Logistics.Shipment.ShipmentOrderLines.md#widthm) | decimal (12, 3) __nullable__ | The width of the package in meters. null means unknown. 
 
@@ -267,16 +266,6 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 ### Volumel
 
 The volume in litres of the whole batch. null means unknown.

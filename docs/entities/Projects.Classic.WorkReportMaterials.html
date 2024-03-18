@@ -83,7 +83,7 @@
 <p>Each record contains a consumed material, reported by the related Work Report. Entity: Prj_Work_Report_Materials</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{WorkReport.EntityName}{StateTagsAttribute}</em><br>
+<em>{WorkReport.EntityName}</em><br>
 Default Search Members:<br>
 <em>WorkReport.EntityName</em><br>
 Name Data Member:<br>
@@ -130,11 +130,6 @@ Aggregate Root:<br>
 <td><a href="Projects.Classic.WorkReportMaterials.html#quantitybase">QuantityBase</a></td>
 <td>decimal (9, 3)</td>
 <td>The equivalence of Quantity in the base measurement unit of the Material. <code>Required</code> <code>Default(0)</code> <code>Filter(eq;like)</code> <code>ReadOnly</code></td>
-</tr>
-<tr>
-<td><a href="Projects.Classic.WorkReportMaterials.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -210,13 +205,6 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( obj.QuantityUnit != null) AndAlso ( obj.MaterialProduct != null)), new Quantity( obj.Quantity, obj.QuantityUnit).ConvertTo( obj.MaterialProduct.BaseUnit, obj.MaterialProduct).Value, obj.QuantityBase)</code></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="materialproduct">MaterialProduct</h3>
 <p>The consumed material. <code>Required</code> <code>Filter(multi eq)</code></p>

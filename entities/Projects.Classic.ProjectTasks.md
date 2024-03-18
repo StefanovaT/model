@@ -9,7 +9,7 @@ Represents one task of a project. Entity: Prj_Project_Tasks
 
 ## Default Visualization
 Default Display Text Format:  
-_{TaskName}{StateTagsAttribute}_  
+_{TaskName}_  
 Default Search Members:  
 _TaskName_  
 Name Data Member:  
@@ -40,7 +40,6 @@ Aggregate Tree
 | [PlannedDurationHours](Projects.Classic.ProjectTasks.md#planneddurationhours) | decimal (8, 2) | Planned duration of the task in hours. The hours are allocated in the time interval between Start Date Time and Finish Date Time. `Required` `Default(0)` 
 | [ProjectTaskNo](Projects.Classic.ProjectTasks.md#projecttaskno) | int32 | Consecutive task number, unique within the project. `Required` 
 | [StartDateTime](Projects.Classic.ProjectTasks.md#startdatetime) | datetime | The date and time when the task is planned to start. `Required` `Default(Now)` `Filter(eq;ge;le)` 
-| [StateTagsAttribute](Projects.Classic.ProjectTasks.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TaskName](Projects.Classic.ProjectTasks.md#taskname) | string (254) | The short name of the task. It is best practice to contain the target of the task. `Required` `Filter(multi eq;like)` 
 
 ## References
@@ -161,16 +160,6 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TaskName
 

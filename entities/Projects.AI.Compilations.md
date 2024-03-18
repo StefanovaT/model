@@ -9,7 +9,7 @@ Compilation is created, when a Model is being compiled through the AI provider i
 
 ## Default Visualization
 Default Display Text Format:  
-_{CompiledModelName}{StateTagsAttribute}_  
+_{CompiledModelName}_  
 Default Search Members:  
 _CompiledModelName_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Tree
 | [IsSuccessful](Projects.AI.Compilations.md#issuccessful) | boolean | Indicated whether the build process was successful and the compilation can be used for conversations. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [ObjectVersion](Projects.AI.Compilations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartTimeUtc](Projects.AI.Compilations.md#starttimeutc) | datetime | The time, when the compilation was started. `Required` `Default(NowUtc)` `Filter(eq;ge;le)` `ORD` `ReadOnly` 
-| [StateTagsAttribute](Projects.AI.Compilations.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Status](Projects.AI.Compilations.md#status) | [Status](Projects.AI.Compilations.md#status) | The status of the build job of the compilation. Building the compilation runs through New, Running and Completed. Deleting the compilation from the providers space marks it as Deleted. `Required` `Default("N")` `Filter(multi eq)` `ReadOnly` 
 
 ## References
@@ -150,16 +149,6 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan**
 _Supports Order By_: **True**  
 _Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### Status
 

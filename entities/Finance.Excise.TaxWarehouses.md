@@ -9,7 +9,7 @@ Contains excise-related data for warehouses (stores), which are defined as tax w
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _TaxWarehouseExciseNumber; Name_  
 Code Data Member:  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [Id](Finance.Excise.TaxWarehouses.md#id) | guid |  
 | [Name](Finance.Excise.TaxWarehouses.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Tax Warehouse Name (Multilanguage). `Required` `Filter(like)` `Introduced in version 21.1.3.93` 
 | [ObjectVersion](Finance.Excise.TaxWarehouses.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Excise.TaxWarehouses.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TaxWarehouseExciseNumber](Finance.Excise.TaxWarehouses.md#taxwarehouseexcisenumber) | string (32) | The excise identification number of the tax warehouse, issued by the competent authorities. `Required` `Default("-")` `Introduced in version 21.1.3.87` 
 | [TraderExciseNumber](Finance.Excise.TaxWarehouses.md#traderexcisenumber) | string (32) | The excise identification number of the owner of the Tax Warehouse. `Required` `Default("-")` `Introduced in version 21.1.3.87` 
 
@@ -93,16 +92,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

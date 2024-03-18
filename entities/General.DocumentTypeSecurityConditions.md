@@ -35,7 +35,6 @@ Aggregate Root:
 | [Id](General.DocumentTypeSecurityConditions.md#id) | guid |  
 | [ObjectVersion](General.DocumentTypeSecurityConditions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](General.DocumentTypeSecurityConditions.md#priority) | [Priority](General.DocumentTypeSecurityConditions.md#priority) | Priority of the rule against other rules, which are also applicable. Only the highest priority rule is selected. `Required` `Default(3)` `Filter(ge;le)` 
-| [StateTagsAttribute](General.DocumentTypeSecurityConditions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -118,16 +117,6 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **3**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

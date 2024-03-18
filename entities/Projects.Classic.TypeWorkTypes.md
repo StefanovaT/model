@@ -9,7 +9,7 @@ Contains the work types, that can be performed in projects of this project type.
 
 ## Default Visualization
 Default Display Text Format:  
-_{WorkTypeName}{StateTagsAttribute}_  
+_{WorkTypeName}_  
 Default Search Members:  
 _WorkTypeName_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](Projects.Classic.TypeWorkTypes.md#id) | guid |  
 | [IsActive](Projects.Classic.TypeWorkTypes.md#isactive) | boolean | True when the work type is currently active and selectable in new documents. `Required` `Default(true)` `Filter(eq)` 
 | [ObjectVersion](Projects.Classic.TypeWorkTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Projects.Classic.TypeWorkTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [WorkTypeName](Projects.Classic.TypeWorkTypes.md#worktypename) | string (254) | The name of the work type. `Required` `Filter(eq;like)` 
 
 ## References
@@ -82,16 +81,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

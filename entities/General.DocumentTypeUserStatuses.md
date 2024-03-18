@@ -37,7 +37,6 @@ Aggregate Root:
 | [IsExitStatus](General.DocumentTypeUserStatuses.md#isexitstatus) | boolean | True when the status allows going to the next system status, false otherwise. For example for system status Firm Planned, only user status Approved might allow going to Released. `Required` `Default(true)` `Filter(eq)` 
 | [ObjectVersion](General.DocumentTypeUserStatuses.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [State](General.DocumentTypeUserStatuses.md#state) | [DocumentState](General.DocumentTypeUserStatuses.md#state) | The system state to which this user status is bound. `Required` `Filter(eq)` 
-| [StateTagsAttribute](General.DocumentTypeUserStatuses.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UserStatusName](General.DocumentTypeUserStatuses.md#userstatusname) | string (128) | Multi-language name of the user status. `Required` `Filter(eq;like)` 
 
 ## References
@@ -148,16 +147,6 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### UserStatusName
 

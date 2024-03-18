@@ -9,7 +9,7 @@ Contains permissions, which are honored only by client applications and are used
 
 ## Default Visualization
 Default Display Text Format:  
-_{ApplicationName}{StateTagsAttribute}_  
+_{ApplicationName}_  
 Default Search Members:  
 _ApplicationName_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [ObjectVersion](Systems.Security.VisualPermissions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OperationName](Systems.Security.VisualPermissions.md#operationname) | string (64) __nullable__ | Optionally, the operation on the element which will be secured. `Filter(eq)` 
 | [PanelName](Systems.Security.VisualPermissions.md#panelname) | string (128) __nullable__ | Optionally, the panel from the form which will be secured. `Filter(eq)` 
-| [StateTagsAttribute](Systems.Security.VisualPermissions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -129,16 +128,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

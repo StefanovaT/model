@@ -9,7 +9,7 @@ Contains discussions on project risks. Entity: Prj_Project_Risk_Discussion
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProjectRisk.RiskName}{StateTagsAttribute}_  
+_{ProjectRisk.RiskName}_  
 Default Search Members:  
 _ProjectRisk.RiskName_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [LastEditTime](Projects.Classic.ProjectRiskDiscussion.md#lastedittime) | datetime __nullable__ | Contains the last edit time of the message. null if the message was never edited. `Filter(eq;ge;le)` `ReadOnly` 
 | [Message](Projects.Classic.ProjectRiskDiscussion.md#message) | string (max) | The contents of the message. `Required` 
 | [ObjectVersion](Projects.Classic.ProjectRiskDiscussion.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Projects.Classic.ProjectRiskDiscussion.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -104,16 +103,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

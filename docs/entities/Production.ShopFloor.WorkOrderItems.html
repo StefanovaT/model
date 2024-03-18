@@ -83,7 +83,7 @@
 <p>The different items that are produced with a work order. Entity: Prd_Work_Order_Items</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{LineOrd}. {WorkOrder.DocumentNo} {WorkOrder.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>WorkOrder.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -183,11 +183,6 @@ Aggregate Root:<br>
 <td><a href="Production.ShopFloor.WorkOrderItems.html#scheduledstartdatetime">ScheduledStartDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>Date and time when the production of this item is scheduled to begin. <code>Filter(ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Production.ShopFloor.WorkOrderItems.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -446,13 +441,6 @@ Allowed values for the <code>Priority</code>(Production.ShopFloor.WorkOrderItems
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>

@@ -83,7 +83,7 @@
 <p>External login providers. Entity: Sec_User_Provider_Logins (Introduced in version 18.2)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{User.Name:T}{StateTagsAttribute}</em><br>
+<em>{User.Name:T}</em><br>
 Default Search Members:<br>
 <em>User.Name</em><br>
 Name Data Member:<br>
@@ -130,11 +130,6 @@ Aggregate Root:<br>
 <td><a href="Systems.Security.UserProviderLogins.html#providername">ProviderName</a></td>
 <td><a href="Systems.Security.UserProviderLogins.html#providername">ProviderName</a></td>
 <td>The system name of the authentication provider. It should be already registered for the domain. <code>Required</code> <code>Filter(eq)</code> <code>Introduced in version 20.1</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Security.UserProviderLogins.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -220,13 +215,6 @@ Allowed values for the <code>ProviderName</code>(Systems.Security.DomainProvider
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="user">User</h3>
 <p>The user for which the login is defined. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

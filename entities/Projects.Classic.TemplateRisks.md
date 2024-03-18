@@ -9,7 +9,7 @@ Contains project risks, which will be copied to projects, based on the template.
 
 ## Default Visualization
 Default Display Text Format:  
-_{RiskName}{StateTagsAttribute}_  
+_{RiskName}_  
 Default Search Members:  
 _RiskName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [ObjectVersion](Projects.Classic.TemplateRisks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProbabilityPercent](Projects.Classic.TemplateRisks.md#probabilitypercent) | decimal (3, 2) | The probability of the risk occurring. `Required` `Default(0)` 
 | [RiskName](Projects.Classic.TemplateRisks.md#riskname) | string (254) | The name of the risk. `Required` 
-| [StateTagsAttribute](Projects.Classic.TemplateRisks.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -119,16 +118,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

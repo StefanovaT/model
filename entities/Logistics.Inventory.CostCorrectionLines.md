@@ -9,7 +9,7 @@ Cost correction detail lines. One line is created for each corrected transaction
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}. {CostCorrection.DocumentNo} {CostCorrection.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{Id}. {CostCorrection.DocumentNo} {CostCorrection.DocumentType.TypeName:T}_  
 Default Search Members:  
 _CostCorrection.DocumentNo_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [Id](Logistics.Inventory.CostCorrectionLines.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.CostCorrectionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProductCostAdjustment](Logistics.Inventory.CostCorrectionLines.md#productcostadjustment) | [Amount (14, 2)](../data-types.md#amount) | The amount of correction (plus or minus) for the Product Cost field of the transaction line. `Currency: TransactionLine.Product.CostingCurrency` `Required` `Default(0)` 
-| [StateTagsAttribute](Logistics.Inventory.CostCorrectionLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [StoreCostAdjustment](Logistics.Inventory.CostCorrectionLines.md#storecostadjustment) | [Amount (14, 2)](../data-types.md#amount) | The amount of correction (plus or minus) for the Store Cost field of the transaction line. `Currency: TransactionLine.TransactionObj.Store.Currency` `Required` `Default(0)` 
 
 ## References
@@ -110,16 +109,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### StoreCostAdjustment
 

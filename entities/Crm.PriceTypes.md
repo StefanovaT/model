@@ -9,7 +9,7 @@ Price types. Entity: Crm_Price_Types
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [Notes](Crm.PriceTypes.md#notes) | string (max) __nullable__ | Notes for this PriceType. 
 | [ObjectVersion](Crm.PriceTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [OrdinalPos](Crm.PriceTypes.md#ordinalpos) | int32 | Priority position of the price type, with respect to the other price types. `Required` `ORD` 
-| [StateTagsAttribute](Crm.PriceTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -114,16 +113,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

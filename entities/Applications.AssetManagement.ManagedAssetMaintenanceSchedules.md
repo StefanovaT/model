@@ -9,7 +9,7 @@ Contains the maintenance schedules for the managed assets. Entity: Eam_Managed_A
 
 ## Default Visualization
 Default Display Text Format:  
-_{ManagedAsset.Name:T}{StateTagsAttribute}_  
+_{ManagedAsset.Name:T}_  
 Default Search Members:  
 _ManagedAsset.Name_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [ParameterChangeDelta](Applications.AssetManagement.ManagedAssetMaintenanceSchedules.md#parameterchangedelta) | int32 __nullable__ | The value of the tracked parameter change between planned maintenances. The tracked parameter is determined based on the Maintenance Type. null means, that the maintenances are not planned, based on parameter change. `Filter(multi eq;ge;le)` 
 | [ScheduleDays](Applications.AssetManagement.ManagedAssetMaintenanceSchedules.md#scheduledays) | int32 __nullable__ | Number of days between planned maintenances. null means that the schedule is not planned based on days. 
 | [ScheduleMonths](Applications.AssetManagement.ManagedAssetMaintenanceSchedules.md#schedulemonths) | int32 __nullable__ | Number of months between planned maintenances. null means that the schedule is not planned based on months. 
-| [StateTagsAttribute](Applications.AssetManagement.ManagedAssetMaintenanceSchedules.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -117,16 +116,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

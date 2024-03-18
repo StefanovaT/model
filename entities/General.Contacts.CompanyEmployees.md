@@ -9,7 +9,7 @@ Contains the company employee contracts. Entity: Cm_Company_Employees
 
 ## Default Visualization
 Default Display Text Format:  
-_{Person.PartyName:T}{StateTagsAttribute}_  
+_{Person.PartyName:T}_  
 Default Search Members:  
 _ContractCode; Person.PartyName_  
 Code Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [Id](General.Contacts.CompanyEmployees.md#id) | guid |  
 | [Notes](General.Contacts.CompanyEmployees.md#notes) | string (254) __nullable__ | Notes for this CompanyEmployee. 
 | [ObjectVersion](General.Contacts.CompanyEmployees.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.Contacts.CompanyEmployees.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -121,16 +120,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

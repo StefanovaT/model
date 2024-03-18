@@ -83,7 +83,7 @@
 <p>Request for one product with a warehouse requisition. Entity: Wms_Warehouse_Requisition_Lines (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {WarehouseRequisition.DocumentNo} {WarehouseRequisition.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{LineNo}. {WarehouseRequisition.DocumentNo} {WarehouseRequisition.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>WarehouseRequisition.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -148,11 +148,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.Wms.WarehouseRequisitionLines.html#standardquantity">StandardQuantity</a></td>
 <td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
 <td>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Introduced in version 22.1.4.42</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.Wms.WarehouseRequisitionLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -285,13 +280,6 @@ Aggregate Root:<br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantity, IIF( obj.Product.AllowVariableMeasurementRatios, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.QuantityBase))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantity, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The <see cref="WarehouseRequisition"></see> to which this WarehouseRequisitionLine belongs. <code>Required</code> <code>Filter(multi eq)</code></p>

@@ -9,7 +9,7 @@ List of costs, associated with a pricing model. Entity: Crm_Pricing_Model_Costs
 
 ## Default Visualization
 Default Display Text Format:  
-_{PricingModel.Name}{StateTagsAttribute}_  
+_{PricingModel.Name}_  
 Default Search Members:  
 _PricingModel.Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [Id](Crm.Pricing.PricingModelCosts.md#id) | guid |  
 | [LineNo](Crm.Pricing.PricingModelCosts.md#lineno) | int32 | The consequtive number of the cost within the pricing model. `Required` 
 | [ObjectVersion](Crm.Pricing.PricingModelCosts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Pricing.PricingModelCosts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -108,16 +107,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ Contains invoicing ratios for the listed services. Entity: Srv_Service_Invoicing
 
 ## Default Visualization
 Default Display Text Format:  
-_{Service.Name}{StateTagsAttribute}_  
+_{Service.Name}_  
 Default Search Members:  
 _Service.Name_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [ObjectVersion](Applications.Service.ServiceInvoicing.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [QuantityOfProduct](Applications.Service.ServiceInvoicing.md#quantityofproduct) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity to invoice. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [QuantityOfService](Applications.Service.ServiceInvoicing.md#quantityofservice) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity of service for which the invoicing is specified. `Unit: Service.MeasurementUnit` `Required` `Default(1)` `Filter(ge;le)` 
-| [StateTagsAttribute](Applications.Service.ServiceInvoicing.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -96,16 +95,6 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

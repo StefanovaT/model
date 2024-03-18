@@ -83,7 +83,7 @@
 <p>Contains the planned, running and completed projects of the enterprises. Entity: Prj_Projects</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}{StateTagsAttribute}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -162,11 +162,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.Classic.Projects.html#startdate">StartDate</a></td>
 <td>date <strong>nullable</strong></td>
 <td>Expected date, when the execution of the tasks will start. null means that the start date is still unknown. <code>Filter(eq;ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Projects.Classic.Projects.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -347,13 +342,6 @@ Allowed values for the <code>ProjectStatus</code>(Projects.Classic.Projects.md#p
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="budgetingcurrency">BudgetingCurrency</h3>
 <p>The currency in which the project budget is calculated. <code>Filter(multi eq)</code></p>

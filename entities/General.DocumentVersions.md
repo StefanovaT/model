@@ -9,7 +9,7 @@ History of each saved version of each document. Entity: Gen_Document_Versions
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {DocumentId}{StateTagsAttribute}_  
+_{Id}: {DocumentId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -32,7 +32,6 @@ Aggregate Tree
 | [Id](General.DocumentVersions.md#id) | guid |  
 | [ObjectVersion](General.DocumentVersions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [State](General.DocumentVersions.md#state) | [State](General.DocumentVersions.md#state) | The state of the document by the time it was saved. `Required` `Default(0)` `Filter(multi eq)` `ReadOnly` 
-| [StateTagsAttribute](General.DocumentVersions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UpdateTime](General.DocumentVersions.md#updatetime) | datetime | The date and time when this version was saved. `Required` `Default(Now)` `Filter(ge;le)` `ORD` `ReadOnly` 
 | [UpdateUser](General.DocumentVersions.md#updateuser) | string (64) | The login name of the user that saved this version. `Required` `Filter(eq;like)` `ReadOnly` 
 | [Version](General.DocumentVersions.md#version) | int32 | The version number that is stored in this row. `Required` `Filter(eq;ge;le)` `ReadOnly` 
@@ -131,16 +130,6 @@ _Supported Filters_: **Equals, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### UpdateTime
 

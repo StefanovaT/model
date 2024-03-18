@@ -9,7 +9,7 @@ Template for material usage of a principal recipe. Entity: Prd_Principal_Recipe_
 
 ## Default Visualization
 Default Display Text Format:  
-_{IngredientName}{StateTagsAttribute}_  
+_{IngredientName}_  
 Default Search Members:  
 _IngredientName_  
 Name Data Member:  
@@ -39,7 +39,6 @@ Aggregate Root:
 | [LineOrd](Production.Technologies.PrincipalRecipeIngredients.md#lineord) | int32 | The position of the line in the recipe model. `Required` 
 | [ObjectVersion](Production.Technologies.PrincipalRecipeIngredients.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ScrapRate](Production.Technologies.PrincipalRecipeIngredients.md#scraprate) | decimal (7, 6) | The usual percentage (0..1) of scrap of the raw material; inflates the requirements of this material for this recipe. `Required` `Default(0)` `Filter(ge;le)` 
-| [StateTagsAttribute](Production.Technologies.PrincipalRecipeIngredients.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UsageQuantity](Production.Technologies.PrincipalRecipeIngredients.md#usagequantity) | [Quantity (18, 6)](../data-types.md#quantity) __nullable__ | Quantity to be consumed from the material. null means that the quantity is specified with formula. `Unit: UsageUnit` `Default(1)` `Filter(ge;le)` 
 | [UsageQuantityFormula](Production.Technologies.PrincipalRecipeIngredients.md#usagequantityformula) | string (max) __nullable__ | Specifies formula for the usage quantity. The formula can reference properties in `&lt;Prop_Name&gt;` style, just like products name and description mask. The formula can contain *, /, + and - operators. The formula can also be simple number, directly specifying quantity. 
 
@@ -169,16 +168,6 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### UsageQuantity
 

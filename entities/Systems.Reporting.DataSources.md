@@ -9,7 +9,7 @@ Contains user-defined data sources, which retrieve rows from multiple queries. E
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [Name](Systems.Reporting.DataSources.md#name) | string (64) | The name of the data source. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Systems.Reporting.DataSources.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ShowParentTables](Systems.Reporting.DataSources.md#showparenttables) | boolean | Indicates whether the parent nodes in the Reference_Path in Sys_Data_Source_<br />Queries_Table are automaticaly included in the report or not. `Required` `Default(false)` 
-| [StateTagsAttribute](Systems.Reporting.DataSources.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -127,16 +126,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

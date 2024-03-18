@@ -9,7 +9,7 @@ Member parties of a marketing target group. Entity: Crm_Target_Group_Members
 
 ## Default Visualization
 Default Display Text Format:  
-_{TargetGroup.Name}{StateTagsAttribute}_  
+_{TargetGroup.Name}_  
 Default Search Members:  
 _TargetGroup.Name_  
 Name Data Member:  
@@ -32,7 +32,6 @@ Aggregate Root:
 | [DisplayText](Crm.Marketing.TargetGroupMembers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Marketing.TargetGroupMembers.md#id) | guid |  
 | [ObjectVersion](Crm.Marketing.TargetGroupMembers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Marketing.TargetGroupMembers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -69,16 +68,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ Consumables are products, which are usually sold accompanying an asset rental. E
 
 ## Default Visualization
 Default Display Text Format:  
-_{RentalAsset.RentalAssetName}{StateTagsAttribute}_  
+_{RentalAsset.RentalAssetName}_  
 Default Search Members:  
 _RentalAsset.RentalAssetName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](Applications.Rental.AssetConsumables.md#id) | guid |  
 | [Notes](Applications.Rental.AssetConsumables.md#notes) | string (max) __nullable__ | Notes for this AssetConsumable. 
 | [ObjectVersion](Applications.Rental.AssetConsumables.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.Rental.AssetConsumables.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,16 +93,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

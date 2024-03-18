@@ -9,7 +9,7 @@ The various roles, which the users can play. Entity: Wf_Roles
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [Name](Systems.Security.Roles.md#name) | string (254) | The name of this Role. `Required` `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Systems.Security.Roles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RoleDescription](Systems.Security.Roles.md#roledescription) | string (max) __nullable__ | Description of the role. 
-| [StateTagsAttribute](Systems.Security.Roles.md#statetagsattribute) | string | Specifies the state of the document. 
 | [VisualStyle](Systems.Security.Roles.md#visualstyle) | string (64) __nullable__ | The default visual style for the user interface. 
 
 
@@ -101,16 +100,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### VisualStyle
 

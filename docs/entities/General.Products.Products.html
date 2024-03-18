@@ -83,7 +83,7 @@
 <p>Products are the different items in the enterprise, which can be purchased, stored, sold and depreciated. Entity: Gen_Products</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}{StateTagsAttribute}</em><br>
+<em>{Name:T}</em><br>
 Default Search Members:<br>
 <em>PartNumber; Name</em><br>
 Code Data Member:<br>
@@ -273,11 +273,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Products.Products.html#standardpriceperlot">StandardPricePerLot</a></td>
 <td><a href="../data-types.html#amount">Amount (18, 4)</a></td>
 <td>Standard sales price (used if no special price is defined) for one standard lot of the product in the currency, specified by Costing_Currency_Id. <code>Currency: ProductCurrency</code> <code>Required</code> <code>Default(0)</code></td>
-</tr>
-<tr>
-<td><a href="General.Products.Products.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.Products.Products.html#supplyschemaid">SupplySchemaId</a></td>
@@ -787,13 +782,6 @@ Allowed values for the <code>LotsIssue</code>(General.Products.Products.md#lotsi
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="supplyschemaid">SupplySchemaId</h3>
 <p>The supply schema to use for the distribution of the product among warehouses. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid <strong>nullable</strong></strong><br>

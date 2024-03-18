@@ -9,7 +9,7 @@ Coding systems categorize additional product codes. Entity: Gen_Coding_Systems
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [IsUnique](General.Products.CodingSystems.md#isunique) | boolean | True when the coding system can contain only unique product codes. false - duplicate product codes are allowed. `Required` `Default(true)` `Filter(eq)` 
 | [Name](General.Products.CodingSystems.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this CodingSystem. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.Products.CodingSystems.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.Products.CodingSystems.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -101,16 +100,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

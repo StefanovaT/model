@@ -9,7 +9,7 @@ Contains relationship between process and joint controllers. For processes with 
 
 ## Default Visualization
 Default Display Text Format:  
-_{PersonalDataProcess.Name:T}{StateTagsAttribute}_  
+_{PersonalDataProcess.Name:T}_  
 Default Search Members:  
 _PersonalDataProcess.Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](Applications.PersonalData.JointControllers.md#id) | guid |  
 | [Notes](Applications.PersonalData.JointControllers.md#notes) | string (max) __nullable__ | Should usually contain a short description of the role of the joint controller. 
 | [ObjectVersion](Applications.PersonalData.JointControllers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.PersonalData.JointControllers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -81,16 +80,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

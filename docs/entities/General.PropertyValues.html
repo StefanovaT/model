@@ -83,7 +83,7 @@
 <p>The actual values of the user-defined properties for each actual entity. Entity: Gen_Property_Values</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {EntityItemId}{StateTagsAttribute}</em><br>
+<em>{Id}: {EntityItemId}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -138,11 +138,6 @@ Show in UI:  <em>CannotBeShown</em></p>
 <td><a href="General.PropertyValues.html#propertyvaluefield">PropertyValueField</a></td>
 <td>string (254) <strong>nullable</strong></td>
 <td>The actual value of the property for the specified entity (the entity with the specified Id). <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="General.PropertyValues.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.PropertyValues.html#valueid">ValueId</a></td>
@@ -218,13 +213,6 @@ Show in UI:  <em>CannotBeShown</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="valueid">ValueId</h3>
 <p>The internal Id of the value of the property for the specified entity (the entity with the specified Id). For choosable properties, this contains the id of the original &quot;allowed value&quot; row, from which the value was derived. null for non-choosable (free-text) properties, but also for old property values (before this id was available) or other unknown values. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid <strong>nullable</strong></strong><br>

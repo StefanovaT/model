@@ -9,7 +9,7 @@ Detail lines of orders for material consumption. Entity: Prd_Consumption_Order_L
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineOrd}. {ConsumptionOrder.DocumentNo} {ConsumptionOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineOrd}. {ConsumptionOrder.DocumentNo} {ConsumptionOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _ConsumptionOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [Notes](Production.ShopFloor.ConsumptionOrderLines.md#notes) | string (max) __nullable__ | Notes for this ConsumptionOrderLine. 
 | [ObjectVersion](Production.ShopFloor.ConsumptionOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ScheduledDateTime](Production.ShopFloor.ConsumptionOrderLines.md#scheduleddatetime) | datetime __nullable__ | The scheduled date, when the material is needed. `Filter(ge;le)` 
-| [StateTagsAttribute](Production.ShopFloor.ConsumptionOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -181,16 +180,6 @@ _Type_: **datetime __nullable__**
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 

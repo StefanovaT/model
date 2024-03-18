@@ -9,7 +9,7 @@ User-defined properties, which can supplement the system properties of almost al
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -46,7 +46,6 @@ Aggregate Tree
 | [Notes](General.CustomProperties.md#notes) | string (max) __nullable__ | Notes for this CustomProperty. `Introduced in version 20.1` 
 | [ObjectVersion](General.CustomProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PropertyType](General.CustomProperties.md#propertytype) | [PropertyType](General.CustomProperties.md#propertytype) | Type of property values. 'T' - text; 'P' - picture; 'N' - number; 'D' - date. `Required` `Default("T")` 
-| [StateTagsAttribute](General.CustomProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -237,16 +236,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **Text**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

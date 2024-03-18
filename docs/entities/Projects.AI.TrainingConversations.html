@@ -83,7 +83,7 @@
 <p>One piece of training data for fine-tuning AI models. Entity: Llm_Training_Conversations (Introduced in version 24.1.3.89)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {ModelId}{StateTagsAttribute}</em><br>
+<em>{Id}: {ModelId}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -142,11 +142,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.AI.TrainingConversations.html#origin">Origin</a></td>
 <td><a href="Projects.AI.TrainingConversations.html#origin">Origin</a></td>
 <td>Denotes how (based on what other object) was the conversation initially created. Possible values - User-entered, Chat, Calendar, etc. <code>Required</code> <code>Default(&quot;USR&quot;)</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
-</tr>
-<tr>
-<td><a href="Projects.AI.TrainingConversations.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -274,13 +269,6 @@ Allowed values for the <code>Origin</code>(Projects.AI.TrainingConversations.md#
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>UserEntered</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="model">Model</h3>
 <p>The model, which is being trained. <code>Required</code> <code>Filter(multi eq)</code></p>

@@ -9,7 +9,7 @@ Contains all measurement units, grouped in categories. Each category has one bas
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -40,7 +40,6 @@ Aggregate Root:
 | [Multiplier](General.MeasurementUnits.md#multiplier) | decimal (9, 3) | Multiplier of the relative value of the measurement unit against other units (multiplier when converting to base). `Required` `Default(1)` 
 | [Name](General.MeasurementUnits.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | Name of the measurement unit. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.MeasurementUnits.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.MeasurementUnits.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemUnit](General.MeasurementUnits.md#systemunit) | [SystemUnit](General.MeasurementUnits.md#systemunit) __nullable__ | Not null only when this is one of the system measurement units. N=NetKG; G=GrossKG; V=VolumeL; H=HeightM; W=WidthM, L=LengthM, P=Piece, T=TimeH. `Filter(eq;like)` 
 
 ## References
@@ -143,16 +142,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

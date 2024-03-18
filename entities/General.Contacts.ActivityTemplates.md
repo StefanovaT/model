@@ -9,7 +9,7 @@ Templates for automatical generation of activity from any document. Entity: Cm_A
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {RouteId}{StateTagsAttribute}_  
+_{Id}: {RouteId}_  
 Default Search Members:  
 __  
 Category:  _Settings_  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [ReminderTime](General.Contacts.ActivityTemplates.md#remindertime) | time __nullable__ | Time of the day for the reminder. `Filter(ge;le)` 
 | [SourceDateField](General.Contacts.ActivityTemplates.md#sourcedatefield) | string (64) | A name of a field from the header or the document table of the source document in the specified route, that will be used along with Additional_Days to set the Start_Time of the generated activity. `Required` 
 | [StartTime](General.Contacts.ActivityTemplates.md#starttime) | time | The time of the day when the activity starts. `Required` `Filter(ge;le)` 
-| [StateTagsAttribute](General.Contacts.ActivityTemplates.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -128,16 +127,6 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Location numbers for a party. Depending on the partner with which we are doing a
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}{StateTagsAttribute}_  
+_{Party.PartyName:T}_  
 Default Search Members:  
 _LocationNumber; Party.PartyName_  
 Code Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [ObjectVersion](General.PartyLocationNumbers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PartnerLocationNumber](General.PartyLocationNumbers.md#partnerlocationnumber) | string (16) __nullable__ | The location number of the partner party for which we define the main Party location number. The location number of the main Party might be different depending on the location number of the partner party. null means that the location number is not dependent on the partner location number. `Filter(multi eq)` 
 | [Significance](General.PartyLocationNumbers.md#significance) | int32 | Order of significance of the location number within the main Party. If there are multiple location numbers, only the most significant is used. 0 is the least significant and higher numbers indicate higher significance. `Required` `Default(0)` `Filter(multi eq;ge;le)` 
-| [StateTagsAttribute](General.PartyLocationNumbers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -131,16 +130,6 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

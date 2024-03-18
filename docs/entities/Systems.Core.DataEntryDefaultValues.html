@@ -83,7 +83,7 @@
 <p>Contains user-specified default values for columns in data entry forms. Entity: Sys_Default_Values</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ColumnName}{StateTagsAttribute}</em><br>
+<em>{ColumnName}</em><br>
 Default Search Members:<br>
 <em>ColumnName</em><br>
 Name Data Member:<br>
@@ -150,11 +150,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.DataEntryDefaultValues.html#panelname">PanelName</a></td>
 <td>string (64) <strong>nullable</strong></td>
 <td>When not null, specifies the panel for which the default value applies. <code>Filter(eq;like)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.DataEntryDefaultValues.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Core.DataEntryDefaultValues.html#tablename">TableName</a></td>
@@ -261,13 +256,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tablename">TableName</h3>
 <p>The table, containing the column for which the default value is specified. <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>

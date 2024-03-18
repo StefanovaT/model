@@ -9,7 +9,7 @@ The detail lines of rental contracts. Each line contains rental conditions for o
 
 ## Default Visualization
 Default Display Text Format:  
-_{LeaseContract.EntityName}{StateTagsAttribute}_  
+_{LeaseContract.EntityName}_  
 Default Search Members:  
 _LeaseContract.EntityName_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [LineNotes](Applications.Rental.LeaseContractLines.md#linenotes) | string (max) __nullable__ | Notes for this line. 
 | [ObjectVersion](Applications.Rental.LeaseContractLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartDate](Applications.Rental.LeaseContractLines.md#startdate) | date | Starting date of lease for this asset. `Required` `Filter(multi eq;ge;le)` 
-| [StateTagsAttribute](Applications.Rental.LeaseContractLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -150,16 +149,6 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.LeaseContract.StartDate`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 
 ## Reference Details
 

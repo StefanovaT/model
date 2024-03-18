@@ -9,7 +9,7 @@ A single notification of a user. Entity: Cmm_Notifications (Introduced in versio
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {UserId}{StateTagsAttribute}_  
+_{Id}: {UserId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -31,7 +31,6 @@ Aggregate Tree
 | [IsRead](Communities.Notifications.md#isread) | boolean | Specifies whether the user has read the notification. If the system changes the notification after first reading, the flag is reset to unread again. `Required` `Default(false)` `Filter(eq)` 
 | [NotificationClass](Communities.Notifications.md#notificationclass) | string (64) | The class of the notification from a predefined list of system classes. `Required` `Filter(multi eq)` 
 | [ObjectVersion](Communities.Notifications.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Communities.Notifications.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Subject](Communities.Notifications.md#subject) | string (256) __nullable__ | The short subject of the notification (in the Default Culture of the user). `Filter(eq;like)` 
 
 ## References
@@ -102,16 +101,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

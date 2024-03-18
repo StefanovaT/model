@@ -9,7 +9,7 @@ Stores verification tokens for users - e.g. tokens for email, phone or two-facto
 
 ## Default Visualization
 Default Display Text Format:  
-_{LoginProviderName}{StateTagsAttribute}_  
+_{LoginProviderName}_  
 Default Search Members:  
 _LoginProviderName_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](Systems.Security.UserProviderTokens.md#id) | guid |  
 | [LoginProviderName](Systems.Security.UserProviderTokens.md#loginprovidername) | string (450) | Name of the login provider. Could be Facebook, Twitter, E1UserStore, etc. `Required` `Filter(eq)` 
 | [ObjectVersion](Systems.Security.UserProviderTokens.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Systems.Security.UserProviderTokens.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TokenName](Systems.Security.UserProviderTokens.md#tokenname) | string (450) | What kind of token we store, Could be (but is not limited to): AuthenticatorKey (two-factor auth), RecoveryCodes (password recovery). `Required` `Filter(eq)` 
 | [TokenValue](Systems.Security.UserProviderTokens.md#tokenvalue) | string (max) __nullable__ | Actual value depends on Login_Provider_Name and Token_Name. Could be null because the presence of (User_Id, Login_Provider_Name and Token_Name) might be enough for some providers. 
 
@@ -82,16 +81,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

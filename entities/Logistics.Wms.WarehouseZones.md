@@ -9,7 +9,7 @@ One zone within a warehouse. Each zone can have different rack structure and dif
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [Name](Logistics.Wms.WarehouseZones.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language name of the zone. `Required` `Filter(eq;like)` 
 | [Notes](Logistics.Wms.WarehouseZones.md#notes) | string (max) __nullable__ | Notes for this WarehouseZone. 
 | [ObjectVersion](Logistics.Wms.WarehouseZones.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Logistics.Wms.WarehouseZones.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -111,16 +110,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

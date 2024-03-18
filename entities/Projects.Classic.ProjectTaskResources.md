@@ -9,7 +9,7 @@ Contains the resources, required by the project tasks. Entity: Prj_Project_Task_
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProjectTask.TaskName}{StateTagsAttribute}_  
+_{ProjectTask.TaskName}_  
 Default Search Members:  
 _ProjectTask.TaskName_  
 Name Data Member:  
@@ -39,7 +39,6 @@ Aggregate Root:
 | [PerUseCost](Projects.Classic.ProjectTaskResources.md#perusecost) | [Amount (14, 2)](../data-types.md#amount) __nullable__ | One time cost for each resource usage, specified in the projects currency. `Currency: ProjectTask.Project.BudgetingCurrency` 
 | [ResourceUsageHours](Projects.Classic.ProjectTaskResources.md#resourceusagehours) | decimal (10, 2) | The total number of resource-hours, which are planned for this task. Equals to the length of the task, multiplied by the resource usage. `Required` `Default(0)` `Filter(eq)` 
 | [ResourceUsagePercent](Projects.Classic.ProjectTaskResources.md#resourceusagepercent) | decimal (18, 4) | The planned resource usage for this activity in percents. Values of more than 100% are allowed when more than 1 resource is required. `Required` `Default(1)` `Filter(eq)` 
-| [StateTagsAttribute](Projects.Classic.ProjectTaskResources.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TaskTotalCost](Projects.Classic.ProjectTaskResources.md#tasktotalcost) | decimal (14, 2) | Total cost for this task (in the currency of the project). `Required` `Default(0)` `Filter(eq)` 
 
 ## References
@@ -166,16 +165,6 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.ProjectTask.PlannedDurationHours == 0), 0, ( obj.ResourceUsageHours / obj.ProjectTask.PlannedDurationHours))`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 ### TaskTotalCost
 
 Total cost for this task (in the currency of the project). `Required` `Default(0)` `Filter(eq)`

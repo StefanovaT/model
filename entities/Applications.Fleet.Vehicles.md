@@ -9,7 +9,7 @@ Contains vehicle definitions. Entity: Fleet_Vehicles
 
 ## Default Visualization
 Default Display Text Format:  
-_{EngineIdentificationNumber}{StateTagsAttribute}_  
+_{EngineIdentificationNumber}_  
 Default Search Members:  
 _EngineIdentificationNumber_  
 Code Data Member:  
@@ -52,7 +52,6 @@ Aggregate Tree
 | [PrimaryColor](Applications.Fleet.Vehicles.md#primarycolor) | [MultilanguageString (64)](../data-types.md#multilanguagestring) __nullable__ | The primary color of the vehicle. null means that the value is unknown or not applicable. `Filter(eq;like)` 
 | [SeatingPlacesCount](Applications.Fleet.Vehicles.md#seatingplacescount) | int32 __nullable__ | Number of seating places, excluding driver. `Filter(eq;ge;le)` 
 | [StandingPlacesCount](Applications.Fleet.Vehicles.md#standingplacescount) | int32 __nullable__ | Number of standing places, if applicable. 
-| [StateTagsAttribute](Applications.Fleet.Vehicles.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TechnicalMaximum<br />LadenMassKg](Applications.Fleet.Vehicles.md#technicalmaximumladenmasskg) | int32 __nullable__ | Maximum technically permissible laden mass in kg. 
 | [TrainsetMaximumLadenMassKg](Applications.Fleet.Vehicles.md#trainsetmaximumladenmasskg) | int32 __nullable__ | Maximum permissible laden mass of a whole trainset, including the vehicle. 
 | [VehicleIdentification<br />Number](Applications.Fleet.Vehicles.md#vehicleidentificationnumber) | string (20) __nullable__ | VIN, aka Chassis number. `Filter(eq;like)` 
@@ -312,16 +311,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TechnicalMaximumLadenMassKg
 

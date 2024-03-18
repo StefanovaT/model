@@ -9,7 +9,7 @@ Contains the serviceable objects. The service objects can be covered by service 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _SerialNumber; Name_  
 Code Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [Notes](Applications.Service.ServiceObjects.md#notes) | string (254) __nullable__ | Notes for this ServiceObject. 
 | [ObjectVersion](Applications.Service.ServiceObjects.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SerialNumber](Applications.Service.ServiceObjects.md#serialnumber) | string (32) __nullable__ | The serial number of the item, that is being serviced. `Filter(like)` 
-| [StateTagsAttribute](Applications.Service.ServiceObjects.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -128,16 +127,6 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.SerialNumberObj != null), null, obj.SerialNumber)`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 
 ## Reference Details
 

@@ -13,7 +13,7 @@ Obsolete. Not used. Entity: Gen_Document_Links (Obsoleted in version 22.1.6.60)
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}{StateTagsAttribute}_  
+_{Id}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -32,7 +32,6 @@ Aggregate Tree
 | [DisplayText](General.DocumentLinks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.DocumentLinks.md#id) | guid |  
 | [ObjectVersion](General.DocumentLinks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.DocumentLinks.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -61,16 +60,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

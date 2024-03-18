@@ -9,7 +9,7 @@ Contains the way to obtain the values for each required property of both the deb
 
 ## Default Visualization
 Default Display Text Format:  
-_{TemplateLine.AmountColumnName}{StateTagsAttribute}_  
+_{TemplateLine.AmountColumnName}_  
 Default Search Members:  
 _TemplateLine.AmountColumnName_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [PropertyNo](Finance.Accounting.TemplateLineProperties.md#propertyno) | int32 | The ordinal position of the property value in the item key of the account. `Required` `Filter(eq)` 
 | [PropertyValueSource](Finance.Accounting.TemplateLineProperties.md#propertyvaluesource) | string (2000) | Source for the property value according to the chosen source type. `Required` 
 | [PropertyValueSourceType](Finance.Accounting.TemplateLineProperties.md#propertyvaluesourcetype) | string (64) | Type of source for the property value. For example: System properties, User properties for document, Constant, ... `Required` 
-| [StateTagsAttribute](Finance.Accounting.TemplateLineProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -140,16 +139,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

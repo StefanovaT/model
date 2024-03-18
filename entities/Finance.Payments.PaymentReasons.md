@@ -9,7 +9,7 @@ Represents reasons for the payments. Contains both system and user-defined reaso
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [IsSystem](Finance.Payments.PaymentReasons.md#issystem) | boolean | Specifies whether the payment reason is defined by the system. The system defined records are created by the system and are read-only for the user. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [Name](Finance.Payments.PaymentReasons.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this PaymentReason. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Finance.Payments.PaymentReasons.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Payments.PaymentReasons.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -96,16 +95,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

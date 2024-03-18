@@ -83,7 +83,7 @@
 <p>Reaction of a user to any social comment to an object of the system. Entity: Cmm_Social_Reactions (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {DataObjectId}{StateTagsAttribute}</em><br>
+<em>{Id}: {DataObjectId}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -128,11 +128,6 @@ Show in UI:  <em>CannotBeShown</em></p>
 <td><a href="Communities.Social.Reactions.html#reactiontype">ReactionType</a></td>
 <td><a href="Communities.Social.Reactions.html#reactiontype">ReactionType</a></td>
 <td>The type of the reaction. LIK = Like; LOV = Love; HAH = Haha; WOW = Wow; SAD = Sad; ANG = Angry. <code>Required</code> <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Communities.Social.Reactions.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -236,13 +231,6 @@ Allowed values for the <code>ReactionType</code>(Communities.Social.Reactions.md
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="dataobject">DataObject</h3>
 <p>The root data object (post, marketplace product, document, etc), for which the reaction is. <code>Required</code> <code>Filter(multi eq)</code></p>

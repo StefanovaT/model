@@ -9,7 +9,7 @@ Detail records of output orders. Entity: Prd_Output_Order_Lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineOrd}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineOrd}. {OutputOrder.DocumentNo} {OutputOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _OutputOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -39,7 +39,6 @@ Aggregate Root:
 | [ProducedQuantityBase](Production.ShopFloor.OutputOrderLines.md#producedquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Produced Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` 
 | [ProducedStandard<br />QuantityBase](Production.ShopFloor.OutputOrderLines.md#producedstandardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. null means to convert the value from Quantity using the measurement ratios. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
 | [StartTime](Production.ShopFloor.OutputOrderLines.md#starttime) | datetime | Date and time when the operation has began. `Required` `Default(Now)` `Filter(ge;le)` 
-| [StateTagsAttribute](Production.ShopFloor.OutputOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TransactionTimestamp](Production.ShopFloor.OutputOrderLines.md#transactiontimestamp) | datetime __nullable__ | Sets the timestamp of the receipt store operations for this output order line. Used in completing output orders. `Filter(ge;le)` `ReadOnly` 
 
 ## References
@@ -208,16 +207,6 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDateTime**  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### TransactionTimestamp

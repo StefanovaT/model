@@ -9,7 +9,7 @@ Contains a specific instance of an additional amount for a specific document. En
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentAmountType.AmountTypeName:T}{StateTagsAttribute}_  
+_{DocumentAmountType.AmountTypeName:T}_  
 Default Search Members:  
 _Document.EntityName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [InputPercent](General.DocumentAmounts.md#inputpercent) | decimal (7, 6) __nullable__ | When not null, specifies that the amount for this document will be calculated as percent of the base amounts (which are defined in the amount type). `Filter(ge;le)` 
 | [InputUnitAmount](General.DocumentAmounts.md#inputunitamount) | [Amount (14, 5)](../data-types.md#amount) __nullable__ | Input unit amount for the calculation of the current amount. `Currency: GetInputAmountCurrency()` `Filter(eq;ge;le)` 
 | [ObjectVersion](General.DocumentAmounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.DocumentAmounts.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalDistributedAmount](General.DocumentAmounts.md#totaldistributedamount) | [Amount (14, 2)](../data-types.md#amount) __nullable__ | The total amount (in documents currency) which was distributed to the documents lines. Null if the amount is not distributed yet. `Currency: LogisticsDocument.DocumentCurrency` `ReadOnly` 
 | [UserCanChangeInput](General.DocumentAmounts.md#usercanchangeinput) | boolean | True if the user, entering the document is allowed to change the default input percent. `Required` `Default(true)` 
 
@@ -132,16 +131,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

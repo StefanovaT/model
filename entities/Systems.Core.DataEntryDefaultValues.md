@@ -9,7 +9,7 @@ Contains user-specified default values for columns in data entry forms. Entity: 
 
 ## Default Visualization
 Default Display Text Format:  
-_{ColumnName}{StateTagsAttribute}_  
+_{ColumnName}_  
 Default Search Members:  
 _ColumnName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [Id](Systems.Core.DataEntryDefaultValues.md#id) | guid |  
 | [ObjectVersion](Systems.Core.DataEntryDefaultValues.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PanelName](Systems.Core.DataEntryDefaultValues.md#panelname) | string (64) __nullable__ | When not null, specifies the panel for which the default value applies. `Filter(eq;like)` 
-| [StateTagsAttribute](Systems.Core.DataEntryDefaultValues.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TableName](Systems.Core.DataEntryDefaultValues.md#tablename) | string (64) __nullable__ | The table, containing the column for which the default value is specified. `Filter(eq)` 
 
 ## References
@@ -145,16 +144,6 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TableName
 

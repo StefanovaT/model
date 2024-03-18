@@ -36,7 +36,6 @@ Aggregate Root:
 | [MinimumAmount](Crm.Sales.SalesOrdersOptions.md#minimumamount) | [Amount (14, 2)](../data-types.md#amount) __nullable__ | When not null, specifies minimal total amount of the sales order, which is required for order releasing. `Currency: MinimumAmountCurrency` 
 | [ObjectVersion](Crm.Sales.SalesOrdersOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ShipmentAllowance](Crm.Sales.SalesOrdersOptions.md#shipmentallowance) | [ShipmentAllowance](Crm.Sales.SalesOrdersOptions.md#shipmentallowance) | Terms on which the shipment of the products in the sales order is allowed. `Required` `Default("A")` 
-| [StateTagsAttribute](Crm.Sales.SalesOrdersOptions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -140,16 +139,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **AlwaysAllow**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Contains history of saved version of the managed objects. Entity: Sys_Object_Ver
 
 ## Default Visualization
 Default Display Text Format:  
-_{Object}{StateTagsAttribute}_  
+_{Object}_  
 Default Search Members:  
 _Object_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [ObjectContents](Systems.Core.ObjectVersions.md#objectcontents) | byte[] | The compressed contents of the object. `Required` 
 | [ObjectVersion](Systems.Core.ObjectVersions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ServerVersion](Systems.Core.ObjectVersions.md#serverversion) | string (15) __nullable__ | The version of the EnterpriseOne server, which created the version. The version should be in the form (9.9.9.9). null means the version is unknown. 
-| [StateTagsAttribute](Systems.Core.ObjectVersions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Version](Systems.Core.ObjectVersions.md#version) | int32 | The version number of the version, stored in the current row, starting from 1. `Required` `Filter(multi eq;ge;le)` 
 | [VersionTime](Systems.Core.ObjectVersions.md#versiontime) | datetime | The timestamp when the version was saved. `Required` `Filter(ge;le)` 
 | [VersionType](Systems.Core.ObjectVersions.md#versiontype) | [VersionType](Systems.Core.ObjectVersions.md#versiontype) | Specifies the action, which occurred on the actual object, referred by the system object.  'C' means that with this version the object was created. 'U' means that this is an update to an existing object. `Required` 
@@ -98,16 +97,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **15**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### Version
 

@@ -9,7 +9,7 @@ Contains user-defined translations for non-english languages of the user interfa
 
 ## Default Visualization
 Default Display Text Format:  
-_{ApplicationName}{StateTagsAttribute}_  
+_{ApplicationName}_  
 Default Search Members:  
 _ApplicationName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Tree
 | [ObjectVersion](Systems.Core.Translations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResourceId](Systems.Core.Translations.md#resourceid) | string (800) | The unique identifier of the translated resource. Should use ASCII/English chars only. Shorter strings are suggested. Depending on Text_Type: T:TableName; C:ColumnName; H:TableName.ColumnName; E,M,S: Application specific code. `Required` `Filter(eq;like)` 
 | [ResourceType](Systems.Core.Translations.md#resourcetype) | [ResourceType](Systems.Core.Translations.md#resourcetype) | T=Table (entity) Name; C=Column Name; H=Column Hint; R=Meta Resource; E=Error; M=Message; S=Other application specific String. `Required` `Default("S")` `Filter(eq)` 
-| [StateTagsAttribute](Systems.Core.Translations.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TranslationField](Systems.Core.Translations.md#translationfield) | string (max) | The translated text. `Required` 
 | [UpdateTime](Systems.Core.Translations.md#updatetime) | datetime | When the translation was last updated. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` 
 
@@ -154,16 +153,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **OtherApplicationSpecific**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TranslationField
 

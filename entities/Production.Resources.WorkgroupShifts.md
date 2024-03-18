@@ -9,7 +9,7 @@ Contains the working shifts of the wrokgroups. Entity: Prd_Workgroup_Shifts
 
 ## Default Visualization
 Default Display Text Format:  
-_{ShiftName}{StateTagsAttribute}_  
+_{ShiftName}_  
 Default Search Members:  
 _ShiftName_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [Id](Production.Resources.WorkgroupShifts.md#id) | guid |  
 | [ObjectVersion](Production.Resources.WorkgroupShifts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ShiftName](Production.Resources.WorkgroupShifts.md#shiftname) | string (254) | The name of the workgroup shift. `Required` `Filter(like)` 
-| [StateTagsAttribute](Production.Resources.WorkgroupShifts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -108,16 +107,6 @@ _Supported Filters_: **Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

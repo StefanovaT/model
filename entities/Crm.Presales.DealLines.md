@@ -9,7 +9,7 @@ Detail records (lines) of the deals. Entity: Crm_Deal_Lines (Introduced in versi
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {Deal.DocumentNo} {Deal.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineNo}. {Deal.DocumentNo} {Deal.DocumentType.TypeName:T}_  
 Default Search Members:  
 _Deal.DocumentNo_  
 Category:  _Definitions_  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Notes](Crm.Presales.DealLines.md#notes) | string (max) __nullable__ | Notes. 
 | [ObjectVersion](Crm.Presales.DealLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Crm.Presales.DealLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) __nullable__ | When not null, specifies the quantity, which the client can potentially buy (with measurement unit specified in Quantity Unit). `Unit: QuantityUnit` 
-| [StateTagsAttribute](Crm.Presales.DealLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -111,16 +110,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -83,7 +83,7 @@
 <p>Represents the different types of additional amounts which are calculated for the documents. Entity: Gen_Document_Amount_Types</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{AmountTypeName:T}{StateTagsAttribute}</em><br>
+<em>{AmountTypeName:T}</em><br>
 Default Search Members:<br>
 <em>AmountTypeCode; AmountTypeName</em><br>
 Code Data Member:<br>
@@ -192,11 +192,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.DocumentAmountTypes.html#roundscale">RoundScale</a></td>
 <td>int32 <strong>nullable</strong></td>
 <td>The amounts should be rounded with the specified number of digits after the decimal point. null means to use the currency default.</td>
-</tr>
-<tr>
-<td><a href="General.DocumentAmountTypes.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.DocumentAmountTypes.html#unitamountinputallowed">UnitAmountInputAllowed</a></td>
@@ -425,13 +420,6 @@ Allowed values for the <code>DistributeBy</code>(General.DocumentAmountTypes.md#
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="unitamountinputallowed">UnitAmountInputAllowed</h3>
 <p>Specifies whether the user is allowed to input fixed unit amount for the calculation of the amount. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>

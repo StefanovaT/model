@@ -9,7 +9,7 @@ Resource types available to production. Entity: Prd_Resources
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -39,7 +39,6 @@ Aggregate Root:
 | [SetupScrapQuantity](Production.Resources.Resources.md#setupscrapquantity) | [Quantity (18, 3)](../data-types.md#quantity) | The usual quantity of fixed scrap occurring when changing production. . `Unit: SetupScrapUnit` `Required` `Default(0)` 
 | [StandardCostPerHour](Production.Resources.Resources.md#standardcostperhour) | [Amount (18, 6)](../data-types.md#amount) __nullable__ | Standard cost per hour for this resource. It participates in the calculation of standard cost for production recipes in which the current resource is used. `Currency: ResourceCurrency` 
 | [StandardPricePerHour](Production.Resources.Resources.md#standardpriceperhour) | [Amount (18, 6)](../data-types.md#amount) __nullable__ | Standard price per hour for this resource. It participates in the calculation of standard price for production recipes in which the current resource is used. `Currency: ResourceCurrency` 
-| [StateTagsAttribute](Production.Resources.Resources.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -162,16 +161,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Sales Orders detail records. Entity: Crm_Sales_Order_Lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {SalesOrder.DocumentNo} {SalesOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineNo}. {SalesOrder.DocumentNo} {SalesOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _SalesOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -56,7 +56,6 @@ Aggregate Root:
 | [RequiredDeliveryDate](Crm.Sales.SalesOrderLines.md#requireddeliverydate) | date __nullable__ | The required (contracted) delivery date for the line. `Filter(ge;le)` 
 | [StandardQuantityBase](Crm.Sales.SalesOrderLines.md#standardquantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
 | [StandardUnitPrice](Crm.Sales.SalesOrderLines.md#standardunitprice) | [Amount (14, 5)](../data-types.md#amount) __nullable__ | Standard unit price of the product during the creation of the sales order line. `Currency: SalesOrder.DocumentCurrency` `ReadOnly` 
-| [StateTagsAttribute](Crm.Sales.SalesOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UnitPrice](Crm.Sales.SalesOrderLines.md#unitprice) | [Amount (14, 5)](../data-types.md#amount) | Unit price of the product in the currency of the sales order and in the unit of measure, as specified by QuantityUnitId. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)` 
 
 ## References
@@ -521,16 +520,6 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.Product.GetStandardUnitPrice( obj.QuantityUnit, obj.SalesOrder.DocumentCurrency, obj.SalesOrder.CurrencyDirectory)`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 ### UnitPrice
 
 Unit price of the product in the currency of the sales order and in the unit of measure, as specified by QuantityUnitId. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)`

@@ -9,7 +9,7 @@ Detail records (lines) of Invoice Orders. Entity: Crm_Invoice_Order_Lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {InvoiceOrder.DocumentNo} {InvoiceOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineNo}. {InvoiceOrder.DocumentNo} {InvoiceOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _InvoiceOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -39,7 +39,6 @@ Aggregate Root:
 | [Quantity](Crm.Invoicing.InvoiceOrderLines.md#quantity) | [Quantity (12, 3)](../data-types.md#quantity) | The quantity of the product to invoice. `Unit: QuantityUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [QuantityBase](Crm.Invoicing.InvoiceOrderLines.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The equivalent of Quantity in the base measurement unit of the Product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` 
 | [StandardQuantityBase](Crm.Invoicing.InvoiceOrderLines.md#standardquantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
-| [StateTagsAttribute](Crm.Invoicing.InvoiceOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UnitPrice](Crm.Invoicing.InvoiceOrderLines.md#unitprice) | [Amount (14, 5)](../data-types.md#amount) | Unit selling price in the unit of measure, specified in Quantity Unit. `Currency: InvoiceOrder.DocumentCurrency` `Required` `Default(0)` 
 
 ## References
@@ -214,16 +213,6 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 ### UnitPrice
 
 Unit selling price in the unit of measure, specified in Quantity Unit. `Currency: InvoiceOrder.DocumentCurrency` `Required` `Default(0)`

@@ -9,7 +9,7 @@ Contains the different working time periods within the work schedule. Entity: Ge
 
 ## Default Visualization
 Default Display Text Format:  
-_{WorkSchedule.Name}{StateTagsAttribute}_  
+_{WorkSchedule.Name}_  
 Default Search Members:  
 _WorkSchedule.Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [Id](General.Resources.WorkScheduleWorkingTime.md#id) | guid |  
 | [ObjectVersion](General.Resources.WorkScheduleWorkingTime.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartTime](General.Resources.WorkScheduleWorkingTime.md#starttime) | time | Start of working time period on the day, specified by Day_No. `Required` `Filter(ge;le)` 
-| [StateTagsAttribute](General.Resources.WorkScheduleWorkingTime.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -104,16 +103,6 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

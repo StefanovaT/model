@@ -9,7 +9,7 @@ Contains user requests for application of user rights. Entity: Pdm_Data_Subject_
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {EnterpriseCompanyId}{StateTagsAttribute}_  
+_{Id}: {EnterpriseCompanyId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -32,7 +32,6 @@ Aggregate Tree
 | [Notes](Applications.PersonalData.DataSubjectRightRequests.md#notes) | string (max) __nullable__ | This should usually contain detailed implementation notes. 
 | [ObjectVersion](Applications.PersonalData.DataSubjectRightRequests.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RequestedRight](Applications.PersonalData.DataSubjectRightRequests.md#requestedright) | [RequestedRight](Applications.PersonalData.DataSubjectRightRequests.md#requestedright) | The requested right, according to GDPR and other personal data regulations.  REC=Rectify; ERA=Erasure; RES=Restrict; POR=Portability; OBJ=Object; OTH=Other. `Required` `Filter(eq)` 
-| [StateTagsAttribute](Applications.PersonalData.DataSubjectRightRequests.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Status](Applications.PersonalData.DataSubjectRightRequests.md#status) | [Status](Applications.PersonalData.DataSubjectRightRequests.md#status) | The status of the request. 1=Requested; 2=Reviewing; 3=Executing; 4=Implemented; 5=Denied. `Required` 
 
 ## References
@@ -129,16 +128,6 @@ _Allowed Values (Applications.PersonalData.DataSubjectRightRequestsRepository.Re
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### Status
 

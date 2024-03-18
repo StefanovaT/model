@@ -9,7 +9,7 @@ Pictures of products. Entity: Gen_Product_Pictures
 
 ## Default Visualization
 Default Display Text Format:  
-_{Product.Name:T}{StateTagsAttribute}_  
+_{Product.Name:T}_  
 Default Search Members:  
 _Product.Name_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [Picture](General.Products.ProductPictures.md#picture) | byte[] __nullable__ | The actual product picture. Can be null if we insert only some comments. 
 | [PictureNo](General.Products.ProductPictures.md#pictureno) | int32 | Unique picture number within the product. Also used for sorting. `Required` `Filter(eq;like)` 
 | [PictureSizeClass](General.Products.ProductPictures.md#picturesizeclass) | [PictureSizeClass](General.Products.ProductPictures.md#picturesizeclass) __nullable__ | Specifies the relative picture size and usage. S=Small picture (thumbnail), L=Large picture (full size), null=unspecified. 
-| [StateTagsAttribute](General.Products.ProductPictures.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -154,16 +153,6 @@ _Allowed Values (General.Products.ProductPicturesRepository.PictureSizeClass Enu
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

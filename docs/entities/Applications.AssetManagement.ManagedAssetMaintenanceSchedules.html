@@ -83,7 +83,7 @@
 <p>Contains the maintenance schedules for the managed assets. Entity: Eam_Managed_Asset_Maintenance_Schedules (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{ManagedAsset.Name:T}{StateTagsAttribute}</em><br>
+<em>{ManagedAsset.Name:T}</em><br>
 Default Search Members:<br>
 <em>ManagedAsset.Name</em><br>
 Name Data Member:<br>
@@ -140,11 +140,6 @@ Aggregate Root:<br>
 <td><a href="Applications.AssetManagement.ManagedAssetMaintenanceSchedules.html#schedulemonths">ScheduleMonths</a></td>
 <td>int32 <strong>nullable</strong></td>
 <td>Number of months between planned maintenances. null means that the schedule is not planned based on months.</td>
-</tr>
-<tr>
-<td><a href="Applications.AssetManagement.ManagedAssetMaintenanceSchedules.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -221,13 +216,6 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="maintenancetype">MaintenanceType</h3>
 <p>What type of maintenance is scheduled. <code>Required</code> <code>Filter(multi eq)</code></p>

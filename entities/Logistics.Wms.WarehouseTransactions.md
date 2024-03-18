@@ -9,7 +9,7 @@ Represents increase or decrease in the quantity available in a warehouse locatio
 
 ## Default Visualization
 Default Display Text Format:  
-_{TaskType} {CreationTimeUtc:yyyy-MM-dd HH:mm:ss.fff}{StateTagsAttribute}_  
+_{TaskType} {CreationTimeUtc:yyyy-MM-dd HH:mm:ss.fff}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [Quantity](Logistics.Wms.WarehouseTransactions.md#quantity) | decimal (12, 3) | The transacted net change in quantity. Positive values indicate transactions. Negative values are used for adjustments. `Required` `Default(0)` `Filter(multi eq;ge;le)` 
 | [QuantityBase](Logistics.Wms.WarehouseTransactions.md#quantitybase) | [Quantity (12, 3)](../data-types.md#quantity) | Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Introduced in version 22.1.5.9` 
 | [StandardQuantity](Logistics.Wms.WarehouseTransactions.md#standardquantity) | [Quantity (12, 3)](../data-types.md#quantity) | The theoretical quantity according to the current measurement dimensions of the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Introduced in version 22.1.5.9` 
-| [StateTagsAttribute](Logistics.Wms.WarehouseTransactions.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TaskType](Logistics.Wms.WarehouseTransactions.md#tasktype) | [TaskType](Logistics.Wms.WarehouseTransactions.md#tasktype) | The type of the task (operation), which was transacted. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.15` 
 
 ## References
@@ -156,16 +155,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TaskType
 

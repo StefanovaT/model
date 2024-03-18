@@ -9,7 +9,7 @@ Distributors are external for the enterprise persons or companies who obtain sal
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}{StateTagsAttribute}_  
+_{Party.PartyName:T}_  
 Default Search Members:  
 _Party.PartyName_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [FlatCommisionPercentage](Crm.Distributors.md#flatcommisionpercentage) | decimal (7, 6) | Not-zero if commision percentage should be applyied to all sales, regardless of product/discount/progressi<br />ve/qunatity considerations. `Required` `Default(0)` 
 | [Id](Crm.Distributors.md#id) | guid |  
 | [ObjectVersion](Crm.Distributors.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Distributors.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -80,16 +79,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

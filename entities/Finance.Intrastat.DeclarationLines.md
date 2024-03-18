@@ -9,7 +9,7 @@ Contains the details of the Intrastat declarations, issued by the enterprise com
 
 ## Default Visualization
 Default Display Text Format:  
-_{IntrastatDeclaration.EntityName}{StateTagsAttribute}_  
+_{IntrastatDeclaration.EntityName}_  
 Default Search Members:  
 _IntrastatDeclaration.EntityName_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [NetMassKg](Finance.Intrastat.DeclarationLines.md#netmasskg) | decimal (14, 3) | Net mass of the goods in kg. `Required` `Filter(multi eq)` 
 | [ObjectVersion](Finance.Intrastat.DeclarationLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [QuantitySupplementaryUnit](Finance.Intrastat.DeclarationLines.md#quantitysupplementaryunit) | decimal (10, 0) __nullable__ | Quantity of the goods in the supplementary unit. null when no supplementary unit is specified. 
-| [StateTagsAttribute](Finance.Intrastat.DeclarationLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [StatisticalValueAmountBase](Finance.Intrastat.DeclarationLines.md#statisticalvalueamountbase) | [Amount (10, 0)](../data-types.md#amount) __nullable__ | Statistical value of the goods in the base currency. `Currency: IntrastatDeclaration.EnterpriseCompany.BaseCurrency` 
 | [TransactionNature](Finance.Intrastat.DeclarationLines.md#transactionnature) | [TransactionNature](Finance.Intrastat.DeclarationLines.md#transactionnature) | Transaction nature, according to the Intrastat classification. `Required` 
 | [TransportMode](Finance.Intrastat.DeclarationLines.md#transportmode) | [TransportMode](Finance.Intrastat.DeclarationLines.md#transportmode) | Transportation mode - type of transportation used. `Required` 
@@ -180,16 +179,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### StatisticalValueAmountBase
 

@@ -9,7 +9,7 @@ Represents a party associated to a document. Entity: Gen_Document_Parties (Intro
 
 ## Default Visualization
 Default Display Text Format:  
-_{Document.EntityName}{StateTagsAttribute}_  
+_{Document.EntityName}_  
 Default Search Members:  
 _Document.EntityName_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](General.DocumentParties.md#id) | guid |  
 | [Notes](General.DocumentParties.md#notes) | string (max) __nullable__ | Notes for this DocumentParty. 
 | [ObjectVersion](General.DocumentParties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.DocumentParties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -82,16 +81,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

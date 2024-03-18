@@ -83,7 +83,7 @@
 <p>Discount policies for sales documents. Entity: Crm_Line_Discounts</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DiscountPercent:P} {Description}{StateTagsAttribute}</em><br>
+<em>{DiscountPercent:P} {Description}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -158,11 +158,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.LineDiscounts.html#priority">Priority</a></td>
 <td><a href="Crm.LineDiscounts.html#priority">Priority</a></td>
 <td>The priority of this discount policy. When selecting a discount for a sales document line, only the highest priority policy, matching the criteria is applied. <code>Required</code> <code>Default(3)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.LineDiscounts.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.LineDiscounts.html#thrudate">ThruDate</a></td>
@@ -373,13 +368,6 @@ Generic enum type for Priority properties<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>3</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="thrudate">ThruDate</h3>
 <p>Ending date (inclusive) of validity of the discount. If null, the discount is valid forever. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>

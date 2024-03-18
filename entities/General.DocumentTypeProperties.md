@@ -39,7 +39,6 @@ Aggregate Root:
 | [Required](General.DocumentTypeProperties.md#required) | boolean | True if the property is required when creating documents of this type. `Required` `Default(false)` `Filter(eq)` 
 | [RequiredFromDate](General.DocumentTypeProperties.md#requiredfromdate) | datetime __nullable__ | When not null, specifies a date, after which the property becomes required for the current document type. The date is compared against the document date. `Filter(ge;le)` 
 | [RequiredThruDate](General.DocumentTypeProperties.md#requiredthrudate) | datetime __nullable__ | When not null, specifies a date, up to which the property is required for the current document type. The date is compared against the document date. `Filter(ge;le)` 
-| [StateTagsAttribute](General.DocumentTypeProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -156,16 +155,6 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

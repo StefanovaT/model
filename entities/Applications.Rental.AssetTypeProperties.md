@@ -9,7 +9,7 @@ Contains the properties, which are required for each asset category. Entity: Ren
 
 ## Default Visualization
 Default Display Text Format:  
-_{RentalAssetType.RentalAssetTypeName}{StateTagsAttribute}_  
+_{RentalAssetType.RentalAssetTypeName}_  
 Default Search Members:  
 _RentalAssetType.RentalAssetTypeName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [DisplayText](Applications.Rental.AssetTypeProperties.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Rental.AssetTypeProperties.md#id) | guid |  
 | [ObjectVersion](Applications.Rental.AssetTypeProperties.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.Rental.AssetTypeProperties.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -91,16 +90,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

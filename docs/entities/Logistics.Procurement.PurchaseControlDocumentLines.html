@@ -83,7 +83,7 @@
 <p>The detail line of purchase control data. The purchase control is used to tally all orders and execuctions in the purchasing module. Entity: Scm_Purchase_Control_Document_Lines (Introduced in version 18.2)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {PurchaseControlDocument.DocumentNo} {PurchaseControlDocument.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{LineNo}. {PurchaseControlDocument.DocumentNo} {PurchaseControlDocument.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>PurchaseControlDocument.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -178,11 +178,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#requestedstandardquantitybase">RequestedStandard<br>QuantityBase</a></td>
 <td>decimal (12, 3) <strong>nullable</strong></td>
 <td>The standard quantity of the requested items (usually with Purchase Requisition) in base measurement unit. Null when the logged operation did not involve requesting items.</td>
-</tr>
-<tr>
-<td><a href="Logistics.Procurement.PurchaseControlDocumentLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -360,13 +355,6 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p><strong>OBSOLETE! Do not use!</strong> The <see cref="PurchaseControlDocument"></see> to which this PurchaseControlDocumentLine belongs. <code>Obsolete</code> <code>Required</code> <code>Filter(multi eq)</code> <code>Obsoleted in version 24.1.4.50</code></p>

@@ -83,7 +83,7 @@
 <p>Contains cost rates for different periods for resources. Each record is valid until the next From Date. Entity: Gen_Resource_Cost_Rates</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Resource.Name:T}{StateTagsAttribute}</em><br>
+<em>{Resource.Name:T}</em><br>
 Default Search Members:<br>
 <em>Resource.Name</em><br>
 Name Data Member:<br>
@@ -145,11 +145,6 @@ Aggregate Root:<br>
 <td><a href="General.Resources.ResourceCostRates.html#standardrateperhour">StandardRatePerHour</a></td>
 <td><a href="../data-types.html#amount">Amount (12, 4)</a></td>
 <td>The standard cost per hour of the resource in the resources costing currency. The standard cost is applied for resource usage during the normal working hours. <code>Currency: Resource.CostingCurrency</code> <code>Required</code> <code>Filter(eq;like)</code></td>
-</tr>
-<tr>
-<td><a href="General.Resources.ResourceCostRates.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -234,13 +229,6 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>The enterprise company for which the cost is defined. <code>Required</code> <code>Filter(multi eq)</code></p>

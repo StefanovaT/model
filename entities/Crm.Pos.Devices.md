@@ -9,7 +9,7 @@ Represents one POS device, attached to a POS terminal. Entity: Pos_Devices (Intr
 
 ## Default Visualization
 Default Display Text Format:  
-_{PosTerminal.PosTerminalName:T}{StateTagsAttribute}_  
+_{PosTerminal.PosTerminalName:T}_  
 Default Search Members:  
 _PosTerminal.PosTerminalName_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Root:
 | [ObjectVersion](Crm.Pos.Devices.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProtocolName](Crm.Pos.Devices.md#protocolname) | [ProtocolName](Crm.Pos.Devices.md#protocolname) __nullable__ | The name of the protocol, which can be used to communicate with the device. null means that the protocol is unknown and programmatic communication with the device would not be performed. 
 | [SettingsJson](Crm.Pos.Devices.md#settingsjson) | string (max) __nullable__ | Settings and operator access codes for the POS device. The data is stored as Json, encrypted for the current application server instance. null means that there are no settings for this device. 
-| [StateTagsAttribute](Crm.Pos.Devices.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -159,16 +158,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Contains risks, associated to projects. Entity: Prj_Project_Risks
 
 ## Default Visualization
 Default Display Text Format:  
-_{RiskName}{StateTagsAttribute}_  
+_{RiskName}_  
 Default Search Members:  
 _RiskName_  
 Name Data Member:  
@@ -40,7 +40,6 @@ Aggregate Root:
 | [Resolved](Projects.Classic.ProjectRisks.md#resolved) | boolean | True if the risk is resolved. `Required` `Default(false)` `Filter(eq)` 
 | [ResolveDate](Projects.Classic.ProjectRisks.md#resolvedate) | date __nullable__ | The date on which the risk is resolved. `Filter(eq;ge;le)` 
 | [RiskName](Projects.Classic.ProjectRisks.md#riskname) | string (254) | The short name of the risk. `Required` `Filter(multi eq)` 
-| [StateTagsAttribute](Projects.Classic.ProjectRisks.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -173,16 +172,6 @@ _Supported Filters_: **Equals, EqualsIn**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

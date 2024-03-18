@@ -10,7 +10,7 @@ Stores company locations. The locations are parties and as such, can be organize
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName:T}{StateTagsAttribute}_  
+_{PartyName:T}_  
 Default Search Members:  
 _PartyCode; PartyName_  
 Code Data Member:  
@@ -52,7 +52,6 @@ Aggregate Tree
 | [PartyUniqueNumber](General.Contacts.CompanyLocations.md#partyuniquenumber) | string (16) __nullable__ | Unique number of the party (National number for persons, Registration number for companies). `Filter(eq;like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyUpdateTime](General.Contacts.CompanyLocations.md#partyupdatetime) | datetime __nullable__ | Date and time when the Party was last updated. `Filter(ge;le)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PartyUpdateUser](General.Contacts.CompanyLocations.md#partyupdateuser) | string (64) __nullable__ | Login name of the user, who last updated the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
-| [StateTagsAttribute](General.Contacts.CompanyLocations.md#statetagsattribute) | string | Specifies the state of the document. 
 | [WorkingTime](General.Contacts.CompanyLocations.md#workingtime) | string (254) __nullable__ | Textual representation of the working time of the location. 
 
 ## References
@@ -270,16 +269,6 @@ _Category_: **System**
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### WorkingTime

@@ -83,7 +83,7 @@
 <p>Location numbers for a party. Depending on the partner with which we are doing an exchange, our location number might be different. Entity: Gen_Party_Location_Numbers (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Party.PartyName:T}{StateTagsAttribute}</em><br>
+<em>{Party.PartyName:T}</em><br>
 Default Search Members:<br>
 <em>LocationNumber; Party.PartyName</em><br>
 Code Data Member:<br>
@@ -142,11 +142,6 @@ Aggregate Root:<br>
 <td><a href="General.PartyLocationNumbers.html#significance">Significance</a></td>
 <td>int32</td>
 <td>Order of significance of the location number within the main Party. If there are multiple location numbers, only the most significant is used. 0 is the least significant and higher numbers indicate higher significance. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="General.PartyLocationNumbers.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -247,13 +242,6 @@ Allowed values for the <code>LocationCodingSystem</code>(General.PartyLocationNu
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="partnerparty">PartnerParty</h3>
 <p>The party with which we are doing exchange. Depending on the Partner Party, the main Party might have different location number. null means that the location number is not dependent on the Partner Party. <code>Filter(multi eq)</code></p>

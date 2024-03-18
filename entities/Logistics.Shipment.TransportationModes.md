@@ -9,7 +9,7 @@ Represents a mode of transportation, like water, air, road, etc. Entity: Log_Tra
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [Id](Logistics.Shipment.TransportationModes.md#id) | guid |  
 | [Name](Logistics.Shipment.TransportationModes.md#name) | string (254) | Multilanguage name of the mode of transportation. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Logistics.Shipment.TransportationModes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Logistics.Shipment.TransportationModes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemIcon](Logistics.Shipment.TransportationModes.md#systemicon) | string (1) | Icon, depicting the mode of transport. A=Air, W=Water, T=Train/Rail, R=Road, O=Other. `Required` `Default("O")` 
 
 
@@ -88,16 +87,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

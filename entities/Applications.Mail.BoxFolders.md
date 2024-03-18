@@ -9,7 +9,7 @@ Contains the folders inside the mailboxes. Entity: Mail_Box_Folders
 
 ## Default Visualization
 Default Display Text Format:  
-_{FolderName:T}{StateTagsAttribute}_  
+_{FolderName:T}_  
 Default Search Members:  
 _FolderName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](Applications.Mail.BoxFolders.md#id) | guid |  
 | [ObjectVersion](Applications.Mail.BoxFolders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ServerFolderID](Applications.Mail.BoxFolders.md#serverfolderid) | string (256) __nullable__ | ID of the folder on the mail server in the format of the mail server. `Filter(eq)` 
-| [StateTagsAttribute](Applications.Mail.BoxFolders.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SyncState](Applications.Mail.BoxFolders.md#syncstate) | string (max) __nullable__ | The synchronization state for the folder. The format of the contents is dependant on the server type. For IMAP, this is last message Id, for Exchange - this is SyncState. 
 | [SystemPurpose](Applications.Mail.BoxFolders.md#systempurpose) | [SystemPurpose](Applications.Mail.BoxFolders.md#systempurpose) __nullable__ | When not null means that the folder has special system designation. Designations are: M=Mailbox(root folder), I=Inbox, D=Drafts, O=Outbox, S=Sent, T=Trash. `Filter(eq)` `ReadOnly` 
 
@@ -97,16 +96,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### SyncState
 

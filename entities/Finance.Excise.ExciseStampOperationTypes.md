@@ -9,7 +9,7 @@ Specifies the type of the Excise Stamp operation. Entity: Exc_Excise_Stamp_Opera
 
 ## Default Visualization
 Default Display Text Format:  
-_{Code}: {Name}{StateTagsAttribute}_  
+_{Code}: {Name}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -39,7 +39,6 @@ Aggregate Tree
 | [Name](Finance.Excise.ExciseStampOperationTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of operation (multi-language string). `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Excise.ExciseStampOperationTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RequireProduct](Finance.Excise.ExciseStampOperationTypes.md#requireproduct) | boolean __nullable__ | Specifies whether for this operation type, the Product field is mandatory in the Excise Stamp Operation line. `Filter(eq)` `Introduced in version 24.1.1.91` 
-| [StateTagsAttribute](Finance.Excise.ExciseStampOperationTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TrackSequence](Finance.Excise.ExciseStampOperationTypes.md#tracksequence) | boolean __nullable__ | Checks for this Excise Stamp Operation Type, when entering numbers, the sequence of previously entered numbers is preserved. `Filter(eq)` `Introduced in version 24.1.1.82` 
 
 
@@ -175,16 +174,6 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TrackSequence
 

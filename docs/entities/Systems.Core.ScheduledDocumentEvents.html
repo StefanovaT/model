@@ -83,7 +83,7 @@
 <p>Contains postponed events, which will be executed later. Usually these are large number of recalculation events, resulting from other events. For example, releasing a cost correction, publishes postponed events for all affected documents. Entity: Gen_Scheduled_Document_Events</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {SourceDocumentId}{StateTagsAttribute}</em><br>
+<em>{Id}: {SourceDocumentId}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -153,11 +153,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.ScheduledDocumentEvents.html#state">State</a></td>
 <td><a href="Systems.Core.ScheduledDocumentEvents.html#state">State</a></td>
 <td>The state of the document for which the event will be processed. <code>Required</code> <code>ReadOnly</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.ScheduledDocumentEvents.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -299,13 +294,6 @@ Allowed values for the <code>State</code>(Systems.Core.ScheduledDocumentEvents.m
 <p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The document for which the event will be processed. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>

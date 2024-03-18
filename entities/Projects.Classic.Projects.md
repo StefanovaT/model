@@ -9,7 +9,7 @@ Contains the planned, running and completed projects of the enterprises. Entity:
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -42,7 +42,6 @@ Aggregate Tree
 | [ObjectVersion](Projects.Classic.Projects.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProjectStatus](Projects.Classic.Projects.md#projectstatus) | [ProjectStatus](Projects.Classic.Projects.md#projectstatus) | Current project status. 0=New/Structuring, 10=Budgeting, 20=Panning, 30=Started, 40=Resolved(Completed), 45=Resolved(Cancelled), 50=Closed(Completed), 55=Closed(Cancelled). `Required` `Default(0)` `Filter(multi eq)` 
 | [StartDate](Projects.Classic.Projects.md#startdate) | date __nullable__ | Expected date, when the execution of the tasks will start. null means that the start date is still unknown. `Filter(eq;ge;le)` 
-| [StateTagsAttribute](Projects.Classic.Projects.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -172,16 +171,6 @@ _Category_: **System**
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

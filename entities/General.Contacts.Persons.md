@@ -10,7 +10,7 @@ Personal records. Requires related party record. Entity: Cm_Persons (Introduced 
 
 ## Default Visualization
 Default Display Text Format:  
-_{PartyName:T}{StateTagsAttribute}_  
+_{PartyName:T}_  
 Default Search Members:  
 _PartyCode; PartyName_  
 Code Data Member:  
@@ -64,7 +64,6 @@ Aggregate Tree
 | [PartyUpdateUser](General.Contacts.Persons.md#partyupdateuser) | string (64) __nullable__ | Login name of the user, who last updated the Party. `Filter(like)` `ReadOnly` (Inherited from [Parties](General.Contacts.Parties.md)) 
 | [PassportIssuingDate](General.Contacts.Persons.md#passportissuingdate) | datetime __nullable__ | Date of issuing the passport. null means unknown. `Filter(ge;le)` 
 | [PassportNumber](General.Contacts.Persons.md#passportnumber) | string (14) __nullable__ | Current passport number. null means unknown. `Filter(eq)` 
-| [StateTagsAttribute](General.Contacts.Persons.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Title](General.Contacts.Persons.md#title) | [MultilanguageString (32)](../data-types.md#multilanguagestring) __nullable__ | The persons title. It may be one of the standard titles - Mr., Mrs., etc., but it can also contains professional or academic qualification. 
 | [UpdateTime](General.Contacts.Persons.md#updatetime) | datetime __nullable__ | Date and time when the Person was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](General.Contacts.Persons.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Person. `Filter(like)` `ReadOnly` 
@@ -392,16 +391,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Maximum Length_: **14**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### Title
 

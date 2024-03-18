@@ -83,7 +83,7 @@
 <p>Represents a task, such as a piece of work or personal item, that can be tracked and completed. Entity: Gen_Todo_Tasks (Introduced in version 23.1.1.39)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Title}{StateTagsAttribute}</em><br>
+<em>{Title}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -152,11 +152,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.Todo.Tasks.html#state">State</a></td>
 <td><a href="Projects.Todo.Tasks.html#state">State</a></td>
 <td>Indicates the current task state. <code>Required</code> <code>Default(&quot;N&quot;)</code> <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Projects.Todo.Tasks.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Projects.Todo.Tasks.html#title">Title</a></td>
@@ -326,13 +321,6 @@ Allowed values for the <code>State</code>(Projects.Todo.Tasks.md#state) data att
 <p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>New</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="title">Title</h3>
 <p>A brief description of the task. <code>Required</code> <code>Filter(like)</code></p>

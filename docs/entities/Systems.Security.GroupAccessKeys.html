@@ -83,7 +83,7 @@
 <p>Specifies the access keys for which the user groups have permissions. The existance of a record grants read permission. Additional permissions are granted through specialized fields. Entity: Sec_Group_Access_Keys</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Group.Name:T}{StateTagsAttribute}</em><br>
+<em>{Group.Name:T}</em><br>
 Default Search Members:<br>
 <em>Group.Name</em><br>
 Name Data Member:<br>
@@ -185,11 +185,6 @@ Aggregate Root:<br>
 <td><a href="Systems.Security.GroupAccessKeys.html#permission9">Permission9</a></td>
 <td>boolean</td>
 <td>When true, the group is granted with entity-specific permission for the entity, protected by the access key. <code>Required</code> <code>Default(false)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Security.GroupAccessKeys.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -339,13 +334,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="accesskey">AccessKey</h3>
 <p>This access key, to which we are granting access permissions. <code>Required</code> <code>Filter(multi eq)</code></p>

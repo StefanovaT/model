@@ -9,7 +9,7 @@ User-defined reports. Reports retrieve data from data sources and present it in 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Tree
 | [QueryName](Systems.Reporting.Reports.md#queryname) | string (128) | The query on which the report is based. `Required` `Filter(eq)` 
 | [ReportBinaryLayout](Systems.Reporting.Reports.md#reportbinarylayout) | byte[] __nullable__ | The printout layout, when the format requires binary storage. Alternative to Report_Layout. 
 | [ReportLayout](Systems.Reporting.Reports.md#reportlayout) | string (max) __nullable__ | The textual representation of the printout layout, when the format requires text representation. Alternative to Report_Binary_Layout. 
-| [StateTagsAttribute](Systems.Reporting.Reports.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TemplateFilterXml](Systems.Reporting.Reports.md#templatefilterxml) | string (max) __nullable__ | Specifies the filter condition, which must be satisfied in order for this report to be prioritized for printing as a template sub-report. null when the current report cannot be used as template sub-report. 
 | [TemplatePriority](Systems.Reporting.Reports.md#templatepriority) | int32 __nullable__ | Specifies the priority of the current report, relative to other reports. Used only when choosing which report to show as a template subreport, null otherwise. 
 
@@ -154,16 +153,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TemplateFilterXml
 

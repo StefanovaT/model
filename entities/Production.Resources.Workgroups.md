@@ -9,7 +9,7 @@ Production workgroups. Entity: Prd_Workgroups
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -39,7 +39,6 @@ Aggregate Tree
 | [Notes](Production.Resources.Workgroups.md#notes) | string (254) __nullable__ | User notes for the workgroup. 
 | [ObjectVersion](Production.Resources.Workgroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Parent](Production.Resources.Workgroups.md#parent) | string (255) | Path-like parent workgroup name. `Required` `Default("/")` `Filter(like)` `ORD` 
-| [StateTagsAttribute](Production.Resources.Workgroups.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -148,16 +147,6 @@ _Supports Order By_: **True**
 _Maximum Length_: **255**  
 _Default Value_: **/**  
 _Show in UI_: **CannotBeShown**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

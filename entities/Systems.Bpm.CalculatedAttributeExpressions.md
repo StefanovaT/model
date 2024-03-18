@@ -9,7 +9,7 @@ Represent an expression within the calculation of a calculated attribute. Entity
 
 ## Default Visualization
 Default Display Text Format:  
-_{CalculatedAttribute.Name}{StateTagsAttribute}_  
+_{CalculatedAttribute.Name}_  
 Default Search Members:  
 _CalculatedAttribute.Name_  
 Name Data Member:  
@@ -41,7 +41,6 @@ Aggregate Root:
 | [Parameter2Value](Systems.Bpm.CalculatedAttributeExpressions.md#parameter2value) | string (256) __nullable__ | The actual value of the parameter. 
 | [Parameter3Type](Systems.Bpm.CalculatedAttributeExpressions.md#parameter3type) | [ExpressionParameterType](Systems.Bpm.CalculatedAttributeExpressions.md#parameter3type) __nullable__ | The type of the parameter specifies how to obtain the parameter value. 
 | [Parameter3Value](Systems.Bpm.CalculatedAttributeExpressions.md#parameter3value) | string (256) __nullable__ | The actual value of the parameter. 
-| [StateTagsAttribute](Systems.Bpm.CalculatedAttributeExpressions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -275,16 +274,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **256**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

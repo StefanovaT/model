@@ -9,7 +9,7 @@ Sales persons (or representatives) are sellers inside the enterprise company who
 
 ## Default Visualization
 Default Display Text Format:  
-_{Person.PartyName:T}{StateTagsAttribute}_  
+_{Person.PartyName:T}_  
 Default Search Members:  
 _Person.PartyName_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [Id](Crm.SalesPersons.md#id) | guid |  
 | [IsActive](Crm.SalesPersons.md#isactive) | boolean | Specifies whether the sales person is active and should be included in the list when choosing sales person through drop-downs, lists, etc. `Required` `Default(true)` `Filter(eq)` 
 | [ObjectVersion](Crm.SalesPersons.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.SalesPersons.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -126,16 +125,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

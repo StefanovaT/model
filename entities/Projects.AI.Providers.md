@@ -9,7 +9,7 @@ Specifies provider and base model, on which the user models can be based. Entity
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [ObjectVersion](Projects.AI.Providers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProviderApiKey](Projects.AI.Providers.md#providerapikey) | string (128) | The API key (provided by the model provider), which should be used to access the provider API. `Required` 
 | [ProviderField](Projects.AI.Providers.md#providerfield) | [ProviderField](Projects.AI.Providers.md#providerfield) | The provider of the base model. Currently, only OpenAI is supported. `Required` `Default("OpenAI")` `Filter(eq)` 
-| [StateTagsAttribute](Projects.AI.Providers.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -129,16 +128,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **OpenAI**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

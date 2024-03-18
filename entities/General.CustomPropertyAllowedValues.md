@@ -9,7 +9,7 @@ User-defined properties allowed values. Can be specified only for properties wit
 
 ## Default Visualization
 Default Display Text Format:  
-_{Description:T}{StateTagsAttribute}_  
+_{Description:T}_  
 Default Search Members:  
 _PropertyAllowedValueField; Description_  
 Code Data Member:  
@@ -40,7 +40,6 @@ Aggregate Root:
 | [ParentAllowedValueId](General.CustomPropertyAllowedValues.md#parentallowedvalueid) | guid __nullable__ | The value of the parent property, for which this allowed value is valid. `Filter(multi eq)` 
 | [Picture](General.CustomPropertyAllowedValues.md#picture) | byte[] __nullable__ | When not null, specifies a picture representation of the allowed value. 
 | [PropertyAllowedValueField](General.CustomPropertyAllowedValues.md#propertyallowedvaluefield) | string (254) | The actual allowed value. `Required` `Filter(eq;like)` 
-| [StateTagsAttribute](General.CustomPropertyAllowedValues.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -142,16 +141,6 @@ _Supported Filters_: **Equals, Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

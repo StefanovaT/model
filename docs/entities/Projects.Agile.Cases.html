@@ -83,7 +83,7 @@
 <p>Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in version 24.1.1.86)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Number}: {Title:T}{StateTagsAttribute}</em><br>
+<em>{Number}: {Title:T}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -148,11 +148,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Projects.Agile.Cases.html#priority">Priority</a></td>
 <td><a href="Projects.Agile.Cases.html#priority">Priority</a></td>
 <td>Priority of the case, on a scale from 1 (highest) to 7 (lowest). <code>Required</code> <code>Default(7)</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Projects.Agile.Cases.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.Cases.html#systemstate">SystemState</a></td>
@@ -319,13 +314,6 @@ Allowed values for the <code>Priority</code>(Projects.Agile.Cases.md#priority) d
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>7</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="systemstate">SystemState</h3>
 <p>The base state of the case. <code>Required</code> <code>Default(&quot;1&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Agile.Cases.html#systemstate">SystemState</a></strong><br>

@@ -9,7 +9,7 @@ Contains the data of a printout of a document as it was obtained from the data s
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {PrintoutLayoutId}{StateTagsAttribute}_  
+_{Id}: {PrintoutLayoutId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -30,7 +30,6 @@ Aggregate Tree
 | [ObjectVersion](General.DocumentPrintImages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PrintImage](General.DocumentPrintImages.md#printimage) | byte[] | The data of the printout, stored in the format, specified in Print Image Format. `Required` 
 | [PrintImageFormat](General.DocumentPrintImages.md#printimageformat) | string (3) | The format, which is used to represent the print image. Currently, only 'CDS' = Compressed Data Set is supported. `Required` `Default("CDS")` 
-| [StateTagsAttribute](General.DocumentPrintImages.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -91,16 +90,6 @@ _Supports Order By_: **False**
 _Maximum Length_: **3**  
 _Default Value_: **CDS**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

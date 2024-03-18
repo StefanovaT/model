@@ -9,7 +9,7 @@ Specifies a legislation, which is applicable for a party. A single party can hav
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}{StateTagsAttribute}_  
+_{Party.PartyName:T}_  
 Default Search Members:  
 _Party.PartyName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](General.PartyApplicableLegislations.md#id) | guid |  
 | [Notes](General.PartyApplicableLegislations.md#notes) | string (254) __nullable__ | Notes for this PartyApplicableLegislation. `Filter(like)` 
 | [ObjectVersion](General.PartyApplicableLegislations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.PartyApplicableLegislations.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -122,16 +121,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

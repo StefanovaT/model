@@ -83,7 +83,7 @@
 <p>The external authentication providers, linked to the domain. Contains data about registration, usually the app id or app key. Entity: Sec_Domain_Providers (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{DisplayName:T}{StateTagsAttribute}</em><br>
+<em>{DisplayName:T}</em><br>
 Default Search Members:<br>
 <em>DisplayName</em><br>
 Name Data Member:<br>
@@ -150,11 +150,6 @@ Aggregate Root:<br>
 <td><a href="Systems.Security.DomainProviders.html#providername">ProviderName</a></td>
 <td><a href="Systems.Security.DomainProviders.html#providername">ProviderName</a></td>
 <td>The system name of the user authentication provider. For example GOOGLE, FACEBOOK, MICROSOFT, AZUREAD, ERPNET, etc. <code>Required</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Security.DomainProviders.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Systems.Security.DomainProviders.html#tenantid">TenantID</a></td>
@@ -276,13 +271,6 @@ Allowed values for the <code>ProviderName</code>(Systems.Security.DomainProvider
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tenantid">TenantID</h3>
 <p>When the authentication provider is multi-tenant, this specifies the tenant ID. For example, Google, Facebook and Microsoft are singe-tenant, while AzureAD is multi-tenant.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>

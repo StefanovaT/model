@@ -83,7 +83,7 @@
 <p>Detail lines of orders for material consumption. Entity: Prd_Consumption_Order_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineOrd}. {ConsumptionOrder.DocumentNo} {ConsumptionOrder.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{LineOrd}. {ConsumptionOrder.DocumentNo} {ConsumptionOrder.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>ConsumptionOrder.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -153,11 +153,6 @@ Aggregate Root:<br>
 <td><a href="Production.ShopFloor.ConsumptionOrderLines.html#scheduleddatetime">ScheduledDateTime</a></td>
 <td>datetime <strong>nullable</strong></td>
 <td>The scheduled date, when the material is needed. <code>Filter(ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Production.ShopFloor.ConsumptionOrderLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -325,13 +320,6 @@ Allowed values for the <code>ConsumptionType</code>(Production.ShopFloor.Consump
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="consumedquantityunit">ConsumedQuantityUnit</h3>

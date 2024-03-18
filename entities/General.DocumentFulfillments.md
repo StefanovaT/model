@@ -9,7 +9,7 @@ Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced 
 
 ## Default Visualization
 Default Display Text Format:  
-_{DestinationEntityName}{StateTagsAttribute}_  
+_{DestinationEntityName}_  
 Default Search Members:  
 _DestinationEntityName_  
 Name Data Member:  
@@ -41,7 +41,6 @@ Aggregate Root:
 | [ObjectVersion](General.DocumentFulfillments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [QuantityBase](General.DocumentFulfillments.md#quantitybase) | decimal (12, 3) | Fulfilled quantity in the base measurement unit of the product. `Required` `Filter(multi eq;ge;le)` `Introduced in version 21.1.1.33` 
 | [StandardQuantity](General.DocumentFulfillments.md#standardquantity) | decimal (12, 3) | The theoretical quantity according to the current measurement dimensions for the product. Used to measure the execution. `Required` `Introduced in version 22.1.4.52` 
-| [StateTagsAttribute](General.DocumentFulfillments.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -189,16 +188,6 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

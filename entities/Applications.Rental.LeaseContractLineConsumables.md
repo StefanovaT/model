@@ -9,7 +9,7 @@ Contains the consumables, which are sold accompanying asset rentals. Entity: Ren
 
 ## Default Visualization
 Default Display Text Format:  
-_{LeaseLine.LeaseContract.EntityName}{StateTagsAttribute}_  
+_{LeaseLine.LeaseContract.EntityName}_  
 Default Search Members:  
 _LeaseLine.LeaseContract.EntityName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](Applications.Rental.LeaseContractLineConsumables.md#id) | guid |  
 | [LineNo](Applications.Rental.LeaseContractLineConsumables.md#lineno) | int32 | Consecutive number of the consumable within the lease contract line. `Required` `Filter(eq;ge;le)` 
 | [ObjectVersion](Applications.Rental.LeaseContractLineConsumables.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.Rental.LeaseContractLineConsumables.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -99,16 +98,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

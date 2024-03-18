@@ -9,7 +9,7 @@ List of external applications. Used to run external applications. Entity: Sys_Ex
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -40,7 +40,6 @@ Aggregate Tree
 | [Platform](Systems.Core.ExternalApplications.md#platform) | [Platform](Systems.Core.ExternalApplications.md#platform) | The execution platform of the application. `Required` `Filter(eq)` 
 | [RefreshAfterFinish](Systems.Core.ExternalApplications.md#refreshafterfinish) | boolean | Whether to refresh the data, displayed to the user, after the execution finishes. Not all platforms and/or applications support finish notification. `Required` `Default(true)` `Filter(eq)` 
 | [SaveBeforeStart](Systems.Core.ExternalApplications.md#savebeforestart) | boolean | Whether to save the form data to the server before starting the application. `Required` `Default(true)` `Filter(eq)` 
-| [StateTagsAttribute](Systems.Core.ExternalApplications.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -208,16 +207,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

@@ -9,7 +9,7 @@ Asset purchase or sales order line for one asset. Entity: Ast_Asset_Order_Lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}. {AssetOrder.DocumentNo} {AssetOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{Id}. {AssetOrder.DocumentNo} {AssetOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _AssetOrder.DocumentNo_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [ObjectVersion](Finance.Assets.AssetOrderLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentLineNo](Finance.Assets.AssetOrderLines.md#parentlineno) | int32 __nullable__ | The number of the line within the parent document, which the current line executes. null when the current line does not execute line. `Introduced in version 18.2` 
 | [Quantity](Finance.Assets.AssetOrderLines.md#quantity) | int32 | Indicates the nature of the current operation: 1 - the operation is applied, 0 - no change, -1 - the operation is cancelled. `Required` `Default(0)` 
-| [StateTagsAttribute](Finance.Assets.AssetOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -110,16 +109,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

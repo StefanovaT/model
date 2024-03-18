@@ -9,7 +9,7 @@ Used for planned reconciliations to count product quantities from multiple devic
 
 ## Default Visualization
 Default Display Text Format:  
-_{Reconciliation.EntityName}{StateTagsAttribute}_  
+_{Reconciliation.EntityName}_  
 Default Search Members:  
 _Reconciliation.EntityName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](Logistics.Inventory.ReconciliationCounts.md#id) | guid |  
 | [ObjectVersion](Logistics.Inventory.ReconciliationCounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Logistics.Inventory.ReconciliationCounts.md#quantity) | decimal (12, 3) | The counted quantity in the default measurement unit of the product. `Required` `Filter(ge;le)` 
-| [StateTagsAttribute](Logistics.Inventory.ReconciliationCounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -97,16 +96,6 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

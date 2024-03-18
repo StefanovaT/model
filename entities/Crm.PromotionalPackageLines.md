@@ -9,7 +9,7 @@ Detail records (lines) of promotional package definition. Entity: Crm_Promotiona
 
 ## Default Visualization
 Default Display Text Format:  
-_{PromotionalPackage.Name}{StateTagsAttribute}_  
+_{PromotionalPackage.Name}_  
 Default Search Members:  
 _PromotionalPackage.Name_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [Quantity](Crm.PromotionalPackageLines.md#quantity) | [Quantity (9, 3)](../data-types.md#quantity) | The quantity of the product in the package in the base measurement unit of the Product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(1)` `Filter(ge;le)` 
 | [StandardDiscount<br />AdjustOrReplace](Crm.PromotionalPackageLines.md#standarddiscountadjustorreplace) | [StandardDiscount<br />AdjustOrReplace](Crm.PromotionalPackageLines.md#standarddiscountadjustorreplace) | Specifies standard discount change action: A=ADD, M=Mark down - apply after standard discount; R=REPLACE the standard discount. `Required` `Default("R")` 
 | [StandardDiscount<br />PercentAdjust](Crm.PromotionalPackageLines.md#standarddiscountpercentadjust) | decimal (7, 6) | The value of change (in percents) for the standard discount. `Required` `Default(0)` 
-| [StateTagsAttribute](Crm.PromotionalPackageLines.md#statetagsattribute) | string | Specifies the state of the document. 
 | [UnitPrice](Crm.PromotionalPackageLines.md#unitprice) | [Amount (13, 5)](../data-types.md#amount) __nullable__ | When not null specifies directly unit price for the product. When null, the package specifies only discount. `Currency: UnitPriceCurrency` 
 
 ## References
@@ -136,16 +135,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### UnitPrice
 

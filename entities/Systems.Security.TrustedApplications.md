@@ -9,7 +9,7 @@ Application, which is trusted to access the ERP data. Entity: Sec_Trusted_Applic
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -44,7 +44,6 @@ Aggregate Tree
 | [Notes](Systems.Security.TrustedApplications.md#notes) | string (max) __nullable__ | Notes for this TrustedApplication. 
 | [ObjectVersion](Systems.Security.TrustedApplications.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Scope](Systems.Security.TrustedApplications.md#scope) | string (max) __nullable__ | The scope (according to RFC 6749) for which the application was trusted. The scope is an unordered list of space-delimited case-sensitive strings. Each string denotes a permission (see docs for possible values). `Introduced in version 20.1` 
-| [StateTagsAttribute](Systems.Security.TrustedApplications.md#statetagsattribute) | string | Specifies the state of the document. 
 | [SystemUserAllowed](Systems.Security.TrustedApplications.md#systemuserallowed) | boolean | Allows this application to logon as a service. `Required` `Default(false)` `Filter(eq)` 
 | [SystemUserLoginUrl](Systems.Security.TrustedApplications.md#systemuserloginurl) | string (254) __nullable__ | The URL, which will be used by the login process, when the application logs in as a service. 
 
@@ -242,16 +241,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### SystemUserAllowed
 

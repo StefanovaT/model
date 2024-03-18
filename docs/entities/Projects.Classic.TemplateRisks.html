@@ -83,7 +83,7 @@
 <p>Contains project risks, which will be copied to projects, based on the template. Entity: Prj_Template_Risks</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{RiskName}{StateTagsAttribute}</em><br>
+<em>{RiskName}</em><br>
 Default Search Members:<br>
 <em>RiskName</em><br>
 Name Data Member:<br>
@@ -140,11 +140,6 @@ Aggregate Root:<br>
 <td><a href="Projects.Classic.TemplateRisks.html#riskname">RiskName</a></td>
 <td>string (254)</td>
 <td>The name of the risk. <code>Required</code></td>
-</tr>
-<tr>
-<td><a href="Projects.Classic.TemplateRisks.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -219,13 +214,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="projecttemplate">ProjectTemplate</h3>
 <p>The <see cref="Template"></see> to which this TemplateRisk belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

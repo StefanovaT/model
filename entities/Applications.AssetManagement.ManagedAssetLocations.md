@@ -9,7 +9,7 @@ Contains the locations to which the assets are assigned at various moments in ti
 
 ## Default Visualization
 Default Display Text Format:  
-_{ManagedAsset.Name:T}{StateTagsAttribute}_  
+_{ManagedAsset.Name:T}_  
 Default Search Members:  
 _ManagedAsset.Name_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](Applications.AssetManagement.ManagedAssetLocations.md#id) | guid |  
 | [Notes](Applications.AssetManagement.ManagedAssetLocations.md#notes) | string (max) __nullable__ | Might contain additional notes for the exact location of the asset within the enterprise company location. 
 | [ObjectVersion](Applications.AssetManagement.ManagedAssetLocations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.AssetManagement.ManagedAssetLocations.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -94,16 +93,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -83,7 +83,7 @@
 <p>List of external applications. Used to run external applications. Entity: Sys_External_Applications</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}{StateTagsAttribute}</em><br>
+<em>{Name:T}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -170,11 +170,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Systems.Core.ExternalApplications.html#savebeforestart">SaveBeforeStart</a></td>
 <td>boolean</td>
 <td>Whether to save the form data to the server before starting the application. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Systems.Core.ExternalApplications.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -352,13 +347,6 @@ Allowed values for the <code>Platform</code>(Systems.Core.ExternalApplications.m
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="accesskey">AccessKey</h3>
 <p>The access key, containing the user permissions for this ExternalApplication. Null means that all users have unlimited permissions. <code>Filter(multi eq)</code></p>

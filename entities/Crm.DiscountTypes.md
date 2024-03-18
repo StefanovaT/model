@@ -9,7 +9,7 @@ Contains the different types of discounts, which can be applied to sales lines. 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Code; Name_  
 Code Data Member:  
@@ -39,7 +39,6 @@ Aggregate Tree
 | [Notes](Crm.DiscountTypes.md#notes) | string (max) __nullable__ | Notes for this DiscountType. 
 | [ObjectVersion](Crm.DiscountTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Ord](Crm.DiscountTypes.md#ord) | int32 | Determines the order in which the discounts are applied. The discounts with smaller Ord are applied first. `Required` `Default(1)` `Filter(ge;le)` 
-| [StateTagsAttribute](Crm.DiscountTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -166,16 +165,6 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **1**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

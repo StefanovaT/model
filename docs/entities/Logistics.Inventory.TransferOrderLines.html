@@ -83,7 +83,7 @@
 <p>Details of Transfer Orders. Each line contains order for the movement of one product. Entity: Inv_Transfer_Order_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineOrd}. {TransferOrder.DocumentNo} {TransferOrder.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{LineOrd}. {TransferOrder.DocumentNo} {TransferOrder.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>TransferOrder.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -158,11 +158,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.Inventory.TransferOrderLines.html#standardunitprice">StandardUnitPrice</a></td>
 <td><a href="../data-types.html#amount">Amount (14, 5)</a> <strong>nullable</strong></td>
 <td>Standard unit price of the product during the creation of the transfer order line. <code>Currency: TransferOrder.DocumentCurrency</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.Inventory.TransferOrderLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -330,13 +325,6 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( obj.Product != null) AndAlso ( obj.QuantityUnit != null)), obj.Product.GetStandardUnitPrice( obj.QuantityUnit, obj.TransferOrder.ToStore.Currency, obj.TransferOrder.CurrencyDirectory), obj.StandardUnitPrice)</code></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
 <p>The parent transfer order. <code>Required</code> <code>Filter(multi eq)</code></p>

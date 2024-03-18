@@ -9,7 +9,7 @@ Contains custom percent ratios for additional amount distribution over products.
 
 ## Default Visualization
 Default Display Text Format:  
-_{Product.Name:T}{StateTagsAttribute}_  
+_{Product.Name:T}_  
 Default Search Members:  
 _Product.Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](General.Products.ProductDocumentAmounts.md#id) | guid |  
 | [LinePercent](General.Products.ProductDocumentAmounts.md#linepercent) | decimal (14, 3) | The custom percent for the current product and amount type. `Required` `Default(0)` 
 | [ObjectVersion](General.Products.ProductDocumentAmounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.Products.ProductDocumentAmounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -81,16 +80,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

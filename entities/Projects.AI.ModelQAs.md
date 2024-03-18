@@ -9,7 +9,7 @@ Questions and desired answers, forming the actual knowledge base of the model. E
 
 ## Default Visualization
 Default Display Text Format:  
-_{Model.Name:T}{StateTagsAttribute}_  
+_{Model.Name:T}_  
 Default Search Members:  
 _Model.Name_  
 Name Data Member:  
@@ -40,7 +40,6 @@ Aggregate Root:
 | [QAType](Projects.AI.ModelQAs.md#qatype) | [QAType](Projects.AI.ModelQAs.md#qatype) | Specifies whether the QA is training or validation. Validation QAs are used to test the correctness of the model and are only reported in the build logs. `Required` `Default("T")` `Filter(eq)` 
 | [Question](Projects.AI.ModelQAs.md#question) | string (max) | User question. `Required` `Filter(like)` 
 | [Section](Projects.AI.ModelQAs.md#section) | string (128) | Free text organizational section of the QA. `Required` 
-| [StateTagsAttribute](Projects.AI.ModelQAs.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -175,16 +174,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **128**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

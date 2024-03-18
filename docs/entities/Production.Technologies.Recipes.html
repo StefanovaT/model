@@ -83,7 +83,7 @@
 <p>Contains the characteristics of operations used to create products. Entity: Prd_Recipes</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}{StateTagsAttribute}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -180,11 +180,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Production.Technologies.Recipes.html#scraprate">ScrapRate</a></td>
 <td>decimal (7, 6)</td>
 <td>The percentage (0..1) of scrap usually occurring during the operation. Specifying this leads to inflated requirements of all raw materials for this recipe. <code>Required</code> <code>Default(0)</code></td>
-</tr>
-<tr>
-<td><a href="Production.Technologies.Recipes.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Production.Technologies.Recipes.html#updatetime">UpdateTime</a></td>
@@ -360,13 +355,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="updatetime">UpdateTime</h3>
 <p>Date and time when the Recipe was last updated. <code>Filter(ge;le)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>

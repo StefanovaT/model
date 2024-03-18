@@ -83,7 +83,7 @@
 <p>Contains detail lines for purchase invoice documents. Entity: Scm_Purchase_Invoice_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{LineNo}. {PurchaseInvoice.DocumentNo} {PurchaseInvoice.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{LineNo}. {PurchaseInvoice.DocumentNo} {PurchaseInvoice.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>PurchaseInvoice.DocumentNo</em><br>
 Category:  <em>Definitions</em><br>
@@ -173,11 +173,6 @@ Aggregate Root:<br>
 <td><a href="Logistics.Procurement.PurchaseInvoiceLines.html#standardquantitybase">StandardQuantityBase</a></td>
 <td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
 <td>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>ReadOnly</code> <code>Introduced in version 18.2</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.Procurement.PurchaseInvoiceLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseInvoiceLines.html#unitprice">UnitPrice</a></td>
@@ -577,13 +572,6 @@ Generic enum type for TransportMode properties<br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="unitprice">UnitPrice</h3>
 <p>The unit price of the invoiced item in the document currency of the invoice. <code>Currency: PurchaseInvoice.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 5)</a></strong><br>

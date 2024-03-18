@@ -9,7 +9,7 @@ Each record contains usage of resource, reported by the related Work Report. Ent
 
 ## Default Visualization
 Default Display Text Format:  
-_{WorkReport.EntityName}{StateTagsAttribute}_  
+_{WorkReport.EntityName}_  
 Default Search Members:  
 _WorkReport.EntityName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [DisplayText](Projects.Classic.WorkReportResources.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Classic.WorkReportResources.md#id) | guid |  
 | [ObjectVersion](Projects.Classic.WorkReportResources.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Projects.Classic.WorkReportResources.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TotalResourceUsageHours](Projects.Classic.WorkReportResources.md#totalresourceusagehours) | decimal (18, 2) | The total number of resource-hours, which are actually consumed. Equals to the duration of the task, multiplied by the average resource usage. `Required` `Default(0)` `Filter(eq;like)` 
 
 ## References
@@ -94,16 +93,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

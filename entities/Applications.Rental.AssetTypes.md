@@ -9,7 +9,7 @@ Categorizes the rental assets in specific type categories. Entity: Rent_Asset_Ty
 
 ## Default Visualization
 Default Display Text Format:  
-_{RentalAssetTypeName}{StateTagsAttribute}_  
+_{RentalAssetTypeName}_  
 Default Search Members:  
 _RentalAssetTypeName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [Notes](Applications.Rental.AssetTypes.md#notes) | string (max) __nullable__ | Notes for this AssetType. `Filter(like)` 
 | [ObjectVersion](Applications.Rental.AssetTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RentalAssetTypeName](Applications.Rental.AssetTypes.md#rentalassettypename) | string (254) | The name of the rental asset type. `Required` `Filter(like)` 
-| [StateTagsAttribute](Applications.Rental.AssetTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -96,16 +95,6 @@ _Supported Filters_: **Like**
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

@@ -9,7 +9,7 @@ Represents the segments which comprise the route of the trips. Entity: Fleet_Tri
 
 ## Default Visualization
 Default Display Text Format:  
-_{Trip.EntityName}{StateTagsAttribute}_  
+_{Trip.EntityName}_  
 Default Search Members:  
 _Trip.EntityName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [Notes](Applications.Fleet.TripSegments.md#notes) | string (254) __nullable__ | Notes for the segment. 
 | [ObjectVersion](Applications.Fleet.TripSegments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartingTimestamp](Applications.Fleet.TripSegments.md#startingtimestamp) | datetime | The starting date and time of the travel on the segment. `Required` `Filter(ge;le)` 
-| [StateTagsAttribute](Applications.Fleet.TripSegments.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -118,16 +117,6 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

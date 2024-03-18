@@ -9,7 +9,7 @@ Contains detail lines of purchase orders. Entity: Scm_Purchase_Order_Lines
 
 ## Default Visualization
 Default Display Text Format:  
-_{LineNo}. {PurchaseOrder.DocumentNo} {PurchaseOrder.DocumentType.TypeName:T}{StateTagsAttribute}_  
+_{LineNo}. {PurchaseOrder.DocumentNo} {PurchaseOrder.DocumentType.TypeName:T}_  
 Default Search Members:  
 _PurchaseOrder.DocumentNo_  
 Category:  _Definitions_  
@@ -43,7 +43,6 @@ Aggregate Root:
 | [Quantity](Logistics.Procurement.PurchaseOrderLines.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The quantity ordered. `Unit: QuantityUnit` `Required` `Default(0)` `Filter(ge;le)` 
 | [QuantityBase](Logistics.Procurement.PurchaseOrderLines.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The equivalence of Quantity, in the base measurement category of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` 
 | [StandardQuantityBase](Logistics.Procurement.PurchaseOrderLines.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `ReadOnly` `Introduced in version 18.2` 
-| [StateTagsAttribute](Logistics.Procurement.PurchaseOrderLines.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -256,16 +255,6 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 
 ## Reference Details
 

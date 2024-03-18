@@ -9,7 +9,7 @@ History of work efforts for executing activities (timesheet). Entity: Cm_Activit
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {ActivityId}{StateTagsAttribute}_  
+_{Id}: {ActivityId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [ObjectVersion](General.Contacts.ActivityTimeIntervals.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartTime](General.Contacts.ActivityTimeIntervals.md#starttime) | time | The starting time of the time interval within 'Date'. `Required` `Filter(ge;le)` 
 | [State](General.Contacts.ActivityTimeIntervals.md#state) | [DocumentState](General.Contacts.ActivityTimeIntervals.md#state) __nullable__ | The state of the primary activity in the moment the time interval was created. null when the state is unknown. 
-| [StateTagsAttribute](General.Contacts.ActivityTimeIntervals.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -152,16 +151,6 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

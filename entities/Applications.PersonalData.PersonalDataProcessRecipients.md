@@ -9,7 +9,7 @@ Contains recipients, to which personal data is disclosed. Entity: Pdm_Personal_D
 
 ## Default Visualization
 Default Display Text Format:  
-_{PersonalDataProcess.Name:T}{StateTagsAttribute}_  
+_{PersonalDataProcess.Name:T}_  
 Default Search Members:  
 _PersonalDataProcess.Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](Applications.PersonalData.PersonalDataProcessRecipients.md#id) | guid |  
 | [Notes](Applications.PersonalData.PersonalDataProcessRecipients.md#notes) | string (max) __nullable__ | Notes for this PersonalDataProcess<br />Recipient. 
 | [ObjectVersion](Applications.PersonalData.PersonalDataProcessRecipients.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Applications.PersonalData.PersonalDataProcessRecipients.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -81,16 +80,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

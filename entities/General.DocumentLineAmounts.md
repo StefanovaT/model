@@ -9,7 +9,7 @@ Specifies user-defined input percentages by lines for the document amounts. Enti
 
 ## Default Visualization
 Default Display Text Format:  
-_{Document.EntityName}{StateTagsAttribute}_  
+_{Document.EntityName}_  
 Default Search Members:  
 _Document.EntityName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [Id](General.DocumentLineAmounts.md#id) | guid |  
 | [LinePercent](General.DocumentLineAmounts.md#linepercent) | decimal (14, 6) | The percent of the additional amount which should be distributed over the current line. `Required` `Default(0)` 
 | [ObjectVersion](General.DocumentLineAmounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.DocumentLineAmounts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -93,16 +92,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

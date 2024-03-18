@@ -83,7 +83,7 @@
 <p>The different steps performed to create products. Entity: Prd_Operations</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}{StateTagsAttribute}</em><br>
+<em>{Name}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -165,11 +165,6 @@ Aggregate Root:<br>
 <td><a href="Production.Resources.Operations.html#standardpriceperhour">StandardPricePerHour</a></td>
 <td>decimal (18, 6)</td>
 <td>Standard price for 1 hour work for this operation. <code>Required</code> <code>Default(0)</code></td>
-</tr>
-<tr>
-<td><a href="Production.Resources.Operations.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Production.Resources.Operations.html#tooling">Tooling</a></td>
@@ -307,13 +302,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tooling">Tooling</h3>
 <p>Short description of the needed instruments for the operation.</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>

@@ -9,7 +9,7 @@ Contains files, attached to the documents. Entity: Gen_Document_File_Attachments
 
 ## Default Visualization
 Default Display Text Format:  
-_{FileName}{StateTagsAttribute}_  
+_{FileName}_  
 Default Search Members:  
 _FileName_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Root:
 | [LinkedFilePath](General.DocumentFileAttachments.md#linkedfilepath) | string (254) __nullable__ | Path to the linked file. null when the file is embedded. 
 | [Notes](General.DocumentFileAttachments.md#notes) | string (max) __nullable__ | Notes for this DocumentFileAttachment. 
 | [ObjectVersion](General.DocumentFileAttachments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.DocumentFileAttachments.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -127,16 +126,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

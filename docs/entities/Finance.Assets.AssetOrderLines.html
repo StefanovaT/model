@@ -83,7 +83,7 @@
 <p>Asset purchase or sales order line for one asset. Entity: Ast_Asset_Order_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}. {AssetOrder.DocumentNo} {AssetOrder.DocumentType.TypeName:T}{StateTagsAttribute}</em><br>
+<em>{Id}. {AssetOrder.DocumentNo} {AssetOrder.DocumentType.TypeName:T}</em><br>
 Default Search Members:<br>
 <em>AssetOrder.DocumentNo</em><br>
 Name Data Member:<br>
@@ -135,11 +135,6 @@ Aggregate Root:<br>
 <td><a href="Finance.Assets.AssetOrderLines.html#quantity">Quantity</a></td>
 <td>int32</td>
 <td>Indicates the nature of the current operation: 1 - the operation is applied, 0 - no change, -1 - the operation is cancelled. <code>Required</code> <code>Default(0)</code></td>
-</tr>
-<tr>
-<td><a href="Finance.Assets.AssetOrderLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -225,13 +220,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="asset">Asset</h3>
 <p>The asset that is acquired or retired. <code>Required</code> <code>Filter(multi eq)</code></p>

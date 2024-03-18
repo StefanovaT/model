@@ -9,7 +9,7 @@ Contains the calculated costs allocated to the different Cost Types. Entity: Cos
 
 ## Default Visualization
 Default Display Text Format:  
-_{Calculation.EntityName}{StateTagsAttribute}_  
+_{Calculation.EntityName}_  
 Default Search Members:  
 _Calculation.EntityName_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [LineNo](Finance.Cost.CalculationCosts.md#lineno) | int32 | Consecutive number of the line within the calculation. `Required` 
 | [ObjectVersion](Finance.Cost.CalculationCosts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ProjectId](Finance.Cost.CalculationCosts.md#projectid) | guid __nullable__ | The Project, which absorbed the cost. `Filter(multi eq)` 
-| [StateTagsAttribute](Finance.Cost.CalculationCosts.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -114,16 +113,6 @@ The Project, which absorbed the cost. `Filter(multi eq)`
 _Type_: **guid __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 

@@ -9,7 +9,7 @@ Contains postponed events, which will be executed later. Usually these are large
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {SourceDocumentId}{StateTagsAttribute}_  
+_{Id}: {SourceDocumentId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -35,7 +35,6 @@ Aggregate Tree
 | [ObjectVersion](Systems.Core.ScheduledDocumentEvents.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Processed](Systems.Core.ScheduledDocumentEvents.md#processed) | boolean | Indicates wheather the event is already processed or not. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [State](Systems.Core.ScheduledDocumentEvents.md#state) | [State](Systems.Core.ScheduledDocumentEvents.md#state) | The state of the document for which the event will be processed. `Required` `ReadOnly` 
-| [StateTagsAttribute](Systems.Core.ScheduledDocumentEvents.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -163,16 +162,6 @@ _Allowed Values (Systems.Core.ScheduledDocumentEventsRepository.State Enum Membe
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details

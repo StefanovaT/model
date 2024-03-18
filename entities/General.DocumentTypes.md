@@ -9,7 +9,7 @@ List of user-defined document types. Each type has associated system entity (obj
 
 ## Default Visualization
 Default Display Text Format:  
-_{TypeName:T}{StateTagsAttribute}_  
+_{TypeName:T}_  
 Default Search Members:  
 _Code; TypeName_  
 Code Data Member:  
@@ -66,7 +66,6 @@ Aggregate Tree
 | [Notes](General.DocumentTypes.md#notes) | string (254) __nullable__ | Notes for this DocumentType. 
 | [ObjectVersion](General.DocumentTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [SchemaXML](General.DocumentTypes.md#schemaxml) | string (max) __nullable__ | Obsolete. Not used. 
-| [StateTagsAttribute](General.DocumentTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 | [TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges) | [TrackAttributeChanges](General.DocumentTypes.md#trackattributechanges) | Enable/disable attributes change tracking for documents from this type. "Default" means that changes will be tracked for all documents, except transit and adjustment documents. `Required` `Default("DEF")` `Filter(eq)` `Introduced in version 24.1.3.37` 
 | [TrackPrintImages](General.DocumentTypes.md#trackprintimages) | [TrackPrintImages](General.DocumentTypes.md#trackprintimages) | Enable/disable print images tracking for documents from this type. `Required` `Default("SDC")` `Filter(eq)` `Introduced in version 24.1.3.95` 
 | [TransitionalDocument](General.DocumentTypes.md#transitionaldocument) | boolean | If checked determines that the documents from this type are automatically managed by the system and don't require management from the users. `Required` `Default(false)` 
@@ -235,16 +234,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **CannotBeShown**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### TrackAttributeChanges
 

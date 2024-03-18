@@ -83,7 +83,7 @@
 <p>Contains purchase prices of the products. Used for automatically loading unit prices in the purchase documents. Entity: Scm_Purchase_Product_Prices</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Price} - {FromDate}{StateTagsAttribute}</em><br>
+<em>{Price} - {FromDate}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -153,11 +153,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Logistics.Procurement.PurchaseProductPrices.html#priority">Priority</a></td>
 <td><a href="Logistics.Procurement.PurchaseProductPrices.html#priority">Priority</a></td>
 <td>Priority of the price comparative to other prices. <code>Required</code> <code>Default(2)</code> <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Logistics.Procurement.PurchaseProductPrices.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Logistics.Procurement.PurchaseProductPrices.html#thrudate">ThruDate</a></td>
@@ -320,13 +315,6 @@ Allowed values for the <code>Priority</code>(Logistics.Procurement.PurchaseProdu
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>2</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="thrudate">ThruDate</h3>
 <p>Ending date (inclusive) of the validity of the price. <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>

@@ -9,7 +9,7 @@ Contains the documents which are referenced by each document amount. Entity: Gen
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentAmount.Document.EntityName}{StateTagsAttribute}_  
+_{DocumentAmount.Document.EntityName}_  
 Default Search Members:  
 _DocumentAmount.Document.EntityName_  
 Name Data Member:  
@@ -32,7 +32,6 @@ Aggregate Root:
 | [DisplayText](General.DocumentAmountReferencedDocuments.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.DocumentAmountReferencedDocuments.md#id) | guid |  
 | [ObjectVersion](General.DocumentAmountReferencedDocuments.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.DocumentAmountReferencedDocuments.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -69,16 +68,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

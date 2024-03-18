@@ -9,7 +9,7 @@ Categories of measurement units. The units within a category are directly conver
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Tree
 | [IsDefault](General.MeasurementCategories.md#isdefault) | boolean | True=This category is the default category; false=otherwise. `Required` `Default(false)` `Filter(eq)` 
 | [Name](General.MeasurementCategories.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | The name of this MeasurementCategory. `Required` `Filter(eq;like)` 
 | [ObjectVersion](General.MeasurementCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](General.MeasurementCategories.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## Child Collections
 
@@ -91,16 +90,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -9,7 +9,7 @@ The promotional packages, included in a sales order. Entity: Crm_Sales_Order_Pro
 
 ## Default Visualization
 Default Display Text Format:  
-_{SalesOrder.EntityName}{StateTagsAttribute}_  
+_{SalesOrder.EntityName}_  
 Default Search Members:  
 _SalesOrder.EntityName_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Root:
 | [LineNumber](Crm.Sales.SalesOrderPromotionalPackages.md#linenumber) | int32 | Consecutive line number of the package, unique within the document. `Required` `Filter(eq)` 
 | [NumberOfPackages](Crm.Sales.SalesOrderPromotionalPackages.md#numberofpackages) | int32 | Number of packages sold. `Required` `Default(0)` 
 | [ObjectVersion](Crm.Sales.SalesOrderPromotionalPackages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Crm.Sales.SalesOrderPromotionalPackages.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -97,16 +96,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

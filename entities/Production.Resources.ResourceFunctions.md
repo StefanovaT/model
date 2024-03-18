@@ -9,7 +9,7 @@ List of functions that a specific resource is able to perform. Entity: Prd_Resou
 
 ## Default Visualization
 Default Display Text Format:  
-_{Resource.Name}{StateTagsAttribute}_  
+_{Resource.Name}_  
 Default Search Members:  
 _Resource.Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [Id](Production.Resources.ResourceFunctions.md#id) | guid |  
 | [Notes](Production.Resources.ResourceFunctions.md#notes) | string (254) __nullable__ | User notes on the resource function. 
 | [ObjectVersion](Production.Resources.ResourceFunctions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Production.Resources.ResourceFunctions.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -81,16 +80,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

@@ -83,7 +83,7 @@
 <p>Contains the sub-queries, which a report contains. Entity: Gen_Report_Queries</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{TableName}{StateTagsAttribute}</em><br>
+<em>{TableName}</em><br>
 Default Search Members:<br>
 <em>TableName</em><br>
 Name Data Member:<br>
@@ -150,11 +150,6 @@ Aggregate Root:<br>
 <td><a href="General.ReportQueries.html#showtextcolumns">ShowTextColumns</a></td>
 <td>boolean</td>
 <td>True to include text descriptions for certain columns. <code>Required</code> <code>Default(false)</code></td>
-</tr>
-<tr>
-<td><a href="General.ReportQueries.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.ReportQueries.html#tablename">TableName</a></td>
@@ -254,13 +249,6 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tablename">TableName</h3>
 <p>The name of the report query. A Reference_Path can participate more than one time in the report but with different Report_Query_Name. This can be used to specify different filter for the same query. Can be null.</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>

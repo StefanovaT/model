@@ -83,7 +83,7 @@
 <p>Detail records (lines) of promotional package definition. Entity: Crm_Promotional_Package_Lines</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{PromotionalPackage.Name}{StateTagsAttribute}</em><br>
+<em>{PromotionalPackage.Name}</em><br>
 Default Search Members:<br>
 <em>PromotionalPackage.Name</em><br>
 Name Data Member:<br>
@@ -140,11 +140,6 @@ Aggregate Root:<br>
 <td><a href="Crm.PromotionalPackageLines.html#standarddiscountpercentadjust">StandardDiscount<br>PercentAdjust</a></td>
 <td>decimal (7, 6)</td>
 <td>The value of change (in percents) for the standard discount. <code>Required</code> <code>Default(0)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.PromotionalPackageLines.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.PromotionalPackageLines.html#unitprice">UnitPrice</a></td>
@@ -266,13 +261,6 @@ Allowed values for the <code>StandardDiscountAdjustOrReplace</code>(Crm.Promotio
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="unitprice">UnitPrice</h3>
 <p>When not null specifies directly unit price for the product. When null, the package specifies only discount. <code>Currency: UnitPriceCurrency</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (13, 5)</a> <strong>nullable</strong></strong><br>

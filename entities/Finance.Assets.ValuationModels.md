@@ -9,7 +9,7 @@ Valuation models stand for the different valuations an asset can have. For examp
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -32,7 +32,6 @@ Aggregate Tree
 | [IsSystem](Finance.Assets.ValuationModels.md#issystem) | boolean | Is_System is True for those valuation models that are managed by the system via update procedures and cannot be edited by the user. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
 | [Name](Finance.Assets.ValuationModels.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this ValuationModel. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Assets.ValuationModels.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Assets.ValuationModels.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -89,16 +88,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

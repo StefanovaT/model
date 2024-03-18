@@ -9,7 +9,7 @@ Represents email messages. Entity: Mail_Messages
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {MailBoxFolderId}{StateTagsAttribute}_  
+_{Id}: {MailBoxFolderId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -38,7 +38,6 @@ Aggregate Tree
 | [ReceivedDateTime](Applications.Mail.Messages.md#receiveddatetime) | datetime __nullable__ | Date and time when the message was received. `Filter(ge;le)` 
 | [SentDateTime](Applications.Mail.Messages.md#sentdatetime) | datetime __nullable__ | Date and time when the message was sent. `Filter(ge;le)` 
 | [ServerMessageID](Applications.Mail.Messages.md#servermessageid) | string (256) __nullable__ | Message ID as it appears on the mail server. `Filter(eq)` `ORD` 
-| [StateTagsAttribute](Applications.Mail.Messages.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Subject](Applications.Mail.Messages.md#subject) | string (1024) __nullable__ | The message subject. `Filter(like)` 
 | [ToEmailAddressList](Applications.Mail.Messages.md#toemailaddresslist) | string (2048) __nullable__ | Semicolon-separated list of receiving email addresses. `Filter(like)` 
 
@@ -184,16 +183,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **True**  
 _Maximum Length_: **256**  
 _Show in UI_: **CannotBeShown**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 ### Subject
 

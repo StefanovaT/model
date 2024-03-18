@@ -83,7 +83,7 @@
 <p>Represents the membership of a user in a social group. Entity: Cmm_Social_Group_Members (Introduced in version 20.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{SocialGroup.Name}{StateTagsAttribute}</em><br>
+<em>{SocialGroup.Name}</em><br>
 Default Search Members:<br>
 <em>SocialGroup.Name</em><br>
 Name Data Member:<br>
@@ -130,11 +130,6 @@ Aggregate Root:<br>
 <td><a href="Communities.Social.GroupMembers.html#role">Role</a></td>
 <td><a href="Communities.Social.GroupMembers.html#role">Role</a></td>
 <td>Member role in a group. Defaults to member. <code>Required</code> <code>Default(&quot;M&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 23.1.1.95</code></td>
-</tr>
-<tr>
-<td><a href="Communities.Social.GroupMembers.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 </tbody>
 </table>
@@ -222,13 +217,6 @@ Allowed values for the <code>Role</code>(Communities.Social.GroupMembers.md#role
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Member</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="socialgroup">SocialGroup</h3>
 <p>The group in which the user participates. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

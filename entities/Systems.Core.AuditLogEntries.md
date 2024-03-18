@@ -9,7 +9,7 @@ Each record represents the occurrence of one logged event. Entity: Sys_Audit_Log
 
 ## Default Visualization
 Default Display Text Format:  
-_{ApplicationName}{StateTagsAttribute}_  
+_{ApplicationName}_  
 Default Search Members:  
 _ApplicationName_  
 Name Data Member:  
@@ -38,7 +38,6 @@ Aggregate Tree
 | [EventType](Systems.Core.AuditLogEntries.md#eventtype) | [EventType](Systems.Core.AuditLogEntries.md#eventtype) | Detailed action type. EID=Read one record by Id; ELD=Load many records; EUP=Update data; EDE=Delete record; EMT=Call method; ETH=Other entity event; AIN=Login; AOU=Log out; AUP=Sign Up; AFL=Login failed; APW=Change password; ATH=Other auth event; STH=Other server event. `Required` `Filter(multi eq)` 
 | [Id](Systems.Core.AuditLogEntries.md#id) | guid |  
 | [ObjectVersion](Systems.Core.AuditLogEntries.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Systems.Core.AuditLogEntries.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -189,16 +188,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

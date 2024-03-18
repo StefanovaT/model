@@ -9,7 +9,7 @@ Specifies the default depreciation methods for the asset categories. Different m
 
 ## Default Visualization
 Default Display Text Format:  
-_{AssetCategory.Name}{StateTagsAttribute}_  
+_{AssetCategory.Name}_  
 Default Search Members:  
 _AssetCategory.Name_  
 Name Data Member:  
@@ -33,7 +33,6 @@ Aggregate Root:
 | [DisplayText](Finance.Assets.DepreciationPlanTemplates.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Assets.DepreciationPlanTemplates.md#id) | guid |  
 | [ObjectVersion](Finance.Assets.DepreciationPlanTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Assets.DepreciationPlanTemplates.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -81,16 +80,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

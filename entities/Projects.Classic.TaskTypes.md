@@ -9,7 +9,7 @@ Represents the different types of tasks, which can be included in the projects. 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -34,7 +34,6 @@ Aggregate Tree
 | [Id](Projects.Classic.TaskTypes.md#id) | guid |  
 | [Name](Projects.Classic.TaskTypes.md#name) | [MultilanguageString (max)](../data-types.md#multilanguagestring) | The multilanguage task type name. `Required` `Filter(multi eq;like)` 
 | [ObjectVersion](Projects.Classic.TaskTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Projects.Classic.TaskTypes.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -111,16 +110,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

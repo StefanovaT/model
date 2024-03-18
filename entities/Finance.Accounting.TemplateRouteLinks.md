@@ -9,7 +9,7 @@ When specified denotes that another route uses the template, initially bound to 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Route.ProcedureName}{StateTagsAttribute}_  
+_{Route.ProcedureName}_  
 Default Search Members:  
 _Route.ProcedureName_  
 Name Data Member:  
@@ -32,7 +32,6 @@ Aggregate Root:
 | [DisplayText](Finance.Accounting.TemplateRouteLinks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Finance.Accounting.TemplateRouteLinks.md#id) | guid |  
 | [ObjectVersion](Finance.Accounting.TemplateRouteLinks.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Finance.Accounting.TemplateRouteLinks.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -69,16 +68,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

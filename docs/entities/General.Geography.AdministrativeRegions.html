@@ -83,7 +83,7 @@
 <p>Hierarchical structure of the legally defined administrative regions. Administrative regions are sub-divisions of the countries. Entity: Gen_Administrative_Regions</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name:T}{StateTagsAttribute}</em><br>
+<em>{Name:T}</em><br>
 Default Search Members:<br>
 <em>Code; Name</em><br>
 Code Data Member:<br>
@@ -142,11 +142,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.Geography.AdministrativeRegions.html#parentfullpath">ParentFullPath</a></td>
 <td>string (254) <strong>nullable</strong></td>
 <td>Parent region of the current territorial subdivision. <code>Filter(eq;like)</code></td>
-</tr>
-<tr>
-<td><a href="General.Geography.AdministrativeRegions.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.Geography.AdministrativeRegions.html#validfrom">ValidFrom</a></td>
@@ -230,13 +225,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="validfrom">ValidFrom</h3>
 <p>Start date of validity of this administrative division. null when the starting date is unknown in the past. <code>Filter(ge;le)</code></p>
 <p><em>Type</em>: <strong>date <strong>nullable</strong></strong><br>

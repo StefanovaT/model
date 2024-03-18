@@ -9,7 +9,7 @@ Contains supplier conditions (contracts). Entity: Scm_Suppliers
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party.PartyName:T}{StateTagsAttribute}_  
+_{Party.PartyName:T}_  
 Default Search Members:  
 _Number; Party.PartyName_  
 Code Data Member:  
@@ -40,7 +40,6 @@ Aggregate Tree
 | [IsActive](Logistics.Procurement.Suppliers.md#isactive) | boolean | Indicates whether the current supplier is active. `Required` `Default(true)` `Filter(eq)` 
 | [Number](Logistics.Procurement.Suppliers.md#number) | string (16) __nullable__ | The unique supplier number. `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Logistics.Procurement.Suppliers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Logistics.Procurement.Suppliers.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ThruDate](Logistics.Procurement.Suppliers.md#thrudate) | datetime __nullable__ | The date (inclusive) on which this party ceased to be a supplier. `Filter(ge;le)` 
 | [UpdateTime](Logistics.Procurement.Suppliers.md#updatetime) | datetime __nullable__ | Date and time when the Supplier was last updated. `Filter(ge;le)` `ReadOnly` 
 | [UpdateUser](Logistics.Procurement.Suppliers.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Supplier. `Filter(like)` `ReadOnly` 
@@ -175,16 +174,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

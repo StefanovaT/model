@@ -9,7 +9,7 @@ Depreciation methods. Contains both system-defined and user-defined methods. Ent
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name:T}{StateTagsAttribute}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -37,7 +37,6 @@ Aggregate Tree
 | [ObjectVersion](Finance.Assets.DepreciationMethods.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PeriodDeterminationMethod](Finance.Assets.DepreciationMethods.md#perioddeterminationmethod) | [PeriodDeterminationMethod](Finance.Assets.DepreciationMethods.md#perioddeterminationmethod) | Determines when the depreciation starts and when it ends. NM=Next_Month, CM=Current_Month, BD=By_Days. `Required` 
 | [StartFromNextMonth](Finance.Assets.DepreciationMethods.md#startfromnextmonth) | boolean | When true, denotes that the depreciation starts from the month, following the month of deployment. When false, the depreciation starts from the same month. `Required` `Default(true)` `ReadOnly` 
-| [StateTagsAttribute](Finance.Assets.DepreciationMethods.md#statetagsattribute) | string | Specifies the state of the document. 
 
 
 ## Attribute Details
@@ -164,16 +163,6 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **CannotBeShown**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## API Methods

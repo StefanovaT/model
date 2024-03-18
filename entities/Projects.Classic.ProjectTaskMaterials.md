@@ -9,7 +9,7 @@ Contains the materials, which are required for a project task. Entity: Prj_Proje
 
 ## Default Visualization
 Default Display Text Format:  
-_{ProjectTask.TaskName}{StateTagsAttribute}_  
+_{ProjectTask.TaskName}_  
 Default Search Members:  
 _ProjectTask.TaskName_  
 Name Data Member:  
@@ -36,7 +36,6 @@ Aggregate Root:
 | [ObjectVersion](Projects.Classic.ProjectTaskMaterials.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Quantity](Projects.Classic.ProjectTaskMaterials.md#quantity) | [Quantity (9, 3)](../data-types.md#quantity) | The required quantity of the material. `Unit: QuantityUnit` `Required` `Default(1)` 
 | [QuantityBase](Projects.Classic.ProjectTaskMaterials.md#quantitybase) | decimal (9, 3) | The equivalence of Quantity in the base measurement unit of the Material. `Required` `Default(0)` `ReadOnly` 
-| [StateTagsAttribute](Projects.Classic.ProjectTaskMaterials.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -130,16 +129,6 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( ( obj.QuantityUnit != null) AndAlso ( obj.MaterialProduct != null)), obj.Quantity.ConvertTo( obj.MaterialProduct.BaseUnit, obj.MaterialProduct).Value, obj.QuantityBase)`
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
 
 ## Reference Details
 

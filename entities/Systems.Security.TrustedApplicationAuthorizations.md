@@ -9,7 +9,7 @@ Authorization of a trusted application to access the data on behalf of a context
 
 ## Default Visualization
 Default Display Text Format:  
-_{TrustedApplication.Name}{StateTagsAttribute}_  
+_{TrustedApplication.Name}_  
 Default Search Members:  
 _TrustedApplication.Name_  
 Name Data Member:  
@@ -35,7 +35,6 @@ Aggregate Root:
 | [IsRevoked](Systems.Security.TrustedApplicationAuthorizations.md#isrevoked) | boolean | Specifies whether the grant is explicitly revoked. `Required` `Default(false)` 
 | [Notes](Systems.Security.TrustedApplicationAuthorizations.md#notes) | string (max) __nullable__ | Notes for this TrustedApplication<br />Authorization. 
 | [ObjectVersion](Systems.Security.TrustedApplicationAuthorizations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [StateTagsAttribute](Systems.Security.TrustedApplicationAuthorizations.md#statetagsattribute) | string | Specifies the state of the document. 
 | [ValidFromUtc](Systems.Security.TrustedApplicationAuthorizations.md#validfromutc) | datetime __nullable__ | The start of the validitiy of the authorization. null means that there is no restriction. `Filter(ge;le)` 
 | [ValidUntilUtc](Systems.Security.TrustedApplicationAuthorizations.md#validuntilutc) | datetime __nullable__ | The time (in UTC) when the grant expires. null means that there is no time restriction. `Filter(ge;le)` 
 
@@ -108,16 +107,6 @@ The latest version of the extensible data object for the aggregate root for the 
 
 _Type_: **int32**  
 _Category_: **Extensible Data Object**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  

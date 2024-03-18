@@ -83,7 +83,7 @@
 <p>The companies in the enterprise that issue documents. Entity: Gen_Enterprise_Companies</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Company.PartyName:T}{StateTagsAttribute}</em><br>
+<em>{Company.PartyName:T}</em><br>
 Default Search Members:<br>
 <em>Company.RegistrationNumber; Company.PartyName</em><br>
 Code Data Member:<br>
@@ -173,11 +173,6 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="General.EnterpriseCompanies.html#printimagesretentionmonths">PrintImagesRetentionMonths</a></td>
 <td>int32</td>
 <td>A period of months for which the printed images of the documents will be kept. <code>Required</code> <code>Default(60)</code> <code>Filter(multi eq;ge;le)</code> <code>Introduced in version 20.1</code></td>
-</tr>
-<tr>
-<td><a href="General.EnterpriseCompanies.html#statetagsattribute">StateTagsAttribute</a></td>
-<td>string</td>
-<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="General.EnterpriseCompanies.html#uibasecolor">UIBaseColor</a></td>
@@ -389,13 +384,6 @@ Allowed values for the <code>DefaultLanguage</code>(General.EnterpriseCompanies.
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>60</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="statetagsattribute">StateTagsAttribute</h3>
-<p>Specifies the state of the document.</p>
-<p><em>Type</em>: <strong>string</strong><br>
-<em>Category</em>: <strong>Calculated Attributes</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: ****<br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="uibasecolor">UIBaseColor</h3>
 <p>When not null, specifies the background color to use for visualization of the UI when the current enterprise company is selected. The color is in RGBA color format. <code>Introduced in version 18.2</code></p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>

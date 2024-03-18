@@ -9,7 +9,7 @@ User notification settings for the different notification classes. Entity: Cmm_N
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {UserId}{StateTagsAttribute}_  
+_{Id}: {UserId}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
@@ -32,7 +32,6 @@ Aggregate Tree
 | [ReceiveMail](Communities.NotificationSettings.md#receivemail) | boolean | True if the user should receive mail. `Required` `Default(false)` `Filter(eq)` 
 | [ReceiveNotification](Communities.NotificationSettings.md#receivenotification) | boolean | True if the user should receive internal notification. `Required` `Default(true)` `Filter(eq)` 
 | [ReceiveSms](Communities.NotificationSettings.md#receivesms) | boolean | True if the user should receive SMS. `Required` `Default(false)` `Filter(eq)` 
-| [StateTagsAttribute](Communities.NotificationSettings.md#statetagsattribute) | string | Specifies the state of the document. 
 
 ## References
 
@@ -115,16 +114,6 @@ _Supported Filters_: **Equals**
 _Supports Order By_: **False**  
 _Default Value_: **False**  
 _Show in UI_: **ShownByDefault**  
-
-### StateTagsAttribute
-
-Specifies the state of the document.
-
-_Type_: **string**  
-_Category_: **Calculated Attributes**  
-_Supported Filters_: **NotFilterable**  
-_Supports Order By_: ****  
-_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
