@@ -51,7 +51,8 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [DocumentType](General.Printouts.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The document type to which this printout layout is bound. `Required` `Filter(multi eq)` `Owner` |
 | [EnterpriseCompany](General.Printouts.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this Printout applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
-| [PrintoutLayout](General.Printouts.md#printoutlayout) | [PrintoutLayouts](General.PrintoutLayouts.md) | The printout layout, that is bound to the document type. `Required` `Filter(multi eq)` |
+| [FiscalReceiptTemplate](General.Printouts.md#fiscalreceipttemplate) | [FiscalReceiptTemplates](Crm.Pos.FiscalReceiptTemplates.md) (nullable) | Template for customizing the fiscal receipt. `Filter(multi eq)` `Introduced in version 24.1.4.56` |
+| [PrintoutLayout](General.Printouts.md#printoutlayout) | [PrintoutLayouts](General.PrintoutLayouts.md) (nullable) | The printout layout, that is bound to the document type. `Filter(multi eq)` |
 | [Report](General.Printouts.md#report) | [DataSources](Systems.Reporting.DataSources.md) (nullable) | If not null points to a custom report that indicates which data will be loaded in the printout. `Filter(multi eq)` |
 
 
@@ -253,11 +254,20 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
 
+### FiscalReceiptTemplate
+
+Template for customizing the fiscal receipt. `Filter(multi eq)` `Introduced in version 24.1.4.56`
+
+_Type_: **[FiscalReceiptTemplates](Crm.Pos.FiscalReceiptTemplates.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### PrintoutLayout
 
-The printout layout, that is bound to the document type. `Required` `Filter(multi eq)`
+The printout layout, that is bound to the document type. `Filter(multi eq)`
 
-_Type_: **[PrintoutLayouts](General.PrintoutLayouts.md)**  
+_Type_: **[PrintoutLayouts](General.PrintoutLayouts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

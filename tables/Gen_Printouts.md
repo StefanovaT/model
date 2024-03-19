@@ -23,6 +23,7 @@ Contains data about binding of printout layouts to specific user-defined documen
 |[Definition_Format](#definition_format)|`nvarchar(16)` |Obsolete. Not used.|
 |[Document_Type_Id](#document_type_id)|`uniqueidentifier` |The document type to which this printout layout is bound.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
+|[Fiscal_Receipt_Template_Id](#fiscal_receipt_template_id)|`uniqueidentifier` |Template for customizing the fiscal receipt.|
 |[Is_Default](#is_default)|`bit` |1 if this is the default printout for the application form|
 |[Notes](#notes)|`nvarchar(512)` ||
 |[Ord](#ord)|`int` |Order in the list of printouts when using direct printing|
@@ -288,6 +289,43 @@ The document type to which this printout layout is bound.
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
+### Fiscal_Receipt_Template_Id
+
+
+Template for customizing the fiscal receipt.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Pos_Fiscal_Receipt_Templates](Pos_Fiscal_Receipt_Templates.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Fiscal_Receipt_Template_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Is_Default
 
 
@@ -500,7 +538,7 @@ The printout layout, that is bound to the document type.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|
@@ -510,7 +548,7 @@ The printout layout, that is bound to the document type.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Printout_Name
 

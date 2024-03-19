@@ -27,6 +27,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [AccessPermission](Systems.Core.ObjectFiles.md#accesspermission) | [AccessPermission](Systems.Core.ObjectFiles.md#accesspermission) | Indicates who has permission to access this file. `Required` `Default("IN")` `Introduced in version 24.1.4.56` 
 | [ContentLocation](Systems.Core.ObjectFiles.md#contentlocation) | [ContentLocation](Systems.Core.ObjectFiles.md#contentlocation) | The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link. `Required` `Default("EMB")` `Filter(multi eq)` `Introduced in version 20.1` 
 | [CreationTimeUtc](Systems.Core.ObjectFiles.md#creationtimeutc) | datetime | Time (in UTC), when the file was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `Introduced in version 20.1` 
 | [DisplayText](Systems.Core.ObjectFiles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
@@ -55,6 +56,26 @@ Aggregate Root:
 
 
 ## Attribute Details
+
+### AccessPermission
+
+Indicates who has permission to access this file. `Required` `Default("IN")` `Introduced in version 24.1.4.56`
+
+_Type_: **[AccessPermission](Systems.Core.ObjectFiles.md#accesspermission)**  
+_Category_: **System**  
+Allowed values for the `AccessPermission`(Systems.Core.ObjectFiles.md#accesspermission) data attribute  
+_Allowed Values (Systems.Core.ObjectFilesRepository.AccessPermission Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| Me | Me value. Stored as 'ME'. <br /> _Database Value:_ 'ME' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Me' |
+| Internal | Internal value. Stored as 'IN'. <br /> _Database Value:_ 'IN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
+| External | External value. Stored as 'EX'. <br /> _Database Value:_ 'EX' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'External' |
+
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **Internal**  
+_Show in UI_: **ShownByDefault**  
 
 ### ContentLocation
 
