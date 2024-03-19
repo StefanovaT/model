@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R36338 Task - Check User Rights On Task Creation | ERP.net Domain Model </title>
+    <title>R36338 Task - Check User Rights On Task Creation And Editing | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R36338 Task - Check User Rights On Task Creation | ERP.net Domain Model ">
+    <meta name="title" content="R36338 Task - Check User Rights On Task Creation And Editing | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,7 +70,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r36338-task---check-user-rights-on-task-creation">R36338 Task - Check User Rights On Task Creation</h1>
+<h1 id="r36338-task---check-user-rights-on-task-creation-and-editing">R36338 Task - Check User Rights On Task Creation And Editing</h1>
 
 <table>
 <col style="width:25%">
@@ -86,7 +86,7 @@
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>CheckUserRightsOnTaskCreation</td>
+<td>CheckUserRightsOnTaskCreationAndEditing</td>
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
@@ -114,19 +114,20 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Validate that if the GroupMember.Role of the OwnerUser &gt;=” Member” <br>
-for the selected ToDo.Task.SocialGroup, then Task creation is allowed.</td>
+<td>Validate that if ToDo.Task.SocialGroup != NULL and the GroupMember.Role of the <br>
+OwnerUser &gt;=” Member” for the selected ToDo.Task.SocialGroup, <br>
+then Task creation is allowed.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>This rule ensures that only users with sufficient permissions <br>
-within the specified SocialGroup (Member or Admin) can create  Tasks.</td>
+within the specified SocialGroup (Member or Admin) can create or edit Tasks.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>You do not have permission to create tasks in the selected social group <br>
+<td>You do not have permission to create and edit tasks in the selected social group <br>
 '{SocialGroup.Name}'. <br>
-Only users with ‘Member‘ or ‘Admin’ roles are allowed to create tasks.</td>
+Only users with ‘Member‘ or ‘Admin’ roles are allowed to create and edit tasks.</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
