@@ -12068,6 +12068,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36338.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36338.html",
+          "hash": "7D8MEanrWvTdKRHB5HLxag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -19114,7 +19126,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Projects.Todo.Tasks.html",
-          "hash": "lVJ8NT9MXLUOBYvlKNYaRQ=="
+          "hash": "yfZwBCNFTyxyBoUXinsc6w=="
         }
       },
       "is_incremental": false,
