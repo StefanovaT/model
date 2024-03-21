@@ -9,7 +9,7 @@ Contains options for user defined document types for Offers. Entity: Crm_Offers_
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}{StateTagsAttribute}_  
+_{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  

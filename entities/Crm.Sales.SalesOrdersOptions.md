@@ -9,7 +9,7 @@ Options for sales orders of specific user defined document type. Entity: Crm_Sal
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}{StateTagsAttribute}_  
+_{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  

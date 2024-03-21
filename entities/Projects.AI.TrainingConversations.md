@@ -30,7 +30,7 @@ Aggregate Tree
 | [DisplayText](Projects.AI.TrainingConversations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.TrainingConversations.md#id) | guid |  
 | [LastUpdateTimeUtc](Projects.AI.TrainingConversations.md#lastupdatetimeutc) | datetime | Time when the conversation or any messages in it were created or last modified. Can be used to track changes to the whole aggregate. `Required` `Filter(ge;le)` `ORD` `ReadOnly` 
-| [Notes](Projects.AI.TrainingConversations.md#notes) | [MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__ | Notes for this TrainingConversation. 
+| [Notes](Projects.AI.TrainingConversations.md#notes) | string (max) __nullable__ | Notes for this TrainingConversation. 
 | [ObjectVersion](Projects.AI.TrainingConversations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Origin](Projects.AI.TrainingConversations.md#origin) | [Origin](Projects.AI.TrainingConversations.md#origin) | Denotes how (based on what other object) was the conversation initially created. Possible values - User-entered, Chat, Calendar, etc. `Required` `Default("USR")` `Filter(multi eq)` `ReadOnly` 
 
@@ -95,10 +95,11 @@ _Show in UI_: **ShownByDefault**
 
 Notes for this TrainingConversation.
 
-_Type_: **[MultilanguageString (max)](../data-types.md#multilanguagestring) __nullable__**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion

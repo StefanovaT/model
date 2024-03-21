@@ -9,7 +9,7 @@ Default options for user document types for Invoices. Entity: Crm_Invoices_Optio
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}{StateTagsAttribute}_  
+_{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  

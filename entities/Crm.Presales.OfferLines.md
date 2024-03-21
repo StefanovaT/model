@@ -28,6 +28,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ChoiceGroupName](Crm.Presales.OfferLines.md#choicegroupname) | string (60) __nullable__ | Name of a group of alternative lines, only one of which can be selected for ordering. Lines are grouped based on the exact name of the Choice Group. 
+| [CurrentBalanceBase](Crm.Presales.OfferLines.md#currentbalancebase) | [Quantity](../data-types.md#quantity) | The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly. 
 | [DeliveryTermDays](Crm.Presales.OfferLines.md#deliverytermdays) | int32 | Delivery term in days. When Required Delivery Date is specified (not null), it takes precedence and this is ignored. `Required` `Default(0)` 
 | [DisplayText](Crm.Presales.OfferLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [GuaranteePeriodDays](Crm.Presales.OfferLines.md#guaranteeperioddays) | int32 __nullable__ | Guarantee period in days for the offered product. null for non-serviced products. 
@@ -72,6 +73,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **60**  
+_Show in UI_: **HiddenByDefault**  
+
+### CurrentBalanceBase
+
+The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly.
+
+_Type_: **[Quantity](../data-types.md#quantity)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### DeliveryTermDays

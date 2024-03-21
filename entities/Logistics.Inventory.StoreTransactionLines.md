@@ -28,6 +28,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AllowOverExecution](Logistics.Inventory.StoreTransactionLines.md#allowoverexecution) | boolean | When true, specifies, that we explicitly allow over-execution. Over-execution is when the quantity in all execution lines exceed the quantity in the parent store order line. `Required` `Default(false)` 
+| [CurrentBalanceBase](Logistics.Inventory.StoreTransactionLines.md#currentbalancebase) | [Quantity](../data-types.md#quantity) | The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly. 
 | [DisplayText](Logistics.Inventory.StoreTransactionLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Finished](Logistics.Inventory.StoreTransactionLines.md#finished) | boolean __nullable__ | True if this transaction entry completes the operation. false if there might be more entries. `Default(false)` `Filter(eq)` 
 | [GuaranteePeriodDays](Logistics.Inventory.StoreTransactionLines.md#guaranteeperioddays) | int32 __nullable__ | Guarantee period in days for the offered product. null for non-serviced products. 
@@ -78,6 +79,16 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Default Value_: **False**  
+_Show in UI_: **HiddenByDefault**  
+
+### CurrentBalanceBase
+
+The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly.
+
+_Type_: **[Quantity](../data-types.md#quantity)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### DisplayText

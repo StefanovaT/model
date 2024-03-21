@@ -9,7 +9,7 @@ Default user-defined properties, which should be added to new documents. Entity:
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}{StateTagsAttribute}_  
+_{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  

@@ -27,6 +27,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [CurrentBalanceBase](Logistics.Procurement.PurchaseInvoiceLines.md#currentbalancebase) | [Quantity](../data-types.md#quantity) | The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly. 
 | [DeliveryTermsCode](Logistics.Procurement.PurchaseInvoiceLines.md#deliverytermscode) | [DeliveryTerms](Logistics.Procurement.PurchaseInvoiceLines.md#deliverytermscode) __nullable__ | Mode of delivery, like CIF, FOB, etc. Used also in Intrastat reporting. 
 | [DisplayText](Logistics.Procurement.PurchaseInvoiceLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Procurement.PurchaseInvoiceLines.md#id) | guid |  
@@ -61,6 +62,16 @@ Aggregate Root:
 
 
 ## Attribute Details
+
+### CurrentBalanceBase
+
+The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly.
+
+_Type_: **[Quantity](../data-types.md#quantity)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### DeliveryTermsCode
 

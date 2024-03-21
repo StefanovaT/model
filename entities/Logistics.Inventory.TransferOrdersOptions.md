@@ -9,7 +9,7 @@ Options per document type for the transfer orders. Entity: Inv_Transfer_Orders_O
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.EntityName}{StateTagsAttribute}_  
+_{DocumentType.EntityName}_  
 Default Search Members:  
 _DocumentType.EntityName_  
 Name Data Member:  

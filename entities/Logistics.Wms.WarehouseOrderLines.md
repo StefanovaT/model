@@ -27,6 +27,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [CurrentBalanceBase](Logistics.Wms.WarehouseOrderLines.md#currentbalancebase) | [Quantity](../data-types.md#quantity) | The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly. 
 | [DisplayText](Logistics.Wms.WarehouseOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Wms.WarehouseOrderLines.md#id) | guid |  
 | [LineGroupNo](Logistics.Wms.WarehouseOrderLines.md#linegroupno) | int32 | Line group number. Indicates which lines are part of the same group e.g. group of components of the same composite product. `Required` `Default(1)` `Filter(eq;ge;le)` `Introduced in version 23.1.0.67` 
@@ -59,6 +60,16 @@ Aggregate Root:
 
 
 ## Attribute Details
+
+### CurrentBalanceBase
+
+The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly.
+
+_Type_: **[Quantity](../data-types.md#quantity)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 

@@ -28,6 +28,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [<s>BeginDateTime</s>](Production.ShopFloor.OutputOrderLines.md#begindatetime) | datetime __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Filter(ge;le)` `Obsoleted in version 22.1.6.61` 
+| [CurrentBalanceBase](Production.ShopFloor.OutputOrderLines.md#currentbalancebase) | [Quantity](../data-types.md#quantity) | The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly. 
 | [DisplayText](Production.ShopFloor.OutputOrderLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EndTime](Production.ShopFloor.OutputOrderLines.md#endtime) | datetime | Date and time when the operation has ended. `Required` `Default(Now)` `Filter(ge;le)` 
 | [Finished](Production.ShopFloor.OutputOrderLines.md#finished) | boolean | True if this output entry completes the operation. false if there might be more entries. `Required` `Default(false)` `Filter(eq)` 
@@ -78,6 +79,16 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **CannotBeShown**  
+
+### CurrentBalanceBase
+
+The current balance of the product in the selected store and enterprise company. If lot, serial number or product variant are specified the quantity is calculated accordingly.
+
+_Type_: **[Quantity](../data-types.md#quantity)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### DisplayText
 

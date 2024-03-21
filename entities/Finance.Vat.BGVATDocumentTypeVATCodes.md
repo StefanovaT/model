@@ -9,7 +9,7 @@ Contains the VAT codes, which should be used, when reporting VAT for the differe
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {DocumentTypeId}{StateTagsAttribute}_  
+_{Id}: {DocumentTypeId}_  
 Default Search Members:  
 __  
 Category:  _Settings_  

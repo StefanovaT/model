@@ -9,7 +9,7 @@ Contains data about binding of printout layouts to specific user-defined documen
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  

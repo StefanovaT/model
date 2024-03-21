@@ -10,7 +10,7 @@ Represents jobs, which change state of documents. Entity: Gen_Document_Jobs (Int
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}{StateTagsAttribute}_  
+_{Name}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
