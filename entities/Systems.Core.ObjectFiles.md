@@ -68,7 +68,7 @@ _Allowed Values (Systems.Core.ObjectFilesRepository.AccessPermission Enum Member
 
 | Value | Description |
 | ---- | --- |
-| Me | Only the creation user has access.. Stored as 'ME'. <br /> _Database Value:_ 'ME' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Me' |
+| Creator | Creator value. Stored as 'CU'. <br /> _Database Value:_ 'CU' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Creator' |
 | Internal | Only internal users have access.. Stored as 'IN'. <br /> _Database Value:_ 'IN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
 | External | External and internal users have access.. Stored as 'EX'. <br /> _Database Value:_ 'EX' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'External' |
 
