@@ -9,11 +9,11 @@ Used for planned reconciliations to count product quantities from multiple devic
 
 ## Default Visualization
 Default Display Text Format:  
-_{Reconcilation.EntityName}_  
+_{Reconciliation.EntityName}_  
 Default Search Members:  
-_Reconcilation.EntityName_  
+_Reconciliation.EntityName_  
 Name Data Member:  
-_Reconcilation.EntityName_  
+_Reconciliation.EntityName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
@@ -42,7 +42,7 @@ Aggregate Root:
 | [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](Logistics.Inventory.ReconciliationCounts.md#product) | [Products](General.Products.Products.md) | The product which is currently counted. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
-| [Reconcilation](Logistics.Inventory.ReconciliationCounts.md#reconcilation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Owner` |
+| [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` `Owner` |
 
 
 ## Attribute Details
@@ -74,7 +74,8 @@ _Type_: **guid**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **CannotBeShown**  
+_Default Value_: **NewGuid**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -126,9 +127,9 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
-### Reconcilation
+### Reconciliation
 
-The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Owner`
+The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` `Owner`
 
 _Type_: **[Reconciliations](Logistics.Inventory.Reconciliations.md)**  
 _Category_: **System**  

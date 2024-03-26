@@ -83,11 +83,9 @@
 <p>Contains supply rules, which are used by the procurement planning system. Entity: Gen_Product_Supply</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{BuyerName}</em><br>
+<em>{ProcurementType} {Product.PartNumber}: {Product.Name:T} ({Store.Name:T})</em><br>
 Default Search Members:<br>
-<em>BuyerName</em><br>
-Name Data Member:<br>
-<em>BuyerName</em><br>
+<em>Product.PartNumber; Product.Name</em><br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
@@ -239,7 +237,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Products.ProductSupply.html#procurementtype">ProcurementType</a></td>
 <td><a href="General.Products.ProductSupply.html#procurementtype">ProcurementType</a></td>
-<td>M=Make; B=Buy; T=Transfer.  Identifies whether the product is produced or externally bought. <code>Required</code> <code>Default(&quot;B&quot;)</code></td>
+<td>M=Make; B=Buy; T=Transfer.  Identifies whether the product is produced or externally bought. <code>Required</code> <code>Default(&quot;B&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#standardcostperlot">StandardCostPerLot</a></td>
@@ -291,7 +289,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Products.ProductSupply.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a> (nullable)</td>
-<td>The <see cref="Product"></see> to which this ProductSupply belongs. <code>Filter(multi eq)</code></td>
+<td>The <see cref="Product"></see> to which this ProductSupply belongs. <code>Filter(multi eq)</code> <code>FilterableReference</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductSupply.html#productgroup">ProductGroup</a></td>
@@ -598,7 +596,7 @@ Allowed values for the <code>OrderPolicy</code>(General.Products.ProductSupply.m
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="procurementtype">ProcurementType</h3>
-<p>M=Make; B=Buy; T=Transfer.  Identifies whether the product is produced or externally bought. <code>Required</code> <code>Default(&quot;B&quot;)</code></p>
+<p>M=Make; B=Buy; T=Transfer.  Identifies whether the product is produced or externally bought. <code>Required</code> <code>Default(&quot;B&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.ProductSupply.html#procurementtype">ProcurementType</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>ProcurementType</code>(General.Products.ProductSupply.md#procurementtype) data attribute<br>
@@ -625,7 +623,7 @@ Allowed values for the <code>ProcurementType</code>(General.Products.ProductSupp
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Buy</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -675,11 +673,12 @@ Allowed values for the <code>ProcurementType</code>(General.Products.ProductSupp
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
-<p>The <see cref="Product"></see> to which this ProductSupply belongs. <code>Filter(multi eq)</code></p>
+<p>The <see cref="Product"></see> to which this ProductSupply belongs. <code>Filter(multi eq)</code> <code>FilterableReference</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="productgroup">ProductGroup</h3>
 <p>Not null when the method is a default method for a whole product group. In this case new products in the group inherit the settings. <code>Filter(multi eq)</code></p>

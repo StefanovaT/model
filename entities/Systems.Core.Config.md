@@ -25,26 +25,26 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Description](Systems.Core.Config.md#description) | string (254) __nullable__ | The description of this Config. 
+| [Description](Systems.Core.Config.md#description) | string (254) __nullable__ | The description of this Config. `Filter(like)` 
 | [DisplayText](Systems.Core.Config.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Core.Config.md#id) | guid |  
 | [IsActive](Systems.Core.Config.md#isactive) | boolean | Indicates whether this config entry is active. Inactive config entries are not taken into account. `Required` `Default(true)` `Filter(eq)` `Introduced in version 19.1` 
-| [KeyPath](Systems.Core.Config.md#keypath) | string (128) | Full path of the configuration option. `Required` `Filter(eq)` `ORD` 
-| [KeyValue](Systems.Core.Config.md#keyvalue) | string (max) __nullable__ | The value of the configuration option. 
+| [KeyPath](Systems.Core.Config.md#keypath) | string (128) | Full path of the configuration option. `Required` `Filter(eq;like)` `ORD` 
+| [KeyValue](Systems.Core.Config.md#keyvalue) | string (max) __nullable__ | The value of the configuration option. `Filter(eq;like)` 
 | [ObjectVersion](Systems.Core.Config.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [UserLogin](Systems.Core.Config.md#userlogin) | string (64) __nullable__ | If not null, the configuration option is specific to the user. `Filter(eq)` 
-| [UserMachine](Systems.Core.Config.md#usermachine) | string (64) __nullable__ | If not null, the configuration option is specific to the machine. `Filter(eq)` 
+| [UserLogin](Systems.Core.Config.md#userlogin) | string (64) __nullable__ | If not null, the configuration option is specific to the user. `Filter(eq;like)` 
+| [UserMachine](Systems.Core.Config.md#usermachine) | string (64) __nullable__ | If not null, the configuration option is specific to the machine. `Filter(eq;like)` 
 
 
 ## Attribute Details
 
 ### Description
 
-The description of this Config.
+The description of this Config. `Filter(like)`
 
 _Type_: **string (254) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
@@ -81,23 +81,23 @@ _Show in UI_: **ShownByDefault**
 
 ### KeyPath
 
-Full path of the configuration option. `Required` `Filter(eq)` `ORD`
+Full path of the configuration option. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (128)**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **128**  
 _Show in UI_: **ShownByDefault**  
 
 ### KeyValue
 
-The value of the configuration option.
+The value of the configuration option. `Filter(eq;like)`
 
 _Type_: **string (max) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
@@ -114,22 +114,22 @@ _Show in UI_: **HiddenByDefault**
 
 ### UserLogin
 
-If not null, the configuration option is specific to the user. `Filter(eq)`
+If not null, the configuration option is specific to the user. `Filter(eq;like)`
 
 _Type_: **string (64) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 ### UserMachine
 
-If not null, the configuration option is specific to the machine. `Filter(eq)`
+If not null, the configuration option is specific to the machine. `Filter(eq;like)`
 
 _Type_: **string (64) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Equals**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  

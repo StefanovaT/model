@@ -128,7 +128,7 @@ _Maximum Length_: **30**
 _Show in UI_: **ShownByDefault**  
 
 _Back-End Default Expression:_  
-`obj.IncMax( o => o.Number, null, "00000")`
+`obj.GetNextDefaultLotNumber( )`
 
 ### ObjectVersion
 

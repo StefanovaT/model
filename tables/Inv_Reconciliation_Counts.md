@@ -18,11 +18,11 @@ Used for planned reconciliations to count product quantities from multiple devic
 | - | - | --- |
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact time (UTC) the product was counted|
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` Readonly|The user who performed the count|
-|[Id](#id)|`uniqueidentifier` `PK`|Unique Id|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product which is currently counted|
 |[Quantity](#quantity)|`decimal(12, 3)` |The counted quantity in the default measurement unit of the product|
 |[Quantity_Unit_Id](#quantity_unit_id)|`uniqueidentifier` |The measurement unit from the definition of the product|
-|[Reconcilation_Id](#reconcilation_id)|`uniqueidentifier` |The planned reconciliation for which to execute the current counting|
+|[Reconciliation_Count_Id](#reconciliation_count_id)|`uniqueidentifier` `PK`||
+|[Reconciliation_Id](#reconciliation_id)|`uniqueidentifier` |The planned reconciliation for which to execute the current counting.|
 |[Row_Version](#row_version)|`timestamp` ||
 
 ## Columns
@@ -41,7 +41,7 @@ The exact time (UTC) the product was counted
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -77,7 +77,7 @@ The user who performed the count
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -100,42 +100,6 @@ The user who performed the count
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Id
-
-
-Unique Id
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|-1|
-|Order|2147483647|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|yes (order: 1)|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|no|
-
-#### Id - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Equals|`NULL`|no|no|
-
 ### Product_Id
 
 
@@ -150,7 +114,7 @@ The product which is currently counted
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -187,7 +151,7 @@ The counted quantity in the default measurement unit of the product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -223,7 +187,7 @@ The measurement unit from the definition of the product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -246,10 +210,43 @@ The measurement unit from the definition of the product
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Reconcilation_Id
+### Reconciliation_Count_Id
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|NewGuid|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|yes (order: 1)|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Reconciliation_Count_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Reconciliation_Id
 
 
-The planned reconciliation for which to execute the current counting
+The planned reconciliation for which to execute the current counting.
 
 | Property | Value |
 | - | - |
@@ -277,7 +274,7 @@ The planned reconciliation for which to execute the current counting
 |User Login|no|
 |Visible|yes|
 
-#### Reconcilation_Id - Supported Filters
+#### Reconciliation_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
@@ -294,7 +291,7 @@ The planned reconciliation for which to execute the current counting
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

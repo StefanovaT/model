@@ -14,7 +14,7 @@ One piece of training data for fine-tuning AI models. Entity: Llm_Training_Conve
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The date and time (UTC) when the conversation was created.|
 |[Last_Update_Time_Utc](#last_update_time_utc)|`datetime` Readonly|Time when the conversation or any messages in it were created or last modified. Can be used to track changes to the whole aggregate.|
 |[Model_Id](#model_id)|`uniqueidentifier` |The model, which is being trained.|
-|[Notes](#notes)|`nvarchar(max)` `ML`||
+|[Notes](#notes)|`nvarchar(max)` ||
 |[Origin](#origin)|`nvarchar(3)` Allowed: `USR`, `CHT`, `CAL`, `CAS`, `TOD`, Readonly|Denotes how (based on what other object) was the conversation initially created. Possible values - User-entered, Chat, Calendar, etc.|
 |[Origin_Data_Object_Id](#origin_data_object_id)|`uniqueidentifier` Readonly|The object, whose data was used to initially create the conversation. NULL means the object is unknown or not a data object.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -152,7 +152,7 @@ The model, which is being trained.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(max) (MultiLanguage) (Allows NULL)|
+|Type|nvarchar(max) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

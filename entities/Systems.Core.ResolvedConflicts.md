@@ -102,6 +102,9 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`DateTime.Now`
+
 ### ResolveDescription
 
 Description of the resolution of the conflict. `Required` `ReadOnly`

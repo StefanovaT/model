@@ -98,6 +98,7 @@ _Allowed Values (Communities.Social.GroupMembersRepository.Role Enum Members)_
 | ---- | --- |
 | Member | Member. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Member' |
 | Admin | Admin. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Admin' |
+| Observer | Mostly, read-only permissions. Can like comments.. Stored as 'O'. <br /> _Database Value:_ 'O' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Observer' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  

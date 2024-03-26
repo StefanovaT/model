@@ -1978,6 +1978,9 @@ references:
 - uid: Systems.Dmv.ProcedureStatusInfo
   name: Systems.Dmv.ProcedureStatusInfo View
   href: entities/Systems.Dmv.ProcedureStatusInfo.html
+- uid: Systems.Dmv.ProcessInfo
+  name: Systems.Dmv.ProcessInfo View
+  href: entities/Systems.Dmv.ProcessInfo.html
 - uid: Systems.Dmv.TableInfo
   name: Systems.Dmv.TableInfo View
   href: entities/Systems.Dmv.TableInfo.html

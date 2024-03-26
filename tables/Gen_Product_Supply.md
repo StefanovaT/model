@@ -1007,6 +1007,12 @@ M=Make; B=Buy; T=Transfer.  Identifies whether the product is produced or extern
 |User Login|no|
 |Visible|no|
 
+#### Procurement_Type - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Product_Group_Id
 
 

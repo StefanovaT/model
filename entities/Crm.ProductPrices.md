@@ -9,7 +9,7 @@ Specific prices of products. A price is applied after matching the specified cri
 
 ## Default Visualization
 Default Display Text Format:  
-_{Price} {Notes}_  
+_{Price} - {FromDate}_  
 Default Search Members:  
 _Notes_  
 Category:  _Definitions_  

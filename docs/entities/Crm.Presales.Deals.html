@@ -84,7 +84,7 @@
 <p>Potential deals (Opportunities). Entity: Crm_Deals</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Party} - {DocumentType} {DocumentNo}</em><br>
+<em>{Party} - {DocumentType} {DocumentNo}{StateTagsAttribute}</em><br>
 Default Search Members:<br>
 <em>DocumentNo</em><br>
 Code Data Member:<br>
@@ -258,6 +258,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.Presales.Deals.html#state">State</a></td>
 <td><a href="Crm.Presales.Deals.html#state">DocumentState</a></td>
 <td>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+</tr>
+<tr>
+<td><a href="Crm.Presales.Deals.html#statetagsattribute">StateTagsAttribute</a></td>
+<td>string</td>
+<td>Specifies the state of the document.</td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Deals.html#successprobability">SuccessProbability</a></td>
@@ -793,6 +798,13 @@ Enumeration of document system states<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="statetagsattribute">StateTagsAttribute</h3>
+<p>Specifies the state of the document.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="successprobability">SuccessProbability</h3>
 <p>Probability of success of that opportunity in percents (for example, 15 percent is stored as 0.15). <code>Required</code> <code>Default(0)</code></p>
 <p><em>Type</em>: <strong>decimal (3, 2)</strong><br>
@@ -897,6 +909,8 @@ Enumeration of document system states<br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.EnterpriseCompany.BaseCurrency</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.ExpectedRevenueCurrency != null), obj.ExpectedRevenueCurrency, obj.EnterpriseCompany.BaseCurrency)</code></p>
 <h3 id="fromcompanydivision">FromCompanyDivision</h3>
@@ -1161,7 +1175,7 @@ Resets the parent state of document.<br>
 </li>
 </ul>
 <h3 id="getprintout">GetPrintout</h3>
-<p>Gets a document printout as a file. The returned value is Base64 string representation of the file contents.              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates <code>DocumentPrint</code>(General.DocumentPrints.md).              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>string</strong><br>
 <em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>

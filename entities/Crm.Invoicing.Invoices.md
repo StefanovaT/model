@@ -10,7 +10,7 @@ Invoices issued by the enterprise companies. Entity: Crm_Invoices
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.TypeName:T} {DocumentNo}_  
+_{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentNo_  
 Code Data Member:  
@@ -74,6 +74,7 @@ Aggregate Tree
 | [ReferenceDocumentNo](Crm.Invoicing.Invoices.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
 | [ReleaseTime](Crm.Invoicing.Invoices.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [State](Crm.Invoicing.Invoices.md#state) | [DocumentState](Crm.Invoicing.Invoices.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [StateTagsAttribute](Crm.Invoicing.Invoices.md#statetagsattribute) | string | Specifies the state of the document. 
 | [VATCashReportingMode](Crm.Invoicing.Invoices.md#vatcashreportingmode) | boolean | When true, specifies, that the special cash reporting mode should be used for VAT reporting. When false, the normal (classic) VAT reporting is used. `Required` `Default(false)` `Filter(eq)` 
 | [VATNotes](Crm.Invoicing.Invoices.md#vatnotes) | string (254) __nullable__ | Description of the operation that will be entered in the VAT ledgers. 
 | [Void](Crm.Invoicing.Invoices.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -170,6 +171,9 @@ _Category_: **System**
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`obj.DocumentDate`
 
 _Front-End Recalc Expressions:_  
 `obj.DocumentDate`
@@ -592,6 +596,16 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### VATCashReportingMode
@@ -1028,7 +1042,7 @@ _Domain API Request_: **POST**
 
 ### GetPrintout
 
-Gets a document printout as a file. The returned value is Base64 string representation of the file contents.              (Inherited from [Documents](General.Documents.md))  
+Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates `DocumentPrint`(General.DocumentPrints.md).              (Inherited from [Documents](General.Documents.md))  
 _Return Type_: **string**  
 _Declaring Type_: **[Documents](General.Documents.md)**  
 _Domain API Request_: **POST**  

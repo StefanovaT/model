@@ -10,7 +10,7 @@ Generic activity. Provides task management functionality. Activity can be one of
 
 ## Default Visualization
 Default Display Text Format:  
-_{DocumentType.TypeName:T} {DocumentNo}_  
+_{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentNo_  
 Code Data Member:  
@@ -72,6 +72,7 @@ Aggregate Tree
 | [ReminderTime](General.Contacts.Activities.md#remindertime) | datetime __nullable__ | When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. `Filter(ge;le)` 
 | [StartTime](General.Contacts.Activities.md#starttime) | datetime | Currently planned starting time of the task. `Required` `Default(Now)` `Filter(ge;le)` 
 | [State](General.Contacts.Activities.md#state) | [DocumentState](General.Contacts.Activities.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [StateTagsAttribute](General.Contacts.Activities.md#statetagsattribute) | string | Specifies the state of the document. 
 | [Subject](General.Contacts.Activities.md#subject) | string (254) | Task primary subject (required). `Required` `Filter(eq;like)` 
 | [SystemType](General.Contacts.Activities.md#systemtype) | [SystemType](General.Contacts.Activities.md#systemtype) | T=Task; C=Communication; M=Meeting. `Required` 
 | [Void](General.Contacts.Activities.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
@@ -491,6 +492,16 @@ _Allowed Values (General.DocumentState Enum Members)_
 _Supported Filters_: **Equals, GreaterThanOrLessThan, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
+_Show in UI_: **HiddenByDefault**  
+
+### StateTagsAttribute
+
+Specifies the state of the document.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
 ### Subject
@@ -915,7 +926,7 @@ _Domain API Request_: **POST**
 
 ### GetPrintout
 
-Gets a document printout as a file. The returned value is Base64 string representation of the file contents.              (Inherited from [Documents](General.Documents.md))  
+Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates `DocumentPrint`(General.DocumentPrints.md).              (Inherited from [Documents](General.Documents.md))  
 _Return Type_: **string**  
 _Declaring Type_: **[Documents](General.Documents.md)**  
 _Domain API Request_: **POST**  

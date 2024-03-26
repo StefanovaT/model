@@ -15,6 +15,7 @@ Contains files attached to objects. Entity: Sys_Object_Files
 
 | Name | Type | Description |
 | - | - | --- |
+|[Access_Permission](#access_permission)|`nvarchar(2)` Allowed: `CU`, `IN`, `EX`|Indicates who has permission to access this file.|
 |[Content_Location](#content_location)|`nvarchar(3)` Allowed: `EMB`, `URL`, `FSL`|The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link.|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` |Time (in UTC), when the file was created.|
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` |The user, who created the file record. NULL if it is unknown.|
@@ -36,6 +37,37 @@ Contains files attached to objects. Entity: Sys_Object_Files
 |[Section](#section)|`nvarchar(64)` |A section name used to group files|
 
 ## Columns
+
+### Access_Permission
+
+
+Indicates who has permission to access this file.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`CU`, `IN`, `EX`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|IN|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|2|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(2)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Content_Location
 

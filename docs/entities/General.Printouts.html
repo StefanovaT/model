@@ -204,9 +204,14 @@ Aggregate Root:<br>
 <td>The Enterprise Company to which this Printout applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="General.Printouts.html#fiscalreceipttemplate">FiscalReceiptTemplate</a></td>
+<td><a href="Crm.Pos.FiscalReceiptTemplates.html">FiscalReceiptTemplates</a> (nullable)</td>
+<td>Template for customizing the fiscal receipt. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.56</code></td>
+</tr>
+<tr>
 <td><a href="General.Printouts.html#printoutlayout">PrintoutLayout</a></td>
-<td><a href="General.PrintoutLayouts.html">PrintoutLayouts</a></td>
-<td>The printout layout, that is bound to the document type. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td><a href="General.PrintoutLayouts.html">PrintoutLayouts</a> (nullable)</td>
+<td>The printout layout, that is bound to the document type. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Printouts.html#report">Report</a></td>
@@ -384,9 +389,15 @@ Allowed values for the <code>AllowPrintingOnState</code>(General.Printouts.md#al
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="fiscalreceipttemplate">FiscalReceiptTemplate</h3>
+<p>Template for customizing the fiscal receipt. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.56</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Pos.FiscalReceiptTemplates.html">FiscalReceiptTemplates</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="printoutlayout">PrintoutLayout</h3>
-<p>The printout layout, that is bound to the document type. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.PrintoutLayouts.html">PrintoutLayouts</a></strong><br>
+<p>The printout layout, that is bound to the document type. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="General.PrintoutLayouts.html">PrintoutLayouts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

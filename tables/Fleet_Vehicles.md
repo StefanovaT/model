@@ -460,6 +460,12 @@ True if the vehicle is still owned and managed by the enterprise.
 |User Login|no|
 |Visible|yes|
 
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Issuing_Authority
 
 

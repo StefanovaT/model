@@ -105,6 +105,11 @@ Aggregate Root:<br>
 </thead>
 <tbody>
 <tr>
+<td><a href="Systems.Core.ObjectFiles.html#accesspermission">AccessPermission</a></td>
+<td><a href="Systems.Core.ObjectFiles.html#accesspermission">AccessPermission</a></td>
+<td>Indicates who has permission to access this file. <code>Required</code> <code>Default(&quot;IN&quot;)</code> <code>Introduced in version 24.1.4.56</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Core.ObjectFiles.html#contentlocation">ContentLocation</a></td>
 <td><a href="Systems.Core.ObjectFiles.html#contentlocation">ContentLocation</a></td>
 <td>The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link. <code>Required</code> <code>Default(&quot;EMB&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></td>
@@ -219,6 +224,38 @@ Aggregate Root:<br>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
+<h3 id="accesspermission">AccessPermission</h3>
+<p>Indicates who has permission to access this file. <code>Required</code> <code>Default(&quot;IN&quot;)</code> <code>Introduced in version 24.1.4.56</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Core.ObjectFiles.html#accesspermission">AccessPermission</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>AccessPermission</code>(Systems.Core.ObjectFiles.md#accesspermission) data attribute<br>
+<em>Allowed Values (Systems.Core.ObjectFilesRepository.AccessPermission Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creator</td>
+<td>Creator value. Stored as 'CU'. <br> <em>Database Value:</em> 'CU' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Creator'</td>
+</tr>
+<tr>
+<td>Internal</td>
+<td>Only internal users have access.. Stored as 'IN'. <br> <em>Database Value:</em> 'IN' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Internal'</td>
+</tr>
+<tr>
+<td>External</td>
+<td>External and internal users have access.. Stored as 'EX'. <br> <em>Database Value:</em> 'EX' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'External'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Internal</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="contentlocation">ContentLocation</h3>
 <p>The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link. <code>Required</code> <code>Default(&quot;EMB&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.ObjectFiles.html#contentlocation">ContentLocation</a></strong><br>

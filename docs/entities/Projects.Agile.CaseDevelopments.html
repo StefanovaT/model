@@ -83,7 +83,7 @@
 <p>Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {CaseId}</em><br>
+<em>{Case.Number}: {ActionDescription} by {CreationUser} {CreationTimeUtc}</em><br>
 Default Search Members:<br>
 __<br>
 Category:  <em>Definitions</em><br>
@@ -104,6 +104,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="Projects.Agile.CaseDevelopments.html#actiondescription">ActionDescription</a></td>
+<td>string</td>
+<td>Specifies the latest action, dependent on DevelopmentType.</td>
+</tr>
 <tr>
 <td><a href="Projects.Agile.CaseDevelopments.html#creationtimeutc">CreationTimeUtc</a></td>
 <td>datetime</td>
@@ -169,6 +174,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
+<h3 id="actiondescription">ActionDescription</h3>
+<p>Specifies the latest action, dependent on DevelopmentType.</p>
+<p><em>Type</em>: <strong>string</strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
 <p>The exact date and time (in UTC) when the development was created. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code> <code>ORD</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime</strong><br>
