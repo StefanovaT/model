@@ -33,6 +33,7 @@ Aggregate Tree
 | [Description](Crm.Presales.LeadUserStages.md#description) | string (max) __nullable__ | Description of the user stage. Displayed to the end-user upon stage selection. 
 | [DisplayText](Crm.Presales.LeadUserStages.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Presales.LeadUserStages.md#id) | guid |  
+| [IsActive](Crm.Presales.LeadUserStages.md#isactive) | boolean | Indicates whether the current Lead's User Stage is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.4.62` 
 | [Name](Crm.Presales.LeadUserStages.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language name of the user stage. `Required` `Filter(like)` 
 | [Notes](Crm.Presales.LeadUserStages.md#notes) | string (max) __nullable__ | Notes for this LeadUserStage. 
 | [ObjectVersion](Crm.Presales.LeadUserStages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -82,6 +83,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the current Lead's User Stage is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.4.62`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 

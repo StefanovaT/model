@@ -92,6 +92,9 @@ _Supports Order By_: **False**
 _Maximum Length_: **64**  
 _Show in UI_: **CannotBeShown**  
 
+_Back-End Default Expression:_  
+`obj.Transaction.ApplicationName`
+
 ### BackwardCompatibility
 
 Obsolete. Not used. `Required` `Default(false)`

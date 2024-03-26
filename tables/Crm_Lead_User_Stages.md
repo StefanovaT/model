@@ -13,6 +13,7 @@ User-defined stages of the lead processing workflow. Entity: Crm_Lead_User_Stage
 | - | - | --- |
 |[Code](#code)|`nvarchar(32)` ||
 |[Description](#description)|`nvarchar(max)` |Description of the user stage. Displayed to the end-user upon stage selection.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Lead's User Stage is active.|
 |[Lead_User_Stage_Id](#lead_user_stage_id)|`uniqueidentifier` `PK`|User-defined stage of the lead processing workflow.|
 |[Name](#name)|`nvarchar(254)` `ML`|Multi-language name of the user stage.|
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -85,6 +86,42 @@ Description of the user stage. Displayed to the end-user upon stage selection.
 |UI Width|Long|
 |User Login|no|
 |Visible|yes|
+
+### Is_Active
+
+
+Indicates whether the current Lead's User Stage is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Lead_User_Stage_Id
 
