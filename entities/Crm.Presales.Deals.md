@@ -10,7 +10,7 @@ Potential deals (Opportunities). Entity: Crm_Deals
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party} - {DocumentType} {DocumentNo}{StateTagsAttribute}_  
+_{Party} - {DocumentType} {DocumentNo}{StateTagsAttribute}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentNo_  
 Code Data Member:  
