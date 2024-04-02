@@ -12080,6 +12080,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36423.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36423.html",
+          "hash": "n7bGsdMBFW5N72QzqYxNZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -14662,7 +14674,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Assets.Assets.html",
-          "hash": "AWI4v/F78phY2arppctn1w=="
+          "hash": "4UM+7qhvMrRAGdfsvPYu9w=="
         }
       },
       "is_incremental": false,
