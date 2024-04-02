@@ -50,6 +50,12 @@ Specifies whether the asset type is active for choosing in drop-down choices.
 |User Login|no|
 |Visible|yes|
 
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Managed_Asset_Type_Code
 
 

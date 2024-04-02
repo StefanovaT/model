@@ -49,6 +49,12 @@ Profiles contain multiple maintenance plans and can be assigned directly to a ve
 |User Login|no|
 |Visible|yes|
 
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Maintenance_Profile_Code
 
 | Property | Value |

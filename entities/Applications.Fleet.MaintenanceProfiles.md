@@ -33,7 +33,7 @@ Aggregate Tree
 | [Code](Applications.Fleet.MaintenanceProfiles.md#code) | string (16) | The unique code of the MaintenanceProfile. `Required` 
 | [DisplayText](Applications.Fleet.MaintenanceProfiles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Fleet.MaintenanceProfiles.md#id) | guid |  
-| [IsActive](Applications.Fleet.MaintenanceProfiles.md#isactive) | boolean | True if the profile is active and can be assigned to vehicles. However, if a profile is already assigned to a vehicle, it will still work even if it is de-activated. `Required` `Default(true)` `Introduced in version 18.2` 
+| [IsActive](Applications.Fleet.MaintenanceProfiles.md#isactive) | boolean | True if the profile is active and can be assigned to vehicles. However, if a profile is already assigned to a vehicle, it will still work even if it is de-activated. `Required` `Default(true)` `Filter(eq)` `Introduced in version 18.2` 
 | [Name](Applications.Fleet.MaintenanceProfiles.md#name) | string (254) | Name of the maintenance profile (Multilanguage). `Required` 
 | [Notes](Applications.Fleet.MaintenanceProfiles.md#notes) | string (max) __nullable__ | Notes for this MaintenanceProfile. 
 | [ObjectVersion](Applications.Fleet.MaintenanceProfiles.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -79,11 +79,11 @@ _Show in UI_: **ShownByDefault**
 
 ### IsActive
 
-True if the profile is active and can be assigned to vehicles. However, if a profile is already assigned to a vehicle, it will still work even if it is de-activated. `Required` `Default(true)` `Introduced in version 18.2`
+True if the profile is active and can be assigned to vehicles. However, if a profile is already assigned to a vehicle, it will still work even if it is de-activated. `Required` `Default(true)` `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **boolean**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
