@@ -106,8 +106,8 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Validate that for the selected Managed Asset, <br>
-EnterpriseCompany == Finance.Assets.Asset.EnterpriseCompany.</td>
+<td>If ManageAsset !=Null, validate that <br>                                                      |
+Finance.Assets.Asset.EnterpriseCompany == ManageAsset.EnterpriseCompany.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
@@ -116,9 +116,10 @@ as the fixed asset.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>The Enterprise Company of the fixed asset differs from that of the selected managed asset. <br>
-Please ensure that the Enterprise Company of the fixed asset '{Finance.Assets.Asset.Name}' <br>
-matches the Enterprise Company of the selected managed asset '{ManagedAsset.Name}'.</td>
+<td>The Enterprise Company of the fixed asset '{Finance.Assets.Asset.Name}' <br>
+differs from that of the selected managed asset '{ManagedAsset.Name}'. <br>
+Please select a managed asset with an Enterprise Company that equals <br>
+the Enterprise Company of the fixed asset.</td>
 </tr>
 <tr>
 <td><strong>Introduced In
