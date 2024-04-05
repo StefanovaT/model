@@ -161,6 +161,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The Enterprise Company to which this ServiceObject applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Applications.Service.ServiceObjects.html#managedasset">ManagedAsset</a></td>
+<td><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</td>
+<td>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></td>
+</tr>
+<tr>
 <td><a href="Applications.Service.ServiceObjects.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a> (nullable)</td>
 <td>When not-null identifies the product, from which the service object was created. <code>Filter(multi eq)</code></td>
@@ -247,6 +252,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="managedasset">ManagedAsset</h3>
+<p>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></p>
+<p><em>Type</em>: <strong><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>When not-null identifies the product, from which the service object was created. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>

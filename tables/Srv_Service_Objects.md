@@ -13,6 +13,7 @@ Contains the serviceable objects. The service objects can be covered by service 
 | - | - | --- |
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
 |[Is_Active](#is_active)|`bit` |Indicates whether the current service object is active.|
+|[Managed_Asset_Id](#managed_asset_id)|`uniqueidentifier` |Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset.|
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Product_Id](#product_id)|`uniqueidentifier` |When not-NULL identifies the product, from which the service object was created|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -73,7 +74,7 @@ Indicates whether the current service object is active.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -94,6 +95,43 @@ Indicates whether the current service object is active.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`True`|no|no|
+
+### Managed_Asset_Id
+
+
+Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|11|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Eam_Managed_Assets](Eam_Managed_Assets.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Managed_Asset_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Notes
 

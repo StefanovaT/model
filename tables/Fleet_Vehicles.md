@@ -26,6 +26,7 @@ Contains vehicle definitions. Entity: Fleet_Vehicles
 |[Issuing_Authority](#issuing_authority)|`nvarchar(64)` `ML`|The country or state issuing the registration number. NULL (not recommended) means that the authority is unknown or not applicable|
 |[Maintenance_Profile_Id](#maintenance_profile_id)|`uniqueidentifier` |When not null, specifies, that the vehicle should be maintained according to the specified profile. Assigning a profile creates plan assignments for the vehicle. Ultimately, the specific plan assignments are taken into consideration, when planning vehicle maintenance. The profile is only for conveniently assigning multiple plans.|
 |[Make](#make)|`nvarchar(64)` `ML`|The name of the manufacturer of the vehicle. NULL means that the value is unknown|
+|[Managed_Asset_Id](#managed_asset_id)|`uniqueidentifier` |Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset.|
 |[Manufacture_Year](#manufacture_year)|`int` |The year when the vehicle was manufactured or first registered - whichever is known. NULL means that the value is unknown|
 |[Maximum_Speed_KmH](#maximum_speed_kmh)|`int` |Maximum speed in km/h|
 |[Model](#model)|`nvarchar(64)` `ML`|The model of the vehicle|
@@ -60,7 +61,7 @@ The date and time, when the vehicle has been purchased or started to be managed.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|30|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -96,7 +97,7 @@ The date and time, when the vehicle has been sold or has stopped being managed. 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|31|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -132,7 +133,7 @@ Maximum permissible laden mass, as determined by the registration authority
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|17|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -162,7 +163,7 @@ Crew members count. For road vehicles = 1; for trailers, coaches and wagons =0; 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -199,7 +200,7 @@ Engine identification number
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|20|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -236,7 +237,7 @@ Engine output power in horse power. NULL means that the value is unknown or not 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -273,7 +274,7 @@ Engine size in cubic centimeters (cm3). NULL means that the value is unknown or 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -310,7 +311,7 @@ Maximum fuel capacity of the engine or the battery in the fuel measurement unit
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|20|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -340,7 +341,7 @@ Average fuel consumption in the fuel measurement unit for 1 operational unit
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -370,7 +371,7 @@ The measurement unit in which the fuel is measured. E.g. liters for automobiles,
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|26|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -407,7 +408,7 @@ Fuel type of the engine or the power source of the engine (Multilanguage) - e.g.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|19|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -444,7 +445,7 @@ True if the vehicle is still owned and managed by the enterprise.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|29|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -480,7 +481,7 @@ The country or state issuing the registration number. NULL (not recommended) mea
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -517,7 +518,7 @@ When not null, specifies, that the vehicle should be maintained according to the
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|28|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -554,7 +555,7 @@ The name of the manufacturer of the vehicle. NULL means that the value is unknow
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -577,6 +578,43 @@ The name of the manufacturer of the vehicle. NULL means that the value is unknow
 |Equals|`NULL`|yes|no|
 |Like|None|no|no|
 
+### Managed_Asset_Id
+
+
+Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|32|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Eam_Managed_Assets](Eam_Managed_Assets.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Managed_Asset_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Manufacture_Year
 
 
@@ -591,7 +629,7 @@ The year when the vehicle was manufactured or first registered - whichever is kn
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -628,7 +666,7 @@ Maximum speed in km/h
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|22|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -658,7 +696,7 @@ The model of the vehicle
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -692,7 +730,7 @@ The model of the vehicle
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|24|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -722,7 +760,7 @@ The measurement unit in which the operation of the vehicle is measured. E.g. km 
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|25|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -759,7 +797,7 @@ Vehicle owner
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|23|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -796,7 +834,7 @@ The primary color of the vehicle. NULL means that the value is unknown or not ap
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -830,7 +868,7 @@ The primary color of the vehicle. NULL means that the value is unknown or not ap
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|27|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -860,7 +898,7 @@ Number of seating places, excluding driver
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -897,7 +935,7 @@ Number of standing places, if applicable
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -927,7 +965,7 @@ Maximum technically permissible laden mass in kg
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -957,7 +995,7 @@ Maximum permissible laden mass of a whole trainset, including the vehicle
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|18|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -987,7 +1025,7 @@ Unique vehicle id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1023,7 +1061,7 @@ VIN, aka Chassis number
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|20|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1060,7 +1098,7 @@ Vehicle own mass in kg
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1090,7 +1128,7 @@ The registration plate number. Can be numeric or alphanumeric code. It should be
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|16|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -1127,7 +1165,7 @@ Type of vehicle - e.g. automobile, bus, etc. NULL means the value is unknown
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

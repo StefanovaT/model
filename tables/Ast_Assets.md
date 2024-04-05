@@ -19,6 +19,7 @@ The fixed assets. Entity: Ast_Assets
 |[Deployment_Date](#deployment_date)|`datetime` |Date, when the asset is first deployed. Null if the asset is not deployed yet|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
 |[Is_Active](#is_active)|`bit` |Checked if the assets is active and can be used in documents. The inactive assets can be used only for reports.|
+|[Managed_Asset_Id](#managed_asset_id)|`uniqueidentifier` |Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset.|
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Primary_Valuation_Model_Id](#primary_valuation_model_id)|`uniqueidentifier` |Obsolete. Not used.|
 |[Purchase_Date](#purchase_date)|`datetime` |Original purchase date of the asset.|
@@ -42,7 +43,7 @@ The category of this asset. The category may determine default values for the de
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -76,7 +77,7 @@ The category of this asset. The category may determine default values for the de
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|20|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -113,7 +114,7 @@ The asset group to which this asset belongs.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -147,7 +148,7 @@ The asset group to which this asset belongs.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -180,7 +181,7 @@ The asset group to which this asset belongs.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -216,7 +217,7 @@ Date, when the asset is first deployed. Null if the asset is not deployed yet
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -249,7 +250,7 @@ Date, when the asset is first deployed. Null if the asset is not deployed yet
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -286,7 +287,7 @@ Checked if the assets is active and can be used in documents. The inactive asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -308,6 +309,43 @@ Checked if the assets is active and can be used in documents. The inactive asset
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Managed_Asset_Id
+
+
+Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|14|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Eam_Managed_Assets](Eam_Managed_Assets.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Managed_Asset_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Notes
 
 | Property | Value |
@@ -320,7 +358,7 @@ Checked if the assets is active and can be used in documents. The inactive asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -350,7 +388,7 @@ Obsolete. Not used.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -387,7 +425,7 @@ Original purchase date of the asset.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -420,7 +458,7 @@ Original purchase date of the asset.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -450,7 +488,7 @@ Serial number of the asset.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|30|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -486,7 +524,7 @@ Currency in which changes of the asset values (purchase value, depreciation valu
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
