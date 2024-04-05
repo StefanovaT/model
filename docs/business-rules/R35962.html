@@ -98,7 +98,7 @@
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>Commit</td>
+<td>Commit, Committed</td>
 </tr>
 <tr>
 <td><strong>Record State</strong></td>
@@ -114,8 +114,8 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>If the Assigned To User field is set to a value different than the current database value,
-on commit - the rule creates a notification to the assigned user through the Notifications system.</td>
+<td>On commit - the rule checks if the Assigned To User field is set to a value different than the current database value and the assigned user is different from the current user.<br>
+On committed - if the above conditions are met, the rule creates a notification to the assigned user through the Notifications system.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
