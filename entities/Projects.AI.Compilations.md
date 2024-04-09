@@ -30,7 +30,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [BuildLog](Projects.AI.Compilations.md#buildlog) | string (max) __nullable__ | Detailed log of the build process of the compilation. `ReadOnly` 
 | [CompiledModelName](Projects.AI.Compilations.md#compiledmodelname) | string (256) __nullable__ | The name of the model, which was created in the providers space, as a result of the compilation. `Filter(eq;like)` `ReadOnly` 
-| [CompletionTimeUtc](Projects.AI.Compilations.md#completiontimeutc) | datetime __nullable__ | The time, when the compilation has completed. `Filter(eq;ge;le)` `ReadOnly` 
+| [CompletionTimeUtc](Projects.AI.Compilations.md#completiontimeutc) | datetime __nullable__ | The time, when the compilation has completed. `Filter(eq;ge;le)` `ORD` `ReadOnly` 
 | [DisplayText](Projects.AI.Compilations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ErrorMessage](Projects.AI.Compilations.md#errormessage) | string (max) __nullable__ | Human-readable error message indicating the problem, when a build is not successful. `ReadOnly` 
 | [Id](Projects.AI.Compilations.md#id) | guid |  
@@ -79,12 +79,12 @@ _Show in UI_: **ShownByDefault**
 
 ### CompletionTimeUtc
 
-The time, when the compilation has completed. `Filter(eq;ge;le)` `ReadOnly`
+The time, when the compilation has completed. `Filter(eq;ge;le)` `ORD` `ReadOnly`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText

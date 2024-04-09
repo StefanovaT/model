@@ -146,7 +146,7 @@ The time, when the compilation has completed.
 |Primary Key|no|
 |Readonly|yes|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime (Allows NULL)|
