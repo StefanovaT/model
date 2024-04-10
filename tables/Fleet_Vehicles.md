@@ -18,6 +18,7 @@ Contains vehicle definitions. Entity: Fleet_Vehicles
 |[Engine_Identification_Number](#engine_identification_number)|`nvarchar(20)` |Engine identification number|
 |[Engine_Power_hp](#engine_power_hp)|`int` |Engine output power in horse power. NULL means that the value is unknown or not applicable for this type of engine|
 |[Engine_Size_cc](#engine_size_cc)|`int` |Engine size in cubic centimeters (cm3). NULL means that the value is unknown or not applicable for this type of engine (e.g. electric motors)|
+|[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |The Enterprise Company that manages thе Vehicle.|
 |[Fuel_Capacity](#fuel_capacity)|`int` |Maximum fuel capacity of the engine or the battery in the fuel measurement unit|
 |[Fuel_Compsumption](#fuel_compsumption)|`decimal(7, 1)` |Average fuel consumption in the fuel measurement unit for 1 operational unit|
 |[Fuel_Measurement_Unit_Id](#fuel_measurement_unit_id)|`uniqueidentifier` |The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. NULL means unknown|
@@ -296,6 +297,43 @@ Engine size in cubic centimeters (cm3). NULL means that the value is unknown or 
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 |GreaterThanOrLessThan|None|no|no|
+
+### Enterprise_Company_Id
+
+
+The Enterprise Company that manages thе Vehicle.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|33|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Enterprise_Companies](Gen_Enterprise_Companies.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Enterprise_Company_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Fuel_Capacity
 
