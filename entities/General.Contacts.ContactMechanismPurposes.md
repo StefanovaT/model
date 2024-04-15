@@ -29,9 +29,9 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Code](General.Contacts.ContactMechanismPurposes.md#code) | string (16) | The unique code of the ContactMechanismPurpos. `Required` `Filter(eq;like)` `ORD` 
+| [Code](General.Contacts.ContactMechanismPurposes.md#code) | string (16) | The unique code of the ContactMechanismPurpose. `Required` `Filter(eq;like)` `ORD` 
 | [ContactMechanismType](General.Contacts.ContactMechanismPurposes.md#contactmechanismtype) | [ContactMechanismType](General.Contacts.ContactMechanismPurposes.md#contactmechanismtype) __nullable__ | When specified, allows the purpose to be specified only for contact mechanisms of the specified type. `Filter(multi eq)` 
-| [Description](General.Contacts.ContactMechanismPurposes.md#description) | string (max) __nullable__ | The description of this ContactMechanismPurpos. `Filter(like)` 
+| [Description](General.Contacts.ContactMechanismPurposes.md#description) | string (max) __nullable__ | The description of this ContactMechanismPurpose. `Filter(like)` 
 | [DisplayText](General.Contacts.ContactMechanismPurposes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.Contacts.ContactMechanismPurposes.md#id) | guid |  
 | [Name](General.Contacts.ContactMechanismPurposes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the contact mechanism purpose (Multilanguage). `Required` `Filter(like)` 
@@ -42,7 +42,7 @@ Aggregate Tree
 
 ### Code
 
-The unique code of the ContactMechanismPurpos. `Required` `Filter(eq;like)` `ORD`
+The unique code of the ContactMechanismPurpose. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (16)**  
 _Indexed_: **True**  
@@ -79,7 +79,7 @@ _Show in UI_: **ShownByDefault**
 
 ### Description
 
-The description of this ContactMechanismPurpos. `Filter(like)`
+The description of this ContactMechanismPurpose. `Filter(like)`
 
 _Type_: **string (max) __nullable__**  
 _Category_: **System**  
