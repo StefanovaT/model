@@ -91,7 +91,8 @@ Code Data Member:<br>
 Name Data Member:<br>
 <em>Name</em><br>
 Category:  <em>Definitions</em><br>
-Show in UI:  <em>ShownByDefault</em></p>
+Show in UI:  <em>ShownByDefault</em><br>
+Object category attribute:  <em>ServiceObjectTypeId</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -159,6 +160,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Service.ServiceObjects.html#enterprisecompany">EnterpriseCompany</a></td>
 <td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</td>
 <td>The Enterprise Company to which this ServiceObject applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Service.ServiceObjects.html#managedasset">ManagedAsset</a></td>
+<td><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</td>
+<td>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></td>
 </tr>
 <tr>
 <td><a href="Applications.Service.ServiceObjects.html#product">Product</a></td>
@@ -247,6 +253,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="managedasset">ManagedAsset</h3>
+<p>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></p>
+<p><em>Type</em>: <strong><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>When not-null identifies the product, from which the service object was created. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
@@ -345,6 +358,7 @@ The subject.<br>
 <h2 id="business-rules">Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R17342-2-4.html">R17342-2-4 ServiceObject - Service Object And Product Enterprise Company Are Different</a></li>
+<li><a href="../business-rules/R36453.html">R36453 Service Object - Service Object And Managed Asset Enterprise Company Are Equal</a></li>
 </ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>

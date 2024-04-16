@@ -10,13 +10,14 @@ Potential deals (Opportunities). Entity: Crm_Deals
 
 ## Default Visualization
 Default Display Text Format:  
-_{Party} - {DocumentType} {DocumentNo}{StateTagsAttribute}_  
+_{Party} - {DocumentType} {DocumentNo}{StateTagsAttribute}{StateTagsAttribute}_  
 Default Search Members:  
 _DocumentNo_  
 Code Data Member:  
 _DocumentNo_  
 Category:  _Documents_  
 Show in UI:  _ShownByDefault_  
+Object category attribute:  _DocumentTypeId_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  

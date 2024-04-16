@@ -123,7 +123,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Projects.AI.Compilations.html#completiontimeutc">CompletionTimeUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The time, when the compilation has completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></td>
+<td>The time, when the compilation has completed. <code>Filter(eq;ge;le)</code> <code>ORD</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Projects.AI.Compilations.html#displaytext">DisplayText</a></td>
@@ -219,11 +219,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>256</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="completiontimeutc">CompletionTimeUtc</h3>
-<p>The time, when the compilation has completed. <code>Filter(eq;ge;le)</code> <code>ReadOnly</code></p>
+<p>The time, when the compilation has completed. <code>Filter(eq;ge;le)</code> <code>ORD</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>

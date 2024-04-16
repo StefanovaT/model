@@ -103,7 +103,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">NO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Transitional Documents</td>
@@ -119,7 +119,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Orphan Rows</td>
-<td>Ignore</td>
+<td>Forbid</td>
 </tr>
 <tr>
 <td style="text-align: left;">Split Function</td>
@@ -145,11 +145,11 @@ StoreOrder.Store = TransferOrder.FromStore
 
 StoreOrder.MovementType = Issue
 
-StoreOrder.DueDate = TransferOrder.DefaultDueDateOut
+StoreOrder.DueDate = TODAY
 
-StoreOrder.PlannedReleaseDate = TransferOrder.DefaultDueDateOut
+StoreOrder.PlannedReleaseDate = TODAY
 
-StoreOrder.PlannedCompletionDate = TransferOrder.DefaultDueDateOut
+StoreOrder.PlannedCompletionDate = TODAY
 
 StoreOrder.IssuedByParty = null
 

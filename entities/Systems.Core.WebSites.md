@@ -9,7 +9,7 @@ Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {EnterpriseCompanyId}_  
+_{RelativeUrl}: {WebSiteType}_  
 Default Search Members:  
 __  
 Category:  _Settings_  

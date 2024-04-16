@@ -18,6 +18,7 @@ Name Data Member:
 _Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
+Object category attribute:  _AssetCategoryId_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -47,6 +48,7 @@ Aggregate Tree
 | [AssetCategory](Finance.Assets.Assets.md#assetcategory) | [AssetCategories](Finance.Assets.AssetCategories.md) | The category of this asset. The category may determine default values for the depreciation plans for the different valuation models for this asset. `Required` `Filter(multi eq)` |
 | [AssetGroup](Finance.Assets.Assets.md#assetgroup) | [AssetGroups](Finance.Assets.AssetGroups.md) (nullable) | The asset group to which this asset belongs. `Filter(multi eq)` |
 | [EnterpriseCompany](Finance.Assets.Assets.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The Enterprise Company to which this Asset applies. `Required` `Filter(multi eq)` |
+| [ManagedAsset](Finance.Assets.Assets.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
 | [PrimaryValuationModel](Finance.Assets.Assets.md#primaryvaluationmodel) | [ValuationModels](Finance.Assets.ValuationModels.md) | Obsolete. Not used. `Required` `Filter(multi eq)` |
 | [ValuationCurrency](Finance.Assets.Assets.md#valuationcurrency) | [Currencies](General.Currencies.md) | Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)` |
 
@@ -186,6 +188,16 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
+
+### ManagedAsset
+
+Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74`
+
+_Type_: **[ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### PrimaryValuationModel
 

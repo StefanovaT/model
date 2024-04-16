@@ -14,6 +14,7 @@ Default Search Members:
 __  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
+Object category attribute:  _CaseCategoryId_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  

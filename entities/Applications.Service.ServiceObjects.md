@@ -18,6 +18,7 @@ Name Data Member:
 _Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
+Object category attribute:  _ServiceObjectTypeId_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -42,6 +43,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [EnterpriseCompany](Applications.Service.ServiceObjects.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this ServiceObject applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
+| [ManagedAsset](Applications.Service.ServiceObjects.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
 | [Product](Applications.Service.ServiceObjects.md#product) | [Products](General.Products.Products.md) (nullable) | When not-null identifies the product, from which the service object was created. `Filter(multi eq)` |
 | [SerialNumberObj](Applications.Service.ServiceObjects.md#serialnumberobj) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Serial number for the product, that corresponds to this service object. If there is no product, then the other field for 'Serial number' is used to specify this data. `Filter(multi eq)` |
 | [ServicedProduct](Applications.Service.ServiceObjects.md#servicedproduct) | [Products](General.Products.Products.md) (nullable) | The product, which is used to physically store the service object, when it is serviced. Need to be specified, only when it is different from Product; otherwise, it is null. `Filter(multi eq)` |
@@ -138,6 +140,16 @@ _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
+
+### ManagedAsset
+
+Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74`
+
+_Type_: **[ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Product
 

@@ -18,6 +18,7 @@ Name Data Member:
 _RentalAssetName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
+Object category attribute:  _RentalAssetTypeId_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -46,6 +47,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [AccountingAsset](Applications.Rental.Assets.md#accountingasset) | [Assets](Finance.Assets.Assets.md) (nullable) | When not null identifies the corresponding accounting asset. `Filter(multi eq)` |
 | [EnterpriseCompany](Applications.Rental.Assets.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | When not null, specifies that the asset is specific to a given enterprise company and may be used only in documents from this enterprise company. If null, the asset can be used in all enterprise companies. `Filter(multi eq)` |
+| [ManagedAsset](Applications.Rental.Assets.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
 | [Product](Applications.Rental.Assets.md#product) | [Products](General.Products.Products.md) (nullable) | Product which is used in the store transactions for this asset. `Filter(multi eq)` |
 | [RentalAssetGroup](Applications.Rental.Assets.md#rentalassetgroup) | [AssetGroups](Applications.Rental.AssetGroups.md) | The logical group of the rental asset. `Required` `Filter(multi eq)` |
 | [RentalAssetType](Applications.Rental.Assets.md#rentalassettype) | [AssetTypes](Applications.Rental.AssetTypes.md) | The type of the asset. `Required` `Filter(multi eq)` |
@@ -182,6 +184,16 @@ _Show in UI_: **ShownByDefault**
 When not null, specifies that the asset is specific to a given enterprise company and may be used only in documents from this enterprise company. If null, the asset can be used in all enterprise companies. `Filter(multi eq)`
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### ManagedAsset
+
+Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74`
+
+_Type_: **[ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

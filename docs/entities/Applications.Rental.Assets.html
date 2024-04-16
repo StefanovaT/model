@@ -91,7 +91,8 @@ Code Data Member:<br>
 Name Data Member:<br>
 <em>RentalAssetName</em><br>
 Category:  <em>Definitions</em><br>
-Show in UI:  <em>ShownByDefault</em></p>
+Show in UI:  <em>ShownByDefault</em><br>
+Object category attribute:  <em>RentalAssetTypeId</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Tree</p>
@@ -178,6 +179,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Rental.Assets.html#enterprisecompany">EnterpriseCompany</a></td>
 <td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</td>
 <td>When not null, specifies that the asset is specific to a given enterprise company and may be used only in documents from this enterprise company. If null, the asset can be used in all enterprise companies. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Rental.Assets.html#managedasset">ManagedAsset</a></td>
+<td><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</td>
+<td>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></td>
 </tr>
 <tr>
 <td><a href="Applications.Rental.Assets.html#product">Product</a></td>
@@ -335,6 +341,13 @@ Allowed values for the <code>TimePeriodType</code>(Applications.Rental.Assets.md
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="managedasset">ManagedAsset</h3>
+<p>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></p>
+<p><em>Type</em>: <strong><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>Product which is used in the store transactions for this asset. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
@@ -451,7 +464,9 @@ The subject.<br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R36433.html">R36433 Rental Asset - Rental Asset And Managed Asset Enterprise Company Are Equal</a></li>
+</ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R31484-1.html">R31484-1 Rental Asset - Set Serial Number (Recalc)</a></li>

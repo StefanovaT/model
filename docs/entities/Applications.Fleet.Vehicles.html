@@ -269,6 +269,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 </thead>
 <tbody>
 <tr>
+<td><a href="Applications.Fleet.Vehicles.html#enterprisecompany">EnterpriseCompany</a></td>
+<td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</td>
+<td>The Enterprise Company that manages thе Vehicle. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.79</code></td>
+</tr>
+<tr>
 <td><a href="Applications.Fleet.Vehicles.html#fuelmeasurementunit">FuelMeasurementUnit</a></td>
 <td><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</td>
 <td>The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. <code>Filter(multi eq)</code></td>
@@ -277,6 +282,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Applications.Fleet.Vehicles.html#maintenanceprofile">MaintenanceProfile</a></td>
 <td><a href="Applications.Fleet.MaintenanceProfiles.html">MaintenanceProfiles</a> (nullable)</td>
 <td>When not null, specifies, that the vehicle should be maintained according to the specified profile. Assigning a profile creates plan assignments for the vehicle. Ultimately, the specific plan assignments are taken into consideration, when planning vehicle maintenance. The profile is only for conveniently assigning multiple plans. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Applications.Fleet.Vehicles.html#managedasset">ManagedAsset</a></td>
+<td><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</td>
+<td>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></td>
 </tr>
 <tr>
 <td><a href="Applications.Fleet.Vehicles.html#operationalmeasurementunit">OperationalMeasurementUnit</a></td>
@@ -524,6 +534,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="enterprisecompany">EnterpriseCompany</h3>
+<p>The Enterprise Company that manages thе Vehicle. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.79</code></p>
+<p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="fuelmeasurementunit">FuelMeasurementUnit</h3>
 <p>The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
@@ -533,6 +549,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h3 id="maintenanceprofile">MaintenanceProfile</h3>
 <p>When not null, specifies, that the vehicle should be maintained according to the specified profile. Assigning a profile creates plan assignments for the vehicle. Ultimately, the specific plan assignments are taken into consideration, when planning vehicle maintenance. The profile is only for conveniently assigning multiple plans. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Applications.Fleet.MaintenanceProfiles.html">MaintenanceProfiles</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="managedasset">ManagedAsset</h3>
+<p>Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.74</code></p>
+<p><em>Type</em>: <strong><a href="Applications.AssetManagement.ManagedAssets.html">ManagedAssets</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -618,7 +641,9 @@ The subject.<br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <h2 id="business-rules">Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R36440.html">R36440 Vehicle - Vehicle And Managed Asset Enterprise Company Are Equal</a></li>
+</ul>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <p>None</p>
 <h2 id="api">API</h2>
