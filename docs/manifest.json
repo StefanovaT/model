@@ -12128,6 +12128,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36471.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36471.html",
+          "hash": "/6W5sUTlL3R6mypfAa0Ckg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R36514.md",
       "output": {
         ".html": {
