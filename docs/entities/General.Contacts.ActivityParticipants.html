@@ -112,6 +112,11 @@ Aggregate Root:<br>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
 </tr>
 <tr>
+<td><a href="General.Contacts.ActivityParticipants.html#email">Email</a></td>
+<td>string (254) <strong>nullable</strong></td>
+<td>Participant email. Used to identify the participant and is required when syncing with external services. <code>Filter(multi eq;like)</code> <code>Introduced in version 24.1.4.87</code></td>
+</tr>
+<tr>
 <td><a href="General.Contacts.ActivityParticipants.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
@@ -163,6 +168,14 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="email">Email</h3>
+<p>Participant email. Used to identify the participant and is required when syncing with external services. <code>Filter(multi eq;like)</code> <code>Introduced in version 24.1.4.87</code></p>
+<p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>254</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>

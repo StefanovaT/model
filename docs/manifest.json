@@ -12185,6 +12185,17 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "docs/logo_old.svg",
+      "output": {
+        "resource": {
+          "relative_path": "docs/logo_old.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "entities-overview.md",
       "output": {
@@ -15682,7 +15693,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Contacts.ActivityParticipants.html",
-          "hash": "jcm7PyNXD3igjDq25waygA=="
+          "hash": "YllmX9UUNoisFsR8h3ZaXg=="
         }
       },
       "is_incremental": false,
@@ -21938,7 +21949,7 @@
       "output": {
         ".html": {
           "relative_path": "tables/Cm_Activity_Participants.html",
-          "hash": "rbRClgzN0JVEdZLtHt3XWQ=="
+          "hash": "t83oonaSFMAUBd9ncWtkKg=="
         }
       },
       "is_incremental": false,

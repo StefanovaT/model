@@ -18,6 +18,7 @@ Contains the additional participants in the activities. These are the participat
 | - | - | --- |
 |[Activity_Id](#activity_id)|`uniqueidentifier` ||
 |[Activity_Participant_Id](#activity_participant_id)|`uniqueidentifier` `PK`||
+|[Email](#email)|`nvarchar(254)` |Participant email. Used to identify the participant and is required when syncing with external services.|
 |[Notes](#notes)|`nvarchar(255)` ||
 |[Participant_Person_Id](#participant_person_id)|`uniqueidentifier` |The person, participating in an activity|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -91,6 +92,43 @@ Contains the additional participants in the activities. These are the participat
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Email
+
+
+Participant email. Used to identify the participant and is required when syncing with external services.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|nvarchar(254) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Email - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
 
 ### Notes
 

@@ -30,6 +30,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](General.Contacts.ActivityParticipants.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [Email](General.Contacts.ActivityParticipants.md#email) | string (254) __nullable__ | Participant email. Used to identify the participant and is required when syncing with external services. `Filter(multi eq;like)` `Introduced in version 24.1.4.87` 
 | [Id](General.Contacts.ActivityParticipants.md#id) | guid |  
 | [Notes](General.Contacts.ActivityParticipants.md#notes) | string (255) __nullable__ | Notes for this ActivityParticipant. 
 | [ObjectVersion](General.Contacts.ActivityParticipants.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -54,6 +55,17 @@ _Category_: **Calculated Attributes**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### Email
+
+Participant email. Used to identify the participant and is required when syncing with external services. `Filter(multi eq;like)` `Introduced in version 24.1.4.87`
+
+_Type_: **string (254) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
+_Supports Order By_: **False**  
+_Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
