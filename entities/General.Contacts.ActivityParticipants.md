@@ -41,7 +41,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Activity](General.Contacts.ActivityParticipants.md#activity) | [Activities](General.Contacts.Activities.md) | The <see cref="Activity"/> to which this ActivityParticipant belongs. `Required` `Filter(multi eq)` `Owner` |
-| [ParticipantPerson](General.Contacts.ActivityParticipants.md#participantperson) | [Persons](General.Contacts.Persons.md) | The person, participating in an activity. `Required` `Filter(multi eq)` |
+| [ParticipantPerson](General.Contacts.ActivityParticipants.md#participantperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person, participating in an activity. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -129,9 +129,9 @@ _Show in UI_: **ShownByDefault**
 
 ### ParticipantPerson
 
-The person, participating in an activity. `Required` `Filter(multi eq)`
+The person, participating in an activity. `Filter(multi eq)`
 
-_Type_: **[Persons](General.Contacts.Persons.md)**  
+_Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
