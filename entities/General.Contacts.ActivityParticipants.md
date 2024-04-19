@@ -67,6 +67,11 @@ _Supports Order By_: **False**
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`GetRelatedUserEmailAddress( obj.ParticipantPerson)`
+
+_Front-End Recalc Expressions:_  
+`GetRelatedUserEmailAddress( obj.ParticipantPerson)`
 ### Id
 
 _Type_: **guid**  
