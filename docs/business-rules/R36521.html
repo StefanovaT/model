@@ -111,24 +111,21 @@
 <tr>
 <td><strong>Action</strong></td>
 <td>Validate that the Quantity unit for the counted product meets the requirements
-described here:  - [Conversion Validation Methods]</td>
+described here:
+- <a href="../reference/common-business-rules/conversion-validation-methods.html">Conversion Validation
+Methods</a>.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The validation helps the user to select the correct Quantity unit for the counted
+product. Reconciliation will be interrupted if a product is counted at a measurement</td>
 </tr>
 <tr>
 <td colspan="2">
-<pre><code>						                |   (../reference/common-business-rules/conversion-validation-methods.md).              |
+<pre><code>					                  | unit that has no set conversion dimension to Base measurement unit of the product.    |
 </code></pre>
 </td>
 </tr>
-</tbody>
-</table>
-<p>------------------------------+---------------------------------------------------------------------------------------+
-| <strong>Description</strong>             | The validation helps the user to select the correct Quantity unit for the counted     |
-|                             | product. Reconciliation will be interrupted if a product is counted at a measurement  |
-|						                  | unit that has no set conversion dimension to Base measurement unit of the product.    |</p>
-<table>
-<col style="width:25%">
-<col style="width:75%">
-<tbody>
 <tr>
 <td><strong>Message</strong></td>
 <td>There is an invalid quantity unit '{QuantityUnit}' for product '{Product}'.Valid units
@@ -137,7 +134,7 @@ are a part of the base measurement category of the product or have a set product
 <tr>
 <td colspan="2">
 <pre><code>					              	  | dimension.                                                                            |
-						                |	Please, select a valid quantity unit and save again.                                  |
+						                |	Please, select a valid quantity unit and try again.                                  |
 </code></pre>
 </td>
 </tr>
