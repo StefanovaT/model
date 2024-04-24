@@ -59,7 +59,7 @@ Aggregate Tree
 | [Id](General.Contacts.Activities.md#id) | guid |  
 | [<s>IsReleased</s>](General.Contacts.Activities.md#isreleased) | boolean | **OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` 
 | [IsSingleExecution](General.Contacts.Activities.md#issingleexecution) | boolean | Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly` 
-| [Notes](General.Contacts.Activities.md#notes) | string (254) __nullable__ | Notes for this Activity. 
+| [Notes](General.Contacts.Activities.md#notes) | string (max) __nullable__ | Notes for this Activity. 
 | [ObjectVersion](General.Contacts.Activities.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](General.Contacts.Activities.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](General.Contacts.Activities.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [PlannedDurationMinutes](General.Contacts.Activities.md#planneddurationminutes) | int32 __nullable__ | Total planned duration of the activity, regardless of the current execution status. `Filter(ge;le)` 
@@ -317,11 +317,11 @@ _Show in UI_: **HiddenByDefault**
 
 Notes for this Activity.
 
-_Type_: **string (254) __nullable__**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
-_Maximum Length_: **254**  
+_Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion

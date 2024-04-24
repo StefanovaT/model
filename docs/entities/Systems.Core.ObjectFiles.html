@@ -107,7 +107,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Core.ObjectFiles.html#accesspermission">AccessPermission</a></td>
 <td><a href="Systems.Core.ObjectFiles.html#accesspermission">AccessPermission</a></td>
-<td>Indicates who has permission to access this file. <code>Required</code> <code>Default(&quot;IN&quot;)</code> <code>Introduced in version 24.1.4.56</code></td>
+<td>Indicates who has permission to access this file. <code>Required</code> <code>Default(&quot;IN&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.56</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ObjectFiles.html#contentlocation">ContentLocation</a></td>
@@ -225,7 +225,7 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="accesspermission">AccessPermission</h3>
-<p>Indicates who has permission to access this file. <code>Required</code> <code>Default(&quot;IN&quot;)</code> <code>Introduced in version 24.1.4.56</code></p>
+<p>Indicates who has permission to access this file. <code>Required</code> <code>Default(&quot;IN&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.4.56</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Core.ObjectFiles.html#accesspermission">AccessPermission</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>AccessPermission</code>(Systems.Core.ObjectFiles.md#accesspermission) data attribute<br>
@@ -252,7 +252,7 @@ Allowed values for the <code>AccessPermission</code>(Systems.Core.ObjectFiles.md
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Internal</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

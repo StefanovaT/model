@@ -60,7 +60,7 @@ Aggregate Tree
 | [Id](Applications.AssetManagement.MaintenanceOrders.md#id) | guid |  
 | [<s>IsReleased</s>](Applications.AssetManagement.MaintenanceOrders.md#isreleased) | boolean | **OBSOLETE! Do not use!** True if the document is not void and its state is released or greater. Deprecated. `Obsolete` `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Obsoleted in version 22.1.6.61` (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [IsSingleExecution](Applications.AssetManagement.MaintenanceOrders.md#issingleexecution) | boolean | Specifies whether the document is a single execution of its order document. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Activities](General.Contacts.Activities.md)) 
-| [Notes](Applications.AssetManagement.MaintenanceOrders.md#notes) | string (254) __nullable__ | Notes for this Activity. (Inherited from [Activities](General.Contacts.Activities.md)) 
+| [Notes](Applications.AssetManagement.MaintenanceOrders.md#notes) | string (max) __nullable__ | Notes for this Activity. (Inherited from [Activities](General.Contacts.Activities.md)) 
 | [ObjectVersion](Applications.AssetManagement.MaintenanceOrders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Applications.AssetManagement.MaintenanceOrders.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Applications.AssetManagement.MaintenanceOrders.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
 | [PlannedDurationMinutes](Applications.AssetManagement.MaintenanceOrders.md#planneddurationminutes) | int32 __nullable__ | Total planned duration of the activity, regardless of the current execution status. `Filter(ge;le)` (Inherited from [Activities](General.Contacts.Activities.md)) 
@@ -322,11 +322,11 @@ _Show in UI_: **HiddenByDefault**
 
 Notes for this Activity. (Inherited from [Activities](General.Contacts.Activities.md))
 
-_Type_: **string (254) __nullable__**  
+_Type_: **string (max) __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
-_Maximum Length_: **254**  
+_Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
