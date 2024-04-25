@@ -1254,6 +1254,8 @@
       href: Systems.Security.Groups.md
     - name: Roles
       href: Systems.Security.Roles.md
+    - name: SystemPermissions
+      href: Systems.Security.SystemPermissions.md
     - name: TrustedApplicationAuthorizations
       href: Systems.Security.TrustedApplicationAuthorizations.md
     - name: TrustedApplications

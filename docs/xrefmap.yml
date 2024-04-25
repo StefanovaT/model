@@ -2032,6 +2032,9 @@ references:
 - uid: Systems.Security.Roles
   name: Systems.Security.Roles Entity
   href: entities/Systems.Security.Roles.html
+- uid: Systems.Security.SystemPermissions
+  name: Systems.Security.SystemPermissions View
+  href: entities/Systems.Security.SystemPermissions.html
 - uid: Systems.Security.TrustedApplicationAuthorizations
   name: Systems.Security.TrustedApplicationAuthorizations Entity
   href: entities/Systems.Security.TrustedApplicationAuthorizations.html

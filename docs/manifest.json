@@ -20225,6 +20225,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Security.SystemPermissions.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Security.SystemPermissions.html",
+          "hash": "68W+ry6QjclsE0YQo4OWdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Systems.Security.TrustedApplicationAuthorizations.md",
       "output": {
         ".html": {
@@ -20325,7 +20337,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Systems.Security.html",
-          "hash": "4HQUXcmF2OL1aVO78PGrtA=="
+          "hash": "t7bKp7KGHFJGZ7yOO09/7Q=="
         }
       },
       "is_incremental": false,
@@ -20445,7 +20457,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/toc.html",
-          "hash": "nzdHFfTyfbmtKjYe/keTDg=="
+          "hash": "k0mCReCrx04SFMJtjGOLxQ=="
         }
       },
       "is_incremental": false,
