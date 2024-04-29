@@ -12176,6 +12176,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36601.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36601.html",
+          "hash": "oYuhD43GTvuczdsIGolDsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -18045,7 +18057,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehouseWorkers.html",
-          "hash": "ULKSx/FD8/Zyu7vOuCeCPg=="
+          "hash": "LqPHbtRGUkFzQFywcj2bQw=="
         }
       },
       "is_incremental": false,
