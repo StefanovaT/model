@@ -164,6 +164,11 @@ Aggregate Root:<br>
 <td>The definition of the person, when the worker is human worker. null means that the person is unknown or the worker is non-person. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Logistics.Wms.WarehouseWorkers.html#user">User</a></td>
+<td><a href="Systems.Security.Users.html">Users</a> (nullable)</td>
+<td>The user who is going to work in the selected warehouse. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.0</code></td>
+</tr>
+<tr>
 <td><a href="Logistics.Wms.WarehouseWorkers.html#warehouse">Warehouse</a></td>
 <td><a href="Logistics.Wms.Warehouses.html">Warehouses</a></td>
 <td>The warehouse, where the worker works. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
@@ -234,6 +239,12 @@ Aggregate Root:<br>
 <h3 id="person">Person</h3>
 <p>The definition of the person, when the worker is human worker. null means that the person is unknown or the worker is non-person. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="user">User</h3>
+<p>The user who is going to work in the selected warehouse. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.0</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
