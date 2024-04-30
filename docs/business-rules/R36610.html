@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>R35081 WarehouseOrderLine - Check Warehouse Zone | ERP.net Domain Model </title>
+    <title>R36610 Activity Participant - Set User | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="R35081 WarehouseOrderLine - Check Warehouse Zone | ERP.net Domain Model ">
+    <meta name="title" content="R36610 Activity Participant - Set User | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,35 +70,35 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="r35081-warehouseorderline---check-warehouse-zone">R35081 WarehouseOrderLine - Check Warehouse Zone</h1>
+<h1 id="r36610-activity-participant---set-user">R36610 Activity Participant - Set User</h1>
 
 <table>
-<col style="width:18.8%">
-<col style="width:81.2%">
+<col style="width:25%">
+<col style="width:75%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
-<td>R35081</td>
+<td>R36610</td>
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Logistics.Wms.WarehouseOrderLines.html">Logistics.Wms.WarehouseOrderLines Entity</a></td>
+<td><a class="xref" href="../entities/General.Contacts.ActivityParticipants.html">General.Contacts.ActivityParticipants Entity</a>                                                                   |</td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>CheckWarehouseZonе</td>
+<td>SetUser</td>
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
-<td>WarehouseZone, WarehouseLocation</td>
+<td>User</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
-<td>Back-End</td>
+<td>Front-End</td>
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>Commit</td>
+<td>AttributeChanged(ParticipantPerson)</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
@@ -106,43 +106,36 @@
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
-<td>No</td>
-</tr>
-<tr>
-<td><strong>Applicable
-Legislations</strong></td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">ALL // no condition needed
-</a></td>
+<td>YES</td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>If WarehouseLocation != NULL
-AND WarehouseZone != NULL
-validate, that:
-WarehouseZone == WarehouseLocation.WarehouseZone</td>
+<td>When Paricipant Person is changed, the first User found to be associated with this Person,
+is set automatically in the User field. <br>
+If there is no User associated with the Paricipant Person, the User field is set to null.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule ensures that the warehouse zone field will always represent the zone of the location.
-The zone is used to evaluate the warehouse policies.</td>
+<td>The rule ensures that the user associated with the activity's participant person
+will be set automatically, thereby facilitating the implementation of
+the notification system rules.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>The Warehouse Location in line {LineNo} is from a different Warehouse Zone. Please check the
-Warehouse Zone and try again.</td>
+<td>-</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
-<td>Introduced: 23 SP6</td>
+<td>Introduced: v.24</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 </tbody>
 </table>
-<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
-topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
+<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
+topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
 </article>
           </div>
           
@@ -151,7 +144,7 @@ topic <a href="../templates/template-description-system-business-rules.html">Sys
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R35081.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R36610.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
