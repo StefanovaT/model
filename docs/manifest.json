@@ -12200,6 +12200,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36612.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36612.html",
+          "hash": "OhGRGGdDmtyA9KBCbraxxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -15741,7 +15753,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Contacts.ActivityParticipants.html",
-          "hash": "1GlEL7tWQpXdvpUTpeMkhA=="
+          "hash": "xGlS3Pm5prFTC5fxAgoCqw=="
         }
       },
       "is_incremental": false,
