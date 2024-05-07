@@ -12212,6 +12212,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36635.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36635.html",
+          "hash": "ic9wLK0rwkCGJGJVzjKbaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
