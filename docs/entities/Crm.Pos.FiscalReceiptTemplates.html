@@ -152,6 +152,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>Denotes whether to print the system-defined header for each row. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
+<td><a href="Crm.Pos.FiscalReceiptTemplates.html#templatekind">TemplateKind</a></td>
+<td><a href="Crm.Pos.FiscalReceiptTemplates.html#templatekind">TemplateKind</a></td>
+<td>Specifies the entity type, for which the template can be used. Template strings can refer to the attributes of the specified entity type. <code>Required</code> <code>Default(&quot;S&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.7</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Pos.FiscalReceiptTemplates.html#templatename">TemplateName</a></td>
 <td>string (64)</td>
 <td>The unique name of the printing template. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
@@ -226,6 +231,38 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="templatekind">TemplateKind</h3>
+<p>Specifies the entity type, for which the template can be used. Template strings can refer to the attributes of the specified entity type. <code>Required</code> <code>Default(&quot;S&quot;)</code> <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.7</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Pos.FiscalReceiptTemplates.html#templatekind">TemplateKind</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>TemplateKind</code>(Crm.Pos.FiscalReceiptTemplates.md#templatekind) data attribute<br>
+<em>Allowed Values (Crm.Pos.FiscalReceiptTemplatesRepository.TemplateKind Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SalesOrders</td>
+<td>Sales Orders entity type. Stored as 'S'. <br> <em>Database Value:</em> 'S' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'SalesOrders'</td>
+</tr>
+<tr>
+<td>Invoices</td>
+<td>Invoices entity type. Stored as 'I'. <br> <em>Database Value:</em> 'I' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Invoices'</td>
+</tr>
+<tr>
+<td>Payments</td>
+<td>Payments entity type. Stored as 'P'. <br> <em>Database Value:</em> 'P' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Payments'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>SalesOrders</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="templatename">TemplateName</h3>
 <p>The unique name of the printing template. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>

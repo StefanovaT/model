@@ -160,7 +160,7 @@ _Allowed Values (Applications.Rental.AssetsRepository.TimePeriodType Enum Member
 
 | Value | Description |
 | ---- | --- |
-| Days | Days value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Days' |
+| OvernightStays | OvernightStays value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OvernightStays' |
 | Months | Months value. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Months' |
 
 _Supported Filters_: **Equals, EqualsIn**  
