@@ -165,7 +165,7 @@ _Allowed Values (Systems.Bpm.ExpressionOperator Enum Members)_
 | INTERPOLATE | INTERPOLATE(Object?, InterpolatedString) => Performs string interpolation, according to the context of the passed object.. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 45 <br /> _Domain API Value:_ 'INTERPOLATE' |
 | DATEDIFF | DATEDIFF(DateTime, DateTime, Interval?) => Returns the difference between dates as the date difference for the specified interval type.. Stored as 'DATEDIFF'. <br /> _Database Value:_ 'DATEDIFF' <br /> _Model Value:_ 46 <br /> _Domain API Value:_ 'DATEDIFF' |
 | DATESPAN | DATESPAN(DateTime, DateTime, Interval?) => Returns the difference between dates as a duration in the specified interval type. The interval is fulfilled when the same date and time is reached in the next interval.. Stored as 'DATESPAN'. <br /> _Database Value:_ 'DATESPAN' <br /> _Model Value:_ 47 <br /> _Domain API Value:_ 'DATESPAN' |
-| IFERROR | IFERROR value. Stored as 'IFERROR'. <br /> _Database Value:_ 'IFERROR' <br /> _Model Value:_ 48 <br /> _Domain API Value:_ 'IFERROR' |
+| IFERROR | IFERROR(Value, ValueIfError) => Evaluates an expression and returns the value specified in the second parameter, if the expression returns an error. Otherwise returns the value of the expression itself.. Stored as 'IFERROR'. <br /> _Database Value:_ 'IFERROR' <br /> _Model Value:_ 48 <br /> _Domain API Value:_ 'IFERROR' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
