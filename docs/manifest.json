@@ -12236,6 +12236,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36650.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36650.html",
+          "hash": "ViaToVnnLjxPwiq8sFkQSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -14913,7 +14925,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Finance.Assets.Depreciations.html",
-          "hash": "Jl6crtfeKYWG40ZbQxG4YQ=="
+          "hash": "DJTD/3A0ak3YqKQ7WE3oRg=="
         }
       },
       "is_incremental": false,
@@ -18105,7 +18117,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehouseWorkers.html",
-          "hash": "oPUYnA/k6gremJ9rd4Ka2w=="
+          "hash": "Me3++aDQzUL4W6WlprFc/g=="
         }
       },
       "is_incremental": false,
