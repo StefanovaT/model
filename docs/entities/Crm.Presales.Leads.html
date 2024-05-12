@@ -184,7 +184,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Leads.html#systemstage">SystemStage</a></td>
 <td><a href="Crm.Presales.Leads.html#systemstage">SystemStage</a></td>
-<td>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). <code>Required</code> <code>Default(&quot;NEW&quot;)</code> <code>Filter(multi eq)</code></td>
+<td>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). <code>Required</code> <code>Default(&quot;NEW&quot;)</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 </tbody>
 </table>
@@ -236,7 +236,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Crm.Presales.Leads.html#leaduserstage">LeadUserStage</a></td>
 <td><a href="Crm.Presales.LeadUserStages.html">LeadUserStages</a> (nullable)</td>
-<td>The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). <code>Filter(multi eq)</code></td>
+<td>The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.Leads.html#marketingcompanysize">MarketingCompanySize</a></td>
@@ -383,7 +383,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="systemstage">SystemStage</h3>
-<p>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). <code>Required</code> <code>Default(&quot;NEW&quot;)</code> <code>Filter(multi eq)</code></p>
+<p>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). <code>Required</code> <code>Default(&quot;NEW&quot;)</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Presales.Leads.html#systemstage">SystemStage</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>SystemStage</code>(Crm.Presales.Leads.md#systemstage) data attribute<br>
@@ -467,7 +467,7 @@ Allowed values for the <code>SystemStage</code>(Crm.Presales.Leads.md#systemstag
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="leaduserstage">LeadUserStage</h3>
-<p>The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). <code>Filter(multi eq)</code></p>
+<p>The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Presales.LeadUserStages.html">LeadUserStages</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>

@@ -144,7 +144,7 @@
 </tr>
 <tr>
 <td><a href="#lead_user_stage_id">Lead_User_Stage_Id</a></td>
-<td><code>uniqueidentifier</code></td>
+<td><code>uniqueidentifier</code> Readonly</td>
 <td>The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. NULL when the user stage is undefined (the pure System Stage defines the stage).</td>
 </tr>
 <tr>
@@ -229,7 +229,7 @@
 </tr>
 <tr>
 <td><a href="#system_stage">System_Stage</a></td>
-<td><code>nvarchar(3)</code> Allowed: <code>NEW</code>, <code>QUA</code>, <code>MQL</code>, <code>SQL</code>, <code>CLO</code></td>
+<td><code>nvarchar(3)</code> Allowed: <code>NEW</code>, <code>QUA</code>, <code>MQL</code>, <code>SQL</code>, <code>CLO</code>, Readonly</td>
 <td>The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO)</td>
 </tr>
 </tbody>
@@ -1518,7 +1518,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>Referenced Table</td>
@@ -3579,7 +3579,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
