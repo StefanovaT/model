@@ -138,9 +138,7 @@
 <h2 id="business-logic">Business Logic</h2>
 <p>This Generation procedure is used to create receipt Store Orders (SO) from the Transfer Orders.</p>
 <p>What is specific about it is that it creates receipt SO, only for the products that have already been issued from the other store i.e. for which there are created released and non-voided Store Transactions.</p>
-<p>The lines of the document contain information about how the issued lines have been executed - what is the actual issued quantity, lot, serial number, cost and etc.</p>
-<p>If for the current row of the Transfer Order there is no enough quantity from first Lot then is created another row in the Store Orders with remaining Quantity and another Available Lot.</p>
-<p>If there is no Available Lot then Lot is Null.</p>
+<p>The lines of the document contain information about how the issued lines have been executed - what is the actual issued quantity, lot, serial number, cost, etc.</p>
 <pre><code>StoreOrder.DocumentDate = TransferOrder.DocumentDate
 
 StoreOrder.Store = TransferOrder.FromStore
@@ -157,28 +155,28 @@ StoreOrder.IssuedByParty = null
 
 StoreOrder.DocumentCurrency =  
 
-​                          if (TransferOrder.FromStore.Currency != null)
+​                          if (TransferOrder.ToStore.Currency != null)
 
-​                          , then TransferOrder.FromStore.Currency
+​                          , then TransferOrder.ToStore.Currency
 
-​                          , else Error &quot;The field 'Document Currency' in the Store Order cannot be filled because currency for the issued store is not specified.&quot;
+​                          , else Error &quot;The field 'Document Currency' in the Store Order cannot be filled because currency for the receipt store is not specified.&quot;
 
 StoreOrder.FromParty = TransferOrder.FromParty
 
-StoreOrder.ToParty = TransferOrder.ToStore
+StoreOrder.ToParty = TransferOrder.FromStore
 </code></pre>
 <h2 id="fulfillments">Fulfillments</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Name</th>
-<th>ShipmentOrderLineToStoreOrderLine</th>
+<th>IssueStoreTransactionLineToStoreOrderLine</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Parent Entity</td>
-<td>TransferOrderLine</td>
+<td>StoreTransactionLines (where &quot;StoreTransactionLine.ParentLine =  Id of any TransferOrderLine of the generating TransferOrder&quot; AND &quot;StoreTransactionLine.Document.State = RELEASE&quot; AND &quot;StoreTransactionLine.Document.Void = False&quot;)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Child Entity</td>
@@ -186,7 +184,7 @@ StoreOrder.ToParty = TransferOrder.ToStore
 </tr>
 <tr>
 <td style="text-align: left;">Parent / Child Relationship</td>
-<td>StoreOrderLine.ParentDocument = TransferOrder; StoreOrderLine.ParentLineNo = TransferOrderLine.LineOrd</td>
+<td>StoreOrderLine.ParentDocument = StoreTransaction; StoreOrderLine.ParentLineNo = StoreTransaction.LineNo</td>
 </tr>
 </tbody>
 </table>
@@ -204,83 +202,85 @@ StoreOrder.ToParty = TransferOrder.ToStore
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">TransferOrderLineToStoreOrderLine</td>
+<td style="text-align: left;">IssueStoreTransactionLineToStoreOrderLine</td>
 <td style="text-align: center;">MStandardQuantityBase</td>
-<td style="text-align: center;">TransferOrderLine.Product.BaseMeasurementUnit</td>
-<td style="text-align: left;">TransferOrderLine.StandardQuantityBase</td>
+<td style="text-align: center;">StoreTransactionLine.Product.BaseMeasurementUnit</td>
+<td style="text-align: left;">StoreTransactionLine.StandardQuantityBase</td>
 <td style="text-align: left;">StoreOrderLine.StandardQuantityBase</td>
 <td style="text-align: left;">YES</td>
 </tr>
 <tr>
-<td style="text-align: left;">TransferOrderLineToStoreOrderLine</td>
+<td style="text-align: left;">IssueStoreTransactionLineToStoreOrderLine</td>
 <td style="text-align: center;">MQuantity</td>
-<td style="text-align: center;">TransferOrderLine.QuantityUnit</td>
-<td style="text-align: left;">TransferOrderLine.Quantity</td>
+<td style="text-align: center;">StoreTransactionLine.QuantityUnit</td>
+<td style="text-align: left;">StoreTransactionLine.Quantity</td>
 <td style="text-align: left;">StoreOrderLine.Quantity</td>
 <td style="text-align: left;">NO</td>
 </tr>
 <tr>
-<td style="text-align: left;">TransferOrderLineToStoreOrderLine</td>
+<td style="text-align: left;">IssueStoreTransactionLineToStoreOrderLine</td>
 <td style="text-align: center;">MQuantityBase</td>
-<td style="text-align: center;">TransferOrderLine.Product.BaseMeasurementUnit</td>
-<td style="text-align: left;">TransferOrderLine.QuantityBase</td>
+<td style="text-align: center;">StoreTransactionLine.Product.BaseMeasurementUnit</td>
+<td style="text-align: left;">StoreTransactionLine.QuantityBase</td>
 <td style="text-align: left;">StoreOrderLine.QuantityBase</td>
+<td style="text-align: left;">NO</td>
+</tr>
+<tr>
+<td style="text-align: left;">IssueStoreTransactionLineToStoreOrderLine</td>
+<td style="text-align: center;">MLineCost</td>
+<td style="text-align: center;">StoreTransactionLine.Document.DocumentCurrency</td>
+<td style="text-align: left;">StoreTransactionLine.LineCost</td>
+<td style="text-align: left;">StoreOrderLine.LineCost</td>
 <td style="text-align: left;">NO</td>
 </tr>
 </tbody>
 </table>
-<pre><code>StoreOrderLine.LineNo = TransferOrderLine.LineOrd
+<pre><code>StoreOrderLine.LineNo = StoreTransactionLine.LineNo
 
-StoreOrderLine.ParentLineId = TranferOrderLine.Id
+StoreOrderLine.ParentLineId = StoreTransactionLine.ParentLineId
 
-StoreOrderLine.Product = TransferOrderLine.Product
+StoreOrderLine.Product = StoreTransactionLine.Product
 
-StoreOrderLine.ProductVariant = TransferOrderLine.ProductVariant
+StoreOrderLine.ProductVariant = StoreTransactionLine.ProductVariant
 
-StoreOrderLine.StoreBin = TransferOrderLine.FromStoreBin
+StoreOrderLine.StoreBin = StoreTransactionLine.StoreBin
 
-StoreOrderLine.SerialNumber = TransferOrderLine.SerialNumber
+StoreOrderLine.SerialNumber = StoreTransactionLine.SerialNumber
 
-StoreOrderLine.Quantity = TransferOrderLine.REMAINING(MQuantity)
+StoreOrderLine.Quantity = StoreTransactionLine.REMAINING(MQuantity)
 
-StoreOrderLine.QuantityUnit = TransferOrderLine.QuantityUnit
+StoreOrderLine.QuantityUnit = StoreTransactionLine.QuantityUnit
 
-StoreOrderLine.QuantityBase = TransferOrderLine.REMAINING(MQuantityBase)
+StoreOrderLine.QuantityBase = StoreTransactionLine.REMAINING(MQuantityBase)
 
-StoreOrderLine.StandardQuantityBase = TransferOrderLine.REMAINING(MStandardQuantityBase)
+StoreOrderLine.StandardQuantityBase = StoreTransactionLine.REMAINING(MStandardQuantityBase)
 
-StoreOrderLine.UnitCost = null
+StoreOrderLine.LineCost = CONVERT(StoreOrderLine.Document.DocumentCurrency, StoreTransactionLine.REMAINING(MUnitCost)
 
-StoreOrderLine.LineCost = null
+StoreOrderLine.UnitCost =
+                 if (StoreOrderLine.LineCost != 0.00), then StoreOrderLine.LineCost/Quantity
 
-StoreOrderLine.Lot =
+                 else 0.00
+                         
+StoreOrderLine.Lot = StoreTransactionLine.Lot
 
-​                 if (TransferOrderLine.Lot != Null), then TransferOrderLine.Lot
-
-                 else if (Lots Issue* == Null), then Null
-
-                 else Lots Issue*
-
-StoreOrderLine.GuaranteePeriodDays = TransferOrderLine.Product.GuaranteePeriodDays
+StoreOrderLine.GuaranteePeriodDays = StoreTransactionLine.GuaranteePeriodDays
 
 StoreOrderLine.SalesOrderLine = null
 
-StoreOrderLine.Notes = TransferOrderLine.Notes
+StoreOrderLine.Notes = StoreTransactionLine.Notes
 
 StoreOrderLine.PersistLot = false
 
-StoreOrderLine.ParentDocument = TransferOrder
+StoreOrderLine.ParentDocument = StoreTransactionLine
 
-StoreOrderLine.ParentLineNo = TransferOrderLine.LineOrd
+StoreOrderLine.ParentLineNo = StoreTransactionLine.LineNo
 
 StoreOrderLine.TransactionTimestamp = null
 
 StoreOrderLine.ForOrdering = false
 
 </code></pre>
-<p><a href="https://docs.erp.net/tech/modules/logistics/concepts/lots-issue.html">Lots Issue</a> is algorithm than determine Lots from Available To Promise Lots.</p>
-<p>If there is no enough quantity from first Lot then current row is break down to multiple rows as in next row is filled another Lots that is available.</p>
-<p>If there is no available Lot for the current row then Lot = Null.</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>WARNING: Any of the Store Orders created according to the description above is saved then and only when there is at least one line in it.</p>

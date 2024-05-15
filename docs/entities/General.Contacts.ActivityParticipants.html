@@ -158,6 +158,11 @@ Aggregate Root:<br>
 <td><a href="General.Contacts.Persons.html">Persons</a> (nullable)</td>
 <td>The person, participating in an activity. <code>Filter(multi eq)</code></td>
 </tr>
+<tr>
+<td><a href="General.Contacts.ActivityParticipants.html#user">User</a></td>
+<td><a href="Systems.Security.Users.html">Users</a> (nullable)</td>
+<td>The user associated with the Person participating in the activity. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.15</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
@@ -222,6 +227,13 @@ Aggregate Root:<br>
 <h3 id="participantperson">ParticipantPerson</h3>
 <p>The person, participating in an activity. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="user">User</h3>
+<p>The user associated with the Person participating in the activity. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.15</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
