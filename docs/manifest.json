@@ -12272,6 +12272,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36718.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36718.html",
+          "hash": "UJKHU1bxWOKGp9lBw8/jkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -15813,7 +15825,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Contacts.ActivityParticipants.html",
-          "hash": "6wHVYQ9fc2a72fEH33mFxg=="
+          "hash": "4rnO4UOnpzlAYCrs9rlRkQ=="
         }
       },
       "is_incremental": false,
@@ -20964,7 +20976,7 @@
       "output": {
         ".html": {
           "relative_path": "generations/LOG0211.html",
-          "hash": "8N0HJiEMGiBvckDhXPb7sg=="
+          "hash": "/p85b6i8ba/czmwALnQesw=="
         }
       },
       "is_incremental": false,
