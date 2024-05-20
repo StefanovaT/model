@@ -16,6 +16,7 @@ Marketing campaigns. Used to treat target groups with marketing messages, plan b
 |[Description](#description)|`nvarchar(254)` |Campaign description|
 |[End_Date](#end_date)|`datetime` |End date of the campaign. NULL means that the end date is still unknown|
 |[Forecasted_Cost](#forecasted_cost)|`decimal(18, 0)` |Forecasted total cost of the campaign|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Campaign is active.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Start_Date](#start_date)|`datetime` |Starting date of the campaign|
 
@@ -186,6 +187,42 @@ Forecasted total cost of the campaign
 |UI Width|Short|
 |User Login|no|
 |Visible|yes|
+
+### Is_Active
+
+
+Indicates whether the current Campaign is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Row_Version
 
