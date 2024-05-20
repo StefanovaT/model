@@ -10197,7 +10197,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R33172.html",
-          "hash": "3CMmedUtpabmLvr6F+Im0g=="
+          "hash": "NLZy5XbQHzE7/8V/cfMxvg=="
         }
       },
       "is_incremental": false,
@@ -10761,7 +10761,7 @@
       "output": {
         ".html": {
           "relative_path": "business-rules/R33568.html",
-          "hash": "wNiqIa/A+013k7gbY9Uchg=="
+          "hash": "qNXZ/u2dp2JSjH+DnQj7EA=="
         }
       },
       "is_incremental": false,
@@ -12253,6 +12253,18 @@
         ".html": {
           "relative_path": "business-rules/R36676.html",
           "hash": "iWAy4E0NL8A6NJ00Dt9g6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R36711.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36711.html",
+          "hash": "pqhu04OBZ/FmP/cMa9yJoQ=="
         }
       },
       "is_incremental": false,
@@ -18081,7 +18093,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehousePolicies.html",
-          "hash": "AP/PG8AlXLo8mV2C1V9mIw=="
+          "hash": "AlWlwE5W7C/UrqvlzTkxow=="
         }
       },
       "is_incremental": false,
