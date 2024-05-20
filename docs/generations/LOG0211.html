@@ -136,10 +136,12 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This Generation procedure is used to create receipt Store Orders (SO) from the Transfer Orders.</p>
-<p>What is specific about it is that it creates receipt SO, only for the products that have already been issued from the other store i.e. for which there are created released and non-voided Store Transactions.</p>
-<p>The lines of the document contain information about how the issued lines have been executed - what is the actual issued quantity, lot, serial number, cost, etc.</p>
-<pre><code>StoreOrder.DocumentDate = TODAY
+<p>This generation procedure is used to create receipt Store Orders (SO) from Transfer Orders (TO).</p>
+<p>It specifically creates receipt SOs only for products that have already been issued from the other store, meaning there are created, released, and non-voided Store Transactions for these lines.</p>
+<p>The SO lines contain detailed information about the execution of the issued lines, including the actual issued quantity, lot number, serial number, cost, and other relevant data.</p>
+<p>The SOs for the products that have not been issued yet are created by a different procedure, <a href="LOG0212.html">LOG0212</a>. Both generation procedures are typically set up simultaneously for the same ТО. While LOG0211 provides details about what has already been issued, LOG0212 indicates what remains to be issued and is planned to be received.</p>
+<p><strong>The new SO's header is created as follows:</strong></p>
+<pre><code>StoreOrder.DocumentDate = TransferOrder.DocumentDate
 
 StoreOrder.PlanningOnly = False
 
@@ -237,6 +239,7 @@ StoreOrder.ToParty = TransferOrder.FromStore
 </tr>
 </tbody>
 </table>
+<p><strong>The lines of the new SO are created as follows:</strong></p>
 <pre><code>StoreOrderLine.LineNo = autonumber 10, 20, 30
 
 StoreOrderLine.Product = StoreTransactionLine.Product
@@ -258,7 +261,7 @@ StoreOrderLine.StandardQuantityBase = StoreTransactionLine.REMAINING(MStandardQu
 StoreOrderLine.LineCost = CONVERT(StoreOrderLine.Document.DocumentCurrency, StoreTransactionLine.REMAINING(MUnitCost)
 
 StoreOrderLine.UnitCost =
-                 if (StoreOrderLine.LineCost != 0.00), then StoreOrderLine.LineCost/Quantity
+                 if (StoreOrderLine.LineCost != 0.00), then StoreOrderLine.CONVERT(StoreOrderLine.Document.DocumentCurrency, StoreTransactionLine.REMAINING(MUnitCost)/Quantity
 
                  else 0.00
                          
@@ -275,7 +278,7 @@ StoreOrderLine.Notes = CAST(StoreTransactionLine.ParentLineId, TransferOrderLine
 
 StoreOrderLine.PersistLot = false
 
-StoreOrderLine.ParentDocument = StoreTransactionLine
+StoreOrderLine.ParentDocument = StoreTransaction
 
 StoreOrderLine.ParentLineNo = StoreTransactionLine.LineNo
 

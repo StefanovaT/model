@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>LOG0210 Create issue store order with break down by lots | ERP.net Domain Model </title>
+    <title>LOG0212 Create receipt Store order for the products remaining to be issued (for planning only) | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="LOG0210 Create issue store order with break down by lots | ERP.net Domain Model ">
+    <meta name="title" content="LOG0212 Create receipt Store order for the products remaining to be issued (for planning only) | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,7 +70,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="log0210-create-issue-store-order-with-break-down-by-lots">LOG0210 Create issue store order with break down by lots</h1>
+<h1 id="log0212-create-receipt-store-order-for-the-products-remaining-to-be-issued-for-planning-only">LOG0212 Create receipt Store order for the products remaining to be issued (for planning only)</h1>
 
 <h2 id="basic-information">Basic Information</h2>
 <table>
@@ -83,7 +83,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Code</td>
-<td>LOG0210</td>
+<td>LOG0212</td>
 </tr>
 <tr>
 <td style="text-align: left;">Parent Document</td>
@@ -95,7 +95,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Full Name</td>
-<td>Create issue store order with break down by lots</td>
+<td>Create receipt Store order for the products remaining to be issued (for planning only)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Status</td>
@@ -115,7 +115,7 @@
 </tr>
 <tr>
 <td style="text-align: left;">Replaces</td>
-<td>CreateIssueStoreOrderWithBreakDownByLots</td>
+<td>GenerateSeparateReceiptStoreOrders</td>
 </tr>
 <tr>
 <td style="text-align: left;">Orphan Rows</td>
@@ -136,55 +136,58 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This Generation is used to create Store Orders from the Transfer Order and break down rows by Available To Promise Lots.</p>
-<p>If for the current row of the Transfer Order there is no enough quantity from first Lot then is created another row in the Store Orders with remaining Quantity and another Available Lot.</p>
-<p>If there is no Available Lot then Lot is Null.</p>
+<p>This Generation procedure is used to create receipt Store Orders (SO) from Transfer Orders (TO).</p>
+<p>This procedure is unique in that it creates receipt SOs only for products/lines <strong>planned</strong> to be issued, meaning there are no released and non-voided Store Transactions (ST) for these lines yet. These SOs are solely for planning purposes and are NOT intended to be processed or released by users or any other processes. They are generated in the Planning state and are automatically voided by the system once the products are issued from the other store.</p>
+<p>The SOs for the products that have already been issued are created by a different procedure, <a href="LOG0211.html">LOG0211</a>. Both generation procedures are typically set up simultaneously for the same ТО. While LOG0211 provides details about what has already been issued, LOG0212 indicates what remains to be issued and is planned to be received.</p>
+<p><strong>The new SO's header is created as follows:</strong></p>
 <pre><code>StoreOrder.DocumentDate = TransferOrder.DocumentDate
 
-StoreOrder.Store = TransferOrder.FromStore
+StoreOrder.PlanningOnly = True
 
-StoreOrder.MovementType = Issue
+StoreOrder.Store = TransferOrder.ToStore
 
-StoreOrder.DueDate = TODAY
+StoreOrder.MovementType = Receipt
 
-StoreOrder.PlannedReleaseDate = TODAY
+StoreOrder.DueDate = TransferOrder.DefaultDueDateIn
 
-StoreOrder.PlannedCompletionDate = TODAY
+StoreOrder.PlannedReleaseDate = TransferOrder.DefaultDueDateIn
 
-StoreOrder.IssuedByParty = null
+StoreOrder.PlannedCompletionDate = TransferOrder.DefaultDueDateIn
+
+StoreOrder.CurrencyDirectory =  TransferOrder.CurrencyDirectory 
 
 StoreOrder.DocumentCurrency =  
 
-​                          if (TransferOrder.FromStore.Currency != null)
+​                          if (TransferOrder.ToStore.Currency != null)
 
-​                          , then TransferOrder.FromStore.Currency
+​                          , then TransferOrder.ToStore.Currency
 
-​                          , else Error &quot;The field 'Document Currency' in the Store Order cannot be filled because currency for the issued store is not specified.&quot;
+​                          , else Error &quot;The field 'Document Currency' in the Store Order cannot be filled because currency for the receipt store is not specified.&quot;
 
 StoreOrder.FromParty = TransferOrder.FromParty
 
-StoreOrder.ToParty = TransferOrder.ToStore
+StoreOrder.ToParty = TransferOrder.FromStore
 </code></pre>
 <h2 id="fulfillments">Fulfillments</h2>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Name</th>
-<th>ShipmentOrderLineToStoreOrderLine</th>
+<th>TransferOrderLineToIssueStoreTransactionLine</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Parent Entity</td>
-<td>TransferOrderLines</td>
+<td>TransferOrderLine</td>
 </tr>
 <tr>
 <td style="text-align: left;">Child Entity</td>
-<td>StoreOrderLines (where &quot;StoreOrderLine.StoreOrder.MovementType = Issue&quot;</td>
+<td>StoreTransactionLines (where &quot;StoreTransactionLine.StoreTransaction.MovementType = Issue&quot; AND &quot;StoreTransactionLine.Document.State = RELEASE&quot; AND &quot;StoreTransactionLine.Document.Void = False&quot;)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Parent / Child Relationship</td>
-<td>StoreOrderLine.ParentDocument = TransferOrder; StoreOrderLine.ParentLineNo = TransferOrderLine.LineOrd</td>
+<td>StoreTransactionLine.ParentLineId =  TransferOrderLine.Id</td>
 </tr>
 </tbody>
 </table>
@@ -202,83 +205,79 @@ StoreOrder.ToParty = TransferOrder.ToStore
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">TransferOrderLineToStoreOrderLine</td>
+<td style="text-align: left;">TransferOrderLineToIssueStoreTransactionLine</td>
 <td style="text-align: center;">MStandardQuantityBase</td>
 <td style="text-align: center;">TransferOrderLine.Product.BaseMeasurementUnit</td>
 <td style="text-align: left;">TransferOrderLine.StandardQuantityBase</td>
-<td style="text-align: left;">StoreOrderLine.StandardQuantityBase</td>
+<td style="text-align: left;">StoreTransactionLine.StandardQuantityBase</td>
 <td style="text-align: left;">YES</td>
 </tr>
 <tr>
-<td style="text-align: left;">TransferOrderLineToStoreOrderLine</td>
+<td style="text-align: left;">TransferOrderLineToIssueStoreTransactionLine</td>
 <td style="text-align: center;">MQuantity</td>
 <td style="text-align: center;">TransferOrderLine.QuantityUnit</td>
 <td style="text-align: left;">TransferOrderLine.Quantity</td>
-<td style="text-align: left;">StoreOrderLine.Quantity</td>
+<td style="text-align: left;">StoreTransactionLine.Quantity</td>
 <td style="text-align: left;">NO</td>
 </tr>
 <tr>
-<td style="text-align: left;">TransferOrderLineToStoreOrderLine</td>
+<td style="text-align: left;">TransferOrderLineToIssueStoreTransactionLine</td>
 <td style="text-align: center;">MQuantityBase</td>
 <td style="text-align: center;">TransferOrderLine.Product.BaseMeasurementUnit</td>
 <td style="text-align: left;">TransferOrderLine.QuantityBase</td>
-<td style="text-align: left;">StoreOrderLine.QuantityBase</td>
+<td style="text-align: left;">StoreTransactionLine.QuantityBase</td>
 <td style="text-align: left;">NO</td>
 </tr>
 </tbody>
 </table>
-<pre><code>StoreOrderLine.LineNo = TransferOrderLine.LineOrd
+<p><strong>The lines of the new SO are created as follows:</strong></p>
+<pre><code>StoreOrderLine.LineNo = autonumber 10, 20, 30
 
-StoreOrderLine.ParentLineId = TranferOrderLine.Id
+StoreOrderLine.Product = TranferOrderLine.Product
 
-StoreOrderLine.Product = TransferOrderLine.Product
+StoreOrderLine.ProductVariant = TranferOrderLine.ProductVariant
 
-StoreOrderLine.ProductVariant = TransferOrderLine.ProductVariant
+StoreOrderLine.StoreBin = TranferOrderLine.ToStoreBin
 
-StoreOrderLine.StoreBin = TransferOrderLine.FromStoreBin
+StoreOrderLine.SerialNumber = TranferOrderLine.SerialNumber
 
-StoreOrderLine.SerialNumber = TransferOrderLine.SerialNumber
+StoreOrderLine.Quantity = TranferOrderLine.REMAINING(MQuantity)
 
-StoreOrderLine.Quantity = TransferOrderLine.REMAINING(MQuantity)
+StoreOrderLine.QuantityUnit = TranferOrderLine.QuantityUnit
 
-StoreOrderLine.QuantityUnit = TransferOrderLine.QuantityUnit
+StoreOrderLine.QuantityBase = TranferOrderLine.REMAINING(MQuantityBase)
 
-StoreOrderLine.QuantityBase = TransferOrderLine.REMAINING(MQuantityBase)
+StoreOrderLine.StandardQuantityBase = TranferOrderLine.REMAINING(MStandardQuantityBase)
 
-StoreOrderLine.StandardQuantityBase = TransferOrderLine.REMAINING(MStandardQuantityBase)
+StoreOrderLine.LineCost = 0
 
-StoreOrderLine.UnitCost = null
+StoreOrderLine.UnitCost = 0
+          
+StoreOrderLine.Lot = TranferOrderLine.Lot
 
-StoreOrderLine.LineCost = null
+StoreOrderLine.GuaranteePeriodDays =
+                
+                 if(TranferOrderLine.GuaranteePeriodDays != null), then TranferOrderLine.GuaranteePeriodDays
 
-StoreOrderLine.Lot =
-
-​                 if (TransferOrderLine.Lot != Null), then TransferOrderLine.Lot
-
-                 else if (Lots Issue* == Null), then Null
-
-                 else Lots Issue*
-
-StoreOrderLine.GuaranteePeriodDays = TransferOrderLine.Product.GuaranteePeriodDays
+                 else Product.GuaranteePeriodDays
 
 StoreOrderLine.SalesOrderLine = null
 
-StoreOrderLine.Notes = TransferOrderLine.Notes
+StoreOrderLine.Notes = TranferOrderLine.Notes
 
 StoreOrderLine.PersistLot = false
 
-StoreOrderLine.ParentDocument = TransferOrder
+StoreOrderLine.ParentDocument = TranferOrder
 
-StoreOrderLine.ParentLineNo = TransferOrderLine.LineOrd
+StoreOrderLine.ParentLineNo = TranferOrderLine.LineNo
+
+StoreOrderLine.ParentLineId = TranferOrderLine.Id
 
 StoreOrderLine.TransactionTimestamp = null
 
 StoreOrderLine.ForOrdering = false
 
 </code></pre>
-<p><a href="https://docs.erp.net/tech/modules/logistics/concepts/lots-issue.html">Lots Issue</a> is algorithm than determine Lots from Available To Promise Lots.</p>
-<p>If there is no enough quantity from first Lot then current row is break down to multiple rows as in next row is filled another Lots that is available.</p>
-<p>If there is no available Lot for the current row then Lot = Null.</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>WARNING: Any of the Store Orders created according to the description above is saved then and only when there is at least one line in it.</p>
@@ -291,7 +290,7 @@ StoreOrderLine.ForOrdering = false
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/LOG0210.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/generations/LOG0212.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

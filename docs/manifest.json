@@ -17529,7 +17529,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Inventory.TransferOrders.html",
-          "hash": "sfRzqhApUJSao5fy6nj6bQ=="
+          "hash": "y2X5BfhdPqhOcZjaEvLFIg=="
         }
       },
       "is_incremental": false,
@@ -20976,7 +20976,7 @@
       "output": {
         ".html": {
           "relative_path": "generations/LOG0210.html",
-          "hash": "1uNJsNzeHq5wNKhgWB1ocw=="
+          "hash": "La/vzxQiGvNVJGP5ia6ycw=="
         }
       },
       "is_incremental": false,
@@ -20988,7 +20988,19 @@
       "output": {
         ".html": {
           "relative_path": "generations/LOG0211.html",
-          "hash": "XnO+ulDzs5QDwBj/ZICRdA=="
+          "hash": "xokEx5rFGvDBtU2kU2CuEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "generations/LOG0212.md",
+      "output": {
+        ".html": {
+          "relative_path": "generations/LOG0212.html",
+          "hash": "Bmk9+e4c7u1VChqAJKL28g=="
         }
       },
       "is_incremental": false,
