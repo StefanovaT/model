@@ -12260,18 +12260,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "business-rules/R36711.md",
-      "output": {
-        ".html": {
-          "relative_path": "business-rules/R36711.html",
-          "hash": "pqhu04OBZ/FmP/cMa9yJoQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "business-rules/R36712.md",
       "output": {
         ".html": {
@@ -12289,6 +12277,18 @@
         ".html": {
           "relative_path": "business-rules/R36718.html",
           "hash": "PvrfwGWF2wSA3gfopxgWZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R36722.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36722.html",
+          "hash": "SygwXcXt+6yLWg1hIy1mPA=="
         }
       },
       "is_incremental": false,
@@ -18093,7 +18093,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.Wms.WarehousePolicies.html",
-          "hash": "AlWlwE5W7C/UrqvlzTkxow=="
+          "hash": "YqVoqDcLZkKoz94rc00QEg=="
         }
       },
       "is_incremental": false,
