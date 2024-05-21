@@ -25,6 +25,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 Aggregate Tree  
 * [Crm.Invoicing.InvoiceOrders](Crm.Invoicing.InvoiceOrders.md)  
   * [Crm.Invoicing.InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md)  
+  * [Crm.Invoicing.InvoiceOrderLinesUnfulfilledView](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md)  
   * [General.DocumentAmounts](General.DocumentAmounts.md)  
     * [General.DocumentAmountReferencedDocuments](General.DocumentAmountReferencedDocuments.md)  
   * [General.DocumentComments](General.DocumentComments.md)  

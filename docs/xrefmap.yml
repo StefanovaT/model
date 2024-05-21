@@ -382,6 +382,9 @@ references:
 - uid: Crm.Invoicing.InvoiceOrderLines
   name: Crm.Invoicing.InvoiceOrderLines Entity
   href: entities/Crm.Invoicing.InvoiceOrderLines.html
+- uid: Crm.Invoicing.InvoiceOrderLinesUnfulfilledView
+  name: Crm.Invoicing.InvoiceOrderLinesUnfulfilledView View
+  href: entities/Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html
 - uid: Crm.Invoicing.InvoiceOrders
   name: Crm.Invoicing.InvoiceOrders Entity
   href: entities/Crm.Invoicing.InvoiceOrders.html

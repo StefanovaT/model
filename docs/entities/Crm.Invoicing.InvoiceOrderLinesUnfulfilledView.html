@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Crm.Invoicing.InvoiceOrderLinesUnfulfilledView View | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView View | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView">
+<h1 id="crminvoicinginvoiceorderlinesunfulfilledview-view">Crm.Invoicing.InvoiceOrderLinesUnfulfilledView View</h1>
+
+<p><strong>Namespace:</strong> <a href="Crm.Invoicing.html">Crm.Invoicing</a></p>
+<p>Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, which are Released. Is_Fulfilled and Is_QuantityFulfilled can be used to filter out lines which appear fulfilled. For best performance, the invoice orders should be finished after fulfilling. Entity: Crm_Invoice_Order_Lines_Unfulfilled_View (Introduced in version 24.1.5.17)</p>
+<h2 id="default-visualization">Default Visualization</h2>
+<p>Default Display Text Format:<br>
+<em>{InvoiceOrderLineId}: {LineAmountValue}</em><br>
+Default Search Members:<br>
+__<br>
+Category:  <em>Views</em><br>
+Show in UI:  <em>CannotBeShown</em></p>
+<h2 id="aggregate">Aggregate</h2>
+<p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
+<p>Aggregate Parent:<br>
+<a href="Crm.Invoicing.InvoiceOrders.html">Crm.Invoicing.InvoiceOrders</a><br>
+Aggregate Root:<br>
+<a href="Crm.Invoicing.InvoiceOrders.html">Crm.Invoicing.InvoiceOrders</a></p>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#businessreason">BusinessReason</a></td>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#businessreason">InvoicingBusinessReason</a></td>
+<td>Business reason for invoicing of this product or service. S=Shipment, P=Payment. <code>Required</code> <code>Default(&quot;S&quot;)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Business_Reason</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#isfulfilled">IsFulfilled</a></td>
+<td>int32</td>
+<td>Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#isquantityfulfilled">IsQuantityFulfilled</a></td>
+<td>int32</td>
+<td>Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#lineamount">LineAmount</a></td>
+<td><a href="../data-types.html#amount">Amount (14, 2)</a></td>
+<td>Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Line_Amount</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#linecustomdiscountpercent">LineCustomDiscountPercent</a></td>
+<td>decimal (7, 6)</td>
+<td>User-defined discount for the line. <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Line_Custom_Discount_&lt;br /&gt;Percent</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#lineno">LineNo</a></td>
+<td>int32</td>
+<td>Line number. <code>Required</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#linestandarddiscountpercent">LineStandardDiscount<br>Percent</a></td>
+<td>decimal (7, 6)</td>
+<td>Standard discount for the line. This is automatically computed according to discount conditions. <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Line_Standard_&lt;br /&gt;Discount_Percent</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#orderremaininglineamount">OrderRemainingLineAmount</a></td>
+<td><a href="../data-types.html#amount">Amount (38, 2)</a></td>
+<td>The uninvoiced (unfulfilled) line amount of the invoice order line. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Filter(eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#orderremainingstandardquantity">OrderRemaining<br>StandardQuantity</a></td>
+<td><a href="../data-types.html#quantity">Quantity (38, 6)</a></td>
+<td>The uninvoiced (unfulfilled) quantity of the invoice order line in base measurement unit. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#productdescription">ProductDescription</a></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></td>
+<td>The description of Product. Initially copied from the name of the Product or from the generating document. <code>Required</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Product_Description</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#quantity">Quantity</a></td>
+<td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
+<td>The quantity of the product to invoice. <code>Unit: QuantityUnit</code> <code>Required</code> <code>Default(1)</code> <code>Filter(ge;le)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Quantity</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#quantitybase">QuantityBase</a></td>
+<td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
+<td>The equivalent of Quantity in the base measurement unit of the Product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Quantity_Base</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#standardquantitybase">StandardQuantityBase</a></td>
+<td><a href="../data-types.html#quantity">Quantity (12, 3)</a></td>
+<td>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>ReadOnly</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Standard_Quantity_Base</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#unitprice">UnitPrice</a></td>
+<td><a href="../data-types.html#amount">Amount (14, 5)</a></td>
+<td>Unit selling price in the unit of measure, specified in Quantity Unit. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Unit_Price</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#invoiceorder">InvoiceOrder</a></td>
+<td><a href="Crm.Invoicing.InvoiceOrders.html">InvoiceOrders</a></td>
+<td>The invoice order to which the invoice order line belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Invoice_Order_Id</code> <code>Introduced in version 24.1.5.19</code> <code>Owner</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#invoiceorderline">InvoiceOrderLine</a></td>
+<td><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a></td>
+<td>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#linedealtype">LineDealType</a></td>
+<td><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</td>
+<td>Deal type to be passed to the invoice line. If deal type in the line is different from deal type in the header another VAT entry is created from the invoice. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Line_Deal_Type_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#linediscount">LineDiscount</a></td>
+<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td>The line discount type used to form the Line_Standard_<br>Discount_Percent. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Line_Discount_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#paymenttransaction">PaymentTransaction</a></td>
+<td><a href="Finance.Payments.PaymentTransactions.html">PaymentTransactions</a> (nullable)</td>
+<td>The payment transaction, which is to be invoiced by this line, when Business Reason = P. Used to reconcile the invoice with the payments in the case of advance payment. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Payment_Transaction_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#product">Product</a></td>
+<td><a href="General.Products.Products.html">Products</a> (nullable)</td>
+<td>The product, which is ordered for invoicing. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Product_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#quantityunit">QuantityUnit</a></td>
+<td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
+<td>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Quantity_Unit_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#salesorder">SalesOrder</a></td>
+<td><a href="Crm.Sales.SalesOrders.html">SalesOrders</a> (nullable)</td>
+<td>When not null specifies the Sales Order that is ordered to be invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Sales_Order_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#salesorderline">SalesOrderLine</a></td>
+<td><a href="Crm.Sales.SalesOrderLines.html">SalesOrderLines</a> (nullable)</td>
+<td>When not null specifies the Sales Order line that is ordered to be invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Sales_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#serialnumber">SerialNumber</a></td>
+<td><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</td>
+<td>Which serial number to receive/issue. null means that serial number is unknown or not applicable. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Serial_Number_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#transactionline">TransactionLine</a></td>
+<td><a href="Logistics.Inventory.StoreTransactionLines.html">StoreTransactionLines</a> (nullable)</td>
+<td>The store transaction line that is to be invoiced by this line, for Business Reason = S. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Transaction_Line_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-details">Attribute Details</h2>
+<h3 id="businessreason">BusinessReason</h3>
+<p>Business reason for invoicing of this product or service. S=Shipment, P=Payment. <code>Required</code> <code>Default(&quot;S&quot;)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Business_Reason</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#businessreason">InvoicingBusinessReason</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Generic enum type for InvoicingBusinessReason properties<br>
+<em>Allowed Values (Crm.Invoicing.InvoicingBusinessReason Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Payment</td>
+<td>Payment value. Stored as 'P'. <br> <em>Database Value:</em> 'P' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Payment'</td>
+</tr>
+<tr>
+<td>Shipment</td>
+<td>Shipment value. Stored as 'S'. <br> <em>Database Value:</em> 'S' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Shipment'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Business_Reason</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Shipment</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="isfulfilled">IsFulfilled</h3>
+<p>Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="isquantityfulfilled">IsQuantityFulfilled</h3>
+<p>Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="lineamount">LineAmount</h3>
+<p>Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Line_Amount</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 2)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Line_Amount</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="linecustomdiscountpercent">LineCustomDiscountPercent</h3>
+<p>User-defined discount for the line. <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Line_Custom_Discount_Percent</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Line_Custom_Discount_Percent</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="lineno">LineNo</h3>
+<p>Line number. <code>Required</code></p>
+<p><em>Type</em>: <strong>int32</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="linestandarddiscountpercent">LineStandardDiscountPercent</h3>
+<p>Standard discount for the line. This is automatically computed according to discount conditions. <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Line_Standard_Discount_Percent</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong>decimal (7, 6)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Line_Standard_Discount_Percent</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>0</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="orderremaininglineamount">OrderRemainingLineAmount</h3>
+<p>The uninvoiced (unfulfilled) line amount of the invoice order line. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Filter(eq;ge;le)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (38, 2)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="orderremainingstandardquantity">OrderRemainingStandardQuantity</h3>
+<p>The uninvoiced (unfulfilled) quantity of the invoice order line in base measurement unit. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Filter(eq;ge;le)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (38, 6)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="productdescription">ProductDescription</h3>
+<p>The description of Product. Initially copied from the name of the Product or from the generating document. <code>Required</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Product_Description</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Product_Description</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="quantity">Quantity</h3>
+<p>The quantity of the product to invoice. <code>Unit: QuantityUnit</code> <code>Required</code> <code>Default(1)</code> <code>Filter(ge;le)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Quantity</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Quantity</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="quantitybase">QuantityBase</h3>
+<p>The equivalent of Quantity in the base measurement unit of the Product. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Quantity_Base</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Quantity_Base</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="standardquantitybase">StandardQuantityBase</h3>
+<p>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>ReadOnly</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Standard_Quantity_Base</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (12, 3)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Standard_Quantity_Base</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="unitprice">UnitPrice</h3>
+<p>Unit selling price in the unit of measure, specified in Quantity Unit. <code>Currency: InvoiceOrder.DocumentCurrency</code> <code>Required</code> <code>Default(0)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Unit_Price</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount (14, 5)</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Unit_Price</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Constant</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h2 id="reference-details">Reference Details</h2>
+<h3 id="invoiceorder">InvoiceOrder</h3>
+<p>The invoice order to which the invoice order line belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Id</code> <code>Introduced in version 24.1.5.19</code> <code>Owner</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrders.html">InvoiceOrders</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Invoice_Order_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="invoiceorderline">InvoiceOrderLine</h3>
+<p>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="linedealtype">LineDealType</h3>
+<p>Deal type to be passed to the invoice line. If deal type in the line is different from deal type in the header another VAT entry is created from the invoice. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Line_Deal_Type_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Finance.Vat.DealTypes.html">DealTypes</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Line_Deal_Type_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="linediscount">LineDiscount</h3>
+<p>The line discount type used to form the Line_Standard_Discount_Percent. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Line_Discount_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Line_Discount_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="paymenttransaction">PaymentTransaction</h3>
+<p>The payment transaction, which is to be invoiced by this line, when Business Reason = P. Used to reconcile the invoice with the payments in the case of advance payment. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Payment_Transaction_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Finance.Payments.PaymentTransactions.html">PaymentTransactions</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Payment_Transaction_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="product">Product</h3>
+<p>The product, which is ordered for invoicing. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Product_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Product_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="quantityunit">QuantityUnit</h3>
+<p>The measurement unit of Quantity. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Quantity_Unit_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Quantity_Unit_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="salesorder">SalesOrder</h3>
+<p>When not null specifies the Sales Order that is ordered to be invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Sales_Order_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrders.html">SalesOrders</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Sales_Order_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="salesorderline">SalesOrderLine</h3>
+<p>When not null specifies the Sales Order line that is ordered to be invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Sales_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Sales.SalesOrderLines.html">SalesOrderLines</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Sales_Order_Line_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="serialnumber">SerialNumber</h3>
+<p>Which serial number to receive/issue. null means that serial number is unknown or not applicable. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Serial_Number_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Serial_Number_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="transactionline">TransactionLine</h3>
+<p>The store transaction line that is to be invoiced by this line, for Business Reason = S. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Transaction_Line_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.StoreTransactionLines.html">StoreTransactionLines</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Transaction_Line_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h2 id="api">API</h2>
+<p>Domain API Query:
+<a href="https://demodb.my.erp.net/api/domain/odata/Crm_Invoicing_InvoiceOrderLinesUnfulfilledView?$top=10">https://demodb.my.erp.net/api/domain/odata/Crm_Invoicing_InvoiceOrderLinesUnfulfilledView?$top=10</a></p>
+<p>Domain API Query Builder:
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Crm_Invoicing_InvoiceOrderLinesUnfulfilledView?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Crm_Invoicing_InvoiceOrderLinesUnfulfilledView?$top=10</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

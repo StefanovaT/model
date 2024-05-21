@@ -1,6 +1,12 @@
 # View Crm_Invoice_Order_Lines_Unfulfilled_View
 
 
+## Entity
+
+Entity: [Crm.Invoicing.InvoiceOrderLinesUnfulfilledView](~/entities/Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md)
+
+Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, which are Released. Is_Fulfilled and Is_QuantityFulfilled can be used to filter out lines which appear fulfilled. For best performance, the invoice orders should be finished after fulfilling. Entity: Crm_Invoice_Order_Lines_Unfulfilled_View (Introduced in version 24.1.5.17)
+
 ## Owner Tables Hierarchy
 
 * [Crm_Invoice_Orders](Crm_Invoice_Orders.md)

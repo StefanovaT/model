@@ -245,6 +245,8 @@
       href: Crm.Invoicing.InvoiceLines.md
     - name: InvoiceOrderLines
       href: Crm.Invoicing.InvoiceOrderLines.md
+    - name: InvoiceOrderLinesUnfulfilledView
+      href: Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md
     - name: InvoiceOrders
       href: Crm.Invoicing.InvoiceOrders.md
     - name: Invoices
