@@ -22,6 +22,7 @@ The detail lines of rental contracts. Each line contains rental conditions for o
 |[Lease_Line_Id](#lease_line_id)|`uniqueidentifier` `PK`||
 |[Line_No](#line_no)|`int` |Consecutive number of the line within the lease contract.|
 |[Line_Notes](#line_notes)|`nvarchar(max)` |Notes for this line.|
+|[Number_Of_Periods](#number_of_periods)|`int` |Number of periods calculated based on the Start Date and End Date of the lease, and the Time Period Type defined for the asset.|
 |[Rental_Asset_Id](#rental_asset_id)|`uniqueidentifier` |The asset which is rented with the current contract.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Start_Date](#start_date)|`date` |Starting date of lease for this asset|
@@ -42,7 +43,7 @@ Ending date of lease of this asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -76,7 +77,7 @@ Ending date of lease of this asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -103,7 +104,7 @@ Ending date of lease of this asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -137,7 +138,7 @@ Ending date of lease of this asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -174,7 +175,7 @@ Consecutive number of the line within the lease contract.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -212,7 +213,7 @@ Notes for this line.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -228,6 +229,43 @@ Notes for this line.
 |User Login|no|
 |Visible|yes|
 
+### Number_Of_Periods
+
+
+Number of periods calculated based on the Start Date and End Date of the lease, and the Time Period Type defined for the asset.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Number_Of_Periods - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
+
 ### Rental_Asset_Id
 
 
@@ -242,7 +280,7 @@ The asset which is rented with the current contract.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -276,7 +314,7 @@ The asset which is rented with the current contract.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -306,7 +344,7 @@ Starting date of lease for this asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

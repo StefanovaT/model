@@ -162,6 +162,8 @@ _Allowed Values (Applications.Rental.AssetsRepository.TimePeriodType Enum Member
 | ---- | --- |
 | OvernightStays | OvernightStays value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OvernightStays' |
 | Months | Months value. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Months' |
+| FullDays | Total count of complete days.. Stored as 'F'. <br /> _Database Value:_ 'F' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'FullDays' |
+| v_24HourPeriods | Started 24-hour periods.. Stored as 'H'. <br /> _Database Value:_ 'H' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'v_24HourPeriods' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

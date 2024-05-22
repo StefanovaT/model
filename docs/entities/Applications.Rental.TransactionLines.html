@@ -122,6 +122,11 @@ Aggregate Root:<br>
 <td>Notes.</td>
 </tr>
 <tr>
+<td><a href="Applications.Rental.TransactionLines.html#numberofperiods">NumberOfPeriods</a></td>
+<td>int32 <strong>nullable</strong></td>
+<td>Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset. <code>Filter(eq;ge;le)</code> <code>Introduced in version 24.1.5.21</code></td>
+</tr>
+<tr>
 <td><a href="Applications.Rental.TransactionLines.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
@@ -192,6 +197,13 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="numberofperiods">NumberOfPeriods</h3>
+<p>Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset. <code>Filter(eq;ge;le)</code> <code>Introduced in version 24.1.5.21</code></p>
+<p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
