@@ -12296,6 +12296,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36747.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36747.html",
+          "hash": "To5dsbfu0G6C+iUnD6Tz8w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -20445,7 +20457,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Systems.Security.Users.html",
-          "hash": "W+txXGvMPHarPu1qPJeaRA=="
+          "hash": "jEuUqFedFqu7N9PJzYkONA=="
         }
       },
       "is_incremental": false,
