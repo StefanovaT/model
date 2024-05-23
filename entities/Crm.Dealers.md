@@ -30,6 +30,7 @@ Aggregate Tree
 | [DisplayText](Crm.Dealers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FromDate](Crm.Dealers.md#fromdate) | datetime __nullable__ | Start of the dealer relationship. `Default(Today)` `Filter(ge;le)` 
 | [Id](Crm.Dealers.md#id) | guid |  
+| [IsActive](Crm.Dealers.md#isactive) | boolean | Indicates whether the current Dealer is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.5.22` 
 | [Notes](Crm.Dealers.md#notes) | string (254) __nullable__ | Notes for this Dealer. 
 | [ObjectVersion](Crm.Dealers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ThruDate](Crm.Dealers.md#thrudate) | datetime __nullable__ | Termination date of the dealership. null for active dealers. `Filter(ge;le)` 
@@ -73,6 +74,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the current Dealer is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.5.22`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 

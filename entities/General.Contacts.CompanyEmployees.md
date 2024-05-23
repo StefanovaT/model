@@ -36,6 +36,7 @@ Aggregate Root:
 | [ContractStartDate](General.Contacts.CompanyEmployees.md#contractstartdate) | datetime __nullable__ | Start date of the employee contract. Null if it is unkown. `Filter(ge;le)` 
 | [DisplayText](General.Contacts.CompanyEmployees.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.Contacts.CompanyEmployees.md#id) | guid |  
+| [IsActive](General.Contacts.CompanyEmployees.md#isactive) | boolean | Indicates whether the current Employee is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.5.22` 
 | [Notes](General.Contacts.CompanyEmployees.md#notes) | string (254) __nullable__ | Notes for this CompanyEmployee. 
 | [ObjectVersion](General.Contacts.CompanyEmployees.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
@@ -102,6 +103,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the current Employee is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.5.22`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Notes
 

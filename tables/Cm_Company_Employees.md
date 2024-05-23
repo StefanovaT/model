@@ -22,6 +22,7 @@ Contains the company employee contracts. Entity: Cm_Company_Employees
 |[Contract_Code](#contract_code)|`nvarchar(16)` |Contract number or code, unique within the company. One employee can have more than one contract|
 |[Contract_End_Date](#contract_end_date)|`datetime` |End date of the employee contract, null if the contract is still valid.|
 |[Contract_Start_Date](#contract_start_date)|`datetime` |Start date of the employee contract. Null if it is unkown.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Employee is active.|
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Person_Id](#person_id)|`uniqueidentifier` |The personal data of the employee.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -42,7 +43,7 @@ The department in which this employee is working. NULL means this information is
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -76,7 +77,7 @@ The department in which this employee is working. NULL means this information is
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -112,7 +113,7 @@ The company for which this employee works.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -149,7 +150,7 @@ Contract number or code, unique within the company. One employee can have more t
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|16|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -186,7 +187,7 @@ End date of the employee contract, null if the contract is still valid.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -222,7 +223,7 @@ Start date of the employee contract. Null if it is unkown.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -244,6 +245,42 @@ Start date of the employee contract. Null if it is unkown.
 | - | - | - | - |
 |GreaterThanOrLessThan|None|yes|no|
 
+### Is_Active
+
+
+Indicates whether the current Employee is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Notes
 
 | Property | Value |
@@ -256,7 +293,7 @@ Start date of the employee contract. Null if it is unkown.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -286,7 +323,7 @@ The personal data of the employee.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -320,7 +357,7 @@ The personal data of the employee.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
