@@ -109,24 +109,22 @@
 <td>NO</td>
 </tr>
 <tr>
-<td><strong>Applicable Legislations</strong></td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">ALL // no condition
-needed</a></td>
-</tr>
-<tr>
 <td><strong>Action</strong></td>
-<td>If (Active == true &amp;&amp; ProductGroup != Null &amp;&amp; ProductGroup.RequiredProperties !=
-Null)
+<td>If (Active == true &amp;&amp; ProductGroup != Null &amp;&amp; (ProductGroup.RequiredProperties !=
+Null || ProductGroup.ParentGroups.RequiredProperties != Null))
 <br><br>
 , validate that:
 <br><br>
 ProductGroup.RequiredProperties.All(RequiredProperty.Required==false ||
+Product.CustomProperties[RequiredProperty.Property.Code]!= null )
+&amp;&amp;
+ProductGroup.ParentGroups.RequiredProperties.All(RequiredProperty.Required==false || |
 Product.CustomProperties[RequiredProperty.Property.Code]!= null )</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>The current rule validates that when activating a Product - all of the Required
-Properties of its Product Group for which the field Required is check-marked
+Properties of the Product Group and its Parent Groups for which the field Required is check-marked  |
 are inherited correctly by the Product. The Required Properties are inherited
 correctly when they are all set as Custom Properties for the Product and have values.</td>
 </tr>
@@ -139,7 +137,8 @@ There are no values for all required custom properties -
 </tr>
 <tr>
 <td><strong>Version</strong></td>
-<td>Introduced: 2015</td>
+<td>Introduced: 2015
+Updated: v.XX - additional validation for required properties in the parent product groups.|</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
