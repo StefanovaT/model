@@ -116,15 +116,15 @@ Null || ProductGroup.ParentGroups.RequiredProperties != Null))
 , validate that:
 <br><br>
 ProductGroup.RequiredProperties.All(RequiredProperty.Required==false ||
-Product.CustomProperties[RequiredProperty.Property.Code]!= null )
-&amp;&amp;
-ProductGroup.ParentGroups.RequiredProperties.All(RequiredProperty.Required==false || |
+Product.CustomProperties[RequiredProperty.Property.Code]!= null ) <br>
+&amp;&amp; <br>
+ProductGroup.ParentGroups.RequiredProperties.All(RequiredProperty.Required==false ||
 Product.CustomProperties[RequiredProperty.Property.Code]!= null )</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>The current rule validates that when activating a Product - all of the Required
-Properties of the Product Group and its Parent Groups for which the field Required is check-marked  |
+Properties of the Product Group and its Parent Groups for which the field Required is check-marked
 are inherited correctly by the Product. The Required Properties are inherited
 correctly when they are all set as Custom Properties for the Product and have values.</td>
 </tr>
