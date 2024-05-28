@@ -185,6 +185,12 @@ Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E
 |User Login|no|
 |Visible|yes|
 
+#### Group_Type - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Notes
 
 | Property | Value |

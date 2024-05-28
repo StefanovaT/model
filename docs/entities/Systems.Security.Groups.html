@@ -123,7 +123,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Security.Groups.html#grouptype">GroupType</a></td>
 <td><a href="Systems.Security.Groups.html#grouptype">GroupType</a></td>
-<td>Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. <code>Required</code> <code>Default(&quot;G&quot;)</code> <code>ReadOnly</code></td>
+<td>Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. <code>Required</code> <code>Default(&quot;G&quot;)</code> <code>Filter(eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Security.Groups.html#id">Id</a></td>
@@ -197,7 +197,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="grouptype">GroupType</h3>
-<p>Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. <code>Required</code> <code>Default(&quot;G&quot;)</code> <code>ReadOnly</code></p>
+<p>Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. <code>Required</code> <code>Default(&quot;G&quot;)</code> <code>Filter(eq)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Groups.html#grouptype">GroupType</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>GroupType</code>(Systems.Security.Groups.md#grouptype) data attribute<br>
@@ -228,7 +228,7 @@ Allowed values for the <code>GroupType</code>(Systems.Security.Groups.md#groupty
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>NormalUserDefinableGroup</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

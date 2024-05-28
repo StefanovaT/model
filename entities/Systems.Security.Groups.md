@@ -30,7 +30,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [DisplayText](Systems.Security.Groups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EditPeriodDays](Systems.Security.Groups.md#editperioddays) | int32 __nullable__ | The number of days before which the documents can not be corrected, released or voided. 
-| [GroupType](Systems.Security.Groups.md#grouptype) | [GroupType](Systems.Security.Groups.md#grouptype) | Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. `Required` `Default("G")` `ReadOnly` 
+| [GroupType](Systems.Security.Groups.md#grouptype) | [GroupType](Systems.Security.Groups.md#grouptype) | Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. `Required` `Default("G")` `Filter(eq)` `ReadOnly` 
 | [Id](Systems.Security.Groups.md#id) | guid |  
 | [Name](Systems.Security.Groups.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this Group. `Required` `Filter(like)` `ORD` 
 | [Notes](Systems.Security.Groups.md#notes) | string (254) __nullable__ | Notes for this Group. 
@@ -73,7 +73,7 @@ _Show in UI_: **ShownByDefault**
 
 ### GroupType
 
-Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. `Required` `Default("G")` `ReadOnly`
+Group type. G=Normal user-definable group; U=System group for 1 user; A=Admin; E=Everybody. `Required` `Default("G")` `Filter(eq)` `ReadOnly`
 
 _Type_: **[GroupType](Systems.Security.Groups.md#grouptype)**  
 _Category_: **System**  
@@ -87,7 +87,7 @@ _Allowed Values (Systems.Security.GroupsRepository.GroupType Enum Members)_
 | Administrators | Administrators value. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Administrators' |
 | Everybody | Everybody value. Stored as 'E'. <br /> _Database Value:_ 'E' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Everybody' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **NormalUserDefinableGroup**  
 _Show in UI_: **ShownByDefault**  
