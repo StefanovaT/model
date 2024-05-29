@@ -176,6 +176,7 @@ _Allowed Values (Logistics.Inventory.StoreTransactionsRepository.CostSource Enum
 | ---- | --- |
 | Store | Store value. Stored as 'S'. <br /> _Database Value:_ 'S' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Store' |
 | Document | Document value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Document' |
+| Adjustment | Adjustment value. Used when updating the product's Base Cost to its Adjusted Cost.. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Adjustment' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  

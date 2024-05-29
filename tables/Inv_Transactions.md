@@ -15,7 +15,7 @@ Executed store-receipts(in) and store-issues(out). Store-issues are recorded wit
 
 | Name | Type | Description |
 | - | - | --- |
-|[Cost_Source](#cost_source)|`nvarchar(1)` Allowed: `S`, `D`, Readonly|Determines whether the cost in the transaction is taken from the store current availability (usually this is the case for issue transactions) or the cost must be specified in the transaction itself (usually for receipt transactions). S = Store, D = Document|
+|[Cost_Source](#cost_source)|`nvarchar(1)` Allowed: `S`, `D`, `A`, Readonly|Determines whether the cost in the transaction is taken from the store current availability (usually this is the case for issue transactions) or the cost must be specified in the transaction itself (usually for receipt transactions). S = Store, D = Document|
 |[Document_Currency_Id](#document_currency_id)|`uniqueidentifier` |The currency in which the document amounts are recorded.|
 |[Document_Id](#document_id)|`uniqueidentifier` |The main document data of the transaction|
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
@@ -40,7 +40,7 @@ Determines whether the cost in the transaction is taken from the store current a
 
 | Property | Value |
 | - | - |
-|Allowed Values|`S`, `D`|
+|Allowed Values|`S`, `D`, `A`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
