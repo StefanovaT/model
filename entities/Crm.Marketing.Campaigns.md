@@ -37,6 +37,12 @@ Aggregate Tree
 | [ObjectVersion](Crm.Marketing.Campaigns.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartDate](Crm.Marketing.Campaigns.md#startdate) | datetime | Starting date of the campaign. `Required` `Default(Today)` `Filter(ge;le)` 
 
+## References
+
+| Name | Type | Description |
+| ---- | ---- | --- |
+| [AccessKey](Crm.Marketing.Campaigns.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this Campaign. Null means that all users have unlimited permissions. `Filter(multi eq)` `Introduced in version 24.1.5.30` |
+
 
 ## Attribute Details
 
@@ -134,6 +140,18 @@ _Supported Filters_: **GreaterThanOrLessThan**
 _Supports Order By_: **False**  
 _Default Value_: **CurrentDate**  
 _Show in UI_: **ShownByDefault**  
+
+
+## Reference Details
+
+### AccessKey
+
+The access key, containing the user permissions for this Campaign. Null means that all users have unlimited permissions. `Filter(multi eq)` `Introduced in version 24.1.5.30`
+
+_Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
 
 
 ## API Methods

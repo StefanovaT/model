@@ -42,7 +42,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Person](Logistics.Wms.WarehouseWorkers.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | The definition of the person, when the worker is human worker. null means that the person is unknown or the worker is non-person. `Filter(multi eq)` |
+| [Person](Logistics.Wms.WarehouseWorkers.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | The definition of the person, when the worker is human worker. null means that the person is unknown or the worker is non-person. `Filter(multi eq)` `ReadOnly` |
 | [User](Logistics.Wms.WarehouseWorkers.md#user) | [Users](Systems.Security.Users.md) (nullable) | The user who is going to work in the selected warehouse. `Filter(multi eq)` `Introduced in version 24.1.5.0` |
 | [Warehouse](Logistics.Wms.WarehouseWorkers.md#warehouse) | [Warehouses](Logistics.Wms.Warehouses.md) | The warehouse, where the worker works. `Required` `Filter(multi eq)` `Owner` |
 
@@ -136,7 +136,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Person
 
-The definition of the person, when the worker is human worker. null means that the person is unknown or the worker is non-person. `Filter(multi eq)`
+The definition of the person, when the worker is human worker. null means that the person is unknown or the worker is non-person. `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
