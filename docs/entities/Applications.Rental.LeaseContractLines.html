@@ -151,6 +151,11 @@ Aggregate Root:<br>
 <td>date</td>
 <td>Starting date of lease for this asset. <code>Required</code> <code>Filter(multi eq;ge;le)</code></td>
 </tr>
+<tr>
+<td><a href="Applications.Rental.LeaseContractLines.html#timeperiodtype">TimePeriodType</a></td>
+<td><a href="Applications.Rental.LeaseContractLines.html#timeperiodtype">TimePeriodType</a> <strong>nullable</strong></td>
+<td>Specifies the unit by which the periods of renting of this asset are measured. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.31</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="references">References</h2>
@@ -269,6 +274,41 @@ Aggregate Root:<br>
 <code>obj.LeaseContract.StartDate</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.LeaseContract.StartDate</code></p>
+<h3 id="timeperiodtype">TimePeriodType</h3>
+<p>Specifies the unit by which the periods of renting of this asset are measured. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.31</code></p>
+<p><em>Type</em>: <strong><a href="Applications.Rental.LeaseContractLines.html#timeperiodtype">TimePeriodType</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>TimePeriodType</code>(Applications.Rental.LeaseContractLines.md#timeperiodtype) data attribute<br>
+<em>Allowed Values (Applications.Rental.LeaseContractLinesRepository.TimePeriodType Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OvernightStays</td>
+<td>OvernightStays value. Stored as 'D'. <br> <em>Database Value:</em> 'D' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'OvernightStays'</td>
+</tr>
+<tr>
+<td>Months</td>
+<td>Months value. Stored as 'M'. <br> <em>Database Value:</em> 'M' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Months'</td>
+</tr>
+<tr>
+<td>FullDays</td>
+<td>Total count of complete days. Stored as 'F'. <br> <em>Database Value:</em> 'F' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'FullDays'</td>
+</tr>
+<tr>
+<td>v_24HourPeriods</td>
+<td>Started 24-Hour periods.. Stored as 'H'. <br> <em>Database Value:</em> 'H' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'v_24HourPeriods'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="leasecontract">LeaseContract</h3>
 <p>The <see cref="LeaseContract"></see> to which this LeaseContractLine belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>

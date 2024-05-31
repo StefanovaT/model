@@ -26,6 +26,7 @@ The detail lines of rental contracts. Each line contains rental conditions for o
 |[Rental_Asset_Id](#rental_asset_id)|`uniqueidentifier` |The asset which is rented with the current contract.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Start_Date](#start_date)|`date` |Starting date of lease for this asset|
+|[Time_Period_Type](#time_period_type)|`nvarchar(1)` Allowed: `D`, `M`, `F`, `H`|Specifies the unit by which the periods of renting of this asset are measured.|
 
 ## Columns
 
@@ -366,5 +367,42 @@ Starting date of lease for this asset
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 |GreaterThanOrLessThan|None|no|no|
+
+### Time_Period_Type
+
+
+Specifies the unit by which the periods of renting of this asset are measured.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`D`, `M`, `F`, `H`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|10|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|nvarchar(1) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Time_Period_Type - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 

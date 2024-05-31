@@ -775,6 +775,8 @@
 - name: Llm
   href: Llm.md
   items:
+  - name: Llm_Assistant_Conversations
+    href: Llm_Assistant_Conversations.md
   - name: Llm_Compilation_Assets
     href: Llm_Compilation_Assets.md
   - name: Llm_Compilations

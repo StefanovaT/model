@@ -1624,6 +1624,9 @@ references:
 - uid: Projects.AI
   name: Projects.AI Namespace
   href: entities/Projects.AI.html
+- uid: Projects.AI.AssistantConversations
+  name: Projects.AI.AssistantConversations Entity
+  href: entities/Projects.AI.AssistantConversations.html
 - uid: Projects.AI.CompilationAssets
   name: Projects.AI.CompilationAssets Entity
   href: entities/Projects.AI.CompilationAssets.html

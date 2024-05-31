@@ -29,6 +29,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AutoUpdateToLatestBuild](Projects.AI.Models.md#autoupdatetolatestbuild) | boolean | Indicates whether to automatically update Conversation Build to the latest successful build. `Required` `Default(true)` 
+| [BuildAssistant](Projects.AI.Models.md#buildassistant) | boolean | Specifies whether the model should produce an AI assistant. `Required` `Default(true)` `Introduced in version 24.1.5.31` 
 | [DisplayText](Projects.AI.Models.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.Models.md#id) | guid |  
 | [IsDefault](Projects.AI.Models.md#isdefault) | boolean | Specifies whether this is the default model which will handle AI prompts. `Required` `Default(false)` `Filter(eq)` `Introduced in version 24.1.3.23` 
@@ -58,6 +59,17 @@ Aggregate Tree
 ### AutoUpdateToLatestBuild
 
 Indicates whether to automatically update Conversation Build to the latest successful build. `Required` `Default(true)`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
+
+### BuildAssistant
+
+Specifies whether the model should produce an AI assistant. `Required` `Default(true)` `Introduced in version 24.1.5.31`
 
 _Type_: **boolean**  
 _Category_: **System**  

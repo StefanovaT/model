@@ -38,6 +38,7 @@ Aggregate Root:
 | [NumberOfPeriods](Applications.Rental.LeaseContractLines.md#numberofperiods) | int32 __nullable__ | Number of periods calculated based on the Start Date and End Date of the lease, and the Time Period Type defined for the asset. `Filter(eq;ge;le)` `Introduced in version 24.1.5.21` 
 | [ObjectVersion](Applications.Rental.LeaseContractLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartDate](Applications.Rental.LeaseContractLines.md#startdate) | date | Starting date of lease for this asset. `Required` `Filter(multi eq;ge;le)` 
+| [TimePeriodType](Applications.Rental.LeaseContractLines.md#timeperiodtype) | [TimePeriodType](Applications.Rental.LeaseContractLines.md#timeperiodtype) __nullable__ | Specifies the unit by which the periods of renting of this asset are measured. `Filter(multi eq)` `Introduced in version 24.1.5.31` 
 
 ## References
 
@@ -160,6 +161,26 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.LeaseContract.StartDate`
+### TimePeriodType
+
+Specifies the unit by which the periods of renting of this asset are measured. `Filter(multi eq)` `Introduced in version 24.1.5.31`
+
+_Type_: **[TimePeriodType](Applications.Rental.LeaseContractLines.md#timeperiodtype) __nullable__**  
+_Category_: **System**  
+Allowed values for the `TimePeriodType`(Applications.Rental.LeaseContractLines.md#timeperiodtype) data attribute  
+_Allowed Values (Applications.Rental.LeaseContractLinesRepository.TimePeriodType Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| OvernightStays | OvernightStays value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OvernightStays' |
+| Months | Months value. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Months' |
+| FullDays | Total count of complete days. Stored as 'F'. <br /> _Database Value:_ 'F' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'FullDays' |
+| v_24HourPeriods | Started 24-Hour periods.. Stored as 'H'. <br /> _Database Value:_ 'H' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'v_24HourPeriods' |
+
+_Supported Filters_: **Equals, EqualsIn**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
 
 ## Reference Details
 

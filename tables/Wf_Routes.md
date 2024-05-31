@@ -281,6 +281,12 @@ The system states for which to execute the specified route.
 |User Login|no|
 |Visible|yes|
 
+#### Condition_States_Bit_Mask - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
+
 ### Condition_User_Status_Id
 
 
@@ -750,6 +756,12 @@ Event which triggers the route. Usually the event is change of state. Every docu
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Process_Event - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Read_Only
 

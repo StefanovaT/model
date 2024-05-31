@@ -34,7 +34,7 @@ Aggregate Root:
 | [AllowedGenerationTypes](Systems.Workflow.Routes.md#allowedgenerationtypes) | [AllowedGenerationTypes](Systems.Workflow.Routes.md#allowedgenerationtypes) | Determines the possible types of the generation of the destination document: A=Auto, M=Manual, B=Both (Auto and Manual). `Required` `Default("B")` `Filter(multi eq)` 
 | [AllowObsoleteGeneration](Systems.Workflow.Routes.md#allowobsoletegeneration) | boolean | Allows the usage of unsupported generation procedures (marked as obsolete). This is a user override of the system prohibition of the usage of obsolete procedures. `Required` `Default(false)` 
 | [ConditionFilterXML](Systems.Workflow.Routes.md#conditionfilterxml) | dataaccessfilter __nullable__ | Contains filter condition, which the document must match in order to execute the route. 
-| [ConditionStatesBitMask](Systems.Workflow.Routes.md#conditionstatesbitmask) | [DocumentStateFlags](Systems.Workflow.Routes.md#conditionstatesbitmask) | The system states for which to execute the specified route. `Required` `Default(0)` 
+| [ConditionStatesBitMask](Systems.Workflow.Routes.md#conditionstatesbitmask) | [DocumentStateFlags](Systems.Workflow.Routes.md#conditionstatesbitmask) | The system states for which to execute the specified route. `Required` `Default(0)` `Filter(like)` 
 | [ConnectedPartyCondition](Systems.Workflow.Routes.md#connectedpartycondition) | [ConnectedPartyCondition](Systems.Workflow.Routes.md#connectedpartycondition) | A - any party; C - connected party: to_party is enterprise company; U - unconnected party - not enterprise company;. `Required` `Default("A")` 
 | [DeactivationDate](Systems.Workflow.Routes.md#deactivationdate) | date __nullable__ | The date until (including) the route is active. The date is matched against the document date of the generating document. Null means the route does not have a deactivation date. `Filter(ge;le)` 
 | [DestinationState](Systems.Workflow.Routes.md#destinationstate) | [DocumentState](Systems.Workflow.Routes.md#destinationstate) | 0=New;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` 
@@ -45,7 +45,7 @@ Aggregate Root:
 | [ObjectVersion](Systems.Workflow.Routes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Systems.Workflow.Routes.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Systems.Workflow.Routes.md#parentdocumentrelationshiptype) | Determines the default relationship type between the generated document and the parent document. `Required` `Default("S")` 
 | [ProcedureName](Systems.Workflow.Routes.md#procedurename) | string (254) | The system name of the generation procedure, which must be executed by the route. `Required` 
-| [ProcessEvent](Systems.Workflow.Routes.md#processevent) | string (254) | Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required` 
+| [ProcessEvent](Systems.Workflow.Routes.md#processevent) | string (254) | Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required` `Filter(eq)` 
 | [ReadOnly](Systems.Workflow.Routes.md#readonly) | boolean | Indicates wheather the destination document shoul be read only. true - the destination document is read only. `Required` `Default(false)` 
 | [<s>SchemaXML</s>](Systems.Workflow.Routes.md#schemaxml) | string (max) __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Obsoleted in version 22.1.6.61` 
 
@@ -139,7 +139,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ConditionStatesBitMask
 
-The system states for which to execute the specified route. `Required` `Default(0)`
+The system states for which to execute the specified route. `Required` `Default(0)` `Filter(like)`
 
 _Type_: **[DocumentStateFlags](Systems.Workflow.Routes.md#conditionstatesbitmask)**  
 _Category_: **System**  
@@ -156,7 +156,7 @@ _Allowed Values (General.DocumentStateFlags Enum Members)_
 | Adjustment | Document which adjusts other released documents. (Stored as 32). <br /> _Database Value:_ 32 <br /> _Model Value:_ 32 <br /> _Domain API Value:_ 'Adjustment' |
 | Closed | The document is audited and closed. Adjustments are not allowed, but reopening is allowed. (Stored as 64). <br /> _Database Value:_ 64 <br /> _Model Value:_ 64 <br /> _Domain API Value:_ 'Closed' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Default Value_: **0**  
 _Show in UI_: **ShownByDefault**  
@@ -297,11 +297,11 @@ _Show in UI_: **ShownByDefault**
 
 ### ProcessEvent
 
-Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required`
+Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. `Required` `Filter(eq)`
 
 _Type_: **string (254)**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Show in UI_: **ShownByDefault**  

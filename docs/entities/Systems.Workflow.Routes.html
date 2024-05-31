@@ -134,7 +134,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Workflow.Routes.html#conditionstatesbitmask">ConditionStatesBitMask</a></td>
 <td><a href="Systems.Workflow.Routes.html#conditionstatesbitmask">DocumentStateFlags</a></td>
-<td>The system states for which to execute the specified route. <code>Required</code> <code>Default(0)</code></td>
+<td>The system states for which to execute the specified route. <code>Required</code> <code>Default(0)</code> <code>Filter(like)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.Routes.html#connectedpartycondition">ConnectedPartyCondition</a></td>
@@ -189,7 +189,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Workflow.Routes.html#processevent">ProcessEvent</a></td>
 <td>string (254)</td>
-<td>Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. <code>Required</code></td>
+<td>Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. <code>Required</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Workflow.Routes.html#readonly">ReadOnly</a></td>
@@ -352,7 +352,7 @@ Allowed values for the <code>AllowedGenerationTypes</code>(Systems.Workflow.Rout
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditionstatesbitmask">ConditionStatesBitMask</h3>
-<p>The system states for which to execute the specified route. <code>Required</code> <code>Default(0)</code></p>
+<p>The system states for which to execute the specified route. <code>Required</code> <code>Default(0)</code> <code>Filter(like)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html#conditionstatesbitmask">DocumentStateFlags</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Enumeration of document system states that can be combined in bit mask<br>
@@ -395,7 +395,7 @@ Enumeration of document system states that can be combined in bit mask<br>
 </tr>
 </tbody>
 </table>
-<p><em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<p><em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -562,10 +562,10 @@ Relationship between parent and child documents<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="processevent">ProcessEvent</h3>
-<p>Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. <code>Required</code></p>
+<p>Event which triggers the route. Usually the event is change of state. Every document entity may define own custom events. <code>Required</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

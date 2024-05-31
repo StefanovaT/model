@@ -1056,6 +1056,8 @@
   - name: AI
     href: Projects.AI.md
     items:
+    - name: AssistantConversations
+      href: Projects.AI.AssistantConversations.md
     - name: CompilationAssets
       href: Projects.AI.CompilationAssets.md
     - name: Compilations
