@@ -27,7 +27,7 @@ Contains the rentable assets. Entity: Rent_Assets
 |[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` ||
 |[Standard_Guarantee_Amount](#standard_guarantee_amount)|`decimal(14, 2)` ||
 |[Standard_Guarantee_Amount_Currency_Id](#standard_guarantee_amount_currency_id)|`uniqueidentifier` ||
-|[Time_Period_Type](#time_period_type)|`nvarchar(1)` Allowed: `D`, `M`, `F`, `H`||
+|[Time_Period_Type](#time_period_type)|`nvarchar(1)` Allowed: `D`, `M`, `F`, `H`|Specifies the unit by which the periods of renting of this asset are measured.|
 |[Work_Schedule_Id](#work_schedule_id)|`uniqueidentifier` ||
 
 ## Columns
@@ -578,6 +578,9 @@ The type of the asset.
 |Equals|`NULL`|yes|no|
 
 ### Time_Period_Type
+
+
+Specifies the unit by which the periods of renting of this asset are measured.
 
 | Property | Value |
 | - | - |

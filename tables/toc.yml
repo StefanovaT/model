@@ -701,6 +701,8 @@
     href: Inv_Cost_Corrections.md
   - name: Inv_Cost_Corrections_Options
     href: Inv_Cost_Corrections_Options.md
+  - name: Inv_Current_Balance_Adjusted_Costs
+    href: Inv_Current_Balance_Adjusted_Costs.md
   - name: Inv_Current_Balances
     href: Inv_Current_Balances.md
   - name: Inv_Demand_Management_ATP
