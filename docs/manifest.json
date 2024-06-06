@@ -12308,6 +12308,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36805.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36805.html",
+          "hash": "kmKucVKs128kqLoAtDvscw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
@@ -14505,7 +14517,7 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Sales.SalesOrders.html",
-          "hash": "G+iaqcqn3iRRJSc3RD5YDQ=="
+          "hash": "moMKxXLaN1AT+AC+bVETvQ=="
         }
       },
       "is_incremental": false,
