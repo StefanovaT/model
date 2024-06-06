@@ -112,21 +112,21 @@
 <td><strong>Action</strong></td>
 <td>If the Sales Person field is empty, then the rule checks if among the Sales Person Assignment Rules
 there is a rule which meets the following conditions:<br>                            |
-/- Is Active is true <br>                                                            |
-/- From Date is empty or &lt;= Sales Order’s Document Date<br>                          |
-/- To Date is empty or &gt;= Sales Order’s Document Date<br>                            |
-/- Enterprise Company is equal to Sales Order’s Enterprise Company<br>               |
-/- Company Division is empty or equal to Sales Order’s From Company Division<br>     |
-/- Customer Type is empty or equal to Customer’s Customer Type<br>                   |
-/- Sales Area is empty or equal to Customer’s Area<br>                          |
+- Is Active is true <br>                                                            |
+- From Date is empty or &lt;= Sales Order’s Document Date<br>                          |
+- To Date is empty or &gt;= Sales Order’s Document Date<br>                            |
+- Enterprise Company is equal to Sales Order’s Enterprise Company<br>               |
+- Company Division is empty or equal to Sales Order’s From Company Division<br>     |
+- Customer Type is empty or equal to Customer’s Customer Type<br>                   |
+- Sales Area is empty or equal to Customer’s Area<br>                          |
 If there is more than one rule which meets the condition -&gt; the one with the highest priority is selected.<br> |
-If there is more than one rule within the same highest priority –&gt; the one with the highest Rule № is selected.<br>|                                                                                      |
-The Sales Person of the selected Sales Person Assignment Rule is set in the Sales Person field.                                                                                      |</td>
+If there is more than one rule within the same highest priority –&gt; the one with the highest Rule № is selected.<br>|
+The Sales Person of the selected Sales Person Assignment Rule is set in the Sales Person field. |</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
 <td>When there is no sales person assigned to the sales order, the rule facilitates this assignment.<br> |
-The rule ensures that the sales person who is determined via a Sales Person Assignment Rule                                          |
+The rule ensures that the sales person who is determined via a Sales Person Assignment Rule
 to be responsible for the respective customer according to his type and region
 within the enterprise company and company division of the deal.</td>
 </tr>
