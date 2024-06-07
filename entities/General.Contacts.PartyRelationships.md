@@ -9,17 +9,21 @@ Defines the relationships between the parties. The data is preserved over time. 
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {FromPartyId}_  
+_{FromParty.PartyName:T}_  
 Default Search Members:  
-__  
+_FromParty.PartyName_  
+Name Data Member:  
+_FromParty.PartyName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Tree  
-* [General.Contacts.PartyRelationships](General.Contacts.PartyRelationships.md)  
+Aggregate Parent:  
+[General.Contacts.Parties](General.Contacts.Parties.md)  
+Aggregate Root:  
+[General.Contacts.Parties](General.Contacts.Parties.md)  
 
 ## Attributes
 
@@ -36,7 +40,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [FromParty](General.Contacts.PartyRelationships.md#fromparty) | [Parties](General.Contacts.Parties.md) | The first party in the relationship. `Required` `Filter(multi eq)` |
+| [FromParty](General.Contacts.PartyRelationships.md#fromparty) | [Parties](General.Contacts.Parties.md) | The first party in the relationship. `Required` `Filter(multi eq)` `Owner` |
 | [RelationshipType](General.Contacts.PartyRelationships.md#relationshiptype) | [PartyRelationshipTypes](General.Contacts.PartyRelationshipTypes.md) | The type of the relationship. `Required` `Filter(multi eq)` |
 | [ToParty](General.Contacts.PartyRelationships.md#toparty) | [Parties](General.Contacts.Parties.md) | The second party in the relationship. `Required` `Filter(multi eq)` |
 
@@ -108,11 +112,12 @@ _Show in UI_: **ShownByDefault**
 
 ### FromParty
 
-The first party in the relationship. `Required` `Filter(multi eq)`
+The first party in the relationship. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### RelationshipType
@@ -141,7 +146,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

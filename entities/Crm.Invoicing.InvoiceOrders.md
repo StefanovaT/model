@@ -90,7 +90,7 @@ Aggregate Tree
 | [Customer](Crm.Invoicing.InvoiceOrders.md#customer) | [Customers](Crm.Customers.md) | The primary customer to whom to invoice. `Required` `Filter(multi eq)` |
 | [DealType](Crm.Invoicing.InvoiceOrders.md#dealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | VAT deal type for this invoice order. This deal type is copied to the invoice to create VAT entries. `Filter(multi eq)` |
 | [DocumentCurrency](Crm.Invoicing.InvoiceOrders.md#documentcurrency) | [Currencies](General.Currencies.md) | The currency in which the document is issued. All amounts are in this currency. `Required` `Filter(multi eq)` |
-| [DocumentType](Crm.Invoicing.InvoiceOrders.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [DocumentType](Crm.Invoicing.InvoiceOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Crm.Invoicing.InvoiceOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Crm.Invoicing.InvoiceOrders.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [FromCompanyDivision](Crm.Invoicing.InvoiceOrders.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -103,10 +103,10 @@ Aggregate Tree
 | [ResponsiblePerson](Crm.Invoicing.InvoiceOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Crm.Invoicing.InvoiceOrders.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [SalesOrder](Crm.Invoicing.InvoiceOrders.md#salesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) (nullable) | Default value and filter for the lines. Used to differenciate the invoice order for each sales order. `Filter(multi eq)` |
-| [Sequence](Crm.Invoicing.InvoiceOrders.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [Sequence](Crm.Invoicing.InvoiceOrders.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [ToCompanyDivision](Crm.Invoicing.InvoiceOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Crm.Invoicing.InvoiceOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [UserStatus](Crm.Invoicing.InvoiceOrders.md#userstatus) | [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [UserStatus](Crm.Invoicing.InvoiceOrders.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 
 ## Child Collections
 
@@ -622,7 +622,7 @@ _Show in UI_: **ShownByDefault**
 
 The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -751,7 +751,7 @@ _Front-End Recalc Expressions:_
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
+_Type_: **[Sequences](Systems.Documents.Sequences.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -781,7 +781,7 @@ _Back-End Default Expression:_
 
 The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Type_: **[DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -818,7 +818,7 @@ _Domain API Request_: **POST**
 
   * **userStatus**  
     The desired new user status of the document. Can be null.  
-    _Type_: [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md)  
+    _Type_: [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -916,7 +916,7 @@ _Domain API Request_: **POST**
 
   * **printout**  
     The printout defined for the document type of the document. If null the default printout of the document type is used.  
-    _Type_: [Printouts](General.Printouts.md)  
+    _Type_: [Printouts](Systems.Documents.Printouts.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -948,7 +948,7 @@ _Domain API Request_: **GET**
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

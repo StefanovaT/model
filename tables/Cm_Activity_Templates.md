@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.ActivityTemplates](~/entities/General.Contacts.ActivityTemplates.md)
+Entity: [General.Activities.ActivityTemplates](~/entities/General.Activities.ActivityTemplates.md)
 
 Templates for automatical generation of activity from any document. Entity: Cm_Activity_Templates
 

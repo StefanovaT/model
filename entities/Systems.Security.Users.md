@@ -65,6 +65,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Domain](Systems.Security.Users.md#domain) | [Domains](Systems.Security.Domains.md) (nullable) | The domain, to which the user belongs. `Filter(multi eq)` `Introduced in version 20.1` |
+| [Model](Systems.Security.Users.md#model) | [Models](Projects.AI.Models.md) (nullable) | The AI model associated with the user for their interactions. null means that this user has no AI model associated. `Filter(multi eq)` `Introduced in version 24.1.5.34` |
 | [Person](Systems.Security.Users.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. `Filter(multi eq)` |
 
 ## Child Collections
@@ -384,6 +385,15 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+### Model
+
+The AI model associated with the user for their interactions. null means that this user has no AI model associated. `Filter(multi eq)` `Introduced in version 24.1.5.34`
+
+_Type_: **[Models](Projects.AI.Models.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### Person
 
 The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. `Filter(multi eq)`
@@ -401,7 +411,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

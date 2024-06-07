@@ -41,7 +41,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](Logistics.Inventory.ReconciliationCounts.md#product) | [Products](General.Products.Products.md) | The product which is currently counted. `Required` `Filter(multi eq)` |
-| [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
 | [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` `Owner` |
 
 
@@ -122,7 +122,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit from the definition of the product. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -145,7 +145,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

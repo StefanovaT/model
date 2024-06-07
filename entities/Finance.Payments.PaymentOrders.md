@@ -91,7 +91,7 @@ Aggregate Tree
 | [AdjustedDocument](Finance.Payments.PaymentOrders.md#adjusteddocument) | [Documents](General.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [AssignedToUser](Finance.Payments.PaymentOrders.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [CurrencyDirectory](Finance.Payments.PaymentOrders.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [DocumentType](Finance.Payments.PaymentOrders.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [DocumentType](Finance.Payments.PaymentOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Finance.Payments.PaymentOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Finance.Payments.PaymentOrders.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [FiscalPrinterPosDevice](Finance.Payments.PaymentOrders.md#fiscalprinterposdevice) | [Devices](Crm.Pos.Devices.md) (nullable) | When not null, contains suggested fiscal printer for printing fiscal notes upon payment. `Filter(multi eq)` `Introduced in version 19.1` |
@@ -106,16 +106,16 @@ Aggregate Tree
 | [PaymentType](Finance.Payments.PaymentOrders.md#paymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | Expected payment type. Null when there is no expectation. Can also specify default payment account. `Filter(multi eq)` |
 | [PrimeCauseDocument](Finance.Payments.PaymentOrders.md#primecausedocument) | [Documents](General.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [RefDocument](Finance.Payments.PaymentOrders.md#refdocument) | [Documents](General.Documents.md) (nullable) | The document which has created the payment order and is the basis for the payment. If this column is filled then Ref_Document_Type_Id, Ref_Document_No and Ref_Document_Date must be equal to the type, number and date of the specified document. `Filter(multi eq)` |
-| [RefDocumentType](Finance.Payments.PaymentOrders.md#refdocumenttype) | [DocumentTypes](General.DocumentTypes.md) | The type of the document which has created the payment order and is the basis for the payment. `Required` `Filter(multi eq)` |
+| [RefDocumentType](Finance.Payments.PaymentOrders.md#refdocumenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The type of the document which has created the payment order and is the basis for the payment. `Required` `Filter(multi eq)` |
 | [RefInvoiceDocument](Finance.Payments.PaymentOrders.md#refinvoicedocument) | [Documents](General.Documents.md) (nullable) | The invoice document which has created or is related to the payment order and is the basis for the payment. null means that the payment order isn't created or related to any invoice or the invoice isn't present in the database. If this column is filled then Ref_Invoice_Document_<br />Type_Id, Ref_Invoice_Document_No and Ref_Invoice_Document_Date must be equal to the type, number and date of the specified invoice document. `Filter(multi eq)` |
-| [RefInvoiceDocumentType](Finance.Payments.PaymentOrders.md#refinvoicedocumenttype) | [DocumentTypes](General.DocumentTypes.md) (nullable) | The document type of the invoice which has created or is related to the payment order and is the basis for the payment. null means that the payment order isn't created or related to any invoice. `Filter(multi eq)` |
+| [RefInvoiceDocumentType](Finance.Payments.PaymentOrders.md#refinvoicedocumenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) (nullable) | The document type of the invoice which has created or is related to the payment order and is the basis for the payment. null means that the payment order isn't created or related to any invoice. `Filter(multi eq)` |
 | [ResponsiblePerson](Finance.Payments.PaymentOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Finance.Payments.PaymentOrders.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [Sequence](Finance.Payments.PaymentOrders.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [Sequence](Finance.Payments.PaymentOrders.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [ToCompanyDivision](Finance.Payments.PaymentOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Finance.Payments.PaymentOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [TotalAmountCurrency](Finance.Payments.PaymentOrders.md#totalamountcurrency) | [Currencies](General.Currencies.md) | The currency of Total Amount. `Required` `Filter(multi eq)` |
-| [UserStatus](Finance.Payments.PaymentOrders.md#userstatus) | [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [UserStatus](Finance.Payments.PaymentOrders.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 
 ## Child Collections
 
@@ -702,7 +702,7 @@ _Show in UI_: **HiddenByDefault**
 
 The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -850,7 +850,7 @@ _Show in UI_: **ShownByDefault**
 
 The type of the document which has created the payment order and is the basis for the payment. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -875,7 +875,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document type of the invoice which has created or is related to the payment order and is the basis for the payment. null means that the payment order isn't created or related to any invoice. `Filter(multi eq)`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -907,7 +907,7 @@ _Show in UI_: **HiddenByDefault**
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
+_Type_: **[Sequences](Systems.Documents.Sequences.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -949,7 +949,7 @@ _Back-End Default Expression:_
 
 The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Type_: **[DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -986,7 +986,7 @@ _Domain API Request_: **POST**
 
   * **userStatus**  
     The desired new user status of the document. Can be null.  
-    _Type_: [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md)  
+    _Type_: [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -1084,7 +1084,7 @@ _Domain API Request_: **POST**
 
   * **printout**  
     The printout defined for the document type of the document. If null the default printout of the document type is used.  
-    _Type_: [Printouts](General.Printouts.md)  
+    _Type_: [Printouts](Systems.Documents.Printouts.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -1116,7 +1116,7 @@ _Domain API Request_: **GET**
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

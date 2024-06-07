@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.TableInfo](~/entities/Systems.Dmv.TableInfo.md)
+Entity: [Systems.Monitoring.TableInfo](~/entities/Systems.Monitoring.TableInfo.md)
 
 Information about the tables in the database. Entity: Dmv_Table_Info (Introduced in version 23.1.2.43)
 

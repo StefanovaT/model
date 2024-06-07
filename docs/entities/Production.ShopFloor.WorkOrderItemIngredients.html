@@ -168,7 +168,7 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemIngredients.html#distributebymeasurementcategory">DistributeByMeasurement<br>Category</a></td>
-<td><a href="General.MeasurementCategories.html">MeasurementCategories</a> (nullable)</td>
+<td><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a> (nullable)</td>
 <td>Measurement category by which the materials from the line are distributed amongst all work order items in case Distribute_By = MC. Should be NOT null iif Distribute_By = MC. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -218,7 +218,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Production.ShopFloor.WorkOrderItemIngredients.html#usedquantityunit">UsedQuantityUnit</a></td>
-<td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
+<td><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></td>
 <td>The measurement unit of the quantity of the material consumed in the operation. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -348,7 +348,7 @@ Allowed values for the <code>DistributeBy</code>(Production.ShopFloor.WorkOrderI
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="distributebymeasurementcategory">DistributeByMeasurementCategory</h3>
 <p>Measurement category by which the materials from the line are distributed amongst all work order items in case Distribute_By = MC. Should be NOT null iif Distribute_By = MC. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementCategories.html">MeasurementCategories</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -421,7 +421,7 @@ Allowed values for the <code>DistributeBy</code>(Production.ShopFloor.WorkOrderI
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="usedquantityunit">UsedQuantityUnit</h3>
 <p>The measurement unit of the quantity of the material consumed in the operation. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -450,7 +450,7 @@ Allowed values for the <code>DistributeBy</code>(Production.ShopFloor.WorkOrderI
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

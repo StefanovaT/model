@@ -40,7 +40,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ProductType](General.Products.ProductTypePurchaseInvoiceLineProperties.md#producttype) | [ProductTypes](General.Products.ProductTypes.md) | The <see cref="ProductType"/> to which this ProductTypePurchase<br />InvoiceLineProperty belongs. `Required` `Filter(multi eq)` `Owner` |
-| [Property](General.Products.ProductTypePurchaseInvoiceLineProperties.md#property) | [CustomProperties](General.CustomProperties.md) | The user-defined property. It should be with Entity Type = 'Purchase Invoice Line'. `Required` `Filter(multi eq)` |
+| [Property](General.Products.ProductTypePurchaseInvoiceLineProperties.md#property) | [CustomProperties](Systems.Bpm.CustomProperties.md) | The user-defined property. It should be with Entity Type = 'Purchase Invoice Line'. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -118,7 +118,7 @@ _Show in UI_: **ShownByDefault**
 
 The user-defined property. It should be with Entity Type = 'Purchase Invoice Line'. `Required` `Filter(multi eq)`
 
-_Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Type_: **[CustomProperties](Systems.Bpm.CustomProperties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -131,7 +131,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

@@ -51,12 +51,12 @@ Aggregate Root:
 | [ExciseDutyRate](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisedutyrate) | [ExciseDutyRates](Finance.Excise.ExciseDutyRates.md) (nullable) | The Duty rate specified by the taxation and customs authorities. `Filter(multi eq)` `Introduced in version 21.1.3.97` |
 | [ExciseProduct](Finance.Excise.ExciseAdministrativeDocumentLines.md#exciseproduct) | [ExciseProducts](Finance.Excise.ExciseProducts.md) (nullable) | The Excise product code defined by the taxation and customs authorities. `Filter(multi eq)` `Introduced in version 21.1.3.97` |
 | [ExcisePurposeCode](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisepurposecode) | [ExcisePurposeCodes](Finance.Excise.ExcisePurposeCodes.md) (nullable) | The Purpose codes specify the different purposes recognized by the authorities for determining the excise rate. `Filter(multi eq)` `Introduced in version 21.1.3.97` |
-| [ExciseQuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisequantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Excise Quantity. Copied from the excise product type. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.58` |
+| [ExciseQuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisequantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Excise Quantity. Copied from the excise product type. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.58` |
 | [Lot](Finance.Excise.ExciseAdministrativeDocumentLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | Warehouse lot. `Filter(multi eq)` `Introduced in version 23.1.2.68` |
 | [MeasuringTransaction](Finance.Excise.ExciseAdministrativeDocumentLines.md#measuringtransaction) | [MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable) | Transaction of product input or output, measured with specialized measuring device for excise purposes. `Filter(multi eq)` `Introduced in version 21.1.3.87` |
 | [ParentDocument](Finance.Excise.ExciseAdministrativeDocumentLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. Null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 22.1.4.9` |
 | [Product](Finance.Excise.ExciseAdministrativeDocumentLines.md#product) | [Products](General.Products.Products.md) | The product being sold. `Required` `Filter(multi eq)` |
-| [QuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -280,7 +280,7 @@ _Front-End Recalc Expressions:_
 
 The measurement unit of Excise Quantity. Copied from the excise product type. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.58`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -328,7 +328,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -343,7 +343,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

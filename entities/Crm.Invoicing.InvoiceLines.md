@@ -63,7 +63,7 @@ Aggregate Root:
 | [ParentSalesOrderLine](Crm.Invoicing.InvoiceLines.md#parentsalesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable) | When not null specifies the Sales Order line that is invoiced by this invoice line. `Filter(multi eq)` |
 | [PaymentTransaction](Crm.Invoicing.InvoiceLines.md#paymenttransaction) | [PaymentTransactions](Finance.Payments.PaymentTransactions.md) (nullable) | The payment transaction, which is invoiced by this line, when Business Reason = P. Used to reconcile the invoice with the payments in the case of advance payment. `Filter(multi eq)` |
 | [Product](Crm.Invoicing.InvoiceLines.md#product) | [Products](General.Products.Products.md) (nullable) | The invoiced product. When null, although rarely used, the invoice line is still valid and the Product Description contains the invoiced item. `Filter(multi eq)` |
-| [QuantityUnit](Crm.Invoicing.InvoiceLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Crm.Invoicing.InvoiceLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [SalesOrder](Crm.Invoicing.InvoiceLines.md#salesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) (nullable) | When not null specifies the Sales Order that is invoiced by this line. `Filter(multi eq;like)` |
 | [SerialNumber](Crm.Invoicing.InvoiceLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)` |
 | [TransactionLine](Crm.Invoicing.InvoiceLines.md#transactionline) | [StoreTransactionLines](Logistics.Inventory.StoreTransactionLines.md) (nullable) | The store transaction line that is invoiced by this line, for Business Reason = S. `Filter(multi eq)` |
@@ -504,7 +504,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -550,7 +550,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

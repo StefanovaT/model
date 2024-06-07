@@ -104,6 +104,7 @@ Object category attribute:  <em>PartyType</em></p>
 <li><a href="General.PartyApplicableLegislations.html">General.PartyApplicableLegislations</a></li>
 <li><a href="General.PartyLocationNumbers.html">General.PartyLocationNumbers</a></li>
 <li><a href="General.Contacts.PartyContactMechanisms.html">General.Contacts.PartyContactMechanisms</a></li>
+<li><a href="General.Contacts.PartyRelationships.html">General.Contacts.PartyRelationships</a></li>
 <li><a href="General.Contacts.PartyBankAccounts.html">General.Contacts.PartyBankAccounts</a></li>
 <li><a href="General.Contacts.PartyPictures.html">General.Contacts.PartyPictures</a></li>
 </ul>
@@ -287,6 +288,11 @@ Object category attribute:  <em>PartyType</em></p>
 <td>Pictures</td>
 <td><a href="General.Contacts.PartyPictures.html">PartyPictures</a></td>
 <td>List of <code>PartyPicture</code>(General.Contacts.PartyPictures.md) child objects, based on the <code>General.Contacts.PartyPicture.Party</code>(General.Contacts.PartyPictures.md#party) back reference (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
+</tr>
+<tr>
+<td>Relationships</td>
+<td><a href="General.Contacts.PartyRelationships.html">PartyRelationships</a></td>
+<td>List of <code>PartyRelationship</code>(General.Contacts.PartyRelationships.md) child objects, based on the <code>General.Contacts.PartyRelationship.FromParty</code>(General.Contacts.PartyRelationships.md#fromparty) back reference (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +525,7 @@ Allowed values for the PartyType data attribute<br>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

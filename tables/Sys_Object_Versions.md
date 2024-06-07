@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.ObjectVersions](~/entities/Systems.Core.ObjectVersions.md)
+Entity: [Systems.Internal.ObjectVersions](~/entities/Systems.Internal.ObjectVersions.md)
 
 Contains history of saved version of the managed objects. Entity: Sys_Object_Versions
 

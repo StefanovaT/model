@@ -80,7 +80,7 @@
 <h1 id="applicationsassetmanagementmaintenanceorders-entity">Applications.AssetManagement.MaintenanceOrders Entity</h1>
 
 <p><strong>Namespace:</strong> <a href="Applications.AssetManagement.html">Applications.AssetManagement</a><br>
-<strong>Inherited From:</strong> <a href="General.Contacts.Activities.html">General.Contacts.Activities</a></p>
+<strong>Inherited From:</strong> <a href="General.Activities.Activities.html">General.Activities.Activities</a></p>
 <p>Orders for maintenance. It is performed by a single service center, but can contain many different types of maintenance for many assets. The document is Activity and as such is scheduled and visible in the main calendar. Entity: Eam_Maintenance_Orders (Introduced in version 19.1)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
@@ -99,9 +99,9 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <li><a href="Applications.AssetManagement.MaintenanceOrders.html">Applications.AssetManagement.MaintenanceOrders</a>
 <ul>
 <li><a href="Applications.AssetManagement.MaintenanceOrderLines.html">Applications.AssetManagement.MaintenanceOrderLines</a></li>
-<li><a href="General.Contacts.ActivityParticipants.html">General.Contacts.ActivityParticipants</a></li>
-<li><a href="General.Contacts.ActivityResources.html">General.Contacts.ActivityResources</a></li>
-<li><a href="General.Contacts.Reminders.html">General.Contacts.Reminders</a></li>
+<li><a href="General.Activities.ActivityParticipants.html">General.Activities.ActivityParticipants</a></li>
+<li><a href="General.Activities.ActivityResources.html">General.Activities.ActivityResources</a></li>
+<li><a href="General.Activities.Reminders.html">General.Activities.Reminders</a></li>
 <li><a href="General.DocumentAmounts.html">General.DocumentAmounts</a>
 <ul>
 <li><a href="General.DocumentAmountReferencedDocuments.html">General.DocumentAmountReferencedDocuments</a></li>
@@ -161,7 +161,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#deadlinetime">DeadlineTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The deadline for the task. null if there is no deadline. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>The deadline for the task. null if there is no deadline. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#displaytext">DisplayText</a></td>
@@ -191,7 +191,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#endtime">EndTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Currently planned ending time of the task. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Currently planned ending time of the task. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#entityname">EntityName</a></td>
@@ -206,17 +206,17 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#isreleased"><s>IsReleased</s></a></td>
 <td>boolean</td>
-<td><strong>OBSOLETE! Do not use!</strong> True if the document is not void and its state is released or greater. Deprecated. <code>Obsolete</code> <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> <code>Obsoleted in version 22.1.6.61</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td><strong>OBSOLETE! Do not use!</strong> True if the document is not void and its state is released or greater. Deprecated. <code>Obsolete</code> <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> <code>Obsoleted in version 22.1.6.61</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#issingleexecution">IsSingleExecution</a></td>
 <td>boolean</td>
-<td>Specifies whether the document is a single execution of its order document. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Specifies whether the document is a single execution of its order document. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#notes">Notes</a></td>
 <td>string (max) <strong>nullable</strong></td>
-<td>Notes for this Activity. (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Notes for this Activity. (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#objectversion">ObjectVersion</a></td>
@@ -231,7 +231,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#planneddurationminutes">PlannedDurationMinutes</a></td>
 <td>int32 <strong>nullable</strong></td>
-<td>Total planned duration of the activity, regardless of the current execution status. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Total planned duration of the activity, regardless of the current execution status. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#planningonly">PlanningOnly</a></td>
@@ -241,12 +241,12 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#priority">Priority</a></td>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#priority">Priority</a></td>
-<td>Priority on the scale from 1 (least important) to 5 (very important). <code>Required</code> <code>Default(3)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Priority on the scale from 1 (least important) to 5 (very important). <code>Required</code> <code>Default(3)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#private">Private</a></td>
 <td>boolean</td>
-<td>True if the task is visible only to its owner; false if this is publicly visible task. <code>Required</code> <code>Default(false)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>True if the task is visible only to its owner; false if this is publicly visible task. <code>Required</code> <code>Default(false)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#readonly">ReadOnly</a></td>
@@ -271,12 +271,12 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#remindertime">ReminderTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#starttime">StartTime</a></td>
 <td>datetime</td>
-<td>Currently planned starting time of the task. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Currently planned starting time of the task. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#state">State</a></td>
@@ -291,12 +291,12 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#subject">Subject</a></td>
 <td>string (254)</td>
-<td>Task primary subject (required). <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Task primary subject (required). <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#systemtype">SystemType</a></td>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#systemtype">SystemType</a></td>
-<td>T=Task; C=Communication; M=Meeting. <code>Required</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>T=Task; C=Communication; M=Meeting. <code>Required</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#void">Void</a></td>
@@ -348,7 +348,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#contactperson">ContactPerson</a></td>
 <td><a href="General.Contacts.Persons.html">Persons</a> (nullable)</td>
-<td>The contact person, from the side of the Target Party. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>The contact person, from the side of the Target Party. <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#currencydirectory">CurrencyDirectory</a></td>
@@ -357,7 +357,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#documenttype">DocumentType</a></td>
-<td><a href="General.DocumentTypes.html">DocumentTypes</a></td>
+<td><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></td>
 <td>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
@@ -398,7 +398,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#ownerparty">OwnerParty</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a></td>
-<td>The party that owns the task. Initially this is the party that has created the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>The party that owns the task. Initially this is the party that has created the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#parent">Parent</a></td>
@@ -413,12 +413,12 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#projecttask">ProjectTask</a></td>
 <td><a href="Projects.Classic.ProjectTasks.html">ProjectTasks</a> (nullable)</td>
-<td>The project task for which the work is performed. null when the activity is not related to a project task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>The project task for which the work is performed. null when the activity is not related to a project task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#responsibleparty">ResponsibleParty</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a></td>
-<td>Who is responsible for executing the task. Initially this is the owner of the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Who is responsible for executing the task. Initially this is the owner of the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#responsibleperson">ResponsiblePerson</a></td>
@@ -432,7 +432,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#sequence">Sequence</a></td>
-<td><a href="Systems.Core.Sequences.html">Sequences</a> (nullable)</td>
+<td><a href="Systems.Documents.Sequences.html">Sequences</a> (nullable)</td>
 <td>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
@@ -443,12 +443,12 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#socialgroup">SocialGroup</a></td>
 <td><a href="Communities.Social.Groups.html">Groups</a> (nullable)</td>
-<td>Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). <code>Filter(multi eq)</code> <code>Introduced in version 23.1.1.3</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). <code>Filter(multi eq)</code> <code>Introduced in version 23.1.1.3</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#targetparty">TargetParty</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a> (nullable)</td>
-<td>External participant or target of the task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td>External participant or target of the task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#tocompanydivision">ToCompanyDivision</a></td>
@@ -462,7 +462,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td><a href="Applications.AssetManagement.MaintenanceOrders.html#userstatus">UserStatus</a></td>
-<td><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</td>
+<td><a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</td>
 <td>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 </tbody>
@@ -514,8 +514,8 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td>Participants</td>
-<td><a href="General.Contacts.ActivityParticipants.html">ActivityParticipants</a></td>
-<td>List of <code>ActivityParticipant</code>(General.Contacts.ActivityParticipants.md) child objects, based on the <code>General.Contacts.ActivityParticipant.Activity</code>(General.Contacts.ActivityParticipants.md#activity) back reference (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td><a href="General.Activities.ActivityParticipants.html">ActivityParticipants</a></td>
+<td>List of <code>ActivityParticipant</code>(General.Activities.ActivityParticipants.md) child objects, based on the <code>General.Activities.ActivityParticipant.Activity</code>(General.Activities.ActivityParticipants.md#activity) back reference (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td>Parties</td>
@@ -529,13 +529,13 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td>Reminders</td>
-<td><a href="General.Contacts.Reminders.html">Reminders</a></td>
-<td>List of <code>Reminder</code>(General.Contacts.Reminders.md) child objects, based on the <code>General.Contacts.Reminder.Activity</code>(General.Contacts.Reminders.md#activity) back reference (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td><a href="General.Activities.Reminders.html">Reminders</a></td>
+<td>List of <code>Reminder</code>(General.Activities.Reminders.md) child objects, based on the <code>General.Activities.Reminder.Activity</code>(General.Activities.Reminders.md#activity) back reference (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td>Resources</td>
-<td><a href="General.Contacts.ActivityResources.html">ActivityResources</a></td>
-<td>List of <code>ActivityResource</code>(General.Contacts.ActivityResources.md) child objects, based on the <code>General.Contacts.ActivityResource.Activity</code>(General.Contacts.ActivityResources.md#activity) back reference (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</td>
+<td><a href="General.Activities.ActivityResources.html">ActivityResources</a></td>
+<td>List of <code>ActivityResource</code>(General.Activities.ActivityResources.md) child objects, based on the <code>General.Activities.ActivityResource.Activity</code>(General.Activities.ActivityResources.md#activity) back reference (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</td>
 </tr>
 <tr>
 <td>StateChanges</td>
@@ -592,7 +592,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="deadlinetime">DeadlineTime</h3>
-<p>The deadline for the task. null if there is no deadline. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>The deadline for the task. null if there is no deadline. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -640,7 +640,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="endtime">EndTime</h3>
-<p>Currently planned ending time of the task. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Currently planned ending time of the task. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -663,7 +663,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="isreleased">IsReleased</h3>
-<p><strong>OBSOLETE! Do not use!</strong> True if the document is not void and its state is released or greater. Deprecated. <code>Obsolete</code> <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> <code>Obsoleted in version 22.1.6.61</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p><strong>OBSOLETE! Do not use!</strong> True if the document is not void and its state is released or greater. Deprecated. <code>Obsolete</code> <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> <code>Obsoleted in version 22.1.6.61</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
@@ -671,7 +671,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="issingleexecution">IsSingleExecution</h3>
-<p>Specifies whether the document is a single execution of its order document. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Specifies whether the document is a single execution of its order document. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
@@ -679,7 +679,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="notes">Notes</h3>
-<p>Notes for this Activity. (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Notes for this Activity. (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -725,7 +725,7 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="planneddurationminutes">PlannedDurationMinutes</h3>
-<p>Total planned duration of the activity, regardless of the current execution status. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Total planned duration of the activity, regardless of the current execution status. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -740,7 +740,7 @@ Relationship between parent and child documents<br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="priority">Priority</h3>
-<p>Priority on the scale from 1 (least important) to 5 (very important). <code>Required</code> <code>Default(3)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Priority on the scale from 1 (least important) to 5 (very important). <code>Required</code> <code>Default(3)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="Applications.AssetManagement.MaintenanceOrders.html#priority">Priority</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Generic enum type for Priority properties<br>
@@ -780,7 +780,7 @@ Generic enum type for Priority properties<br>
 <em>Default Value</em>: <strong>3</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="private">Private</h3>
-<p>True if the task is visible only to its owner; false if this is publicly visible task. <code>Required</code> <code>Default(false)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>True if the task is visible only to its owner; false if this is publicly visible task. <code>Required</code> <code>Default(false)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -819,14 +819,14 @@ Generic enum type for Priority properties<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="remindertime">ReminderTime</h3>
-<p>When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>When to snooze to the owner to remind him for the task. This default reminder is copied to and managed by the Reminders entity. <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="starttime">StartTime</h3>
-<p>Currently planned starting time of the task. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Currently planned starting time of the task. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -889,7 +889,7 @@ Enumeration of document system states<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="subject">Subject</h3>
-<p>Task primary subject (required). <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Task primary subject (required). <code>Required</code> <code>Filter(eq;like)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong>string (254)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
@@ -899,11 +899,11 @@ Enumeration of document system states<br>
 <p><em>Back-End Default Expression:</em><br>
 <code>GetSystemSubject( obj.SystemType, obj.TargetParty)</code></p>
 <h3 id="systemtype">SystemType</h3>
-<p>T=Task; C=Communication; M=Meeting. <code>Required</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>T=Task; C=Communication; M=Meeting. <code>Required</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="Applications.AssetManagement.MaintenanceOrders.html#systemtype">SystemType</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#systemtype) data attribute<br>
-<em>Allowed Values (General.Contacts.ActivitiesRepository.SystemType Enum Members)</em></p>
+Allowed values for the <code>SystemType</code>(General.Activities.Activities.md#systemtype) data attribute<br>
+<em>Allowed Values (General.Activities.ActivitiesRepository.SystemType Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -983,7 +983,7 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="contactperson">ContactPerson</h3>
-<p>The contact person, from the side of the Target Party. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>The contact person, from the side of the Target Party. <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -996,7 +996,7 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="documenttype">DocumentType</h3>
 <p>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -1047,7 +1047,7 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="ownerparty">OwnerParty</h3>
-<p>The party that owns the task. Initially this is the party that has created the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>The party that owns the task. Initially this is the party that has created the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -1067,13 +1067,13 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="projecttask">ProjectTask</h3>
-<p>The project task for which the work is performed. null when the activity is not related to a project task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>The project task for which the work is performed. null when the activity is not related to a project task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="Projects.Classic.ProjectTasks.html">ProjectTasks</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="responsibleparty">ResponsibleParty</h3>
-<p>Who is responsible for executing the task. Initially this is the owner of the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Who is responsible for executing the task. Initially this is the owner of the task. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
@@ -1093,7 +1093,7 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="sequence">Sequence</h3>
 <p>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="Systems.Core.Sequences.html">Sequences</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.Sequences.html">Sequences</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -1104,13 +1104,13 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="socialgroup">SocialGroup</h3>
-<p>Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). <code>Filter(multi eq)</code> <code>Introduced in version 23.1.1.3</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>Associates the activity with the specified social group. null means that this event is not related to a social group and might be publicly visible (can still be marked as private). <code>Filter(multi eq)</code> <code>Introduced in version 23.1.1.3</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="Communities.Social.Groups.html">Groups</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="targetparty">TargetParty</h3>
-<p>External participant or target of the task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Contacts.Activities.html">Activities</a>)</p>
+<p>External participant or target of the task. <code>Filter(multi eq)</code> (Inherited from <a href="General.Activities.Activities.html">Activities</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -1131,7 +1131,7 @@ Allowed values for the <code>SystemType</code>(General.Contacts.Activities.md#sy
 <code>obj.ObtainToParty( )</code></p>
 <h3 id="userstatus">UserStatus</h3>
 <p>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -1190,7 +1190,7 @@ Enumeration of document system states<br>
 </li>
 <li><p><strong>userStatus</strong><br>
 The desired new user status of the document. Can be null.<br>
-<em>Type</em>: <a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a><br>
+<em>Type</em>: <a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a><br>
 <em>Optional</em>: True<br>
 <em>Default Value</em>: null</p>
 </li>
@@ -1310,7 +1310,7 @@ The file format: pdf, html, xlsx, xls, docx, txt and png. The default format is 
 </li>
 <li><p><strong>printout</strong><br>
 The printout defined for the document type of the document. If null the default printout of the document type is used.<br>
-<em>Type</em>: <a href="General.Printouts.html">Printouts</a><br>
+<em>Type</em>: <a href="Systems.Documents.Printouts.html">Printouts</a><br>
 <em>Optional</em>: True<br>
 <em>Default Value</em>: null</p>
 </li>
@@ -1336,7 +1336,7 @@ if set to true the current document is included.<br>
 </ul>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

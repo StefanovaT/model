@@ -57,7 +57,7 @@ Aggregate Root:
 | [ProductVariant](Logistics.Procurement.PurchaseOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
 | [PurchaseOrder](Logistics.Procurement.PurchaseOrderLines.md#purchaseorder) | [PurchaseOrders](Logistics.Procurement.PurchaseOrders.md) | The <see cref="PurchaseOrder"/> to which this PurchaseOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
 | [PurchaseProductPrice](Logistics.Procurement.PurchaseOrderLines.md#purchaseproductprice) | [PurchaseProductPrices](Logistics.Procurement.PurchaseProductPrices.md) (nullable) | When not null, specifies that the purchase unit price is loaded automatically from the specified purchase price record. `Filter(multi eq)` |
-| [QuantityUnit](Logistics.Procurement.PurchaseOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Logistics.Procurement.PurchaseOrderLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [RequisitionLine](Logistics.Procurement.PurchaseOrderLines.md#requisitionline) | [RequisitionLines](Logistics.Procurement.RequisitionLines.md) (nullable) | When not null, specifies that the current line is based on the specified requisition line. `Filter(multi eq)` |
 
 
@@ -355,7 +355,7 @@ _Front-End Recalc Expressions:_
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -379,7 +379,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

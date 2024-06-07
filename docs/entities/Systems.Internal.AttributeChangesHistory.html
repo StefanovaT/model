@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Systems.Internal.AttributeChangesHistory View | ERP.net Domain Model </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Systems.Internal.AttributeChangesHistory View | ERP.net Domain Model ">
+    <meta name="generator" content="docfx 2.56.9.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Systems.Internal.AttributeChangesHistory">
+<h1 id="systemsinternalattributechangeshistory-view">Systems.Internal.AttributeChangesHistory View</h1>
+
+<p><strong>Namespace:</strong> <a href="Systems.Internal.html">Systems.Internal</a></p>
+<p>Each entry represents an entity attribute change with previous and new value. Entity: Sys_Attribute_Changes_History_View (Introduced in version 23.1.2.37)</p>
+<h2 id="default-visualization">Default Visualization</h2>
+<p>Default Display Text Format:<br>
+<em>{RepositoryName}: {EntityItemId}</em><br>
+Default Search Members:<br>
+__<br>
+Category:  <em>Views</em><br>
+Show in UI:  <em>ShownByDefault</em></p>
+<h2 id="aggregate">Aggregate</h2>
+<p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
+<p>Aggregate Tree</p>
+<ul>
+<li><a href="Systems.Internal.AttributeChangesHistory.html">Systems.Internal.AttributeChangesHistory</a></li>
+</ul>
+<h2 id="attributes">Attributes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#attributename">AttributeName</a></td>
+<td>string (64)</td>
+<td>The name of the attribute. <code>Required</code> <code>Filter(eq)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.Attribute_Name</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#entityitemid">EntityItemId</a></td>
+<td>guid</td>
+<td>The id of the actual changed object, described by this change. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changes_Table.Entity_Item_Id</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#newvalue">NewValue</a></td>
+<td>string (max) <strong>nullable</strong></td>
+<td>The new value. <code>Filter(eq;like)</code> <code>Inherited from Sys_Attribute_&lt;br /&gt;Changes_Table.New_Value</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#previousvalue">PreviousValue</a></td>
+<td>string (max)</td>
+<td>The previous value. <code>Required</code> <code>Filter(eq)</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#repositoryname">RepositoryName</a></td>
+<td>string (64)</td>
+<td>The repository of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. <code>Required</code> <code>Filter(multi eq;like)</code> <code>Inherited from Sys_Object_Changes_Table.Repository_Name</code></td>
+</tr>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#timeutc">TimeUtc</a></td>
+<td>datetime</td>
+<td>Date and time (in Utc) when the changeset was processed by the server. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> <code>Inherited from Sys_Object_Changesets_&lt;br /&gt;Table.Time_Utc</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="Systems.Internal.AttributeChangesHistory.html#user">User</a></td>
+<td><a href="Systems.Security.Users.html">Users</a> (nullable)</td>
+<td>The user which initiated the change. null when it is unknown. <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changesets_&lt;br /&gt;Table.User_Id</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-details">Attribute Details</h2>
+<h3 id="attributename">AttributeName</h3>
+<p>The name of the attribute. <code>Required</code> <code>Filter(eq)</code> <code>Inherited from Sys_Attribute_Changes_Table.Attribute_Name</code></p>
+<p><em>Type</em>: <strong>string (64)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.Attribute_Name</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="entityitemid">EntityItemId</h3>
+<p>The id of the actual changed object, described by this change. <code>Required</code> <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changes_Table.Entity_Item_Id</code></p>
+<p><em>Type</em>: <strong>guid</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sys_Object_Changes_Table.Entity_Item_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="newvalue">NewValue</h3>
+<p>The new value. <code>Filter(eq;like)</code> <code>Inherited from Sys_Attribute_Changes_Table.New_Value</code></p>
+<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sys_Attribute_Changes_Table.New_Value</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="previousvalue">PreviousValue</h3>
+<p>The previous value. <code>Required</code> <code>Filter(eq)</code></p>
+<p><em>Type</em>: <strong>string (max)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="repositoryname">RepositoryName</h3>
+<p>The repository of the actual changed object, described by this change. This is different than the aggregate root, which is pointed by Root Object. <code>Required</code> <code>Filter(multi eq;like)</code> <code>Inherited from Sys_Object_Changes_Table.Repository_Name</code></p>
+<p><em>Type</em>: <strong>string (64)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sys_Object_Changes_Table.Repository_Name</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like, EqualsIn</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="timeutc">TimeUtc</h3>
+<p>Date and time (in Utc) when the changeset was processed by the server. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> <code>Inherited from Sys_Object_Changesets_Table.Time_Utc</code></p>
+<p><em>Type</em>: <strong>datetime</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sys_Object_Changesets_Table.Time_Utc</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h2 id="reference-details">Reference Details</h2>
+<h3 id="user">User</h3>
+<p>The user which initiated the change. null when it is unknown. <code>Filter(multi eq)</code> <code>Inherited from Sys_Object_Changesets_Table.User_Id</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Inherited From</em>: <strong>Sys_Object_Changesets_Table.User_Id</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h2 id="api">API</h2>
+<p>Domain API Query:
+<a href="https://demodb.my.erp.net/api/domain/odata/Systems_Internal_AttributeChangesHistory?$top=10">https://demodb.my.erp.net/api/domain/odata/Systems_Internal_AttributeChangesHistory?$top=10</a></p>
+<p>Domain API Query Builder:
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Systems_Internal_AttributeChangesHistory?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Systems_Internal_AttributeChangesHistory?$top=10</a></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Systems.Internal.AttributeChangesHistory.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

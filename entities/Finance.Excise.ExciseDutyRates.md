@@ -35,7 +35,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ExciseMeasurementUnit](Finance.Excise.ExciseDutyRates.md#excisemeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit which should be used in the excise calculation. This is only for verification purposes. `Required` `Filter(multi eq)` |
+| [ExciseMeasurementUnit](Finance.Excise.ExciseDutyRates.md#excisemeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit which should be used in the excise calculation. This is only for verification purposes. `Required` `Filter(multi eq)` |
 | [ExciseProduct](Finance.Excise.ExciseDutyRates.md#exciseproduct) | [ExciseProducts](Finance.Excise.ExciseProducts.md) | The excise product for which the rate is applied. `Required` `Filter(multi eq)` |
 | [ExcisePurposeCode](Finance.Excise.ExciseDutyRates.md#excisepurposecode) | [ExcisePurposeCodes](Finance.Excise.ExcisePurposeCodes.md) | The purpose for which the rate is applied. `Required` `Filter(multi eq)` |
 
@@ -100,7 +100,7 @@ _Show in UI_: **HiddenByDefault**
 
 The measurement unit which should be used in the excise calculation. This is only for verification purposes. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -131,7 +131,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

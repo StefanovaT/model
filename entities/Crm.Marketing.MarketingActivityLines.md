@@ -46,7 +46,7 @@ Aggregate Root:
 | [Document](Crm.Marketing.MarketingActivityLines.md#document) | [MarketingActivities](Crm.Marketing.MarketingActivities.md) | Marketing activity. `Required` `Filter(multi eq)` |
 | [MarketingActivity](Crm.Marketing.MarketingActivityLines.md#marketingactivity) | [MarketingActivities](Crm.Marketing.MarketingActivities.md) | Marketing activity. `Required` `Filter(multi eq)` `Owner` |
 | [MarketingActivityLineType](Crm.Marketing.MarketingActivityLines.md#marketingactivitylinetype) | [MarketingActivityLineTypes](Crm.Marketing.MarketingActivityLineTypes.md) | Describes what the purpose of the marketing activity is. `Required` `Filter(multi eq)` |
-| [OrderQuantityUnit](Crm.Marketing.MarketingActivityLines.md#orderquantityunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit of In_Store_Available_<br />Quantity and Order_Quantity. `Filter(multi eq)` |
+| [OrderQuantityUnit](Crm.Marketing.MarketingActivityLines.md#orderquantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | The measurement unit of In_Store_Available_<br />Quantity and Order_Quantity. `Filter(multi eq)` |
 | [Product](Crm.Marketing.MarketingActivityLines.md#product) | [Products](General.Products.Products.md) | The specific product that was target of the marketing activity. `Required` `Filter(multi eq)` |
 
 
@@ -202,7 +202,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of In_Store_Available_Quantity and Order_Quantity. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -226,7 +226,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeUserStatuses](~/entities/General.DocumentTypeUserStatuses.md)
+Entity: [Systems.Documents.DocumentTypeUserStatuses](~/entities/Systems.Documents.DocumentTypeUserStatuses.md)
 
 User-defined document statuses. Entity: Gen_Document_Type_User_Statuses
 

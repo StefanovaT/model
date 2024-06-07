@@ -42,7 +42,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Product](Crm.Subscriptions.SubscriptionLines.md#product) | [Products](General.Products.Products.md) | The product to be billed. `Required` `Filter(multi eq)` |
-| [QuantityUnit](Crm.Subscriptions.SubscriptionLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Crm.Subscriptions.SubscriptionLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [Subscription](Crm.Subscriptions.SubscriptionLines.md#subscription) | [Subscriptions](Crm.Subscriptions.Subscriptions.md) | The <see cref="Subscription"/> to which this SubscriptionLine belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -141,7 +141,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -166,7 +166,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

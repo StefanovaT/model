@@ -155,12 +155,12 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="General.Products.ProductDimensions.html#destquantityunit">DestQuantityUnit</a></td>
-<td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
+<td><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></td>
 <td>The measurement unit of Dest_Quantity. Should be one of the units of the base measurement category of the product. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.ProductDimensions.html#measurementcategory">MeasurementCategory</a></td>
-<td><a href="General.MeasurementCategories.html">MeasurementCategories</a></td>
+<td><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a></td>
 <td>The measurement category of Source Quantity Unit. For each product, only one conversion ratio can be specified for a measurement category. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
@@ -170,7 +170,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="General.Products.ProductDimensions.html#sourcequantityunit">SourceQuantityUnit</a></td>
-<td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
+<td><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></td>
 <td>The non-base measurement unit for which we specify convertion ratio. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 </tbody>
@@ -234,13 +234,13 @@ Aggregate Root:<br>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="destquantityunit">DestQuantityUnit</h3>
 <p>The measurement unit of Dest_Quantity. Should be one of the units of the base measurement category of the product. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="measurementcategory">MeasurementCategory</h3>
 <p>The measurement category of Source Quantity Unit. For each product, only one conversion ratio can be specified for a measurement category. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementCategories.html">MeasurementCategories</a></strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -259,7 +259,7 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="sourcequantityunit">SourceQuantityUnit</h3>
 <p>The non-base measurement unit for which we specify convertion ratio. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -267,7 +267,7 @@ Aggregate Root:<br>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

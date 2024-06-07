@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeAmounts](~/entities/General.DocumentTypeAmounts.md)
+Entity: [Systems.Documents.DocumentTypeAmounts](~/entities/Systems.Documents.DocumentTypeAmounts.md)
 
 Specifies amount types, that should be automatically added to documents of a given type. Entity: Gen_Document_Type_Amounts
 

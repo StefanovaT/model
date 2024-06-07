@@ -39,7 +39,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Property](Applications.Rental.AssetTypeProperties.md#property) | [CustomProperties](General.CustomProperties.md) | The user-defined property, which is required for assets of the specified type. `Required` `Filter(multi eq)` |
+| [Property](Applications.Rental.AssetTypeProperties.md#property) | [CustomProperties](Systems.Bpm.CustomProperties.md) | The user-defined property, which is required for assets of the specified type. `Required` `Filter(multi eq)` |
 | [RentalAssetType](Applications.Rental.AssetTypeProperties.md#rentalassettype) | [AssetTypes](Applications.Rental.AssetTypes.md) | The <see cref="AssetType"/> to which this AssetTypeProperty belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -101,7 +101,7 @@ _Show in UI_: **HiddenByDefault**
 
 The user-defined property, which is required for assets of the specified type. `Required` `Filter(multi eq)`
 
-_Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Type_: **[CustomProperties](Systems.Bpm.CustomProperties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -124,7 +124,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

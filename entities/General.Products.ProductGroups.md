@@ -57,7 +57,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DefaultMeasurementUnit](General.Products.ProductGroups.md#defaultmeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | When not null, specifies default measurement unit, which should be assigned to new products in the group. `Filter(multi eq)` |
+| [DefaultMeasurementUnit](General.Products.ProductGroups.md#defaultmeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | When not null, specifies default measurement unit, which should be assigned to new products in the group. `Filter(multi eq)` |
 | [DefaultProductType](General.Products.ProductGroups.md#defaultproducttype) | [ProductTypes](General.Products.ProductTypes.md) (nullable) | When not null, specifies default product type, which should be assigned to new products in the group. `Filter(multi eq)` |
 | [EnterpriseCompany](General.Products.ProductGroups.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | When not null, specifies that the product group, its sub-groups and products are specific to a given enterprise company and may be used only in documents from this enterprise company. `Filter(multi eq)` |
 | [ParentGroup](General.Products.ProductGroups.md#parentgroup) | [ProductGroups](General.Products.ProductGroups.md) (nullable) | Parent product group. null if this is root group. `Filter(multi eq)` `Introduced in version 22.1.5.98` |
@@ -301,7 +301,7 @@ _Show in UI_: **ShownByDefault**
 
 When not null, specifies default measurement unit, which should be assigned to new products in the group. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -354,7 +354,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

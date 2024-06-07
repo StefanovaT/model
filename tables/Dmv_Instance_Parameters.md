@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.InstanceParameters](~/entities/Systems.Dmv.InstanceParameters.md)
+Entity: [Systems.Monitoring.InstanceParameters](~/entities/Systems.Monitoring.InstanceParameters.md)
 
 Parameters for this instance. Entity: Dmv_Instance_Parameters (Introduced in version 24.1.1.68)
 

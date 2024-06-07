@@ -79,7 +79,7 @@ Aggregate Tree
 | [AssignedToUser](Finance.Payments.Transfers.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [CurrencyDirectory](Finance.Payments.Transfers.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [DestinationPaymentAccount](Finance.Payments.Transfers.md#destinationpaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) | The account to which to transfer the amount. `Required` `Filter(multi eq)` |
-| [DocumentType](Finance.Payments.Transfers.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [DocumentType](Finance.Payments.Transfers.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Finance.Payments.Transfers.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Finance.Payments.Transfers.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [FromCompanyDivision](Finance.Payments.Transfers.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -89,11 +89,11 @@ Aggregate Tree
 | [PrimeCauseDocument](Finance.Payments.Transfers.md#primecausedocument) | [Documents](General.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ResponsiblePerson](Finance.Payments.Transfers.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Finance.Payments.Transfers.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [Sequence](Finance.Payments.Transfers.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [Sequence](Finance.Payments.Transfers.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [SourcePaymentAccount](Finance.Payments.Transfers.md#sourcepaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) | The account from which to deduct the amount. `Required` `Filter(multi eq)` |
 | [ToCompanyDivision](Finance.Payments.Transfers.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Finance.Payments.Transfers.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [UserStatus](Finance.Payments.Transfers.md#userstatus) | [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [UserStatus](Finance.Payments.Transfers.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 
 ## Child Collections
 
@@ -514,7 +514,7 @@ _Show in UI_: **ShownByDefault**
 
 The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -609,7 +609,7 @@ _Show in UI_: **HiddenByDefault**
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
+_Type_: **[Sequences](Systems.Documents.Sequences.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -648,7 +648,7 @@ _Back-End Default Expression:_
 
 The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Type_: **[DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -685,7 +685,7 @@ _Domain API Request_: **POST**
 
   * **userStatus**  
     The desired new user status of the document. Can be null.  
-    _Type_: [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md)  
+    _Type_: [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -783,7 +783,7 @@ _Domain API Request_: **POST**
 
   * **printout**  
     The printout defined for the document type of the document. If null the default printout of the document type is used.  
-    _Type_: [Printouts](General.Printouts.md)  
+    _Type_: [Printouts](Systems.Documents.Printouts.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -815,7 +815,7 @@ _Domain API Request_: **GET**
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

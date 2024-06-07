@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.DataEntryDefaultValues](~/entities/Systems.Core.DataEntryDefaultValues.md)
+Entity: [Systems.Internal.DataEntryDefaultValues](~/entities/Systems.Internal.DataEntryDefaultValues.md)
 
 Contains user-specified default values for columns in data entry forms. Entity: Sys_Default_Values
 

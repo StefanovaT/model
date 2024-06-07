@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.ActivityParticipants](~/entities/General.Contacts.ActivityParticipants.md)
+Entity: [General.Activities.ActivityParticipants](~/entities/General.Activities.ActivityParticipants.md)
 
 Contains the additional participants in the activities. These are the participating users, besides the user to which the activitiy is assigned. Entity: Cm_Activity_Participants
 

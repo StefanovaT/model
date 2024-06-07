@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.LicenseHistory](~/entities/Systems.Dmv.LicenseHistory.md)
+Entity: [Systems.Monitoring.LicenseHistory](~/entities/Systems.Monitoring.LicenseHistory.md)
 
 Historical licensing events for the instance. Entity: Dmv_License_History (Introduced in version 24.1.3.88)
 

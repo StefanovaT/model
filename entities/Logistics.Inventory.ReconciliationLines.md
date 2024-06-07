@@ -48,7 +48,7 @@ Aggregate Root:
 | [Product](Logistics.Inventory.ReconciliationLines.md#product) | [Products](General.Products.Products.md) | The id of the reconciled product. `Required` `Filter(multi eq)` |
 | [ProductCode](Logistics.Inventory.ReconciliationLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Selects the product thru some of the product codes. `Filter(multi eq)` |
 | [ProductVariant](Logistics.Inventory.ReconciliationLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | The product variant, which was reconciled. `Filter(multi eq)` `Introduced in version 22.1.6.15` |
-| [QuantityUnit](Logistics.Inventory.ReconciliationLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Logistics.Inventory.ReconciliationLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [Reconciliation](Logistics.Inventory.ReconciliationLines.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | Parent reconciliation Id. `Required` `Filter(multi eq)` `Owner` |
 | [SerialNumber](Logistics.Inventory.ReconciliationLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Item serial number for serialized items. null for non-serializable items. `Filter(multi eq)` |
 | [Store](Logistics.Inventory.ReconciliationLines.md#store) | [Stores](Logistics.Inventory.Stores.md) | The store, containing the reconciled product. `Required` `Filter(multi eq)` |
@@ -240,7 +240,7 @@ _Show in UI_: **HiddenByDefault**
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -309,7 +309,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

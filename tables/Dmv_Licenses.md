@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.Licenses](~/entities/Systems.Dmv.Licenses.md)
+Entity: [Systems.Monitoring.Licenses](~/entities/Systems.Monitoring.Licenses.md)
 
 The currently active licenses for the instance. Entity: Dmv_Licenses (Introduced in version 24.1.3.66)
 

@@ -4,11 +4,6 @@ uid: General.Contacts
 # General.Contacts Namespace
 
 ## Entities
-- [Activities](General.Contacts.Activities.md)  
-- [ActivityParticipants](General.Contacts.ActivityParticipants.md)  
-- [ActivityResources](General.Contacts.ActivityResources.md)  
-- [ActivityTemplates](General.Contacts.ActivityTemplates.md)  
-- [ActivityTimeIntervals](General.Contacts.ActivityTimeIntervals.md)  
 - [Companies](General.Contacts.Companies.md)  
 - [CompanyDepartments](General.Contacts.CompanyDepartments.md)  
 - [CompanyDivisions](General.Contacts.CompanyDivisions.md)  
@@ -23,5 +18,4 @@ uid: General.Contacts
 - [PartyRelationships](General.Contacts.PartyRelationships.md)  
 - [PartyRelationshipTypes](General.Contacts.PartyRelationshipTypes.md)  
 - [Persons](General.Contacts.Persons.md)  
-- [Reminders](General.Contacts.Reminders.md)  
 

@@ -40,7 +40,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Account](Finance.Accounting.AccountRequiredProperties.md#account) | [Accounts](Finance.Accounting.Accounts.md) | The <see cref="Account"/> to which this AccountRequiredProperty belongs. `Required` `Filter(multi eq)` `Owner` |
-| [Property](Finance.Accounting.AccountRequiredProperties.md#property) | [CustomProperties](General.CustomProperties.md) | A property of type (Entity_Name = Account Voucher Line) for which the user can specify value when entering accounting vouchers. `Required` `Filter(multi eq)` |
+| [Property](Finance.Accounting.AccountRequiredProperties.md#property) | [CustomProperties](Systems.Bpm.CustomProperties.md) | A property of type (Entity_Name = Account Voucher Line) for which the user can specify value when entering accounting vouchers. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -118,7 +118,7 @@ _Show in UI_: **HiddenByDefault**
 
 A property of type (Entity_Name = Account Voucher Line) for which the user can specify value when entering accounting vouchers. `Required` `Filter(multi eq)`
 
-_Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Type_: **[CustomProperties](Systems.Bpm.CustomProperties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -131,7 +131,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

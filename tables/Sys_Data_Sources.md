@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Reporting.DataSources](~/entities/Systems.Reporting.DataSources.md)
+Entity: [Systems.Documents.DataSources](~/entities/Systems.Documents.DataSources.md)
 
 Contains user-defined data sources, which retrieve rows from multiple queries. Entity: Sys_Data_Sources
 

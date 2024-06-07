@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.UpdateProcedureExecutes](~/entities/Systems.Core.UpdateProcedureExecutes.md)
+Entity: [Systems.Monitoring.UpdateProcedureExecutes](~/entities/Systems.Monitoring.UpdateProcedureExecutes.md)
 
 Contains data about the execution of Upgrade Procedures. Contains status messages and ensures that each procedure is executed only once. Entity: Sys_Update_Procedure_Executes
 

@@ -48,7 +48,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [EnterpriseCompany](Applications.Cms.WebSites.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company to which this web site belongs. `Required` `Filter(multi eq)` |
-| [<s>PublicUserList</s>](Applications.Cms.WebSites.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) (nullable) | **OBSOLETE! Do not use!** The list of users used to authorize the users on the site. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.5.20` `Obsolete` |
+| [<s>PublicUserList</s>](Applications.Cms.WebSites.md#publicuserlist) | [PublicUserLists](Systems.External.PublicUserLists.md) (nullable) | **OBSOLETE! Do not use!** The list of users used to authorize the users on the site. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.5.35` `Obsolete` |
 
 ## Child Collections
 
@@ -136,7 +136,7 @@ _Show in UI_: **ShownByDefault**
 
 ### PublicUserList
 
-**OBSOLETE! Do not use!** The list of users used to authorize the users on the site. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.5.20` `Obsolete`
+**OBSOLETE! Do not use!** The list of users used to authorize the users on the site. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.5.35` `Obsolete`
 
 _Type_: **[PublicUserLists](Systems.External.PublicUserLists.md) (nullable)**  
 _Category_: **System**  
@@ -151,7 +151,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

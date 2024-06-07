@@ -883,6 +883,27 @@ references:
 - uid: General
   name: General Namespace
   href: entities/General.html
+- uid: General.Activities
+  name: General.Activities Namespace
+  href: entities/General.Activities.html
+- uid: General.Activities.Activities
+  name: General.Activities.Activities Entity
+  href: entities/General.Activities.Activities.html
+- uid: General.Activities.ActivityParticipants
+  name: General.Activities.ActivityParticipants Entity
+  href: entities/General.Activities.ActivityParticipants.html
+- uid: General.Activities.ActivityResources
+  name: General.Activities.ActivityResources Entity
+  href: entities/General.Activities.ActivityResources.html
+- uid: General.Activities.ActivityTemplates
+  name: General.Activities.ActivityTemplates Entity
+  href: entities/General.Activities.ActivityTemplates.html
+- uid: General.Activities.ActivityTimeIntervals
+  name: General.Activities.ActivityTimeIntervals Entity
+  href: entities/General.Activities.ActivityTimeIntervals.html
+- uid: General.Activities.Reminders
+  name: General.Activities.Reminders Entity
+  href: entities/General.Activities.Reminders.html
 - uid: General.Config
   name: General.Config Entity
   href: entities/General.Config.html
@@ -1111,6 +1132,12 @@ references:
 - uid: General.Products.CodingSystems
   name: General.Products.CodingSystems Entity
   href: entities/General.Products.CodingSystems.html
+- uid: General.Products.MeasurementCategories
+  name: General.Products.MeasurementCategories Entity
+  href: entities/General.Products.MeasurementCategories.html
+- uid: General.Products.MeasurementUnits
+  name: General.Products.MeasurementUnits Entity
+  href: entities/General.Products.MeasurementUnits.html
 - uid: General.Products.ProductCatalogs
   name: General.Products.ProductCatalogs Entity
   href: entities/General.Products.ProductCatalogs.html
@@ -1231,6 +1258,9 @@ references:
 - uid: Logistics.Inventory.CostCorrectionsOptions
   name: Logistics.Inventory.CostCorrectionsOptions Entity
   href: entities/Logistics.Inventory.CostCorrectionsOptions.html
+- uid: Logistics.Inventory.CurrentBalanceAdjustedCosts
+  name: Logistics.Inventory.CurrentBalanceAdjustedCosts View
+  href: entities/Logistics.Inventory.CurrentBalanceAdjustedCosts.html
 - uid: Logistics.Inventory.CurrentBalances
   name: Logistics.Inventory.CurrentBalances View
   href: entities/Logistics.Inventory.CurrentBalances.html
@@ -1831,6 +1861,12 @@ references:
 - uid: Systems.Bpm.CalculatedAttributes
   name: Systems.Bpm.CalculatedAttributes Entity
   href: entities/Systems.Bpm.CalculatedAttributes.html
+- uid: Systems.Bpm.CustomProperties
+  name: Systems.Bpm.CustomProperties Entity
+  href: entities/Systems.Bpm.CustomProperties.html
+- uid: Systems.Bpm.CustomPropertyAllowedValues
+  name: Systems.Bpm.CustomPropertyAllowedValues Entity
+  href: entities/Systems.Bpm.CustomPropertyAllowedValues.html
 - uid: Systems.Bpm.ExecutionSteps
   name: Systems.Bpm.ExecutionSteps Entity
   href: entities/Systems.Bpm.ExecutionSteps.html
@@ -1861,6 +1897,15 @@ references:
 - uid: Systems.Bpm.ProcessNodeTimerEvents
   name: Systems.Bpm.ProcessNodeTimerEvents Entity
   href: entities/Systems.Bpm.ProcessNodeTimerEvents.html
+- uid: Systems.Bpm.PropertiesCategories
+  name: Systems.Bpm.PropertiesCategories Entity
+  href: entities/Systems.Bpm.PropertiesCategories.html
+- uid: Systems.Bpm.PropertyEnterpriseCompanyFilters
+  name: Systems.Bpm.PropertyEnterpriseCompanyFilters Entity
+  href: entities/Systems.Bpm.PropertyEnterpriseCompanyFilters.html
+- uid: Systems.Bpm.PropertyValues
+  name: Systems.Bpm.PropertyValues Entity
+  href: entities/Systems.Bpm.PropertyValues.html
 - uid: Systems.Bpm.UserBusinessRuleActions
   name: Systems.Bpm.UserBusinessRuleActions Entity
   href: entities/Systems.Bpm.UserBusinessRuleActions.html
@@ -1873,6 +1918,27 @@ references:
 - uid: Systems.Bpm.UserBusinessRules
   name: Systems.Bpm.UserBusinessRules Entity
   href: entities/Systems.Bpm.UserBusinessRules.html
+- uid: Systems.Config
+  name: Systems.Config Namespace
+  href: entities/Systems.Config.html
+- uid: Systems.Config.Config
+  name: Systems.Config.Config Entity
+  href: entities/Systems.Config.Config.html
+- uid: Systems.Config.Jobs
+  name: Systems.Config.Jobs Entity
+  href: entities/Systems.Config.Jobs.html
+- uid: Systems.Config.Translations
+  name: Systems.Config.Translations Entity
+  href: entities/Systems.Config.Translations.html
+- uid: Systems.Config.WebHooks
+  name: Systems.Config.WebHooks Entity
+  href: entities/Systems.Config.WebHooks.html
+- uid: Systems.Config.WebHosts
+  name: Systems.Config.WebHosts Entity
+  href: entities/Systems.Config.WebHosts.html
+- uid: Systems.Config.WebSites
+  name: Systems.Config.WebSites Entity
+  href: entities/Systems.Config.WebSites.html
 - uid: Systems.Core
   name: Systems.Core Namespace
   href: entities/Systems.Core.html
@@ -1993,6 +2059,48 @@ references:
 - uid: Systems.Dmv.WebSites
   name: Systems.Dmv.WebSites View
   href: entities/Systems.Dmv.WebSites.html
+- uid: Systems.Documents
+  name: Systems.Documents Namespace
+  href: entities/Systems.Documents.html
+- uid: Systems.Documents.DataSourceQueries
+  name: Systems.Documents.DataSourceQueries Entity
+  href: entities/Systems.Documents.DataSourceQueries.html
+- uid: Systems.Documents.DataSources
+  name: Systems.Documents.DataSources Entity
+  href: entities/Systems.Documents.DataSources.html
+- uid: Systems.Documents.DocumentPartyRoles
+  name: Systems.Documents.DocumentPartyRoles Entity
+  href: entities/Systems.Documents.DocumentPartyRoles.html
+- uid: Systems.Documents.DocumentTypeAmounts
+  name: Systems.Documents.DocumentTypeAmounts Entity
+  href: entities/Systems.Documents.DocumentTypeAmounts.html
+- uid: Systems.Documents.DocumentTypeEnterpriseCompanies
+  name: Systems.Documents.DocumentTypeEnterpriseCompanies Entity
+  href: entities/Systems.Documents.DocumentTypeEnterpriseCompanies.html
+- uid: Systems.Documents.DocumentTypeNotifications
+  name: Systems.Documents.DocumentTypeNotifications Entity
+  href: entities/Systems.Documents.DocumentTypeNotifications.html
+- uid: Systems.Documents.DocumentTypeProperties
+  name: Systems.Documents.DocumentTypeProperties Entity
+  href: entities/Systems.Documents.DocumentTypeProperties.html
+- uid: Systems.Documents.DocumentTypes
+  name: Systems.Documents.DocumentTypes Entity
+  href: entities/Systems.Documents.DocumentTypes.html
+- uid: Systems.Documents.DocumentTypeSecurityConditions
+  name: Systems.Documents.DocumentTypeSecurityConditions Entity
+  href: entities/Systems.Documents.DocumentTypeSecurityConditions.html
+- uid: Systems.Documents.DocumentTypeUserStatuses
+  name: Systems.Documents.DocumentTypeUserStatuses Entity
+  href: entities/Systems.Documents.DocumentTypeUserStatuses.html
+- uid: Systems.Documents.PrintoutLayouts
+  name: Systems.Documents.PrintoutLayouts Entity
+  href: entities/Systems.Documents.PrintoutLayouts.html
+- uid: Systems.Documents.Printouts
+  name: Systems.Documents.Printouts Entity
+  href: entities/Systems.Documents.Printouts.html
+- uid: Systems.Documents.Sequences
+  name: Systems.Documents.Sequences Entity
+  href: entities/Systems.Documents.Sequences.html
 - uid: Systems.External
   name: Systems.External Namespace
   href: entities/Systems.External.html
@@ -2002,6 +2110,102 @@ references:
 - uid: Systems.External.PublicUsers
   name: Systems.External.PublicUsers Entity
   href: entities/Systems.External.PublicUsers.html
+- uid: Systems.Internal
+  name: Systems.Internal Namespace
+  href: entities/Systems.Internal.html
+- uid: Systems.Internal.AttributeChanges
+  name: Systems.Internal.AttributeChanges View
+  href: entities/Systems.Internal.AttributeChanges.html
+- uid: Systems.Internal.AttributeChangesHistory
+  name: Systems.Internal.AttributeChangesHistory View
+  href: entities/Systems.Internal.AttributeChangesHistory.html
+- uid: Systems.Internal.DataEntryDefaultValues
+  name: Systems.Internal.DataEntryDefaultValues Entity
+  href: entities/Systems.Internal.DataEntryDefaultValues.html
+- uid: Systems.Internal.DocumentJobs
+  name: Systems.Internal.DocumentJobs Entity
+  href: entities/Systems.Internal.DocumentJobs.html
+- uid: Systems.Internal.DocumentVersions
+  name: Systems.Internal.DocumentVersions Entity
+  href: entities/Systems.Internal.DocumentVersions.html
+- uid: Systems.Internal.ExtensibleDataObjects
+  name: Systems.Internal.ExtensibleDataObjects Entity
+  href: entities/Systems.Internal.ExtensibleDataObjects.html
+- uid: Systems.Internal.FormLayouts
+  name: Systems.Internal.FormLayouts Entity
+  href: entities/Systems.Internal.FormLayouts.html
+- uid: Systems.Internal.ObjectChanges
+  name: Systems.Internal.ObjectChanges Entity
+  href: entities/Systems.Internal.ObjectChanges.html
+- uid: Systems.Internal.ObjectChangesets
+  name: Systems.Internal.ObjectChangesets Entity
+  href: entities/Systems.Internal.ObjectChangesets.html
+- uid: Systems.Internal.ObjectFiles
+  name: Systems.Internal.ObjectFiles Entity
+  href: entities/Systems.Internal.ObjectFiles.html
+- uid: Systems.Internal.ObjectVersions
+  name: Systems.Internal.ObjectVersions Entity
+  href: entities/Systems.Internal.ObjectVersions.html
+- uid: Systems.Internal.Reports
+  name: Systems.Internal.Reports Entity
+  href: entities/Systems.Internal.Reports.html
+- uid: Systems.Monitoring
+  name: Systems.Monitoring Namespace
+  href: entities/Systems.Monitoring.html
+- uid: Systems.Monitoring.AuditLogEntries
+  name: Systems.Monitoring.AuditLogEntries Entity
+  href: entities/Systems.Monitoring.AuditLogEntries.html
+- uid: Systems.Monitoring.AuditLogSummary
+  name: Systems.Monitoring.AuditLogSummary View
+  href: entities/Systems.Monitoring.AuditLogSummary.html
+- uid: Systems.Monitoring.CurrentSessions
+  name: Systems.Monitoring.CurrentSessions View
+  href: entities/Systems.Monitoring.CurrentSessions.html
+- uid: Systems.Monitoring.ExecStats
+  name: Systems.Monitoring.ExecStats View
+  href: entities/Systems.Monitoring.ExecStats.html
+- uid: Systems.Monitoring.InformationMessages
+  name: Systems.Monitoring.InformationMessages Entity
+  href: entities/Systems.Monitoring.InformationMessages.html
+- uid: Systems.Monitoring.InformationMessagesSummary
+  name: Systems.Monitoring.InformationMessagesSummary View
+  href: entities/Systems.Monitoring.InformationMessagesSummary.html
+- uid: Systems.Monitoring.InstanceParameters
+  name: Systems.Monitoring.InstanceParameters View
+  href: entities/Systems.Monitoring.InstanceParameters.html
+- uid: Systems.Monitoring.LicenseHistory
+  name: Systems.Monitoring.LicenseHistory View
+  href: entities/Systems.Monitoring.LicenseHistory.html
+- uid: Systems.Monitoring.Licenses
+  name: Systems.Monitoring.Licenses View
+  href: entities/Systems.Monitoring.Licenses.html
+- uid: Systems.Monitoring.ObjectFiles
+  name: Systems.Monitoring.ObjectFiles View
+  href: entities/Systems.Monitoring.ObjectFiles.html
+- uid: Systems.Monitoring.PrintImages
+  name: Systems.Monitoring.PrintImages View
+  href: entities/Systems.Monitoring.PrintImages.html
+- uid: Systems.Monitoring.ProcedureStatusInfo
+  name: Systems.Monitoring.ProcedureStatusInfo View
+  href: entities/Systems.Monitoring.ProcedureStatusInfo.html
+- uid: Systems.Monitoring.ProcessInfo
+  name: Systems.Monitoring.ProcessInfo View
+  href: entities/Systems.Monitoring.ProcessInfo.html
+- uid: Systems.Monitoring.ResolvedConflicts
+  name: Systems.Monitoring.ResolvedConflicts Entity
+  href: entities/Systems.Monitoring.ResolvedConflicts.html
+- uid: Systems.Monitoring.ScheduledDocumentEvents
+  name: Systems.Monitoring.ScheduledDocumentEvents Entity
+  href: entities/Systems.Monitoring.ScheduledDocumentEvents.html
+- uid: Systems.Monitoring.TableInfo
+  name: Systems.Monitoring.TableInfo View
+  href: entities/Systems.Monitoring.TableInfo.html
+- uid: Systems.Monitoring.UpdateProcedureExecutes
+  name: Systems.Monitoring.UpdateProcedureExecutes Entity
+  href: entities/Systems.Monitoring.UpdateProcedureExecutes.html
+- uid: Systems.Monitoring.WebSites
+  name: Systems.Monitoring.WebSites View
+  href: entities/Systems.Monitoring.WebSites.html
 - uid: Systems.Reporting
   name: Systems.Reporting Namespace
   href: entities/Systems.Reporting.html
@@ -2029,6 +2233,12 @@ references:
 - uid: Systems.Security.Domains
   name: Systems.Security.Domains Entity
   href: entities/Systems.Security.Domains.html
+- uid: Systems.Security.EntitySettings
+  name: Systems.Security.EntitySettings Entity
+  href: entities/Systems.Security.EntitySettings.html
+- uid: Systems.Security.ExternalApplications
+  name: Systems.Security.ExternalApplications Entity
+  href: entities/Systems.Security.ExternalApplications.html
 - uid: Systems.Security.GroupAccessKeys
   name: Systems.Security.GroupAccessKeys Entity
   href: entities/Systems.Security.GroupAccessKeys.html

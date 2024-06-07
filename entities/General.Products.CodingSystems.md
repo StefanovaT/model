@@ -38,7 +38,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DefaultMeasurementUnit](General.Products.CodingSystems.md#defaultmeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | When not null, specifies a measurement unit to be used as default, instead of the products default unit. `Filter(multi eq)` |
+| [DefaultMeasurementUnit](General.Products.CodingSystems.md#defaultmeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | When not null, specifies a measurement unit to be used as default, instead of the products default unit. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -111,7 +111,7 @@ _Show in UI_: **HiddenByDefault**
 
 When not null, specifies a measurement unit to be used as default, instead of the products default unit. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -124,7 +124,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

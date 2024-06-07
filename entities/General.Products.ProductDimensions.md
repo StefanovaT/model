@@ -41,10 +41,10 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DestQuantityUnit](General.Products.ProductDimensions.md#destquantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Dest_Quantity. Should be one of the units of the base measurement category of the product. `Required` `Filter(multi eq)` |
-| [MeasurementCategory](General.Products.ProductDimensions.md#measurementcategory) | [MeasurementCategories](General.MeasurementCategories.md) | The measurement category of Source Quantity Unit. For each product, only one conversion ratio can be specified for a measurement category. `Required` `Filter(multi eq)` `ReadOnly` |
+| [DestQuantityUnit](General.Products.ProductDimensions.md#destquantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Dest_Quantity. Should be one of the units of the base measurement category of the product. `Required` `Filter(multi eq)` |
+| [MeasurementCategory](General.Products.ProductDimensions.md#measurementcategory) | [MeasurementCategories](General.Products.MeasurementCategories.md) | The measurement category of Source Quantity Unit. For each product, only one conversion ratio can be specified for a measurement category. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](General.Products.ProductDimensions.md#product) | [Products](General.Products.Products.md) | The product for which we specify conversion ratios. `Required` `Filter(multi eq)` `Owner` |
-| [SourceQuantityUnit](General.Products.ProductDimensions.md#sourcequantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The non-base measurement unit for which we specify convertion ratio. `Required` `Filter(multi eq)` |
+| [SourceQuantityUnit](General.Products.ProductDimensions.md#sourcequantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The non-base measurement unit for which we specify convertion ratio. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -133,7 +133,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Dest_Quantity. Should be one of the units of the base measurement category of the product. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -142,7 +142,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement category of Source Quantity Unit. For each product, only one conversion ratio can be specified for a measurement category. `Required` `Filter(multi eq)` `ReadOnly`
 
-_Type_: **[MeasurementCategories](General.MeasurementCategories.md)**  
+_Type_: **[MeasurementCategories](General.Products.MeasurementCategories.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -168,7 +168,7 @@ _Show in UI_: **ShownByDefault**
 
 The non-base measurement unit for which we specify convertion ratio. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -181,7 +181,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

@@ -78,18 +78,18 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BaseMeasurementCategory](General.Products.Products.md#basemeasurementcategory) | [MeasurementCategories](General.MeasurementCategories.md) | The base measurement category for quantities of this product. `Required` `Filter(multi eq)` |
+| [BaseMeasurementCategory](General.Products.Products.md#basemeasurementcategory) | [MeasurementCategories](General.Products.MeasurementCategories.md) | The base measurement category for quantities of this product. `Required` `Filter(multi eq)` |
 | [CargoType](General.Products.Products.md#cargotype) | [CargoTypes](Logistics.Shipment.CargoTypes.md) (nullable) | Specifies what type of cargo this product is. Required when generating transportation requisitions. null means unspecified. `Filter(multi eq)` |
 | [CostingCurrency](General.Products.Products.md#costingcurrency) | [Currencies](General.Currencies.md) (nullable) | Specifies the currency to use for cost calculations for the product. When null, the base currency for the enterprise company should be used. `Filter(multi eq)` |
 | [EnterpriseCompany](General.Products.Products.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | When not null, specifies that the product is specific to a given enterprise company and may be used only in documents from this enterprise company. `Filter(multi eq)` |
 | [ExciseProductType](General.Products.Products.md#exciseproducttype) | [ExciseProductTypes](Finance.Excise.ExciseProductTypes.md) (nullable) | Specifies the basic excise attributes of the product. `Filter(multi eq)` `Introduced in version 22.1.6.45` |
 | [IntrastatCommodityCode](General.Products.Products.md#intrastatcommoditycode) | [CommodityCodes](Finance.Intrastat.CommodityCodes.md) (nullable) | Code from The Combined Nomenclature used within the European Union countries. Used when reporting Intrastat and Excise. `Filter(multi eq)` |
-| [IntrastatSupplementaryUnit](General.Products.Products.md#intrastatsupplementaryunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | Additional measurement unit from the Intrastat Combined nomenclature. Used when creating Intrastat declarations. `Filter(multi eq)` |
-| [MeasurementUnit](General.Products.Products.md#measurementunit) | [MeasurementUnits](General.MeasurementUnits.md) | Default measurement unit, when creating new documents with this product. `Required` `Filter(multi eq)` |
+| [IntrastatSupplementaryUnit](General.Products.Products.md#intrastatsupplementaryunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | Additional measurement unit from the Intrastat Combined nomenclature. Used when creating Intrastat declarations. `Filter(multi eq)` |
+| [MeasurementUnit](General.Products.Products.md#measurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | Default measurement unit, when creating new documents with this product. `Required` `Filter(multi eq)` |
 | [OriginCountry](General.Products.Products.md#origincountry) | [Countries](General.Geography.Countries.md) (nullable) | Country from which the product originates (in which the product is produced/cultivated ...). Primarily used for Intrastat reporting. `Filter(multi eq)` |
 | [ProductGroup](General.Products.Products.md#productgroup) | [ProductGroups](General.Products.ProductGroups.md) | The product group, under which the product is categorized. `Required` `Filter(multi eq)` |
 | [ProductType](General.Products.Products.md#producttype) | [ProductTypes](General.Products.ProductTypes.md) | The type of the product. This also defines whether the product is stocked. null=no specific product type and the product is stocked. `Required` `Filter(multi eq)` |
-| [PurchaseMeasurementUnit](General.Products.Products.md#purchasemeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | Default measurement unit to use, when creating new purchase documents with this product. `Filter(multi eq)` |
+| [PurchaseMeasurementUnit](General.Products.Products.md#purchasemeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | Default measurement unit to use, when creating new purchase documents with this product. `Filter(multi eq)` |
 | [ValuationGroup](General.Products.Products.md#valuationgroup) | [ProductValuationGroups](Logistics.Inventory.ProductValuationGroups.md) (nullable) | Valuation group of the product. Used in reconciliations when compensating pluses and minuses. Equal plus and minus amounts within a valuation group are allowed to be compensated with each other for zero net fiscal effect. `Filter(multi eq)` |
 
 ## Child Collections
@@ -533,7 +533,7 @@ _Show in UI_: **ShownByDefault**
 
 The base measurement category for quantities of this product. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementCategories](General.MeasurementCategories.md)**  
+_Type_: **[MeasurementCategories](General.Products.MeasurementCategories.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -591,7 +591,7 @@ _Show in UI_: **ShownByDefault**
 
 Additional measurement unit from the Intrastat Combined nomenclature. Used when creating Intrastat declarations. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -600,7 +600,7 @@ _Show in UI_: **ShownByDefault**
 
 Default measurement unit, when creating new documents with this product. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -645,7 +645,7 @@ _Front-End Recalc Expressions:_
 
 Default measurement unit to use, when creating new purchase documents with this product. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -667,7 +667,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

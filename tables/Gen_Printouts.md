@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Printouts](~/entities/General.Printouts.md)
+Entity: [Systems.Documents.Printouts](~/entities/Systems.Documents.Printouts.md)
 
 Contains data about binding of printout layouts to specific user-defined document types. Entity: Gen_Printouts
 

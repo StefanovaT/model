@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.Reminders](~/entities/General.Contacts.Reminders.md)
+Entity: [General.Activities.Reminders](~/entities/General.Activities.Reminders.md)
 
 Reminders for activities. The reminders are alarms, which can be turned off. Each activity can have multiple reminders. Entity: Cm_Reminders
 

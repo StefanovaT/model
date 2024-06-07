@@ -35,7 +35,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Social.Reactions.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The root data object (post, marketplace product, document, etc), for which the reaction is. `Required` `Filter(multi eq)` |
+| [DataObject](Communities.Social.Reactions.md#dataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) | The root data object (post, marketplace product, document, etc), for which the reaction is. `Required` `Filter(multi eq)` |
 | [SocialComment](Communities.Social.Reactions.md#socialcomment) | [Comments](Communities.Social.Comments.md) (nullable) | When not null, specifies that the reaction is for the specified comment within the data object. `Filter(multi eq)` |
 | [User](Communities.Social.Reactions.md#user) | [Users](Systems.Security.Users.md) | The user, who reacted. `Required` `Filter(multi eq)` |
 
@@ -111,7 +111,7 @@ _Show in UI_: **ShownByDefault**
 
 The root data object (post, marketplace product, document, etc), for which the reaction is. `Required` `Filter(multi eq)`
 
-_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
+_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -142,7 +142,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

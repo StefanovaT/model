@@ -64,10 +64,10 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [EnterpriseCompany](Applications.Fleet.Vehicles.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company that manages thе Vehicle. `Filter(multi eq)` `Introduced in version 24.1.4.79` |
-| [FuelMeasurementUnit](Applications.Fleet.Vehicles.md#fuelmeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. `Filter(multi eq)` |
+| [FuelMeasurementUnit](Applications.Fleet.Vehicles.md#fuelmeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. `Filter(multi eq)` |
 | [MaintenanceProfile](Applications.Fleet.Vehicles.md#maintenanceprofile) | [MaintenanceProfiles](Applications.Fleet.MaintenanceProfiles.md) (nullable) | When not null, specifies, that the vehicle should be maintained according to the specified profile. Assigning a profile creates plan assignments for the vehicle. Ultimately, the specific plan assignments are taken into consideration, when planning vehicle maintenance. The profile is only for conveniently assigning multiple plans. `Filter(multi eq)` |
 | [ManagedAsset](Applications.Fleet.Vehicles.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
-| [OperationalMeasurementUnit](Applications.Fleet.Vehicles.md#operationalmeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit in which the operation of the vehicle is measured. E.g. km for automobiles, hrs for airplanes, etc. null means that the unit is unknown. `Filter(multi eq)` |
+| [OperationalMeasurementUnit](Applications.Fleet.Vehicles.md#operationalmeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | The measurement unit in which the operation of the vehicle is measured. E.g. km for automobiles, hrs for airplanes, etc. null means that the unit is unknown. `Filter(multi eq)` |
 | [OwnerParty](Applications.Fleet.Vehicles.md#ownerparty) | [Parties](General.Contacts.Parties.md) (nullable) | Vehicle owner. `Filter(multi eq)` |
 
 ## Child Collections
@@ -392,7 +392,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -420,7 +420,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit in which the operation of the vehicle is measured. E.g. km for automobiles, hrs for airplanes, etc. null means that the unit is unknown. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -442,7 +442,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

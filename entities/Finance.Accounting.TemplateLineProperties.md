@@ -23,7 +23,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 Aggregate Parent:  
 [Finance.Accounting.TemplateLines](Finance.Accounting.TemplateLines.md)  
 Aggregate Root:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
 ## Attributes
 
@@ -43,7 +43,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Property](Finance.Accounting.TemplateLineProperties.md#property) | [CustomProperties](General.CustomProperties.md) | The property which value will be included in the item key of the account. `Required` `Filter(multi eq)` |
+| [Property](Finance.Accounting.TemplateLineProperties.md#property) | [CustomProperties](Systems.Bpm.CustomProperties.md) | The property which value will be included in the item key of the account. `Required` `Filter(multi eq)` |
 | [TemplateLine](Finance.Accounting.TemplateLineProperties.md#templateline) | [TemplateLines](Finance.Accounting.TemplateLines.md) | The <see cref="TemplateLine"/> to which this TemplateLineProperty belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -147,7 +147,7 @@ _Show in UI_: **ShownByDefault**
 
 The property which value will be included in the item key of the account. `Required` `Filter(multi eq)`
 
-_Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Type_: **[CustomProperties](Systems.Bpm.CustomProperties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -171,7 +171,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

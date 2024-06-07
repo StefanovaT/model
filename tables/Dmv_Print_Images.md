@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.PrintImages](~/entities/Systems.Dmv.PrintImages.md)
+Entity: [Systems.Monitoring.PrintImages](~/entities/Systems.Monitoring.PrintImages.md)
 
 Information about print sizes, grouped by document type and print type. Entity: Dmv_Print_Images (Introduced in version 24.1.0.15)
 

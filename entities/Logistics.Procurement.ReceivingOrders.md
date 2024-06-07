@@ -84,7 +84,7 @@ Aggregate Tree
 | [AssignedToUser](Logistics.Procurement.ReceivingOrders.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [CurrencyDirectory](Logistics.Procurement.ReceivingOrders.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [DocumentCurrency](Logistics.Procurement.ReceivingOrders.md#documentcurrency) | [Currencies](General.Currencies.md) | The currency of the unit prices and amounts in the document. `Required` `Filter(multi eq)` |
-| [DocumentType](Logistics.Procurement.ReceivingOrders.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [DocumentType](Logistics.Procurement.ReceivingOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Logistics.Procurement.ReceivingOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Logistics.Procurement.ReceivingOrders.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [FromCompanyDivision](Logistics.Procurement.ReceivingOrders.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -98,12 +98,12 @@ Aggregate Tree
 | [PurchasePriceList](Logistics.Procurement.ReceivingOrders.md#purchasepricelist) | [PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable) | The price list, which, when non-null, is used to automatically load unit prices of the products, when entering the invoice manually. `Filter(multi eq)` |
 | [ResponsiblePerson](Logistics.Procurement.ReceivingOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ReverseOfDocument](Logistics.Procurement.ReceivingOrders.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [Sequence](Logistics.Procurement.ReceivingOrders.md#sequence) | [Sequences](Systems.Core.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [Sequence](Logistics.Procurement.ReceivingOrders.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [Store](Logistics.Procurement.ReceivingOrders.md#store) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store in which the goods were received. `Filter(multi eq)` |
 | [Supplier](Logistics.Procurement.ReceivingOrders.md#supplier) | [Suppliers](Logistics.Procurement.Suppliers.md) | The supplier of the products for this receiving order. `Required` `Filter(multi eq)` |
 | [ToCompanyDivision](Logistics.Procurement.ReceivingOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Logistics.Procurement.ReceivingOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [UserStatus](Logistics.Procurement.ReceivingOrders.md#userstatus) | [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [UserStatus](Logistics.Procurement.ReceivingOrders.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 
 ## Child Collections
 
@@ -579,7 +579,7 @@ _Front-End Recalc Expressions:_
 
 The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -715,7 +715,7 @@ _Show in UI_: **HiddenByDefault**
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[Sequences](Systems.Core.Sequences.md) (nullable)**  
+_Type_: **[Sequences](Systems.Documents.Sequences.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -766,7 +766,7 @@ _Back-End Default Expression:_
 
 The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md) (nullable)**  
+_Type_: **[DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -803,7 +803,7 @@ _Domain API Request_: **POST**
 
   * **userStatus**  
     The desired new user status of the document. Can be null.  
-    _Type_: [DocumentTypeUserStatuses](General.DocumentTypeUserStatuses.md)  
+    _Type_: [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -901,7 +901,7 @@ _Domain API Request_: **POST**
 
   * **printout**  
     The printout defined for the document type of the document. If null the default printout of the document type is used.  
-    _Type_: [Printouts](General.Printouts.md)  
+    _Type_: [Printouts](Systems.Documents.Printouts.md)  
      _Optional_: True  
     _Default Value_: null  
 
@@ -933,7 +933,7 @@ _Domain API Request_: **GET**
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

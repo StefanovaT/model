@@ -93,9 +93,9 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
-<a href="General.DocumentTypes.html">General.DocumentTypes</a><br>
+<a href="Systems.Documents.DocumentTypes.html">Systems.Documents.DocumentTypes</a><br>
 Aggregate Root:<br>
-<a href="General.DocumentTypes.html">General.DocumentTypes</a></p>
+<a href="Systems.Documents.DocumentTypes.html">Systems.Documents.DocumentTypes</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -160,8 +160,8 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#documenttype">DocumentType</a></td>
-<td><a href="General.DocumentTypes.html">DocumentTypes</a></td>
-<td>The <see cref="General.DocumentType"></see> to which this DefaultSalesOrder<br>PaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
+<td><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></td>
+<td>The <see cref="Systems.Documents.DocumentType"></see> to which this DefaultSalesOrder<br>PaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.DefaultSalesOrderPaymentPlans.html#enterprisecompany">EnterpriseCompany</a></td>
@@ -290,8 +290,8 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <code>IIF( ( obj.AmountPercent != null), False, obj.Remainder)</code></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
-<p>The <see cref="General.DocumentType"></see> to which this DefaultSalesOrderPaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
+<p>The <see cref="Systems.Documents.DocumentType"></see> to which this DefaultSalesOrderPaymentPlan belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
@@ -328,7 +328,7 @@ Generic enum type for PaymentPlanDueDateSource properties<br>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

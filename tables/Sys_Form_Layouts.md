@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.UI.FormLayouts](~/entities/Systems.UI.FormLayouts.md)
+Entity: [Systems.Internal.FormLayouts](~/entities/Systems.Internal.FormLayouts.md)
 
 Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 

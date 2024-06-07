@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.AttributeChanges](~/entities/Systems.Core.AttributeChanges.md)
+Entity: [Systems.Internal.AttributeChanges](~/entities/Systems.Internal.AttributeChanges.md)
 
 Attribute values of an object change. Entity: Sys_Attribute_Changes_View (Introduced in version 23.1.2.71)
 

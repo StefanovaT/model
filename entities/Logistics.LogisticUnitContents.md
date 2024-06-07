@@ -51,7 +51,7 @@ Aggregate Root:
 | [Lot](Logistics.LogisticUnitContents.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot of the product. Null means unknown or that the product does not use lots. `Filter(multi eq)` `Introduced in version 23.1.2.0` |
 | [Product](Logistics.LogisticUnitContents.md#product) | [Products](General.Products.Products.md) | The product, which is contained in the logistic unit. `Required` `Filter(multi eq)` |
 | [ProductVariant](Logistics.LogisticUnitContents.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | The product variant of the product. Null means unknown or that the product does not have variants. `Filter(multi eq)` `Introduced in version 23.1.2.0` |
-| [QuantityUnit](Logistics.LogisticUnitContents.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of the quantity. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Logistics.LogisticUnitContents.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of the quantity. `Required` `Filter(multi eq)` |
 | [SerialNumber](Logistics.LogisticUnitContents.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | The serial number of the product. Null means unknown or that product is not serialized. `Filter(multi eq)` `Introduced in version 23.1.2.0` |
 
 
@@ -222,7 +222,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of the quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -246,7 +246,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

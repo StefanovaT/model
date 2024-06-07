@@ -35,7 +35,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentType](Finance.Vat.BGVATDocumentTypeVATCodes.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | Document type that generates VAT entries. `Required` `Filter(multi eq)` |
+| [DocumentType](Finance.Vat.BGVATDocumentTypeVATCodes.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | Document type that generates VAT entries. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -152,7 +152,7 @@ _Show in UI_: **ShownByDefault**
 
 Document type that generates VAT entries. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -166,7 +166,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

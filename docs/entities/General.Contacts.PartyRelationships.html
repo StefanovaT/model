@@ -83,17 +83,19 @@
 <p>Defines the relationships between the parties. The data is preserved over time. Entity: Cm_Party_Relationships</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Id}: {FromPartyId}</em><br>
+<em>{FromParty.PartyName:T}</em><br>
 Default Search Members:<br>
-__<br>
+<em>FromParty.PartyName</em><br>
+Name Data Member:<br>
+<em>FromParty.PartyName</em><br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Tree</p>
-<ul>
-<li><a href="General.Contacts.PartyRelationships.html">General.Contacts.PartyRelationships</a></li>
-</ul>
+<p>Aggregate Parent:<br>
+<a href="General.Contacts.Parties.html">General.Contacts.Parties</a><br>
+Aggregate Root:<br>
+<a href="General.Contacts.Parties.html">General.Contacts.Parties</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -149,7 +151,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="General.Contacts.PartyRelationships.html#fromparty">FromParty</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a></td>
-<td>The first party in the relationship. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The first party in the relationship. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 <tr>
 <td><a href="General.Contacts.PartyRelationships.html#relationshiptype">RelationshipType</a></td>
@@ -209,10 +211,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="fromparty">FromParty</h3>
-<p>The first party in the relationship. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The first party in the relationship. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="relationshiptype">RelationshipType</h3>
 <p>The type of the relationship. <code>Required</code> <code>Filter(multi eq)</code></p>
@@ -230,7 +233,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

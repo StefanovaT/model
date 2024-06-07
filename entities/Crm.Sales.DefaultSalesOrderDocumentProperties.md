@@ -21,9 +21,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 Aggregate Root:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
 ## Attributes
 
@@ -37,9 +37,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CustomerProperty](Crm.Sales.DefaultSalesOrderDocumentProperties.md#customerproperty) | [CustomProperties](General.CustomProperties.md) | The user-defined customer property that shall be copied. `Required` `Filter(multi eq)` |
-| [DocumentProperty](Crm.Sales.DefaultSalesOrderDocumentProperties.md#documentproperty) | [CustomProperties](General.CustomProperties.md) | The user-defined document property in which to copy the customers property value. `Required` `Filter(multi eq)` |
-| [DocumentType](Crm.Sales.DefaultSalesOrderDocumentProperties.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The document type for which the current definitions apply. `Required` `Filter(multi eq)` `Owner` |
+| [CustomerProperty](Crm.Sales.DefaultSalesOrderDocumentProperties.md#customerproperty) | [CustomProperties](Systems.Bpm.CustomProperties.md) | The user-defined customer property that shall be copied. `Required` `Filter(multi eq)` |
+| [DocumentProperty](Crm.Sales.DefaultSalesOrderDocumentProperties.md#documentproperty) | [CustomProperties](Systems.Bpm.CustomProperties.md) | The user-defined document property in which to copy the customers property value. `Required` `Filter(multi eq)` |
+| [DocumentType](Crm.Sales.DefaultSalesOrderDocumentProperties.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The document type for which the current definitions apply. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -80,7 +80,7 @@ _Show in UI_: **HiddenByDefault**
 
 The user-defined customer property that shall be copied. `Required` `Filter(multi eq)`
 
-_Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Type_: **[CustomProperties](Systems.Bpm.CustomProperties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -89,7 +89,7 @@ _Show in UI_: **ShownByDefault**
 
 The user-defined document property in which to copy the customers property value. `Required` `Filter(multi eq)`
 
-_Type_: **[CustomProperties](General.CustomProperties.md)**  
+_Type_: **[CustomProperties](Systems.Bpm.CustomProperties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -98,7 +98,7 @@ _Show in UI_: **ShownByDefault**
 
 The document type for which the current definitions apply. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -113,7 +113,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeSecurityConditions](~/entities/General.DocumentTypeSecurityConditions.md)
+Entity: [Systems.Documents.DocumentTypeSecurityConditions](~/entities/Systems.Documents.DocumentTypeSecurityConditions.md)
 
 Provides rules to conditionally secure new documents. Entity: Gen_Document_Type_Security_Conditions
 

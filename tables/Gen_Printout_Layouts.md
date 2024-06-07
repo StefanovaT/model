@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.PrintoutLayouts](~/entities/General.PrintoutLayouts.md)
+Entity: [Systems.Documents.PrintoutLayouts](~/entities/Systems.Documents.PrintoutLayouts.md)
 
 Contains design layouts for document printouts. Entity: Gen_Printout_Layouts
 

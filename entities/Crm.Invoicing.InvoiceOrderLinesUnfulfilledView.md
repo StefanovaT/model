@@ -52,7 +52,7 @@ Aggregate Root:
 | [LineDiscount](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Line_Discount_Id` `Introduced in version 24.1.5.19` |
 | [PaymentTransaction](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#paymenttransaction) | [PaymentTransactions](Finance.Payments.PaymentTransactions.md) (nullable) | The payment transaction, which is to be invoiced by this line, when Business Reason = P. Used to reconcile the invoice with the payments in the case of advance payment. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Payment_Transaction_Id` `Introduced in version 24.1.5.19` |
 | [Product](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#product) | [Products](General.Products.Products.md) (nullable) | The product, which is ordered for invoicing. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Product_Id` `Introduced in version 24.1.5.19` |
-| [QuantityUnit](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Quantity_Unit_Id` `Introduced in version 24.1.5.19` |
+| [QuantityUnit](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Quantity_Unit_Id` `Introduced in version 24.1.5.19` |
 | [SalesOrder](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#salesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) (nullable) | When not null specifies the Sales Order that is ordered to be invoiced by this line. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Sales_Order_Id` `Introduced in version 24.1.5.19` |
 | [SalesOrderLine](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#salesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable) | When not null specifies the Sales Order line that is ordered to be invoiced by this line. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Sales_Order_Line_Id` `Introduced in version 24.1.5.19` |
 | [SerialNumber](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Which serial number to receive/issue. null means that serial number is unknown or not applicable. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Serial_Number_Id` `Introduced in version 24.1.5.19` |
@@ -293,7 +293,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_Lines_Table.Quantity_Unit_Id` `Introduced in version 24.1.5.19`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Inherited From_: **Crm_Invoice_Order_Lines_Table.Quantity_Unit_Id**  
 _Supported Filters_: **Equals, EqualsIn**  

@@ -8,6 +8,8 @@ uid: Systems.Security
 - [ColumnPermissions](Systems.Security.ColumnPermissions.md)  
 - [DomainProviders](Systems.Security.DomainProviders.md)  
 - [Domains](Systems.Security.Domains.md)  
+- [EntitySettings](Systems.Security.EntitySettings.md)  
+- [ExternalApplications](Systems.Security.ExternalApplications.md)  
 - [GroupAccessKeys](Systems.Security.GroupAccessKeys.md)  
 - [Groups](Systems.Security.Groups.md)  
 - [Roles](Systems.Security.Roles.md)  

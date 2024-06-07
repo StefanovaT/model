@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.ActivityTimeIntervals](~/entities/General.Contacts.ActivityTimeIntervals.md)
+Entity: [General.Activities.ActivityTimeIntervals](~/entities/General.Activities.ActivityTimeIntervals.md)
 
 History of work efforts for executing activities (timesheet). Entity: Cm_Activity_Time_Intervals
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.ObjectChangesets](~/entities/Systems.Core.ObjectChangesets.md)
+Entity: [Systems.Internal.ObjectChangesets](~/entities/Systems.Internal.ObjectChangesets.md)
 
 A set of changes, performed in one request. Entity: Sys_Object_Changesets (Introduced in version 19.1)
 

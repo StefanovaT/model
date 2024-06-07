@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.Activities](~/entities/General.Contacts.Activities.md)
+Entity: [General.Activities.Activities](~/entities/General.Activities.Activities.md)
 
 Generic activity. Provides task management functionality. Activity can be one of Task, Communication or Meeting. Entity: Cm_Activities
 

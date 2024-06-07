@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.ObjectChanges](~/entities/Systems.Core.ObjectChanges.md)
+Entity: [Systems.Internal.ObjectChanges](~/entities/Systems.Internal.ObjectChanges.md)
 
 Actual tracked changes to one object. Entity: Sys_Object_Changes (Introduced in version 19.1)
 

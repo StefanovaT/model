@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Reporting.DataSourceQueries](~/entities/Systems.Reporting.DataSourceQueries.md)
+Entity: [Systems.Documents.DataSourceQueries](~/entities/Systems.Documents.DataSourceQueries.md)
 
 Represents a query within a data source. Entity: Sys_Data_Source_Queries
 

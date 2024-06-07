@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.PropertyValues](~/entities/General.PropertyValues.md)
+Entity: [Systems.Bpm.PropertyValues](~/entities/Systems.Bpm.PropertyValues.md)
 
 The actual values of the user-defined properties for each actual entity. Entity: Gen_Property_Values
 

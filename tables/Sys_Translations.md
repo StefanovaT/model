@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.Translations](~/entities/Systems.Core.Translations.md)
+Entity: [Systems.Config.Translations](~/entities/Systems.Config.Translations.md)
 
 Contains user-defined translations for non-english languages of the user interface and program messages. Entity: Sys_Translations
 

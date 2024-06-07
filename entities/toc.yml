@@ -584,19 +584,24 @@
 - name: General
   href: General.md
   items:
+  - name: Activities
+    href: General.Activities.md
+    items:
+    - name: Activities
+      href: General.Activities.Activities.md
+    - name: ActivityParticipants
+      href: General.Activities.ActivityParticipants.md
+    - name: ActivityResources
+      href: General.Activities.ActivityResources.md
+    - name: ActivityTemplates
+      href: General.Activities.ActivityTemplates.md
+    - name: ActivityTimeIntervals
+      href: General.Activities.ActivityTimeIntervals.md
+    - name: Reminders
+      href: General.Activities.Reminders.md
   - name: Contacts
     href: General.Contacts.md
     items:
-    - name: Activities
-      href: General.Contacts.Activities.md
-    - name: ActivityParticipants
-      href: General.Contacts.ActivityParticipants.md
-    - name: ActivityResources
-      href: General.Contacts.ActivityResources.md
-    - name: ActivityTemplates
-      href: General.Contacts.ActivityTemplates.md
-    - name: ActivityTimeIntervals
-      href: General.Contacts.ActivityTimeIntervals.md
     - name: Companies
       href: General.Contacts.Companies.md
     - name: CompanyDepartments
@@ -625,18 +630,12 @@
       href: General.Contacts.PartyRelationshipTypes.md
     - name: Persons
       href: General.Contacts.Persons.md
-    - name: Reminders
-      href: General.Contacts.Reminders.md
   - name: Currencies
     href: General.Currencies.md
   - name: CurrencyDirectories
     href: General.CurrencyDirectories.md
   - name: CurrencyDirectoryLines
     href: General.CurrencyDirectoryLines.md
-  - name: CustomProperties
-    href: General.CustomProperties.md
-  - name: CustomPropertyAllowedValues
-    href: General.CustomPropertyAllowedValues.md
   - name: DocumentAmountReferencedDocuments
     href: General.DocumentAmountReferencedDocuments.md
   - name: DocumentAmounts
@@ -653,8 +652,6 @@
     href: General.DocumentFileAttachments.md
   - name: DocumentFulfillments
     href: General.DocumentFulfillments.md
-  - name: DocumentJobs
-    href: General.DocumentJobs.md
   - name: DocumentLineAmounts
     href: General.DocumentLineAmounts.md
   - name: DocumentLinks
@@ -663,8 +660,6 @@
     href: General.DocumentManualDistributedAmounts.md
   - name: DocumentParties
     href: General.DocumentParties.md
-  - name: DocumentPartyRoles
-    href: General.DocumentPartyRoles.md
   - name: DocumentPrintImages
     href: General.DocumentPrintImages.md
   - name: DocumentPrints
@@ -673,22 +668,6 @@
     href: General.Documents.md
   - name: DocumentStateChanges
     href: General.DocumentStateChanges.md
-  - name: DocumentTypeAmounts
-    href: General.DocumentTypeAmounts.md
-  - name: DocumentTypeEnterpriseCompanies
-    href: General.DocumentTypeEnterpriseCompanies.md
-  - name: DocumentTypeNotifications
-    href: General.DocumentTypeNotifications.md
-  - name: DocumentTypeProperties
-    href: General.DocumentTypeProperties.md
-  - name: DocumentTypes
-    href: General.DocumentTypes.md
-  - name: DocumentTypeSecurityConditions
-    href: General.DocumentTypeSecurityConditions.md
-  - name: DocumentTypeUserStatuses
-    href: General.DocumentTypeUserStatuses.md
-  - name: DocumentVersions
-    href: General.DocumentVersions.md
   - name: EnterpriseCompanies
     href: General.EnterpriseCompanies.md
   - name: Files
@@ -711,23 +690,19 @@
       href: General.Geography.MapPoints.md
   - name: LinkTypes
     href: General.LinkTypes.md
-  - name: MeasurementCategories
-    href: General.MeasurementCategories.md
-  - name: MeasurementUnits
-    href: General.MeasurementUnits.md
   - name: PartyApplicableLegislations
     href: General.PartyApplicableLegislations.md
   - name: PartyLocationNumbers
     href: General.PartyLocationNumbers.md
-  - name: PrintoutLayouts
-    href: General.PrintoutLayouts.md
-  - name: Printouts
-    href: General.Printouts.md
   - name: Products
     href: General.Products.md
     items:
     - name: CodingSystems
       href: General.Products.CodingSystems.md
+    - name: MeasurementCategories
+      href: General.Products.MeasurementCategories.md
+    - name: MeasurementUnits
+      href: General.Products.MeasurementUnits.md
     - name: ProductCatalogs
       href: General.Products.ProductCatalogs.md
     - name: ProductCodes
@@ -760,12 +735,6 @@
       href: General.Products.VariantSizes.md
     - name: VariantStyles
       href: General.Products.VariantStyles.md
-  - name: PropertiesCategories
-    href: General.PropertiesCategories.md
-  - name: PropertyEnterpriseCompanyFilters
-    href: General.PropertyEnterpriseCompanyFilters.md
-  - name: PropertyValues
-    href: General.PropertyValues.md
   - name: ReportQueries
     href: General.ReportQueries.md
   - name: Reports
@@ -803,6 +772,8 @@
       href: Logistics.Inventory.CostCorrections.md
     - name: CostCorrectionsOptions
       href: Logistics.Inventory.CostCorrectionsOptions.md
+    - name: CurrentBalanceAdjustedCosts
+      href: Logistics.Inventory.CurrentBalanceAdjustedCosts.md
     - name: CurrentBalances
       href: Logistics.Inventory.CurrentBalances.md
     - name: DemandManagement
@@ -1141,6 +1112,18 @@
       href: Systems.Bpm.CalculatedAttributeExpressions.md
     - name: CalculatedAttributes
       href: Systems.Bpm.CalculatedAttributes.md
+    - name: CustomProperties
+      href: Systems.Bpm.CustomProperties.md
+    - name: CustomPropertyAllowedValues
+      href: Systems.Bpm.CustomPropertyAllowedValues.md
+    - name: Processes
+      href: Systems.Bpm.Processes.md
+    - name: PropertiesCategories
+      href: Systems.Bpm.PropertiesCategories.md
+    - name: PropertyEnterpriseCompanyFilters
+      href: Systems.Bpm.PropertyEnterpriseCompanyFilters.md
+    - name: PropertyValues
+      href: Systems.Bpm.PropertyValues.md
     - name: UserBusinessRuleActions
       href: Systems.Bpm.UserBusinessRuleActions.md
     - name: UserBusinessRuleConditions
@@ -1149,82 +1132,50 @@
       href: Systems.Bpm.UserBusinessRuleEvents.md
     - name: UserBusinessRules
       href: Systems.Bpm.UserBusinessRules.md
-  - name: Core
-    href: Systems.Core.md
+  - name: Config
+    href: Systems.Config.md
     items:
-    - name: AttributeChanges
-      href: Systems.Core.AttributeChanges.md
-    - name: AttributeChangesHistory
-      href: Systems.Core.AttributeChangesHistory.md
-    - name: AuditLogEntries
-      href: Systems.Core.AuditLogEntries.md
     - name: Config
-      href: Systems.Core.Config.md
-    - name: DataEntryDefaultValues
-      href: Systems.Core.DataEntryDefaultValues.md
-    - name: EntitySettings
-      href: Systems.Core.EntitySettings.md
-    - name: ExtensibleDataObjects
-      href: Systems.Core.ExtensibleDataObjects.md
-    - name: ExternalApplications
-      href: Systems.Core.ExternalApplications.md
-    - name: InformationMessages
-      href: Systems.Core.InformationMessages.md
+      href: Systems.Config.Config.md
     - name: Jobs
-      href: Systems.Core.Jobs.md
-    - name: ObjectChanges
-      href: Systems.Core.ObjectChanges.md
-    - name: ObjectChangesets
-      href: Systems.Core.ObjectChangesets.md
-    - name: ObjectFiles
-      href: Systems.Core.ObjectFiles.md
-    - name: ObjectVersions
-      href: Systems.Core.ObjectVersions.md
-    - name: ResolvedConflicts
-      href: Systems.Core.ResolvedConflicts.md
-    - name: ScheduledDocumentEvents
-      href: Systems.Core.ScheduledDocumentEvents.md
-    - name: Sequences
-      href: Systems.Core.Sequences.md
+      href: Systems.Config.Jobs.md
     - name: Translations
-      href: Systems.Core.Translations.md
-    - name: UpdateProcedureExecutes
-      href: Systems.Core.UpdateProcedureExecutes.md
+      href: Systems.Config.Translations.md
     - name: WebHooks
-      href: Systems.Core.WebHooks.md
+      href: Systems.Config.WebHooks.md
     - name: WebHosts
-      href: Systems.Core.WebHosts.md
+      href: Systems.Config.WebHosts.md
     - name: WebSites
-      href: Systems.Core.WebSites.md
-  - name: Dmv
-    href: Systems.Dmv.md
+      href: Systems.Config.WebSites.md
+  - name: Documents
+    href: Systems.Documents.md
     items:
-    - name: AuditLogEntries
-      href: Systems.Dmv.AuditLogEntries.md
-    - name: CurrentSessions
-      href: Systems.Dmv.CurrentSessions.md
-    - name: ExecStats
-      href: Systems.Dmv.ExecStats.md
-    - name: InformationMessages
-      href: Systems.Dmv.InformationMessages.md
-    - name: InstanceParameters
-      href: Systems.Dmv.InstanceParameters.md
-    - name: LicenseHistory
-      href: Systems.Dmv.LicenseHistory.md
-    - name: Licenses
-      href: Systems.Dmv.Licenses.md
-    - name: ObjectFiles
-      href: Systems.Dmv.ObjectFiles.md
-    - name: PrintImages
-      href: Systems.Dmv.PrintImages.md
-    - name: ProcedureStatusInfo
-      href: Systems.Dmv.ProcedureStatusInfo.md
-    - name: ProcessInfo
-      href: Systems.Dmv.ProcessInfo.md
-    - name: TableInfo
-      href: Systems.Dmv.TableInfo.md
-    - name: WebSites
-      href: Systems.Dmv.WebSites.md
+    - name: DataSourceQueries
+      href: Systems.Documents.DataSourceQueries.md
+    - name: DataSources
+      href: Systems.Documents.DataSources.md
+    - name: DocumentPartyRoles
+      href: Systems.Documents.DocumentPartyRoles.md
+    - name: DocumentTypeAmounts
+      href: Systems.Documents.DocumentTypeAmounts.md
+    - name: DocumentTypeEnterpriseCompanies
+      href: Systems.Documents.DocumentTypeEnterpriseCompanies.md
+    - name: DocumentTypeNotifications
+      href: Systems.Documents.DocumentTypeNotifications.md
+    - name: DocumentTypeProperties
+      href: Systems.Documents.DocumentTypeProperties.md
+    - name: DocumentTypes
+      href: Systems.Documents.DocumentTypes.md
+    - name: DocumentTypeSecurityConditions
+      href: Systems.Documents.DocumentTypeSecurityConditions.md
+    - name: DocumentTypeUserStatuses
+      href: Systems.Documents.DocumentTypeUserStatuses.md
+    - name: PrintoutLayouts
+      href: Systems.Documents.PrintoutLayouts.md
+    - name: Printouts
+      href: Systems.Documents.Printouts.md
+    - name: Sequences
+      href: Systems.Documents.Sequences.md
   - name: External
     href: Systems.External.md
     items:
@@ -1232,15 +1183,72 @@
       href: Systems.External.PublicUserLists.md
     - name: PublicUsers
       href: Systems.External.PublicUsers.md
-  - name: Reporting
-    href: Systems.Reporting.md
+  - name: Internal
+    href: Systems.Internal.md
     items:
-    - name: DataSourceQueries
-      href: Systems.Reporting.DataSourceQueries.md
-    - name: DataSources
-      href: Systems.Reporting.DataSources.md
+    - name: AttributeChanges
+      href: Systems.Internal.AttributeChanges.md
+    - name: AttributeChangesHistory
+      href: Systems.Internal.AttributeChangesHistory.md
+    - name: DataEntryDefaultValues
+      href: Systems.Internal.DataEntryDefaultValues.md
+    - name: DocumentJobs
+      href: Systems.Internal.DocumentJobs.md
+    - name: DocumentVersions
+      href: Systems.Internal.DocumentVersions.md
+    - name: ExtensibleDataObjects
+      href: Systems.Internal.ExtensibleDataObjects.md
+    - name: FormLayouts
+      href: Systems.Internal.FormLayouts.md
+    - name: ObjectChanges
+      href: Systems.Internal.ObjectChanges.md
+    - name: ObjectChangesets
+      href: Systems.Internal.ObjectChangesets.md
+    - name: ObjectFiles
+      href: Systems.Internal.ObjectFiles.md
+    - name: ObjectVersions
+      href: Systems.Internal.ObjectVersions.md
     - name: Reports
-      href: Systems.Reporting.Reports.md
+      href: Systems.Internal.Reports.md
+  - name: Monitoring
+    href: Systems.Monitoring.md
+    items:
+    - name: AuditLogEntries
+      href: Systems.Monitoring.AuditLogEntries.md
+    - name: AuditLogSummary
+      href: Systems.Monitoring.AuditLogSummary.md
+    - name: CurrentSessions
+      href: Systems.Monitoring.CurrentSessions.md
+    - name: ExecStats
+      href: Systems.Monitoring.ExecStats.md
+    - name: InformationMessages
+      href: Systems.Monitoring.InformationMessages.md
+    - name: InformationMessagesSummary
+      href: Systems.Monitoring.InformationMessagesSummary.md
+    - name: InstanceParameters
+      href: Systems.Monitoring.InstanceParameters.md
+    - name: LicenseHistory
+      href: Systems.Monitoring.LicenseHistory.md
+    - name: Licenses
+      href: Systems.Monitoring.Licenses.md
+    - name: ObjectFiles
+      href: Systems.Monitoring.ObjectFiles.md
+    - name: PrintImages
+      href: Systems.Monitoring.PrintImages.md
+    - name: ProcedureStatusInfo
+      href: Systems.Monitoring.ProcedureStatusInfo.md
+    - name: ProcessInfo
+      href: Systems.Monitoring.ProcessInfo.md
+    - name: ResolvedConflicts
+      href: Systems.Monitoring.ResolvedConflicts.md
+    - name: ScheduledDocumentEvents
+      href: Systems.Monitoring.ScheduledDocumentEvents.md
+    - name: TableInfo
+      href: Systems.Monitoring.TableInfo.md
+    - name: UpdateProcedureExecutes
+      href: Systems.Monitoring.UpdateProcedureExecutes.md
+    - name: WebSites
+      href: Systems.Monitoring.WebSites.md
   - name: Security
     href: Systems.Security.md
     items:
@@ -1252,6 +1260,10 @@
       href: Systems.Security.DomainProviders.md
     - name: Domains
       href: Systems.Security.Domains.md
+    - name: EntitySettings
+      href: Systems.Security.EntitySettings.md
+    - name: ExternalApplications
+      href: Systems.Security.ExternalApplications.md
     - name: GroupAccessKeys
       href: Systems.Security.GroupAccessKeys.md
     - name: Groups
@@ -1276,16 +1288,9 @@
       href: Systems.Security.Users.md
     - name: VisualPermissions
       href: Systems.Security.VisualPermissions.md
-  - name: UI
-    href: Systems.UI.md
-    items:
-    - name: FormLayouts
-      href: Systems.UI.FormLayouts.md
   - name: Workflow
     href: Systems.Workflow.md
     items:
-    - name: Processes
-      href: Systems.Workflow.Processes.md
     - name: RoleUsers
       href: Systems.Workflow.RoleUsers.md
     - name: Routes

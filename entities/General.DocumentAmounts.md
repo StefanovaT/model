@@ -46,7 +46,7 @@ Aggregate Root:
 | [Document](General.DocumentAmounts.md#document) | [Documents](General.Documents.md) | The <see cref="Document"/> to which this DocumentAmount belongs. `Required` `Filter(multi eq)` `Owner` |
 | [DocumentAmountType](General.DocumentAmounts.md#documentamounttype) | [DocumentAmountTypes](General.DocumentAmountTypes.md) | The type of the amount. `Required` `Filter(multi eq)` |
 | [InputAmountCurrency](General.DocumentAmounts.md#inputamountcurrency) | [Currencies](General.Currencies.md) (nullable) | When specifying the amount directly in Input Amount, this contains the currency of the amount. Used and required when Input Amount is not null. `Filter(multi eq)` |
-| [InputUnit](General.DocumentAmounts.md#inputunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | Measurement unit of the input unit amount. `Filter(multi eq)` |
+| [InputUnit](General.DocumentAmounts.md#inputunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | Measurement unit of the input unit amount. `Filter(multi eq)` |
 
 ## Child Collections
 
@@ -194,7 +194,7 @@ _Front-End Recalc Expressions:_
 
 Measurement unit of the input unit amount. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -209,7 +209,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

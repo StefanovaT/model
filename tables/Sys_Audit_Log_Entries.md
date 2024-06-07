@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.AuditLogEntries](~/entities/Systems.Core.AuditLogEntries.md)
+Entity: [Systems.Monitoring.AuditLogEntries](~/entities/Systems.Monitoring.AuditLogEntries.md)
 
 Each record represents the occurrence of one logged event. Entity: Sys_Audit_Log_Entries (Introduced in version 18.2)
 

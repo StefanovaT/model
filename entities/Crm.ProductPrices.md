@@ -48,7 +48,7 @@ Aggregate Tree
 | [EnterpriseCompany](Crm.ProductPrices.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | When not null, specifies that the sales document must be in the specified enterprise company. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Crm.ProductPrices.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | When set, specifies that the sales document must be of the specified enterprise company location. `Filter(multi eq)` |
 | [PriceList](Crm.ProductPrices.md#pricelist) | [PriceLists](Crm.PriceLists.md) (nullable) | When not null, specifies that the sales document must have the specified price list. `Filter(multi eq)` |
-| [PriceQuantityMeasurement<br />Unit](Crm.ProductPrices.md#pricequantitymeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Price_Quantity. `Required` `Filter(multi eq)` |
+| [PriceQuantityMeasurement<br />Unit](Crm.ProductPrices.md#pricequantitymeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Price_Quantity. `Required` `Filter(multi eq)` |
 | [PriceType](Crm.ProductPrices.md#pricetype) | [PriceTypes](Crm.PriceTypes.md) (nullable) | Price type of the current product price. The price types are used to set additional priority condition for the prices. `Filter(multi eq)` |
 | [Product](Crm.ProductPrices.md#product) | [Products](General.Products.Products.md) | The product for which a price will be defined. `Required` `Filter(multi eq)` `FilterableReference` |
 | [ShipToCustomer](Crm.ProductPrices.md#shiptocustomer) | [Customers](Crm.Customers.md) (nullable) | When not null, specifies that the price will be applied only when the sales document has the specified Ship-To-Customer. `Filter(multi eq)` |
@@ -255,7 +255,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Price_Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -310,7 +310,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

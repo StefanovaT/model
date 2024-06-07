@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.WebSites](~/entities/Systems.Core.WebSites.md)
+Entity: [Systems.Config.WebSites](~/entities/Systems.Config.WebSites.md)
 
 Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites (Introduced in version 19.1)
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypes](~/entities/General.DocumentTypes.md)
+Entity: [Systems.Documents.DocumentTypes](~/entities/Systems.Documents.DocumentTypes.md)
 
 List of user-defined document types. Each type has associated system entity (object class). Entity: Gen_Document_Types
 

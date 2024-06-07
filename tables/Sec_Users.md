@@ -23,6 +23,7 @@ User logins. Entity: Sec_Users
 |[Is_Admin](#is_admin)|`bit` |1 if the user is administrator, otherwise 0.|
 |[Lockout_End_Utc](#lockout_end_utc)|`datetime` |Contains the date and time (in UTC) until the user is locked. NULL when the user is not locked.|
 |[Login](#login)|`nvarchar(64)` |The login name of the user, which is usually the email|
+|[Model_Id](#model_id)|`uniqueidentifier` |The AI model associated with the user for their interactions. NULL means that this user has no AI model associated.|
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Password](#password)|`nvarchar(64)` Readonly|The password hash of the user, stored in the format, specified in Password Format.|
 |[Password_Format](#password_format)|`nvarchar(3)` Allowed: `MD5`, `AN3`|The format of the Password. MD5=MD5 format; AN3 = ASP.NET Core Identity v3.|
@@ -465,6 +466,43 @@ The login name of the user, which is usually the email
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 |Like|None|no|no|
+
+### Model_Id
+
+
+The AI model associated with the user for their interactions. NULL means that this user has no AI model associated.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Llm_Models](Llm_Models.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Model_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Notes
 

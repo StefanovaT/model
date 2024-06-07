@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.ResolvedConflicts](~/entities/Systems.Core.ResolvedConflicts.md)
+Entity: [Systems.Monitoring.ResolvedConflicts](~/entities/Systems.Monitoring.ResolvedConflicts.md)
 
 Contains records of conflicts, which were automatically resolved by update procedures. Entity: Sys_Resolved_Conflicts
 

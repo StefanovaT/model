@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeNotifications](~/entities/General.DocumentTypeNotifications.md)
+Entity: [Systems.Documents.DocumentTypeNotifications](~/entities/Systems.Documents.DocumentTypeNotifications.md)
 
 Provides notification addresses to be notified upon occurrence of different document events. Entity: Gen_Document_Type_Notifications
 

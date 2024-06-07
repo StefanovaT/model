@@ -97,7 +97,6 @@ _Show in UI_: **ShownByDefault**
 The name of this PaymentType. `Required` `Filter(like)`
 
 _Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring)**  
-_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
@@ -170,7 +169,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

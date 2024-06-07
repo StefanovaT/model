@@ -259,6 +259,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The domain, to which the user belongs. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></td>
 </tr>
 <tr>
+<td><a href="Systems.Security.Users.html#model">Model</a></td>
+<td><a href="Projects.AI.Models.html">Models</a> (nullable)</td>
+<td>The AI model associated with the user for their interactions. null means that this user has no AI model associated. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.34</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Security.Users.html#person">Person</a></td>
 <td><a href="General.Contacts.Persons.html">Persons</a> (nullable)</td>
 <td>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code></td>
@@ -567,6 +572,12 @@ Allowed values for the <code>UserType</code>(Systems.Security.Users.md#usertype)
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="model">Model</h3>
+<p>The AI model associated with the user for their interactions. null means that this user has no AI model associated. <code>Filter(multi eq)</code> <code>Introduced in version 24.1.5.34</code></p>
+<p><em>Type</em>: <strong><a href="Projects.AI.Models.html">Models</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="person">Person</h3>
 <p>The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
@@ -577,7 +588,7 @@ Allowed values for the <code>UserType</code>(Systems.Security.Users.md#usertype)
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

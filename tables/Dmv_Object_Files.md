@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.ObjectFiles](~/entities/Systems.Dmv.ObjectFiles.md)
+Entity: [Systems.Monitoring.ObjectFiles](~/entities/Systems.Monitoring.ObjectFiles.md)
 
 Information about object file sizes, grouped by entity type and creation time. Entity: Dmv_Object_Files (Introduced in version 24.1.3.46)
 

@@ -93,9 +93,9 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
-<a href="General.DocumentTypes.html">General.DocumentTypes</a><br>
+<a href="Systems.Documents.DocumentTypes.html">Systems.Documents.DocumentTypes</a><br>
 Aggregate Root:<br>
-<a href="General.DocumentTypes.html">General.DocumentTypes</a></p>
+<a href="Systems.Documents.DocumentTypes.html">Systems.Documents.DocumentTypes</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -135,12 +135,12 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Crm.Presales.OffersOptions.html#dealdocumenttype">DealDocumentType</a></td>
-<td><a href="General.DocumentTypes.html">DocumentTypes</a> (nullable)</td>
+<td><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a> (nullable)</td>
 <td>If filled then new opportunities (deals) from the specified type will be created automatically for the offers that aren't assigned to existing opportunities. Used for automating opportunity management. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Presales.OffersOptions.html#documenttype">DocumentType</a></td>
-<td><a href="General.DocumentTypes.html">DocumentTypes</a></td>
+<td><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></td>
 <td>The document type for which the offer option applies. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 </tbody>
@@ -170,13 +170,13 @@ Aggregate Root:<br>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="dealdocumenttype">DealDocumentType</h3>
 <p>If filled then new opportunities (deals) from the specified type will be created automatically for the offers that aren't assigned to existing opportunities. Used for automating opportunity management. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="documenttype">DocumentType</h3>
 <p>The document type for which the offer option applies. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -186,7 +186,7 @@ Aggregate Root:<br>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

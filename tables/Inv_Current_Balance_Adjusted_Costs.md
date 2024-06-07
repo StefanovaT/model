@@ -1,6 +1,12 @@
 # View Inv_Current_Balance_Adjusted_Costs
 
 
+## Entity
+
+Entity: [Logistics.Inventory.CurrentBalanceAdjustedCosts](~/entities/Logistics.Inventory.CurrentBalanceAdjustedCosts.md)
+
+The current inventory balances with adjustments, grouped by storage key (Store, Product, Lot, etc.). Entity: Inv_Current_Balance_Adjusted_Costs (Introduced in version 24.1.5.34)
+
 ## Summary
 
 | Name | Type | Description |

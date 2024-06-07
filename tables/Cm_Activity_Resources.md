@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.ActivityResources](~/entities/General.Contacts.ActivityResources.md)
+Entity: [General.Activities.ActivityResources](~/entities/General.Activities.ActivityResources.md)
 
 Contains the resources, allocated to the activities. Entity: Cm_Activity_Resources
 

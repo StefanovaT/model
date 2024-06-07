@@ -304,7 +304,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td><a href="Finance.Assets.AssetTransactions.html#documenttype">DocumentType</a></td>
-<td><a href="General.DocumentTypes.html">DocumentTypes</a></td>
+<td><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></td>
 <td>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
@@ -354,7 +354,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td><a href="Finance.Assets.AssetTransactions.html#sequence">Sequence</a></td>
-<td><a href="Systems.Core.Sequences.html">Sequences</a> (nullable)</td>
+<td><a href="Systems.Documents.Sequences.html">Sequences</a> (nullable)</td>
 <td>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
@@ -369,7 +369,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 </tr>
 <tr>
 <td><a href="Finance.Assets.AssetTransactions.html#userstatus">UserStatus</a></td>
-<td><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</td>
+<td><a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</td>
 <td>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
 </tr>
 </tbody>
@@ -756,7 +756,7 @@ Enumeration of document system states<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="documenttype">DocumentType</h3>
 <p>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypes.html">DocumentTypes</a></strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -821,7 +821,7 @@ Enumeration of document system states<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="sequence">Sequence</h3>
 <p>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="Systems.Core.Sequences.html">Sequences</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.Sequences.html">Sequences</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -841,7 +841,7 @@ Enumeration of document system states<br>
 <code>obj.ObtainToParty( )</code></p>
 <h3 id="userstatus">UserStatus</h3>
 <p>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -900,7 +900,7 @@ Enumeration of document system states<br>
 </li>
 <li><p><strong>userStatus</strong><br>
 The desired new user status of the document. Can be null.<br>
-<em>Type</em>: <a href="General.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a><br>
+<em>Type</em>: <a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a><br>
 <em>Optional</em>: True<br>
 <em>Default Value</em>: null</p>
 </li>
@@ -1020,7 +1020,7 @@ The file format: pdf, html, xlsx, xls, docx, txt and png. The default format is 
 </li>
 <li><p><strong>printout</strong><br>
 The printout defined for the document type of the document. If null the default printout of the document type is used.<br>
-<em>Type</em>: <a href="General.Printouts.html">Printouts</a><br>
+<em>Type</em>: <a href="Systems.Documents.Printouts.html">Printouts</a><br>
 <em>Optional</em>: True<br>
 <em>Default Value</em>: null</p>
 </li>
@@ -1046,7 +1046,7 @@ if set to true the current document is included.<br>
 </ul>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>

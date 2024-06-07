@@ -21,9 +21,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 Aggregate Root:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
 ## Attributes
 
@@ -37,8 +37,8 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DealDocumentType](Crm.Presales.OffersOptions.md#dealdocumenttype) | [DocumentTypes](General.DocumentTypes.md) (nullable) | If filled then new opportunities (deals) from the specified type will be created automatically for the offers that aren't assigned to existing opportunities. Used for automating opportunity management. `Filter(multi eq)` |
-| [DocumentType](Crm.Presales.OffersOptions.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The document type for which the offer option applies. `Required` `Filter(multi eq)` `Owner` |
+| [DealDocumentType](Crm.Presales.OffersOptions.md#dealdocumenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) (nullable) | If filled then new opportunities (deals) from the specified type will be created automatically for the offers that aren't assigned to existing opportunities. Used for automating opportunity management. `Filter(multi eq)` |
+| [DocumentType](Crm.Presales.OffersOptions.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The document type for which the offer option applies. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -79,7 +79,7 @@ _Show in UI_: **HiddenByDefault**
 
 If filled then new opportunities (deals) from the specified type will be created automatically for the offers that aren't assigned to existing opportunities. Used for automating opportunity management. `Filter(multi eq)`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -88,7 +88,7 @@ _Show in UI_: **ShownByDefault**
 
 The document type for which the offer option applies. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -103,7 +103,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

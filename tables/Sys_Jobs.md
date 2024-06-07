@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.Jobs](~/entities/Systems.Core.Jobs.md)
+Entity: [Systems.Config.Jobs](~/entities/Systems.Config.Jobs.md)
 
 The jobs, which are configured in the system. Entity: Sys_Jobs (Introduced in version 20.1)
 

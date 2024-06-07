@@ -34,7 +34,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Social.Follows.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The object being followed by the user. `Required` `Filter(multi eq)` |
+| [DataObject](Communities.Social.Follows.md#dataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) | The object being followed by the user. `Required` `Filter(multi eq)` |
 | [User](Communities.Social.Follows.md#user) | [Users](Systems.Security.Users.md) | The user which follows the object. `Required` `Filter(multi eq)` |
 
 
@@ -87,7 +87,7 @@ _Show in UI_: **HiddenByDefault**
 
 The object being followed by the user. `Required` `Filter(multi eq)`
 
-_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
+_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -111,7 +111,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

@@ -309,7 +309,7 @@ Object category attribute:  <em>ProductTypeId</em></p>
 <tbody>
 <tr>
 <td><a href="General.Products.Products.html#basemeasurementcategory">BaseMeasurementCategory</a></td>
-<td><a href="General.MeasurementCategories.html">MeasurementCategories</a></td>
+<td><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a></td>
 <td>The base measurement category for quantities of this product. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -339,12 +339,12 @@ Object category attribute:  <em>ProductTypeId</em></p>
 </tr>
 <tr>
 <td><a href="General.Products.Products.html#intrastatsupplementaryunit">IntrastatSupplementaryUnit</a></td>
-<td><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</td>
+<td><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a> (nullable)</td>
 <td>Additional measurement unit from the Intrastat Combined nomenclature. Used when creating Intrastat declarations. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="General.Products.Products.html#measurementunit">MeasurementUnit</a></td>
-<td><a href="General.MeasurementUnits.html">MeasurementUnits</a></td>
+<td><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></td>
 <td>Default measurement unit, when creating new documents with this product. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -364,7 +364,7 @@ Object category attribute:  <em>ProductTypeId</em></p>
 </tr>
 <tr>
 <td><a href="General.Products.Products.html#purchasemeasurementunit">PurchaseMeasurementUnit</a></td>
-<td><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</td>
+<td><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a> (nullable)</td>
 <td>Default measurement unit to use, when creating new purchase documents with this product. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -839,7 +839,7 @@ Allowed values for the <code>UseLots</code>(General.Products.Products.md#uselots
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="basemeasurementcategory">BaseMeasurementCategory</h3>
 <p>The base measurement category for quantities of this product. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementCategories.html">MeasurementCategories</a></strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -879,13 +879,13 @@ Allowed values for the <code>UseLots</code>(General.Products.Products.md#uselots
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="intrastatsupplementaryunit">IntrastatSupplementaryUnit</h3>
 <p>Additional measurement unit from the Intrastat Combined nomenclature. Used when creating Intrastat declarations. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="measurementunit">MeasurementUnit</h3>
 <p>Default measurement unit, when creating new documents with this product. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a></strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -917,7 +917,7 @@ Allowed values for the <code>UseLots</code>(General.Products.Products.md#uselots
 <code>obj.ProductGroup.GetDefaultProductTypeForNewProduct( )</code></p>
 <h3 id="purchasemeasurementunit">PurchaseMeasurementUnit</h3>
 <p>Default measurement unit to use, when creating new purchase documents with this product. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Products.MeasurementUnits.html">MeasurementUnits</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -931,7 +931,7 @@ Allowed values for the <code>UseLots</code>(General.Products.Products.md#uselots
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
 <p>Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.<br>
-<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#general.custompropertyvalue">CustomPropertyValue</a></strong><br>
+<em>Return Type</em>: <strong>Collection Of <a href="../data-types.html#systems.bpm.custompropertyvalue">CustomPropertyValue</a></strong><br>
 <em>Declaring Type</em>: <strong>EntityObject</strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>
