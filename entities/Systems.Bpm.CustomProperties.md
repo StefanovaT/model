@@ -7,6 +7,15 @@ uid: Systems.Bpm.CustomProperties
 
 User-defined properties, which can supplement the system properties of almost all entities in the system. Entity: Gen_Properties
 
+## Renames
+
+Old name: General.CustomProperties 
+New name: Systems.Bpm.CustomProperties 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

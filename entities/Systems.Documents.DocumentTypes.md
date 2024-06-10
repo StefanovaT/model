@@ -7,6 +7,15 @@ uid: Systems.Documents.DocumentTypes
 
 List of user-defined document types. Each type has associated system entity (object class). Entity: Gen_Document_Types
 
+## Renames
+
+Old name: General.DocumentTypes 
+New name: Systems.Documents.DocumentTypes 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{TypeName:T}_  
@@ -246,9 +255,9 @@ _Allowed Values (Systems.Documents.DocumentTypesRepository.TrackAttributeChanges
 
 | Value | Description |
 | ---- | --- |
-| Default | Default value. Stored as 'DEF'. <br /> _Database Value:_ 'DEF' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Default' |
-| ForceEnable | ForceEnable value. Stored as 'ENA'. <br /> _Database Value:_ 'ENA' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ForceEnable' |
-| ForceDisable | ForceDisable value. Stored as 'DIS'. <br /> _Database Value:_ 'DIS' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ForceDisable' |
+| Default | Default. Stored as 'DEF'. <br /> _Database Value:_ 'DEF' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Default' |
+| ForceEnable | Force Enable. Stored as 'ENA'. <br /> _Database Value:_ 'ENA' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ForceEnable' |
+| ForceDisable | Force Disable. Stored as 'DIS'. <br /> _Database Value:_ 'DIS' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ForceDisable' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  

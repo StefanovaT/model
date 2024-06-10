@@ -7,6 +7,15 @@ uid: Systems.Documents.Sequences
 
 Provides numbering sequences, applicable for use in a multi-threaded environment. Entity: Gen_Sequences
 
+## Renames
+
+Old name: Systems.Core.Sequences 
+New name: Systems.Documents.Sequences 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  

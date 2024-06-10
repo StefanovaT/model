@@ -7,6 +7,15 @@ uid: Systems.Documents.DocumentTypeEnterpriseCompanies
 
 Specifies the visibility (availability) of the document type for the different enterprise companies. Entity: Gen_Document_Type_Enterprise_Companies
 
+## Renames
+
+Old name: General.DocumentTypeEnterpriseCompanies 
+New name: Systems.Documents.DocumentTypeEnterpriseCompanies 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.EntityName}_  

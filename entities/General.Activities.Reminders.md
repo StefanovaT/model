@@ -7,6 +7,15 @@ uid: General.Activities.Reminders
 
 Reminders for activities. The reminders are alarms, which can be turned off. Each activity can have multiple reminders. Entity: Cm_Reminders
 
+## Renames
+
+Old name: General.Contacts.Reminders 
+New name: General.Activities.Reminders 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Activity.EntityName}_  

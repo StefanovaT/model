@@ -7,6 +7,15 @@ uid: Systems.Bpm.PropertyValues
 
 The actual values of the user-defined properties for each actual entity. Entity: Gen_Property_Values
 
+## Renames
+
+Old name: General.PropertyValues 
+New name: Systems.Bpm.PropertyValues 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Id}: {EntityItemId}_  

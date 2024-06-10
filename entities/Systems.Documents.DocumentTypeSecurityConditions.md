@@ -7,6 +7,15 @@ uid: Systems.Documents.DocumentTypeSecurityConditions
 
 Provides rules to conditionally secure new documents. Entity: Gen_Document_Type_Security_Conditions
 
+## Renames
+
+Old name: General.DocumentTypeSecurityConditions 
+New name: Systems.Documents.DocumentTypeSecurityConditions 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.EntityName}_  

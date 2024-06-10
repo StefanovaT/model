@@ -7,6 +7,15 @@ uid: General.Activities.ActivityTemplates
 
 Templates for automatical generation of activity from any document. Entity: Cm_Activity_Templates
 
+## Renames
+
+Old name: General.Contacts.ActivityTemplates 
+New name: General.Activities.ActivityTemplates 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Id}: {RouteId}_  

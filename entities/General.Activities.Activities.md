@@ -8,6 +8,15 @@ uid: General.Activities.Activities
 
 Generic activity. Provides task management functionality. Activity can be one of Task, Communication or Meeting. Entity: Cm_Activities
 
+## Renames
+
+Old name: General.Contacts.Activities 
+New name: General.Activities.Activities 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  

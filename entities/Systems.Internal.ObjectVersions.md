@@ -7,6 +7,15 @@ uid: Systems.Internal.ObjectVersions
 
 Contains history of saved version of the managed objects. Entity: Sys_Object_Versions
 
+## Renames
+
+Old name: Systems.Core.ObjectVersions 
+New name: Systems.Internal.ObjectVersions 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Object}_  

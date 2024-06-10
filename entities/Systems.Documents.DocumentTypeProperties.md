@@ -7,6 +7,15 @@ uid: Systems.Documents.DocumentTypeProperties
 
 Default user-defined properties, which should be added to new documents. Entity: Gen_Document_Type_Properties
 
+## Renames
+
+Old name: General.DocumentTypeProperties 
+New name: Systems.Documents.DocumentTypeProperties 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.EntityName}_  

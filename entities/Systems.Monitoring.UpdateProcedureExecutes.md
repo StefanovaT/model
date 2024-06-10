@@ -7,6 +7,15 @@ uid: Systems.Monitoring.UpdateProcedureExecutes
 
 Contains data about the execution of Upgrade Procedures. Contains status messages and ensures that each procedure is executed only once. Entity: Sys_Update_Procedure_Executes
 
+## Renames
+
+Old name: Systems.Core.UpdateProcedureExecutes 
+New name: Systems.Monitoring.UpdateProcedureExecutes 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Id}: {UpdateProcedure}_  

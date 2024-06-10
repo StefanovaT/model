@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentAmountTypes](~/entities/General.DocumentAmountTypes.md)
+Entity: [Systems.Documents.DocumentAmountTypes](~/entities/Systems.Documents.DocumentAmountTypes.md)
 
 Represents the different types of additional amounts which are calculated for the documents. Entity: Gen_Document_Amount_Types
 

@@ -7,6 +7,15 @@ uid: Systems.Documents.DataSourceQueries
 
 Represents a query within a data source. Entity: Sys_Data_Source_Queries
 
+## Renames
+
+Old name: Systems.Reporting.DataSourceQueries 
+New name: Systems.Documents.DataSourceQueries 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{TableName}_  
@@ -44,7 +53,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataSource](Systems.Documents.DataSourceQueries.md#datasource) | [DataSources](Systems.Documents.DataSources.md) | The <see cref="DataSource"/> to which this DataSourceQuery belongs. `Required` `Filter(multi eq)` `Owner` |
+| [DataSource](Systems.Documents.DataSourceQueries.md#datasource) | [DataSources](Systems.Documents.DataSources.md) | The report of the query. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -168,7 +177,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### DataSource
 
-The <see cref="DataSource"/> to which this DataSourceQuery belongs. `Required` `Filter(multi eq)` `Owner`
+The report of the query. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[DataSources](Systems.Documents.DataSources.md)**  
 _Category_: **System**  

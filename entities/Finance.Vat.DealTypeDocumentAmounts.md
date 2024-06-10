@@ -40,7 +40,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DealType](Finance.Vat.DealTypeDocumentAmounts.md#dealtype) | [DealTypes](Finance.Vat.DealTypes.md) | Deal type for which is calculated additional amount. `Required` `Filter(multi eq)` `ReadOnly` `Owner` |
-| [DocumentAmountType](Finance.Vat.DealTypeDocumentAmounts.md#documentamounttype) | [DocumentAmountTypes](General.DocumentAmountTypes.md) | Type of additional amount which is calculated for the documents. `Required` `Filter(multi eq)` |
+| [DocumentAmountType](Finance.Vat.DealTypeDocumentAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | Type of additional amount which is calculated for the documents. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -113,7 +113,7 @@ _Show in UI_: **ShownByDefault**
 
 Type of additional amount which is calculated for the documents. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

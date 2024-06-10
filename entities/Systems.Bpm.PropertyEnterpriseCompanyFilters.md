@@ -7,6 +7,15 @@ uid: Systems.Bpm.PropertyEnterpriseCompanyFilters
 
 Provides a way to apply different filtering of the property allowed values for the different enterprise companies. Entity: Gen_Property_Enterprise_Company_Filters
 
+## Renames
+
+Old name: General.PropertyEnterpriseCompanyFilters 
+New name: Systems.Bpm.PropertyEnterpriseCompanyFilters 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Property.Name:T}_  

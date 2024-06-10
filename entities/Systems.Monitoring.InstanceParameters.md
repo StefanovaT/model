@@ -7,6 +7,15 @@ uid: Systems.Monitoring.InstanceParameters
 
 Parameters for this instance. Entity: Dmv_Instance_Parameters (Introduced in version 24.1.1.68)
 
+## Renames
+
+Old name: Systems.Dmv.InstanceParameters 
+New name: Systems.Monitoring.InstanceParameters 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{ParameterName}: {ParameterValue}_  

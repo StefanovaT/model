@@ -7,6 +7,15 @@ uid: Systems.Internal.AttributeChangesHistory
 
 Each entry represents an entity attribute change with previous and new value. Entity: Sys_Attribute_Changes_History_View (Introduced in version 23.1.2.37)
 
+## Renames
+
+Old name: Systems.Core.AttributeChangesHistory 
+New name: Systems.Internal.AttributeChangesHistory 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{RepositoryName}: {EntityItemId}_  

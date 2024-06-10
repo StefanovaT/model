@@ -7,6 +7,15 @@ uid: Systems.Bpm.Processes
 
 Contains the business process diagrams. Entity: Wf_Processes
 
+## Renames
+
+Old name: Systems.Workflow.Processes 
+New name: Systems.Bpm.Processes 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

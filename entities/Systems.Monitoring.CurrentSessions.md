@@ -7,6 +7,15 @@ uid: Systems.Monitoring.CurrentSessions
 
 Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in version 23.1.1.52)
 
+## Renames
+
+Old name: Systems.Dmv.CurrentSessions 
+New name: Systems.Monitoring.CurrentSessions 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{User}: {Device}_  

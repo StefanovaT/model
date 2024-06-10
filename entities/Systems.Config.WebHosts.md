@@ -7,6 +7,15 @@ uid: Systems.Config.WebHosts
 
 Contains the names and https certificates of the different host names used to host sites. Entity: Sys_Web_Hosts (Introduced in version 19.1)
 
+## Renames
+
+Old name: Systems.Core.WebHosts 
+New name: Systems.Config.WebHosts 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  

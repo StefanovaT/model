@@ -7,6 +7,15 @@ uid: Systems.Monitoring.ResolvedConflicts
 
 Contains records of conflicts, which were automatically resolved by update procedures. Entity: Sys_Resolved_Conflicts
 
+## Renames
+
+Old name: Systems.Core.ResolvedConflicts 
+New name: Systems.Monitoring.ResolvedConflicts 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{TableName:T}_  

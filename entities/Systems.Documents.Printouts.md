@@ -7,6 +7,15 @@ uid: Systems.Documents.Printouts
 
 Contains data about binding of printout layouts to specific user-defined document types. Entity: Gen_Printouts
 
+## Renames
+
+Old name: General.Printouts 
+New name: Systems.Documents.Printouts 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  

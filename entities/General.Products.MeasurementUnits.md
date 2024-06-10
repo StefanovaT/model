@@ -7,6 +7,15 @@ uid: General.Products.MeasurementUnits
 
 Contains all measurement units, grouped in categories. Each category has one base unit (with ratio 1/1) and unlimited number of derived units with fixed ratio to the base unit. Entity: Gen_Measurement_Units
 
+## Renames
+
+Old name: General.MeasurementUnits 
+New name: General.Products.MeasurementUnits 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

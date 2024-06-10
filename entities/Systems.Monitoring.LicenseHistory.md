@@ -7,6 +7,15 @@ uid: Systems.Monitoring.LicenseHistory
 
 Historical licensing events for the instance. Entity: Dmv_License_History (Introduced in version 24.1.3.88)
 
+## Renames
+
+Old name: Systems.Dmv.LicenseHistory 
+New name: Systems.Monitoring.LicenseHistory 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{LicensingEvent}: {LicensingDate}_  

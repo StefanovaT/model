@@ -7,6 +7,15 @@ uid: Systems.Monitoring.PrintImages
 
 Information about print sizes, grouped by document type and print type. Entity: Dmv_Print_Images (Introduced in version 24.1.0.15)
 
+## Renames
+
+Old name: Systems.Dmv.PrintImages 
+New name: Systems.Monitoring.PrintImages 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{PrintoutLayoutName}: {TypeName}_  

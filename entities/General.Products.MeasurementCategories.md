@@ -7,6 +7,15 @@ uid: General.Products.MeasurementCategories
 
 Categories of measurement units. The units within a category are directly convertable to each other. Each category contains one base unit and unlimited number of derived units with fixed ratio to the base unit. Entity: Gen_Measurement_Categories
 
+## Renames
+
+Old name: General.MeasurementCategories 
+New name: General.Products.MeasurementCategories 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

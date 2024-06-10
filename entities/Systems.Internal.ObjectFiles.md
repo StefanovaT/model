@@ -7,6 +7,15 @@ uid: Systems.Internal.ObjectFiles
 
 Contains files attached to objects. Entity: Sys_Object_Files
 
+## Renames
+
+Old name: Systems.Core.ObjectFiles 
+New name: Systems.Internal.ObjectFiles 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{FileName}_  
@@ -69,8 +78,8 @@ _Allowed Values (Systems.Internal.ObjectFilesRepository.AccessPermission Enum Me
 | Value | Description |
 | ---- | --- |
 | Creator | Creator value. Stored as 'CU'. <br /> _Database Value:_ 'CU' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Creator' |
-| Internal | Internal value. Stored as 'IN'. <br /> _Database Value:_ 'IN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
-| External | External value. Stored as 'EX'. <br /> _Database Value:_ 'EX' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'External' |
+| Internal | Only internal users have access.. Stored as 'IN'. <br /> _Database Value:_ 'IN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
+| External | External and internal users have access.. Stored as 'EX'. <br /> _Database Value:_ 'EX' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'External' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
@@ -88,9 +97,9 @@ _Allowed Values (Systems.Internal.ObjectFilesRepository.ContentLocation Enum Mem
 
 | Value | Description |
 | ---- | --- |
-| Embedded | Embedded value. Stored as 'EMB'. <br /> _Database Value:_ 'EMB' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Embedded' |
-| InternetUrl | InternetUrl value. Stored as 'URL'. <br /> _Database Value:_ 'URL' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'InternetUrl' |
-| FileSystemLink | FileSystemLink value. Stored as 'FSL'. <br /> _Database Value:_ 'FSL' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'FileSystemLink' |
+| Embedded | The content is stored in the database. Stored as 'EMB'. <br /> _Database Value:_ 'EMB' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Embedded' |
+| InternetUrl | Internet resource location. Stored as 'URL'. <br /> _Database Value:_ 'URL' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'InternetUrl' |
+| FileSystemLink | Path to the file in the local file system. Stored as 'FSL'. <br /> _Database Value:_ 'FSL' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'FileSystemLink' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

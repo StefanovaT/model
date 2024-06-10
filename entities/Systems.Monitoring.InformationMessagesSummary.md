@@ -7,6 +7,15 @@ uid: Systems.Monitoring.InformationMessagesSummary
 
 Information abount types of information messages. Entity: Dmv_Information_Messages (Introduced in version 24.1.1.68)
 
+## Renames
+
+Old name: Systems.Dmv.InformationMessages 
+New name: Systems.Monitoring.InformationMessagesSummary 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Process}: {Count}_  

@@ -640,10 +640,6 @@
     href: General.DocumentAmountReferencedDocuments.md
   - name: DocumentAmounts
     href: General.DocumentAmounts.md
-  - name: DocumentAmountTypeDependencies
-    href: General.DocumentAmountTypeDependencies.md
-  - name: DocumentAmountTypes
-    href: General.DocumentAmountTypes.md
   - name: DocumentComments
     href: General.DocumentComments.md
   - name: DocumentDistributedAmounts
@@ -660,8 +656,6 @@
     href: General.DocumentManualDistributedAmounts.md
   - name: DocumentParties
     href: General.DocumentParties.md
-  - name: DocumentPrintImages
-    href: General.DocumentPrintImages.md
   - name: DocumentPrints
     href: General.DocumentPrints.md
   - name: Documents
@@ -1154,6 +1148,10 @@
       href: Systems.Documents.DataSourceQueries.md
     - name: DataSources
       href: Systems.Documents.DataSources.md
+    - name: DocumentAmountTypeDependencies
+      href: Systems.Documents.DocumentAmountTypeDependencies.md
+    - name: DocumentAmountTypes
+      href: Systems.Documents.DocumentAmountTypes.md
     - name: DocumentPartyRoles
       href: Systems.Documents.DocumentPartyRoles.md
     - name: DocumentTypeAmounts
@@ -1194,6 +1192,8 @@
       href: Systems.Internal.DataEntryDefaultValues.md
     - name: DocumentJobs
       href: Systems.Internal.DocumentJobs.md
+    - name: DocumentPrintImages
+      href: Systems.Internal.DocumentPrintImages.md
     - name: DocumentVersions
       href: Systems.Internal.DocumentVersions.md
     - name: ExtensibleDataObjects

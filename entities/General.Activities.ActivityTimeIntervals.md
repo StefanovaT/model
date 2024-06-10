@@ -7,6 +7,15 @@ uid: General.Activities.ActivityTimeIntervals
 
 History of work efforts for executing activities (timesheet). Entity: Cm_Activity_Time_Intervals
 
+## Renames
+
+Old name: General.Contacts.ActivityTimeIntervals 
+New name: General.Activities.ActivityTimeIntervals 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Id}: {ActivityId}_  

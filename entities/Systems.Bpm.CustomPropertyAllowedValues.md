@@ -7,6 +7,15 @@ uid: Systems.Bpm.CustomPropertyAllowedValues
 
 User-defined properties allowed values. Can be specified only for properties with unbound allowed values (e.g. for which Allowed Values Entity is not set). Entity: Gen_Property_Allowed_Values
 
+## Renames
+
+Old name: General.CustomPropertyAllowedValues 
+New name: Systems.Bpm.CustomPropertyAllowedValues 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Description:T}_  

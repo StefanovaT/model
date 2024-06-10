@@ -7,6 +7,15 @@ uid: Systems.Security.ExternalApplications
 
 List of external applications. Used to run external applications. Entity: Sys_External_Applications
 
+## Renames
+
+Old name: Systems.Core.ExternalApplications 
+New name: Systems.Security.ExternalApplications 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

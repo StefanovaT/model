@@ -7,6 +7,15 @@ uid: Systems.Monitoring.WebSites
 
 Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 23.1.1.43)
 
+## Renames
+
+Old name: Systems.Dmv.WebSites 
+New name: Systems.Monitoring.WebSites 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{RootUrl}: {Type}_  

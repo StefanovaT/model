@@ -7,6 +7,15 @@ uid: Systems.Monitoring.AuditLogEntries
 
 Each record represents the occurrence of one logged event. Entity: Sys_Audit_Log_Entries (Introduced in version 18.2)
 
+## Renames
+
+Old name: Systems.Core.AuditLogEntries 
+New name: Systems.Monitoring.AuditLogEntries 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{ApplicationName}_  

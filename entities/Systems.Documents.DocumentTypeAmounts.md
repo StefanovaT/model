@@ -7,6 +7,15 @@ uid: Systems.Documents.DocumentTypeAmounts
 
 Specifies amount types, that should be automatically added to documents of a given type. Entity: Gen_Document_Type_Amounts
 
+## Renames
+
+Old name: General.DocumentTypeAmounts 
+New name: Systems.Documents.DocumentTypeAmounts 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.EntityName}_  
@@ -41,7 +50,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentAmountType](Systems.Documents.DocumentTypeAmounts.md#documentamounttype) | [DocumentAmountTypes](General.DocumentAmountTypes.md) | The amount type that should be automatically added to the documents of the specified type. `Required` `Filter(multi eq)` |
+| [DocumentAmountType](Systems.Documents.DocumentTypeAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The amount type that should be automatically added to the documents of the specified type. `Required` `Filter(multi eq)` |
 | [DocumentType](Systems.Documents.DocumentTypeAmounts.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The document type for which the amount type is specified. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -124,7 +133,7 @@ _Show in UI_: **ShownByDefault**
 
 The amount type that should be automatically added to the documents of the specified type. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

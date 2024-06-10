@@ -7,6 +7,15 @@ uid: General.Activities.ActivityParticipants
 
 Contains the additional participants in the activities. These are the participating users, besides the user to which the activitiy is assigned. Entity: Cm_Activity_Participants
 
+## Renames
+
+Old name: General.Contacts.ActivityParticipants 
+New name: General.Activities.ActivityParticipants 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Activity.EntityName}_  

@@ -7,6 +7,15 @@ uid: Systems.Config.WebHooks
 
 Webhook templates. Activated by business rules or other means. Entity: Sys_Web_Hooks (Introduced in version 22.1.5.8)
 
+## Renames
+
+Old name: Systems.Core.WebHooks 
+New name: Systems.Config.WebHooks 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

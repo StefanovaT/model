@@ -45,7 +45,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Document](General.DocumentPrints.md#document) | [Documents](General.Documents.md) | The document which was printed or exported. `Required` `Filter(multi eq)` `Owner` |
-| [DocumentPrintImage](General.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](General.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq;like)` |
+| [DocumentPrintImage](General.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](Systems.Internal.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq;like)` |
 
 
 ## Attribute Details
@@ -182,7 +182,7 @@ _Show in UI_: **CannotBeShown**
 
 Points to the actual contents of the printed document. `Filter(multi eq;like)`
 
-_Type_: **[DocumentPrintImages](General.DocumentPrintImages.md) (nullable)**  
+_Type_: **[DocumentPrintImages](Systems.Internal.DocumentPrintImages.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like, EqualsIn**  

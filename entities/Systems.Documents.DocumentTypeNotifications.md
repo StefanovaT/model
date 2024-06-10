@@ -7,6 +7,15 @@ uid: Systems.Documents.DocumentTypeNotifications
 
 Provides notification addresses to be notified upon occurrence of different document events. Entity: Gen_Document_Type_Notifications
 
+## Renames
+
+Old name: General.DocumentTypeNotifications 
+New name: Systems.Documents.DocumentTypeNotifications 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.EntityName}_  

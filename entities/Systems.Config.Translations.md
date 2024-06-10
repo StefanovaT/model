@@ -7,6 +7,15 @@ uid: Systems.Config.Translations
 
 Contains user-defined translations for non-english languages of the user interface and program messages. Entity: Sys_Translations
 
+## Renames
+
+Old name: Systems.Core.Translations 
+New name: Systems.Config.Translations 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{ApplicationName}_  

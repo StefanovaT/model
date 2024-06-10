@@ -7,6 +7,15 @@ uid: Systems.Internal.ObjectChangesets
 
 A set of changes, performed in one request. Entity: Sys_Object_Changesets (Introduced in version 19.1)
 
+## Renames
+
+Old name: Systems.Core.ObjectChangesets 
+New name: Systems.Internal.ObjectChangesets 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{User} {TimeUtc}_  

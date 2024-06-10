@@ -7,6 +7,15 @@ uid: Systems.Config.WebSites
 
 Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites (Introduced in version 19.1)
 
+## Renames
+
+Old name: Systems.Core.WebSites 
+New name: Systems.Config.WebSites 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{RelativeUrl}: {WebSiteType}_  
@@ -141,8 +150,8 @@ _Allowed Values (Systems.Config.WebSitesRepository.WebSiteType Enum Members)_
 
 | Value | Description |
 | ---- | --- |
-| API | API value. Stored as 'API'. <br /> _Database Value:_ 'API' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'API' |
-| ClientCenter | ClientCenter value. Stored as 'CC'. <br /> _Database Value:_ 'CC' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ClientCenter' |
+| API | Allows external applications to access the ERP resources using REST API.. Stored as 'API'. <br /> _Database Value:_ 'API' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'API' |
+| ClientCenter | Allows community users to access ERP resources. Requires working ID site.. Stored as 'CC'. <br /> _Database Value:_ 'CC' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ClientCenter' |
 | ECommerce | ECommerce value. Stored as 'EC'. <br /> _Database Value:_ 'EC' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ECommerce' |
 | LEGALBG | LEGALBG value. Stored as 'LEG'. <br /> _Database Value:_ 'LEG' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'LEGALBG' |
 | SocialInteractions | SocialInteractions value. Stored as 'SI'. <br /> _Database Value:_ 'SI' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'SocialInteractions' |

@@ -2068,6 +2068,12 @@ references:
 - uid: Systems.Documents.DataSources
   name: Systems.Documents.DataSources Entity
   href: entities/Systems.Documents.DataSources.html
+- uid: Systems.Documents.DocumentAmountTypeDependencies
+  name: Systems.Documents.DocumentAmountTypeDependencies Entity
+  href: entities/Systems.Documents.DocumentAmountTypeDependencies.html
+- uid: Systems.Documents.DocumentAmountTypes
+  name: Systems.Documents.DocumentAmountTypes Entity
+  href: entities/Systems.Documents.DocumentAmountTypes.html
 - uid: Systems.Documents.DocumentPartyRoles
   name: Systems.Documents.DocumentPartyRoles Entity
   href: entities/Systems.Documents.DocumentPartyRoles.html
@@ -2125,6 +2131,9 @@ references:
 - uid: Systems.Internal.DocumentJobs
   name: Systems.Internal.DocumentJobs Entity
   href: entities/Systems.Internal.DocumentJobs.html
+- uid: Systems.Internal.DocumentPrintImages
+  name: Systems.Internal.DocumentPrintImages Entity
+  href: entities/Systems.Internal.DocumentPrintImages.html
 - uid: Systems.Internal.DocumentVersions
   name: Systems.Internal.DocumentVersions Entity
   href: entities/Systems.Internal.DocumentVersions.html

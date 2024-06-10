@@ -81,6 +81,11 @@
 
 <p><strong>Namespace:</strong> <a href="Systems.Internal.html">Systems.Internal</a></p>
 <p>Contains files attached to objects. Entity: Sys_Object_Files</p>
+<h2 id="renames">Renames</h2>
+<p>Old name: Systems.Core.ObjectFiles
+New name: Systems.Internal.ObjectFiles
+Version: 24.1.5.35
+Case: 35911</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
 <em>{FileName}</em><br>
@@ -244,11 +249,11 @@ Allowed values for the <code>AccessPermission</code>(Systems.Internal.ObjectFile
 </tr>
 <tr>
 <td>Internal</td>
-<td>Internal value. Stored as 'IN'. <br> <em>Database Value:</em> 'IN' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Internal'</td>
+<td>Only internal users have access.. Stored as 'IN'. <br> <em>Database Value:</em> 'IN' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Internal'</td>
 </tr>
 <tr>
 <td>External</td>
-<td>External value. Stored as 'EX'. <br> <em>Database Value:</em> 'EX' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'External'</td>
+<td>External and internal users have access.. Stored as 'EX'. <br> <em>Database Value:</em> 'EX' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'External'</td>
 </tr>
 </tbody>
 </table>
@@ -272,15 +277,15 @@ Allowed values for the <code>ContentLocation</code>(Systems.Internal.ObjectFiles
 <tbody>
 <tr>
 <td>Embedded</td>
-<td>Embedded value. Stored as 'EMB'. <br> <em>Database Value:</em> 'EMB' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Embedded'</td>
+<td>The content is stored in the database. Stored as 'EMB'. <br> <em>Database Value:</em> 'EMB' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Embedded'</td>
 </tr>
 <tr>
 <td>InternetUrl</td>
-<td>InternetUrl value. Stored as 'URL'. <br> <em>Database Value:</em> 'URL' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'InternetUrl'</td>
+<td>Internet resource location. Stored as 'URL'. <br> <em>Database Value:</em> 'URL' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'InternetUrl'</td>
 </tr>
 <tr>
 <td>FileSystemLink</td>
-<td>FileSystemLink value. Stored as 'FSL'. <br> <em>Database Value:</em> 'FSL' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'FileSystemLink'</td>
+<td>Path to the file in the local file system. Stored as 'FSL'. <br> <em>Database Value:</em> 'FSL' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'FileSystemLink'</td>
 </tr>
 </tbody>
 </table>

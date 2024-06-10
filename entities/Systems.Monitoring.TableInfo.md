@@ -7,6 +7,15 @@ uid: Systems.Monitoring.TableInfo
 
 Information about the tables in the database. Entity: Dmv_Table_Info (Introduced in version 23.1.2.43)
 
+## Renames
+
+Old name: Systems.Dmv.TableInfo 
+New name: Systems.Monitoring.TableInfo 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{TableName}: {SizeMB}_  

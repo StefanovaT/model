@@ -7,6 +7,15 @@ uid: Systems.Bpm.PropertiesCategories
 
 Categories of properties. Entity: Gen_Properties_Categories
 
+## Renames
+
+Old name: General.PropertiesCategories 
+New name: Systems.Bpm.PropertiesCategories 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

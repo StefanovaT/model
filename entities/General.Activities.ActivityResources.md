@@ -7,6 +7,15 @@ uid: General.Activities.ActivityResources
 
 Contains the resources, allocated to the activities. Entity: Cm_Activity_Resources
 
+## Renames
+
+Old name: General.Contacts.ActivityResources 
+New name: General.Activities.ActivityResources 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Activity.EntityName}_  

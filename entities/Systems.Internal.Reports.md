@@ -7,6 +7,15 @@ uid: Systems.Internal.Reports
 
 User-defined reports. Reports retrieve data from data sources and present it in a user-defined layout. Entity: Sys_Reports
 
+## Renames
+
+Old name: Systems.Reporting.Reports 
+New name: Systems.Internal.Reports 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  

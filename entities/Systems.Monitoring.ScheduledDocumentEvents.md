@@ -7,6 +7,15 @@ uid: Systems.Monitoring.ScheduledDocumentEvents
 
 Contains postponed events, which will be executed later. Usually these are large number of recalculation events, resulting from other events. For example, releasing a cost correction, publishes postponed events for all affected documents. Entity: Gen_Scheduled_Document_Events
 
+## Renames
+
+Old name: Systems.Core.ScheduledDocumentEvents 
+New name: Systems.Monitoring.ScheduledDocumentEvents 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Id}: {SourceDocumentId}_  

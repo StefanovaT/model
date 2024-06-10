@@ -7,6 +7,15 @@ uid: Systems.Internal.ObjectChanges
 
 Actual tracked changes to one object. Entity: Sys_Object_Changes (Introduced in version 19.1)
 
+## Renames
+
+Old name: Systems.Core.ObjectChanges 
+New name: Systems.Internal.ObjectChanges 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{RepositoryName}_  

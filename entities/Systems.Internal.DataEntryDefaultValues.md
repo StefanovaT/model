@@ -7,6 +7,15 @@ uid: Systems.Internal.DataEntryDefaultValues
 
 Contains user-specified default values for columns in data entry forms. Entity: Sys_Default_Values
 
+## Renames
+
+Old name: Systems.Core.DataEntryDefaultValues 
+New name: Systems.Internal.DataEntryDefaultValues 
+Version: 24.1.5.35 
+Case: 35911 
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{ColumnName}_  
