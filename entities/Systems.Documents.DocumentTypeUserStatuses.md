@@ -9,10 +9,10 @@ User-defined document statuses. Entity: Gen_Document_Type_User_Statuses
 
 ## Renames
 
-Old name: General.DocumentTypeUserStatuses 
-New name: Systems.Documents.DocumentTypeUserStatuses 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentTypeUserStatuses**  
+New name: **Systems.Documents.DocumentTypeUserStatuses**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

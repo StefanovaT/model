@@ -9,10 +9,10 @@ The actual values of the user-defined properties for each actual entity. Entity:
 
 ## Renames
 
-Old name: General.PropertyValues 
-New name: Systems.Bpm.PropertyValues 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.PropertyValues**  
+New name: **Systems.Bpm.PropertyValues**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

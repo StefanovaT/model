@@ -9,10 +9,10 @@ Information abount types of information messages. Entity: Dmv_Information_Messag
 
 ## Renames
 
-Old name: Systems.Dmv.InformationMessages 
-New name: Systems.Monitoring.InformationMessagesSummary 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.InformationMessages**  
+New name: **Systems.Monitoring.InformationMessagesSummary**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

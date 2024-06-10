@@ -9,10 +9,10 @@ Specifies amount types, that should be automatically added to documents of a giv
 
 ## Renames
 
-Old name: General.DocumentTypeAmounts 
-New name: Systems.Documents.DocumentTypeAmounts 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentTypeAmounts**  
+New name: **Systems.Documents.DocumentTypeAmounts**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

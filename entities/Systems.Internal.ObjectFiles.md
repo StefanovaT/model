@@ -9,10 +9,10 @@ Contains files attached to objects. Entity: Sys_Object_Files
 
 ## Renames
 
-Old name: Systems.Core.ObjectFiles 
-New name: Systems.Internal.ObjectFiles 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.ObjectFiles**  
+New name: **Systems.Internal.ObjectFiles**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

@@ -9,10 +9,10 @@ Contains all measurement units, grouped in categories. Each category has one bas
 
 ## Renames
 
-Old name: General.MeasurementUnits 
-New name: General.Products.MeasurementUnits 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.MeasurementUnits**  
+New name: **General.Products.MeasurementUnits**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

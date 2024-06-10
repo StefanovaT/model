@@ -9,10 +9,10 @@ Contains user-defined data sources, which retrieve rows from multiple queries. E
 
 ## Renames
 
-Old name: Systems.Reporting.DataSources 
-New name: Systems.Documents.DataSources 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Reporting.DataSources**  
+New name: **Systems.Documents.DataSources**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

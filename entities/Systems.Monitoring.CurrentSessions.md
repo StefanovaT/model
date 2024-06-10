@@ -9,10 +9,10 @@ Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in ve
 
 ## Renames
 
-Old name: Systems.Dmv.CurrentSessions 
-New name: Systems.Monitoring.CurrentSessions 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.CurrentSessions**  
+New name: **Systems.Monitoring.CurrentSessions**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

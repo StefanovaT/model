@@ -9,10 +9,10 @@ Each record represents the occurrence of one logged event. Entity: Sys_Audit_Log
 
 ## Renames
 
-Old name: Systems.Core.AuditLogEntries 
-New name: Systems.Monitoring.AuditLogEntries 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.AuditLogEntries**  
+New name: **Systems.Monitoring.AuditLogEntries**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

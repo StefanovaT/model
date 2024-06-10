@@ -9,10 +9,10 @@ Contains the resources, allocated to the activities. Entity: Cm_Activity_Resourc
 
 ## Renames
 
-Old name: General.Contacts.ActivityResources 
-New name: General.Activities.ActivityResources 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.Contacts.ActivityResources**  
+New name: **General.Activities.ActivityResources**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

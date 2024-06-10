@@ -9,10 +9,10 @@ User-defined properties allowed values. Can be specified only for properties wit
 
 ## Renames
 
-Old name: General.CustomPropertyAllowedValues 
-New name: Systems.Bpm.CustomPropertyAllowedValues 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.CustomPropertyAllowedValues**  
+New name: **Systems.Bpm.CustomPropertyAllowedValues**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

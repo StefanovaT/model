@@ -9,10 +9,10 @@ Dynamic management view for long running procedures. Entity: Dmv_Procedure_Statu
 
 ## Renames
 
-Old name: Systems.Dmv.ProcedureStatusInfo 
-New name: Systems.Monitoring.ProcedureStatusInfo 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.ProcedureStatusInfo**  
+New name: **Systems.Monitoring.ProcedureStatusInfo**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

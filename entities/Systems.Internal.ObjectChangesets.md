@@ -9,10 +9,10 @@ A set of changes, performed in one request. Entity: Sys_Object_Changesets (Intro
 
 ## Renames
 
-Old name: Systems.Core.ObjectChangesets 
-New name: Systems.Internal.ObjectChangesets 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.ObjectChangesets**  
+New name: **Systems.Internal.ObjectChangesets**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

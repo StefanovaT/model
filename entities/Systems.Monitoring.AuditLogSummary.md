@@ -9,10 +9,10 @@ Information about the count and the size of audit log entries, grouped by applic
 
 ## Renames
 
-Old name: Systems.Dmv.AuditLogEntries 
-New name: Systems.Monitoring.AuditLogSummary 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.AuditLogEntries**  
+New name: **Systems.Monitoring.AuditLogSummary**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

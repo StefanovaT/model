@@ -9,10 +9,10 @@ Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites
 
 ## Renames
 
-Old name: Systems.Core.WebSites 
-New name: Systems.Config.WebSites 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.WebSites**  
+New name: **Systems.Config.WebSites**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

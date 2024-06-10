@@ -9,10 +9,10 @@ Historical licensing events for the instance. Entity: Dmv_License_History (Intro
 
 ## Renames
 
-Old name: Systems.Dmv.LicenseHistory 
-New name: Systems.Monitoring.LicenseHistory 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.LicenseHistory**  
+New name: **Systems.Monitoring.LicenseHistory**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

@@ -9,10 +9,10 @@ List of external applications. Used to run external applications. Entity: Sys_Ex
 
 ## Renames
 
-Old name: Systems.Core.ExternalApplications 
-New name: Systems.Security.ExternalApplications 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.ExternalApplications**  
+New name: **Systems.Security.ExternalApplications**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

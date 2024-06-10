@@ -9,10 +9,10 @@ Represents the different possible roles of a party associated to a document. Ent
 
 ## Renames
 
-Old name: General.DocumentPartyRoles 
-New name: Systems.Documents.DocumentPartyRoles 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentPartyRoles**  
+New name: **Systems.Documents.DocumentPartyRoles**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

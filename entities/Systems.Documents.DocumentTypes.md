@@ -9,10 +9,10 @@ List of user-defined document types. Each type has associated system entity (obj
 
 ## Renames
 
-Old name: General.DocumentTypes 
-New name: Systems.Documents.DocumentTypes 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentTypes**  
+New name: **Systems.Documents.DocumentTypes**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

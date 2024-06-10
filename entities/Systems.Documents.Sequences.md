@@ -9,10 +9,10 @@ Provides numbering sequences, applicable for use in a multi-threaded environment
 
 ## Renames
 
-Old name: Systems.Core.Sequences 
-New name: Systems.Documents.Sequences 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.Sequences**  
+New name: **Systems.Documents.Sequences**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

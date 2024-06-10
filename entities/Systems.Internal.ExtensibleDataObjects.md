@@ -9,10 +9,10 @@ Extends data in other tables with attached files, custom properties, etc. Each r
 
 ## Renames
 
-Old name: Systems.Core.ExtensibleDataObjects 
-New name: Systems.Internal.ExtensibleDataObjects 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.ExtensibleDataObjects**  
+New name: **Systems.Internal.ExtensibleDataObjects**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

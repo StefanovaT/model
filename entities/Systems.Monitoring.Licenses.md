@@ -9,10 +9,10 @@ The currently active licenses for the instance. Entity: Dmv_Licenses (Introduced
 
 ## Renames
 
-Old name: Systems.Dmv.Licenses 
-New name: Systems.Monitoring.Licenses 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.Licenses**  
+New name: **Systems.Monitoring.Licenses**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

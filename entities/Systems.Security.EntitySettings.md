@@ -9,10 +9,10 @@ Contains entities, which have secured access. Entity: Sys_Entities
 
 ## Renames
 
-Old name: Systems.Core.EntitySettings 
-New name: Systems.Security.EntitySettings 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.EntitySettings**  
+New name: **Systems.Security.EntitySettings**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

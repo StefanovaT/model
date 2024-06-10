@@ -9,10 +9,10 @@ Represents the different types of additional amounts which are calculated for th
 
 ## Renames
 
-Old name: General.DocumentAmountTypes 
-New name: Systems.Documents.DocumentAmountTypes 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentAmountTypes**  
+New name: **Systems.Documents.DocumentAmountTypes**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

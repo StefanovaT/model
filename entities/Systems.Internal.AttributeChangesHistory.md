@@ -9,10 +9,10 @@ Each entry represents an entity attribute change with previous and new value. En
 
 ## Renames
 
-Old name: Systems.Core.AttributeChangesHistory 
-New name: Systems.Internal.AttributeChangesHistory 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.AttributeChangesHistory**  
+New name: **Systems.Internal.AttributeChangesHistory**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

@@ -9,10 +9,10 @@ Execution statistics dynamic management view. Entity: Dmv_Exec_Stats (Introduced
 
 ## Renames
 
-Old name: Systems.Dmv.ExecStats 
-New name: Systems.Monitoring.ExecStats 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.ExecStats**  
+New name: **Systems.Monitoring.ExecStats**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

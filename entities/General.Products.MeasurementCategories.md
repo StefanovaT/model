@@ -9,10 +9,10 @@ Categories of measurement units. The units within a category are directly conver
 
 ## Renames
 
-Old name: General.MeasurementCategories 
-New name: General.Products.MeasurementCategories 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.MeasurementCategories**  
+New name: **General.Products.MeasurementCategories**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

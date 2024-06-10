@@ -9,10 +9,10 @@ User-defined properties, which can supplement the system properties of almost al
 
 ## Renames
 
-Old name: General.CustomProperties 
-New name: Systems.Bpm.CustomProperties 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.CustomProperties**  
+New name: **Systems.Bpm.CustomProperties**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

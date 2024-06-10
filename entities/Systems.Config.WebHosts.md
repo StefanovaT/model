@@ -9,10 +9,10 @@ Contains the names and https certificates of the different host names used to ho
 
 ## Renames
 
-Old name: Systems.Core.WebHosts 
-New name: Systems.Config.WebHosts 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.WebHosts**  
+New name: **Systems.Config.WebHosts**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

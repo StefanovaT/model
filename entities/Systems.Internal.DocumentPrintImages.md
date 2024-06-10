@@ -9,10 +9,10 @@ Contains the data of a printout of a document as it was obtained from the data s
 
 ## Renames
 
-Old name: General.DocumentPrintImages 
-New name: Systems.Internal.DocumentPrintImages 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentPrintImages**  
+New name: **Systems.Internal.DocumentPrintImages**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

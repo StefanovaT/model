@@ -9,10 +9,10 @@ Represents a query within a data source. Entity: Sys_Data_Source_Queries
 
 ## Renames
 
-Old name: Systems.Reporting.DataSourceQueries 
-New name: Systems.Documents.DataSourceQueries 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Reporting.DataSourceQueries**  
+New name: **Systems.Documents.DataSourceQueries**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

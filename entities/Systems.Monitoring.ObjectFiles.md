@@ -9,10 +9,10 @@ Information about object file sizes, grouped by entity type and creation time. E
 
 ## Renames
 
-Old name: Systems.Dmv.ObjectFiles 
-New name: Systems.Monitoring.ObjectFiles 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.ObjectFiles**  
+New name: **Systems.Monitoring.ObjectFiles**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

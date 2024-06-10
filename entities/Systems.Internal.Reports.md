@@ -9,10 +9,10 @@ User-defined reports. Reports retrieve data from data sources and present it in 
 
 ## Renames
 
-Old name: Systems.Reporting.Reports 
-New name: Systems.Internal.Reports 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Reporting.Reports**  
+New name: **Systems.Internal.Reports**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

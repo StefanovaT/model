@@ -9,10 +9,10 @@ The jobs, which are configured in the system. Entity: Sys_Jobs (Introduced in ve
 
 ## Renames
 
-Old name: Systems.Core.Jobs 
-New name: Systems.Config.Jobs 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.Jobs**  
+New name: **Systems.Config.Jobs**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

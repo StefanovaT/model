@@ -9,10 +9,10 @@ Default user-defined properties, which should be added to new documents. Entity:
 
 ## Renames
 
-Old name: General.DocumentTypeProperties 
-New name: Systems.Documents.DocumentTypeProperties 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentTypeProperties**  
+New name: **Systems.Documents.DocumentTypeProperties**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

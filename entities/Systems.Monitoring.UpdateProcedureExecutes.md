@@ -9,10 +9,10 @@ Contains data about the execution of Upgrade Procedures. Contains status message
 
 ## Renames
 
-Old name: Systems.Core.UpdateProcedureExecutes 
-New name: Systems.Monitoring.UpdateProcedureExecutes 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.UpdateProcedureExecutes**  
+New name: **Systems.Monitoring.UpdateProcedureExecutes**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

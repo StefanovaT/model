@@ -9,10 +9,10 @@ Reminders for activities. The reminders are alarms, which can be turned off. Eac
 
 ## Renames
 
-Old name: General.Contacts.Reminders 
-New name: General.Activities.Reminders 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.Contacts.Reminders**  
+New name: **General.Activities.Reminders**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

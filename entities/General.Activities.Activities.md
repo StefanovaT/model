@@ -10,10 +10,10 @@ Generic activity. Provides task management functionality. Activity can be one of
 
 ## Renames
 
-Old name: General.Contacts.Activities 
-New name: General.Activities.Activities 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.Contacts.Activities**  
+New name: **General.Activities.Activities**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

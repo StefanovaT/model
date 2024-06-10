@@ -9,10 +9,10 @@ Templates for automatical generation of activity from any document. Entity: Cm_A
 
 ## Renames
 
-Old name: General.Contacts.ActivityTemplates 
-New name: General.Activities.ActivityTemplates 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.Contacts.ActivityTemplates**  
+New name: **General.Activities.ActivityTemplates**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

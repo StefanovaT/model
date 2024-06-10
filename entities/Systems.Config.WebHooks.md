@@ -9,10 +9,10 @@ Webhook templates. Activated by business rules or other means. Entity: Sys_Web_H
 
 ## Renames
 
-Old name: Systems.Core.WebHooks 
-New name: Systems.Config.WebHooks 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.WebHooks**  
+New name: **Systems.Config.WebHooks**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

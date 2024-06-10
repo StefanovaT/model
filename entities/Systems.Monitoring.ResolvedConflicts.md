@@ -9,10 +9,10 @@ Contains records of conflicts, which were automatically resolved by update proce
 
 ## Renames
 
-Old name: Systems.Core.ResolvedConflicts 
-New name: Systems.Monitoring.ResolvedConflicts 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.ResolvedConflicts**  
+New name: **Systems.Monitoring.ResolvedConflicts**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

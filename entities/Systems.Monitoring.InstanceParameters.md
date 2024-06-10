@@ -9,10 +9,10 @@ Parameters for this instance. Entity: Dmv_Instance_Parameters (Introduced in ver
 
 ## Renames
 
-Old name: Systems.Dmv.InstanceParameters 
-New name: Systems.Monitoring.InstanceParameters 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.InstanceParameters**  
+New name: **Systems.Monitoring.InstanceParameters**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

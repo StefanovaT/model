@@ -9,10 +9,10 @@ Specifies the visibility (availability) of the document type for the different e
 
 ## Renames
 
-Old name: General.DocumentTypeEnterpriseCompanies 
-New name: Systems.Documents.DocumentTypeEnterpriseCompanies 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentTypeEnterpriseCompanies**  
+New name: **Systems.Documents.DocumentTypeEnterpriseCompanies**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

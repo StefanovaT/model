@@ -9,10 +9,10 @@ Information about the tables in the database. Entity: Dmv_Table_Info (Introduced
 
 ## Renames
 
-Old name: Systems.Dmv.TableInfo 
-New name: Systems.Monitoring.TableInfo 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.TableInfo**  
+New name: **Systems.Monitoring.TableInfo**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

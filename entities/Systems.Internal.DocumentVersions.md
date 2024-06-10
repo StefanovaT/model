@@ -9,10 +9,10 @@ History of each saved version of each document. Entity: Gen_Document_Versions
 
 ## Renames
 
-Old name: General.DocumentVersions 
-New name: Systems.Internal.DocumentVersions 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentVersions**  
+New name: **Systems.Internal.DocumentVersions**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

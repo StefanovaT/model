@@ -9,10 +9,10 @@ Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 
 ## Renames
 
-Old name: Systems.UI.FormLayouts 
-New name: Systems.Internal.FormLayouts 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.UI.FormLayouts**  
+New name: **Systems.Internal.FormLayouts**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

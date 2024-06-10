@@ -9,10 +9,10 @@ Contains postponed events, which will be executed later. Usually these are large
 
 ## Renames
 
-Old name: Systems.Core.ScheduledDocumentEvents 
-New name: Systems.Monitoring.ScheduledDocumentEvents 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.ScheduledDocumentEvents**  
+New name: **Systems.Monitoring.ScheduledDocumentEvents**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

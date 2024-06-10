@@ -9,10 +9,10 @@ Contains the additional participants in the activities. These are the participat
 
 ## Renames
 
-Old name: General.Contacts.ActivityParticipants 
-New name: General.Activities.ActivityParticipants 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.Contacts.ActivityParticipants**  
+New name: **General.Activities.ActivityParticipants**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

@@ -9,10 +9,10 @@ Specifies the base amounts on which an amount depends. . Entity: Gen_Document_Am
 
 ## Renames
 
-Old name: General.DocumentAmountTypeDependencies 
-New name: Systems.Documents.DocumentAmountTypeDependencies 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.DocumentAmountTypeDependencies**  
+New name: **Systems.Documents.DocumentAmountTypeDependencies**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

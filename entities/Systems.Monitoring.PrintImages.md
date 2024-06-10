@@ -9,10 +9,10 @@ Information about print sizes, grouped by document type and print type. Entity: 
 
 ## Renames
 
-Old name: Systems.Dmv.PrintImages 
-New name: Systems.Monitoring.PrintImages 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.PrintImages**  
+New name: **Systems.Monitoring.PrintImages**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

@@ -9,10 +9,10 @@ Contains design layouts for document printouts. Entity: Gen_Printout_Layouts
 
 ## Renames
 
-Old name: General.PrintoutLayouts 
-New name: Systems.Documents.PrintoutLayouts 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.PrintoutLayouts**  
+New name: **Systems.Documents.PrintoutLayouts**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

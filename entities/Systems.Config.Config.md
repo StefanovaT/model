@@ -9,10 +9,10 @@ Hierarchical repository of configuration options. Entity: Gen_Config
 
 ## Renames
 
-Old name: Systems.Config.Config 
-New name: Systems.Config.Config 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Config.Config**  
+New name: **Systems.Config.Config**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

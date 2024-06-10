@@ -9,10 +9,10 @@ Contains user-specified default values for columns in data entry forms. Entity: 
 
 ## Renames
 
-Old name: Systems.Core.DataEntryDefaultValues 
-New name: Systems.Internal.DataEntryDefaultValues 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.DataEntryDefaultValues**  
+New name: **Systems.Internal.DataEntryDefaultValues**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

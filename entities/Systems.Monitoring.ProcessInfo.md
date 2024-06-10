@@ -9,10 +9,10 @@ Process information dynamic management view. Entity: Dmv_Process_Info (Introduce
 
 ## Renames
 
-Old name: Systems.Dmv.ProcessInfo 
-New name: Systems.Monitoring.ProcessInfo 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Dmv.ProcessInfo**  
+New name: **Systems.Monitoring.ProcessInfo**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

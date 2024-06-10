@@ -9,10 +9,10 @@ Contains user-defined translations for non-english languages of the user interfa
 
 ## Renames
 
-Old name: Systems.Core.Translations 
-New name: Systems.Config.Translations 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **Systems.Core.Translations**  
+New name: **Systems.Config.Translations**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

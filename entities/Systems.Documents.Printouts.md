@@ -9,10 +9,10 @@ Contains data about binding of printout layouts to specific user-defined documen
 
 ## Renames
 
-Old name: General.Printouts 
-New name: Systems.Documents.Printouts 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.Printouts**  
+New name: **Systems.Documents.Printouts**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 

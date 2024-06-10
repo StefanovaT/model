@@ -9,10 +9,10 @@ Provides a way to apply different filtering of the property allowed values for t
 
 ## Renames
 
-Old name: General.PropertyEnterpriseCompanyFilters 
-New name: Systems.Bpm.PropertyEnterpriseCompanyFilters 
-Version: 24.1.5.35 
-Case: 35911 
+Old name: **General.PropertyEnterpriseCompanyFilters**  
+New name: **Systems.Bpm.PropertyEnterpriseCompanyFilters**  
+Version: **24.1.5.35**  
+Case: **35911**  
 
 
 
