@@ -42,7 +42,7 @@ Aggregate Tree
 | [DefaultCulture](Systems.Security.Users.md#defaultculture) | string (15) __nullable__ | The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1` 
 | [DisplayText](Systems.Security.Users.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Email](Systems.Security.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `ORD` `Introduced in version 18.2` 
-| [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2` 
+| [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Introduced in version 18.2` 
 | [Id](Systems.Security.Users.md#id) | guid |  
 | [IsAdmin](Systems.Security.Users.md#isadmin) | boolean | True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` 
 | [LockoutEndUtc](Systems.Security.Users.md#lockoutendutc) | datetime __nullable__ | Contains the date and time (in UTC) until the user is locked. null when the user is not locked. `Filter(eq;ge;le;like)` `Introduced in version 18.2` 
@@ -171,7 +171,7 @@ _Show in UI_: **ShownByDefault**
 
 ### EmailConfirmed
 
-Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2`
+Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **boolean**  
 _Category_: **System**  

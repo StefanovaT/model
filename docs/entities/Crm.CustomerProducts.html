@@ -196,7 +196,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.CustomerProducts.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The product, which is listed for the customer. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The product, which is listed for the customer. <code>Required</code> <code>Filter(multi eq)</code> <code>FilterableReference</code></td>
 </tr>
 </tbody>
 </table>
@@ -311,10 +311,12 @@ Aggregate Root:<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.MeasurementUnit</code></p>
 <h3 id="product">Product</h3>
-<p>The product, which is listed for the customer. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The product, which is listed for the customer. <code>Required</code> <code>Filter(multi eq)</code> <code>FilterableReference</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>

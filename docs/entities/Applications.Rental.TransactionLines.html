@@ -205,6 +205,8 @@ Aggregate Root:<br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.CalculateNumberOfPeriods( obj.RentalAsset, obj.TransactionTimestamp, obj.TransactionType, obj.LeaseContract)</code></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
@@ -352,7 +354,9 @@ The subject.<br>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R36690.html">R36690 Transaction Line - Set Number Of Periods (Recalc)</a></li>
+</ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Applications_Rental_TransactionLines?$top=10">https://demodb.my.erp.net/api/domain/odata/Applications_Rental_TransactionLines?$top=10</a></p>

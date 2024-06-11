@@ -19,7 +19,7 @@ User logins. Entity: Sec_Users
 |[Default_Culture](#default_culture)|`nvarchar(15)` |The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".|
 |[Domain_Id](#domain_id)|`uniqueidentifier` |The domain, to which the user belongs.|
 |[Email](#email)|`nvarchar(254)` |Unique email of the user. Can be NULL because there may be login providers that don't use emails.|
-|[Email_Confirmed](#email_confirmed)|`bit` |Indicates whether the email address for the specified user has been verified.|
+|[Email_Confirmed](#email_confirmed)|`bit` Readonly|Indicates whether the email address for the specified user has been verified.|
 |[Is_Admin](#is_admin)|`bit` |1 if the user is administrator, otherwise 0.|
 |[Lockout_End_Utc](#lockout_end_utc)|`datetime` |Contains the date and time (in UTC) until the user is locked. NULL when the user is not locked.|
 |[Login](#login)|`nvarchar(64)` |The login name of the user, which is usually the email|
@@ -339,7 +339,7 @@ Indicates whether the email address for the specified user has been verified.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
