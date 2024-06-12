@@ -47,7 +47,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [InvoiceOrder](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#invoiceorder) | [InvoiceOrders](Crm.Invoicing.InvoiceOrders.md) | The invoice order to which the invoice order line belongs. `Required` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Invoice_Order_Id` `Introduced in version 24.1.5.19` `Owner` |
-| [InvoiceOrderLine](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#invoiceorderline) | [InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md) | The line containing the ordered quantity and amount. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Invoice_Order_Line_Id` `Introduced in version 24.1.5.19` |
+| [InvoiceOrderLine](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#invoiceorderline) | [InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md) | The line containing the ordered quantity and amount. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Invoice_Order_Line_Id` `Introduced in version 24.1.5.19` `FilterableReference` |
 | [LineDealType](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type to be passed to the invoice line. If deal type in the line is different from deal type in the header another VAT entry is created from the invoice. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Line_Deal_Type_Id` `Introduced in version 24.1.5.19` |
 | [LineDiscount](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Line_Discount_Id` `Introduced in version 24.1.5.19` |
 | [PaymentTransaction](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#paymenttransaction) | [PaymentTransactions](Finance.Payments.PaymentTransactions.md) (nullable) | The payment transaction, which is to be invoiced by this line, when Business Reason = P. Used to reconcile the invoice with the payments in the case of advance payment. `Filter(multi eq)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Payment_Transaction_Id` `Introduced in version 24.1.5.19` |
@@ -240,12 +240,13 @@ _Show in UI_: **ShownByDefault**
 
 ### InvoiceOrderLine
 
-The line containing the ordered quantity and amount. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id` `Introduced in version 24.1.5.19`
+The line containing the ordered quantity and amount. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id` `Introduced in version 24.1.5.19` `FilterableReference`
 
 _Type_: **[InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md)**  
 _Category_: **System**  
 _Inherited From_: **Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **ShownByDefault**  
 

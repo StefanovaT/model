@@ -21,7 +21,7 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 |[Invoice_Order_Line_Id](#invoice_order_line_id)|`uniqueidentifier` ||
 |[Is_Fulfilled](#is_fulfilled)|`int` |Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
 |[Is_QuantityFulfilled](#is_quantityfulfilled)|`int` |Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
-|[Line_Amount](#line_amount)|`decimal(14, 2)` ||
+|[Line_Amount](#line_amount)|`decimal(14, 2)` |Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount.|
 |[Line_Custom_Discount_Percent](#line_custom_discount_percent)|`decimal(7, 6)` ||
 |[Line_Deal_Type_Id](#line_deal_type_id)|`uniqueidentifier` ||
 |[Line_Discount_Id](#line_discount_id)|`uniqueidentifier` ||
@@ -32,16 +32,16 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 |[Payment_Transaction_Id](#payment_transaction_id)|`uniqueidentifier` ||
 |[Product_Description](#product_description)|`nvarchar(254)` `ML`||
 |[Product_Id](#product_id)|`uniqueidentifier` ||
-|[Quantity](#quantity)|`decimal(12, 3)` ||
-|[Quantity_Base](#quantity_base)|`decimal(12, 3)` ||
+|[Quantity](#quantity)|`decimal(12, 3)` |The quantity of the product to invoice|
+|[Quantity_Base](#quantity_base)|`decimal(12, 3)` |The equivalent of Quantity in the base measurement unit of the Product|
 |[Quantity_Unit_Id](#quantity_unit_id)|`uniqueidentifier` ||
 |[Row_Version](#row_version)|`timestamp` ||
 |[Sales_Order_Id](#sales_order_id)|`uniqueidentifier` ||
 |[Sales_Order_Line_Id](#sales_order_line_id)|`uniqueidentifier` ||
 |[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` ||
-|[Standard_Quantity_Base](#standard_quantity_base)|`decimal(12, 3)` ||
+|[Standard_Quantity_Base](#standard_quantity_base)|`decimal(12, 3)` Readonly|The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.|
 |[Transaction_Line_Id](#transaction_line_id)|`uniqueidentifier` ||
-|[Unit_Price](#unit_price)|`decimal(14, 5)` ||
+|[Unit_Price](#unit_price)|`decimal(14, 5)` |Unit selling price in the unit of measure, specified in Quantity Unit|
 
 ## Columns
 
@@ -214,16 +214,19 @@ Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.00
 
 ### Line_Amount
 
+
+Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|0|
-|Enter Stop|yes|
+|Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -231,7 +234,7 @@ Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.00
 |Readonly|no|
 |RTF|no|
 |Sortable|no|
-|Summary Type|None|
+|Summary Type|Sum|
 |Supports EQUALS_IN|no|
 |Type|decimal(14, 2)|
 |UI Memo Editor|no|
@@ -564,6 +567,9 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 
 ### Quantity
 
+
+The quantity of the product to invoice
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -573,7 +579,7 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -597,6 +603,9 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 
 ### Quantity_Base
 
+
+The equivalent of Quantity in the base measurement unit of the Product
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -606,7 +615,7 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|15|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -620,7 +629,7 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Quantity_Unit_Id
 
@@ -787,6 +796,9 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 
 ### Standard_Quantity_Base
 
+
+The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -796,12 +808,12 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|21|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -810,7 +822,7 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 ### Transaction_Line_Id
 
@@ -848,6 +860,9 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 
 ### Unit_Price
 
+
+Unit selling price in the unit of measure, specified in Quantity Unit
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -857,7 +872,7 @@ The uninvoiced (unfulfilled) quantity of the invoice order line in base measurem
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

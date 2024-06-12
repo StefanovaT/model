@@ -125,7 +125,7 @@
 <tr>
 <td><a href="#line_amount">Line_Amount</a></td>
 <td><code>decimal(14, 2)</code></td>
-<td></td>
+<td>Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount.</td>
 </tr>
 <tr>
 <td><a href="#line_custom_discount_percent">Line_Custom_Discount_Percent</a></td>
@@ -180,12 +180,12 @@
 <tr>
 <td><a href="#quantity">Quantity</a></td>
 <td><code>decimal(12, 3)</code></td>
-<td></td>
+<td>The quantity of the product to invoice</td>
 </tr>
 <tr>
 <td><a href="#quantity_base">Quantity_Base</a></td>
 <td><code>decimal(12, 3)</code></td>
-<td></td>
+<td>The equivalent of Quantity in the base measurement unit of the Product</td>
 </tr>
 <tr>
 <td><a href="#quantity_unit_id">Quantity_Unit_Id</a></td>
@@ -214,8 +214,8 @@
 </tr>
 <tr>
 <td><a href="#standard_quantity_base">Standard_Quantity_Base</a></td>
-<td><code>decimal(12, 3)</code></td>
-<td></td>
+<td><code>decimal(12, 3)</code> Readonly</td>
+<td>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.</td>
 </tr>
 <tr>
 <td><a href="#transaction_line_id">Transaction_Line_Id</a></td>
@@ -225,7 +225,7 @@
 <tr>
 <td><a href="#unit_price">Unit_Price</a></td>
 <td><code>decimal(14, 5)</code></td>
-<td></td>
+<td>Unit selling price in the unit of measure, specified in Quantity Unit</td>
 </tr>
 </tbody>
 </table>
@@ -812,6 +812,7 @@
 </tbody>
 </table>
 <h3 id="line_amount">Line_Amount</h3>
+<p>Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount.</p>
 <table>
 <thead>
 <tr>
@@ -834,7 +835,7 @@
 </tr>
 <tr>
 <td>Enter Stop</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 <tr>
 <td>Ignore for Insert Order</td>
@@ -850,7 +851,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>6</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -882,7 +883,7 @@
 </tr>
 <tr>
 <td>Summary Type</td>
-<td>None</td>
+<td>Sum</td>
 </tr>
 <tr>
 <td>Supports EQUALS_IN</td>
@@ -2054,6 +2055,7 @@
 </tbody>
 </table>
 <h3 id="quantity">Quantity</h3>
+<p>The quantity of the product to invoice</p>
 <table>
 <thead>
 <tr>
@@ -2092,7 +2094,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>2</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -2172,6 +2174,7 @@
 </tbody>
 </table>
 <h3 id="quantity_base">Quantity_Base</h3>
+<p>The equivalent of Quantity in the base measurement unit of the Product</p>
 <table>
 <thead>
 <tr>
@@ -2210,7 +2213,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>15</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -2266,7 +2269,7 @@
 </tr>
 <tr>
 <td>Visible</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -2858,6 +2861,7 @@
 </tbody>
 </table>
 <h3 id="standard_quantity_base">Standard_Quantity_Base</h3>
+<p>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.</p>
 <table>
 <thead>
 <tr>
@@ -2896,7 +2900,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>21</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>
@@ -2916,7 +2920,7 @@
 </tr>
 <tr>
 <td>Readonly</td>
-<td>no</td>
+<td>yes</td>
 </tr>
 <tr>
 <td>RTF</td>
@@ -2952,7 +2956,7 @@
 </tr>
 <tr>
 <td>Visible</td>
-<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
@@ -3079,6 +3083,7 @@
 </tbody>
 </table>
 <h3 id="unit_price">Unit_Price</h3>
+<p>Unit selling price in the unit of measure, specified in Quantity Unit</p>
 <table>
 <thead>
 <tr>
@@ -3117,7 +3122,7 @@
 </tr>
 <tr>
 <td>Order</td>
-<td>2147483647</td>
+<td>4</td>
 </tr>
 <tr>
 <td>Ownership Reference</td>

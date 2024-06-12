@@ -194,7 +194,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#invoiceorderline">InvoiceOrderLine</a></td>
 <td><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a></td>
-<td>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code></td>
+<td>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code> <code>FilterableReference</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#linedealtype">LineDealType</a></td>
@@ -387,11 +387,12 @@ Generic enum type for InvoicingBusinessReason properties<br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="invoiceorderline">InvoiceOrderLine</h3>
-<p>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code></p>
+<p>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code> <code>FilterableReference</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="linedealtype">LineDealType</h3>
