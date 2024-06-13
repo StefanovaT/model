@@ -19,8 +19,8 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 |[Business_Reason](#business_reason)|`nvarchar(1)` Allowed: `P`, `S`||
 |[Invoice_Order_Id](#invoice_order_id)|`uniqueidentifier` ||
 |[Invoice_Order_Line_Id](#invoice_order_line_id)|`uniqueidentifier` ||
-|[Is_Fulfilled](#is_fulfilled)|`int` |Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
-|[Is_QuantityFulfilled](#is_quantityfulfilled)|`int` |Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
+|[Is_Fulfilled](#is_fulfilled)|`bit` |Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
+|[Is_QuantityFulfilled](#is_quantityfulfilled)|`bit` |Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
 |[Line_Amount](#line_amount)|`decimal(14, 2)` |Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount.|
 |[Line_Custom_Discount_Percent](#line_custom_discount_percent)|`decimal(7, 6)` ||
 |[Line_Deal_Type_Id](#line_deal_type_id)|`uniqueidentifier` ||
@@ -163,8 +163,8 @@ Returns 1/true when both the Quantity and Amount are fulfilled or only negligibl
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|int|
+|Supports EQUALS_IN|no|
+|Type|bit|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -199,8 +199,8 @@ Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.00
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|int|
+|Supports EQUALS_IN|no|
+|Type|bit|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

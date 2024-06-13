@@ -28,8 +28,8 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [BusinessReason](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#businessreason) | [InvoicingBusinessReason](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#businessreason) | Business reason for invoicing of this product or service. S=Shipment, P=Payment. `Required` `Default("S")` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Business_Reason` `Introduced in version 24.1.5.19` 
-| [IsFulfilled](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#isfulfilled) | int32 | Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(multi eq)` 
-| [IsQuantityFulfilled](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#isquantityfulfilled) | int32 | Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(multi eq)` 
+| [IsFulfilled](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#isfulfilled) | boolean | Returns true/true when both the Quantity and Amount are fulfilled or only negligible (less than false.001 for qty and false.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(eq)` 
+| [IsQuantityFulfilled](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#isquantityfulfilled) | boolean | Returns true/true when the Quantity is fulfilled or only negligible (less than false.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(eq)` 
 | [LineAmount](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | Amount for the line in the currency of the parent document. Usually equals Quantity * Unit_Price. When Quantity = 0, Unit Price is undefined and this contains the total line amount. `Currency: InvoiceOrder.DocumentCurrency` `Required` `Default(0)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Line_Amount` 
 | [LineCustomDiscountPercent](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Inherited from Crm_Invoice_Order_<br />Lines_Table.Line_Custom_Discount_<br />Percent` `Introduced in version 24.1.5.19` 
 | [LineNo](Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.md#lineno) | int32 | Line number. `Required` 
@@ -83,21 +83,21 @@ _Show in UI_: **ShownByDefault**
 
 ### IsFulfilled
 
-Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(multi eq)`
+Returns true/true when both the Quantity and Amount are fulfilled or only negligible (less than false.001 for qty and false.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(eq)`
 
-_Type_: **int32**  
+_Type_: **boolean**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
 ### IsQuantityFulfilled
 
-Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(multi eq)`
+Returns true/true when the Quantity is fulfilled or only negligible (less than false.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. `Required` `Filter(eq)`
 
-_Type_: **int32**  
+_Type_: **boolean**  
 _Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
