@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>LOG0209 Create Warehouse Requisitions for further execution (manual) | ERP.net Domain Model </title>
+    <title>LOG0209 Create Warehouse Requisitions for further execution (manual generation only) | ERP.net Domain Model </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="LOG0209 Create Warehouse Requisitions for further execution (manual) | ERP.net Domain Model ">
+    <meta name="title" content="LOG0209 Create Warehouse Requisitions for further execution (manual generation only) | ERP.net Domain Model ">
     <meta name="generator" content="docfx 2.56.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -70,7 +70,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="log0209-create-warehouse-requisitions-for-further-execution-manual">LOG0209 Create Warehouse Requisitions for further execution (manual)</h1>
+<h1 id="log0209-create-warehouse-requisitions-for-further-execution-manual-generation-only">LOG0209 Create Warehouse Requisitions for further execution (manual generation only)</h1>
 
 <p>Basic Information</p>
 <table>
@@ -138,6 +138,12 @@
 <h2 id="business-logic">Business Logic</h2>
 <p>This Generation is used to create Warehouse Requisitions from Store Orders for further execution.</p>
 <p>This generation is intended to operate only in manual mode, where a responsible person assesses whether and when it is necessary to complete a previously incomplete Store Orders.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The generation procedure is <strong>Manual Only</strong>. That means you have to select <strong>Allowed Generation Types = Manually</strong>!!! <br>
+Do not set Allowed Generation Types = Auto or Allowed Generation Types = Both (Auto and Manually)!!!</p>
+</div>
+<p><br><br></p>
 <p><strong>The Warehouse Requisition’s header is created based on the Store Order’s header as follows:</strong></p>
 <pre><code>WarehouseRequisition.DocumentDate = StoreOrder.DocumentDate
 
