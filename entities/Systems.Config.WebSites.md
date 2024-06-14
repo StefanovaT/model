@@ -42,6 +42,7 @@ Aggregate Tree
 | [ObjectVersion](Systems.Config.WebSites.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [RelativeUrl](Systems.Config.WebSites.md#relativeurl) | string (254) __nullable__ | The relative Url of the site. This is the text after the first slash after the protocol and host name. The text should not include the protocol and host name. null means that the site will be hosted as the root site in the speicified web host. 
 | [SettingsJson](Systems.Config.WebSites.md#settingsjson) | string (max) __nullable__ | The field specifies the JSON settings for this website. null means that there are no specific settings for this website. `Introduced in version 23.1.0.37` 
+| [Uin](Systems.Config.WebSites.md#uin) | string (64) __nullable__ | The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site. `Introduced in version 24.1.5.42` 
 | [WebSiteType](Systems.Config.WebSites.md#websitetype) | [WebSiteType](Systems.Config.WebSites.md#websitetype) | The type of web site - Api, Client Center, Id, etc. `Required` `Filter(multi eq)` 
 
 ## References
@@ -137,6 +138,17 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
+
+### Uin
+
+The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site. `Introduced in version 24.1.5.42`
+
+_Type_: **string (64) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 ### WebSiteType

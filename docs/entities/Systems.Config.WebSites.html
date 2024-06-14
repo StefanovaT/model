@@ -150,6 +150,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The field specifies the JSON settings for this website. null means that there are no specific settings for this website. <code>Introduced in version 23.1.0.37</code></td>
 </tr>
 <tr>
+<td><a href="Systems.Config.WebSites.html#uin">Uin</a></td>
+<td>string (64) <strong>nullable</strong></td>
+<td>The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site. <code>Introduced in version 24.1.5.42</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Config.WebSites.html#websitetype">WebSiteType</a></td>
 <td><a href="Systems.Config.WebSites.html#websitetype">WebSiteType</a></td>
 <td>The type of web site - Api, Client Center, Id, etc. <code>Required</code> <code>Filter(multi eq)</code></td>
@@ -244,6 +249,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="uin">Uin</h3>
+<p>The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site. <code>Introduced in version 24.1.5.42</code></p>
+<p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="websitetype">WebSiteType</h3>
 <p>The type of web site - Api, Client Center, Id, etc. <code>Required</code> <code>Filter(multi eq)</code></p>

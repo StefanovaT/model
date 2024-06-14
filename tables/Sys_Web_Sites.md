@@ -19,6 +19,7 @@ Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites
 |[Row_Version](#row_version)|`timestamp` ||
 |[Settings_Json](#settings_json)|`nvarchar(max)` |The field specifies the JSON settings for this website. NULL means that there are no specific settings for this website.|
 |[Trusted_Application_Id](#trusted_application_id)|`uniqueidentifier` |The trusted application related to this web site|
+|[Uin](#uin)|`nvarchar(64)` |The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site.|
 |[Web_Host_Id](#web_host_id)|`uniqueidentifier` |The web host in which to host the site.|
 |[Web_Site_Id](#web_site_id)|`uniqueidentifier` `PK`||
 |[Web_Site_Type](#web_site_type)|`nvarchar(3)` Allowed: `API`, `CC`, `EC`, `LEG`, `SI`, `DM`, `APP`, `TAP`, `DAP`, `LUK`, `OLP`, `MSS`|The type of web site - Api, Client Center, Id, etc.|
@@ -286,6 +287,36 @@ The trusted application related to this web site
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Uin
+
+
+The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|64|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(64) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Web_Host_Id
 
