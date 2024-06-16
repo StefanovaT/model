@@ -152,7 +152,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Config.WebSites.html#uin">Uin</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site. <code>Introduced in version 24.1.5.42</code></td>
+<td>For multi-instance databases, specifies the instance on which to start the web site. The instance is specified by its UIN (Unique Instance Name). When null (which is the default and suggested value), the site will be started on the primary instance. . <code>Introduced in version 24.1.5.42</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Config.WebSites.html#websitetype">WebSiteType</a></td>
@@ -251,7 +251,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="uin">Uin</h3>
-<p>The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site. <code>Introduced in version 24.1.5.42</code></p>
+<p>For multi-instance databases, specifies the instance on which to start the web site. The instance is specified by its UIN (Unique Instance Name). When null (which is the default and suggested value), the site will be started on the primary instance. . <code>Introduced in version 24.1.5.42</code></p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>

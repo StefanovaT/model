@@ -135,7 +135,7 @@
 <tr>
 <td><a href="#uin">Uin</a></td>
 <td><code>nvarchar(64)</code></td>
-<td>The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site.</td>
+<td>For multi-instance databases, specifies the instance on which to start the web site. The instance is specified by its UIN (Unique Instance Name). When NULL (which is the default and suggested value), the site will be started on the primary instance.</td>
 </tr>
 <tr>
 <td><a href="#web_host_id">Web_Host_Id</a></td>
@@ -1046,7 +1046,7 @@
 </tbody>
 </table>
 <h3 id="uin">Uin</h3>
-<p>The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site.</p>
+<p>For multi-instance databases, specifies the instance on which to start the web site. The instance is specified by its UIN (Unique Instance Name). When NULL (which is the default and suggested value), the site will be started on the primary instance.</p>
 <table>
 <thead>
 <tr>

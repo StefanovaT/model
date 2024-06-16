@@ -9,7 +9,7 @@ Private conversations between users and AI models (assistant mode). Entity: Llm_
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {UserId}_  
+_{Title}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  

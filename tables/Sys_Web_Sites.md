@@ -19,7 +19,7 @@ Contains the web sites, which are hosted for the database. Entity: Sys_Web_Sites
 |[Row_Version](#row_version)|`timestamp` ||
 |[Settings_Json](#settings_json)|`nvarchar(max)` |The field specifies the JSON settings for this website. NULL means that there are no specific settings for this website.|
 |[Trusted_Application_Id](#trusted_application_id)|`uniqueidentifier` |The trusted application related to this web site|
-|[Uin](#uin)|`nvarchar(64)` |The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site.|
+|[Uin](#uin)|`nvarchar(64)` |For multi-instance databases, specifies the instance on which to start the web site. The instance is specified by its UIN (Unique Instance Name). When NULL (which is the default and suggested value), the site will be started on the primary instance. |
 |[Web_Host_Id](#web_host_id)|`uniqueidentifier` |The web host in which to host the site.|
 |[Web_Site_Id](#web_site_id)|`uniqueidentifier` `PK`||
 |[Web_Site_Type](#web_site_type)|`nvarchar(3)` Allowed: `API`, `CC`, `EC`, `LEG`, `SI`, `DM`, `APP`, `TAP`, `DAP`, `LUK`, `OLP`, `MSS`|The type of web site - Api, Client Center, Id, etc.|
@@ -291,7 +291,7 @@ The trusted application related to this web site
 ### Uin
 
 
-The server identified by this UIN (unique instance name) will start the web site. If set to null, only the primary server will start the web site.
+For multi-instance databases, specifies the instance on which to start the web site. The instance is specified by its UIN (Unique Instance Name). When NULL (which is the default and suggested value), the site will be started on the primary instance. 
 
 | Property | Value |
 | - | - |
