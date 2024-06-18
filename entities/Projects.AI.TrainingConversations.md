@@ -39,7 +39,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Model](Projects.AI.TrainingConversations.md#model) | [Models](Projects.AI.Models.md) | The model, which is being trained. `Required` `Filter(multi eq)` |
-| [OriginDataObject](Projects.AI.TrainingConversations.md#origindataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) (nullable) | The object, whose data was used to initially create the conversation. null means the object is unknown or not a data object. `Filter(multi eq)` `ReadOnly` |
+| [OriginDataObject](Projects.AI.TrainingConversations.md#origindataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) (nullable) | The object, whose data was used to initially create the conversation. null means the object is unknown or not a data object. `Filter(multi eq)` `ReadOnly` |
 
 ## Child Collections
 
@@ -151,7 +151,7 @@ _Show in UI_: **ShownByDefault**
 
 The object, whose data was used to initially create the conversation. null means the object is unknown or not a data object. `Filter(multi eq)` `ReadOnly`
 
-_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) (nullable)**  
+_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

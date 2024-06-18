@@ -32,7 +32,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Social.ReactionsSummary.md#dataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) | The extensible data object. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` |
+| [DataObject](Communities.Social.ReactionsSummary.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The extensible data object. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` |
 | [SocialComment](Communities.Social.ReactionsSummary.md#socialcomment) | [Comments](Communities.Social.Comments.md) | The social comment. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Cmm_Social_Comments_Table.Social_Comment_Id` |
 
 
@@ -77,7 +77,7 @@ _Show in UI_: **ShownByDefault**
 
 The extensible data object. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id`
 
-_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md)**  
+_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Inherited From_: **Sys_Objects_Table.Object_Id**  

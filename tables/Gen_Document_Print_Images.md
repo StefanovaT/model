@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Internal.DocumentPrintImages](~/entities/Systems.Internal.DocumentPrintImages.md)
+Entity: [Systems.Core.DocumentPrintImages](~/entities/Systems.Core.DocumentPrintImages.md)
 
 Contains the data of a printout of a document as it was obtained from the data source in the moment of printing. Entity: Gen_Document_Print_Images
 

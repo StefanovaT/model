@@ -1141,6 +1141,35 @@
       href: Systems.Config.WebHosts.md
     - name: WebSites
       href: Systems.Config.WebSites.md
+  - name: Core
+    href: Systems.Core.md
+    items:
+    - name: AttributeChanges
+      href: Systems.Core.AttributeChanges.md
+    - name: AttributeChangesHistory
+      href: Systems.Core.AttributeChangesHistory.md
+    - name: DataEntryDefaultValues
+      href: Systems.Core.DataEntryDefaultValues.md
+    - name: DocumentJobs
+      href: Systems.Core.DocumentJobs.md
+    - name: DocumentPrintImages
+      href: Systems.Core.DocumentPrintImages.md
+    - name: DocumentVersions
+      href: Systems.Core.DocumentVersions.md
+    - name: ExtensibleDataObjects
+      href: Systems.Core.ExtensibleDataObjects.md
+    - name: FormLayouts
+      href: Systems.Core.FormLayouts.md
+    - name: ObjectChanges
+      href: Systems.Core.ObjectChanges.md
+    - name: ObjectChangesets
+      href: Systems.Core.ObjectChangesets.md
+    - name: ObjectFiles
+      href: Systems.Core.ObjectFiles.md
+    - name: ObjectVersions
+      href: Systems.Core.ObjectVersions.md
+    - name: Reports
+      href: Systems.Core.Reports.md
   - name: Documents
     href: Systems.Documents.md
     items:
@@ -1181,35 +1210,6 @@
       href: Systems.External.PublicUserLists.md
     - name: PublicUsers
       href: Systems.External.PublicUsers.md
-  - name: Internal
-    href: Systems.Internal.md
-    items:
-    - name: AttributeChanges
-      href: Systems.Internal.AttributeChanges.md
-    - name: AttributeChangesHistory
-      href: Systems.Internal.AttributeChangesHistory.md
-    - name: DataEntryDefaultValues
-      href: Systems.Internal.DataEntryDefaultValues.md
-    - name: DocumentJobs
-      href: Systems.Internal.DocumentJobs.md
-    - name: DocumentPrintImages
-      href: Systems.Internal.DocumentPrintImages.md
-    - name: DocumentVersions
-      href: Systems.Internal.DocumentVersions.md
-    - name: ExtensibleDataObjects
-      href: Systems.Internal.ExtensibleDataObjects.md
-    - name: FormLayouts
-      href: Systems.Internal.FormLayouts.md
-    - name: ObjectChanges
-      href: Systems.Internal.ObjectChanges.md
-    - name: ObjectChangesets
-      href: Systems.Internal.ObjectChangesets.md
-    - name: ObjectFiles
-      href: Systems.Internal.ObjectFiles.md
-    - name: ObjectVersions
-      href: Systems.Internal.ObjectVersions.md
-    - name: Reports
-      href: Systems.Internal.Reports.md
   - name: Monitoring
     href: Systems.Monitoring.md
     items:

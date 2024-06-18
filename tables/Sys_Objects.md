@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Internal.ExtensibleDataObjects](~/entities/Systems.Internal.ExtensibleDataObjects.md)
+Entity: [Systems.Core.ExtensibleDataObjects](~/entities/Systems.Core.ExtensibleDataObjects.md)
 
 Extends data in other tables with attached files, custom properties, etc. Each row is an object, bound to exactly one row in the primary table. Each object can be bound to a row in a different primary table, specified in Entity_Type. Entity: Sys_Objects
 

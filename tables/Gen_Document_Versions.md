@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Internal.DocumentVersions](~/entities/Systems.Internal.DocumentVersions.md)
+Entity: [Systems.Core.DocumentVersions](~/entities/Systems.Core.DocumentVersions.md)
 
 History of each saved version of each document. Entity: Gen_Document_Versions
 

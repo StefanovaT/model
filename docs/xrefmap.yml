@@ -1957,6 +1957,15 @@ references:
 - uid: Systems.Core.DataEntryDefaultValues
   name: Systems.Core.DataEntryDefaultValues Entity
   href: entities/Systems.Core.DataEntryDefaultValues.html
+- uid: Systems.Core.DocumentJobs
+  name: Systems.Core.DocumentJobs Entity
+  href: entities/Systems.Core.DocumentJobs.html
+- uid: Systems.Core.DocumentPrintImages
+  name: Systems.Core.DocumentPrintImages Entity
+  href: entities/Systems.Core.DocumentPrintImages.html
+- uid: Systems.Core.DocumentVersions
+  name: Systems.Core.DocumentVersions Entity
+  href: entities/Systems.Core.DocumentVersions.html
 - uid: Systems.Core.EntitySettings
   name: Systems.Core.EntitySettings Entity
   href: entities/Systems.Core.EntitySettings.html
@@ -1966,6 +1975,9 @@ references:
 - uid: Systems.Core.ExternalApplications
   name: Systems.Core.ExternalApplications Entity
   href: entities/Systems.Core.ExternalApplications.html
+- uid: Systems.Core.FormLayouts
+  name: Systems.Core.FormLayouts Entity
+  href: entities/Systems.Core.FormLayouts.html
 - uid: Systems.Core.InformationMessages
   name: Systems.Core.InformationMessages Entity
   href: entities/Systems.Core.InformationMessages.html
@@ -1984,6 +1996,9 @@ references:
 - uid: Systems.Core.ObjectVersions
   name: Systems.Core.ObjectVersions Entity
   href: entities/Systems.Core.ObjectVersions.html
+- uid: Systems.Core.Reports
+  name: Systems.Core.Reports Entity
+  href: entities/Systems.Core.Reports.html
 - uid: Systems.Core.ResolvedConflicts
   name: Systems.Core.ResolvedConflicts Entity
   href: entities/Systems.Core.ResolvedConflicts.html

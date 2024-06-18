@@ -42,7 +42,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [ConditionDocumentType](Systems.Core.DataEntryDefaultValues.md#conditiondocumenttype) | [DocumentTypes](General.DocumentTypes.md) (nullable) | If not null specifies that the default should be applied only if Document_Type_Id equals this value. `Filter(multi eq)` |
+| [ConditionDocumentType](Systems.Core.DataEntryDefaultValues.md#conditiondocumenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) (nullable) | If not null specifies that the default should be applied only if Document_Type_Id equals this value. `Filter(multi eq)` |
 | [ConditionEnterpriseCompany](Systems.Core.DataEntryDefaultValues.md#conditionenterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | If not null specifies that the default should be applied only if Enterprise_Company_Id equals this value. `Filter(multi eq)` |
 | [ConditionRole](Systems.Core.DataEntryDefaultValues.md#conditionrole) | [Roles](Systems.Security.Roles.md) (nullable) | When not null, specifies that the default value should be applied only when the user plays the specified role. `Filter(multi eq)` |
 
@@ -163,7 +163,7 @@ _Show in UI_: **ShownByDefault**
 
 If not null specifies that the default should be applied only if Document_Type_Id equals this value. `Filter(multi eq)`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md) (nullable)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -194,7 +194,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

@@ -32,7 +32,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Social.FollowedEntities.md#dataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) | The data object subject to the social follow. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` `Introduced in version 22.1.6.8` |
+| [DataObject](Communities.Social.FollowedEntities.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The data object subject to the social follow. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` `Introduced in version 22.1.6.8` |
 | [User](Communities.Social.FollowedEntities.md#user) | [Users](Systems.Security.Users.md) | The user which follows the entity. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sec_Users_Table.User_Id` |
 
 
@@ -65,7 +65,7 @@ _Show in UI_: **ShownByDefault**
 
 The data object subject to the social follow. `Required` `Default(New Guid)` `Filter(multi eq)` `Inherited from Sys_Objects_Table.Object_Id` `Introduced in version 22.1.6.8`
 
-_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md)**  
+_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Category_: **System**  
 _Inherited From_: **Sys_Objects_Table.Object_Id**  
 _Supported Filters_: **Equals, EqualsIn**  

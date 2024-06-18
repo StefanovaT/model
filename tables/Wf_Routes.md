@@ -615,6 +615,7 @@ The negative condition should NOT be matched by the document in order to execute
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|yes|
 |Default Value|None|

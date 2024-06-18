@@ -5,63 +5,28 @@ In various versions of ERP.net, different entities have been renamed.
 Here is a list of entity renames in chronological order.  
 
 
-Old name: **Systems.Core.DataEntryDefaultValues**  
-New name: **Systems.Internal.DataEntryDefaultValues**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
-Old name: **Systems.Core.ExtensibleDataObjects**  
-New name: **Systems.Internal.ExtensibleDataObjects**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
-Old name: **Systems.Core.ObjectVersions**  
-New name: **Systems.Internal.ObjectVersions**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
-Old name: **Systems.Core.ObjectFiles**  
-New name: **Systems.Internal.ObjectFiles**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
-Old name: **Systems.Core.ObjectChangesets**  
-New name: **Systems.Internal.ObjectChangesets**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
-Old name: **Systems.Core.ObjectChanges**  
-New name: **Systems.Internal.ObjectChanges**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
-Old name: **Systems.Core.AttributeChangesHistory**  
-New name: **Systems.Internal.AttributeChangesHistory**  
-Version: **24.1.5.35**  
-Case: **35911**  
-
 Old name: **Systems.Reporting.Reports**  
-New name: **Systems.Internal.Reports**  
+New name: **Systems.Core.Reports**  
 Version: **24.1.5.35**  
 Case: **35911**  
 
 Old name: **Systems.UI.FormLayouts**  
-New name: **Systems.Internal.FormLayouts**  
+New name: **Systems.Core.FormLayouts**  
 Version: **24.1.5.35**  
 Case: **35911**  
 
 Old name: **General.DocumentPrintImages**  
-New name: **Systems.Internal.DocumentPrintImages**  
+New name: **Systems.Core.DocumentPrintImages**  
 Version: **24.1.5.35**  
 Case: **35911**  
 
 Old name: **General.DocumentJobs**  
-New name: **Systems.Internal.DocumentJobs**  
+New name: **Systems.Core.DocumentJobs**  
 Version: **24.1.5.35**  
 Case: **35911**  
 
 Old name: **General.DocumentVersions**  
-New name: **Systems.Internal.DocumentVersions**  
+New name: **Systems.Core.DocumentVersions**  
 Version: **24.1.5.35**  
 Case: **35911**  
 

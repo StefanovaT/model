@@ -7,6 +7,10 @@ Entity: [General.Contacts.PartyRelationships](~/entities/General.Contacts.PartyR
 
 Defines the relationships between the parties. The data is preserved over time. Entity: Cm_Party_Relationships
 
+## Owner Tables Hierarchy
+
+* [Gen_Parties](Gen_Parties.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -73,7 +77,7 @@ The first party in the relationship
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|1|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

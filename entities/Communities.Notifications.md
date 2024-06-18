@@ -37,7 +37,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Notifications.md#dataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) (nullable) | The data object about which the notification is created. Null means that the notification is not about any specific data object. `Filter(multi eq)` |
+| [DataObject](Communities.Notifications.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) (nullable) | The data object about which the notification is created. Null means that the notification is not about any specific data object. `Filter(multi eq)` |
 | [User](Communities.Notifications.md#user) | [Users](Systems.Security.Users.md) | The user, who is notified. `Required` `Filter(multi eq)` |
 
 
@@ -123,7 +123,7 @@ _Show in UI_: **ShownByDefault**
 
 The data object about which the notification is created. Null means that the notification is not about any specific data object. `Filter(multi eq)`
 
-_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) (nullable)**  
+_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

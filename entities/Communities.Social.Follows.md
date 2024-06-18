@@ -34,7 +34,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DataObject](Communities.Social.Follows.md#dataobject) | [ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md) | The object being followed by the user. `Required` `Filter(multi eq)` |
+| [DataObject](Communities.Social.Follows.md#dataobject) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The object being followed by the user. `Required` `Filter(multi eq)` |
 | [User](Communities.Social.Follows.md#user) | [Users](Systems.Security.Users.md) | The user which follows the object. `Required` `Filter(multi eq)` |
 
 
@@ -87,7 +87,7 @@ _Show in UI_: **HiddenByDefault**
 
 The object being followed by the user. `Required` `Filter(multi eq)`
 
-_Type_: **[ExtensibleDataObjects](Systems.Internal.ExtensibleDataObjects.md)**  
+_Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

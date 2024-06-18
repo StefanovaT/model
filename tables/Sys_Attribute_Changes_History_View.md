@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Internal.AttributeChangesHistory](~/entities/Systems.Internal.AttributeChangesHistory.md)
+Entity: [Systems.Core.AttributeChangesHistory](~/entities/Systems.Core.AttributeChangesHistory.md)
 
 Each entry represents an entity attribute change with previous and new value. Entity: Sys_Attribute_Changes_History_View (Introduced in version 23.1.2.37)
 

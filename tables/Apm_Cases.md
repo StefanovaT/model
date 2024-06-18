@@ -15,7 +15,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Case_Category_Id](#case_category_id)|`uniqueidentifier` |The category of the case. This also determines the workflow for the case.|
 |[Case_Id](#case_id)|`uniqueidentifier` `PK`||
 |[Case_Number](#case_number)|`int` Readonly||
-|[Description](#description)|`nvarchar(max)` `ML`|Description of the required work.|
+|[Description](#description)|`nvarchar(max)` |Description of the required work.|
 |[Due_Date](#due_date)|`date` |Specified when the case has specific due date.|
 |[Due_Time](#due_time)|`time` |Specified when the case has specific due time.|
 |[Estimated_Time_Hours](#estimated_time_hours)|`decimal(8, 2)` |Estimation of the required work effort in hours.|
@@ -195,7 +195,7 @@ Description of the required work.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(max) (MultiLanguage) (Allows NULL)|
+|Type|nvarchar(max) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

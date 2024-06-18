@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Internal.FormLayouts](~/entities/Systems.Internal.FormLayouts.md)
+Entity: [Systems.Core.FormLayouts](~/entities/Systems.Core.FormLayouts.md)
 
 Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 
@@ -15,7 +15,7 @@ Contains user layouts of the screen forms. Entity: Sys_Form_Layouts
 |[Application_Name](#application_name)|`nvarchar(64)` |The application, which consumes the layout.|
 |[Category](#category)|`nvarchar(36)` |The object category for which the layout is applied. Object category is usually user-defined and further divides the objects of a given object type.|
 |[Form_Layout_Id](#form_layout_id)|`uniqueidentifier` `PK`||
-|[Form_Name](#form_name)|`nvarchar(64)` |The form, for which the layout is applied.|
+|[Form_Name](#form_name)|`nvarchar(128)` |The form, for which the layout is applied.|
 |[Layout](#layout)|`varbinary` |The byte storage of the layout.|
 |[Layout_Format](#layout_format)|`nvarchar(1)` Allowed: `D`, `L`, `U`|The format of the data in the Layout column. Values can be: 'U' - uncompressed; 'L' - LZO compressed; 'D' - Deflate compressed.|
 |[Layout_Name](#layout_name)|`nvarchar(64)` |The name of a named layout. Standard layouts have empty string names.|
@@ -183,7 +183,7 @@ The form, for which the layout is applied.
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|64|
+|Max Length|128|
 |Order|2147483647|
 |Ownership Reference|no|
 |Pasword|no|
@@ -194,7 +194,7 @@ The form, for which the layout is applied.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(64)|
+|Type|nvarchar(128)|
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|

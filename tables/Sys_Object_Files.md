@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Internal.ObjectFiles](~/entities/Systems.Internal.ObjectFiles.md)
+Entity: [Systems.Core.ObjectFiles](~/entities/Systems.Core.ObjectFiles.md)
 
 Contains files attached to objects. Entity: Sys_Object_Files
 
