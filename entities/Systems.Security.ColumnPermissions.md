@@ -14,7 +14,7 @@ Default Search Members:
 _ColumnName_  
 Name Data Member:  
 _ColumnName_  
-Category:  _Settings_  
+Category:  _SystemData_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate

@@ -23,7 +23,7 @@ Default Search Members:
 _Name_  
 Name Data Member:  
 _Name_  
-Category:  _Settings_  
+Category:  _SystemData_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate

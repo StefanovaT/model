@@ -14,7 +14,7 @@ Default Search Members:
 _ApplicationName_  
 Name Data Member:  
 _ApplicationName_  
-Category:  _Settings_  
+Category:  _SystemData_  
 Show in UI:  _ShownByDefault_  
 
 ## Aggregate

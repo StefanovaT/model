@@ -35,7 +35,7 @@ Aggregate Root:
 | [NumberOfPeriods](Applications.Rental.TransactionLines.md#numberofperiods) | int32 __nullable__ | Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset. `Filter(eq;ge;le)` `Introduced in version 24.1.5.21` 
 | [ObjectVersion](Applications.Rental.TransactionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [TransactionTimestamp](Applications.Rental.TransactionLines.md#transactiontimestamp) | datetime | Transaction Timestamp. `Required` `Filter(multi eq;ge;le)` 
-| [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | Transaction Type. `Required` `Filter(eq;like)` 
+| [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | Transaction Type. `Required` `Filter(multi eq;like)` 
 
 ## References
 
@@ -113,7 +113,7 @@ _Show in UI_: **ShownByDefault**
 
 ### TransactionType
 
-Transaction Type. `Required` `Filter(eq;like)`
+Transaction Type. `Required` `Filter(multi eq;like)`
 
 _Type_: **[TransactionType](Applications.Rental.TransactionLines.md#transactiontype)**  
 _Category_: **System**  
@@ -127,7 +127,7 @@ _Allowed Values (Applications.Rental.TransactionLinesRepository.TransactionType 
 | WriteOffNotReturned | WriteOffNotReturned value. Stored as 'W'. <br /> _Database Value:_ 'W' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'WriteOffNotReturned' |
 | StatusReport | StatusReport value. Stored as 'S'. <br /> _Database Value:_ 'S' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'StatusReport' |
 
-_Supported Filters_: **Equals, Like**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
