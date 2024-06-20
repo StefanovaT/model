@@ -107,12 +107,12 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#isfulfilled">IsFulfilled</a></td>
 <td>boolean</td>
-<td>Returns true/true when both the Quantity and Amount are fulfilled or only negligible (less than false.001 for qty and false.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></td>
+<td>Returns true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#isquantityfulfilled">IsQuantityFulfilled</a></td>
 <td>boolean</td>
-<td>Returns true/true when the Quantity is fulfilled or only negligible (less than false.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></td>
+<td>Returns true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#orderremaininglineamount">OrderRemainingLineAmount</a></td>
@@ -143,8 +143,8 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#invoiceorderline">InvoiceOrderLine</a></td>
-<td><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a></td>
-<td>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_&lt;br /&gt;Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code> <code>FilterableReference</code></td>
+<td><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a> (nullable)</td>
+<td>Invoice order line which is invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code> <code>FilterableReference</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceOrderLinesUnfulfilledView.html#salesorder">SalesOrder</a></td>
@@ -165,14 +165,14 @@ Aggregate Root:<br>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="isfulfilled">IsFulfilled</h3>
-<p>Returns true/true when both the Quantity and Amount are fulfilled or only negligible (less than false.001 for qty and false.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></p>
+<p>Returns true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="isquantityfulfilled">IsQuantityFulfilled</h3>
-<p>Returns true/true when the Quantity is fulfilled or only negligible (less than false.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></p>
+<p>Returns true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling. <code>Required</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
@@ -202,13 +202,12 @@ Aggregate Root:<br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="invoiceorderline">InvoiceOrderLine</h3>
-<p>The line containing the ordered quantity and amount. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code> <code>FilterableReference</code></p>
-<p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a></strong><br>
+<p>Invoice order line which is invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Lines_Table.Invoice_Order_Line_Id</code> <code>Introduced in version 24.1.5.19</code> <code>FilterableReference</code></p>
+<p><em>Type</em>: <strong><a href="Crm.Invoicing.InvoiceOrderLines.html">InvoiceOrderLines</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Inherited From</em>: <strong>Crm_Invoice_Order_Lines_Table.Invoice_Order_Line_Id</strong><br>
+<em>Inherited From</em>: <strong>Crm_Invoice_Lines_Table.Invoice_Order_Line_Id</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="salesorder">SalesOrder</h3>
 <p>When not null specifies the Sales Order that is ordered to be invoiced by this line. <code>Filter(multi eq)</code> <code>Inherited from Crm_Invoice_Order_Lines_Table.Sales_Order_Id</code> <code>Introduced in version 24.1.5.19</code></p>

@@ -18,8 +18,8 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 | - | - | --- |
 |[Invoice_Order_Id](#invoice_order_id)|`uniqueidentifier` ||
 |[Invoice_Order_Line_Id](#invoice_order_line_id)|`uniqueidentifier` ||
-|[Is_Fulfilled](#is_fulfilled)|`bit` |Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
-|[Is_QuantityFulfilled](#is_quantityfulfilled)|`bit` |Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
+|[Is_Fulfilled](#is_fulfilled)|`bit` |Returns true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
+|[Is_QuantityFulfilled](#is_quantityfulfilled)|`bit` |Returns true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.|
 |[Order_Remaining_Line_Amount](#order_remaining_line_amount)|`decimal(38, 2)` |The uninvoiced (unfulfilled) line amount of the invoice order line.|
 |[Order_Remaining_Standard_Quantity](#order_remaining_standard_quantity)|`decimal(38, 6)` |The uninvoiced (unfulfilled) quantity of the invoice order line in base measurement unit.|
 |[Sales_Order_Id](#sales_order_id)|`uniqueidentifier` ||
@@ -68,7 +68,7 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 | - | - |
 |Auto Complete|no|
 |Data Filter|no|
-|Default Value|NewGuid|
+|Default Value|None|
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
@@ -79,11 +79,12 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
+|Referenced Table|[Crm_Invoice_Order_Lines](Crm_Invoice_Order_Lines.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -93,12 +94,12 @@ Returns the uninvoiced (unfulfilled) Invoice Order Lines from Invoice Orders, wh
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Is_Fulfilled
 
 
-Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.
+Returns true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.
 
 | Property | Value |
 | - | - |
@@ -134,7 +135,7 @@ Returns 1/true when both the Quantity and Amount are fulfilled or only negligibl
 ### Is_QuantityFulfilled
 
 
-Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.
+Returns true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.
 
 | Property | Value |
 | - | - |

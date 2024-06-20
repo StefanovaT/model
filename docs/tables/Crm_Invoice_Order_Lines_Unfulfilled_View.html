@@ -110,12 +110,12 @@
 <tr>
 <td><a href="#is_fulfilled">Is_Fulfilled</a></td>
 <td><code>bit</code></td>
-<td>Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</td>
+<td>Returns true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</td>
 </tr>
 <tr>
 <td><a href="#is_quantityfulfilled">Is_QuantityFulfilled</a></td>
 <td><code>bit</code></td>
-<td>Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</td>
+<td>Returns true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</td>
 </tr>
 <tr>
 <td><a href="#order_remaining_line_amount">Order_Remaining_Line_Amount</a></td>
@@ -286,7 +286,7 @@
 </tr>
 <tr>
 <td>Default Value</td>
-<td>NewGuid</td>
+<td>None</td>
 </tr>
 <tr>
 <td>Enter Stop</td>
@@ -329,6 +329,10 @@
 <td>no</td>
 </tr>
 <tr>
+<td>Referenced Table</td>
+<td><a href="Crm_Invoice_Order_Lines.html">Crm_Invoice_Order_Lines</a></td>
+</tr>
+<tr>
 <td>RTF</td>
 <td>no</td>
 </tr>
@@ -346,7 +350,7 @@
 </tr>
 <tr>
 <td>Type</td>
-<td>uniqueidentifier</td>
+<td>uniqueidentifier (Allows NULL)</td>
 </tr>
 <tr>
 <td>UI Memo Editor</td>
@@ -380,13 +384,13 @@
 <tr>
 <td>Equals</td>
 <td><code>NULL</code></td>
-<td>no</td>
+<td>yes</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h3 id="is_fulfilled">Is_Fulfilled</h3>
-<p>Returns 1/true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</p>
+<p>Returns true when both the Quantity and Amount are fulfilled or only negligible (less than 0.001 for qty and 0.01 for amount) sums remain. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</p>
 <table>
 <thead>
 <tr>
@@ -505,7 +509,7 @@
 </tbody>
 </table>
 <h3 id="is_quantityfulfilled">Is_QuantityFulfilled</h3>
-<p>Returns 1/true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</p>
+<p>Returns true when the Quantity is fulfilled or only negligible (less than 0.001) sum remains. Please note, that filtering by this field forces full scan and calculation of remaining quantities and amounts for all non-finished invoice orders. For best performance, the invoice orders should be finished after fulfilling.</p>
 <table>
 <thead>
 <tr>
