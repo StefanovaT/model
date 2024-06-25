@@ -27,7 +27,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CompletedDateTimeUtc](Projects.Todo.Tasks.md#completeddatetimeutc) | datetime __nullable__ | Indicates (in UTC) when the task was completed. `Filter(eq;ge;le)` `ReadOnly` 
-| [DisplayText](Projects.Todo.Tasks.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [DisplayText](Projects.Todo.Tasks.md#displaytext) | string |  
 | [DueDate](Projects.Todo.Tasks.md#duedate) | date __nullable__ | Indicates when the task should be finished. `Filter(eq;ge;le)` 
 | [Id](Projects.Todo.Tasks.md#id) | guid |  
 | [Importance](Projects.Todo.Tasks.md#importance) | [Importance](Projects.Todo.Tasks.md#importance) | The importance of the task. `Required` `Default("N")` `Filter(eq)` 
@@ -65,8 +65,6 @@ _Supports Order By_: **False**
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText
-
-Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
 
 _Type_: **string**  
 _Category_: **Calculated Attributes**  
