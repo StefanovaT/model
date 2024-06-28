@@ -121,7 +121,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Accounting.FinancialStatementNodes.html#fullpath">FullPath</a></td>
 <td>string (25) <strong>nullable</strong></td>
-<td>Full identification path of the financial statement node. <code>Filter(like)</code> <code>ReadOnly</code></td>
+<td>Full identification path of the financial statement node. <code>Filter(eq;like)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Accounting.FinancialStatementNodes.html#id">Id</a></td>
@@ -141,7 +141,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Accounting.FinancialStatementNodes.html#parentfullpath">ParentFullPath</a></td>
 <td>string (25) <strong>nullable</strong></td>
-<td>Parent financial statement node specified through its full identification path. <code>Filter(like)</code></td>
+<td>Parent financial statement node specified through its full identification path. <code>Filter(eq;like)</code></td>
 </tr>
 </tbody>
 </table>
@@ -196,10 +196,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="fullpath">FullPath</h3>
-<p>Full identification path of the financial statement node. <code>Filter(like)</code> <code>ReadOnly</code></p>
+<p>Full identification path of the financial statement node. <code>Filter(eq;like)</code> <code>ReadOnly</code></p>
 <p><em>Type</em>: <strong>string (25) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Like</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>25</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -225,10 +225,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="parentfullpath">ParentFullPath</h3>
-<p>Parent financial statement node specified through its full identification path. <code>Filter(like)</code></p>
+<p>Parent financial statement node specified through its full identification path. <code>Filter(eq;like)</code></p>
 <p><em>Type</em>: <strong>string (25) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Like</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>25</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

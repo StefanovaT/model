@@ -189,7 +189,7 @@ Transaction.DocumentCurrency = StoreOrder.DocumentCurrency
 <td style="text-align: center;">StoreOrderLine.Product.BaseMeasurementUnit</td>
 <td style="text-align: left;">StoreOrderLine.StandardQuantityBase</td>
 <td style="text-align: left;">StoreTransactionLine.StandardQuantityBase</td>
-<td style="text-align: left;">YES</td>
+<td style="text-align: left;">if there is atleast one Child.StoreTransactionLine where Finished = TRUE <br>, then 'New Record = NO' <br>,else 'New Record = YES'</td>
 </tr>
 <tr>
 <td style="text-align: left;">StoreOrderLineToStoreTransactionLine</td>
@@ -213,7 +213,7 @@ Transaction.DocumentCurrency = StoreOrder.DocumentCurrency
 <td style="text-align: center;">StoreOrder.DocumentCurrency</td>
 <td style="text-align: left;">StoreOrderLine.LineCost</td>
 <td style="text-align: left;">StoreTransactionLine.LineCost</td>
-<td style="text-align: left;">if (StoreOrder.MovementType== Receipt) {New Record = YES},else {New Record = NO}</td>
+<td style="text-align: left;">if (StoreOrder.MovementType == Receipt) <br>, then 'New Record = YES' <br>,else 'New Record = NO'</td>
 </tr>
 </tbody>
 </table>

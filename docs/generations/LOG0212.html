@@ -210,7 +210,7 @@ StoreOrder.ToParty = TransferOrder.FromStore
 <td style="text-align: center;">TransferOrderLine.Product.BaseMeasurementUnit</td>
 <td style="text-align: left;">TransferOrderLine.StandardQuantityBase</td>
 <td style="text-align: left;">StoreTransactionLine.StandardQuantityBase</td>
-<td style="text-align: left;">YES</td>
+<td style="text-align: left;">if there is atleast one Child.StoreTransactionLine where Finished = TRUE <br>, then 'New Record = NO' <br>,else 'New Record = YES'</td>
 </tr>
 <tr>
 <td style="text-align: left;">TransferOrderLineToIssueStoreTransactionLine</td>
