@@ -83,7 +83,7 @@
 <p>Represents the hierarchy of the function groups. They group the multitude of resource functions in logical, user-defined groups. Entity: Prd_Function_Groups</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Name}</em><br>
+<em>{Name:T}</em><br>
 Default Search Members:<br>
 <em>Name</em><br>
 Name Data Member:<br>
@@ -127,8 +127,8 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tr>
 <tr>
 <td><a href="Production.Resources.FunctionGroups.html#name">Name</a></td>
-<td>string (64)</td>
-<td>The name of this FunctionGroup. <code>Required</code> <code>Filter(like)</code></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a></td>
+<td>The name of the function group. <code>Required</code> <code>Filter(like)</code></td>
 </tr>
 <tr>
 <td><a href="Production.Resources.FunctionGroups.html#objectversion">ObjectVersion</a></td>
@@ -184,12 +184,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="name">Name</h3>
-<p>The name of this FunctionGroup. <code>Required</code> <code>Filter(like)</code></p>
-<p><em>Type</em>: <strong>string (64)</strong><br>
+<p>The name of the function group. <code>Required</code> <code>Filter(like)</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (64)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
