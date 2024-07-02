@@ -12,7 +12,7 @@ Represents the hierarchy of the function groups. They group the multitude of res
 | Name | Type | Description |
 | - | - | --- |
 |[Full_Path](#full_path)|`nvarchar(254)` |The full path of the item.|
-|[Function_Group_Name](#function_group_name)|`nvarchar(64)` ||
+|[Function_Group_Name](#function_group_name)|`nvarchar(64)` `ML`|The name of the function group|
 |[Id](#id)|`uniqueidentifier` `PK`||
 |[Parent](#parent)|`nvarchar(254)` |The path of the parent item.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -57,6 +57,9 @@ The full path of the item.
 
 ### Function_Group_Name
 
+
+The name of the function group
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -76,7 +79,7 @@ The full path of the item.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(64)|
+|Type|nvarchar(64) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Long|
 |User Login|no|

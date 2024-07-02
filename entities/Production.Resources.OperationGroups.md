@@ -29,11 +29,11 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Production.Resources.OperationGroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FullPath](Production.Resources.OperationGroups.md#fullpath) | string (254) | The full path to the operation group. The full path starts with, ends with and is delimited by the "/" (forward slash) character. `Required` `Default("")` `Filter(like)` 
+| [FullPath](Production.Resources.OperationGroups.md#fullpath) | string (254) | The full path to the operation group. The full path starts with, ends with and is delimited by the "/" (forward slash) character. `Required` `Default("")` `Filter(eq;like)` 
 | [Id](Production.Resources.OperationGroups.md#id) | guid |  
 | [Name](Production.Resources.OperationGroups.md#name) | string (64) | The name of this OperationGroup. `Required` `Filter(like)` 
 | [ObjectVersion](Production.Resources.OperationGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Parent](Production.Resources.OperationGroups.md#parent) | string (254) | Path of parent group. `Required` `Default("/")` `Filter(like)` `ORD` 
+| [Parent](Production.Resources.OperationGroups.md#parent) | string (254) | Path of parent group. `Required` `Default("/")` `Filter(eq;like)` `ORD` 
 
 ## Child Collections
 
@@ -56,11 +56,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### FullPath
 
-The full path to the operation group. The full path starts with, ends with and is delimited by the "/" (forward slash) character. `Required` `Default("")` `Filter(like)`
+The full path to the operation group. The full path starts with, ends with and is delimited by the "/" (forward slash) character. `Required` `Default("")` `Filter(eq;like)`
 
 _Type_: **string (254)**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Default Value_: ****  
@@ -98,12 +98,12 @@ _Show in UI_: **HiddenByDefault**
 
 ### Parent
 
-Path of parent group. `Required` `Default("/")` `Filter(like)` `ORD`
+Path of parent group. `Required` `Default("/")` `Filter(eq;like)` `ORD`
 
 _Type_: **string (254)**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **254**  
 _Default Value_: **/**  
