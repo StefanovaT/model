@@ -48,7 +48,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ResponsibleParty](General.Activities.ActivityTemplates.md#responsibleparty) | [Parties](General.Contacts.Parties.md) (nullable) | If Null the user that starts the generation route is responsible party of the activity. `Filter(multi eq)` |
-| [Route](General.Activities.ActivityTemplates.md#route) | [Routes](Systems.Workflow.Routes.md) | The route that uses this template. `Required` `Filter(multi eq)` |
+| [Route](General.Activities.ActivityTemplates.md#route) | [Routes](Systems.Documents.Routes.md) | The route that uses this template. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -153,7 +153,7 @@ _Show in UI_: **ShownByDefault**
 
 The route that uses this template. `Required` `Filter(multi eq)`
 
-_Type_: **[Routes](Systems.Workflow.Routes.md)**  
+_Type_: **[Routes](Systems.Documents.Routes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

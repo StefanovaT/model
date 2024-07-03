@@ -2119,6 +2119,9 @@ references:
 - uid: Systems.Documents.Printouts
   name: Systems.Documents.Printouts Entity
   href: entities/Systems.Documents.Printouts.html
+- uid: Systems.Documents.Routes
+  name: Systems.Documents.Routes Entity
+  href: entities/Systems.Documents.Routes.html
 - uid: Systems.Documents.Sequences
   name: Systems.Documents.Sequences Entity
   href: entities/Systems.Documents.Sequences.html
@@ -2272,6 +2275,9 @@ references:
 - uid: Systems.Security.Roles
   name: Systems.Security.Roles Entity
   href: entities/Systems.Security.Roles.html
+- uid: Systems.Security.RoleUsers
+  name: Systems.Security.RoleUsers Entity
+  href: entities/Systems.Security.RoleUsers.html
 - uid: Systems.Security.SystemPermissions
   name: Systems.Security.SystemPermissions View
   href: entities/Systems.Security.SystemPermissions.html

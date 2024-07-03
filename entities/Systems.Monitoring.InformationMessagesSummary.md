@@ -5,7 +5,7 @@ uid: Systems.Monitoring.InformationMessagesSummary
 
 **Namespace:** [Systems.Monitoring](Systems.Monitoring.md)  
 
-Information about types of information messages. Entity: Dmv_Information_Messages (Introduced in version 24.1.1.68)
+Information abount types of information messages. Entity: Dmv_Information_Messages (Introduced in version 24.1.1.68)
 
 ## Renames
 

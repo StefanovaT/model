@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Email](Public.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `Inherited from Sec_Users_Table.Email` 
-| [IsAdmin](Public.Users.md#isadmin) | boolean | True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` `Inherited from Sec_Users_Table.Is_Admin` 
+| [IsAdmin](Public.Users.md#isadmin) | boolean | True if the user is administrator, otherwise 0. `Required` `Default(false)` `Filter(eq)` `Inherited from Sec_Users_Table.Is_Admin` 
 | [Login](Public.Users.md#login) | string (64) | The login name of the user, which is usually the email. `Required` `Filter(multi eq;like)` `Inherited from Sec_Users_Table.Login` 
 | [Name](Public.Users.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The full name of the user. `Required` `Filter(like)` `Inherited from Sec_Users_Table.User_Name` 
 | [PhoneNumber](Public.Users.md#phonenumber) | string (64) __nullable__ | Used only for two-factor authentication. null when phone-based two-factor is not used. `Filter(eq;like)` `Inherited from Sec_Users_Table.Phone_Number` 
@@ -56,7 +56,7 @@ _Show in UI_: **ShownByDefault**
 
 ### IsAdmin
 
-True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` `Inherited from Sec_Users_Table.Is_Admin`
+True if the user is administrator, otherwise 0. `Required` `Default(false)` `Filter(eq)` `Inherited from Sec_Users_Table.Is_Admin`
 
 _Type_: **boolean**  
 _Category_: **System**  

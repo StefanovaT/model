@@ -21,7 +21,7 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[Systems.Workflow.Routes](Systems.Workflow.Routes.md)  
+[Systems.Documents.Routes](Systems.Documents.Routes.md)  
 Aggregate Root:  
 [Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
@@ -37,7 +37,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Route](Finance.Accounting.TemplateRouteLinks.md#route) | [Routes](Systems.Workflow.Routes.md) | Route for which the specified template will be activated. `Required` `Filter(multi eq)` `Owner` |
+| [Route](Finance.Accounting.TemplateRouteLinks.md#route) | [Routes](Systems.Documents.Routes.md) | Route for which the specified template will be activated. `Required` `Filter(multi eq)` `Owner` |
 | [Template](Finance.Accounting.TemplateRouteLinks.md#template) | [Templates](Finance.Accounting.Templates.md) | Template that will be activated for the specified route. `Required` `Filter(multi eq)` |
 
 
@@ -79,7 +79,7 @@ _Show in UI_: **HiddenByDefault**
 
 Route for which the specified template will be activated. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Routes](Systems.Workflow.Routes.md)**  
+_Type_: **[Routes](Systems.Documents.Routes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
