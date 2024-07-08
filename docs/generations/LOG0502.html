@@ -104,11 +104,11 @@
 </tr>
 <tr>
 <td style="text-align: left;">Deterministic</td>
-<td><a href="xref:deterministic-generations">YES</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/deterministic-generations.html">YES</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Transitional Documents</td>
-<td><a href="xref:transitional-documents">NO</a></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/advanced/document-flow/transitional-documents.html">NO</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Supports Single Execution</td>
@@ -137,7 +137,7 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This generation is used to create Warehouse Orders from Warehouse Requisitions when the company is using <a href="xref:composite-products">Composite Products</a>. Thе generation creates warehouse orders for both composite and noncomposite products. What is special about this generation is that it creates two kinds of warehouse order lines for the composite products. One line for the composite product and one line for each of its components.</p>
+<p>This generation is used to create Warehouse Orders from Warehouse Requisitions when the company is using <a class="xref" href="https://erpnetdocs.github.io/tech/modules/logistics/wms/composite-products/index.html">Composite Products</a>. Thе generation creates warehouse orders for both composite and noncomposite products. What is special about this generation is that it creates two kinds of warehouse order lines for the composite products. One line for the composite product and one line for each of its components.</p>
 <p><strong>The Warehouse Order’s header is created based on the Warehouse Requisition’s header as follows:</strong></p>
 <pre><code>WarehouseOrder.DocumentDate = WarehouseRequisition.DocumentDate
 
