@@ -1,9 +1,6 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
-- uid: all-entities
-  name: All entities
-  href: reference/common-business-rules/all-entities.html
 - uid: Applications
   name: Applications Namespace
   href: entities/Applications.html
@@ -34,21 +31,21 @@ references:
 - uid: Applications.AssetManagement.ManagedAssetParameterValues
   name: Applications.AssetManagement.ManagedAssetParameterValues Entity
   href: entities/Applications.AssetManagement.ManagedAssetParameterValues.html
-- uid: Applications.AssetManagement.ManagedAssets
-  name: Applications.AssetManagement.ManagedAssets Entity
-  href: entities/Applications.AssetManagement.ManagedAssets.html
 - uid: Applications.AssetManagement.ManagedAssetScheduledMaintenances
   name: Applications.AssetManagement.ManagedAssetScheduledMaintenances Entity
   href: entities/Applications.AssetManagement.ManagedAssetScheduledMaintenances.html
 - uid: Applications.AssetManagement.ManagedAssetTypeMaintenanceTypes
   name: Applications.AssetManagement.ManagedAssetTypeMaintenanceTypes Entity
   href: entities/Applications.AssetManagement.ManagedAssetTypeMaintenanceTypes.html
-- uid: Applications.AssetManagement.ManagedAssetTypes
-  name: Applications.AssetManagement.ManagedAssetTypes Entity
-  href: entities/Applications.AssetManagement.ManagedAssetTypes.html
 - uid: Applications.AssetManagement.ManagedAssetTypeTrackedParameters
   name: Applications.AssetManagement.ManagedAssetTypeTrackedParameters Entity
   href: entities/Applications.AssetManagement.ManagedAssetTypeTrackedParameters.html
+- uid: Applications.AssetManagement.ManagedAssetTypes
+  name: Applications.AssetManagement.ManagedAssetTypes Entity
+  href: entities/Applications.AssetManagement.ManagedAssetTypes.html
+- uid: Applications.AssetManagement.ManagedAssets
+  name: Applications.AssetManagement.ManagedAssets Entity
+  href: entities/Applications.AssetManagement.ManagedAssets.html
 - uid: Applications.AssetManagement.ServiceCenters
   name: Applications.AssetManagement.ServiceCenters Entity
   href: entities/Applications.AssetManagement.ServiceCenters.html
@@ -112,12 +109,12 @@ references:
 - uid: Applications.Fleet.MaintenanceProfiles
   name: Applications.Fleet.MaintenanceProfiles Entity
   href: entities/Applications.Fleet.MaintenanceProfiles.html
-- uid: Applications.Fleet.Trips
-  name: Applications.Fleet.Trips Entity
-  href: entities/Applications.Fleet.Trips.html
 - uid: Applications.Fleet.TripSegments
   name: Applications.Fleet.TripSegments Entity
   href: entities/Applications.Fleet.TripSegments.html
+- uid: Applications.Fleet.Trips
+  name: Applications.Fleet.Trips Entity
+  href: entities/Applications.Fleet.Trips.html
 - uid: Applications.Fleet.VehicleAlerts
   name: Applications.Fleet.VehicleAlerts Entity
   href: entities/Applications.Fleet.VehicleAlerts.html
@@ -133,24 +130,24 @@ references:
 - uid: Applications.Fleet.VehicleObdTroubles
   name: Applications.Fleet.VehicleObdTroubles Entity
   href: entities/Applications.Fleet.VehicleObdTroubles.html
-- uid: Applications.Fleet.Vehicles
-  name: Applications.Fleet.Vehicles Entity
-  href: entities/Applications.Fleet.Vehicles.html
-- uid: Applications.Fleet.VehicleSets
-  name: Applications.Fleet.VehicleSets Entity
-  href: entities/Applications.Fleet.VehicleSets.html
 - uid: Applications.Fleet.VehicleSetVehicles
   name: Applications.Fleet.VehicleSetVehicles Entity
   href: entities/Applications.Fleet.VehicleSetVehicles.html
+- uid: Applications.Fleet.VehicleSets
+  name: Applications.Fleet.VehicleSets Entity
+  href: entities/Applications.Fleet.VehicleSets.html
+- uid: Applications.Fleet.Vehicles
+  name: Applications.Fleet.Vehicles Entity
+  href: entities/Applications.Fleet.Vehicles.html
 - uid: Applications.Mail
   name: Applications.Mail Namespace
   href: entities/Applications.Mail.html
-- uid: Applications.Mail.Boxes
-  name: Applications.Mail.Boxes Entity
-  href: entities/Applications.Mail.Boxes.html
 - uid: Applications.Mail.BoxFolders
   name: Applications.Mail.BoxFolders Entity
   href: entities/Applications.Mail.BoxFolders.html
+- uid: Applications.Mail.Boxes
+  name: Applications.Mail.Boxes Entity
+  href: entities/Applications.Mail.Boxes.html
 - uid: Applications.Mail.MessageAttachments
   name: Applications.Mail.MessageAttachments Entity
   href: entities/Applications.Mail.MessageAttachments.html
@@ -166,12 +163,12 @@ references:
 - uid: Applications.PersonalData.JointControllers
   name: Applications.PersonalData.JointControllers Entity
   href: entities/Applications.PersonalData.JointControllers.html
-- uid: Applications.PersonalData.PersonalDataProcesses
-  name: Applications.PersonalData.PersonalDataProcesses Entity
-  href: entities/Applications.PersonalData.PersonalDataProcesses.html
 - uid: Applications.PersonalData.PersonalDataProcessRecipients
   name: Applications.PersonalData.PersonalDataProcessRecipients Entity
   href: entities/Applications.PersonalData.PersonalDataProcessRecipients.html
+- uid: Applications.PersonalData.PersonalDataProcesses
+  name: Applications.PersonalData.PersonalDataProcesses Entity
+  href: entities/Applications.PersonalData.PersonalDataProcesses.html
 - uid: Applications.PersonalData.ProcessingConsents
   name: Applications.PersonalData.ProcessingConsents Entity
   href: entities/Applications.PersonalData.ProcessingConsents.html
@@ -184,9 +181,6 @@ references:
 - uid: Applications.Rental.AssetGroups
   name: Applications.Rental.AssetGroups Entity
   href: entities/Applications.Rental.AssetGroups.html
-- uid: Applications.Rental.Assets
-  name: Applications.Rental.Assets Entity
-  href: entities/Applications.Rental.Assets.html
 - uid: Applications.Rental.AssetTypeConsumables
   name: Applications.Rental.AssetTypeConsumables Entity
   href: entities/Applications.Rental.AssetTypeConsumables.html
@@ -196,6 +190,9 @@ references:
 - uid: Applications.Rental.AssetTypes
   name: Applications.Rental.AssetTypes Entity
   href: entities/Applications.Rental.AssetTypes.html
+- uid: Applications.Rental.Assets
+  name: Applications.Rental.Assets Entity
+  href: entities/Applications.Rental.Assets.html
 - uid: Applications.Rental.LeaseContractLineConsumables
   name: Applications.Rental.LeaseContractLineConsumables Entity
   href: entities/Applications.Rental.LeaseContractLineConsumables.html
@@ -208,12 +205,12 @@ references:
 - uid: Applications.Rental.TransactionLines
   name: Applications.Rental.TransactionLines Entity
   href: entities/Applications.Rental.TransactionLines.html
-- uid: Applications.Rental.Transactions
-  name: Applications.Rental.Transactions Entity
-  href: entities/Applications.Rental.Transactions.html
 - uid: Applications.Rental.TransactionTemplates
   name: Applications.Rental.TransactionTemplates Entity
   href: entities/Applications.Rental.TransactionTemplates.html
+- uid: Applications.Rental.Transactions
+  name: Applications.Rental.Transactions Entity
+  href: entities/Applications.Rental.Transactions.html
 - uid: Applications.Service
   name: Applications.Service Namespace
   href: entities/Applications.Service.html
@@ -238,54 +235,48 @@ references:
 - uid: Applications.Service.ServiceAgreementMaterials
   name: Applications.Service.ServiceAgreementMaterials Entity
   href: entities/Applications.Service.ServiceAgreementMaterials.html
-- uid: Applications.Service.ServiceAgreements
-  name: Applications.Service.ServiceAgreements Entity
-  href: entities/Applications.Service.ServiceAgreements.html
 - uid: Applications.Service.ServiceAgreementServices
   name: Applications.Service.ServiceAgreementServices Entity
   href: entities/Applications.Service.ServiceAgreementServices.html
+- uid: Applications.Service.ServiceAgreements
+  name: Applications.Service.ServiceAgreements Entity
+  href: entities/Applications.Service.ServiceAgreements.html
 - uid: Applications.Service.ServiceInvoicing
   name: Applications.Service.ServiceInvoicing Entity
   href: entities/Applications.Service.ServiceInvoicing.html
-- uid: Applications.Service.ServiceObjects
-  name: Applications.Service.ServiceObjects Entity
-  href: entities/Applications.Service.ServiceObjects.html
 - uid: Applications.Service.ServiceObjectTypes
   name: Applications.Service.ServiceObjectTypes Entity
   href: entities/Applications.Service.ServiceObjectTypes.html
+- uid: Applications.Service.ServiceObjects
+  name: Applications.Service.ServiceObjects Entity
+  href: entities/Applications.Service.ServiceObjects.html
 - uid: Applications.Service.ServiceOrderLines
   name: Applications.Service.ServiceOrderLines Entity
   href: entities/Applications.Service.ServiceOrderLines.html
 - uid: Applications.Service.ServiceOrders
   name: Applications.Service.ServiceOrders Entity
   href: entities/Applications.Service.ServiceOrders.html
-- uid: Applications.Service.Services
-  name: Applications.Service.Services Entity
-  href: entities/Applications.Service.Services.html
 - uid: Applications.Service.ServiceTypes
   name: Applications.Service.ServiceTypes Entity
   href: entities/Applications.Service.ServiceTypes.html
+- uid: Applications.Service.Services
+  name: Applications.Service.Services Entity
+  href: entities/Applications.Service.Services.html
 - uid: Applications.Telephony
   name: Applications.Telephony Namespace
   href: entities/Applications.Telephony.html
 - uid: Applications.Telephony.CallDetails
   name: Applications.Telephony.CallDetails Entity
   href: entities/Applications.Telephony.CallDetails.html
-- uid: code-validation
-  name: Code validation
-  href: reference/common-business-rules/code-validation.html
-- uid: code-validation-strict
-  name: Code validation (strict)
-  href: reference/common-business-rules/code-validation-strict.html
 - uid: Communities
   name: Communities Namespace
   href: entities/Communities.html
-- uid: Communities.Notifications
-  name: Communities.Notifications Entity
-  href: entities/Communities.Notifications.html
 - uid: Communities.NotificationSettings
   name: Communities.NotificationSettings Entity
   href: entities/Communities.NotificationSettings.html
+- uid: Communities.Notifications
+  name: Communities.Notifications Entity
+  href: entities/Communities.Notifications.html
 - uid: Communities.Social
   name: Communities.Social Namespace
   href: entities/Communities.Social.html
@@ -343,18 +334,18 @@ references:
 - uid: Crm.CustomerProducts
   name: Crm.CustomerProducts Entity
   href: entities/Crm.CustomerProducts.html
-- uid: Crm.Customers
-  name: Crm.Customers Entity
-  href: entities/Crm.Customers.html
 - uid: Crm.CustomerTypes
   name: Crm.CustomerTypes Entity
   href: entities/Crm.CustomerTypes.html
-- uid: Crm.Dealers
-  name: Crm.Dealers Entity
-  href: entities/Crm.Dealers.html
+- uid: Crm.Customers
+  name: Crm.Customers Entity
+  href: entities/Crm.Customers.html
 - uid: Crm.DealLines
   name: Crm.DealLines Entity
   href: entities/Crm.DealLines.html
+- uid: Crm.Dealers
+  name: Crm.Dealers Entity
+  href: entities/Crm.Dealers.html
 - uid: Crm.DiscountTypes
   name: Crm.DiscountTypes Entity
   href: entities/Crm.DiscountTypes.html
@@ -412,12 +403,12 @@ references:
 - uid: Crm.Marketing.CompanySizeClasses
   name: Crm.Marketing.CompanySizeClasses Entity
   href: entities/Crm.Marketing.CompanySizeClasses.html
-- uid: Crm.Marketing.Competitors
-  name: Crm.Marketing.Competitors Entity
-  href: entities/Crm.Marketing.Competitors.html
 - uid: Crm.Marketing.CompetitorSolutions
   name: Crm.Marketing.CompetitorSolutions Entity
   href: entities/Crm.Marketing.CompetitorSolutions.html
+- uid: Crm.Marketing.Competitors
+  name: Crm.Marketing.Competitors Entity
+  href: entities/Crm.Marketing.Competitors.html
 - uid: Crm.Marketing.DistributionChannels
   name: Crm.Marketing.DistributionChannels Entity
   href: entities/Crm.Marketing.DistributionChannels.html
@@ -430,12 +421,12 @@ references:
 - uid: Crm.Marketing.MarketingActivities
   name: Crm.Marketing.MarketingActivities Entity
   href: entities/Crm.Marketing.MarketingActivities.html
-- uid: Crm.Marketing.MarketingActivityLines
-  name: Crm.Marketing.MarketingActivityLines Entity
-  href: entities/Crm.Marketing.MarketingActivityLines.html
 - uid: Crm.Marketing.MarketingActivityLineTypes
   name: Crm.Marketing.MarketingActivityLineTypes Entity
   href: entities/Crm.Marketing.MarketingActivityLineTypes.html
+- uid: Crm.Marketing.MarketingActivityLines
+  name: Crm.Marketing.MarketingActivityLines Entity
+  href: entities/Crm.Marketing.MarketingActivityLines.html
 - uid: Crm.Marketing.MarketingSolutions
   name: Crm.Marketing.MarketingSolutions Entity
   href: entities/Crm.Marketing.MarketingSolutions.html
@@ -484,12 +475,12 @@ references:
 - uid: Crm.Presales.Deals
   name: Crm.Presales.Deals Entity
   href: entities/Crm.Presales.Deals.html
-- uid: Crm.Presales.Leads
-  name: Crm.Presales.Leads Entity
-  href: entities/Crm.Presales.Leads.html
 - uid: Crm.Presales.LeadUserStages
   name: Crm.Presales.LeadUserStages Entity
   href: entities/Crm.Presales.LeadUserStages.html
+- uid: Crm.Presales.Leads
+  name: Crm.Presales.Leads Entity
+  href: entities/Crm.Presales.Leads.html
 - uid: Crm.Presales.OfferLines
   name: Crm.Presales.OfferLines Entity
   href: entities/Crm.Presales.OfferLines.html
@@ -571,9 +562,6 @@ references:
 - uid: Crm.Subscriptions.Subscriptions
   name: Crm.Subscriptions.Subscriptions Entity
   href: entities/Crm.Subscriptions.Subscriptions.html
-- uid: data-types
-  name: Data Types
-  href: data-types.html
 - uid: Dmv
   name: Dmv Namespace
   href: entities/Dmv.html
@@ -589,15 +577,15 @@ references:
 - uid: Finance.Accounting.AccountGroups
   name: Finance.Accounting.AccountGroups Entity
   href: entities/Finance.Accounting.AccountGroups.html
+- uid: Finance.Accounting.AccountRequiredProperties
+  name: Finance.Accounting.AccountRequiredProperties Entity
+  href: entities/Finance.Accounting.AccountRequiredProperties.html
 - uid: Finance.Accounting.AccountingVoucherLines
   name: Finance.Accounting.AccountingVoucherLines Entity
   href: entities/Finance.Accounting.AccountingVoucherLines.html
 - uid: Finance.Accounting.AccountingVouchers
   name: Finance.Accounting.AccountingVouchers Entity
   href: entities/Finance.Accounting.AccountingVouchers.html
-- uid: Finance.Accounting.AccountRequiredProperties
-  name: Finance.Accounting.AccountRequiredProperties Entity
-  href: entities/Finance.Accounting.AccountRequiredProperties.html
 - uid: Finance.Accounting.Accounts
   name: Finance.Accounting.Accounts Entity
   href: entities/Finance.Accounting.Accounts.html
@@ -649,15 +637,15 @@ references:
 - uid: Finance.Assets.AssetOrders
   name: Finance.Assets.AssetOrders Entity
   href: entities/Finance.Assets.AssetOrders.html
-- uid: Finance.Assets.Assets
-  name: Finance.Assets.Assets Entity
-  href: entities/Finance.Assets.Assets.html
 - uid: Finance.Assets.AssetTransactionLines
   name: Finance.Assets.AssetTransactionLines Entity
   href: entities/Finance.Assets.AssetTransactionLines.html
 - uid: Finance.Assets.AssetTransactions
   name: Finance.Assets.AssetTransactions Entity
   href: entities/Finance.Assets.AssetTransactions.html
+- uid: Finance.Assets.Assets
+  name: Finance.Assets.Assets Entity
+  href: entities/Finance.Assets.Assets.html
 - uid: Finance.Assets.DepreciationAssets
   name: Finance.Assets.DepreciationAssets Entity
   href: entities/Finance.Assets.DepreciationAssets.html
@@ -670,12 +658,12 @@ references:
 - uid: Finance.Assets.DepreciationPlanLines
   name: Finance.Assets.DepreciationPlanLines Entity
   href: entities/Finance.Assets.DepreciationPlanLines.html
-- uid: Finance.Assets.DepreciationPlans
-  name: Finance.Assets.DepreciationPlans Entity
-  href: entities/Finance.Assets.DepreciationPlans.html
 - uid: Finance.Assets.DepreciationPlanTemplates
   name: Finance.Assets.DepreciationPlanTemplates Entity
   href: entities/Finance.Assets.DepreciationPlanTemplates.html
+- uid: Finance.Assets.DepreciationPlans
+  name: Finance.Assets.DepreciationPlans Entity
+  href: entities/Finance.Assets.DepreciationPlans.html
 - uid: Finance.Assets.Depreciations
   name: Finance.Assets.Depreciations Entity
   href: entities/Finance.Assets.Depreciations.html
@@ -745,12 +733,12 @@ references:
 - uid: Finance.Excise.ExciseProductCategories
   name: Finance.Excise.ExciseProductCategories Entity
   href: entities/Finance.Excise.ExciseProductCategories.html
-- uid: Finance.Excise.ExciseProducts
-  name: Finance.Excise.ExciseProducts Entity
-  href: entities/Finance.Excise.ExciseProducts.html
 - uid: Finance.Excise.ExciseProductTypes
   name: Finance.Excise.ExciseProductTypes Entity
   href: entities/Finance.Excise.ExciseProductTypes.html
+- uid: Finance.Excise.ExciseProducts
+  name: Finance.Excise.ExciseProducts Entity
+  href: entities/Finance.Excise.ExciseProducts.html
 - uid: Finance.Excise.ExcisePurposeCodes
   name: Finance.Excise.ExcisePurposeCodes Entity
   href: entities/Finance.Excise.ExcisePurposeCodes.html
@@ -760,12 +748,12 @@ references:
 - uid: Finance.Excise.ExciseStampOperationLines
   name: Finance.Excise.ExciseStampOperationLines Entity
   href: entities/Finance.Excise.ExciseStampOperationLines.html
-- uid: Finance.Excise.ExciseStampOperations
-  name: Finance.Excise.ExciseStampOperations Entity
-  href: entities/Finance.Excise.ExciseStampOperations.html
 - uid: Finance.Excise.ExciseStampOperationTypes
   name: Finance.Excise.ExciseStampOperationTypes Entity
   href: entities/Finance.Excise.ExciseStampOperationTypes.html
+- uid: Finance.Excise.ExciseStampOperations
+  name: Finance.Excise.ExciseStampOperations Entity
+  href: entities/Finance.Excise.ExciseStampOperations.html
 - uid: Finance.Excise.ExciseStampTypes
   name: Finance.Excise.ExciseStampTypes Entity
   href: entities/Finance.Excise.ExciseStampTypes.html
@@ -958,12 +946,12 @@ references:
 - uid: General.Contacts.PartyPictures
   name: General.Contacts.PartyPictures Entity
   href: entities/General.Contacts.PartyPictures.html
-- uid: General.Contacts.PartyRelationships
-  name: General.Contacts.PartyRelationships Entity
-  href: entities/General.Contacts.PartyRelationships.html
 - uid: General.Contacts.PartyRelationshipTypes
   name: General.Contacts.PartyRelationshipTypes Entity
   href: entities/General.Contacts.PartyRelationshipTypes.html
+- uid: General.Contacts.PartyRelationships
+  name: General.Contacts.PartyRelationships Entity
+  href: entities/General.Contacts.PartyRelationships.html
 - uid: General.Contacts.Persons
   name: General.Contacts.Persons Entity
   href: entities/General.Contacts.Persons.html
@@ -988,15 +976,15 @@ references:
 - uid: General.DocumentAmountReferencedDocuments
   name: General.DocumentAmountReferencedDocuments Entity
   href: entities/General.DocumentAmountReferencedDocuments.html
-- uid: General.DocumentAmounts
-  name: General.DocumentAmounts Entity
-  href: entities/General.DocumentAmounts.html
 - uid: General.DocumentAmountTypeDependencies
   name: General.DocumentAmountTypeDependencies Entity
   href: entities/General.DocumentAmountTypeDependencies.html
 - uid: General.DocumentAmountTypes
   name: General.DocumentAmountTypes Entity
   href: entities/General.DocumentAmountTypes.html
+- uid: General.DocumentAmounts
+  name: General.DocumentAmounts Entity
+  href: entities/General.DocumentAmounts.html
 - uid: General.DocumentComments
   name: General.DocumentComments Entity
   href: entities/General.DocumentComments.html
@@ -1033,15 +1021,6 @@ references:
 - uid: General.DocumentPrints
   name: General.DocumentPrints Entity
   href: entities/General.DocumentPrints.html
-- uid: General.Documents
-  name: General.Documents Entity
-  href: entities/General.Documents.html
-- uid: General.Documents.DocumentParties
-  name: General.Documents.DocumentParties Entity
-  href: entities/General.Documents.DocumentParties.html
-- uid: General.Documents.DocumentPartyRoles
-  name: General.Documents.DocumentPartyRoles Entity
-  href: entities/General.Documents.DocumentPartyRoles.html
 - uid: General.DocumentStateChanges
   name: General.DocumentStateChanges Entity
   href: entities/General.DocumentStateChanges.html
@@ -1057,18 +1036,27 @@ references:
 - uid: General.DocumentTypeProperties
   name: General.DocumentTypeProperties Entity
   href: entities/General.DocumentTypeProperties.html
-- uid: General.DocumentTypes
-  name: General.DocumentTypes Entity
-  href: entities/General.DocumentTypes.html
 - uid: General.DocumentTypeSecurityConditions
   name: General.DocumentTypeSecurityConditions Entity
   href: entities/General.DocumentTypeSecurityConditions.html
 - uid: General.DocumentTypeUserStatuses
   name: General.DocumentTypeUserStatuses Entity
   href: entities/General.DocumentTypeUserStatuses.html
+- uid: General.DocumentTypes
+  name: General.DocumentTypes Entity
+  href: entities/General.DocumentTypes.html
 - uid: General.DocumentVersions
   name: General.DocumentVersions Entity
   href: entities/General.DocumentVersions.html
+- uid: General.Documents
+  name: General.Documents Entity
+  href: entities/General.Documents.html
+- uid: General.Documents.DocumentParties
+  name: General.Documents.DocumentParties Entity
+  href: entities/General.Documents.DocumentParties.html
+- uid: General.Documents.DocumentPartyRoles
+  name: General.Documents.DocumentPartyRoles Entity
+  href: entities/General.Documents.DocumentPartyRoles.html
 - uid: General.EnterpriseCompanies
   name: General.EnterpriseCompanies Entity
   href: entities/General.EnterpriseCompanies.html
@@ -1126,6 +1114,9 @@ references:
 - uid: General.ProductGroupsLevelNames
   name: General.ProductGroupsLevelNames View
   href: entities/General.ProductGroupsLevelNames.html
+- uid: General.ProductVariants
+  name: General.ProductVariants Entity
+  href: entities/General.ProductVariants.html
 - uid: General.Products
   name: General.Products Namespace
   href: entities/General.Products.html
@@ -1162,9 +1153,6 @@ references:
 - uid: General.Products.ProductPictures
   name: General.Products.ProductPictures Entity
   href: entities/General.Products.ProductPictures.html
-- uid: General.Products.Products
-  name: General.Products.Products Entity
-  href: entities/General.Products.Products.html
 - uid: General.Products.ProductSupply
   name: General.Products.ProductSupply Entity
   href: entities/General.Products.ProductSupply.html
@@ -1177,6 +1165,9 @@ references:
 - uid: General.Products.ProductVariants
   name: General.Products.ProductVariants Entity
   href: entities/General.Products.ProductVariants.html
+- uid: General.Products.Products
+  name: General.Products.Products Entity
+  href: entities/General.Products.Products.html
 - uid: General.Products.VariantColors
   name: General.Products.VariantColors Entity
   href: entities/General.Products.VariantColors.html
@@ -1186,9 +1177,6 @@ references:
 - uid: General.Products.VariantStyles
   name: General.Products.VariantStyles Entity
   href: entities/General.Products.VariantStyles.html
-- uid: General.ProductVariants
-  name: General.ProductVariants Entity
-  href: entities/General.ProductVariants.html
 - uid: General.PropertiesCategories
   name: General.PropertiesCategories Entity
   href: entities/General.PropertiesCategories.html
@@ -1222,12 +1210,12 @@ references:
 - uid: General.Resources.Resources
   name: General.Resources.Resources Entity
   href: entities/General.Resources.Resources.html
-- uid: General.Resources.WorkSchedules
-  name: General.Resources.WorkSchedules Entity
-  href: entities/General.Resources.WorkSchedules.html
 - uid: General.Resources.WorkScheduleWorkingTime
   name: General.Resources.WorkScheduleWorkingTime Entity
   href: entities/General.Resources.WorkScheduleWorkingTime.html
+- uid: General.Resources.WorkSchedules
+  name: General.Resources.WorkSchedules Entity
+  href: entities/General.Resources.WorkSchedules.html
 - uid: General.ScheduledDocumentEvents
   name: General.ScheduledDocumentEvents Entity
   href: entities/General.ScheduledDocumentEvents.html
@@ -1237,9 +1225,6 @@ references:
 - uid: General.Sequences
   name: General.Sequences Entity
   href: entities/General.Sequences.html
-- uid: hierarchical-entities
-  name: Hierarchical entities
-  href: reference/common-business-rules/hierarchical-entities.html
 - uid: Logistics
   name: Logistics Namespace
   href: entities/Logistics.html
@@ -1324,15 +1309,15 @@ references:
 - uid: Logistics.Inventory.StoreResponsibleParties
   name: Logistics.Inventory.StoreResponsibleParties Entity
   href: entities/Logistics.Inventory.StoreResponsibleParties.html
-- uid: Logistics.Inventory.Stores
-  name: Logistics.Inventory.Stores Entity
-  href: entities/Logistics.Inventory.Stores.html
 - uid: Logistics.Inventory.StoreTransactionLines
   name: Logistics.Inventory.StoreTransactionLines Entity
   href: entities/Logistics.Inventory.StoreTransactionLines.html
 - uid: Logistics.Inventory.StoreTransactions
   name: Logistics.Inventory.StoreTransactions Entity
   href: entities/Logistics.Inventory.StoreTransactions.html
+- uid: Logistics.Inventory.Stores
+  name: Logistics.Inventory.Stores Entity
+  href: entities/Logistics.Inventory.Stores.html
 - uid: Logistics.Inventory.SupplySchemaRoutes
   name: Logistics.Inventory.SupplySchemaRoutes Entity
   href: entities/Logistics.Inventory.SupplySchemaRoutes.html
@@ -1357,15 +1342,15 @@ references:
 - uid: Logistics.LogisticUnitContents
   name: Logistics.LogisticUnitContents Entity
   href: entities/Logistics.LogisticUnitContents.html
-- uid: Logistics.LogisticUnits
-  name: Logistics.LogisticUnits Entity
-  href: entities/Logistics.LogisticUnits.html
 - uid: Logistics.LogisticUnitSpecifications
   name: Logistics.LogisticUnitSpecifications Entity
   href: entities/Logistics.LogisticUnitSpecifications.html
 - uid: Logistics.LogisticUnitTypes
   name: Logistics.LogisticUnitTypes Entity
   href: entities/Logistics.LogisticUnitTypes.html
+- uid: Logistics.LogisticUnits
+  name: Logistics.LogisticUnits Entity
+  href: entities/Logistics.LogisticUnits.html
 - uid: Logistics.Procurement
   name: Logistics.Procurement Namespace
   href: entities/Logistics.Procurement.html
@@ -1411,12 +1396,12 @@ references:
 - uid: Logistics.Procurement.Requisitions
   name: Logistics.Procurement.Requisitions Entity
   href: entities/Logistics.Procurement.Requisitions.html
-- uid: Logistics.Procurement.Suppliers
-  name: Logistics.Procurement.Suppliers Entity
-  href: entities/Logistics.Procurement.Suppliers.html
 - uid: Logistics.Procurement.SupplierTypes
   name: Logistics.Procurement.SupplierTypes Entity
   href: entities/Logistics.Procurement.SupplierTypes.html
+- uid: Logistics.Procurement.Suppliers
+  name: Logistics.Procurement.Suppliers Entity
+  href: entities/Logistics.Procurement.Suppliers.html
 - uid: Logistics.Shipment
   name: Logistics.Shipment Namespace
   href: entities/Logistics.Shipment.html
@@ -1504,9 +1489,6 @@ references:
 - uid: Logistics.Wms.WarehouseRequisitions
   name: Logistics.Wms.WarehouseRequisitions Entity
   href: entities/Logistics.Wms.WarehouseRequisitions.html
-- uid: Logistics.Wms.Warehouses
-  name: Logistics.Wms.Warehouses Entity
-  href: entities/Logistics.Wms.Warehouses.html
 - uid: Logistics.Wms.WarehouseTransactions
   name: Logistics.Wms.WarehouseTransactions Entity
   href: entities/Logistics.Wms.WarehouseTransactions.html
@@ -1516,12 +1498,9 @@ references:
 - uid: Logistics.Wms.WarehouseZones
   name: Logistics.Wms.WarehouseZones Entity
   href: entities/Logistics.Wms.WarehouseZones.html
-- uid: logistics-documents
-  name: Logistics documents
-  href: reference/common-business-rules/logistics-documents.html
-- uid: master-detail rules
-  name: Master/detail
-  href: reference/common-business-rules/master-detail.html
+- uid: Logistics.Wms.Warehouses
+  name: Logistics.Wms.Warehouses Entity
+  href: entities/Logistics.Wms.Warehouses.html
 - uid: Production
   name: Production Namespace
   href: entities/Production.html
@@ -1561,12 +1540,12 @@ references:
 - uid: Production.Resources.WorkgroupResources
   name: Production.Resources.WorkgroupResources Entity
   href: entities/Production.Resources.WorkgroupResources.html
-- uid: Production.Resources.Workgroups
-  name: Production.Resources.Workgroups Entity
-  href: entities/Production.Resources.Workgroups.html
 - uid: Production.Resources.WorkgroupShifts
   name: Production.Resources.WorkgroupShifts Entity
   href: entities/Production.Resources.WorkgroupShifts.html
+- uid: Production.Resources.Workgroups
+  name: Production.Resources.Workgroups Entity
+  href: entities/Production.Resources.Workgroups.html
 - uid: Production.ShopFloor
   name: Production.ShopFloor Namespace
   href: entities/Production.ShopFloor.html
@@ -1627,30 +1606,6 @@ references:
 - uid: Projects
   name: Projects Namespace
   href: entities/Projects.html
-- uid: Projects.Agile
-  name: Projects.Agile Namespace
-  href: entities/Projects.Agile.html
-- uid: Projects.Agile.CaseCategories
-  name: Projects.Agile.CaseCategories Entity
-  href: entities/Projects.Agile.CaseCategories.html
-- uid: Projects.Agile.CaseDevelopments
-  name: Projects.Agile.CaseDevelopments Entity
-  href: entities/Projects.Agile.CaseDevelopments.html
-- uid: Projects.Agile.Cases
-  name: Projects.Agile.Cases Entity
-  href: entities/Projects.Agile.Cases.html
-- uid: Projects.Agile.ProjectAreas
-  name: Projects.Agile.ProjectAreas Entity
-  href: entities/Projects.Agile.ProjectAreas.html
-- uid: Projects.Agile.ProjectMilestones
-  name: Projects.Agile.ProjectMilestones Entity
-  href: entities/Projects.Agile.ProjectMilestones.html
-- uid: Projects.Agile.Projects
-  name: Projects.Agile.Projects Entity
-  href: entities/Projects.Agile.Projects.html
-- uid: Projects.Agile.ProjectTypes
-  name: Projects.Agile.ProjectTypes Entity
-  href: entities/Projects.Agile.ProjectTypes.html
 - uid: Projects.AI
   name: Projects.AI Namespace
   href: entities/Projects.AI.html
@@ -1684,6 +1639,30 @@ references:
 - uid: Projects.AI.TrainingConversations
   name: Projects.AI.TrainingConversations Entity
   href: entities/Projects.AI.TrainingConversations.html
+- uid: Projects.Agile
+  name: Projects.Agile Namespace
+  href: entities/Projects.Agile.html
+- uid: Projects.Agile.CaseCategories
+  name: Projects.Agile.CaseCategories Entity
+  href: entities/Projects.Agile.CaseCategories.html
+- uid: Projects.Agile.CaseDevelopments
+  name: Projects.Agile.CaseDevelopments Entity
+  href: entities/Projects.Agile.CaseDevelopments.html
+- uid: Projects.Agile.Cases
+  name: Projects.Agile.Cases Entity
+  href: entities/Projects.Agile.Cases.html
+- uid: Projects.Agile.ProjectAreas
+  name: Projects.Agile.ProjectAreas Entity
+  href: entities/Projects.Agile.ProjectAreas.html
+- uid: Projects.Agile.ProjectMilestones
+  name: Projects.Agile.ProjectMilestones Entity
+  href: entities/Projects.Agile.ProjectMilestones.html
+- uid: Projects.Agile.ProjectTypes
+  name: Projects.Agile.ProjectTypes Entity
+  href: entities/Projects.Agile.ProjectTypes.html
+- uid: Projects.Agile.Projects
+  name: Projects.Agile.Projects Entity
+  href: entities/Projects.Agile.Projects.html
 - uid: Projects.Classic
   name: Projects.Classic Namespace
   href: entities/Projects.Classic.html
@@ -1696,9 +1675,6 @@ references:
 - uid: Projects.Classic.ProjectRisks
   name: Projects.Classic.ProjectRisks Entity
   href: entities/Projects.Classic.ProjectRisks.html
-- uid: Projects.Classic.Projects
-  name: Projects.Classic.Projects Entity
-  href: entities/Projects.Classic.Projects.html
 - uid: Projects.Classic.ProjectTaskDependancies
   name: Projects.Classic.ProjectTaskDependancies Entity
   href: entities/Projects.Classic.ProjectTaskDependancies.html
@@ -1720,6 +1696,9 @@ references:
 - uid: Projects.Classic.ProjectWorkElements
   name: Projects.Classic.ProjectWorkElements Entity
   href: entities/Projects.Classic.ProjectWorkElements.html
+- uid: Projects.Classic.Projects
+  name: Projects.Classic.Projects Entity
+  href: entities/Projects.Classic.Projects.html
 - uid: Projects.Classic.Resources
   name: Projects.Classic.Resources Entity
   href: entities/Projects.Classic.Resources.html
@@ -1729,12 +1708,12 @@ references:
 - uid: Projects.Classic.TemplateRisks
   name: Projects.Classic.TemplateRisks Entity
   href: entities/Projects.Classic.TemplateRisks.html
-- uid: Projects.Classic.Templates
-  name: Projects.Classic.Templates Entity
-  href: entities/Projects.Classic.Templates.html
 - uid: Projects.Classic.TemplateWorkElements
   name: Projects.Classic.TemplateWorkElements Entity
   href: entities/Projects.Classic.TemplateWorkElements.html
+- uid: Projects.Classic.Templates
+  name: Projects.Classic.Templates Entity
+  href: entities/Projects.Classic.Templates.html
 - uid: Projects.Classic.TypeRoles
   name: Projects.Classic.TypeRoles Entity
   href: entities/Projects.Classic.TypeRoles.html
@@ -1762,9 +1741,6 @@ references:
 - uid: Projects.ProjectRisks
   name: Projects.ProjectRisks Entity
   href: entities/Projects.ProjectRisks.html
-- uid: Projects.Projects
-  name: Projects.Projects Entity
-  href: entities/Projects.Projects.html
 - uid: Projects.ProjectTaskDependancies
   name: Projects.ProjectTaskDependancies Entity
   href: entities/Projects.ProjectTaskDependancies.html
@@ -1786,6 +1762,9 @@ references:
 - uid: Projects.ProjectWorkElements
   name: Projects.ProjectWorkElements Entity
   href: entities/Projects.ProjectWorkElements.html
+- uid: Projects.Projects
+  name: Projects.Projects Entity
+  href: entities/Projects.Projects.html
 - uid: Projects.Resources
   name: Projects.Resources Entity
   href: entities/Projects.Resources.html
@@ -1795,12 +1774,15 @@ references:
 - uid: Projects.TemplateRisks
   name: Projects.TemplateRisks Entity
   href: entities/Projects.TemplateRisks.html
-- uid: Projects.Templates
-  name: Projects.Templates Entity
-  href: entities/Projects.Templates.html
 - uid: Projects.TemplateWorkElements
   name: Projects.TemplateWorkElements Entity
   href: entities/Projects.TemplateWorkElements.html
+- uid: Projects.Templates
+  name: Projects.Templates Entity
+  href: entities/Projects.Templates.html
+- uid: Projects.ToDoSubTasks
+  name: Projects.ToDoSubTasks Entity
+  href: entities/Projects.ToDoSubTasks.html
 - uid: Projects.Todo
   name: Projects.Todo Namespace
   href: entities/Projects.Todo.html
@@ -1810,9 +1792,6 @@ references:
 - uid: Projects.Todo.Tasks
   name: Projects.Todo.Tasks Entity
   href: entities/Projects.Todo.Tasks.html
-- uid: Projects.ToDoSubTasks
-  name: Projects.ToDoSubTasks Entity
-  href: entities/Projects.ToDoSubTasks.html
 - uid: Projects.TodoTaskItems
   name: Projects.TodoTaskItems Entity
   href: entities/Projects.TodoTaskItems.html
@@ -1843,12 +1822,6 @@ references:
 - uid: Public.Users
   name: Public.Users View
   href: entities/Public.Users.html
-- uid: serial-numbers-business-rules
-  name: Serial numbers
-  href: reference/common-business-rules/serial-numbers.html
-- uid: system-business-rules
-  name: System Business Rules
-  href: templates/template-description-system-business-rules.html
 - uid: Systems
   name: Systems Namespace
   href: entities/Systems.html
@@ -1876,9 +1849,6 @@ references:
 - uid: Systems.Bpm.ProcessElements
   name: Systems.Bpm.ProcessElements Entity
   href: entities/Systems.Bpm.ProcessElements.html
-- uid: Systems.Bpm.Processes
-  name: Systems.Bpm.Processes Entity
-  href: entities/Systems.Bpm.Processes.html
 - uid: Systems.Bpm.ProcessGroups
   name: Systems.Bpm.ProcessGroups Entity
   href: entities/Systems.Bpm.ProcessGroups.html
@@ -1891,12 +1861,15 @@ references:
 - uid: Systems.Bpm.ProcessNodeEvents
   name: Systems.Bpm.ProcessNodeEvents Entity
   href: entities/Systems.Bpm.ProcessNodeEvents.html
-- uid: Systems.Bpm.ProcessNodes
-  name: Systems.Bpm.ProcessNodes Entity
-  href: entities/Systems.Bpm.ProcessNodes.html
 - uid: Systems.Bpm.ProcessNodeTimerEvents
   name: Systems.Bpm.ProcessNodeTimerEvents Entity
   href: entities/Systems.Bpm.ProcessNodeTimerEvents.html
+- uid: Systems.Bpm.ProcessNodes
+  name: Systems.Bpm.ProcessNodes Entity
+  href: entities/Systems.Bpm.ProcessNodes.html
+- uid: Systems.Bpm.Processes
+  name: Systems.Bpm.Processes Entity
+  href: entities/Systems.Bpm.Processes.html
 - uid: Systems.Bpm.PropertiesCategories
   name: Systems.Bpm.PropertiesCategories Entity
   href: entities/Systems.Bpm.PropertiesCategories.html
@@ -2104,15 +2077,15 @@ references:
 - uid: Systems.Documents.DocumentTypeProperties
   name: Systems.Documents.DocumentTypeProperties Entity
   href: entities/Systems.Documents.DocumentTypeProperties.html
-- uid: Systems.Documents.DocumentTypes
-  name: Systems.Documents.DocumentTypes Entity
-  href: entities/Systems.Documents.DocumentTypes.html
 - uid: Systems.Documents.DocumentTypeSecurityConditions
   name: Systems.Documents.DocumentTypeSecurityConditions Entity
   href: entities/Systems.Documents.DocumentTypeSecurityConditions.html
 - uid: Systems.Documents.DocumentTypeUserStatuses
   name: Systems.Documents.DocumentTypeUserStatuses Entity
   href: entities/Systems.Documents.DocumentTypeUserStatuses.html
+- uid: Systems.Documents.DocumentTypes
+  name: Systems.Documents.DocumentTypes Entity
+  href: entities/Systems.Documents.DocumentTypes.html
 - uid: Systems.Documents.PrintoutLayouts
   name: Systems.Documents.PrintoutLayouts Entity
   href: entities/Systems.Documents.PrintoutLayouts.html
@@ -2272,12 +2245,12 @@ references:
 - uid: Systems.Security.Groups
   name: Systems.Security.Groups Entity
   href: entities/Systems.Security.Groups.html
-- uid: Systems.Security.Roles
-  name: Systems.Security.Roles Entity
-  href: entities/Systems.Security.Roles.html
 - uid: Systems.Security.RoleUsers
   name: Systems.Security.RoleUsers Entity
   href: entities/Systems.Security.RoleUsers.html
+- uid: Systems.Security.Roles
+  name: Systems.Security.Roles Entity
+  href: entities/Systems.Security.Roles.html
 - uid: Systems.Security.SystemPermissions
   name: Systems.Security.SystemPermissions View
   href: entities/Systems.Security.SystemPermissions.html
@@ -2317,12 +2290,39 @@ references:
 - uid: Systems.Workflow.Processes
   name: Systems.Workflow.Processes Entity
   href: entities/Systems.Workflow.Processes.html
-- uid: Systems.Workflow.Roles
-  name: Systems.Workflow.Roles Entity
-  href: entities/Systems.Workflow.Roles.html
 - uid: Systems.Workflow.RoleUsers
   name: Systems.Workflow.RoleUsers Entity
   href: entities/Systems.Workflow.RoleUsers.html
+- uid: Systems.Workflow.Roles
+  name: Systems.Workflow.Roles Entity
+  href: entities/Systems.Workflow.Roles.html
 - uid: Systems.Workflow.Routes
   name: Systems.Workflow.Routes Entity
   href: entities/Systems.Workflow.Routes.html
+- uid: all-entities
+  name: All entities
+  href: reference/common-business-rules/all-entities.html
+- uid: code-validation
+  name: Code validation
+  href: reference/common-business-rules/code-validation.html
+- uid: code-validation-strict
+  name: Code validation (strict)
+  href: reference/common-business-rules/code-validation-strict.html
+- uid: data-types
+  name: Data Types
+  href: data-types.html
+- uid: hierarchical-entities
+  name: Hierarchical entities
+  href: reference/common-business-rules/hierarchical-entities.html
+- uid: logistics-documents
+  name: Logistics documents
+  href: reference/common-business-rules/logistics-documents.html
+- uid: master-detail rules
+  name: Master/detail
+  href: reference/common-business-rules/master-detail.html
+- uid: serial-numbers-business-rules
+  name: Serial numbers
+  href: reference/common-business-rules/serial-numbers.html
+- uid: system-business-rules
+  name: System Business Rules
+  href: templates/template-description-system-business-rules.html
