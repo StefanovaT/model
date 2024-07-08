@@ -93,7 +93,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
-<a href="Systems.Workflow.Routes.html">Systems.Workflow.Routes</a><br>
+<a href="Systems.Documents.Routes.html">Systems.Documents.Routes</a><br>
 Aggregate Root:<br>
 <a href="Systems.Documents.DocumentTypes.html">Systems.Documents.DocumentTypes</a></p>
 <h2 id="attributes">Attributes</h2>
@@ -129,7 +129,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Crm.Sales.SalesOrderPaymentOrdersTemplates.html#isamountwithvat">IsAmountWithVAT</a></td>
 <td>boolean</td>
-<td>True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = true. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. <code>Required</code></td>
+<td>True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = 1. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. <code>Required</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderPaymentOrdersTemplates.html#objectversion">ObjectVersion</a></td>
@@ -155,7 +155,7 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Crm.Sales.SalesOrderPaymentOrdersTemplates.html#route">Route</a></td>
-<td><a href="Systems.Workflow.Routes.html">Routes</a></td>
+<td><a href="Systems.Documents.Routes.html">Routes</a></td>
 <td>The route to which the current option set is assigned. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 </tbody>
@@ -190,7 +190,7 @@ Aggregate Root:<br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="isamountwithvat">IsAmountWithVAT</h3>
-<p>True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = true. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. <code>Required</code></p>
+<p>True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = 1. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. <code>Required</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -213,7 +213,7 @@ Aggregate Root:<br>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="route">Route</h3>
 <p>The route to which the current option set is assigned. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
-<p><em>Type</em>: <strong><a href="Systems.Workflow.Routes.html">Routes</a></strong><br>
+<p><em>Type</em>: <strong><a href="Systems.Documents.Routes.html">Routes</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>

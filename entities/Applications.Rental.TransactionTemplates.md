@@ -21,7 +21,7 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[Systems.Workflow.Routes](Systems.Workflow.Routes.md)  
+[Systems.Documents.Routes](Systems.Documents.Routes.md)  
 Aggregate Root:  
 [Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
@@ -38,7 +38,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Route](Applications.Rental.TransactionTemplates.md#route) | [Routes](Systems.Workflow.Routes.md) | The route for which the transaction template is defined. `Required` `Filter(multi eq)` `Owner` |
+| [Route](Applications.Rental.TransactionTemplates.md#route) | [Routes](Systems.Documents.Routes.md) | The route for which the transaction template is defined. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -99,7 +99,7 @@ _Show in UI_: **ShownByDefault**
 
 The route for which the transaction template is defined. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Routes](Systems.Workflow.Routes.md)**  
+_Type_: **[Routes](Systems.Documents.Routes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

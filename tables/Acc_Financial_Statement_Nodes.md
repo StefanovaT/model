@@ -199,6 +199,7 @@ Full identification path of the financial statement node
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|yes|no|
 |Like|None|no|no|
 
 ### Parent_Full_Path
@@ -235,6 +236,7 @@ Parent financial statement node specified through its full identification path
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|yes|no|
 |Like|None|no|no|
 
 ### Row_Version

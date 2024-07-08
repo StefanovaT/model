@@ -10,5 +10,4 @@ uid: Systems
 - [External](Systems.External.md)  
 - [Monitoring](Systems.Monitoring.md)  
 - [Security](Systems.Security.md)  
-- [Workflow](Systems.Workflow.md)  
 

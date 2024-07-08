@@ -28,7 +28,7 @@ Aggregate Tree
   * [Systems.Security.UserGroups](Systems.Security.UserGroups.md)  
   * [Systems.Security.UserProviderLogins](Systems.Security.UserProviderLogins.md)  
   * [Systems.Security.UserProviderTokens](Systems.Security.UserProviderTokens.md)  
-  * [Systems.Workflow.RoleUsers](Systems.Workflow.RoleUsers.md)  
+  * [Systems.Security.RoleUsers](Systems.Security.RoleUsers.md)  
 
 ## Attributes
 
@@ -44,7 +44,7 @@ Aggregate Tree
 | [Email](Systems.Security.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `ORD` `Introduced in version 18.2` 
 | [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Introduced in version 18.2` 
 | [Id](Systems.Security.Users.md#id) | guid |  
-| [IsAdmin](Systems.Security.Users.md#isadmin) | boolean | True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` 
+| [IsAdmin](Systems.Security.Users.md#isadmin) | boolean | True if the user is administrator, otherwise 0. `Required` `Default(false)` `Filter(eq)` 
 | [LockoutEndUtc](Systems.Security.Users.md#lockoutendutc) | datetime __nullable__ | Contains the date and time (in UTC) until the user is locked. null when the user is not locked. `Filter(eq;ge;le;like)` `Introduced in version 18.2` 
 | [Login](Systems.Security.Users.md#login) | string (64) | The login name of the user, which is usually the email. `Required` `Filter(multi eq;like)` `ORD` 
 | [Name](Systems.Security.Users.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The full name of the user. `Required` `Filter(like)` 
@@ -76,7 +76,7 @@ Aggregate Tree
 | Groups | [UserGroups](Systems.Security.UserGroups.md) | List of `UserGroup`(Systems.Security.UserGroups.md) child objects, based on the `Systems.Security.UserGroup.User`(Systems.Security.UserGroups.md#user) back reference 
 | ProviderLogins | [UserProviderLogins](Systems.Security.UserProviderLogins.md) | List of `UserProviderLogin`(Systems.Security.UserProviderLogins.md) child objects, based on the `Systems.Security.UserProviderLogin.User`(Systems.Security.UserProviderLogins.md#user) back reference 
 | ProviderTokens | [UserProviderTokens](Systems.Security.UserProviderTokens.md) | List of `UserProviderToken`(Systems.Security.UserProviderTokens.md) child objects, based on the `Systems.Security.UserProviderToken.User`(Systems.Security.UserProviderTokens.md#user) back reference 
-| RoleUsers | [RoleUsers](Systems.Workflow.RoleUsers.md) | List of `RoleUser`(Systems.Workflow.RoleUsers.md) child objects, based on the `Systems.Workflow.RoleUser.User`(Systems.Workflow.RoleUsers.md#user) back reference 
+| RoleUsers | [RoleUsers](Systems.Security.RoleUsers.md) | List of `RoleUser`(Systems.Security.RoleUsers.md) child objects, based on the `Systems.Security.RoleUser.User`(Systems.Security.RoleUsers.md#user) back reference 
 
 
 ## Attribute Details
@@ -191,7 +191,7 @@ _Show in UI_: **CannotBeShown**
 
 ### IsAdmin
 
-True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)`
+True if the user is administrator, otherwise 0. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
 _Category_: **System**  

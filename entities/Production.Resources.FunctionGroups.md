@@ -9,7 +9,7 @@ Represents the hierarchy of the function groups. They group the multitude of res
 
 ## Default Visualization
 Default Display Text Format:  
-_{Name}_  
+_{Name:T}_  
 Default Search Members:  
 _Name_  
 Name Data Member:  
@@ -31,7 +31,7 @@ Aggregate Tree
 | [DisplayText](Production.Resources.FunctionGroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FullPath](Production.Resources.FunctionGroups.md#fullpath) | string (254) | The full path of the item. `Required` `Default("")` `Filter(eq;like)` 
 | [Id](Production.Resources.FunctionGroups.md#id) | guid |  
-| [Name](Production.Resources.FunctionGroups.md#name) | string (64) | The name of this FunctionGroup. `Required` `Filter(like)` 
+| [Name](Production.Resources.FunctionGroups.md#name) | [MultilanguageString (64)](../data-types.md#multilanguagestring) | The name of the function group. `Required` `Filter(like)` 
 | [ObjectVersion](Production.Resources.FunctionGroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Parent](Production.Resources.FunctionGroups.md#parent) | string (254) | The path of the parent item. `Required` `Default("/")` `Filter(eq;like)` `ORD` 
 
@@ -77,13 +77,12 @@ _Show in UI_: **CannotBeShown**
 
 ### Name
 
-The name of this FunctionGroup. `Required` `Filter(like)`
+The name of the function group. `Required` `Filter(like)`
 
-_Type_: **string (64)**  
+_Type_: **[MultilanguageString (64)](../data-types.md#multilanguagestring)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
-_Maximum Length_: **64**  
 _Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion

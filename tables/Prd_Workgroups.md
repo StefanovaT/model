@@ -117,6 +117,12 @@ The full path to the current node, represented with slash ('/') as leading, trai
 |User Login|no|
 |Visible|no|
 
+#### Full_Path - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Id
 
 
@@ -218,6 +224,7 @@ Path-like parent workgroup name
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |Like|None|no|no|
 
 ### Row_Version

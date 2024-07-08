@@ -52,6 +52,7 @@ The full path to the operation group. The full path starts with, ends with and i
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |Like|None|no|no|
 
 ### Id
@@ -124,6 +125,7 @@ Dot-separated list of parent groups. It also contains leading and trailing dot.
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |Like|None|no|no|
 
 ### Resource_Group_Name

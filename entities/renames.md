@@ -310,3 +310,13 @@ New name: **Systems.Documents.SequenceGenerators**
 Version: **24.1.5.35**  
 Case: **35911**  
 
+Old name: **Systems.Workflow.Routes**  
+New name: **Systems.Documents.Routes**  
+Version: **24.1.101.1**  
+Case: **36967**  
+
+Old name: **Systems.Workflow.RoleUsers**  
+New name: **Systems.Documents.RoleUsers**  
+Version: **24.1.101.1**  
+Case: **36967**  
+

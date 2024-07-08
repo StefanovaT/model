@@ -39,7 +39,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DealType](Logistics.Inventory.TransactionEntryTemplates.md#dealtype) | [DealTypes](Finance.Vat.DealTypes.md) | Obsolete. Not used. `Required` `Filter(multi eq)` |
-| [Route](Logistics.Inventory.TransactionEntryTemplates.md#route) | [Routes](Systems.Workflow.Routes.md) | Obsolete. Not used. `Required` `Filter(multi eq)` |
+| [Route](Logistics.Inventory.TransactionEntryTemplates.md#route) | [Routes](Systems.Documents.Routes.md) | Obsolete. Not used. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -100,7 +100,7 @@ _Show in UI_: **ShownByDefault**
 
 Obsolete. Not used. `Required` `Filter(multi eq)`
 
-_Type_: **[Routes](Systems.Workflow.Routes.md)**  
+_Type_: **[Routes](Systems.Documents.Routes.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

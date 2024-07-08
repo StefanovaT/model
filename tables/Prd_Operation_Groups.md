@@ -52,6 +52,7 @@ The full path to the operation group. The full path starts with, ends with and i
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |Like|None|no|no|
 
 ### Id
@@ -154,6 +155,7 @@ Path of parent group
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
+|Equals|`NULL`|no|no|
 |Like|None|no|no|
 
 ### Row_Version

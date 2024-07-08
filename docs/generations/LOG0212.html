@@ -136,9 +136,13 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This Generation procedure is used to create receipt Store Orders (SO) from Transfer Orders (TO).</p>
-<p>This procedure is unique in that it creates receipt SOs only for products/lines <strong>planned</strong> to be issued, meaning there are no released and non-voided Store Transactions (ST) for these lines yet. These SOs are solely for planning purposes and are NOT intended to be processed or released by users or any other processes. They are generated in the Planning state and are automatically voided by the system once the products are issued from the other store.</p>
-<p>The SOs for the products that have already been issued are created by a different procedure, <a href="LOG0211.html">LOG0211</a>. Both generation procedures are typically set up simultaneously for the same ТО. While LOG0211 provides details about what has already been issued, LOG0212 indicates what remains to be issued and is planned to be received.</p>
+<p>This Generation procedure is used to create receipt <strong>Store Orders (SO)</strong> from <strong>Transfer Orders (TO)</strong>.</p>
+<p>This procedure is unique in that it creates receipt SOs only for products/lines <strong>planned to be issued</strong>, meaning there are no released and non-voided Store Transactions (ST) for these lines yet. These SOs are solely for planning purposes and are NOT intended to be processed or released by users or any other processes. They are generated in the Planning state and are automatically voided by the system once the products are issued from the other store.</p>
+<p>This generation procedure is typically configured in <strong>combination with a second procedure, <a href="LOG0211.html">LOG0211</a></strong>, which creates SOs for products that have already been issued. While <strong>LOG0211</strong> provides details about what has already been issued and is currently expected, <strong>LOG0212</strong> indicates what remains to be issued and is planned to be received in the future.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>IMPORTANT:</strong> Note that document routes for both generation procedures <strong>must be set up to create different Document Types</strong> otherwise, they won’t function correctly.</p>
+</div>
 <p><strong>The new SO's header is created as follows:</strong></p>
 <pre><code>StoreOrder.DocumentDate = TransferOrder.DocumentDate
 
@@ -210,7 +214,7 @@ StoreOrder.ToParty = TransferOrder.FromStore
 <td style="text-align: center;">TransferOrderLine.Product.BaseMeasurementUnit</td>
 <td style="text-align: left;">TransferOrderLine.StandardQuantityBase</td>
 <td style="text-align: left;">StoreTransactionLine.StandardQuantityBase</td>
-<td style="text-align: left;">YES</td>
+<td style="text-align: left;">if there is atleast one Child.StoreTransactionLine where Finished = TRUE <br>, then 'New Record = NO' <br>,else 'New Record = YES'</td>
 </tr>
 <tr>
 <td style="text-align: left;">TransferOrderLineToIssueStoreTransactionLine</td>

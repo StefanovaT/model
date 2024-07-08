@@ -133,7 +133,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Production.Resources.Workgroups.html#fullpath">FullPath</a></td>
 <td>string (254) <strong>nullable</strong></td>
-<td>The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. <code>Default(&quot;&quot;)</code></td>
+<td>The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. <code>Default(&quot;&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Production.Resources.Workgroups.html#id">Id</a></td>
@@ -158,7 +158,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Production.Resources.Workgroups.html#parent">Parent</a></td>
 <td>string (255)</td>
-<td>Path-like parent workgroup name. <code>Required</code> <code>Default(&quot;/&quot;)</code> <code>Filter(like)</code> <code>ORD</code></td>
+<td>Path-like parent workgroup name. <code>Required</code> <code>Default(&quot;/&quot;)</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
 </tr>
 </tbody>
 </table>
@@ -209,10 +209,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="fullpath">FullPath</h3>
-<p>The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. <code>Default(&quot;&quot;)</code></p>
+<p>The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. <code>Default(&quot;&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Default Value</em>: ****<br>
@@ -248,11 +248,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="parent">Parent</h3>
-<p>Path-like parent workgroup name. <code>Required</code> <code>Default(&quot;/&quot;)</code> <code>Filter(like)</code> <code>ORD</code></p>
+<p>Path-like parent workgroup name. <code>Required</code> <code>Default(&quot;/&quot;)</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (255)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Like</strong><br>
+<em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Maximum Length</em>: <strong>255</strong><br>
 <em>Default Value</em>: <strong>/</strong><br>

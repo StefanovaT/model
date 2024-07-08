@@ -136,10 +136,14 @@
 </tbody>
 </table>
 <h2 id="business-logic">Business Logic</h2>
-<p>This generation procedure is used to create receipt Store Orders (SO) from Transfer Orders (TO).</p>
-<p>It specifically creates receipt SOs only for products that have already been issued from the other store, meaning there are created, released, and non-voided Store Transactions for these lines.</p>
+<p>This generation procedure is used to create receipt <strong>Store Orders (SO)</strong> from <strong>Transfer Orders (TO)</strong>.</p>
+<p>It specifically creates receipt SOs only for products that <strong>have already been issued from the other store</strong>, meaning there are created, released, and non-voided Store Transactions for these lines.</p>
 <p>The SO lines contain detailed information about the execution of the issued lines, including the actual issued quantity, lot number, serial number, cost, and other relevant data.</p>
-<p>The SOs for the products that have not been issued yet are created by a different procedure, <a href="LOG0212.html">LOG0212</a>. Both generation procedures are typically set up simultaneously for the same ТО. While LOG0211 provides details about what has already been issued, LOG0212 indicates what remains to be issued and is planned to be received.</p>
+<p>This generation procedure is typically configured in <strong>combination with a second procedure, <a href="LOG0212.html">LOG0212</a></strong>, which creates SOs for products that have not yet been issued. While <strong>LOG0211</strong> provides details about what has already been issued and is currently expected, <strong>LOG0212</strong> indicates what remains to be issued and is planned to be received in the future.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>IMPORTANT:</strong> Note that document routes for both generation procedures <strong>must be set up to create different Document Types</strong> otherwise, they won’t function correctly.</p>
+</div>
 <p><strong>The new SO's header is created as follows:</strong></p>
 <pre><code>StoreOrder.DocumentDate = TransferOrder.DocumentDate
 

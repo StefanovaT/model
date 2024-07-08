@@ -18,5 +18,6 @@ uid: Systems.Documents
 - [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md)  
 - [PrintoutLayouts](Systems.Documents.PrintoutLayouts.md)  
 - [Printouts](Systems.Documents.Printouts.md)  
+- [Routes](Systems.Documents.Routes.md)  
 - [Sequences](Systems.Documents.Sequences.md)  
 

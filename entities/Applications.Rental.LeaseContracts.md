@@ -727,7 +727,7 @@ _Domain API Request_: **POST**
 **Parameters**  
   * **route**  
       
-    _Type_: [Routes](Systems.Workflow.Routes.md)  
+    _Type_: [Routes](Systems.Documents.Routes.md)  
 
   * **processForLowerDocumentStates**  
       
