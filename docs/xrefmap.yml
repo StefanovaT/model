@@ -1225,6 +1225,9 @@ references:
 - uid: General.Sequences
   name: General.Sequences Entity
   href: entities/General.Sequences.html
+- uid: LOG0209
+  name: LOG0209 Create Warehouse Requisitions for further execution (manual generation only)
+  href: generations/LOG0209.html
 - uid: Logistics
   name: Logistics Namespace
   href: entities/Logistics.html
