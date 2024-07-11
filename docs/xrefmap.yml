@@ -1225,9 +1225,18 @@ references:
 - uid: General.Sequences
   name: General.Sequences Entity
   href: entities/General.Sequences.html
+- uid: LOG0205
+  name: LOG0205 Create Warehouse Requisitions
+  href: generations/LOG0205.html
+- uid: LOG0207
+  name: LOG0207 Create Store transaction (for the completed warehouse operations)
+  href: generations/LOG0207.html
 - uid: LOG0209
   name: LOG0209 Create Warehouse Requisitions for further execution (manual generation only)
   href: generations/LOG0209.html
+- uid: LOG0502
+  name: LOG0502 Create Simple Warehouse Orders (with separate lines for the components)
+  href: generations/LOG0502.html
 - uid: Logistics
   name: Logistics Namespace
   href: entities/Logistics.html
