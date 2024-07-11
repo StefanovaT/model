@@ -1234,6 +1234,9 @@ references:
 - uid: LOG0209
   name: LOG0209 Create Warehouse Requisitions for further execution (manual generation only)
   href: generations/LOG0209.html
+- uid: LOG0501
+  name: LOG0501 Create Simple Warehouse Orders
+  href: generations/LOG0501.html
 - uid: LOG0502
   name: LOG0502 Create Simple Warehouse Orders (with separate lines for the components)
   href: generations/LOG0502.html
