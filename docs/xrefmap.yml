@@ -547,6 +547,9 @@ references:
 - uid: Crm.Sales.SalesOrdersOptions
   name: Crm.Sales.SalesOrdersOptions Entity
   href: entities/Crm.Sales.SalesOrdersOptions.html
+- uid: Crm.SalesPersonAssignmentRules
+  name: Crm.SalesPersonAssignmentRules Entity
+  href: entities/Crm.SalesPersonAssignmentRules.html
 - uid: Crm.SalesPersons
   name: Crm.SalesPersons Entity
   href: entities/Crm.SalesPersons.html

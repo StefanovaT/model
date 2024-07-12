@@ -356,6 +356,8 @@
     href: Crm_Sales_Orders.md
   - name: Crm_Sales_Orders_Options
     href: Crm_Sales_Orders_Options.md
+  - name: Crm_Sales_Person_Assignment_Rules
+    href: Crm_Sales_Person_Assignment_Rules.md
   - name: Crm_Sales_Person_Groups
     href: Crm_Sales_Person_Groups.md
   - name: Crm_Sales_Person_Target_Lines

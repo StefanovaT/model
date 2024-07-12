@@ -14,6 +14,7 @@ Billing cycles contain information when to issue new bills. Entity: Sm_Billing_C
 |[Billing_Cycle_Id](#billing_cycle_id)|`uniqueidentifier` `PK`||
 |[Billing_Cycle_Name](#billing_cycle_name)|`nvarchar(256)` `ML`|Multi-language name of the billing cycle.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |Specifies the enterprise company for which the cycle will be valid. NULL means that it is valid for all enterprise companies.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Billing cycle is active.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Number_Of_Months](#number_of_months)|`tinyint` |Number of months between billings.|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -127,6 +128,42 @@ Specifies the enterprise company for which the cycle will be valid. NULL means t
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Is_Active
+
+
+Indicates whether the current Billing cycle is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Notes
 

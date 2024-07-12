@@ -366,6 +366,8 @@
       href: Crm.Sales.SalesOrders.md
     - name: SalesOrdersOptions
       href: Crm.Sales.SalesOrdersOptions.md
+  - name: SalesPersonAssignmentRules
+    href: Crm.SalesPersonAssignmentRules.md
   - name: SalesPersons
     href: Crm.SalesPersons.md
   - name: Subscriptions

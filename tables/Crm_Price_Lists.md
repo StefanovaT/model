@@ -15,6 +15,7 @@ Price Lists are used to manage multiple price records, assign to customers, etc.
 |[Description](#description)|`nvarchar(max)` ||
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` ||
 |[From_Date](#from_date)|`datetime` |Starting validity of the price list|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Price List is active.|
 |[Price_List_Id](#price_list_id)|`uniqueidentifier` `PK`||
 |[Price_List_Name](#price_list_name)|`nvarchar(50)` ||
 |[Row_Version](#row_version)|`timestamp` ||
@@ -156,6 +157,42 @@ Starting validity of the price list
 | - | - | - | - |
 |Equals|`NULL`|yes|yes|
 |GreaterThanOrLessThan|None|yes|no|
+
+### Is_Active
+
+
+Indicates whether the current Price List is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|8|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Price_List_Id
 

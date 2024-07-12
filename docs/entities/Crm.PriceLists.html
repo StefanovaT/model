@@ -140,6 +140,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td></td>
 </tr>
 <tr>
+<td><a href="Crm.PriceLists.html#isactive">IsActive</a></td>
+<td>boolean</td>
+<td>Indicates whether the current Price List is active. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> <code>Introduced in version 25.1.0.18</code></td>
+</tr>
+<tr>
 <td><a href="Crm.PriceLists.html#name">Name</a></td>
 <td>string (50)</td>
 <td>The name of this PriceList. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></td>
@@ -235,6 +240,14 @@ Allowed values for the <code>DiscountLevel</code>(Crm.LineDiscounts.md#discountl
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="isactive">IsActive</h3>
+<p>Indicates whether the current Price List is active. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code> <code>Introduced in version 25.1.0.18</code></p>
+<p><em>Type</em>: <strong>boolean</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>True</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="name">Name</h3>
 <p>The name of this PriceList. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code></p>
 <p><em>Type</em>: <strong>string (50)</strong><br>

@@ -13,6 +13,7 @@ The industries, for which we are offering solutions. Entity: Crm_Industries (Int
 | - | - | --- |
 |[Code](#code)|`nvarchar(32)` ||
 |[Industry_Id](#industry_id)|`uniqueidentifier` `PK`||
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Industry is active.|
 |[Name](#name)|`nvarchar(254)` `ML`|Industry name (multi-language).|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Row_Version](#row_version)|`timestamp` ||
@@ -81,6 +82,42 @@ The industries, for which we are offering solutions. Entity: Crm_Industries (Int
 |Visible|no|
 
 #### Industry_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Is_Active
+
+
+Indicates whether the current Industry is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

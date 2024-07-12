@@ -18,6 +18,7 @@ Specific prices of products. A price is applied after matching the specified cri
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, specifies that the sales document must be in the specified enterprise company.|
 |[Enterprise_Company_Location_Id](#enterprise_company_location_id)|`uniqueidentifier` |When set, specifies that the sales document must be of the specified enterprise company location.|
 |[From_Date](#from_date)|`date` |Starting date of validity of the price|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Product price is active.|
 |[Max_Quantity](#max_quantity)|`decimal(18, 3)` |Maximum quantity for which this price is valid in the Price_Quantity_Measurement_Unit|
 |[Min_Quantity](#min_quantity)|`decimal(18, 3)` |Minimal quantity required to use this price (in the Price_Quantity_Measurement_Unit)|
 |[Notes](#notes)|`nvarchar(254)` ||
@@ -294,6 +295,42 @@ Starting date of validity of the price
 | - | - | - | - |
 |Equals|`NULL`|yes|yes|
 |GreaterThanOrLessThan|None|yes|no|
+
+### Is_Active
+
+
+Indicates whether the current Product price is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Max_Quantity
 

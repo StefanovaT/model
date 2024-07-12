@@ -13,6 +13,7 @@ Competitors to our marketing solutions. Entity: Crm_Competitors (Introduced in v
 | - | - | --- |
 |[Competitor_Id](#competitor_id)|`uniqueidentifier` `PK`|Competitor to our marketing solutions.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |Our enterprise company, for which we are defining the competitor. NULL means that the competitor is defined for all the companies in the ERP instance.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Competitor is active.|
 |[Name](#name)|`nvarchar(254)` `ML`||
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Party_Id](#party_id)|`uniqueidentifier` |When not null, specifies the party of the competitor.|
@@ -92,6 +93,42 @@ Our enterprise company, for which we are defining the competitor. NULL means tha
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Is_Active
+
+
+Indicates whether the current Competitor is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Name
 

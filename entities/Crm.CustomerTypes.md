@@ -29,6 +29,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [DisplayText](Crm.CustomerTypes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.CustomerTypes.md#id) | guid |  
+| [IsActive](Crm.CustomerTypes.md#isactive) | boolean | Indicates whether the current Customer type is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18` 
 | [Name](Crm.CustomerTypes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this CustomerType. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Crm.CustomerTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
@@ -59,6 +60,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the current Customer type is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 

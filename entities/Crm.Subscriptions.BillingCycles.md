@@ -29,6 +29,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [DisplayText](Crm.Subscriptions.BillingCycles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Subscriptions.BillingCycles.md#id) | guid |  
+| [IsActive](Crm.Subscriptions.BillingCycles.md#isactive) | boolean | Indicates whether the current Billing cycle is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18` 
 | [Name](Crm.Subscriptions.BillingCycles.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the billing cycle. `Required` `Filter(eq;like)` 
 | [Notes](Crm.Subscriptions.BillingCycles.md#notes) | string (max) __nullable__ | Notes for this BillingCycle. 
 | [NumberOfMonths](Crm.Subscriptions.BillingCycles.md#numberofmonths) | byte | Number of months between billings. `Required` `Default(1)` `Filter(eq;ge;le)` 
@@ -62,6 +63,17 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### IsActive
+
+Indicates whether the current Billing cycle is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 

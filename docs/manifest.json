@@ -10272,6 +10272,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R36745.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R36745.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R36747.md",
       "output": {
         ".html": {
@@ -12126,6 +12136,16 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Sales.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesPersonAssignmentRules.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesPersonAssignmentRules.html"
         }
       },
       "version": ""
@@ -20315,6 +20335,16 @@
       "output": {
         ".html": {
           "relative_path": "tables/Crm_Sales_Orders_Options.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Crm_Sales_Person_Assignment_Rules.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Crm_Sales_Person_Assignment_Rules.html"
         }
       },
       "version": ""

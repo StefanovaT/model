@@ -16,6 +16,7 @@ Forecast items form demand in MRP calculations. Entity: Crm_Forecast_Items
 |[Date](#date)|`datetime` |The date for which the sales is forecasted. When forecasting for a period, this contains the first date of the period|
 |[Dealer_Id](#dealer_id)|`uniqueidentifier` |The dealer for which the forecast is made. When NULL, the forecast is not for any specfic dealer.|
 |[Forecast_Item_Id](#forecast_item_id)|`uniqueidentifier` `PK`||
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Forecast item is active.|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product for which the forecast is made.|
 |[Quantity](#quantity)|`decimal(18, 3)` |The forecasted sales quantity in the base measurement category of the product|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -199,6 +200,42 @@ The dealer for which the forecast is made. When NULL, the forecast is not for an
 |Visible|no|
 
 #### Forecast_Item_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Is_Active
+
+
+Indicates whether the current Forecast item is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

@@ -51,6 +51,7 @@
 * [Crm_Sales_Order_Promotional_Packages](Crm_Sales_Order_Promotional_Packages.md)
 * [Crm_Sales_Orders](Crm_Sales_Orders.md)
 * [Crm_Sales_Orders_Options](Crm_Sales_Orders_Options.md)
+* [Crm_Sales_Person_Assignment_Rules](Crm_Sales_Person_Assignment_Rules.md)
 * [Crm_Sales_Person_Groups](Crm_Sales_Person_Groups.md)
 * [Crm_Sales_Person_Target_Lines](Crm_Sales_Person_Target_Lines.md)
 * [Crm_Sales_Person_Targets](Crm_Sales_Person_Targets.md)

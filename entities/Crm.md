@@ -25,5 +25,6 @@ uid: Crm
 - [ProductPrices](Crm.ProductPrices.md)  
 - [PromotionalPackageLines](Crm.PromotionalPackageLines.md)  
 - [PromotionalPackages](Crm.PromotionalPackages.md)  
+- [SalesPersonAssignmentRules](Crm.SalesPersonAssignmentRules.md)  
 - [SalesPersons](Crm.SalesPersons.md)  
 
