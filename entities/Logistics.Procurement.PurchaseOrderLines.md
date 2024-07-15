@@ -367,6 +367,7 @@ _Front-End Recalc Expressions:_
 When not null, specifies that the current line is based on the specified requisition line. `Filter(multi eq)`
 
 _Type_: **[RequisitionLines](Logistics.Procurement.RequisitionLines.md) (nullable)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

@@ -18,7 +18,7 @@ Contains rules for automated assignment of sales persons for customers, sales or
 |[From_Date](#from_date)|`datetime` |Starting date of rule validity. NULL means no from date restriction.|
 |[Is_Active](#is_active)|`bit` |Indicates whether the current rule is active.|
 |[Notes](#notes)|`nvarchar(max)` |Additional information or comments related to the rule.|
-|[Priority](#priority)|`tinyint` Allowed: `1`, `2`, `3`, `4`, `5`|Priority when multiple rules match the criteria.|
+|[Priority](#priority)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`|Priority when multiple rules match the criteria.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Rule_No](#rule_no)|`int` |Consecutive number of the rule within the selected enterprise company.|
 |[Sales_Area_Id](#sales_area_id)|`uniqueidentifier` |The sales area, where the customer is located.|
@@ -263,7 +263,7 @@ Additional information or comments related to the rule.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|12|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -299,8 +299,8 @@ Priority when multiple rules match the criteria.
 |Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|-1|
-|Order|11|
+|Max Length|1|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -310,7 +310,7 @@ Priority when multiple rules match the criteria.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|tinyint|
+|Type|nvarchar(1)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -333,7 +333,7 @@ Priority when multiple rules match the criteria.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|13|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

@@ -32,7 +32,7 @@ Aggregate Tree
 | [IsActive](Crm.SalesPersonAssignmentRules.md#isactive) | boolean | Indicates whether the current rule is active. `Required` `Default(true)` `Filter(eq)` 
 | [Notes](Crm.SalesPersonAssignmentRules.md#notes) | string (max) __nullable__ | Additional information or comments related to the rule. `Filter(like)` 
 | [ObjectVersion](Crm.SalesPersonAssignmentRules.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Priority](Crm.SalesPersonAssignmentRules.md#priority) | [Priority](Crm.SalesPersonAssignmentRules.md#priority) | Priority when multiple rules match the criteria. `Required` `Default(3)` `Filter(eq)` 
+| [Priority](Crm.SalesPersonAssignmentRules.md#priority) | [Priority](Crm.SalesPersonAssignmentRules.md#priority) | Priority when multiple rules match the criteria. `Required` `Default("3")` `Filter(eq)` `Introduced in version 25.1.0.23` 
 | [RuleNo](Crm.SalesPersonAssignmentRules.md#ruleno) | int32 | Consecutive number of the rule within the selected enterprise company. `Required` `Filter(eq)` `ORD` 
 | [ToDate](Crm.SalesPersonAssignmentRules.md#todate) | datetime __nullable__ | Ending date (inclusive) of rule validity. null means that the rule is valid forever. `Filter(eq;ge;le)` 
 
@@ -131,7 +131,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Priority
 
-Priority when multiple rules match the criteria. `Required` `Default(3)` `Filter(eq)`
+Priority when multiple rules match the criteria. `Required` `Default("3")` `Filter(eq)` `Introduced in version 25.1.0.23`
 
 _Type_: **[Priority](Crm.SalesPersonAssignmentRules.md#priority)**  
 _Category_: **System**  
@@ -140,15 +140,15 @@ _Allowed Values (Crm.SalesPersonAssignmentRulesRepository.Priority Enum Members)
 
 | Value | Description |
 | ---- | --- |
-| Highest | Highest. Stored as 1. <br /> _Database Value:_ 1 <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Highest' |
-| High | High. Stored as 2. <br /> _Database Value:_ 2 <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'High' |
-| Medium | Medium. Stored as 3. <br /> _Database Value:_ 3 <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Medium' |
-| Low | Low. Stored as 4. <br /> _Database Value:_ 4 <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Low' |
-| Lowest | Lowest. Stored as 5. <br /> _Database Value:_ 5 <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'Lowest' |
+| Highest | Highest. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Highest' |
+| High | High. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'High' |
+| Medium | Medium. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Medium' |
+| Low | Low. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Low' |
+| Lowest | Lowest. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Lowest' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
-_Default Value_: **3**  
+_Default Value_: **Medium**  
 _Show in UI_: **ShownByDefault**  
 
 ### RuleNo
