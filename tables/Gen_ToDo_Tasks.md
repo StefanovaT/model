@@ -438,7 +438,7 @@ A brief description of the task.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Todo_Task_Id - Supported Filters
 
