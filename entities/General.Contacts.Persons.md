@@ -12,9 +12,9 @@ Personal records. Requires related party record. Entity: Cm_Persons (Introduced 
 Default Display Text Format:  
 _{PartyName:T}_  
 Default Search Members:  
-_PartyCode; PartyName_  
+_NationalNumber; PartyName_  
 Code Data Member:  
-_PartyCode_  
+_NationalNumber_  
 Name Data Member:  
 _PartyName_  
 Category:  _Definitions_  
