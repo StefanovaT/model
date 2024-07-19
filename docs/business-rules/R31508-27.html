@@ -116,7 +116,7 @@ Legislations</strong></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>if (OldValue != NewValue)
+<td>if (OldValue != NewValue AND OldValue.ProductType != NewValue.ProductType)
 {
 PurchaseInvoiceLine.RefreshCustomPropertyValues(Product);
 }
@@ -147,7 +147,8 @@ if (currentPV == null) PropertyValue newPV = new PropertyValue{Property = item,
 <td>There are Custom Properties for Product Types which are required for Purchase Invoice Lines.
 When the Product is changed, all missing custom properties for the line according to the
 Product's Product Type should be added. If there are previously added Custom Properties for
-the line, they are deleted.</td>
+the line, they are deleted, except when the Product is changed to another Product with the
+same Product Type- any previously added Custom Properties for the line will remain unchanged.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
