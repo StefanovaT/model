@@ -158,6 +158,7 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | UnassignedOrders<br />SectionVisibility | UnassignedOrders<br />SectionVisibility value. Stored as 'UOS'. <br /> _Database Value:_ 'UOS' <br /> _Model Value:_ 14 <br /> _Domain API Value:_ 'UnassignedOrders<br />SectionVisibility' |
 | StartedByOthers<br />SectionVisibility | StartedByOthers<br />SectionVisibility value. Stored as 'SOS'. <br /> _Database Value:_ 'SOS' <br /> _Model Value:_ 15 <br /> _Domain API Value:_ 'StartedByOthers<br />SectionVisibility' |
 | AssignedToOthers<br />SectionVisibility | AssignedToOthers<br />SectionVisibility value. Stored as 'AOS'. <br /> _Database Value:_ 'AOS' <br /> _Model Value:_ 16 <br /> _Domain API Value:_ 'AssignedToOthers<br />SectionVisibility' |
+| LogisticUnitScreen<br />Visibility | LogisticUnitScreen<br />Visibility value. Stored as 'LUS'. <br /> _Database Value:_ 'LUS' <br /> _Model Value:_ 17 <br /> _Domain API Value:_ 'LogisticUnitScreen<br />Visibility' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
