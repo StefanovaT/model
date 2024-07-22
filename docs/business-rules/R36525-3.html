@@ -115,15 +115,15 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If Property.LimitToAllowedValues is true and ValueId is not null, the rule checks if ValueId exists among the allowed values. If the ValueId is not found - throw an error (Message1) <br><br> Also checks if the PropertyValueField is equal to the Value of the allowed value. If - throw an error (Message2).</td>
+<td>If (PropertyValueField != Null) AND (ValueId != Null) AND (Property.LimitToAllowedValues == True) <br><br> Validates that: <br> 1. ValueId exists among the property's allowed values IDs. Otherwise - throws an error (Error1) <br> 2. If check №1 is passed, the rule validates that: PropertyValueField's value is equal to the value of the allowed value corresponding to the value id. Otherwise - throws an error (Error2).</td>
 </tr>
 <tr>
 <td>Description</td>
-<td></td>
+<td>The rule ensures that only properties with valid values can be saved. A valid property value means that its id is among the property’s allowed values ids and that the value itself matches the allowed value corresponding to its id.</td>
 </tr>
 <tr>
 <td>Message</td>
-<td>Message1: ValueId '{ValueId}' is not found among the allowed values for property '{Property.DisplayText}'. <br><br> Message2: The value for property '{Property.DisplayText}' for entity item with Id '{EntityItemId}' points to allowed value with ValueId '{ValueId}', but the property value does not match the allowed value. The value in the entity item is '{PropertyValueFeld}', but the allowed value is '{AllowedValues.Value}'.</td>
+<td>Error1: ValueId '{ValueId}' is not found among the allowed values for property '{Property.DisplayText}'. <br><br> Error2: The value for property '{Property.DisplayText}' for entity item with Id '{EntityItemId}' points to allowed value with ValueId '{ValueId}', but the property value does not match the allowed value. The value in the entity item is '{PropertyValueFeld}', but the allowed value is '{AllowedValues.Value}'.</td>
 </tr>
 <tr>
 <td>Version</td>

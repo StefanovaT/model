@@ -115,11 +115,11 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If Property.LimitToAllowedValues is true and ValueId is null, the rule validates that PropertyValueField's value is within the property's allowed values list.</td>
+<td>If (PropertyValueField != Null) AND (ValueId == Null) AND (Property.LimitToAllowedValues == True) <br><br> Validates that: PropertyValueField's value is within the property's allowed values list.</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>The rule prevents values that are not within the property's limited allowed values from being saved.</td>
+<td>The rule prevents values that are not among the property's limited allowed values list from being saved.</td>
 </tr>
 <tr>
 <td>Message</td>
