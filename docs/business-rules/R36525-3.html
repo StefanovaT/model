@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>R33758 PropertyValue - Property Value Date Validity | ERP.net Domain Model </title>
+      <title>R36525-3 PropertyValue - Value Id Validation | ERP.net Domain Model </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="R33758 PropertyValue - Property Value Date Validity | ERP.net Domain Model ">
+      <meta name="title" content="R36525-3 PropertyValue - Value Id Validation | ERP.net Domain Model ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R33758.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R36525-3.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -71,7 +71,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="r33758-propertyvalue---property-value-date-validity">R33758 PropertyValue - Property Value Date Validity</h1>
+<h1 id="r36525-3-propertyvalue---value-id-validation">R36525-3 PropertyValue - Value Id Validation</h1>
 
 <table>
 <thead>
@@ -83,7 +83,7 @@
 <tbody>
 <tr>
 <td>Code</td>
-<td>R33758</td>
+<td>R36525-3</td>
 </tr>
 <tr>
 <td>Entity</td>
@@ -91,11 +91,11 @@
 </tr>
 <tr>
 <td>Name</td>
-<td>PropertyValueDateValidity</td>
+<td>ValueIdValidation</td>
 </tr>
 <tr>
 <td>Attribute</td>
-<td>PropertyValueField</td>
+<td>ValueId</td>
 </tr>
 <tr>
 <td>Layer</td>
@@ -115,33 +115,31 @@
 </tr>
 <tr>
 <td>Action</td>
-<td>If (PropertyValueField != null &amp;&amp; PropertyValue.Property.PropertyType == PropertyType.Date) <br> <br> Validate that: DateTime.TryParse(PropertyValueField, out DateTime d) == TRUE</td>
+<td>If Property.LimitToAllowedValues is true and ValueId is not null, the rule checks if ValueId exists among the allowed values. If the ValueId is not found - throw an error (Message1) <br><br> Also checks if the PropertyValueField is equal to the Value of the allowed value. If - throw an error (Message2).</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>If the field 'PropertyValueField' is filled in and 'PropertyType' in the definition of the Property is Date, check if PropertyValueField is valid date.</td>
+<td></td>
 </tr>
 <tr>
 <td>Message</td>
-<td>The value '{PropertyValueField}' is not valid date string for custom property. The date must be in format yyyyMMdd.<br> <br> Example: Today = {DateTime.Today.ToString(&quot;yyyyMMdd&quot;)}.</td>
+<td>Message1: ValueId '{ValueId}' is not found among the allowed values for property '{Property.DisplayText}'. <br><br> Message2: The value for property '{Property.DisplayText}' for entity item with Id '{EntityItemId}' points to allowed value with ValueId '{ValueId}', but the property value does not match the allowed value. The value in the entity item is '{PropertyValueFeld}', but the allowed value is '{AllowedValues.Value}'.</td>
 </tr>
 <tr>
 <td>Version</td>
-<td>Introduced: 2023 <br> Updated: v.24 - becomes revocable</td>
+<td>Introduced: v.24</td>
 </tr>
 <tr>
 <td>Revocable</td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 </tbody>
 </table>
-<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
-topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R33758.md/#L1" class="edit-link">Suggest improvement to this page</a>
+          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R36525-3.md/#L1" class="edit-link">Suggest improvement to this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
