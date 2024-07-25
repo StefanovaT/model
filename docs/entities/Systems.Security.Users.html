@@ -150,9 +150,9 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The date and time (in UTC), when the user was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code> <code>Introduced in version 18.2</code></td>
 </tr>
 <tr>
-<td><a href="Systems.Security.Users.html#defaultculture">DefaultCulture</a></td>
+<td><a href="Systems.Security.Users.html#defaultlanguage">DefaultLanguage</a></td>
 <td>string (15) <strong>nullable</strong></td>
-<td>The preferred default culture of the user for UI, notifications, etc. null means &quot;en-US&quot;. <code>Introduced in version 20.1</code></td>
+<td>The preferred default language of the user for UI, notifications, etc. Null means &quot;en=English&quot;. <code>Filter(eq)</code> <code>Introduced in version 25.1.0.34</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Security.Users.html#displaytext">DisplayText</a></td>
@@ -356,11 +356,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="defaultculture">DefaultCulture</h3>
-<p>The preferred default culture of the user for UI, notifications, etc. null means &quot;en-US&quot;. <code>Introduced in version 20.1</code></p>
+<h3 id="defaultlanguage">DefaultLanguage</h3>
+<p>The preferred default language of the user for UI, notifications, etc. Null means &quot;en=English&quot;. <code>Filter(eq)</code> <code>Introduced in version 25.1.0.34</code></p>
 <p><em>Type</em>: <strong>string (15) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>15</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

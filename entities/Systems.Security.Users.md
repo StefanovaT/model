@@ -39,7 +39,7 @@ Aggregate Tree
 | [BasicAuthenticationAllowed](Systems.Security.Users.md#basicauthenticationallowed) | boolean | If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.1.35` 
 | [CompanyName](Systems.Security.Users.md#companyname) | string (64) __nullable__ | Name of the company in which the user claims they are working. `Introduced in version 22.1.6.61` 
 | [CreationTimeUtc](Systems.Security.Users.md#creationtimeutc) | datetime | The date and time (in UTC), when the user was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` `Introduced in version 18.2` 
-| [DefaultCulture](Systems.Security.Users.md#defaultculture) | string (15) __nullable__ | The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1` 
+| [DefaultLanguage](Systems.Security.Users.md#defaultlanguage) | string (15) __nullable__ | The preferred default language of the user for UI, notifications, etc. Null means "en=English". `Filter(eq)` `Introduced in version 25.1.0.34` 
 | [DisplayText](Systems.Security.Users.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Email](Systems.Security.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `ORD` `Introduced in version 18.2` 
 | [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Introduced in version 18.2` 
@@ -136,13 +136,13 @@ _Supports Order By_: **False**
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
 
-### DefaultCulture
+### DefaultLanguage
 
-The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1`
+The preferred default language of the user for UI, notifications, etc. Null means "en=English". `Filter(eq)` `Introduced in version 25.1.0.34`
 
 _Type_: **string (15) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **15**  
 _Show in UI_: **ShownByDefault**  

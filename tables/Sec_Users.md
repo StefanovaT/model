@@ -16,7 +16,7 @@ User logins. Entity: Sec_Users
 |[Basic_Authentication_Allowed](#basic_authentication_allowed)|`bit` |If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!|
 |[Company_Name](#company_name)|`nvarchar(64)` |Name of the company in which the user claims they are working.|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The date and time (in UTC), when the user was created.|
-|[Default_Culture](#default_culture)|`nvarchar(15)` |The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".|
+|[Default_Language](#default_language)|`nvarchar(15)` |The preferred default language of the user for UI, notifications, etc. Null means "en=English"|
 |[Domain_Id](#domain_id)|`uniqueidentifier` |The domain, to which the user belongs.|
 |[Email](#email)|`nvarchar(254)` |Unique email of the user. Can be NULL because there may be login providers that don't use emails.|
 |[Email_Confirmed](#email_confirmed)|`bit` Readonly|Indicates whether the email address for the specified user has been verified.|
@@ -216,10 +216,10 @@ The date and time (in UTC), when the user was created.
 | - | - | - | - |
 |GreaterThanOrLessThan|None|no|no|
 
-### Default_Culture
+### Default_Language
 
 
-The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".
+The preferred default language of the user for UI, notifications, etc. Null means "en=English"
 
 | Property | Value |
 | - | - |
@@ -245,6 +245,12 @@ The preferred default culture of the user for UI, notifications, etc. NULL means
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Default_Language - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Domain_Id
 

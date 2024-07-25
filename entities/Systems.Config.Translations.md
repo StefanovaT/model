@@ -41,7 +41,7 @@ Aggregate Tree
 | [CreationTime](Systems.Config.Translations.md#creationtime) | datetime | Timestamp when the translation was first created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` 
 | [DisplayText](Systems.Config.Translations.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Config.Translations.md#id) | guid |  
-| [Language](Systems.Config.Translations.md#language) | string (8) | The code of the language or language-culture pair. Standard Windows codes are used. English="en"; US English = "en-us". `Required` `Default("en")` `Filter(eq)` 
+| [Language](Systems.Config.Translations.md#language) | string (8) | The code of the language by the ISO639-1 two letter language coding: "en"=English, "bg"=Bulgarian. `Required` `Default("en")` `Filter(eq)` 
 | [ObjectVersion](Systems.Config.Translations.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ResourceId](Systems.Config.Translations.md#resourceid) | string (800) | The unique identifier of the translated resource. Should use ASCII/English chars only. Shorter strings are suggested. Depending on Text_Type: T:TableName; C:ColumnName; H:TableName.ColumnName; E,M,S: Application specific code. `Required` `Filter(eq;like)` 
 | [ResourceType](Systems.Config.Translations.md#resourcetype) | [ResourceType](Systems.Config.Translations.md#resourcetype) | T=Table (entity) Name; C=Column Name; H=Column Hint; R=Meta Resource; E=Error; M=Message; S=Other application specific String. `Required` `Default("S")` `Filter(eq)` 
@@ -108,7 +108,7 @@ _Show in UI_: **CannotBeShown**
 
 ### Language
 
-The code of the language or language-culture pair. Standard Windows codes are used. English="en"; US English = "en-us". `Required` `Default("en")` `Filter(eq)`
+The code of the language by the ISO639-1 two letter language coding: "en"=English, "bg"=Bulgarian. `Required` `Default("en")` `Filter(eq)`
 
 _Type_: **string (8)**  
 _Category_: **System**  

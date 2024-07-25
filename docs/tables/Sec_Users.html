@@ -126,9 +126,9 @@
 <td>The date and time (in UTC), when the user was created.</td>
 </tr>
 <tr>
-<td><a href="#default_culture">Default_Culture</a></td>
+<td><a href="#default_language">Default_Language</a></td>
 <td><code>nvarchar(15)</code></td>
-<td>The preferred default culture of the user for UI, notifications, etc. NULL means &quot;en-US&quot;.</td>
+<td>The preferred default language of the user for UI, notifications, etc. Null means &quot;en=English&quot;</td>
 </tr>
 <tr>
 <td><a href="#domain_id">Domain_Id</a></td>
@@ -820,8 +820,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="default_culture">Default_Culture</h3>
-<p>The preferred default culture of the user for UI, notifications, etc. NULL means &quot;en-US&quot;.</p>
+<h3 id="default_language">Default_Language</h3>
+<p>The preferred default language of the user for UI, notifications, etc. Null means &quot;en=English&quot;</p>
 <table>
 <thead>
 <tr>
@@ -917,6 +917,25 @@
 <tr>
 <td>Visible</td>
 <td>yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="default_language---supported-filters">Default_Language - Supported Filters</h4>
+<table>
+<thead>
+<tr>
+<th>Filter Type</th>
+<th>Default</th>
+<th>Include Nulls</th>
+<th>Hidden by Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equals</td>
+<td><code>NULL</code></td>
+<td>yes</td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
