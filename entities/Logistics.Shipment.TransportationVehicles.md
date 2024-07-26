@@ -11,11 +11,11 @@ A vehicle, which is used for transportation. One actual vehicle might be defined
 Default Display Text Format:  
 _{Code}: {Vehicle.VehicleType:T}, {Vehicle.VehicleRegistrationNumber:T}_  
 Default Search Members:  
-_Code; Vehicle.EngineIdentificationNumber_  
+_Code; Vehicle.VehicleRegistrationNumber_  
 Code Data Member:  
 _Code_  
 Name Data Member:  
-_Vehicle.EngineIdentificationNumber_  
+_Vehicle.VehicleRegistrationNumber_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 

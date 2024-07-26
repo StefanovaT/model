@@ -9,11 +9,11 @@ Contains the actual and history of equipment, installed on the vehicles. Entity:
 
 ## Default Visualization
 Default Display Text Format:  
-_{Vehicle.EngineIdentificationNumber}_  
+_{Vehicle.VehicleRegistrationNumber}_  
 Default Search Members:  
-_Vehicle.EngineIdentificationNumber_  
+_Vehicle.VehicleRegistrationNumber_  
 Name Data Member:  
-_Vehicle.EngineIdentificationNumber_  
+_Vehicle.VehicleRegistrationNumber_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 

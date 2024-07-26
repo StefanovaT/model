@@ -9,11 +9,11 @@ Contains vehicle definitions. Entity: Fleet_Vehicles
 
 ## Default Visualization
 Default Display Text Format:  
-_{EngineIdentificationNumber}_  
+_{VehicleRegistrationNumber}_  
 Default Search Members:  
-_EngineIdentificationNumber_  
+_VehicleRegistrationNumber_  
 Code Data Member:  
-_EngineIdentificationNumber_  
+_VehicleRegistrationNumber_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
