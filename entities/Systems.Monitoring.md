@@ -21,5 +21,6 @@ uid: Systems.Monitoring
 - [ScheduledDocumentEvents](Systems.Monitoring.ScheduledDocumentEvents.md)  
 - [TableInfo](Systems.Monitoring.TableInfo.md)  
 - [UpdateProcedureExecutes](Systems.Monitoring.UpdateProcedureExecutes.md)  
+- [WaitStats](Systems.Monitoring.WaitStats.md)  
 - [WebSites](Systems.Monitoring.WebSites.md)  
 

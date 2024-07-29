@@ -1251,6 +1251,8 @@
       href: Systems.Monitoring.TableInfo.md
     - name: UpdateProcedureExecutes
       href: Systems.Monitoring.UpdateProcedureExecutes.md
+    - name: WaitStats
+      href: Systems.Monitoring.WaitStats.md
     - name: WebSites
       href: Systems.Monitoring.WebSites.md
   - name: Security

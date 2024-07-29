@@ -17692,6 +17692,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Monitoring.WaitStats.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Monitoring.WaitStats.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Systems.Monitoring.WebSites.md",
       "output": {
         ".html": {
@@ -20565,6 +20575,16 @@
       "output": {
         ".html": {
           "relative_path": "tables/Dmv_Table_Info.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Dmv_Wait_Stats.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Dmv_Wait_Stats.html"
         }
       },
       "version": ""

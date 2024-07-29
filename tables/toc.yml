@@ -397,6 +397,8 @@
     href: Dmv_Process_Info.md
   - name: Dmv_Table_Info
     href: Dmv_Table_Info.md
+  - name: Dmv_Wait_Stats
+    href: Dmv_Wait_Stats.md
   - name: Dmv_Web_Sites
     href: Dmv_Web_Sites.md
 - name: Dw

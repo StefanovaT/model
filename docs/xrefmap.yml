@@ -2221,6 +2221,9 @@ references:
 - uid: Systems.Monitoring.UpdateProcedureExecutes
   name: Systems.Monitoring.UpdateProcedureExecutes Entity
   href: entities/Systems.Monitoring.UpdateProcedureExecutes.html
+- uid: Systems.Monitoring.WaitStats
+  name: Systems.Monitoring.WaitStats View
+  href: entities/Systems.Monitoring.WaitStats.html
 - uid: Systems.Monitoring.WebSites
   name: Systems.Monitoring.WebSites View
   href: entities/Systems.Monitoring.WebSites.html
