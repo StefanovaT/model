@@ -9,7 +9,7 @@ The actual values in the general data warehouse. Entity: Dw_Data_Values (Introdu
 
 ## Default Visualization
 Default Display Text Format:  
-_{Id}: {DataMeasureId}_  
+_{DataMeasure}: {ActualValue}_  
 Default Search Members:  
 __  
 Category:  _Definitions_  
