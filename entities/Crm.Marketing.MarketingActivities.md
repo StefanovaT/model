@@ -93,7 +93,7 @@ Aggregate Tree
 | [AssignedToUser](Crm.Marketing.MarketingActivities.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Campaign](Crm.Marketing.MarketingActivities.md#campaign) | [Campaigns](Crm.Marketing.Campaigns.md) (nullable) | The marketing campaing, to which this activity belongs. `Filter(multi eq)` |
 | [ContactPerson](Crm.Marketing.MarketingActivities.md#contactperson) | [Persons](General.Contacts.Persons.md) (nullable) | The contact person, from the side of the Target Party. `Filter(multi eq)` (Inherited from [Activities](General.Activities.Activities.md)) |
-| [CurrencyDirectory](Crm.Marketing.MarketingActivities.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Crm.Marketing.MarketingActivities.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [DocumentType](Crm.Marketing.MarketingActivities.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Crm.Marketing.MarketingActivities.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Crm.Marketing.MarketingActivities.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -664,7 +664,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

@@ -45,7 +45,7 @@ Aggregate Root:
 | [Lot](Crm.PromotionalPackageLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The Product lot number in the promotional package. `Filter(multi eq)` `Introduced in version 19.1` |
 | [Product](Crm.PromotionalPackageLines.md#product) | [Products](General.Products.Products.md) | The product, which is included in the promotional package. `Required` `Filter(multi eq)` |
 | [PromotionalPackage](Crm.PromotionalPackageLines.md#promotionalpackage) | [PromotionalPackages](Crm.PromotionalPackages.md) | The <see cref="Promotional<br />Package"/> to which this PromotionalPackageLine belongs. `Required` `Filter(multi eq)` `Owner` |
-| [UnitPriceCurrency](Crm.PromotionalPackageLines.md#unitpricecurrency) | [Currencies](General.Currencies.md) (nullable) | Currency of the unit price. null if the package specifies only discount. `Filter(multi eq)` |
+| [UnitPriceCurrency](Crm.PromotionalPackageLines.md#unitpricecurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | Currency of the unit price. null if the package specifies only discount. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -182,7 +182,7 @@ _Show in UI_: **ShownByDefault**
 
 Currency of the unit price. null if the package specifies only discount. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

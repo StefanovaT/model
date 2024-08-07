@@ -82,12 +82,12 @@ Aggregate Tree
 | [AdjustedDocument](Crm.Presales.Deals.md#adjusteddocument) | [Documents](General.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [AssignedToUser](Crm.Presales.Deals.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Campaign](Crm.Presales.Deals.md#campaign) | [Campaigns](Crm.Marketing.Campaigns.md) (nullable) | The marketing campaign to which this opportunity belongs. `Filter(multi eq)` `Introduced in version 24.1.0.67` |
-| [CurrencyDirectory](Crm.Presales.Deals.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Crm.Presales.Deals.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Dealer](Crm.Presales.Deals.md#dealer) | [Dealers](Crm.Dealers.md) (nullable) | The external dealer, which provided the opportunity. `Filter(multi eq)` |
 | [DocumentType](Crm.Presales.Deals.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Crm.Presales.Deals.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Crm.Presales.Deals.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [ExpectedRevenueCurrency](Crm.Presales.Deals.md#expectedrevenuecurrency) | [Currencies](General.Currencies.md) | The currency of Expected Revenue. `Required` `Filter(multi eq)` |
+| [ExpectedRevenueCurrency](Crm.Presales.Deals.md#expectedrevenuecurrency) | [Currencies](General.Currencies.Currencies.md) | The currency of Expected Revenue. `Required` `Filter(multi eq)` |
 | [FromCompanyDivision](Crm.Presales.Deals.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [FromParty](Crm.Presales.Deals.md#fromparty) | [Parties](General.Contacts.Parties.md) | The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [LeadingSalesPerson](Crm.Presales.Deals.md#leadingsalesperson) | [SalesPersons](Crm.SalesPersons.md) | The sales person, responsible for the opportunity. `Required` `Filter(multi eq)` |
@@ -558,7 +558,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -605,7 +605,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency of Expected Revenue. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

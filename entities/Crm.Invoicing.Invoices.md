@@ -91,10 +91,10 @@ Aggregate Tree
 | [AdjustedDocument](Crm.Invoicing.Invoices.md#adjusteddocument) | [Documents](General.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [AssignedToUser](Crm.Invoicing.Invoices.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [CreditNoteOriginalInvoice](Crm.Invoicing.Invoices.md#creditnoteoriginalinvoice) | [Invoices](Crm.Invoicing.Invoices.md) (nullable) | When this is credit note, may contain the original Invoice. null for normal invoices or when the original document is unknown. `Filter(multi eq)` |
-| [CurrencyDirectory](Crm.Invoicing.Invoices.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Crm.Invoicing.Invoices.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Customer](Crm.Invoicing.Invoices.md#customer) | [Customers](Crm.Customers.md) | The customer to which the invoice is issued. `Required` `Filter(multi eq)` |
 | [DealType](Crm.Invoicing.Invoices.md#dealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | VAT deal type for this invoice. If deal type in entered then VAT entry is created for this deal type. `Filter(multi eq)` |
-| [DocumentCurrency](Crm.Invoicing.Invoices.md#documentcurrency) | [Currencies](General.Currencies.md) | The currency in which the document is issued. All amounts are in this currency. `Required` `Filter(multi eq)` |
+| [DocumentCurrency](Crm.Invoicing.Invoices.md#documentcurrency) | [Currencies](General.Currencies.Currencies.md) | The currency in which the document is issued. All amounts are in this currency. `Required` `Filter(multi eq)` |
 | [DocumentType](Crm.Invoicing.Invoices.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Crm.Invoicing.Invoices.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Crm.Invoicing.Invoices.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -723,7 +723,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -756,7 +756,7 @@ _Front-End Recalc Expressions:_
 
 The currency in which the document is issued. All amounts are in this currency. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

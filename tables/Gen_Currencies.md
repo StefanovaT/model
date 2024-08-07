@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Currencies](~/entities/General.Currencies.md)
+Entity: [General.Currencies.Currencies](~/entities/General.Currencies.Currencies.md)
 
 List of user-defined currencies. Entity: Gen_Currencies
 

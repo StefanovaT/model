@@ -50,7 +50,7 @@ Aggregate Root:
 | [PromotionalPackage](Crm.Distribution.SalesPersonTargetLines.md#promotionalpackage) | [PromotionalPackages](Crm.PromotionalPackages.md) (nullable) | Promotional Package Id when the target type is PROMO, null otherwise. `Filter(multi eq)` |
 | [SalesPerson](Crm.Distribution.SalesPersonTargetLines.md#salesperson) | [SalesPersons](Crm.SalesPersons.md) | Sales person to whom the target is assigned. `Required` `Filter(multi eq)` |
 | [SalesPersonTarget](Crm.Distribution.SalesPersonTargetLines.md#salespersontarget) | [SalesPersonTargets](Crm.Distribution.SalesPersonTargets.md) | The <see cref="SalesPersonTarget"/> to which this SalesPersonTargetLine belongs. `Required` `Filter(multi eq)` `Owner` |
-| [TargetAmountCurrency](Crm.Distribution.SalesPersonTargetLines.md#targetamountcurrency) | [Currencies](General.Currencies.md) (nullable) | Deprecated - use currency in document header. `Filter(multi eq)` |
+| [TargetAmountCurrency](Crm.Distribution.SalesPersonTargetLines.md#targetamountcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | Deprecated - use currency in document header. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -239,7 +239,7 @@ _Show in UI_: **ShownByDefault**
 
 Deprecated - use currency in document header. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

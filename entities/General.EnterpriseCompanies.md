@@ -54,7 +54,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [AccessKey](General.EnterpriseCompanies.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this EnterpriseCompany. Null means that all users have unlimited permissions. `Filter(multi eq)` |
 | [AdvanceProduct](General.EnterpriseCompanies.md#advanceproduct) | [Products](General.Products.Products.md) (nullable) | Product that is used for handling advances in trade documents. `Filter(multi eq)` |
-| [BaseCurrency](General.EnterpriseCompanies.md#basecurrency) | [Currencies](General.Currencies.md) | The base currency for summary reporting for this company. `Required` `Filter(multi eq)` |
+| [BaseCurrency](General.EnterpriseCompanies.md#basecurrency) | [Currencies](General.Currencies.Currencies.md) | The base currency for summary reporting for this company. `Required` `Filter(multi eq)` |
 | [Company](General.EnterpriseCompanies.md#company) | [Companies](General.Contacts.Companies.md) | Contains the base company data on which this enterprise company is based. `Required` `Filter(multi eq)` |
 | [ExchangeDifference<br />CreditAccount](General.EnterpriseCompanies.md#exchangedifferencecreditaccount) | [Accounts](Finance.Accounting.Accounts.md) (nullable) | Account for balancing accounting vouchers with credit difference due to currency exchanges. `Filter(multi eq)` |
 | [ExchangeDifference<br />DebitAccount](General.EnterpriseCompanies.md#exchangedifferencedebitaccount) | [Accounts](Finance.Accounting.Accounts.md) (nullable) | Account for balancing accounting vouchers with debit difference due to currency exchanges. `Filter(multi eq)` |
@@ -228,7 +228,7 @@ _Show in UI_: **ShownByDefault**
 
 The base currency for summary reporting for this company. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

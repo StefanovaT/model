@@ -80,7 +80,7 @@ Aggregate Tree
 | [AssignedToUser](Logistics.Shipment.TransportationOrders.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Carrier](Logistics.Shipment.TransportationOrders.md#carrier) | [Carriers](Logistics.Shipment.Carriers.md) (nullable) | The carrier chosen for this transportation. null when the transportation is done with own transport. `Filter(multi eq)` |
 | [Crew](Logistics.Shipment.TransportationOrders.md#crew) | [Crews](Applications.Fleet.Crews.md) (nullable) | The crew which is assigned to operate the vehicle of the current Transportation Order. If null means the crew is yet unknown or the order is executed by external carrier. `Filter(multi eq)` `Introduced in version 18.2` |
-| [CurrencyDirectory](Logistics.Shipment.TransportationOrders.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Logistics.Shipment.TransportationOrders.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [DocumentType](Logistics.Shipment.TransportationOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Logistics.Shipment.TransportationOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Logistics.Shipment.TransportationOrders.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -514,7 +514,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

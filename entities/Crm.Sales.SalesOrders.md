@@ -92,13 +92,13 @@ Aggregate Tree
 | [AccessKey](Crm.Sales.SalesOrders.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [AdjustedDocument](Crm.Sales.SalesOrders.md#adjusteddocument) | [Documents](General.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [AssignedToUser](Crm.Sales.SalesOrders.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [CurrencyDirectory](Crm.Sales.SalesOrders.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Crm.Sales.SalesOrders.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Customer](Crm.Sales.SalesOrders.md#customer) | [Customers](Crm.Customers.md) | The primary customer, which placed the sales order. `Required` `Filter(multi eq)` |
 | [Deal](Crm.Sales.SalesOrders.md#deal) | [Deals](Crm.Presales.Deals.md) (nullable) | The opportunity (deal) on which this order is based. `Filter(multi eq)` |
 | [Dealer](Crm.Sales.SalesOrders.md#dealer) | [Dealers](Crm.Dealers.md) (nullable) | The external dealer, associated with the sales order. `Filter(multi eq)` |
 | [DealType](Crm.Sales.SalesOrders.md#dealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type to be passed to the invoice. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)` |
 | [DistributionChannel](Crm.Sales.SalesOrders.md#distributionchannel) | [DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable) | The distribution channel, that is used to deliver the products. `Filter(multi eq)` |
-| [DocumentCurrency](Crm.Sales.SalesOrders.md#documentcurrency) | [Currencies](General.Currencies.md) | The currency of the document; e.g. the currency of the amounts in the document. `Required` `Filter(multi eq)` |
+| [DocumentCurrency](Crm.Sales.SalesOrders.md#documentcurrency) | [Currencies](General.Currencies.Currencies.md) | The currency of the document; e.g. the currency of the amounts in the document. `Required` `Filter(multi eq)` |
 | [DocumentType](Crm.Sales.SalesOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EndCustomerParty](Crm.Sales.SalesOrders.md#endcustomerparty) | [Parties](General.Contacts.Parties.md) (nullable) | The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition; any party can be used. `Filter(multi eq)` `Introduced in version 20.1` |
 | [EnterpriseCompany](Crm.Sales.SalesOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -729,7 +729,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -788,7 +788,7 @@ _Front-End Recalc Expressions:_
 
 The currency of the document; e.g. the currency of the amounts in the document. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

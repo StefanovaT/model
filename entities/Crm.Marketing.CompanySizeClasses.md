@@ -45,7 +45,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [RevenueCurrency](Crm.Marketing.CompanySizeClasses.md#revenuecurrency) | [Currencies](General.Currencies.md) (nullable) | The currency in which the revenues are states. null if no revenues are specified. `Filter(multi eq)` |
+| [RevenueCurrency](Crm.Marketing.CompanySizeClasses.md#revenuecurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The currency in which the revenues are states. null if no revenues are specified. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -170,7 +170,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency in which the revenues are states. null if no revenues are specified. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

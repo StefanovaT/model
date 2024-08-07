@@ -36,7 +36,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Currency](Finance.Cost.AllocationModels.md#currency) | [Currencies](General.Currencies.md) | The currency in which the calculation is done. This is applied to the production and the results. `Required` `Filter(multi eq)` |
+| [Currency](Finance.Cost.AllocationModels.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency in which the calculation is done. This is applied to the production and the results. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -88,7 +88,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency in which the calculation is done. This is applied to the production and the results. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -53,7 +53,7 @@ Aggregate Tree
 | [RentalAssetType](Applications.Rental.Assets.md#rentalassettype) | [AssetTypes](Applications.Rental.AssetTypes.md) | The type of the asset. `Required` `Filter(multi eq)` |
 | [SalesProduct](Applications.Rental.Assets.md#salesproduct) | [Products](General.Products.Products.md) (nullable) | Product which is used in the creation of Sales Orders to form the price of the service of renting this asset. `Filter(multi eq)` |
 | [SerialNumber](Applications.Rental.Assets.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Serial number which in conjunction with the product for store operations allows for more accurate identification of the asset. `Filter(multi eq)` |
-| [StandardGuarantee<br />AmountCurrency](Applications.Rental.Assets.md#standardguaranteeamountcurrency) | [Currencies](General.Currencies.md) (nullable) | Currency of the standard guarantee amount. `Filter(multi eq)` |
+| [StandardGuarantee<br />AmountCurrency](Applications.Rental.Assets.md#standardguaranteeamountcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | Currency of the standard guarantee amount. `Filter(multi eq)` |
 | [WorkSchedule](Applications.Rental.Assets.md#workschedule) | [WorkSchedules](General.Resources.WorkSchedules.md) (nullable) | Work schedule, which is used to calculate how many days this assets has been rented for (used only when the asset's lease by mode is by days). `Filter(multi eq)` |
 
 ## Child Collections
@@ -253,7 +253,7 @@ _Front-End Recalc Expressions:_
 
 Currency of the standard guarantee amount. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

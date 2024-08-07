@@ -45,7 +45,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [PrimaryUnit](Production.Resources.Resources.md#primaryunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | Primary measurement unit for quantities of the resource. `Required` `Filter(multi eq)` |
-| [ResourceCurrency](Production.Resources.Resources.md#resourcecurrency) | [Currencies](General.Currencies.md) (nullable) | Currency for this resource. This currency applies for the standard price and cost per hour. `Filter(multi eq)` |
+| [ResourceCurrency](Production.Resources.Resources.md#resourcecurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | Currency for this resource. This currency applies for the standard price and cost per hour. `Filter(multi eq)` |
 | [ResourceGroup](Production.Resources.Resources.md#resourcegroup) | [ResourceGroups](Production.Resources.ResourceGroups.md) | The Id of the containing resource group. `Required` `Filter(multi eq)` `Owner` |
 | [SetupScrapUnit](Production.Resources.Resources.md#setupscrapunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement units of Setup_Scrap_Quantity. `Required` `Filter(multi eq)` |
 
@@ -178,7 +178,7 @@ _Show in UI_: **ShownByDefault**
 
 Currency for this resource. This currency applies for the standard price and cost per hour. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

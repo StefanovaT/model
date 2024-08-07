@@ -40,7 +40,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Currency](Crm.Pricing.PricingModels.md#currency) | [Currencies](General.Currencies.md) | The currency in which the prices will be calculated. `Required` `Filter(multi eq)` |
+| [Currency](Crm.Pricing.PricingModels.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency in which the prices will be calculated. `Required` `Filter(multi eq)` |
 | [PurchasePriceList](Crm.Pricing.PricingModels.md#purchasepricelist) | [PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) | Purchase price list Id, which will be used to get the purchase price of the products. `Required` `Filter(multi eq)` |
 
 ## Child Collections
@@ -122,7 +122,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency in which the prices will be calculated. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

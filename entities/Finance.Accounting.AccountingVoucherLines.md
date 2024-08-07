@@ -47,7 +47,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Account](Finance.Accounting.AccountingVoucherLines.md#account) | [Accounts](Finance.Accounting.Accounts.md) | The account being debited or credited. `Required` `Filter(multi eq)` |
 | [CostCenter](Finance.Accounting.AccountingVoucherLines.md#costcenter) | [CostCenters](Finance.Accounting.CostCenters.md) (nullable) | The cost center to which this cost is related. `Filter(multi eq)` |
-| [Currency](Finance.Accounting.AccountingVoucherLines.md#currency) | [Currencies](General.Currencies.md) | The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)` |
+| [Currency](Finance.Accounting.AccountingVoucherLines.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)` |
 | [Document](Finance.Accounting.AccountingVoucherLines.md#document) | [AccountingVouchers](Finance.Accounting.AccountingVouchers.md) | The voucher to which this line is attached. `Required` `Filter(multi eq)` |
 | [ProfitCenter](Finance.Accounting.AccountingVoucherLines.md#profitcenter) | [ProfitCenters](Finance.Accounting.ProfitCenters.md) (nullable) | The profit center to which this revenue is related. `Filter(multi eq)` |
 | [ReferencedDocument](Finance.Accounting.AccountingVoucherLines.md#referenceddocument) | [Documents](General.Documents.md) | The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)` |
@@ -224,7 +224,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

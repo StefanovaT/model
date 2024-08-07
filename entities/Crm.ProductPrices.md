@@ -43,7 +43,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Campaign](Crm.ProductPrices.md#campaign) | [Campaigns](Crm.Marketing.Campaigns.md) (nullable) | Тhe marketing campaign to which the current definition belongs. `Filter(multi eq)` `Introduced in version 22.1.4.67` |
-| [Currency](Crm.ProductPrices.md#currency) | [Currencies](General.Currencies.md) | The currency of the price. `Required` `Filter(multi eq)` |
+| [Currency](Crm.ProductPrices.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of the price. `Required` `Filter(multi eq)` |
 | [Customer](Crm.ProductPrices.md#customer) | [Customers](Crm.Customers.md) (nullable) | When not null, specifies that the customer of the sales document must be the specified customer. `Filter(multi eq)` |
 | [DistributionChannel](Crm.ProductPrices.md#distributionchannel) | [DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable) | Use the price only when selling through the specified channel. `Filter(multi eq)` |
 | [EnterpriseCompany](Crm.ProductPrices.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | When not null, specifies that the sales document must be in the specified enterprise company. `Filter(multi eq)` |
@@ -209,7 +209,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency of the price. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

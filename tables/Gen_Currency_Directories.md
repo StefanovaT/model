@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.CurrencyDirectories](~/entities/General.CurrencyDirectories.md)
+Entity: [General.Currencies.CurrencyDirectories](~/entities/General.Currencies.CurrencyDirectories.md)
 
 Contains a named set of currency exchange rates against a single currency for a given date. Multiple directories with different names can exist for single date. For example, buy and sell rates are recorded as separate directories. Entity: Gen_Currency_Directories
 
@@ -18,7 +18,7 @@ Contains a named set of currency exchange rates against a single currency for a 
 |[Currency_Directory_Id](#currency_directory_id)|`uniqueidentifier` `PK`||
 |[Currency_Directory_Name](#currency_directory_name)|`nvarchar(64)` |The name of the currency directory, used to distinguish it from the other directories on the same date|
 |[Document_Id](#document_id)|`uniqueidentifier` ||
-|[Is_Default](#is_default)|`bit` ||
+|[Is_Default](#is_default)|`bit` |Specifies that this currency directory is set by default in new documents. When there are more than one default directory, the last default directory is used.|
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
 |[Is_Single_Execution](#is_single_execution)|`bit` Readonly|Specifies whether the document is a single execution of its order document.|
 |[Is_Valid](#is_valid)|`bit` |Shows if the current currency directory is valid to be used in documents|
@@ -131,6 +131,9 @@ The name of the currency directory, used to distinguish it from the other direct
 |Equals|`NULL`|no|yes|
 
 ### Is_Default
+
+
+Specifies that this currency directory is set by default in new documents. When there are more than one default directory, the last default directory is used.
 
 | Property | Value |
 | - | - |

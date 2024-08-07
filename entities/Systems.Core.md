@@ -16,5 +16,6 @@ uid: Systems.Core
 - [ObjectChangesets](Systems.Core.ObjectChangesets.md)  
 - [ObjectFiles](Systems.Core.ObjectFiles.md)  
 - [ObjectVersions](Systems.Core.ObjectVersions.md)  
+- [ReportQueries](Systems.Core.ReportQueries.md)  
 - [Reports](Systems.Core.Reports.md)  
 

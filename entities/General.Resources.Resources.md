@@ -39,7 +39,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CostingCurrency](General.Resources.Resources.md#costingcurrency) | [Currencies](General.Currencies.md) (nullable) | The currency in which resource costs are specified. Required only if resource costs will be specified. `Filter(multi eq)` |
+| [CostingCurrency](General.Resources.Resources.md#costingcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The currency in which resource costs are specified. Required only if resource costs will be specified. `Filter(multi eq)` |
 | [ResourceGroup](General.Resources.Resources.md#resourcegroup) | [ResourceGroups](General.Resources.ResourceGroups.md) | The <see cref="ResourceGroup"/> to which this Resource belongs. `Required` `Filter(multi eq)` `Owner` |
 
 ## Child Collections
@@ -110,7 +110,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency in which resource costs are specified. Required only if resource costs will be specified. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

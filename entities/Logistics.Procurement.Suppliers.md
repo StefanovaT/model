@@ -49,7 +49,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DefaultCurrency](Logistics.Procurement.Suppliers.md#defaultcurrency) | [Currencies](General.Currencies.md) (nullable) | The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)` |
+| [DefaultCurrency](Logistics.Procurement.Suppliers.md#defaultcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)` |
 | [DefaultPaymentAccount](Logistics.Procurement.Suppliers.md#defaultpaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | When not null, specifies the default payment account which should be used for new purchase document for this supplier. `Filter(multi eq)` |
 | [DefaultPaymentType](Logistics.Procurement.Suppliers.md#defaultpaymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | When not null, specifies the default payment type which should be used for new purchase document for this supplier. `Filter(multi eq)` |
 | [DefaultPurchasePriceList](Logistics.Procurement.Suppliers.md#defaultpurchasepricelist) | [PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable) | The default purchase price list, which shall be used for new purchase documents for this supplier. `Filter(multi eq)` |
@@ -217,7 +217,7 @@ _Show in UI_: **HiddenByDefault**
 
 The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

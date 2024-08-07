@@ -113,8 +113,8 @@ Object category attribute:  <em>ProductTypeId</em></p>
 <li><a href="General.Products.ProductDocumentAmounts.html">General.Products.ProductDocumentAmounts</a></li>
 <li><a href="General.Products.ProductPictures.html">General.Products.ProductPictures</a></li>
 <li><a href="General.Products.ProductVariants.html">General.Products.ProductVariants</a></li>
+<li><a href="General.Products.CompositeProductComponents.html">General.Products.CompositeProductComponents</a></li>
 <li><a href="Logistics.Inventory.ProductDefaultStoreBins.html">Logistics.Inventory.ProductDefaultStoreBins</a></li>
-<li><a href="Logistics.CompositeProductComponents.html">Logistics.CompositeProductComponents</a></li>
 </ul>
 </li>
 </ul>
@@ -327,7 +327,7 @@ Object category attribute:  <em>ProductTypeId</em></p>
 </tr>
 <tr>
 <td><a href="General.Products.Products.html#costingcurrency">CostingCurrency</a></td>
-<td><a href="General.Currencies.html">Currencies</a> (nullable)</td>
+<td><a href="General.Currencies.Currencies.html">Currencies</a> (nullable)</td>
 <td>Specifies the currency to use for cost calculations for the product. When null, the base currency for the enterprise company should be used. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -399,8 +399,8 @@ Object category attribute:  <em>ProductTypeId</em></p>
 </tr>
 <tr>
 <td>CompositeProductComponents</td>
-<td><a href="Logistics.CompositeProductComponents.html">CompositeProductComponents</a></td>
-<td>List of <code>CompositeProduct&lt;br /&gt;Component</code>(Logistics.CompositeProductComponents.md) child objects, based on the <code>Logistics.CompositeProductComponent.CompositeProduct</code>(Logistics.CompositeProductComponents.md#compositeproduct) back reference</td>
+<td><a href="General.Products.CompositeProductComponents.html">CompositeProductComponents</a></td>
+<td>List of <code>CompositeProduct&lt;br /&gt;Component</code>(General.Products.CompositeProductComponents.md) child objects, based on the <code>General.Products.CompositeProductComponent.CompositeProduct</code>(General.Products.CompositeProductComponents.md#compositeproduct) back reference</td>
 </tr>
 <tr>
 <td>DefaultStoreBins</td>
@@ -861,7 +861,7 @@ Allowed values for the <code>UseLots</code>(General.Products.Products.md#uselots
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="costingcurrency">CostingCurrency</h3>
 <p>Specifies the currency to use for cost calculations for the product. When null, the base currency for the enterprise company should be used. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Currencies.html">Currencies</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Currencies.Currencies.html">Currencies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

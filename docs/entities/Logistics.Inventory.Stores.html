@@ -111,11 +111,11 @@ Object category attribute:  <em>PartyType</em></p>
 <li><a href="Logistics.Inventory.StoreBins.html">Logistics.Inventory.StoreBins</a></li>
 <li><a href="Logistics.Inventory.StoreResponsibleParties.html">Logistics.Inventory.StoreResponsibleParties</a></li>
 <li><a href="Crm.Distributors.html">Crm.Distributors</a></li>
-<li><a href="General.PartyApplicableLegislations.html">General.PartyApplicableLegislations</a></li>
-<li><a href="General.PartyLocationNumbers.html">General.PartyLocationNumbers</a></li>
 <li><a href="General.Contacts.PartyContactMechanisms.html">General.Contacts.PartyContactMechanisms</a></li>
 <li><a href="General.Contacts.PartyRelationships.html">General.Contacts.PartyRelationships</a></li>
+<li><a href="General.Contacts.PartyApplicableLegislations.html">General.Contacts.PartyApplicableLegislations</a></li>
 <li><a href="General.Contacts.PartyBankAccounts.html">General.Contacts.PartyBankAccounts</a></li>
+<li><a href="General.Contacts.PartyLocationNumbers.html">General.Contacts.PartyLocationNumbers</a></li>
 <li><a href="General.Contacts.PartyPictures.html">General.Contacts.PartyPictures</a></li>
 </ul>
 </li>
@@ -284,7 +284,7 @@ Object category attribute:  <em>PartyType</em></p>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.Stores.html#currency">Currency</a></td>
-<td><a href="General.Currencies.html">Currencies</a> (nullable)</td>
+<td><a href="General.Currencies.Currencies.html">Currencies</a> (nullable)</td>
 <td>The currency for the warehouse cost calculations. When null, the base currency for the enterprise company will be used. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -351,8 +351,8 @@ Object category attribute:  <em>PartyType</em></p>
 <tbody>
 <tr>
 <td>ApplicableLegislations</td>
-<td><a href="General.PartyApplicableLegislations.html">PartyApplicableLegislations</a></td>
-<td>List of <code>PartyApplicable&lt;br /&gt;Legislation</code>(General.PartyApplicable<br>Legislations.md) child objects, based on the <code>General.PartyApplicableLegislation.Party</code>(General.PartyApplicable<br>Legislations.md#party) back reference (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
+<td><a href="General.Contacts.PartyApplicableLegislations.html">PartyApplicableLegislations</a></td>
+<td>List of <code>PartyApplicable&lt;br /&gt;Legislation</code>(General.Contacts.PartyApplicable<br>Legislations.md) child objects, based on the <code>General.Contacts.PartyApplicableLegislation.Party</code>(General.Contacts.PartyApplicable<br>Legislations.md#party) back reference (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
 </tr>
 <tr>
 <td>BankAccounts</td>
@@ -376,8 +376,8 @@ Object category attribute:  <em>PartyType</em></p>
 </tr>
 <tr>
 <td>LocationNumbers</td>
-<td><a href="General.PartyLocationNumbers.html">PartyLocationNumbers</a></td>
-<td>List of <code>PartyLocationNumber</code>(General.PartyLocationNumbers.md) child objects, based on the <code>General.PartyLocationNumber.Party</code>(General.PartyLocationNumbers.md#party) back reference (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
+<td><a href="General.Contacts.PartyLocationNumbers.html">PartyLocationNumbers</a></td>
+<td>List of <code>PartyLocationNumber</code>(General.Contacts.PartyLocationNumbers.md) child objects, based on the <code>General.Contacts.PartyLocationNumber.Party</code>(General.Contacts.PartyLocationNumbers.md#party) back reference (Inherited from <a href="General.Contacts.Parties.html">Parties</a>)</td>
 </tr>
 <tr>
 <td>Pictures</td>
@@ -646,7 +646,7 @@ Allowed values for the PartyType data attribute<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="currency">Currency</h3>
 <p>The currency for the warehouse cost calculations. When null, the base currency for the enterprise company will be used. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Currencies.html">Currencies</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Currencies.Currencies.html">Currencies</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

@@ -60,7 +60,7 @@ Aggregate Tree
 | [CompanyLocation](Crm.Marketing.BonusPrograms.md#companylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | When set, specifies that the sales document must be of the specified enterprise company location. `Filter(multi eq)` |
 | [ConditionCustomer](Crm.Marketing.BonusPrograms.md#conditioncustomer) | [Customers](Crm.Customers.md) (nullable) | When not null, specifies that the bonus should be applied only to the specified customer. `Filter(multi eq)` |
 | [ConditionDistribution<br />Channel](Crm.Marketing.BonusPrograms.md#conditiondistributionchannel) | [DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable) | When not null, specifies that the bonus should be applied only when the specified channel is used. `Filter(multi eq)` |
-| [ConditionDocumentCurrency](Crm.Marketing.BonusPrograms.md#conditiondocumentcurrency) | [Currencies](General.Currencies.md) (nullable) | Condition for the document amount. Should be not null if any of the amount conditions are not null. `Filter(multi eq)` |
+| [ConditionDocumentCurrency](Crm.Marketing.BonusPrograms.md#conditiondocumentcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | Condition for the document amount. Should be not null if any of the amount conditions are not null. `Filter(multi eq)` |
 | [ConditionPriceList](Crm.Marketing.BonusPrograms.md#conditionpricelist) | [PriceLists](Crm.PriceLists.md) (nullable) | When not null, specifies that the bonus should be applied only when the sales order is based on the speicfied price list. `Filter(multi eq)` |
 | [ConditionProduct](Crm.Marketing.BonusPrograms.md#conditionproduct) | [Products](General.Products.Products.md) (nullable) | When not null, specifies a conditional product, which is required to exist in the sales document in order for the bonus program to be applied. If a condition with multiple products is required, additional products can be added to Bonus Program Products. If null the other conditions should be evaluated against the whole order. `Filter(multi eq)` |
 | [ConditionProductGroup](Crm.Marketing.BonusPrograms.md#conditionproductgroup) | [ProductGroups](General.Products.ProductGroups.md) (nullable) | When not null, specifies that the bonus should be applied only to products from the specified product group or its subgroups. `Filter(multi eq)` |
@@ -370,7 +370,7 @@ _Show in UI_: **ShownByDefault**
 
 Condition for the document amount. Should be not null if any of the amount conditions are not null. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

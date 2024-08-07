@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.PartyApplicableLegislations](~/entities/General.PartyApplicableLegislations.md)
+Entity: [General.Contacts.PartyApplicableLegislations](~/entities/General.Contacts.PartyApplicableLegislations.md)
 
 Specifies a legislation, which is applicable for a party. A single party can have more than one applicable legislations. Entity: Gen_Party_Applicable_Legislations (Introduced in version 19.1)
 

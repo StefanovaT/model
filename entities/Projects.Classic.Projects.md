@@ -47,7 +47,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BudgetingCurrency](Projects.Classic.Projects.md#budgetingcurrency) | [Currencies](General.Currencies.md) (nullable) | The currency in which the project budget is calculated. `Filter(multi eq)` |
+| [BudgetingCurrency](Projects.Classic.Projects.md#budgetingcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The currency in which the project budget is calculated. `Filter(multi eq)` |
 | [ClientParty](Projects.Classic.Projects.md#clientparty) | [Parties](General.Contacts.Parties.md) (nullable) | The external or internal client of the project. `Filter(multi eq)` |
 | [EnterpriseCompany](Projects.Classic.Projects.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this Project applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
 | [ProjectManagerPerson](Projects.Classic.Projects.md#projectmanagerperson) | [Persons](General.Contacts.Persons.md) (nullable) | The project manager. `Filter(multi eq)` |
@@ -179,7 +179,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency in which the project budget is calculated. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

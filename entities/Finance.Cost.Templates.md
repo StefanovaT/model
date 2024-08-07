@@ -41,7 +41,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Currency](Finance.Cost.Templates.md#currency) | [Currencies](General.Currencies.md) | The currency of the calculations, based on the template. `Required` `Filter(multi eq)` |
+| [Currency](Finance.Cost.Templates.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of the calculations, based on the template. `Required` `Filter(multi eq)` |
 
 ## Child Collections
 
@@ -111,7 +111,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency of the calculations, based on the template. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -95,7 +95,7 @@ Aggregate Tree
 | [AdjustedDocument](Applications.Service.ServiceActivities.md#adjusteddocument) | [Documents](General.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 | [AssignedToUser](Applications.Service.ServiceActivities.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ContactPerson](Applications.Service.ServiceActivities.md#contactperson) | [Persons](General.Contacts.Persons.md) (nullable) | The contact person, from the side of the Target Party. `Filter(multi eq)` (Inherited from [Activities](General.Activities.Activities.md)) |
-| [CurrencyDirectory](Applications.Service.ServiceActivities.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Applications.Service.ServiceActivities.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [Customer](Applications.Service.ServiceActivities.md#customer) | [Customers](Crm.Customers.md) | The receiver of the work. `Required` `Filter(multi eq)` |
 | [DefaultServiceObject](Applications.Service.ServiceActivities.md#defaultserviceobject) | [ServiceObjects](Applications.Service.ServiceObjects.md) (nullable) | Default service object for materials and services lines. `Filter(multi eq)` |
 | [DocumentType](Applications.Service.ServiceActivities.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -665,7 +665,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  

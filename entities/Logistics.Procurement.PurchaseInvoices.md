@@ -86,9 +86,9 @@ Aggregate Tree
 | [AssignedToUser](Logistics.Procurement.PurchaseInvoices.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [CostCenter](Logistics.Procurement.PurchaseInvoices.md#costcenter) | [CostCenters](Finance.Accounting.CostCenters.md) (nullable) | Cost center for which the amount from this document will be accounted. `Filter(multi eq)` |
 | [CreditNoteOriginal<br />PurchaseInvoice](Logistics.Procurement.PurchaseInvoices.md#creditnoteoriginalpurchaseinvoice) | [PurchaseInvoices](Logistics.Procurement.PurchaseInvoices.md) (nullable) | The original invoice, which is debited/credited with this note. `Filter(multi eq)` |
-| [CurrencyDirectory](Logistics.Procurement.PurchaseInvoices.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
+| [CurrencyDirectory](Logistics.Procurement.PurchaseInvoices.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [DealType](Logistics.Procurement.PurchaseInvoices.md#dealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type for this purchase invoice. If deal type in entered then VAT entry is created for this deal type. `Filter(multi eq)` |
-| [DocumentCurrency](Logistics.Procurement.PurchaseInvoices.md#documentcurrency) | [Currencies](General.Currencies.md) | The currency of the unit prices and amounts in the document. `Required` `Filter(multi eq)` |
+| [DocumentCurrency](Logistics.Procurement.PurchaseInvoices.md#documentcurrency) | [Currencies](General.Currencies.Currencies.md) | The currency of the unit prices and amounts in the document. `Required` `Filter(multi eq)` |
 | [DocumentType](Logistics.Procurement.PurchaseInvoices.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompany](Logistics.Procurement.PurchaseInvoices.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [EnterpriseCompanyLocation](Logistics.Procurement.PurchaseInvoices.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
@@ -665,7 +665,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -685,7 +685,7 @@ _Front-End Recalc Expressions:_
 
 The currency of the unit prices and amounts in the document. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

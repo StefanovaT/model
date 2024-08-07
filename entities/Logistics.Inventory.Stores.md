@@ -29,11 +29,11 @@ Aggregate Tree
   * [Logistics.Inventory.StoreBins](Logistics.Inventory.StoreBins.md)  
   * [Logistics.Inventory.StoreResponsibleParties](Logistics.Inventory.StoreResponsibleParties.md)  
   * [Crm.Distributors](Crm.Distributors.md)  
-  * [General.PartyApplicableLegislations](General.PartyApplicableLegislations.md)  
-  * [General.PartyLocationNumbers](General.PartyLocationNumbers.md)  
   * [General.Contacts.PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md)  
   * [General.Contacts.PartyRelationships](General.Contacts.PartyRelationships.md)  
+  * [General.Contacts.PartyApplicableLegislations](General.Contacts.PartyApplicableLegislations.md)  
   * [General.Contacts.PartyBankAccounts](General.Contacts.PartyBankAccounts.md)  
+  * [General.Contacts.PartyLocationNumbers](General.Contacts.PartyLocationNumbers.md)  
   * [General.Contacts.PartyPictures](General.Contacts.PartyPictures.md)  
 
 ## Attributes
@@ -73,7 +73,7 @@ Aggregate Tree
 | [AccessKey](Logistics.Inventory.Stores.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this Store. Null means that all users have unlimited permissions. `Filter(multi eq)` |
 | [AdministrativeRegion](Logistics.Inventory.Stores.md#administrativeregion) | [AdministrativeRegions](General.Geography.AdministrativeRegions.md) (nullable) | The administrative region in which the party is situated. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md)) |
 | [Area](Logistics.Inventory.Stores.md#area) | [Areas](General.Geography.Areas.md) (nullable) | The area in which the party is situated. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md)) |
-| [Currency](Logistics.Inventory.Stores.md#currency) | [Currencies](General.Currencies.md) (nullable) | The currency for the warehouse cost calculations. When null, the base currency for the enterprise company will be used. `Filter(multi eq)` |
+| [Currency](Logistics.Inventory.Stores.md#currency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The currency for the warehouse cost calculations. When null, the base currency for the enterprise company will be used. `Filter(multi eq)` |
 | [DefaultProductCodingSystem](Logistics.Inventory.Stores.md#defaultproductcodingsystem) | [CodingSystems](General.Products.CodingSystems.md) (nullable) | When not null, specifies coding system for products, which is required by the party. The coding system is used primarily for document printouts and document import/exports. `Filter(multi eq)` (Inherited from [Parties](General.Contacts.Parties.md)) |
 | [DefaultStoreBin](Logistics.Inventory.Stores.md#defaultstorebin) | [StoreBins](Logistics.Inventory.StoreBins.md) (nullable) | To be used when store bin is unknown. `Filter(multi eq)` |
 | [EnterpriseCompany](Logistics.Inventory.Stores.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this Store applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
@@ -89,12 +89,12 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| ApplicableLegislations | [PartyApplicableLegislations](General.PartyApplicableLegislations.md) | List of `PartyApplicable<br />Legislation`(General.PartyApplicable<br />Legislations.md) child objects, based on the `General.PartyApplicableLegislation.Party`(General.PartyApplicable<br />Legislations.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
+| ApplicableLegislations | [PartyApplicableLegislations](General.Contacts.PartyApplicableLegislations.md) | List of `PartyApplicable<br />Legislation`(General.Contacts.PartyApplicable<br />Legislations.md) child objects, based on the `General.Contacts.PartyApplicableLegislation.Party`(General.Contacts.PartyApplicable<br />Legislations.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | BankAccounts | [PartyBankAccounts](General.Contacts.PartyBankAccounts.md) | List of `PartyBankAccount`(General.Contacts.PartyBankAccounts.md) child objects, based on the `General.Contacts.PartyBankAccount.Party`(General.Contacts.PartyBankAccounts.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Bins | [StoreBins](Logistics.Inventory.StoreBins.md) | List of `StoreBin`(Logistics.Inventory.StoreBins.md) child objects, based on the `Logistics.Inventory.StoreBin.Store`(Logistics.Inventory.StoreBins.md#store) back reference 
 | ContactMechanisms | [PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md) | List of `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md) child objects, based on the `General.Contacts.PartyContactMechanism.Party`(General.Contacts.PartyContactMechanisms.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Distributors | [Distributors](Crm.Distributors.md) | List of `Distributor`(Crm.Distributors.md) child objects, based on the `Crm.Distributor.Party`(Crm.Distributors.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
-| LocationNumbers | [PartyLocationNumbers](General.PartyLocationNumbers.md) | List of `PartyLocationNumber`(General.PartyLocationNumbers.md) child objects, based on the `General.PartyLocationNumber.Party`(General.PartyLocationNumbers.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
+| LocationNumbers | [PartyLocationNumbers](General.Contacts.PartyLocationNumbers.md) | List of `PartyLocationNumber`(General.Contacts.PartyLocationNumbers.md) child objects, based on the `General.Contacts.PartyLocationNumber.Party`(General.Contacts.PartyLocationNumbers.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Pictures | [PartyPictures](General.Contacts.PartyPictures.md) | List of `PartyPicture`(General.Contacts.PartyPictures.md) child objects, based on the `General.Contacts.PartyPicture.Party`(General.Contacts.PartyPictures.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Relationships | [PartyRelationships](General.Contacts.PartyRelationships.md) | List of `PartyRelationship`(General.Contacts.PartyRelationships.md) child objects, based on the `General.Contacts.PartyRelationship.FromParty`(General.Contacts.PartyRelationships.md#fromparty) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | ResponsibleParties | [StoreResponsibleParties](Logistics.Inventory.StoreResponsibleParties.md) | List of `StoreResponsibleParty`(Logistics.Inventory.StoreResponsibleParties.md) child objects, based on the `Logistics.Inventory.StoreResponsibleParty.Store`(Logistics.Inventory.StoreResponsibleParties.md#store) back reference 
@@ -419,7 +419,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency for the warehouse cost calculations. When null, the base currency for the enterprise company will be used. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

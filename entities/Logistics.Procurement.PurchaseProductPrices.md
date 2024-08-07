@@ -41,7 +41,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Currency](Logistics.Procurement.PurchaseProductPrices.md#currency) | [Currencies](General.Currencies.md) | The currency of the price. `Required` `Filter(multi eq)` |
+| [Currency](Logistics.Procurement.PurchaseProductPrices.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of the price. `Required` `Filter(multi eq)` |
 | [EnterpriseCompany](Logistics.Procurement.PurchaseProductPrices.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | Determines for which enterprise company this price is used. If not specified the price is used for all enterprise companies. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Logistics.Procurement.PurchaseProductPrices.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | Specifies the Enterprise Company Location for which the price is valid for. If the field is blank, the price is valid for all Enterprise Company Locations. `Filter(multi eq)` `Introduced in version 24.1.4.35` |
 | [PriceQuantityMeasurement<br />Unit](Logistics.Procurement.PurchaseProductPrices.md#pricequantitymeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Price_Quantity. `Required` `Filter(multi eq)` |
@@ -183,7 +183,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency of the price. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.CurrencyDirectoryLines](~/entities/General.CurrencyDirectoryLines.md)
+Entity: [General.Currencies.CurrencyDirectoryLines](~/entities/General.Currencies.CurrencyDirectoryLines.md)
 
 Contains exchange rate for a currency against the main currency of currency directory. Entity: Gen_Currency_Directory_Lines
 

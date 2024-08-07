@@ -26,7 +26,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [General.Reports](General.Reports.md)  
-  * [General.ReportQueries](General.ReportQueries.md)  
+  * [Systems.Core.ReportQueries](Systems.Core.ReportQueries.md)  
 
 ## Attributes
 
@@ -44,7 +44,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Queries | [ReportQueries](General.ReportQueries.md) | List of `ReportQuery`(General.ReportQueries.md) child objects, based on the `General.ReportQuery.Report`(General.ReportQueries.md#report) back reference 
+| Queries | [ReportQueries](Systems.Core.ReportQueries.md) | List of `ReportQuery`(Systems.Core.ReportQueries.md) child objects, based on the `Systems.Core.ReportQuery.Report`(Systems.Core.ReportQueries.md#report) back reference 
 
 
 ## Attribute Details

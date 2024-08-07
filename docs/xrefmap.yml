@@ -940,12 +940,18 @@ references:
 - uid: General.Contacts.Parties
   name: General.Contacts.Parties Entity
   href: entities/General.Contacts.Parties.html
+- uid: General.Contacts.PartyApplicableLegislations
+  name: General.Contacts.PartyApplicableLegislations Entity
+  href: entities/General.Contacts.PartyApplicableLegislations.html
 - uid: General.Contacts.PartyBankAccounts
   name: General.Contacts.PartyBankAccounts Entity
   href: entities/General.Contacts.PartyBankAccounts.html
 - uid: General.Contacts.PartyContactMechanisms
   name: General.Contacts.PartyContactMechanisms Entity
   href: entities/General.Contacts.PartyContactMechanisms.html
+- uid: General.Contacts.PartyLocationNumbers
+  name: General.Contacts.PartyLocationNumbers Entity
+  href: entities/General.Contacts.PartyLocationNumbers.html
 - uid: General.Contacts.PartyPictures
   name: General.Contacts.PartyPictures Entity
   href: entities/General.Contacts.PartyPictures.html
@@ -962,8 +968,17 @@ references:
   name: General.Contacts.Reminders Entity
   href: entities/General.Contacts.Reminders.html
 - uid: General.Currencies
-  name: General.Currencies Entity
+  name: General.Currencies Namespace
   href: entities/General.Currencies.html
+- uid: General.Currencies.Currencies
+  name: General.Currencies.Currencies Entity
+  href: entities/General.Currencies.Currencies.html
+- uid: General.Currencies.CurrencyDirectories
+  name: General.Currencies.CurrencyDirectories Entity
+  href: entities/General.Currencies.CurrencyDirectories.html
+- uid: General.Currencies.CurrencyDirectoryLines
+  name: General.Currencies.CurrencyDirectoryLines Entity
+  href: entities/General.Currencies.CurrencyDirectoryLines.html
 - uid: General.CurrencyDirectories
   name: General.CurrencyDirectories Entity
   href: entities/General.CurrencyDirectories.html
@@ -1126,6 +1141,9 @@ references:
 - uid: General.Products.CodingSystems
   name: General.Products.CodingSystems Entity
   href: entities/General.Products.CodingSystems.html
+- uid: General.Products.CompositeProductComponents
+  name: General.Products.CompositeProductComponents Entity
+  href: entities/General.Products.CompositeProductComponents.html
 - uid: General.Products.MeasurementCategories
   name: General.Products.MeasurementCategories Entity
   href: entities/General.Products.MeasurementCategories.html
@@ -1987,6 +2005,9 @@ references:
 - uid: Systems.Core.ObjectVersions
   name: Systems.Core.ObjectVersions Entity
   href: entities/Systems.Core.ObjectVersions.html
+- uid: Systems.Core.ReportQueries
+  name: Systems.Core.ReportQueries Entity
+  href: entities/Systems.Core.ReportQueries.html
 - uid: Systems.Core.Reports
   name: Systems.Core.Reports Entity
   href: entities/Systems.Core.Reports.html
@@ -2104,6 +2125,9 @@ references:
 - uid: Systems.Documents.DocumentTypes
   name: Systems.Documents.DocumentTypes Entity
   href: entities/Systems.Documents.DocumentTypes.html
+- uid: Systems.Documents.LinkTypes
+  name: Systems.Documents.LinkTypes Entity
+  href: entities/Systems.Documents.LinkTypes.html
 - uid: Systems.Documents.PrintoutLayouts
   name: Systems.Documents.PrintoutLayouts Entity
   href: entities/Systems.Documents.PrintoutLayouts.html
@@ -2113,6 +2137,9 @@ references:
 - uid: Systems.Documents.Routes
   name: Systems.Documents.Routes Entity
   href: entities/Systems.Documents.Routes.html
+- uid: Systems.Documents.SequenceGenerators
+  name: Systems.Documents.SequenceGenerators Entity
+  href: entities/Systems.Documents.SequenceGenerators.html
 - uid: Systems.Documents.Sequences
   name: Systems.Documents.Sequences Entity
   href: entities/Systems.Documents.Sequences.html

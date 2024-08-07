@@ -16,8 +16,10 @@ uid: Systems.Documents
 - [DocumentTypes](Systems.Documents.DocumentTypes.md)  
 - [DocumentTypeSecurityConditions](Systems.Documents.DocumentTypeSecurityConditions.md)  
 - [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md)  
+- [LinkTypes](Systems.Documents.LinkTypes.md)  
 - [PrintoutLayouts](Systems.Documents.PrintoutLayouts.md)  
 - [Printouts](Systems.Documents.Printouts.md)  
 - [Routes](Systems.Documents.Routes.md)  
+- [SequenceGenerators](Systems.Documents.SequenceGenerators.md)  
 - [Sequences](Systems.Documents.Sequences.md)  
 

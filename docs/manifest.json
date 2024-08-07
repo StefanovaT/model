@@ -13482,6 +13482,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/General.Contacts.PartyApplicableLegislations.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Contacts.PartyApplicableLegislations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/General.Contacts.PartyBankAccounts.md",
       "output": {
         ".html": {
@@ -13496,6 +13506,16 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Contacts.PartyContactMechanisms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Contacts.PartyLocationNumbers.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Contacts.PartyLocationNumbers.html"
         }
       },
       "version": ""
@@ -13556,6 +13576,36 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Contacts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Currencies.Currencies.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Currencies.Currencies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Currencies.CurrencyDirectories.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Currencies.CurrencyDirectories.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Currencies.CurrencyDirectoryLines.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Currencies.CurrencyDirectoryLines.html"
         }
       },
       "version": ""
@@ -14096,6 +14146,16 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Products.CodingSystems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Products.CompositeProductComponents.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Products.CompositeProductComponents.html"
         }
       },
       "version": ""
@@ -16922,6 +16982,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Core.ReportQueries.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Core.ReportQueries.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Systems.Core.Reports.md",
       "output": {
         ".html": {
@@ -17312,6 +17382,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Documents.LinkTypes.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Documents.LinkTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Systems.Documents.PrintoutLayouts.md",
       "output": {
         ".html": {
@@ -17336,6 +17416,16 @@
       "output": {
         ".html": {
           "relative_path": "entities/Systems.Documents.Routes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Documents.SequenceGenerators.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Documents.SequenceGenerators.html"
         }
       },
       "version": ""

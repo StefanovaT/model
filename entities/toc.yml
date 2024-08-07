@@ -620,10 +620,14 @@
       href: General.Contacts.ContactMechanisms.md
     - name: Parties
       href: General.Contacts.Parties.md
+    - name: PartyApplicableLegislations
+      href: General.Contacts.PartyApplicableLegislations.md
     - name: PartyBankAccounts
       href: General.Contacts.PartyBankAccounts.md
     - name: PartyContactMechanisms
       href: General.Contacts.PartyContactMechanisms.md
+    - name: PartyLocationNumbers
+      href: General.Contacts.PartyLocationNumbers.md
     - name: PartyPictures
       href: General.Contacts.PartyPictures.md
     - name: PartyRelationships
@@ -634,10 +638,13 @@
       href: General.Contacts.Persons.md
   - name: Currencies
     href: General.Currencies.md
-  - name: CurrencyDirectories
-    href: General.CurrencyDirectories.md
-  - name: CurrencyDirectoryLines
-    href: General.CurrencyDirectoryLines.md
+    items:
+    - name: Currencies
+      href: General.Currencies.Currencies.md
+    - name: CurrencyDirectories
+      href: General.Currencies.CurrencyDirectories.md
+    - name: CurrencyDirectoryLines
+      href: General.Currencies.CurrencyDirectoryLines.md
   - name: DocumentAmountReferencedDocuments
     href: General.DocumentAmountReferencedDocuments.md
   - name: DocumentAmounts
@@ -684,17 +691,13 @@
       href: General.Geography.GeoPoints.md
     - name: MapPoints
       href: General.Geography.MapPoints.md
-  - name: LinkTypes
-    href: General.LinkTypes.md
-  - name: PartyApplicableLegislations
-    href: General.PartyApplicableLegislations.md
-  - name: PartyLocationNumbers
-    href: General.PartyLocationNumbers.md
   - name: Products
     href: General.Products.md
     items:
     - name: CodingSystems
       href: General.Products.CodingSystems.md
+    - name: CompositeProductComponents
+      href: General.Products.CompositeProductComponents.md
     - name: MeasurementCategories
       href: General.Products.MeasurementCategories.md
     - name: MeasurementUnits
@@ -731,8 +734,6 @@
       href: General.Products.VariantSizes.md
     - name: VariantStyles
       href: General.Products.VariantStyles.md
-  - name: ReportQueries
-    href: General.ReportQueries.md
   - name: Reports
     href: General.Reports.md
   - name: Resources
@@ -752,13 +753,9 @@
       href: General.Resources.WorkSchedules.md
     - name: WorkScheduleWorkingTime
       href: General.Resources.WorkScheduleWorkingTime.md
-  - name: SequenceGenerators
-    href: General.SequenceGenerators.md
 - name: Logistics
   href: Logistics.md
   items:
-  - name: CompositeProductComponents
-    href: Logistics.CompositeProductComponents.md
   - name: Inventory
     href: Logistics.Inventory.md
     items:
@@ -1170,6 +1167,8 @@
       href: Systems.Core.ObjectFiles.md
     - name: ObjectVersions
       href: Systems.Core.ObjectVersions.md
+    - name: ReportQueries
+      href: Systems.Core.ReportQueries.md
     - name: Reports
       href: Systems.Core.Reports.md
   - name: Documents
@@ -1199,12 +1198,16 @@
       href: Systems.Documents.DocumentTypeSecurityConditions.md
     - name: DocumentTypeUserStatuses
       href: Systems.Documents.DocumentTypeUserStatuses.md
+    - name: LinkTypes
+      href: Systems.Documents.LinkTypes.md
     - name: PrintoutLayouts
       href: Systems.Documents.PrintoutLayouts.md
     - name: Printouts
       href: Systems.Documents.Printouts.md
     - name: Routes
       href: Systems.Documents.Routes.md
+    - name: SequenceGenerators
+      href: Systems.Documents.SequenceGenerators.md
     - name: Sequences
       href: Systems.Documents.Sequences.md
   - name: External

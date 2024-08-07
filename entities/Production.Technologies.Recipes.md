@@ -50,7 +50,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CurrencyDirectory](Production.Technologies.Recipes.md#currencydirectory) | [CurrencyDirectories](General.CurrencyDirectories.md) (nullable) | Currency directory, which is used to convert the costs and prices of materials, operations and resources into the currency of the product. `Filter(multi eq)` |
+| [CurrencyDirectory](Production.Technologies.Recipes.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | Currency directory, which is used to convert the costs and prices of materials, operations and resources into the currency of the product. `Filter(multi eq)` |
 | [PrincipalRecipe](Production.Technologies.Recipes.md#principalrecipe) | [PrincipalRecipes](Production.Technologies.PrincipalRecipes.md) (nullable) | The prinicipal recipe, used to create this recipe. null means that this recipe was created without the help of principal recipe. `Filter(multi eq)` |
 | [Product](Production.Technologies.Recipes.md#product) | [Products](General.Products.Products.md) (nullable) | The Id of the produced product. `Filter(multi eq)` |
 | [Store](Production.Technologies.Recipes.md#store) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store for which this technology is valid. The store is matched with the output store specified in the production order. When null, the technology is valid for all stores. `Filter(multi eq)` |
@@ -241,7 +241,7 @@ _Show in UI_: **HiddenByDefault**
 
 Currency directory, which is used to convert the costs and prices of materials, operations and resources into the currency of the product. `Filter(multi eq)`
 
-_Type_: **[CurrencyDirectories](General.CurrencyDirectories.md) (nullable)**  
+_Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

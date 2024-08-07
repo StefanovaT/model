@@ -40,7 +40,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Currency](Finance.Payments.OrderBalances.md#currency) | [Currencies](General.Currencies.md) | The currency of amounts. `Required` `Filter(multi eq)` `Inherited from Cash_Payment_Orders_Table.Total_Amount_Currency_Id` |
+| [Currency](Finance.Payments.OrderBalances.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of amounts. `Required` `Filter(multi eq)` `Inherited from Cash_Payment_Orders_Table.Total_Amount_Currency_Id` |
 | [EnterpriseCompany](Finance.Payments.OrderBalances.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` `Inherited from Gen_Documents_Table.Enterprise_Company_Id` |
 | [LocationParty](Finance.Payments.OrderBalances.md#locationparty) | [Parties](General.Contacts.Parties.md) (nullable) | Location or sub-party of the Party_Id in the order. `Filter(multi eq)` `Inherited from Cash_Payment_Orders_Table.Location_Party_Id` |
 | [Party](Finance.Payments.OrderBalances.md#party) | [Parties](General.Contacts.Parties.md) | The party which is to pay or receive the amount. `Required` `Filter(multi eq)` `Inherited from Cash_Payment_Orders_Table.Party_Id` |
@@ -200,7 +200,7 @@ _Front-End Recalc Expressions:_
 
 The currency of amounts. `Required` `Filter(multi eq)` `Inherited from Cash_Payment_Orders_Table.Total_Amount_Currency_Id`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Inherited From_: **Cash_Payment_Orders_Table.Total_Amount_Currency_Id**  
 _Supported Filters_: **Equals, EqualsIn**  

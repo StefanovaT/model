@@ -57,7 +57,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [CollectionsResponsible<br />Employee](Crm.Customers.md#collectionsresponsibleemployee) | [CompanyEmployees](General.Contacts.CompanyEmployees.md) (nullable) | The employee, who is responsible for the collections from the customer. `Filter(multi eq)` |
 | [CustomerType](Crm.Customers.md#customertype) | [CustomerTypes](Crm.CustomerTypes.md) (nullable) | The user-defined type of this customer. null when there is no specific type. Record-level security from the customer type is applied to the individual customers and can be used for security purposes. `Filter(multi eq)` |
-| [DefaultCurrency](Crm.Customers.md#defaultcurrency) | [Currencies](General.Currencies.md) (nullable) | The default currency to use when creating new documents for this customer. `Filter(multi eq)` |
+| [DefaultCurrency](Crm.Customers.md#defaultcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The default currency to use when creating new documents for this customer. `Filter(multi eq)` |
 | [DefaultDistributionChannel](Crm.Customers.md#defaultdistributionchannel) | [DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable) | The default distribution channel used when selling to the customer. `Filter(multi eq)` |
 | [DefaultPaymentAccount](Crm.Customers.md#defaultpaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | The default payment account to use when creating new documents for this customer. `Filter(multi eq)` |
 | [DefaultPaymentType](Crm.Customers.md#defaultpaymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | If not null, specifies default payment type for the sales, offers and invoices for this customer. `Filter(multi eq)` |
@@ -312,7 +312,7 @@ _Show in UI_: **ShownByDefault**
 
 The default currency to use when creating new documents for this customer. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -51,8 +51,8 @@ The legislation, for which the tax group is applicable. `Required` `Filter(multi
 
 _Type_: **[ApplicableLegislation](Crm.Pos.ProductTypeTaxGroups.md#applicablelegislation)**  
 _Category_: **System**  
-Allowed values for the `ApplicableLegislation`(General.PartyApplicableLegislations.md#applicablelegislation) data attribute  
-_Allowed Values (General.PartyApplicableLegislationsRepository.ApplicableLegislation Enum Members)_  
+Allowed values for the `ApplicableLegislation`(General.Contacts.PartyApplicableLegislations.md#applicablelegislation) data attribute  
+_Allowed Values (General.Contacts.PartyApplicableLegislationsRepository.ApplicableLegislation Enum Members)_  
 
 | Value | Description |
 | ---- | --- |

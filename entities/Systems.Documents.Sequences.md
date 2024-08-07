@@ -31,7 +31,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Systems.Documents.Sequences](Systems.Documents.Sequences.md)  
-  * [General.SequenceGenerators](General.SequenceGenerators.md)  
+  * [Systems.Documents.SequenceGenerators](Systems.Documents.SequenceGenerators.md)  
 
 ## Attributes
 
@@ -47,7 +47,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Generators | [SequenceGenerators](General.SequenceGenerators.md) | List of `SequenceGenerator`(General.SequenceGenerators.md) child objects, based on the `General.SequenceGenerator.Sequence`(General.SequenceGenerators.md#sequence) back reference 
+| Generators | [SequenceGenerators](Systems.Documents.SequenceGenerators.md) | List of `SequenceGenerator`(Systems.Documents.SequenceGenerators.md) child objects, based on the `Systems.Documents.SequenceGenerator.Sequence`(Systems.Documents.SequenceGenerators.md#sequence) back reference 
 
 
 ## Attribute Details

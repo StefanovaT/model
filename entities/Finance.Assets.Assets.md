@@ -50,7 +50,7 @@ Aggregate Tree
 | [EnterpriseCompany](Finance.Assets.Assets.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The Enterprise Company to which this Asset applies. `Required` `Filter(multi eq)` |
 | [ManagedAsset](Finance.Assets.Assets.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
 | [PrimaryValuationModel](Finance.Assets.Assets.md#primaryvaluationmodel) | [ValuationModels](Finance.Assets.ValuationModels.md) | Obsolete. Not used. `Required` `Filter(multi eq)` |
-| [ValuationCurrency](Finance.Assets.Assets.md#valuationcurrency) | [Currencies](General.Currencies.md) | Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)` |
+| [ValuationCurrency](Finance.Assets.Assets.md#valuationcurrency) | [Currencies](General.Currencies.Currencies.md) | Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -212,7 +212,7 @@ _Show in UI_: **ShownByDefault**
 
 Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

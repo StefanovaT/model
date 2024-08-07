@@ -9,7 +9,6 @@ uid: Logistics
 - [Wms](Logistics.Wms.md)  
 
 ## Entities
-- [CompositeProductComponents](Logistics.CompositeProductComponents.md)  
 - [LogisticUnitContents](Logistics.LogisticUnitContents.md)  
 - [LogisticUnits](Logistics.LogisticUnits.md)  
 - [LogisticUnitSpecifications](Logistics.LogisticUnitSpecifications.md)  

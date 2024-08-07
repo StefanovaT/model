@@ -38,7 +38,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DeferredPayment<br />MinimalAmmount<br />Currency](Crm.Sales.DocumentTypePaymentOptions.md#deferredpaymentminimalammountcurrency) | [Currencies](General.Currencies.md) | The currency of Deferred Payment Minimal Amount. `Required` `Filter(multi eq)` |
+| [DeferredPayment<br />MinimalAmmount<br />Currency](Crm.Sales.DocumentTypePaymentOptions.md#deferredpaymentminimalammountcurrency) | [Currencies](General.Currencies.Currencies.md) | The currency of Deferred Payment Minimal Amount. `Required` `Filter(multi eq)` |
 | [DocumentType](Crm.Sales.DocumentTypePaymentOptions.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The document type for which the payment option applies. `Required` `Filter(multi eq)` `Owner` |
 | [EnterpriseCompany](Crm.Sales.DocumentTypePaymentOptions.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company for which the payment options are specified. `Required` `Filter(multi eq)` |
 
@@ -91,7 +91,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency of Deferred Payment Minimal Amount. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.CompositeProductComponents](~/entities/Logistics.CompositeProductComponents.md)
+Entity: [General.Products.CompositeProductComponents](~/entities/General.Products.CompositeProductComponents.md)
 
 Separate components of a product which are packaged and stored individually. Used when a single product is stored in multiple packages. Entity: Log_Composite_Product_Components (Introduced in version 23.1.0.15)
 
