@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.LogisticUnits](~/entities/Logistics.LogisticUnits.md)
+Entity: [Logistics.Common.LogisticUnits](~/entities/Logistics.Common.LogisticUnits.md)
 
 Composition of products established for transport and/or storage which needs to be managed through the supply chain. Entity: Log_Logistic_Units (Introduced in version 21.1.0.77)
 

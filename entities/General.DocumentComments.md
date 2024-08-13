@@ -5,7 +5,11 @@ uid: General.DocumentComments
 
 **Namespace:** [General](General.md)  
 
-Contains user comments for documents. Entity: Gen_Document_Comments
+Contains user comments for documents. Entity: Gen_Document_Comments (Obsoleted in version 25.1.0.48)
+
+> [!NOTE]  
+> **OBSOLETE! Do not use!**   
+
 
 ## Default Visualization
 Default Display Text Format:  
@@ -15,7 +19,7 @@ _Document.EntityName_
 Name Data Member:  
 _Document.EntityName_  
 Category:  _Definitions_  
-Show in UI:  _ShownByDefault_  
+Show in UI:  _HiddenByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationModes](~/entities/Logistics.Shipment.TransportationModes.md)
+Entity: [Logistics.Transportation.TransportationModes](~/entities/Logistics.Transportation.TransportationModes.md)
 
 Represents a mode of transportation, like water, air, road, etc. Entity: Log_Transportation_Modes
 

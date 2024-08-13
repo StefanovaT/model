@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.LogisticUnitContents](~/entities/Logistics.LogisticUnitContents.md)
+Entity: [Logistics.Common.LogisticUnitContents](~/entities/Logistics.Common.LogisticUnitContents.md)
 
 Theoretical or actual content of a logistic unit. Entity: Log_Logistic_Unit_Contents (Introduced in version 21.1.0.77)
 

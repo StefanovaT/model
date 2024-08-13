@@ -9,7 +9,7 @@ User logins. Entity: Sec_Users
 
 ## Default Visualization
 Default Display Text Format:  
-_{Login}_  
+_{Name}_  
 Default Search Members:  
 _Login; Name_  
 Code Data Member:  

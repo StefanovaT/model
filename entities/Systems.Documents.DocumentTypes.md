@@ -41,7 +41,7 @@ Aggregate Tree
   * [Crm.Sales.SalesOrdersOptions](Crm.Sales.SalesOrdersOptions.md)  
   * [Logistics.Inventory.CostCorrectionsOptions](Logistics.Inventory.CostCorrectionsOptions.md)  
   * [Logistics.Inventory.TransferOrdersOptions](Logistics.Inventory.TransferOrdersOptions.md)  
-  * [Production.WorkOrderDocumentTypesOptions](Production.WorkOrderDocumentTypesOptions.md)  
+  * [Production.ShopFloor.WorkOrderDocumentTypesOptions](Production.ShopFloor.WorkOrderDocumentTypesOptions.md)  
   * [Logistics.Procurement.PurchaseInvoicesOptions](Logistics.Procurement.PurchaseInvoicesOptions.md)  
   * [Systems.Documents.DocumentTypeAmounts](Systems.Documents.DocumentTypeAmounts.md)  
   * [Systems.Documents.DocumentTypeEnterpriseCompanies](Systems.Documents.DocumentTypeEnterpriseCompanies.md)  
@@ -108,7 +108,7 @@ Aggregate Tree
 | SecurityConditions | [DocumentTypeSecurityConditions](Systems.Documents.DocumentTypeSecurityConditions.md) | List of `DocumentTypeSecurity<br />Condition`(Systems.Documents.DocumentTypeSecurity<br />Conditions.md) child objects, based on the `Systems.Documents.DocumentTypeSecurity<br />Condition.DocumentType`(Systems.Documents.DocumentTypeSecurity<br />Conditions.md#documenttype) back reference 
 | TransferOrdersOptions | [TransferOrdersOptions](Logistics.Inventory.TransferOrdersOptions.md) | List of `TransferOrdersOption`(Logistics.Inventory.TransferOrdersOptions.md) child objects, based on the `Logistics.Inventory.TransferOrdersOption.DocumentType`(Logistics.Inventory.TransferOrdersOptions.md#documenttype) back reference 
 | UserStatuses | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) | List of `DocumentTypeUserStatus`(Systems.Documents.DocumentTypeUserStatuses.md) child objects, based on the `Systems.Documents.DocumentTypeUserStatus.DocumentType`(Systems.Documents.DocumentTypeUserStatuses.md#documenttype) back reference 
-| WorkOrderDocument<br />TypesOptions | [WorkOrderDocumentTypesOptions](Production.WorkOrderDocumentTypesOptions.md) | List of `WorkOrderDocument<br />TypesOption`(Production.WorkOrderDocument<br />TypesOptions.md) child objects, based on the `Production.WorkOrderDocument<br />TypesOption.DocumentType`(Production.WorkOrderDocument<br />TypesOptions.md#documenttype) back reference 
+| WorkOrderDocument<br />TypesOptions | [WorkOrderDocumentTypesOptions](Production.ShopFloor.WorkOrderDocumentTypesOptions.md) | List of `WorkOrderDocument<br />TypesOption`(Production.ShopFloor.WorkOrderDocument<br />TypesOptions.md) child objects, based on the `Production.ShopFloor.WorkOrderDocument<br />TypesOption.DocumentType`(Production.ShopFloor.WorkOrderDocument<br />TypesOptions.md#documenttype) back reference 
 
 
 ## Attribute Details

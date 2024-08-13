@@ -1264,6 +1264,21 @@ references:
 - uid: Logistics
   name: Logistics Namespace
   href: entities/Logistics.html
+- uid: Logistics.Common
+  name: Logistics.Common Namespace
+  href: entities/Logistics.Common.html
+- uid: Logistics.Common.LogisticUnitContents
+  name: Logistics.Common.LogisticUnitContents Entity
+  href: entities/Logistics.Common.LogisticUnitContents.html
+- uid: Logistics.Common.LogisticUnitSpecifications
+  name: Logistics.Common.LogisticUnitSpecifications Entity
+  href: entities/Logistics.Common.LogisticUnitSpecifications.html
+- uid: Logistics.Common.LogisticUnitTypes
+  name: Logistics.Common.LogisticUnitTypes Entity
+  href: entities/Logistics.Common.LogisticUnitTypes.html
+- uid: Logistics.Common.LogisticUnits
+  name: Logistics.Common.LogisticUnits Entity
+  href: entities/Logistics.Common.LogisticUnits.html
 - uid: Logistics.CompositeProductComponents
   name: Logistics.CompositeProductComponents Entity
   href: entities/Logistics.CompositeProductComponents.html
@@ -1483,6 +1498,33 @@ references:
 - uid: Logistics.Shipment.TransportationVehicles
   name: Logistics.Shipment.TransportationVehicles Entity
   href: entities/Logistics.Shipment.TransportationVehicles.html
+- uid: Logistics.Transportation
+  name: Logistics.Transportation Namespace
+  href: entities/Logistics.Transportation.html
+- uid: Logistics.Transportation.TransportationExecutionLines
+  name: Logistics.Transportation.TransportationExecutionLines Entity
+  href: entities/Logistics.Transportation.TransportationExecutionLines.html
+- uid: Logistics.Transportation.TransportationExecutions
+  name: Logistics.Transportation.TransportationExecutions Entity
+  href: entities/Logistics.Transportation.TransportationExecutions.html
+- uid: Logistics.Transportation.TransportationModes
+  name: Logistics.Transportation.TransportationModes Entity
+  href: entities/Logistics.Transportation.TransportationModes.html
+- uid: Logistics.Transportation.TransportationOrderLines
+  name: Logistics.Transportation.TransportationOrderLines Entity
+  href: entities/Logistics.Transportation.TransportationOrderLines.html
+- uid: Logistics.Transportation.TransportationOrders
+  name: Logistics.Transportation.TransportationOrders Entity
+  href: entities/Logistics.Transportation.TransportationOrders.html
+- uid: Logistics.Transportation.TransportationRequisitionLines
+  name: Logistics.Transportation.TransportationRequisitionLines Entity
+  href: entities/Logistics.Transportation.TransportationRequisitionLines.html
+- uid: Logistics.Transportation.TransportationRequisitions
+  name: Logistics.Transportation.TransportationRequisitions Entity
+  href: entities/Logistics.Transportation.TransportationRequisitions.html
+- uid: Logistics.Transportation.TransportationVehicles
+  name: Logistics.Transportation.TransportationVehicles Entity
+  href: entities/Logistics.Transportation.TransportationVehicles.html
 - uid: Logistics.Wms
   name: Logistics.Wms Namespace
   href: entities/Logistics.Wms.html
@@ -1603,6 +1645,9 @@ references:
 - uid: Production.ShopFloor.OutputOrders
   name: Production.ShopFloor.OutputOrders Entity
   href: entities/Production.ShopFloor.OutputOrders.html
+- uid: Production.ShopFloor.WorkOrderDocumentTypesOptions
+  name: Production.ShopFloor.WorkOrderDocumentTypesOptions Entity
+  href: entities/Production.ShopFloor.WorkOrderDocumentTypesOptions.html
 - uid: Production.ShopFloor.WorkOrderItemIngredients
   name: Production.ShopFloor.WorkOrderItemIngredients Entity
   href: entities/Production.ShopFloor.WorkOrderItemIngredients.html

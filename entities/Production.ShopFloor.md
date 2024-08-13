@@ -10,6 +10,7 @@ uid: Production.ShopFloor
 - [OutputOrderDistributedMaterialConsumptions](Production.ShopFloor.OutputOrderDistributedMaterialConsumptions.md)  
 - [OutputOrderLines](Production.ShopFloor.OutputOrderLines.md)  
 - [OutputOrders](Production.ShopFloor.OutputOrders.md)  
+- [WorkOrderDocumentTypesOptions](Production.ShopFloor.WorkOrderDocumentTypesOptions.md)  
 - [WorkOrderItemIngredients](Production.ShopFloor.WorkOrderItemIngredients.md)  
 - [WorkOrderItemOperations](Production.ShopFloor.WorkOrderItemOperations.md)  
 - [WorkOrderItems](Production.ShopFloor.WorkOrderItems.md)  

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationExecutionLines](~/entities/Logistics.Shipment.TransportationExecutionLines.md)
+Entity: [Logistics.Transportation.TransportationExecutionLines](~/entities/Logistics.Transportation.TransportationExecutionLines.md)
 
 Contains details of executions of transportation order lines. Entity: Log_Transportation_Execution_Lines (Introduced in version 18.2)
 

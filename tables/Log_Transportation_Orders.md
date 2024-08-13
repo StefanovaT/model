@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationOrders](~/entities/Logistics.Shipment.TransportationOrders.md)
+Entity: [Logistics.Transportation.TransportationOrders](~/entities/Logistics.Transportation.TransportationOrders.md)
 
 Transportation ordered to specific carrier or vehicle. Entity: Log_Transportation_Orders
 

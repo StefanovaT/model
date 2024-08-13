@@ -756,6 +756,17 @@
 - name: Logistics
   href: Logistics.md
   items:
+  - name: Common
+    href: Logistics.Common.md
+    items:
+    - name: LogisticUnitContents
+      href: Logistics.Common.LogisticUnitContents.md
+    - name: LogisticUnits
+      href: Logistics.Common.LogisticUnits.md
+    - name: LogisticUnitSpecifications
+      href: Logistics.Common.LogisticUnitSpecifications.md
+    - name: LogisticUnitTypes
+      href: Logistics.Common.LogisticUnitTypes.md
   - name: Inventory
     href: Logistics.Inventory.md
     items:
@@ -826,14 +837,6 @@
       href: Logistics.Inventory.TransferOrders.md
     - name: TransferOrdersOptions
       href: Logistics.Inventory.TransferOrdersOptions.md
-  - name: LogisticUnitContents
-    href: Logistics.LogisticUnitContents.md
-  - name: LogisticUnits
-    href: Logistics.LogisticUnits.md
-  - name: LogisticUnitSpecifications
-    href: Logistics.LogisticUnitSpecifications.md
-  - name: LogisticUnitTypes
-    href: Logistics.LogisticUnitTypes.md
   - name: Procurement
     href: Logistics.Procurement.md
     items:
@@ -884,22 +887,25 @@
       href: Logistics.Shipment.ShipmentOrders.md
     - name: Shipments
       href: Logistics.Shipment.Shipments.md
+  - name: Transportation
+    href: Logistics.Transportation.md
+    items:
     - name: TransportationExecutionLines
-      href: Logistics.Shipment.TransportationExecutionLines.md
+      href: Logistics.Transportation.TransportationExecutionLines.md
     - name: TransportationExecutions
-      href: Logistics.Shipment.TransportationExecutions.md
+      href: Logistics.Transportation.TransportationExecutions.md
     - name: TransportationModes
-      href: Logistics.Shipment.TransportationModes.md
+      href: Logistics.Transportation.TransportationModes.md
     - name: TransportationOrderLines
-      href: Logistics.Shipment.TransportationOrderLines.md
+      href: Logistics.Transportation.TransportationOrderLines.md
     - name: TransportationOrders
-      href: Logistics.Shipment.TransportationOrders.md
+      href: Logistics.Transportation.TransportationOrders.md
     - name: TransportationRequisitionLines
-      href: Logistics.Shipment.TransportationRequisitionLines.md
+      href: Logistics.Transportation.TransportationRequisitionLines.md
     - name: TransportationRequisitions
-      href: Logistics.Shipment.TransportationRequisitions.md
+      href: Logistics.Transportation.TransportationRequisitions.md
     - name: TransportationVehicles
-      href: Logistics.Shipment.TransportationVehicles.md
+      href: Logistics.Transportation.TransportationVehicles.md
   - name: Wms
     href: Logistics.Wms.md
     items:
@@ -972,6 +978,8 @@
       href: Production.ShopFloor.OutputOrderLines.md
     - name: OutputOrders
       href: Production.ShopFloor.OutputOrders.md
+    - name: WorkOrderDocumentTypesOptions
+      href: Production.ShopFloor.WorkOrderDocumentTypesOptions.md
     - name: WorkOrderItemIngredients
       href: Production.ShopFloor.WorkOrderItemIngredients.md
     - name: WorkOrderItemOperations
@@ -995,8 +1003,6 @@
       href: Production.Technologies.RecipeOperations.md
     - name: Recipes
       href: Production.Technologies.Recipes.md
-  - name: WorkOrderDocumentTypesOptions
-    href: Production.WorkOrderDocumentTypesOptions.md
 - name: Projects
   href: Projects.md
   items:

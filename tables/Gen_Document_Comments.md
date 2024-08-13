@@ -1,11 +1,15 @@
 # Table Gen_Document_Comments
 
 
+> [!NOTE]  
+> **OBSOLETE! Do not use!**  
+
+
 ## Entity
 
 Entity: [General.DocumentComments](~/entities/General.DocumentComments.md)
 
-Contains user comments for documents. Entity: Gen_Document_Comments
+Contains user comments for documents. Entity: Gen_Document_Comments (Obsoleted in version 25.1.0.48)
 
 ## Owner Tables Hierarchy
 

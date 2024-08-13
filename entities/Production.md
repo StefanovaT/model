@@ -7,6 +7,3 @@ uid: Production
 - [ShopFloor](Production.ShopFloor.md)  
 - [Technologies](Production.Technologies.md)  
 
-## Entities
-- [WorkOrderDocumentTypesOptions](Production.WorkOrderDocumentTypesOptions.md)  
-

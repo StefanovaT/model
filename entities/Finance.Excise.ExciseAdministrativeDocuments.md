@@ -97,7 +97,7 @@ Aggregate Tree
 | [ToCompanyDivision](Finance.Excise.ExciseAdministrativeDocuments.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [ToParty](Finance.Excise.ExciseAdministrativeDocuments.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
 | [TransportationCarrier](Finance.Excise.ExciseAdministrativeDocuments.md#transportationcarrier) | [Carriers](Logistics.Shipment.Carriers.md) (nullable) | The carrier used for the transportation of the goods. `Filter(multi eq)` |
-| [TransportationVehicle](Finance.Excise.ExciseAdministrativeDocuments.md#transportationvehicle) | [TransportationVehicles](Logistics.Shipment.TransportationVehicles.md) (nullable) | The vehicle, used for the transportation of the goods. `Filter(multi eq)` |
+| [TransportationVehicle](Finance.Excise.ExciseAdministrativeDocuments.md#transportationvehicle) | [TransportationVehicles](Logistics.Transportation.TransportationVehicles.md) (nullable) | The vehicle, used for the transportation of the goods. `Filter(multi eq)` |
 | [UserStatus](Finance.Excise.ExciseAdministrativeDocuments.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
 
 ## Child Collections
@@ -687,7 +687,7 @@ _Show in UI_: **ShownByDefault**
 
 The vehicle, used for the transportation of the goods. `Filter(multi eq)`
 
-_Type_: **[TransportationVehicles](Logistics.Shipment.TransportationVehicles.md) (nullable)**  
+_Type_: **[TransportationVehicles](Logistics.Transportation.TransportationVehicles.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

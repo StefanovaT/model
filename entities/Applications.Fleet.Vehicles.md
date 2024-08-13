@@ -23,7 +23,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 Aggregate Tree  
 * [Applications.Fleet.Vehicles](Applications.Fleet.Vehicles.md)  
   * [Applications.Fleet.VehicleEquipment](Applications.Fleet.VehicleEquipment.md)  
-  * [Logistics.Shipment.TransportationVehicles](Logistics.Shipment.TransportationVehicles.md)  
+  * [Logistics.Transportation.TransportationVehicles](Logistics.Transportation.TransportationVehicles.md)  
 
 ## Attributes
 
@@ -75,7 +75,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | Equipment | [VehicleEquipment](Applications.Fleet.VehicleEquipment.md) | List of `VehicleEquipment`(Applications.Fleet.VehicleEquipment.md) child objects, based on the `Applications.Fleet.VehicleEquipment.Vehicle`(Applications.Fleet.VehicleEquipment.md#vehicle) back reference 
-| TransportationVehicles | [TransportationVehicles](Logistics.Shipment.TransportationVehicles.md) | List of `TransportationVehicle`(Logistics.Shipment.TransportationVehicles.md) child objects, based on the `Logistics.Shipment.TransportationVehicle.Vehicle`(Logistics.Shipment.TransportationVehicles.md#vehicle) back reference 
+| TransportationVehicles | [TransportationVehicles](Logistics.Transportation.TransportationVehicles.md) | List of `TransportationVehicle`(Logistics.Transportation.TransportationVehicles.md) child objects, based on the `Logistics.Transportation.TransportationVehicle.Vehicle`(Logistics.Transportation.TransportationVehicles.md#vehicle) back reference 
 
 
 ## Attribute Details

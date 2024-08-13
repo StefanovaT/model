@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationRequisitionLines](~/entities/Logistics.Shipment.TransportationRequisitionLines.md)
+Entity: [Logistics.Transportation.TransportationRequisitionLines](~/entities/Logistics.Transportation.TransportationRequisitionLines.md)
 
 One line in a client requisition for transportation. Different lines usually represent requisitions for different cargo types. Entity: Log_Transportation_Requisition_Lines
 

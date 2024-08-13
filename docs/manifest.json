@@ -14532,6 +14532,56 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Common.LogisticUnitContents.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Common.LogisticUnitContents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Common.LogisticUnitSpecifications.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Common.LogisticUnitSpecifications.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Common.LogisticUnitTypes.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Common.LogisticUnitTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Common.LogisticUnits.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Common.LogisticUnits.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Common.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Common.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Logistics.CompositeProductComponents.md",
       "output": {
         ".html": {
@@ -15262,6 +15312,96 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationExecutionLines.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationExecutionLines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationExecutions.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationExecutions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationModes.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationModes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationOrderLines.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationOrderLines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationOrders.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationOrders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationRequisitionLines.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationRequisitionLines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationRequisitions.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationRequisitions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.TransportationVehicles.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.TransportationVehicles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Transportation.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Transportation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Logistics.Wms.CompositeProductComponents.md",
       "output": {
         ".html": {
@@ -15646,6 +15786,16 @@
       "output": {
         ".html": {
           "relative_path": "entities/Production.ShopFloor.OutputOrders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Production.ShopFloor.WorkOrderDocumentTypesOptions.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Production.ShopFloor.WorkOrderDocumentTypesOptions.html"
         }
       },
       "version": ""

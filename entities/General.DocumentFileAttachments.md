@@ -5,7 +5,11 @@ uid: General.DocumentFileAttachments
 
 **Namespace:** [General](General.md)  
 
-Contains files, attached to the documents. Entity: Gen_Document_File_Attachments
+Contains files, attached to the documents. Entity: Gen_Document_File_Attachments (Obsoleted in version 25.1.0.48)
+
+> [!NOTE]  
+> **OBSOLETE! Do not use!**   
+
 
 ## Default Visualization
 Default Display Text Format:  
