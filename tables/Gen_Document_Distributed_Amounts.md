@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentDistributedAmounts](~/entities/General.DocumentDistributedAmounts.md)
+Entity: [General.Documents.DocumentDistributedAmounts](~/entities/General.Documents.DocumentDistributedAmounts.md)
 
 Contains the amounts which are distributed by the system over the document lines as a result of additional amount calculations. Entity: Gen_Document_Distributed_Amounts
 

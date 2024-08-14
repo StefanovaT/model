@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentFulfillments](~/entities/General.DocumentFulfillments.md)
+Entity: [General.Documents.DocumentFulfillments](~/entities/General.Documents.DocumentFulfillments.md)
 
 Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced in version 20.1)
 

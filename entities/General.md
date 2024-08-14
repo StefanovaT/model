@@ -6,6 +6,7 @@ uid: General
 - [Activities](General.Activities.md)  
 - [Contacts](General.Contacts.md)  
 - [Currencies](General.Currencies.md)  
+- [Documents](General.Documents.md)  
 - [Files](General.Files.md)  
 - [Geography](General.Geography.md)  
 - [Products](General.Products.md)  
@@ -13,18 +14,6 @@ uid: General
 
 ## Entities
 - [DocumentAmountReferencedDocuments](General.DocumentAmountReferencedDocuments.md)  
-- [DocumentAmounts](General.DocumentAmounts.md)  
-- [DocumentComments](General.DocumentComments.md)  
-- [DocumentDistributedAmounts](General.DocumentDistributedAmounts.md)  
-- [DocumentFileAttachments](General.DocumentFileAttachments.md)  
-- [DocumentFulfillments](General.DocumentFulfillments.md)  
-- [DocumentLineAmounts](General.DocumentLineAmounts.md)  
-- [DocumentLinks](General.DocumentLinks.md)  
-- [DocumentManualDistributedAmounts](General.DocumentManualDistributedAmounts.md)  
-- [DocumentParties](General.DocumentParties.md)  
-- [DocumentPrints](General.DocumentPrints.md)  
-- [Documents](General.Documents.md)  
-- [DocumentStateChanges](General.DocumentStateChanges.md)  
 - [EnterpriseCompanies](General.EnterpriseCompanies.md)  
 - [Reports](General.Reports.md)  
 

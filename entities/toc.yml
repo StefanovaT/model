@@ -647,30 +647,31 @@
       href: General.Currencies.CurrencyDirectoryLines.md
   - name: DocumentAmountReferencedDocuments
     href: General.DocumentAmountReferencedDocuments.md
-  - name: DocumentAmounts
-    href: General.DocumentAmounts.md
-  - name: DocumentComments
-    href: General.DocumentComments.md
-  - name: DocumentDistributedAmounts
-    href: General.DocumentDistributedAmounts.md
-  - name: DocumentFileAttachments
-    href: General.DocumentFileAttachments.md
-  - name: DocumentFulfillments
-    href: General.DocumentFulfillments.md
-  - name: DocumentLineAmounts
-    href: General.DocumentLineAmounts.md
-  - name: DocumentLinks
-    href: General.DocumentLinks.md
-  - name: DocumentManualDistributedAmounts
-    href: General.DocumentManualDistributedAmounts.md
-  - name: DocumentParties
-    href: General.DocumentParties.md
-  - name: DocumentPrints
-    href: General.DocumentPrints.md
   - name: Documents
     href: General.Documents.md
-  - name: DocumentStateChanges
-    href: General.DocumentStateChanges.md
+    items:
+    - name: DocumentAmounts
+      href: General.Documents.DocumentAmounts.md
+    - name: DocumentComments
+      href: General.Documents.DocumentComments.md
+    - name: DocumentDistributedAmounts
+      href: General.Documents.DocumentDistributedAmounts.md
+    - name: DocumentFileAttachments
+      href: General.Documents.DocumentFileAttachments.md
+    - name: DocumentFulfillments
+      href: General.Documents.DocumentFulfillments.md
+    - name: DocumentLineAmounts
+      href: General.Documents.DocumentLineAmounts.md
+    - name: DocumentLinks
+      href: General.Documents.DocumentLinks.md
+    - name: DocumentManualDistributedAmounts
+      href: General.Documents.DocumentManualDistributedAmounts.md
+    - name: DocumentParties
+      href: General.Documents.DocumentParties.md
+    - name: DocumentPrints
+      href: General.Documents.DocumentPrints.md
+    - name: DocumentStateChanges
+      href: General.Documents.DocumentStateChanges.md
   - name: EnterpriseCompanies
     href: General.EnterpriseCompanies.md
   - name: Files

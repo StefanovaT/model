@@ -1069,12 +1069,42 @@ references:
 - uid: General.Documents
   name: General.Documents Entity
   href: entities/General.Documents.html
+- uid: General.Documents.DocumentAmounts
+  name: General.Documents.DocumentAmounts Entity
+  href: entities/General.Documents.DocumentAmounts.html
+- uid: General.Documents.DocumentComments
+  name: General.Documents.DocumentComments Entity
+  href: entities/General.Documents.DocumentComments.html
+- uid: General.Documents.DocumentDistributedAmounts
+  name: General.Documents.DocumentDistributedAmounts Entity
+  href: entities/General.Documents.DocumentDistributedAmounts.html
+- uid: General.Documents.DocumentFileAttachments
+  name: General.Documents.DocumentFileAttachments Entity
+  href: entities/General.Documents.DocumentFileAttachments.html
+- uid: General.Documents.DocumentFulfillments
+  name: General.Documents.DocumentFulfillments Entity
+  href: entities/General.Documents.DocumentFulfillments.html
+- uid: General.Documents.DocumentLineAmounts
+  name: General.Documents.DocumentLineAmounts Entity
+  href: entities/General.Documents.DocumentLineAmounts.html
+- uid: General.Documents.DocumentLinks
+  name: General.Documents.DocumentLinks Entity
+  href: entities/General.Documents.DocumentLinks.html
+- uid: General.Documents.DocumentManualDistributedAmounts
+  name: General.Documents.DocumentManualDistributedAmounts Entity
+  href: entities/General.Documents.DocumentManualDistributedAmounts.html
 - uid: General.Documents.DocumentParties
   name: General.Documents.DocumentParties Entity
   href: entities/General.Documents.DocumentParties.html
 - uid: General.Documents.DocumentPartyRoles
   name: General.Documents.DocumentPartyRoles Entity
   href: entities/General.Documents.DocumentPartyRoles.html
+- uid: General.Documents.DocumentPrints
+  name: General.Documents.DocumentPrints Entity
+  href: entities/General.Documents.DocumentPrints.html
+- uid: General.Documents.DocumentStateChanges
+  name: General.Documents.DocumentStateChanges Entity
+  href: entities/General.Documents.DocumentStateChanges.html
 - uid: General.EnterpriseCompanies
   name: General.EnterpriseCompanies Entity
   href: entities/General.EnterpriseCompanies.html

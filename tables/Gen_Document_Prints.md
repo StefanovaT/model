@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentPrints](~/entities/General.DocumentPrints.md)
+Entity: [General.Documents.DocumentPrints](~/entities/General.Documents.DocumentPrints.md)
 
 Contains the history of each document print or export. Entity: Gen_Document_Prints
 

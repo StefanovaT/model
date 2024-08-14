@@ -14,6 +14,8 @@ Default Search Members:
 _Document.EntityName_  
 Name Data Member:  
 _Document.EntityName_  
+Category:  _Definitions_  
+Show in UI:  _ShownByDefault_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -38,7 +40,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Document](General.Documents.DocumentParties.md#document) | [Documents](General.Documents.md) | The document in which the party plays a role. `Required` `Filter(multi eq)` `Owner` |
 | [Party](General.Documents.DocumentParties.md#party) | [Parties](General.Contacts.Parties.md) | The party, which plays a role in the document. `Required` `Filter(multi eq)` |
-| [Role](General.Documents.DocumentParties.md#role) | [DocumentPartyRoles](General.Documents.DocumentPartyRoles.md) | The role of the party in the document. `Required` `Filter(multi eq)` |
+| [Role](General.Documents.DocumentParties.md#role) | [DocumentPartyRoles](Systems.Documents.DocumentPartyRoles.md) | The role of the party in the document. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -51,6 +53,7 @@ _Type_: **string**
 _Category_: **Calculated Attributes**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
@@ -59,6 +62,7 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
 ### Notes
 
@@ -69,6 +73,7 @@ _Category_: **System**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
 _Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
 
 ### ObjectVersion
 
@@ -78,6 +83,7 @@ _Type_: **int32**
 _Category_: **Extensible Data Object**  
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 
 ## Reference Details
@@ -90,6 +96,7 @@ _Type_: **[Documents](General.Documents.md)**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
+_Show in UI_: **CannotBeShown**  
 
 ### Party
 
@@ -98,14 +105,16 @@ The party, which plays a role in the document. `Required` `Filter(multi eq)`
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 ### Role
 
 The role of the party in the document. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentPartyRoles](General.Documents.DocumentPartyRoles.md)**  
+_Type_: **[DocumentPartyRoles](Systems.Documents.DocumentPartyRoles.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## API Methods
@@ -115,7 +124,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -154,6 +163,34 @@ _Domain API Request_: **GET**
      _Optional_: True  
     _Default Value_: 0  
 
+
+### CreateNotification
+
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The notification subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules

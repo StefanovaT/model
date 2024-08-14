@@ -190,6 +190,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>The user, who created the object represented by this system object . null means that it is unknown. <code>Filter(multi eq)</code> <code>Introduced in version 19.1</code></td>
 </tr>
 <tr>
+<td><a href="Systems.Core.ExtensibleDataObjects.html#folder">Folder</a></td>
+<td><a href="General.Files.Folders.html">Folders</a> (nullable)</td>
+<td>The owner folder of the object. <code>Filter(multi eq)</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#lastupdateuser">LastUpdateUser</a></td>
 <td><a href="Systems.Security.Users.html">Users</a> (nullable)</td>
 <td>The user, who made the last modification of the object represented by this system object . null means that it is unknown. <code>Filter(multi eq)</code> <code>Introduced in version 19.1</code></td>
@@ -307,6 +312,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h3 id="creationuser">CreationUser</h3>
 <p>The user, who created the object represented by this system object . null means that it is unknown. <code>Filter(multi eq)</code> <code>Introduced in version 19.1</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="folder">Folder</h3>
+<p>The owner folder of the object. <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="General.Files.Folders.html">Folders</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>

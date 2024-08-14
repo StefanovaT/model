@@ -13922,6 +13922,86 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentAmounts.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentAmounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentComments.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentComments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentDistributedAmounts.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentDistributedAmounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentFileAttachments.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentFileAttachments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentFulfillments.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentFulfillments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentLineAmounts.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentLineAmounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentLinks.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentLinks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentManualDistributedAmounts.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentManualDistributedAmounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/General.Documents.DocumentParties.md",
       "output": {
         ".html": {
@@ -13936,6 +14016,26 @@
       "output": {
         ".html": {
           "relative_path": "entities/General.Documents.DocumentPartyRoles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentPrints.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentPrints.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/General.Documents.DocumentStateChanges.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/General.Documents.DocumentStateChanges.html"
         }
       },
       "version": ""

@@ -21,7 +21,7 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.DocumentAmounts](General.DocumentAmounts.md)  
+[General.Documents.DocumentAmounts](General.Documents.DocumentAmounts.md)  
 Aggregate Root:  
 [General.Documents](General.Documents.md)  
 
@@ -37,7 +37,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentAmount](General.DocumentAmountReferencedDocuments.md#documentamount) | [DocumentAmounts](General.DocumentAmounts.md) | The document amount for which the referenced document is specified. `Required` `Filter(multi eq)` `Owner` |
+| [DocumentAmount](General.DocumentAmountReferencedDocuments.md#documentamount) | [DocumentAmounts](General.Documents.DocumentAmounts.md) | The document amount for which the referenced document is specified. `Required` `Filter(multi eq)` `Owner` |
 | [ReferencedDocument](General.DocumentAmountReferencedDocuments.md#referenceddocument) | [Documents](General.Documents.md) | The document which is referenced by the document amount. `Required` `Filter(multi eq)` |
 
 
@@ -79,7 +79,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document amount for which the referenced document is specified. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[DocumentAmounts](General.DocumentAmounts.md)**  
+_Type_: **[DocumentAmounts](General.Documents.DocumentAmounts.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

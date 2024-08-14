@@ -7,7 +7,7 @@
 
 ## Entity
 
-Entity: [General.DocumentComments](~/entities/General.DocumentComments.md)
+Entity: [General.Documents.DocumentComments](~/entities/General.Documents.DocumentComments.md)
 
 Contains user comments for documents. Entity: Gen_Document_Comments (Obsoleted in version 25.1.0.48)
 

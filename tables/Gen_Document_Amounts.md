@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentAmounts](~/entities/General.DocumentAmounts.md)
+Entity: [General.Documents.DocumentAmounts](~/entities/General.Documents.DocumentAmounts.md)
 
 Contains a specific instance of an additional amount for a specific document. Entity: Gen_Document_Amounts
 

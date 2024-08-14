@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentStateChanges](~/entities/General.DocumentStateChanges.md)
+Entity: [General.Documents.DocumentStateChanges](~/entities/General.Documents.DocumentStateChanges.md)
 
 History of document state changes. Entity: Gen_Document_State_Changes
 
