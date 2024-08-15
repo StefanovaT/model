@@ -201,7 +201,7 @@ _Allowed Values (Applications.Mail.BoxesRepository.SyncProtocol Enum Members)_
 | Recommended | Recommended value. Stored as 'IMAP'. <br /> _Database Value:_ 'IMAP' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Recommended' |
 | POP3 | POP3 value. Stored as 'POP3'. <br /> _Database Value:_ 'POP3' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'POP3' |
 | MicrosoftExchange | MicrosoftExchange value. Stored as 'MEWS'. <br /> _Database Value:_ 'MEWS' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'MicrosoftExchange' |
-| NOSYNC | Synchronization is not performed. Stored as 'NOSYNC'. <br /> _Database Value:_ 'NOSYNC' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'NOSYNC' |
+| NOSYNC | Synchronization is not performed. Stored as 'NSNC'. <br /> _Database Value:_ 'NSNC' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'NOSYNC' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
