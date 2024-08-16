@@ -168,15 +168,16 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 
 | Value | Description |
 | ---- | --- |
-| QUEUED | QUEUED value. Stored as '0'. <br /> _Database Value:_ '0' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'QUEUED' |
-| ACTIVE | ACTIVE value. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ACTIVE' |
-| WAITING | WAITING value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'WAITING' |
-| RESOLVED | RESOLVED value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'RESOLVED' |
-| CLOSED | CLOSED value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'CLOSED' |
+| BACKLOG | BACKLOG. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'BACKLOG' |
+| READY | READY. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'READY' |
+| INPROGRESS | IN PROGRESS. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'INPROGRESS' |
+| WAITING | WAITING. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'WAITING' |
+| RESOLVED | RESOLVED. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'RESOLVED' |
+| CLOSED | CLOSED. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'CLOSED' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
-_Default Value_: **ACTIVE**  
+_Default Value_: **BACKLOG**  
 _Show in UI_: **CannotBeShown**  
 
 ### Title

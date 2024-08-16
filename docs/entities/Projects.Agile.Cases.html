@@ -338,30 +338,34 @@ Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemst
 </thead>
 <tbody>
 <tr>
-<td>QUEUED</td>
-<td>QUEUED value. Stored as '0'. <br> <em>Database Value:</em> '0' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'QUEUED'</td>
+<td>BACKLOG</td>
+<td>BACKLOG. Stored as '1'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'BACKLOG'</td>
 </tr>
 <tr>
-<td>ACTIVE</td>
-<td>ACTIVE value. Stored as '1'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'ACTIVE'</td>
+<td>READY</td>
+<td>READY. Stored as '2'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'READY'</td>
+</tr>
+<tr>
+<td>INPROGRESS</td>
+<td>IN PROGRESS. Stored as '3'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'INPROGRESS'</td>
 </tr>
 <tr>
 <td>WAITING</td>
-<td>WAITING value. Stored as '2'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'WAITING'</td>
+<td>WAITING. Stored as '4'. <br> <em>Database Value:</em> '4' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'WAITING'</td>
 </tr>
 <tr>
 <td>RESOLVED</td>
-<td>RESOLVED value. Stored as '3'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'RESOLVED'</td>
+<td>RESOLVED. Stored as '5'. <br> <em>Database Value:</em> '5' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'RESOLVED'</td>
 </tr>
 <tr>
 <td>CLOSED</td>
-<td>CLOSED value. Stored as '4'. <br> <em>Database Value:</em> '4' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'CLOSED'</td>
+<td>CLOSED. Stored as '6'. <br> <em>Database Value:</em> '6' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'CLOSED'</td>
 </tr>
 </tbody>
 </table>
 <p><em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>ACTIVE</strong><br>
+<em>Default Value</em>: <strong>BACKLOG</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="title">Title</h3>
 <p>Case short title. <code>Required</code> <code>Filter(like)</code></p>
