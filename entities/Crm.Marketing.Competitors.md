@@ -29,11 +29,13 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Crm.Marketing.Competitors.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [FromDate](Crm.Marketing.Competitors.md#fromdate) | datetime __nullable__ | Start date when this company became a competitor. `Default(Today)` `Filter(ge;le)` `Introduced in version 25.1.0.62` 
 | [Id](Crm.Marketing.Competitors.md#id) | guid |  
 | [IsActive](Crm.Marketing.Competitors.md#isactive) | boolean | Indicates whether the current Competitor is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18` 
 | [Name](Crm.Marketing.Competitors.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The name of this Competitor. `Required` `Filter(like)` 
 | [Notes](Crm.Marketing.Competitors.md#notes) | string (max) __nullable__ | Notes for this Competitor. 
 | [ObjectVersion](Crm.Marketing.Competitors.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [ToDate](Crm.Marketing.Competitors.md#todate) | datetime __nullable__ | Date until which this company was considered a competitor. The field is blank if the company is still a competitor. `Filter(ge;le)` `Introduced in version 25.1.0.62` 
 
 ## References
 
@@ -60,6 +62,17 @@ _Category_: **Calculated Attributes**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### FromDate
+
+Start date when this company became a competitor. `Default(Today)` `Filter(ge;le)` `Introduced in version 25.1.0.62`
+
+_Type_: **datetime __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Default Value_: **CurrentDate**  
+_Show in UI_: **ShownByDefault**  
 
 ### Id
 
@@ -111,6 +124,16 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### ToDate
+
+Date until which this company was considered a competitor. The field is blank if the company is still a competitor. `Filter(ge;le)` `Introduced in version 25.1.0.62`
+
+_Type_: **datetime __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details

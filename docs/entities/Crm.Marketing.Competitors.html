@@ -124,6 +124,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
 </tr>
 <tr>
+<td><a href="Crm.Marketing.Competitors.html#fromdate">FromDate</a></td>
+<td>datetime <strong>nullable</strong></td>
+<td>Start date when this company became a competitor. <code>Default(Today)</code> <code>Filter(ge;le)</code> <code>Introduced in version 25.1.0.62</code></td>
+</tr>
+<tr>
 <td><a href="Crm.Marketing.Competitors.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
@@ -147,6 +152,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 <td><a href="Crm.Marketing.Competitors.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
+<td><a href="Crm.Marketing.Competitors.html#todate">ToDate</a></td>
+<td>datetime <strong>nullable</strong></td>
+<td>Date until which this company was considered a competitor. The field is blank if the company is still a competitor. <code>Filter(ge;le)</code> <code>Introduced in version 25.1.0.62</code></td>
 </tr>
 </tbody>
 </table>
@@ -197,6 +207,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="fromdate">FromDate</h3>
+<p>Start date when this company became a competitor. <code>Default(Today)</code> <code>Filter(ge;le)</code> <code>Introduced in version 25.1.0.62</code></p>
+<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>CurrentDate</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="id">Id</h3>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
@@ -234,6 +252,13 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="todate">ToDate</h3>
+<p>Date until which this company was considered a competitor. The field is blank if the company is still a competitor. <code>Filter(ge;le)</code> <code>Introduced in version 25.1.0.62</code></p>
+<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
 <p>Our enterprise company, for which we are defining the competitor. null means that the competitor is defined for all the companies in the ERP instance. <code>Filter(multi eq)</code></p>

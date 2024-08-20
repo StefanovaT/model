@@ -13,11 +13,13 @@ Competitors to our marketing solutions. Entity: Crm_Competitors (Introduced in v
 | - | - | --- |
 |[Competitor_Id](#competitor_id)|`uniqueidentifier` `PK`|Competitor to our marketing solutions.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |Our enterprise company, for which we are defining the competitor. NULL means that the competitor is defined for all the companies in the ERP instance.|
+|[From_Date](#from_date)|`datetime` |Start date when this company became a competitor.|
 |[Is_Active](#is_active)|`bit` |Indicates whether the current Competitor is active.|
 |[Name](#name)|`nvarchar(254)` `ML`||
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Party_Id](#party_id)|`uniqueidentifier` |When not null, specifies the party of the competitor.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[To_Date](#to_date)|`datetime` |Date until which this company was considered a competitor. The field is blank if the company is still a competitor.|
 
 ## Columns
 
@@ -94,6 +96,42 @@ Our enterprise company, for which we are defining the competitor. NULL means tha
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
+### From_Date
+
+
+Start date when this company became a competitor.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|CurrentDate|
+|Enter Stop|no|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### From_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|yes|no|
+
 ### Is_Active
 
 
@@ -108,7 +146,7 @@ Indicates whether the current Competitor is active.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -239,7 +277,7 @@ When not null, specifies the party of the competitor.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -254,5 +292,41 @@ When not null, specifies the party of the competitor.
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### To_Date
+
+
+Date until which this company was considered a competitor. The field is blank if the company is still a competitor.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|no|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|8|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### To_Date - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|yes|no|
 
 
