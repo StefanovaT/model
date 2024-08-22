@@ -8,6 +8,15 @@ uid: Logistics.Transportation.TransportationRequisitions
 
 Client requisition for transportation. Entity: Log_Transportation_Requisitions
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationRequisitions**  
+New name: **Logistics.Transportation.TransportationRequisitions**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  

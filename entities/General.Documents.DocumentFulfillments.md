@@ -7,6 +7,15 @@ uid: General.Documents.DocumentFulfillments
 
 Fulfillment ledger for documents. Entity: Gen_Document_Fulfillments (Introduced in version 20.1)
 
+## Renames
+
+Old name: **General.DocumentFulfillments**  
+New name: **General.Documents.DocumentFulfillments**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DestinationEntityName}_  

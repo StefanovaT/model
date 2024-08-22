@@ -7,6 +7,15 @@ uid: Systems.Core.ReportQueries
 
 Contains the sub-queries, which a report contains. Entity: Gen_Report_Queries
 
+## Renames
+
+Old name: **General.ReportQueries**  
+New name: **Systems.Core.ReportQueries**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{TableName}_  

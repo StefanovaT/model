@@ -7,6 +7,15 @@ uid: General.Contacts.PartyLocationNumbers
 
 Location numbers for a party. Depending on the partner with which we are doing an exchange, our location number might be different. Entity: Gen_Party_Location_Numbers (Introduced in version 19.1)
 
+## Renames
+
+Old name: **General.PartyLocationNumbers**  
+New name: **General.Contacts.PartyLocationNumbers**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Party.PartyName:T}_  

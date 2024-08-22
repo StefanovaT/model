@@ -7,6 +7,15 @@ uid: General.Documents.DocumentLineAmounts
 
 Specifies user-defined input percentages by lines for the document amounts. Entity: Gen_Document_Line_Amounts
 
+## Renames
+
+Old name: **General.DocumentLineAmounts**  
+New name: **General.Documents.DocumentLineAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Document.EntityName}_  

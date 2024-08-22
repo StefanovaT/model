@@ -7,6 +7,15 @@ uid: General.Documents.DocumentPrints
 
 Contains the history of each document print or export. Entity: Gen_Document_Prints
 
+## Renames
+
+Old name: **General.DocumentPrints**  
+New name: **General.Documents.DocumentPrints**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Document.EntityName}_  

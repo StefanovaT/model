@@ -7,6 +7,15 @@ uid: General.Documents.DocumentParties
 
 Represents a party associated to a document. Entity: Gen_Document_Parties (Introduced in version 22.1.4.46)
 
+## Renames
+
+Old name: **General.DocumentParties**  
+New name: **General.Documents.DocumentParties**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Document.EntityName}_  

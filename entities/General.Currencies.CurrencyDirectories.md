@@ -8,6 +8,15 @@ uid: General.Currencies.CurrencyDirectories
 
 Contains a named set of currency exchange rates against a single currency for a given date. Multiple directories with different names can exist for single date. For example, buy and sell rates are recorded as separate directories. Entity: Gen_Currency_Directories
 
+## Renames
+
+Old name: **General.CurrencyDirectories**  
+New name: **General.Currencies.CurrencyDirectories**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  

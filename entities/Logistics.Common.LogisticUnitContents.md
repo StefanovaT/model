@@ -7,6 +7,15 @@ uid: Logistics.Common.LogisticUnitContents
 
 Theoretical or actual content of a logistic unit. Entity: Log_Logistic_Unit_Contents (Introduced in version 21.1.0.77)
 
+## Renames
+
+Old name: **Logistics.LogisticUnitContents**  
+New name: **Logistics.Common.LogisticUnitContents**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{LogisticUnit.SerialCode}_  

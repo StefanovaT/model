@@ -7,6 +7,15 @@ uid: General.Documents.DocumentDistributedAmounts
 
 Contains the amounts which are distributed by the system over the document lines as a result of additional amount calculations. Entity: Gen_Document_Distributed_Amounts
 
+## Renames
+
+Old name: **General.DocumentDistributedAmounts**  
+New name: **General.Documents.DocumentDistributedAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentAmountType} {DocumentLineId} {Amount}_  

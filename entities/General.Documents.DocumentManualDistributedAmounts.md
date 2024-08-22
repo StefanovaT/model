@@ -11,6 +11,15 @@ Obsolete. Not used. Entity: Gen_Document_Manual_Distributed_Amounts (Obsoleted i
 > **OBSOLETE! Do not use!**   
 
 
+## Renames
+
+Old name: **General.DocumentManualDistributedAmounts**  
+New name: **General.Documents.DocumentManualDistributedAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Id}: {DocumentId}_  

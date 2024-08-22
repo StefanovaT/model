@@ -7,6 +7,15 @@ uid: Logistics.Transportation.TransportationOrderLines
 
 Different cargoes of a transportation order. Entity: Log_Transportation_Order_Lines
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationOrderLines**  
+New name: **Logistics.Transportation.TransportationOrderLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{LineNo}. {TransportationOrder.DocumentNo} {TransportationOrder.DocumentType.TypeName:T}_  

@@ -7,6 +7,15 @@ uid: Logistics.Transportation.TransportationVehicles
 
 A vehicle, which is used for transportation. One actual vehicle might be defined multiple times as transportation vehicle - for different modes of transportation or cargo types. Entity: Log_Transportation_Vehicles
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationVehicles**  
+New name: **Logistics.Transportation.TransportationVehicles**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Code}: {Vehicle.VehicleType:T}, {Vehicle.VehicleRegistrationNumber:T}_  

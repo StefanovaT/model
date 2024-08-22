@@ -320,3 +320,168 @@ New name: **Systems.Documents.RoleUsers**
 Version: **24.1.101.1**  
 Case: **36967**  
 
+Old name: **General.Currencies**  
+New name: **General.Currencies.Currencies**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.CurrencyDirectories**  
+New name: **General.Currencies.CurrencyDirectories**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.CurrencyDirectoryLines**  
+New name: **General.Currencies.CurrencyDirectoryLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentAmounts**  
+New name: **General.Documents.DocumentAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentComments**  
+New name: **General.Documents.DocumentComments**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentDistributedAmounts**  
+New name: **General.Documents.DocumentDistributedAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentFileAttachments**  
+New name: **General.Documents.DocumentFileAttachments**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentFulfillments**  
+New name: **General.Documents.DocumentFulfillments**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentLineAmounts**  
+New name: **General.Documents.DocumentLineAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentLinks**  
+New name: **General.Documents.DocumentLinks**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentManualDistributedAmounts**  
+New name: **General.Documents.DocumentManualDistributedAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentParties**  
+New name: **General.Documents.DocumentParties**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentPrints**  
+New name: **General.Documents.DocumentPrints**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.Documents**  
+New name: **General.Documents.Documents**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.DocumentStateChanges**  
+New name: **General.Documents.DocumentStateChanges**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.LinkTypes**  
+New name: **Systems.Documents.LinkTypes**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.PartyApplicableLegislations**  
+New name: **General.Contacts.PartyApplicableLegislations**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.PartyLocationNumbers**  
+New name: **General.Contacts.PartyLocationNumbers**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **General.ReportQueries**  
+New name: **Systems.Core.ReportQueries**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.CompositeProductComponents**  
+New name: **General.Products.CompositeProductComponents**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.LogisticUnitContents**  
+New name: **Logistics.Common.LogisticUnitContents**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.LogisticUnits**  
+New name: **Logistics.Common.LogisticUnits**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.LogisticUnitSpecifications**  
+New name: **Logistics.Common.LogisticUnitSpecifications**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.LogisticUnitTypes**  
+New name: **Logistics.Common.LogisticUnitTypes**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationExecutionLines**  
+New name: **Logistics.Transportation.TransportationExecutionLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationExecutions**  
+New name: **Logistics.Transportation.TransportationExecutions**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationModes**  
+New name: **Logistics.Transportation.TransportationModes**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationOrderLines**  
+New name: **Logistics.Transportation.TransportationOrderLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationOrders**  
+New name: **Logistics.Transportation.TransportationOrders**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationRequisitionLines**  
+New name: **Logistics.Transportation.TransportationRequisitionLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationRequisitions**  
+New name: **Logistics.Transportation.TransportationRequisitions**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Logistics.Shipment.TransportationVehicles**  
+New name: **Logistics.Transportation.TransportationVehicles**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+Old name: **Prodution.WorkOrderDocumentTypesOptions**  
+New name: **Production.ShopFloor.WorkOrderDocumentTypesOptions**  
+Version: **25.1.0.64**  
+Case: **37169**  
+

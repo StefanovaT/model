@@ -7,6 +7,15 @@ uid: Logistics.Transportation.TransportationExecutionLines
 
 Contains details of executions of transportation order lines. Entity: Log_Transportation_Execution_Lines (Introduced in version 18.2)
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationExecutionLines**  
+New name: **Logistics.Transportation.TransportationExecutionLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{LineNo}. {TransportationExecution.DocumentNo} {TransportationExecution.DocumentType.TypeName:T}_  

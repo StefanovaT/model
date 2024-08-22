@@ -7,6 +7,15 @@ uid: General.Currencies.CurrencyDirectoryLines
 
 Contains exchange rate for a currency against the main currency of currency directory. Entity: Gen_Currency_Directory_Lines
 
+## Renames
+
+Old name: **General.CurrencyDirectoryLines**  
+New name: **General.Currencies.CurrencyDirectoryLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{CurrencyDirectory.Name}_  

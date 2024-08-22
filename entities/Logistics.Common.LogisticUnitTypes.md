@@ -7,6 +7,15 @@ uid: Logistics.Common.LogisticUnitTypes
 
 Types of logistic units, like EU-PALLET, 40x40 pallet, ISO container, etc. Entity: Log_Logistic_Unit_Types (Introduced in version 21.1.0.77)
 
+## Renames
+
+Old name: **Logistics.LogisticUnitTypes**  
+New name: **Logistics.Common.LogisticUnitTypes**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

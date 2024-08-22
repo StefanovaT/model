@@ -7,6 +7,15 @@ uid: Logistics.Transportation.TransportationRequisitionLines
 
 One line in a client requisition for transportation. Different lines usually represent requisitions for different cargo types. Entity: Log_Transportation_Requisition_Lines
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationRequisitionLines**  
+New name: **Logistics.Transportation.TransportationRequisitionLines**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{LineNo}. {TransportationRequisition.DocumentNo} {TransportationRequisition.DocumentType.TypeName:T}_  

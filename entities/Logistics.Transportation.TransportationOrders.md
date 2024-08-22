@@ -8,6 +8,15 @@ uid: Logistics.Transportation.TransportationOrders
 
 Transportation ordered to specific carrier or vehicle. Entity: Log_Transportation_Orders
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationOrders**  
+New name: **Logistics.Transportation.TransportationOrders**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.TypeName:T} {DocumentNo}{StateTagsAttribute}_  

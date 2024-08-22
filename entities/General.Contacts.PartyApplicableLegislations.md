@@ -7,6 +7,15 @@ uid: General.Contacts.PartyApplicableLegislations
 
 Specifies a legislation, which is applicable for a party. A single party can have more than one applicable legislations. Entity: Gen_Party_Applicable_Legislations (Introduced in version 19.1)
 
+## Renames
+
+Old name: **General.PartyApplicableLegislations**  
+New name: **General.Contacts.PartyApplicableLegislations**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Party.PartyName:T}_  

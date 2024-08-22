@@ -7,6 +7,15 @@ uid: Logistics.Transportation.TransportationModes
 
 Represents a mode of transportation, like water, air, road, etc. Entity: Log_Transportation_Modes
 
+## Renames
+
+Old name: **Logistics.Shipment.TransportationModes**  
+New name: **Logistics.Transportation.TransportationModes**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  

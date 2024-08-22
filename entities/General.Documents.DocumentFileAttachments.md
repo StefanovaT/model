@@ -11,6 +11,15 @@ Contains files, attached to the documents. Entity: Gen_Document_File_Attachments
 > **OBSOLETE! Do not use!**   
 
 
+## Renames
+
+Old name: **General.DocumentFileAttachments**  
+New name: **General.Documents.DocumentFileAttachments**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{FileName}_  

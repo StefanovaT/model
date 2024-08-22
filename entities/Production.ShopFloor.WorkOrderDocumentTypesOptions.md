@@ -7,6 +7,15 @@ uid: Production.ShopFloor.WorkOrderDocumentTypesOptions
 
 Options for user-defined Work Order document types. Entity: Prd_Work_Order_Document_Types_Options
 
+## Renames
+
+Old name: **Prodution.WorkOrderDocumentTypesOptions**  
+New name: **Production.ShopFloor.WorkOrderDocumentTypesOptions**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentType.EntityName}_  

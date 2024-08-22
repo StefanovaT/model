@@ -7,6 +7,15 @@ uid: General.Documents.DocumentAmounts
 
 Contains a specific instance of an additional amount for a specific document. Entity: Gen_Document_Amounts
 
+## Renames
+
+Old name: **General.DocumentAmounts**  
+New name: **General.Documents.DocumentAmounts**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{DocumentAmountType.AmountTypeName:T}_  

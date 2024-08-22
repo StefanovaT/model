@@ -11,6 +11,15 @@ Obsolete. Not used. Entity: Gen_Link_Types (Obsoleted in version 22.1.6.60)
 > **OBSOLETE! Do not use!**   
 
 
+## Renames
+
+Old name: **General.LinkTypes**  
+New name: **Systems.Documents.LinkTypes**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name}_  

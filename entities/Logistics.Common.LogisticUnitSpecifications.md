@@ -7,6 +7,15 @@ uid: Logistics.Common.LogisticUnitSpecifications
 
 Specification of a logistic unit. The database can contain any kind of specification, but most client applications and integrated methods process GS1 specifications (application codes). Entity: Log_Logistic_Unit_Specifications (Introduced in version 21.1.0.77)
 
+## Renames
+
+Old name: **Logistics.LogisticUnitSpecifications**  
+New name: **Logistics.Common.LogisticUnitSpecifications**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{Name:T}_  

@@ -7,6 +7,15 @@ uid: Logistics.Common.LogisticUnits
 
 Composition of products established for transport and/or storage which needs to be managed through the supply chain. Entity: Log_Logistic_Units (Introduced in version 21.1.0.77)
 
+## Renames
+
+Old name: **Logistics.LogisticUnits**  
+New name: **Logistics.Common.LogisticUnits**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{SerialCode}_  

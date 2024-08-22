@@ -7,6 +7,15 @@ uid: General.Currencies.Currencies
 
 List of user-defined currencies. Entity: Gen_Currencies
 
+## Renames
+
+Old name: **General.Currencies**  
+New name: **General.Currencies.Currencies**  
+Version: **25.1.0.64**  
+Case: **37169**  
+
+
+
 ## Default Visualization
 Default Display Text Format:  
 _{CurrencySign}_  
