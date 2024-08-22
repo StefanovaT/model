@@ -111,20 +111,33 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Condition 1: <br>
-If the data entity includes a Name and a Code, then: <br>
-Set the &quot;Entity Name&quot; field with the actual entity name. <br>
-Set the &quot;Code&quot; field with the value from the Code Data Member. <br>
-Set the &quot;Name&quot; field with the value from the Name Data Member. <br>
-Condition 2: <br>
-If the data entity does not include either a Name or a Code, then: <br>
-Set the &quot;Entity Name&quot; field with the actual entity name. <br>
-Set the &quot;Code&quot; field to Null. <br>
-Set the &quot;Name&quot; field with the value from Entity.DisplayText. <br></td>
+<td><p>Set the AccessKey fields as follows: <br></p>
+<ol>
+<li>Field: EntityName <br>                                                            |
+EntityName = Entity Name (e.g., Stores) <br></li>
+<li>Field: Name <br>                                                                  |</li>
+</ol>
+<ul>
+<li>If the respective entity has a name field (Name Data Member) -&gt; then
+Name = Entity.Name <br></li>
+<li>If the respective entity does not have a name field (Name Data Member) -&gt; then
+Name = Entity.DisplayText <br></li>
+</ul>
+<ol start="3">
+<li>Field: Code <br>                                                                  |
+<ul>
+<li>If the respective entity has a code field (Code Data Member) -&gt; then
+Code = Entity.Code
+If the respective entity does not have a code field (Code Data Member) -&gt; then
+Code = Null</li>
+</ul>
+</li>
+</ol>
+</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>This rule ensures that when creating a key from the Access Permissions panel, the
+<td>This rule ensures that when creating a private key from the Access Permissions panel, the|
 Entity Name, Name, and Code fields in the Access keys entity are automatically filled.</td>
 </tr>
 <tr>
