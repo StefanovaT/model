@@ -18,10 +18,8 @@ Show in UI:  _ShownByDefault_
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[Systems.Core.ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)  
-Aggregate Root:  
-[Systems.Core.ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)  
+Aggregate Tree  
+* [Systems.Core.ObjectFiles](Systems.Core.ObjectFiles.md)  
 
 ## Attributes
 
@@ -52,7 +50,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [CreationUser](Systems.Core.ObjectFiles.md#creationuser) | [Users](Systems.Security.Users.md) (nullable) | The user, who created the file record. null if it is unknown. `Filter(multi eq)` `Introduced in version 20.1` |
 | [LastUpdateUser](Systems.Core.ObjectFiles.md#lastupdateuser) | [Users](Systems.Security.Users.md) (nullable) | The user, who performed the last update to the file record. null if it is unknown. `Filter(multi eq)` `Introduced in version 20.1` |
-| [Object](Systems.Core.ObjectFiles.md#object) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The object to which the file is attached. `Required` `Filter(multi eq)` `Owner` |
+| [Object](Systems.Core.ObjectFiles.md#object) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The object to which the file is attached. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -287,13 +285,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Object
 
-The object to which the file is attached. `Required` `Filter(multi eq)` `Owner`
+The object to which the file is attached. `Required` `Filter(multi eq)`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 

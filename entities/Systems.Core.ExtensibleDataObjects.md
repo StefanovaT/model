@@ -20,7 +20,6 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [Systems.Core.ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)  
-  * [Systems.Core.ObjectFiles](Systems.Core.ObjectFiles.md)  
   * [Systems.Core.ObjectVersions](Systems.Core.ObjectVersions.md)  
 
 ## Attributes
@@ -51,7 +50,6 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Files | [ObjectFiles](Systems.Core.ObjectFiles.md) | List of `ObjectFile`(Systems.Core.ObjectFiles.md) child objects, based on the `Systems.Core.ObjectFile.Object`(Systems.Core.ObjectFiles.md#object) back reference 
 | Versions | [ObjectVersions](Systems.Core.ObjectVersions.md) | List of `ObjectVersion`(Systems.Core.ObjectVersions.md) child objects, based on the `Systems.Core.ObjectVersion.Object`(Systems.Core.ObjectVersions.md#object) back reference 
 
 
