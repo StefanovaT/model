@@ -36,7 +36,7 @@ Aggregate Tree
 | [ObjectVersion](Projects.Agile.Cases.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](Projects.Agile.Cases.md#priority) | [Priority](Projects.Agile.Cases.md#priority) | Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Default(7)` `Filter(eq)` 
 | [SystemState](Projects.Agile.Cases.md#systemstate) | [SystemState](Projects.Agile.Cases.md#systemstate) | The base state of the case. `Required` `Default("1")` `Filter(eq)` 
-| [Title](Projects.Agile.Cases.md#title) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | Case short title. `Required` `Filter(like)` 
+| [Title](Projects.Agile.Cases.md#title) | string (128) | Case short title. `Required` `Filter(like)` 
 
 ## References
 
@@ -184,10 +184,11 @@ _Show in UI_: **CannotBeShown**
 
 Case short title. `Required` `Filter(like)`
 
-_Type_: **[MultilanguageString (128)](../data-types.md#multilanguagestring)**  
+_Type_: **string (128)**  
 _Category_: **System**  
 _Supported Filters_: **Like**  
 _Supports Order By_: **False**  
+_Maximum Length_: **128**  
 _Show in UI_: **ShownByDefault**  
 
 

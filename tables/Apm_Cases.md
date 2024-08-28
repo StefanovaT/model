@@ -27,7 +27,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |Specified, when the case is assigned to a group of users.|
 |[System_State](#system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`|The base state of the case.|
-|[Title](#title)|`nvarchar(128)` `ML`|Case short title.|
+|[Title](#title)|`nvarchar(128)` |Case short title.|
 
 ## Columns
 
@@ -619,7 +619,7 @@ Case short title.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(128) (MultiLanguage)|
+|Type|nvarchar(128)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
