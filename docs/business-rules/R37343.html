@@ -83,7 +83,7 @@
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Projects.Agile.Cases.html">Projects.Agile.Cases Entity</a>                                                     |</td>
+<td><a class="xref" href="../entities/Projects.Agile.Cases.html">Projects.Agile.Cases Entity</a></td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
@@ -111,19 +111,15 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>If the System state field has been changed
-, then create a new Case Development record where Development Type = State change /stored as &quot;STH&quot;<br>
+<td>If the System state field has been changed<br>
+, then create a new CaseDevelopment record where DevelopmentType = State change/STH and NewSystemState = Case.SystemState<br>
 <br><br>
-If the Assigned To User field has been changed
-, then create a new Case Development record where Development Type = Assignment /stored as &quot;ASH&quot;<br></td>
+If the Assigned To User field has been changed<br>
+, then create a new CaseDevelopment record where DevelopmentType = Assignment/ASH and AssignedToUser = Case.AssignedToUser<br></td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>When there is no sales person assigned to the customer, the rule facilitates this assignment.
-<br><br>
-It assigns the sales person who is determined via a Sales Person Assignment Rule
-to be responsible for the respective customer according to its type, sales area
-and the enterprise company for which it is recorded.</td>
+<td>The rule ensures that the history of state changes and assignments for a given case will be tracked by creating new case developments containing this information.|</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
