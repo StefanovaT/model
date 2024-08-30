@@ -26,7 +26,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Project_Milestone_Id](#project_milestone_id)|`uniqueidentifier` |Determines the milestone for which the case must be resolved.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |Specified, when the case is assigned to a group of users.|
-|[System_State](#system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`|The base state of the case.|
+|[System_State](#system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, Readonly|The base state of the case.|
 |[Title](#title)|`nvarchar(128)` |Case short title.|
 
 ## Columns
@@ -578,7 +578,7 @@ The base state of the case.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|

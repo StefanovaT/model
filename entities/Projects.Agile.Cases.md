@@ -35,7 +35,7 @@ Aggregate Tree
 | [Number](Projects.Agile.Cases.md#number) | int32 | The unique number of the Case. `Required` `Filter(eq)` `ReadOnly` `Introduced in version 24.1.3.86` 
 | [ObjectVersion](Projects.Agile.Cases.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Priority](Projects.Agile.Cases.md#priority) | [Priority](Projects.Agile.Cases.md#priority) | Priority of the case, on a scale from 1 (highest) to 7 (lowest). `Required` `Default(7)` `Filter(eq)` 
-| [SystemState](Projects.Agile.Cases.md#systemstate) | [SystemState](Projects.Agile.Cases.md#systemstate) | The base state of the case. `Required` `Default("1")` `Filter(eq)` 
+| [SystemState](Projects.Agile.Cases.md#systemstate) | [SystemState](Projects.Agile.Cases.md#systemstate) | The base state of the case. `Required` `Default("1")` `Filter(eq)` `ReadOnly` 
 | [Title](Projects.Agile.Cases.md#title) | string (128) | Case short title. `Required` `Filter(like)` 
 
 ## References
@@ -159,7 +159,7 @@ _Show in UI_: **ShownByDefault**
 
 ### SystemState
 
-The base state of the case. `Required` `Default("1")` `Filter(eq)`
+The base state of the case. `Required` `Default("1")` `Filter(eq)` `ReadOnly`
 
 _Type_: **[SystemState](Projects.Agile.Cases.md#systemstate)**  
 _Category_: **System**  
@@ -178,7 +178,7 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **BACKLOG**  
-_Show in UI_: **CannotBeShown**  
+_Show in UI_: **HiddenByDefault**  
 
 ### Title
 

@@ -92,6 +92,8 @@ _Allowed Values (Projects.Agile.CaseDevelopmentsRepository.DevelopmentType Enum 
 | Edit | Edit. Stored as 'EDT'. <br /> _Database Value:_ 'EDT' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Edit' |
 | Assignment | Assignment . Stored as 'ASN'. <br /> _Database Value:_ 'ASN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Assignment' |
 | ChangeState | Change state. Stored as 'STA'. <br /> _Database Value:_ 'STA' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ChangeState' |
+| AssignmentH | Assignment. Stored as 'ASH'. <br /> _Database Value:_ 'ASH' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AssignmentH' |
+| ChangeStateH | Change state. Stored as 'STH'. <br /> _Database Value:_ 'STH' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'ChangeStateH' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
