@@ -29,6 +29,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [Active](Applications.Mail.BoxFolders.md#active) | boolean | True when the mail box folder is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.76` 
 | [DisplayText](Applications.Mail.BoxFolders.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [FolderName](Applications.Mail.BoxFolders.md#foldername) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Multi-language folder name. `Required` `Filter(eq;like)` 
 | [Id](Applications.Mail.BoxFolders.md#id) | guid |  
@@ -46,6 +47,17 @@ Aggregate Root:
 
 
 ## Attribute Details
+
+### Active
+
+True when the mail box folder is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.76`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 

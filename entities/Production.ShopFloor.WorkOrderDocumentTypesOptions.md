@@ -41,6 +41,7 @@ Aggregate Root:
 | [DisplayText](Production.ShopFloor.WorkOrderDocumentTypesOptions.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Production.ShopFloor.WorkOrderDocumentTypesOptions.md#id) | guid |  
 | [ObjectVersion](Production.ShopFloor.WorkOrderDocumentTypesOptions.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [ProductionМode](Production.ShopFloor.WorkOrderDocumentTypesOptions.md#productionмode) | [ProductionМode](Production.ShopFloor.WorkOrderDocumentTypesOptions.md#productionмode) | Specifies whether the document is for Production or Decomposition purposes. `Required` `Default("P")` `Filter(eq)` `Introduced in version 25.1.0.76` 
 
 ## References
 
@@ -80,6 +81,26 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### ProductionМode
+
+Specifies whether the document is for Production or Decomposition purposes. `Required` `Default("P")` `Filter(eq)` `Introduced in version 25.1.0.76`
+
+_Type_: **[ProductionМode](Production.ShopFloor.WorkOrderDocumentTypesOptions.md#productionмode)**  
+_Category_: **System**  
+Allowed values for the `ProductionМode`(Production.ShopFloor.WorkOrderDocumentTypesOptions.md#productionмode) data attribute  
+_Allowed Values (Production.ShopFloor.WorkOrderDocumentTypesOptionsRepository.ProductionМode Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| Production | Production. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Production' |
+| Decomposition | Decomposition. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Decomposition' |
+| ProductionOrDecomposition<br />DependsOnSign | Production or Decomposition (depends on sign) . Stored as 'S'. <br /> _Database Value:_ 'S' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ProductionOrDecomposition<br />DependsOnSign' |
+
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **Production**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details
