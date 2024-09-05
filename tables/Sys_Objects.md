@@ -48,7 +48,7 @@ The exact server time (in UTC) when the object represented by this system object
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime (Allows NULL)|
@@ -157,7 +157,7 @@ The entity type of the row to which the object is bound
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|yes|
+|Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(64)|
@@ -338,7 +338,7 @@ The exact server time (in UTC) of the last modification of the object represente
 |Primary Key|no|
 |Readonly|no|
 |RTF|no|
-|Sortable|no|
+|Sortable|yes|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|datetime (Allows NULL)|

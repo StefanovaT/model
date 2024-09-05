@@ -119,7 +119,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#creationtimeutc">CreationTimeUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. <code>Filter(ge;le)</code> <code>Introduced in version 19.1</code></td>
+<td>The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. <code>Filter(ge;le)</code> <code>ORD</code> <code>Introduced in version 19.1</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#displaytext">DisplayText</a></td>
@@ -134,7 +134,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#entitytype">EntityType</a></td>
 <td>string (64)</td>
-<td>The entity type of the row to which the object is bound. <code>Required</code> <code>Default(&quot; &quot;)</code> <code>Filter(eq)</code> <code>ORD</code></td>
+<td>The entity type of the row to which the object is bound. <code>Required</code> <code>Default(&quot; &quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#externalid">ExternalId</a></td>
@@ -159,7 +159,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#lastupdatetimeutc">LastUpdateTimeUtc</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. <code>Filter(ge;le)</code> <code>Introduced in version 19.1</code></td>
+<td>The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. <code>Filter(ge;le)</code> <code>ORD</code> <code>Introduced in version 19.1</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Core.ExtensibleDataObjects.html#latestversion">LatestVersion</a></td>
@@ -219,11 +219,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="creationtimeutc">CreationTimeUtc</h3>
-<p>The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. <code>Filter(ge;le)</code> <code>Introduced in version 19.1</code></p>
+<p>The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. <code>Filter(ge;le)</code> <code>ORD</code> <code>Introduced in version 19.1</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
@@ -235,16 +236,16 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h3 id="entityitemid">EntityItemId</h3>
 <p>The Id of the primary row to which the object is bound. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong>guid</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="entitytype">EntityType</h3>
-<p>The entity type of the row to which the object is bound. <code>Required</code> <code>Default(&quot; &quot;)</code> <code>Filter(eq)</code> <code>ORD</code></p>
+<p>The entity type of the row to which the object is bound. <code>Required</code> <code>Default(&quot; &quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>True</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Default Value</em>: ** **<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -281,11 +282,12 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lastupdatetimeutc">LastUpdateTimeUtc</h3>
-<p>The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. <code>Filter(ge;le)</code> <code>Introduced in version 19.1</code></p>
+<p>The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. <code>Filter(ge;le)</code> <code>ORD</code> <code>Introduced in version 19.1</code></p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="latestversion">LatestVersion</h3>
 <p>The latest saved version of the object. Starts from 1 and increments with 1 for each new version. <code>Required</code> <code>Default(1)</code></p>
