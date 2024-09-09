@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>R37354 ExciseAdministrativeDocuments - Document And Tax Warehouses Enterprise Company Are Equal | ERP.net Domain Model </title>
+      <title>R37237-3 CreateDefaultBoxFolders - Create Default Box Folders | ERP.net Domain Model </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="R37354 ExciseAdministrativeDocuments - Document And Tax Warehouses Enterprise Company Are Equal | ERP.net Domain Model ">
+      <meta name="title" content="R37237-3 CreateDefaultBoxFolders - Create Default Box Folders | ERP.net Domain Model ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37354.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/37237-3.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -71,63 +71,76 @@
         </div>
 
         <article data-uid="">
-<h1 id="r37354-exciseadministrativedocuments---document-and-tax-warehouses-enterprise-company-are-equal">R37354 ExciseAdministrativeDocuments - Document And Tax Warehouses Enterprise Company Are Equal</h1>
+<h1 id="r37237-3-createdefaultboxfolders---create-default-box-folders">R37237-3 CreateDefaultBoxFolders - Create Default Box Folders</h1>
 
 <table>
-<col style="width:16.24%">
-<col style="width:83.76%">
+<col style="width:18.8%">
+<col style="width:81.2%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
-<td>R37354</td>
+<td>R37237-3</td>
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Finance.Excise.ExciseAdministrativeDocuments.html">Finance.Excise.ExciseAdministrativeDocuments Entity</a></td>
+<td><a class="xref" href="../entities/Applications.Mail.Boxes.html">Applications.Mail.Boxes Entity</a></td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>DocumentAndTaxWarehousesEnterpriseCompanyAreEqual</td>
+<td>CreateDefaultBoxFolders</td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>-</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
 <td>Back-End</td>
 </tr>
 <tr>
-<td><strong>Attribute</strong></td>
-<td>EnterpriseCompany</td>
+<td><strong>Events</strong></td>
+<td>Commit</td>
 </tr>
 <tr>
-<td><strong>Events</strong></td>
-<td>Planning +</td>
+<td><strong>Priority</strong></td>
+<td>Normal</td>
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
-<td>NO</td>
+<td>YES
+<br><br>
+<br><br></td>
+</tr>
+<tr>
+<td><strong>Applicable
+Legislations</strong></td>
+<td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">ALL // no condition
+needed</a></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Validate that: <br>
-Finance.Excise.ExciseAdministrativeDocuments.EnterpriseCompany ==
-Finance.Excise.TaxWarehouses.EnterpriseCompany</td>
+<td>Validate that:
+<br><br>
+If (Box.ObjectState = Added)
+<br><br>
+then
+<br><br>
+CreateDefaultBoxFolders()</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule validates that the selected tax warehouse has the same enterprise company as the
-excise administrative document.</td>
+<td>When the mailbox is initially created, all corresponding default mail folders, as described
+in the <a href="../entities/Applications.Mail.BoxFolders.html#systempurpose">SystemPurpose</a>,
+should also be created.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>The Enterprise Company of the excise administrative document
-'{Finance.Excise.ExciseAdministrativeDocument.DocumentNo}' is different from that of the
-selected tax warehouse '{TaxWarehouse.Name}'. <br>
-Please select a tax warehouse that belongs to the same Enterprise Company as the excise
-administrative document.</td>
+<td>-</td>
 </tr>
 <tr>
 <td><strong>Introduced In
 Version</strong></td>
-<td>Introduced: v.24</td>
+<td>25</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
@@ -141,7 +154,7 @@ topic <a href="../templates/template-description-system-business-rules.html">Sys
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37354.md/#L1" class="edit-link">Suggest improvement to this page</a>
+          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/37237-3.md/#L1" class="edit-link">Suggest improvement to this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

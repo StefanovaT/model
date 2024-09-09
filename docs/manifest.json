@@ -22,6 +22,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/37237-3.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/37237-3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R17342-1.md",
       "output": {
         ".html": {
