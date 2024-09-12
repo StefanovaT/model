@@ -30,9 +30,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -48,10 +48,10 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.Documents.DocumentLineAmounts.md#document) | [Documents](General.Documents.md) | The <see cref="General.Document"/> to which this DocumentLineAmount belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentLineAmounts.md#document) | [Documents](General.Documents.Documents.md) | The <see cref="Document"/> to which this DocumentLineAmount belongs. `Required` `Filter(multi eq)` `Owner` |
 | [DocumentAmountType](General.Documents.DocumentLineAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The type of amount for which the distribution pattern is specified. `Required` `Filter(multi eq)` |
 | [Product](General.Documents.DocumentLineAmounts.md#product) | [Products](General.Products.Products.md) | The product for which the distribution is specified. It is also the product, specified in the document line, but is duplicated here for integrity purposes. `Required` `Filter(multi eq)` |
-| [ReferencedDocument](General.Documents.DocumentLineAmounts.md#referenceddocument) | [Documents](General.Documents.md) (nullable) | When not null, specifies that this distribution is specified for a referenced document (not the document for which the amount is calculated). `Filter(multi eq)` |
+| [ReferencedDocument](General.Documents.DocumentLineAmounts.md#referenceddocument) | [Documents](General.Documents.Documents.md) (nullable) | When not null, specifies that this distribution is specified for a referenced document (not the document for which the amount is calculated). `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -110,9 +110,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### Document
 
-The <see cref="General.Document"/> to which this DocumentLineAmount belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Document"/> to which this DocumentLineAmount belongs. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -141,7 +141,7 @@ _Show in UI_: **ShownByDefault**
 
 When not null, specifies that this distribution is specified for a referenced document (not the document for which the amount is calculated). `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

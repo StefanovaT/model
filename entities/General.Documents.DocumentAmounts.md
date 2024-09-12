@@ -30,9 +30,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -52,7 +52,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.Documents.DocumentAmounts.md#document) | [Documents](General.Documents.md) | The <see cref="General.Document"/> to which this DocumentAmount belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentAmounts.md#document) | [Documents](General.Documents.Documents.md) | The <see cref="Document"/> to which this DocumentAmount belongs. `Required` `Filter(multi eq)` `Owner` |
 | [DocumentAmountType](General.Documents.DocumentAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The type of the amount. `Required` `Filter(multi eq)` |
 | [InputAmountCurrency](General.Documents.DocumentAmounts.md#inputamountcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | When specifying the amount directly in Input Amount, this contains the currency of the amount. Used and required when Input Amount is not null. `Filter(multi eq)` |
 | [InputUnit](General.Documents.DocumentAmounts.md#inputunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | Measurement unit of the input unit amount. `Filter(multi eq)` |
@@ -61,7 +61,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| ReferencedDocuments | [DocumentAmountReferencedDocuments](General.DocumentAmountReferencedDocuments.md) | List of `DocumentAmount<br />ReferencedDocument`(General.DocumentAmount<br />ReferencedDocuments.md) child objects, based on the `General.DocumentAmount<br />ReferencedDocument.DocumentAmount`(General.DocumentAmount<br />ReferencedDocuments.md#documentamount) back reference 
+| ReferencedDocuments | [DocumentAmountReferencedDocuments](General.Documents.DocumentAmountReferencedDocuments.md) | List of `DocumentAmount<br />ReferencedDocument`(General.Documents.DocumentAmount<br />ReferencedDocuments.md) child objects, based on the `General.Documents.DocumentAmount<br />ReferencedDocument.DocumentAmount`(General.Documents.DocumentAmount<br />ReferencedDocuments.md#documentamount) back reference 
 
 
 ## Attribute Details
@@ -170,9 +170,9 @@ _Show in UI_: **CannotBeShown**
 
 ### Document
 
-The <see cref="General.Document"/> to which this DocumentAmount belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Document"/> to which this DocumentAmount belongs. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

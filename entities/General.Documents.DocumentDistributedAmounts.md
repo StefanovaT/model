@@ -30,9 +30,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -49,9 +49,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.Documents.DocumentDistributedAmounts.md#document) | [Documents](General.Documents.md) | The <see cref="General.Document"/> to which this DocumentDistributedAmount belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentDistributedAmounts.md#document) | [Documents](General.Documents.Documents.md) | The <see cref="Document"/> to which this DocumentDistributedAmount belongs. `Required` `Filter(multi eq)` `Owner` |
 | [DocumentAmountType](General.Documents.DocumentDistributedAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The type of amount which is distributed. `Required` `Filter(multi eq)` |
-| [ReferencedDocument](General.Documents.DocumentDistributedAmounts.md#referenceddocument) | [Documents](General.Documents.md) (nullable) | In not null the Document_Line_Id is a line of the document with Referenced_Document_Id. `Filter(multi eq)` |
+| [ReferencedDocument](General.Documents.DocumentDistributedAmounts.md#referenceddocument) | [Documents](General.Documents.Documents.md) (nullable) | In not null the Document_Line_Id is a line of the document with Referenced_Document_Id. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -120,9 +120,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### Document
 
-The <see cref="General.Document"/> to which this DocumentDistributedAmount belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Document"/> to which this DocumentDistributedAmount belongs. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -142,7 +142,7 @@ _Show in UI_: **ShownByDefault**
 
 In not null the Document_Line_Id is a line of the document with Referenced_Document_Id. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

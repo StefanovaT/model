@@ -57,7 +57,7 @@ Aggregate Root:
 | [Document](Logistics.Inventory.StoreTransactionLines.md#document) | [StoreTransactions](Logistics.Inventory.StoreTransactions.md) | The transaction to which the transaction line belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Inventory.StoreTransactionLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | If non-null, contains the specific lot to use for the movement. `Filter(multi eq)` |
 | [OriginalProduct](Logistics.Inventory.StoreTransactionLines.md#originalproduct) | [Products](General.Products.Products.md) (nullable) | When specified, contains the original product, which was ordered to be received or issued. The actual product is recorded in the Product field. Deprecated. Use Parent Store Order Line.Product instead. `Filter(multi eq)` |
-| [ParentDocument](Logistics.Inventory.StoreTransactionLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Logistics.Inventory.StoreTransactionLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [ParentStoreOrderLine](Logistics.Inventory.StoreTransactionLines.md#parentstoreorderline) | [StoreOrderLines](Logistics.Inventory.StoreOrderLines.md) (nullable) | The line, containing the ordered quantity, which this execution line executes. `Filter(multi eq)` |
 | [Product](Logistics.Inventory.StoreTransactionLines.md#product) | [Products](General.Products.Products.md) | The item that was received/issued. `Required` `Filter(multi eq)` |
 | [ProductCode](Logistics.Inventory.StoreTransactionLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Used to set the Product_Id thru the coding systems. `Filter(multi eq)` |
@@ -357,7 +357,7 @@ _Front-End Recalc Expressions:_
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

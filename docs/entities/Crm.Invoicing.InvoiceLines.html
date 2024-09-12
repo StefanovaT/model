@@ -261,7 +261,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Crm.Invoicing.InvoiceLines.html#parentdocument">ParentDocument</a></td>
-<td><a href="General.Documents.html">Documents</a> (nullable)</td>
+<td><a href="General.Documents.Documents.html">Documents</a> (nullable)</td>
 <td>The document, which the current line executes. null when the current line does not execute another line. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></td>
 </tr>
 <tr>
@@ -751,7 +751,7 @@ Generic enum type for TransportMode properties<br>
 <code>obj.DetermineLineDiscount( Convert( ( obj.Invoice.DeliveryDate ?? obj.Invoice.DocumentDate), Nullable</code>1), obj.Invoice.Customer, obj.Product, obj.Quantity, obj.Invoice.EnterpriseCompany, obj.Invoice.EnterpriseCompanyLocation, IIF( ( obj.SalesOrder == null), null, obj.SalesOrder.DistributionChannel), IIF( ( obj.SalesOrder == null), null, obj.SalesOrder.PriceList))`</p>
 <h3 id="parentdocument">ParentDocument</h3>
 <p>The document, which the current line executes. null when the current line does not execute another line. <code>Filter(multi eq)</code> <code>Introduced in version 18.2</code></p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

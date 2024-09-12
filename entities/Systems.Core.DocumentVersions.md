@@ -49,7 +49,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Systems.Core.DocumentVersions.md#document) | [Documents](General.Documents.md) | The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly` |
+| [Document](Systems.Core.DocumentVersions.md#document) | [Documents](General.Documents.Documents.md) | The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly` |
 
 
 ## Attribute Details
@@ -180,7 +180,7 @@ _Show in UI_: **ShownByDefault**
 
 The document whoose version is stored in this row. `Required` `Filter(multi eq)` `ReadOnly`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

@@ -106,9 +106,9 @@ Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
 <p>Aggregate Parent:<br>
-<a href="General.Documents.html">General.Documents</a><br>
+<a href="General.Documents.Documents.html">General.Documents.Documents</a><br>
 Aggregate Root:<br>
-<a href="General.Documents.html">General.Documents</a></p>
+<a href="General.Documents.Documents.html">General.Documents.Documents</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -163,8 +163,8 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="General.Documents.DocumentDistributedAmounts.html#document">Document</a></td>
-<td><a href="General.Documents.html">Documents</a></td>
-<td>The <see cref="General.Document"></see> to which this DocumentDistributedAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
+<td><a href="General.Documents.Documents.html">Documents</a></td>
+<td>The <see cref="Document"></see> to which this DocumentDistributedAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 <tr>
 <td><a href="General.Documents.DocumentDistributedAmounts.html#documentamounttype">DocumentAmountType</a></td>
@@ -173,7 +173,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="General.Documents.DocumentDistributedAmounts.html#referenceddocument">ReferencedDocument</a></td>
-<td><a href="General.Documents.html">Documents</a> (nullable)</td>
+<td><a href="General.Documents.Documents.html">Documents</a> (nullable)</td>
 <td>In not null the Document_Line_Id is a line of the document with Referenced_Document_Id. <code>Filter(multi eq)</code></td>
 </tr>
 </tbody>
@@ -223,8 +223,8 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="document">Document</h3>
-<p>The <see cref="General.Document"></see> to which this DocumentDistributedAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<p>The <see cref="Document"></see> to which this DocumentDistributedAmount belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -238,7 +238,7 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="referenceddocument">ReferencedDocument</h3>
 <p>In not null the Document_Line_Id is a line of the document with Referenced_Document_Id. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>

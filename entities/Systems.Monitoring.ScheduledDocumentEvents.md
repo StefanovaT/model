@@ -49,8 +49,8 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](Systems.Monitoring.ScheduledDocumentEvents.md#document) | [Documents](General.Documents.md) | The document for which the event will be processed. `Required` `Filter(multi eq)` `ReadOnly` |
-| [SourceDocument](Systems.Monitoring.ScheduledDocumentEvents.md#sourcedocument) | [Documents](General.Documents.md) | The document that has caused this event to be scheduled. `Required` `Filter(multi eq)` `ReadOnly` |
+| [Document](Systems.Monitoring.ScheduledDocumentEvents.md#document) | [Documents](General.Documents.Documents.md) | The document for which the event will be processed. `Required` `Filter(multi eq)` `ReadOnly` |
+| [SourceDocument](Systems.Monitoring.ScheduledDocumentEvents.md#sourcedocument) | [Documents](General.Documents.Documents.md) | The document that has caused this event to be scheduled. `Required` `Filter(multi eq)` `ReadOnly` |
 
 
 ## Attribute Details
@@ -179,7 +179,7 @@ _Show in UI_: **ShownByDefault**
 
 The document for which the event will be processed. `Required` `Filter(multi eq)` `ReadOnly`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -188,7 +188,7 @@ _Show in UI_: **ShownByDefault**
 
 The document that has caused this event to be scheduled. `Required` `Filter(multi eq)` `ReadOnly`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

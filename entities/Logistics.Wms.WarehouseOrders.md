@@ -4,7 +4,7 @@ uid: Logistics.Wms.WarehouseOrders
 # Logistics.Wms.WarehouseOrders Entity
 
 **Namespace:** [Logistics.Wms](Logistics.Wms.md)  
-**Inherited From:** [General.Documents](General.Documents.md)  
+**Inherited From:** [General.Documents.Documents](General.Documents.Documents.md)  
 
 Contains order for internal warehouse operation or plan for execution of warehouse requisition. Entity: Wms_Warehouse_Orders (Introduced in version 20.1)
 
@@ -26,7 +26,7 @@ Aggregate Tree
 * [Logistics.Wms.WarehouseOrders](Logistics.Wms.WarehouseOrders.md)  
   * [Logistics.Wms.WarehouseOrderLines](Logistics.Wms.WarehouseOrderLines.md)  
   * [General.Documents.DocumentAmounts](General.Documents.DocumentAmounts.md)  
-    * [General.DocumentAmountReferencedDocuments](General.DocumentAmountReferencedDocuments.md)  
+    * [General.Documents.DocumentAmountReferencedDocuments](General.Documents.DocumentAmountReferencedDocuments.md)  
   * [General.Documents.DocumentComments](General.Documents.DocumentComments.md)  
   * [General.Documents.DocumentDistributedAmounts](General.Documents.DocumentDistributedAmounts.md)  
   * [General.Documents.DocumentFileAttachments](General.Documents.DocumentFileAttachments.md)  
@@ -40,55 +40,55 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AdjustmentNumber](Logistics.Wms.WarehouseOrders.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [AdjustmentTime](Logistics.Wms.WarehouseOrders.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [AdjustmentUser](Logistics.Wms.WarehouseOrders.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [CompleteTime](Logistics.Wms.WarehouseOrders.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [CreationTime](Logistics.Wms.WarehouseOrders.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [CreationUser](Logistics.Wms.WarehouseOrders.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [AdjustmentNumber](Logistics.Wms.WarehouseOrders.md#adjustmentnumber) | int32 | Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [AdjustmentTime](Logistics.Wms.WarehouseOrders.md#adjustmenttime) | datetime __nullable__ | Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [AdjustmentUser](Logistics.Wms.WarehouseOrders.md#adjustmentuser) | string (64) __nullable__ | The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [CompleteTime](Logistics.Wms.WarehouseOrders.md#completetime) | datetime __nullable__ | Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [CreationTime](Logistics.Wms.WarehouseOrders.md#creationtime) | datetime | Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [CreationUser](Logistics.Wms.WarehouseOrders.md#creationuser) | string (64) | The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
 | [DisplayText](Logistics.Wms.WarehouseOrders.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [DocumentDate](Logistics.Wms.WarehouseOrders.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md)) 
-| [DocumentNo](Logistics.Wms.WarehouseOrders.md#documentno) | string (20) | Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.md)) 
-| [DocumentNotes](Logistics.Wms.WarehouseOrders.md#documentnotes) | string (max) __nullable__ | Notes for this Document. (Inherited from [Documents](General.Documents.md)) 
-| [DocumentVersion](Logistics.Wms.WarehouseOrders.md#documentversion) | int32 | Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [EntityName](Logistics.Wms.WarehouseOrders.md#entityname) | string (64) | The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [DocumentDate](Logistics.Wms.WarehouseOrders.md#documentdate) | date | The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [DocumentNo](Logistics.Wms.WarehouseOrders.md#documentno) | string (20) | Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [DocumentNotes](Logistics.Wms.WarehouseOrders.md#documentnotes) | string (max) __nullable__ | Notes for this Document. (Inherited from [Documents](General.Documents.Documents.md)) 
+| [DocumentVersion](Logistics.Wms.WarehouseOrders.md#documentversion) | int32 | Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [EntityName](Logistics.Wms.WarehouseOrders.md#entityname) | string (64) | The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
 | [Id](Logistics.Wms.WarehouseOrders.md#id) | guid |  
 | [ObjectVersion](Logistics.Wms.WarehouseOrders.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ParentDocument<br />RelationshipType](Logistics.Wms.WarehouseOrders.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Logistics.Wms.WarehouseOrders.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [PlanningOnly](Logistics.Wms.WarehouseOrders.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ReadOnly](Logistics.Wms.WarehouseOrders.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [ReferenceDate](Logistics.Wms.WarehouseOrders.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md)) 
-| [ReferenceDocumentNo](Logistics.Wms.WarehouseOrders.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md)) 
-| [ReleaseTime](Logistics.Wms.WarehouseOrders.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [State](Logistics.Wms.WarehouseOrders.md#state) | [DocumentState](Logistics.Wms.WarehouseOrders.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [ParentDocument<br />RelationshipType](Logistics.Wms.WarehouseOrders.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Logistics.Wms.WarehouseOrders.md#parentdocumentrelationshiptype) __nullable__ | Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [PlanningOnly](Logistics.Wms.WarehouseOrders.md#planningonly) | boolean | Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [ReadOnly](Logistics.Wms.WarehouseOrders.md#readonly) | boolean | True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [ReferenceDate](Logistics.Wms.WarehouseOrders.md#referencedate) | datetime __nullable__ | Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [ReferenceDocumentNo](Logistics.Wms.WarehouseOrders.md#referencedocumentno) | string (20) __nullable__ | The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [ReleaseTime](Logistics.Wms.WarehouseOrders.md#releasetime) | datetime __nullable__ | Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [State](Logistics.Wms.WarehouseOrders.md#state) | [DocumentState](Logistics.Wms.WarehouseOrders.md#state) | The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
 | [StateTagsAttribute](Logistics.Wms.WarehouseOrders.md#statetagsattribute) | string | Specifies the state of the document. 
-| [Void](Logistics.Wms.WarehouseOrders.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidReason](Logistics.Wms.WarehouseOrders.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidTime](Logistics.Wms.WarehouseOrders.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
-| [VoidUser](Logistics.Wms.WarehouseOrders.md#voiduser) | string (64) __nullable__ | The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md)) 
+| [Void](Logistics.Wms.WarehouseOrders.md#void) | boolean | True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [VoidReason](Logistics.Wms.WarehouseOrders.md#voidreason) | string (254) __nullable__ | Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [VoidTime](Logistics.Wms.WarehouseOrders.md#voidtime) | datetime __nullable__ | Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
+| [VoidUser](Logistics.Wms.WarehouseOrders.md#voiduser) | string (64) __nullable__ | The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AccessKey](Logistics.Wms.WarehouseOrders.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [AdjustedDocument](Logistics.Wms.WarehouseOrders.md#adjusteddocument) | [Documents](General.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [AssignedToUser](Logistics.Wms.WarehouseOrders.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [CurrencyDirectory](Logistics.Wms.WarehouseOrders.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [DocumentType](Logistics.Wms.WarehouseOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [EnterpriseCompany](Logistics.Wms.WarehouseOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [EnterpriseCompanyLocation](Logistics.Wms.WarehouseOrders.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [FromCompanyDivision](Logistics.Wms.WarehouseOrders.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [FromParty](Logistics.Wms.WarehouseOrders.md#fromparty) | [Parties](General.Contacts.Parties.md) | The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [MasterDocument](Logistics.Wms.WarehouseOrders.md#masterdocument) | [Documents](General.Documents.md) | In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [Parent](Logistics.Wms.WarehouseOrders.md#parent) | [Documents](General.Documents.md) (nullable) | In a multi-document tree, this is the direct parent document. If this is the root it is null. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [PrimeCauseDocument](Logistics.Wms.WarehouseOrders.md#primecausedocument) | [Documents](General.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [ResponsiblePerson](Logistics.Wms.WarehouseOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [ReverseOfDocument](Logistics.Wms.WarehouseOrders.md#reverseofdocument) | [Documents](General.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [Sequence](Logistics.Wms.WarehouseOrders.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
-| [ToCompanyDivision](Logistics.Wms.WarehouseOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [ToParty](Logistics.Wms.WarehouseOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md)) |
-| [UserStatus](Logistics.Wms.WarehouseOrders.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md)) |
+| [AccessKey](Logistics.Wms.WarehouseOrders.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [AdjustedDocument](Logistics.Wms.WarehouseOrders.md#adjusteddocument) | [Documents](General.Documents.Documents.md) (nullable) | The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [AssignedToUser](Logistics.Wms.WarehouseOrders.md#assignedtouser) | [Users](Systems.Security.Users.md) (nullable) | The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [CurrencyDirectory](Logistics.Wms.WarehouseOrders.md#currencydirectory) | [CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable) | The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [DocumentType](Logistics.Wms.WarehouseOrders.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [EnterpriseCompany](Logistics.Wms.WarehouseOrders.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [EnterpriseCompanyLocation](Logistics.Wms.WarehouseOrders.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [FromCompanyDivision](Logistics.Wms.WarehouseOrders.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [FromParty](Logistics.Wms.WarehouseOrders.md#fromparty) | [Parties](General.Contacts.Parties.md) | The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [MasterDocument](Logistics.Wms.WarehouseOrders.md#masterdocument) | [Documents](General.Documents.Documents.md) | In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [Parent](Logistics.Wms.WarehouseOrders.md#parent) | [Documents](General.Documents.Documents.md) (nullable) | In a multi-document tree, this is the direct parent document. If this is the root it is null. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [PrimeCauseDocument](Logistics.Wms.WarehouseOrders.md#primecausedocument) | [Documents](General.Documents.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [ResponsiblePerson](Logistics.Wms.WarehouseOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [ReverseOfDocument](Logistics.Wms.WarehouseOrders.md#reverseofdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [Sequence](Logistics.Wms.WarehouseOrders.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [ToCompanyDivision](Logistics.Wms.WarehouseOrders.md#tocompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [ToParty](Logistics.Wms.WarehouseOrders.md#toparty) | [Parties](General.Contacts.Parties.md) (nullable) | The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
+| [UserStatus](Logistics.Wms.WarehouseOrders.md#userstatus) | [DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable) | The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [Warehouse](Logistics.Wms.WarehouseOrders.md#warehouse) | [Warehouses](Logistics.Wms.Warehouses.md) | The warehouse, where the order will be executed. `Required` `Filter(multi eq)` |
 | [WarehouseWorker](Logistics.Wms.WarehouseOrders.md#warehouseworker) | [WarehouseWorkers](Logistics.Wms.WarehouseWorkers.md) (nullable) | When set, denotes that the whole order is assigned to the specified worker. `Filter(multi eq)` `Introduced in version 21.1.1.18` |
 
@@ -96,23 +96,23 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Comments | [DocumentComments](General.Documents.DocumentComments.md) | List of `DocumentComment`(General.Documents.DocumentComments.md) child objects, based on the `General.Documents.DocumentComment.Document`(General.Documents.DocumentComments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| DistributedAmounts | [DocumentDistributedAmounts](General.Documents.DocumentDistributedAmounts.md) | List of `DocumentDistributed<br />Amount`(General.Documents.DocumentDistributedAmounts.md) child objects, based on the `General.Documents.DocumentDistributedAmount.Document`(General.Documents.DocumentDistributedAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| DocumentAmounts | [DocumentAmounts](General.Documents.DocumentAmounts.md) | List of `DocumentAmount`(General.Documents.DocumentAmounts.md) child objects, based on the `General.Documents.DocumentAmount.Document`(General.Documents.DocumentAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| FileAttachments | [DocumentFileAttachments](General.Documents.DocumentFileAttachments.md) | List of `DocumentFileAttachment`(General.Documents.DocumentFileAttachments.md) child objects, based on the `General.Documents.DocumentFileAttachment.Document`(General.Documents.DocumentFileAttachments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| Fulfillments | [DocumentFulfillments](General.Documents.DocumentFulfillments.md) | List of `DocumentFulfillment`(General.Documents.DocumentFulfillments.md) child objects, based on the `General.Documents.DocumentFulfillment.Document`(General.Documents.DocumentFulfillments.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| LineAmounts | [DocumentLineAmounts](General.Documents.DocumentLineAmounts.md) | List of `DocumentLineAmount`(General.Documents.DocumentLineAmounts.md) child objects, based on the `General.Documents.DocumentLineAmount.Document`(General.Documents.DocumentLineAmounts.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Comments | [DocumentComments](General.Documents.DocumentComments.md) | List of `DocumentComment`(General.Documents.DocumentComments.md) child objects, based on the `General.Documents.DocumentComment.Document`(General.Documents.DocumentComments.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| DistributedAmounts | [DocumentDistributedAmounts](General.Documents.DocumentDistributedAmounts.md) | List of `DocumentDistributed<br />Amount`(General.Documents.DocumentDistributedAmounts.md) child objects, based on the `General.Documents.DocumentDistributedAmount.Document`(General.Documents.DocumentDistributedAmounts.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| DocumentAmounts | [DocumentAmounts](General.Documents.DocumentAmounts.md) | List of `DocumentAmount`(General.Documents.DocumentAmounts.md) child objects, based on the `General.Documents.DocumentAmount.Document`(General.Documents.DocumentAmounts.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| FileAttachments | [DocumentFileAttachments](General.Documents.DocumentFileAttachments.md) | List of `DocumentFileAttachment`(General.Documents.DocumentFileAttachments.md) child objects, based on the `General.Documents.DocumentFileAttachment.Document`(General.Documents.DocumentFileAttachments.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| Fulfillments | [DocumentFulfillments](General.Documents.DocumentFulfillments.md) | List of `DocumentFulfillment`(General.Documents.DocumentFulfillments.md) child objects, based on the `General.Documents.DocumentFulfillment.Document`(General.Documents.DocumentFulfillments.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| LineAmounts | [DocumentLineAmounts](General.Documents.DocumentLineAmounts.md) | List of `DocumentLineAmount`(General.Documents.DocumentLineAmounts.md) child objects, based on the `General.Documents.DocumentLineAmount.Document`(General.Documents.DocumentLineAmounts.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
 | Lines | [WarehouseOrderLines](Logistics.Wms.WarehouseOrderLines.md) | List of `WarehouseOrderLine`(Logistics.Wms.WarehouseOrderLines.md) child objects, based on the `Logistics.Wms.WarehouseOrderLine.WarehouseOrder`(Logistics.Wms.WarehouseOrderLines.md#warehouseorder) back reference 
-| Parties | [DocumentParties](General.Documents.DocumentParties.md) | List of `DocumentParty`(General.Documents.DocumentParties.md) child objects, based on the `General.Documents.DocumentParty.Document`(General.Documents.DocumentParties.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| Prints | [DocumentPrints](General.Documents.DocumentPrints.md) | List of `DocumentPrint`(General.Documents.DocumentPrints.md) child objects, based on the `General.Documents.DocumentPrint.Document`(General.Documents.DocumentPrints.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
-| StateChanges | [DocumentStateChanges](General.Documents.DocumentStateChanges.md) | List of `DocumentStateChange`(General.Documents.DocumentStateChanges.md) child objects, based on the `General.Documents.DocumentStateChange.Document`(General.Documents.DocumentStateChanges.md#document) back reference (Inherited from [Documents](General.Documents.md)) 
+| Parties | [DocumentParties](General.Documents.DocumentParties.md) | List of `DocumentParty`(General.Documents.DocumentParties.md) child objects, based on the `General.Documents.DocumentParty.Document`(General.Documents.DocumentParties.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| Prints | [DocumentPrints](General.Documents.DocumentPrints.md) | List of `DocumentPrint`(General.Documents.DocumentPrints.md) child objects, based on the `General.Documents.DocumentPrint.Document`(General.Documents.DocumentPrints.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
+| StateChanges | [DocumentStateChanges](General.Documents.DocumentStateChanges.md) | List of `DocumentStateChange`(General.Documents.DocumentStateChanges.md) child objects, based on the `General.Documents.DocumentStateChange.Document`(General.Documents.DocumentStateChanges.md#document) back reference (Inherited from [Documents](General.Documents.Documents.md)) 
 
 
 ## Attribute Details
 
 ### AdjustmentNumber
 
-Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Consecutive number of the correction that this document is applying to the adjusted document. `Required` `Default(0)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **int32**  
 _Category_: **System**  
@@ -123,7 +123,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### AdjustmentTime
 
-Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document last has been adjusted by corrective document. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
@@ -133,7 +133,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### AdjustmentUser
 
-The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The user who adjusted the document. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (64) __nullable__**  
 _Category_: **System**  
@@ -144,7 +144,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### CompleteTime
 
-Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date and time when the document was completed (State set to Completed). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
@@ -154,7 +154,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### CreationTime
 
-Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/Time when the document was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **datetime**  
 _Category_: **System**  
@@ -165,7 +165,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### CreationUser
 
-The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The login name of the user, who created the document. `Required` `Filter(like)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (64)**  
 _Category_: **System**  
@@ -186,7 +186,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### DocumentDate
 
-The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.md))
+The date on which the document was issued. `Required` `Default(Today)` `Filter(eq;ge;le)` `ORD` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **date**  
 _Indexed_: **True**  
@@ -198,7 +198,7 @@ _Show in UI_: **ShownByDefault**
 
 ### DocumentNo
 
-Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.md))
+Document number, unique within Document_Type_Id. `Required` `Filter(eq;like)` `ORD` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (20)**  
 _Indexed_: **True**  
@@ -210,7 +210,7 @@ _Show in UI_: **ShownByDefault**
 
 ### DocumentNotes
 
-Notes for this Document. (Inherited from [Documents](General.Documents.md))
+Notes for this Document. (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (max) __nullable__**  
 _Category_: **System**  
@@ -221,7 +221,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### DocumentVersion
 
-Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Consecutive version number, starting with 1. Each update produces a new version of the document. `Required` `Default(1)` `Filter(eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **int32**  
 _Category_: **System**  
@@ -232,7 +232,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### EntityName
 
-The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The entity name of the document header. `Required` `Filter(eq)` `ORD` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (64)**  
 _Indexed_: **True**  
@@ -263,12 +263,12 @@ _Show in UI_: **HiddenByDefault**
 
 ### ParentDocumentRelationshipType
 
-Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[ParentDocument<br />RelationshipType](Logistics.Wms.WarehouseOrders.md#parentdocumentrelationshiptype) __nullable__**  
 _Category_: **System**  
 Relationship between parent and child documents  
-_Allowed Values (General.ParentDocumentRelationshipType Enum Members)_  
+_Allowed Values (General.Documents.ParentDocumentRelationshipType Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -282,7 +282,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### PlanningOnly
 
-Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -293,7 +293,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ReadOnly
 
-True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+True - the document is read only; false - the document is not read only. `Required` `Default(false)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -304,7 +304,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ReferenceDate
 
-Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.md))
+Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. `Default(Today)` `Filter(ge;le)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
@@ -315,7 +315,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ReferenceDocumentNo
 
-The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.md))
+The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. `Filter(eq;like)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (20) __nullable__**  
 _Category_: **System**  
@@ -326,7 +326,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ReleaseTime
 
-Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date and time when the document was released (State set to Released). `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
@@ -336,12 +336,12 @@ _Show in UI_: **HiddenByDefault**
 
 ### State
 
-The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` `Default(0)` `Filter(multi eq;ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[DocumentState](Logistics.Wms.WarehouseOrders.md#state)**  
 _Category_: **System**  
 Enumeration of document system states  
-_Allowed Values (General.DocumentState Enum Members)_  
+_Allowed Values (General.Documents.DocumentState Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -370,7 +370,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Void
 
-True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+True if the document is null and void. `Required` `Default(false)` `Filter(eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **boolean**  
 _Indexed_: **True**  
@@ -382,7 +382,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidReason
 
-Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Reason for voiding the document, entered by the user. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (254) __nullable__**  
 _Category_: **System**  
@@ -393,7 +393,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidTime
 
-Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+Date/time when the document has become void. `Filter(ge;le)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
@@ -403,7 +403,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### VoidUser
 
-The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The user who voided the document. `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **string (64) __nullable__**  
 _Category_: **System**  
@@ -417,7 +417,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### AccessKey
 
-The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The access key, containing the user permissions for this document. null means that all users have unlimited permissions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
 _Category_: **System**  
@@ -426,9 +426,9 @@ _Show in UI_: **CannotBeShown**
 
 ### AdjustedDocument
 
-The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The primary document, which the current document adjusts. null when this is not an adjustment document. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -436,7 +436,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### AssignedToUser
 
-The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The user to which this document is assigned for handling. null means that the document is not assigned to specific user. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Indexed_: **True**  
@@ -446,7 +446,7 @@ _Show in UI_: **ShownByDefault**
 
 ### CurrencyDirectory
 
-The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[CurrencyDirectories](General.Currencies.CurrencyDirectories.md) (nullable)**  
 _Category_: **System**  
@@ -455,7 +455,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### DocumentType
 
-The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Indexed_: **True**  
@@ -465,7 +465,7 @@ _Show in UI_: **ShownByDefault**
 
 ### EnterpriseCompany
 
-The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The enterprise company which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[EnterpriseCompanies](General.EnterpriseCompanies.md)**  
 _Indexed_: **True**  
@@ -475,7 +475,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### EnterpriseCompanyLocation
 
-The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[CompanyLocations](General.Contacts.CompanyLocations.md) (nullable)**  
 _Category_: **System**  
@@ -484,7 +484,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### FromCompanyDivision
 
-The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
 _Category_: **System**  
@@ -493,7 +493,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### FromParty
 
-The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md)**  
 _Category_: **System**  
@@ -502,9 +502,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### MasterDocument
 
-In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -512,9 +512,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### Parent
 
-In a multi-document tree, this is the direct parent document. If this is the root it is null. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+In a multi-document tree, this is the direct parent document. If this is the root it is null. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -522,9 +522,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### PrimeCauseDocument
 
-The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -532,7 +532,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ResponsiblePerson
 
-The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
 _Category_: **System**  
@@ -541,16 +541,16 @@ _Show in UI_: **HiddenByDefault**
 
 ### ReverseOfDocument
 
-The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
 
 ### Sequence
 
-The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[Sequences](Systems.Documents.Sequences.md) (nullable)**  
 _Category_: **System**  
@@ -559,7 +559,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ToCompanyDivision
 
-The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The division of the company, receiving the document. null when the document is not received by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable)**  
 _Category_: **System**  
@@ -568,7 +568,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ToParty
 
-The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.md))
+The party which should receive the document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[Parties](General.Contacts.Parties.md) (nullable)**  
 _Category_: **System**  
@@ -580,7 +580,7 @@ _Back-End Default Expression:_
 
 ### UserStatus
 
-The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.md))
+The user status of this document if applicable for this document type. null means unknown or not yet set. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md))
 
 _Type_: **[DocumentTypeUserStatuses](Systems.Documents.DocumentTypeUserStatuses.md) (nullable)**  
 _Category_: **System**  
@@ -614,17 +614,17 @@ Methods that can be invoked in public APIs.
 
 ### ChangeState
 
-Changes the document state to the specified new state              (Inherited from [Documents](General.Documents.md))  
+Changes the document state to the specified new state              (Inherited from [Documents](General.Documents.Documents.md))  
 _Return Type_: **void**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **POST**  
 
 **Parameters**  
   * **newState**  
     The desired new state of the document  
-    _Type_: General.DocumentState  
+    _Type_: General.Documents.DocumentState  
     Enumeration of document system states  
-    _Allowed Values (General.DocumentState Enum Members)_  
+    _Allowed Values (General.Documents.DocumentState Enum Members)_  
 
     | Value | Description |
     | ---- | --- |
@@ -648,9 +648,9 @@ The process of changing the document state is very labor intensive and includes 
 
 ### ProcessSingleRoute
 
-Processes the document route.               (Inherited from [Documents](General.Documents.md))  
+Processes the document route.               (Inherited from [Documents](General.Documents.Documents.md))  
 _Return Type_: **void**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **POST**  
 
 **Parameters**  
@@ -665,17 +665,17 @@ _Domain API Request_: **POST**
 
 ### Complete
 
-Changes the document state to Completed with all Release-ed sub-documents              (Inherited from [Documents](General.Documents.md))  
+Changes the document state to Completed with all Release-ed sub-documents              (Inherited from [Documents](General.Documents.Documents.md))  
 _Return Type_: **void**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **POST**  
 
 **Parameters**  
   * **completion**  
     How the sub-documents will be completed, if at all  
-    _Type_: General.DocumentCompletion  
+    _Type_: General.Documents.DocumentCompletion  
     Determines how Document will be completed  
-    _Allowed Values (General.DocumentCompletion Enum Members)_  
+    _Allowed Values (General.Documents.DocumentCompletion Enum Members)_  
 
     | Value | Description |
     | ---- | --- |
@@ -689,9 +689,9 @@ The process of changing the document state is very labor intensive and includes 
 
 ### MakeVoid
 
-Makes the document void. The operation is irreversible.              (Inherited from [Documents](General.Documents.md))  
+Makes the document void. The operation is irreversible.              (Inherited from [Documents](General.Documents.Documents.md))  
 _Return Type_: **void**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **POST**  
 
 **Parameters**  
@@ -701,9 +701,9 @@ _Domain API Request_: **POST**
 
   * **voidType**  
     The type of void operation to execute.  
-    _Type_: General.DocumentsRepositoryBase.VoidType  
+    _Type_: General.Documents.DocumentsRepositoryBase.VoidType  
     Specifies the type of void operation  
-    _Allowed Values (General.DocumentsRepositoryBase.VoidType Enum Members)_  
+    _Allowed Values (General.Documents.DocumentsRepositoryBase.VoidType Enum Members)_  
 
     | Value | Description |
     | ---- | --- |
@@ -723,9 +723,9 @@ _Domain API Request_: **POST**
 
 ### GetPrintout
 
-Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates `DocumentPrint`(General.Documents.DocumentPrints.md).              (Inherited from [Documents](General.Documents.md))  
+Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates `DocumentPrint`(General.Documents.DocumentPrints.md).              (Inherited from [Documents](General.Documents.Documents.md))  
 _Return Type_: **string**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **POST**  
 
 **Parameters**  
@@ -744,18 +744,18 @@ _Domain API Request_: **POST**
 
 ### Recalculate
 
-The document and all of its owned objects will be altered to become valid.              (Inherited from [Documents](General.Documents.md))  
+The document and all of its owned objects will be altered to become valid.              (Inherited from [Documents](General.Documents.Documents.md))  
 _Return Type_: **void**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **POST**  
 
 In some cases the objects in child collection of the document depend on values from other child objects.             This method ensures that all child objects are properly validated.             The changes are only in memory and are not committed to the server.
 
 ### GetAllParentDocuments
 
-Gets all parent documents, traversing the parent document chain by using the Parent property.              (Inherited from [Documents](General.Documents.md))  
-_Return Type_: **Collection Of [Documents](General.Documents.md)**  
-_Declaring Type_: **[Documents](General.Documents.md)**  
+Gets all parent documents, traversing the parent document chain by using the Parent property.              (Inherited from [Documents](General.Documents.Documents.md))  
+_Return Type_: **Collection Of [Documents](General.Documents.Documents.md)**  
+_Declaring Type_: **[Documents](General.Documents.Documents.md)**  
 _Domain API Request_: **GET**  
 
 **Parameters**  

@@ -645,11 +645,11 @@
       href: General.Currencies.CurrencyDirectories.md
     - name: CurrencyDirectoryLines
       href: General.Currencies.CurrencyDirectoryLines.md
-  - name: DocumentAmountReferencedDocuments
-    href: General.DocumentAmountReferencedDocuments.md
   - name: Documents
     href: General.Documents.md
     items:
+    - name: DocumentAmountReferencedDocuments
+      href: General.Documents.DocumentAmountReferencedDocuments.md
     - name: DocumentAmounts
       href: General.Documents.DocumentAmounts.md
     - name: DocumentComments
@@ -670,6 +670,8 @@
       href: General.Documents.DocumentParties.md
     - name: DocumentPrints
       href: General.Documents.DocumentPrints.md
+    - name: Documents
+      href: General.Documents.Documents.md
     - name: DocumentStateChanges
       href: General.Documents.DocumentStateChanges.md
   - name: EnterpriseCompanies

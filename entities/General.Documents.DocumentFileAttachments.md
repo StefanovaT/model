@@ -34,9 +34,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -55,7 +55,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.Documents.DocumentFileAttachments.md#document) | [Documents](General.Documents.md) | The <see cref="General.Document"/> to which this DocumentFileAttachment belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentFileAttachments.md#document) | [Documents](General.Documents.Documents.md) | The <see cref="Document"/> to which this DocumentFileAttachment belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -148,9 +148,9 @@ _Show in UI_: **HiddenByDefault**
 
 ### Document
 
-The <see cref="General.Document"/> to which this DocumentFileAttachment belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Document"/> to which this DocumentFileAttachment belongs. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

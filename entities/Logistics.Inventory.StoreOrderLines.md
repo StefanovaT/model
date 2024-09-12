@@ -52,7 +52,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Document](Logistics.Inventory.StoreOrderLines.md#document) | [StoreOrders](Logistics.Inventory.StoreOrders.md) | The <see cref="StoreOrder"/> to which this StoreOrderLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Inventory.StoreOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | If non-null, contains the specific lot to use for the movement. `Filter(multi eq)` |
-| [ParentDocument](Logistics.Inventory.StoreOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Logistics.Inventory.StoreOrderLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [Product](Logistics.Inventory.StoreOrderLines.md#product) | [Products](General.Products.Products.md) | The product which should be received/issued. `Required` `Filter(multi eq)` |
 | [ProductVariant](Logistics.Inventory.StoreOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Inventory.StoreOrderLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
@@ -293,7 +293,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

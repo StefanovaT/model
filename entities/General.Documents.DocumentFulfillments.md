@@ -30,9 +30,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -56,7 +56,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CreationUser](General.Documents.DocumentFulfillments.md#creationuser) | [Users](Systems.Security.Users.md) | The user, who created the record. `Required` `Filter(multi eq)` |
-| [Document](General.Documents.DocumentFulfillments.md#document) | [Documents](General.Documents.md) | The Document, which is fulfilled. `Required` `Filter(multi eq)` `ReadOnly` `Introduced in version 21.1.1.26` `Owner` |
+| [Document](General.Documents.DocumentFulfillments.md#document) | [Documents](General.Documents.Documents.md) | The Document, which is fulfilled. `Required` `Filter(multi eq)` `ReadOnly` `Introduced in version 21.1.1.26` `Owner` |
 | [Lot](General.Documents.DocumentFulfillments.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot, which was fulfilled. null when the fulfillment was not for a specific lot. `Filter(multi eq)` `Introduced in version 22.1.4.52` |
 | [ParentFulfillment](General.Documents.DocumentFulfillments.md#parentfulfillment) | [DocumentFulfillments](General.Documents.DocumentFulfillments.md) (nullable) | The parent document fulfillment. Used when the information of the current fulfillment is inherited by another document fulfillment, usually created by another module. `Filter(multi eq)` `Introduced in version 22.1.5.85` |
 | [Product](General.Documents.DocumentFulfillments.md#product) | [Products](General.Products.Products.md) (nullable) | The product, which is fulfilled. `Filter(multi eq)` `Introduced in version 22.1.4.52` |
@@ -214,7 +214,7 @@ _Show in UI_: **ShownByDefault**
 
 The Document, which is fulfilled. `Required` `Filter(multi eq)` `ReadOnly` `Introduced in version 21.1.1.26` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

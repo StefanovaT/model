@@ -59,7 +59,7 @@ Aggregate Root:
 | [InvoiceOrderLine](Crm.Invoicing.InvoiceLines.md#invoiceorderline) | [InvoiceOrderLines](Crm.Invoicing.InvoiceOrderLines.md) (nullable) | Invoice order line which is invoiced by this line. `Filter(multi eq)` |
 | [LineDealType](Crm.Invoicing.InvoiceLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type for this line. If deal type in the line is different from deal type in the header another VAT entry is created. `Filter(multi eq)` |
 | [LineDiscount](Crm.Invoicing.InvoiceLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` |
-| [ParentDocument](Crm.Invoicing.InvoiceLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 18.2` |
+| [ParentDocument](Crm.Invoicing.InvoiceLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 18.2` |
 | [ParentSalesOrderLine](Crm.Invoicing.InvoiceLines.md#parentsalesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable) | When not null specifies the Sales Order line that is invoiced by this invoice line. `Filter(multi eq)` |
 | [PaymentTransaction](Crm.Invoicing.InvoiceLines.md#paymenttransaction) | [PaymentTransactions](Finance.Payments.PaymentTransactions.md) (nullable) | The payment transaction, which is invoiced by this line, when Business Reason = P. Used to reconcile the invoice with the payments in the case of advance payment. `Filter(multi eq)` |
 | [Product](Crm.Invoicing.InvoiceLines.md#product) | [Products](General.Products.Products.md) (nullable) | The invoiced product. When null, although rarely used, the invoice line is still valid and the Product Description contains the invoiced item. `Filter(multi eq)` |
@@ -465,7 +465,7 @@ _Front-End Recalc Expressions:_
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 18.2`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

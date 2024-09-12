@@ -13,7 +13,6 @@ uid: General
 - [Resources](General.Resources.md)  
 
 ## Entities
-- [DocumentAmountReferencedDocuments](General.DocumentAmountReferencedDocuments.md)  
 - [EnterpriseCompanies](General.EnterpriseCompanies.md)  
 - [Reports](General.Reports.md)  
 

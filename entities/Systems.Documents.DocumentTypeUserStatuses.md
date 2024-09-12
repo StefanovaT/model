@@ -141,7 +141,7 @@ The system state to which this user status is bound. `Required` `Filter(eq)`
 _Type_: **[DocumentState](Systems.Documents.DocumentTypeUserStatuses.md#state)**  
 _Category_: **System**  
 Enumeration of document system states  
-_Allowed Values (General.DocumentState Enum Members)_  
+_Allowed Values (General.Documents.DocumentState Enum Members)_  
 
 | Value | Description |
 | ---- | --- |

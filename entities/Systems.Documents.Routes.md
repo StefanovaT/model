@@ -153,7 +153,7 @@ The system states for which to execute the specified route. `Required` `Default(
 _Type_: **[DocumentStateFlags](Systems.Documents.Routes.md#conditionstatesbitmask)**  
 _Category_: **System**  
 Enumeration of document system states that can be combined in bit mask  
-_Allowed Values (General.DocumentStateFlags Enum Members)_  
+_Allowed Values (General.Documents.DocumentStateFlags Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -207,7 +207,7 @@ _Show in UI_: **ShownByDefault**
 _Type_: **[DocumentState](Systems.Documents.Routes.md#destinationstate)**  
 _Category_: **System**  
 Enumeration of document system states  
-_Allowed Values (General.DocumentState Enum Members)_  
+_Allowed Values (General.Documents.DocumentState Enum Members)_  
 
 | Value | Description |
 | ---- | --- |
@@ -280,7 +280,7 @@ Determines the default relationship type between the generated document and the 
 _Type_: **[ParentDocument<br />RelationshipType](Systems.Documents.Routes.md#parentdocumentrelationshiptype)**  
 _Category_: **System**  
 Relationship between parent and child documents  
-_Allowed Values (General.ParentDocumentRelationshipType Enum Members)_  
+_Allowed Values (General.Documents.ParentDocumentRelationshipType Enum Members)_  
 
 | Value | Description |
 | ---- | --- |

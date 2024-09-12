@@ -50,7 +50,7 @@ Aggregate Root:
 | [Currency](Finance.Accounting.AccountingVoucherLines.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)` |
 | [Document](Finance.Accounting.AccountingVoucherLines.md#document) | [AccountingVouchers](Finance.Accounting.AccountingVouchers.md) | The voucher to which this line is attached. `Required` `Filter(multi eq)` |
 | [ProfitCenter](Finance.Accounting.AccountingVoucherLines.md#profitcenter) | [ProfitCenters](Finance.Accounting.ProfitCenters.md) (nullable) | The profit center to which this revenue is related. `Filter(multi eq)` |
-| [ReferencedDocument](Finance.Accounting.AccountingVoucherLines.md#referenceddocument) | [Documents](General.Documents.md) | The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)` |
+| [ReferencedDocument](Finance.Accounting.AccountingVoucherLines.md#referenceddocument) | [Documents](General.Documents.Documents.md) | The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)` |
 | [Voucher](Finance.Accounting.AccountingVoucherLines.md#voucher) | [AccountingVouchers](Finance.Accounting.AccountingVouchers.md) | The voucher to which this line is attached. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -252,7 +252,7 @@ _Show in UI_: **ShownByDefault**
 
 The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

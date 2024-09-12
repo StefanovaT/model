@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentAmountReferencedDocuments](~/entities/General.DocumentAmountReferencedDocuments.md)
+Entity: [General.Documents.DocumentAmountReferencedDocuments](~/entities/General.Documents.DocumentAmountReferencedDocuments.md)
 
 Contains the documents which are referenced by each document amount. Entity: Gen_Document_Amount_Referenced_Documents
 

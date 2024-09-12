@@ -51,7 +51,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Document](Logistics.Procurement.PurchaseOrderLines.md#document) | [PurchaseOrders](Logistics.Procurement.PurchaseOrders.md) | The <see cref="PurchaseOrder"/> to which this PurchaseOrderLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Procurement.PurchaseOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | When not null, indicates that a specific lot is required to be delivered. `Filter(multi eq)` |
-| [ParentDocument](Logistics.Procurement.PurchaseOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 18.2` |
+| [ParentDocument](Logistics.Procurement.PurchaseOrderLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 18.2` |
 | [Product](Logistics.Procurement.PurchaseOrderLines.md#product) | [Products](General.Products.Products.md) | The ordered product. `Required` `Filter(multi eq)` |
 | [ProductCode](Logistics.Procurement.PurchaseOrderLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | When not null, specifies that the product was selected using the specified product code record. `Filter(multi eq)` |
 | [ProductVariant](Logistics.Procurement.PurchaseOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
@@ -292,7 +292,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 18.2`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

@@ -30,9 +30,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -53,7 +53,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.Documents.DocumentPrints.md#document) | [Documents](General.Documents.md) | The document which was printed or exported. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentPrints.md#document) | [Documents](General.Documents.Documents.md) | The document which was printed or exported. `Required` `Filter(multi eq)` `Owner` |
 | [DocumentPrintImage](General.Documents.DocumentPrints.md#documentprintimage) | [DocumentPrintImages](Systems.Core.DocumentPrintImages.md) (nullable) | Points to the actual contents of the printed document. `Filter(multi eq;like)` |
 
 
@@ -180,7 +180,7 @@ _Show in UI_: **ShownByDefault**
 
 The document which was printed or exported. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

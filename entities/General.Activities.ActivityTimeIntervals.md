@@ -145,7 +145,7 @@ The state of the primary activity in the moment the time interval was created. n
 _Type_: **[DocumentState](General.Activities.ActivityTimeIntervals.md#state) __nullable__**  
 _Category_: **System**  
 Enumeration of document system states  
-_Allowed Values (General.DocumentState Enum Members)_  
+_Allowed Values (General.Documents.DocumentState Enum Members)_  
 
 | Value | Description |
 | ---- | --- |

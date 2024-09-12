@@ -34,9 +34,9 @@ Show in UI:  _HiddenByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -53,7 +53,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AssignToUser](General.Documents.DocumentComments.md#assigntouser) | [Users](Systems.Security.Users.md) (nullable) | When not null means that the comment is also an assignment of the document to another user. Upon saving the comment, the system assigns the document to the specified user. `Filter(multi eq)` |
-| [Document](General.Documents.DocumentComments.md#document) | [Documents](General.Documents.md) | The document to which to attach the comment. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentComments.md#document) | [Documents](General.Documents.Documents.md) | The document to which to attach the comment. `Required` `Filter(multi eq)` `Owner` |
 | [User](General.Documents.DocumentComments.md#user) | [Users](Systems.Security.Users.md) | The user, who created the comment. `Required` `Filter(multi eq)` |
 
 
@@ -126,7 +126,7 @@ _Show in UI_: **ShownByDefault**
 
 The document to which to attach the comment. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

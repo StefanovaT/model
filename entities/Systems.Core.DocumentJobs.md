@@ -140,7 +140,7 @@ Specifies the state, which should be set to the documents, matching the filter. 
 _Type_: **[DocumentState](Systems.Core.DocumentJobs.md#newstate)**  
 _Category_: **System**  
 Enumeration of document system states  
-_Allowed Values (General.DocumentState Enum Members)_  
+_Allowed Values (General.Documents.DocumentState Enum Members)_  
 
 | Value | Description |
 | ---- | --- |

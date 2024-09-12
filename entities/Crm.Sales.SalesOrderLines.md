@@ -74,7 +74,7 @@ Aggregate Root:
 | [LineEndCustomerParty](Crm.Sales.SalesOrderLines.md#lineendcustomerparty) | [Parties](General.Contacts.Parties.md) (nullable) | The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. `Filter(multi eq)` `Introduced in version 20.1` |
 | [LineStore](Crm.Sales.SalesOrderLines.md#linestore) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store which should be used to issue the goods for the line. null means to use the store from the header. `Filter(multi eq;like)` |
 | [Lot](Crm.Sales.SalesOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | Specifies the lot from which the goods should be issued. null means that the lot will be specified at a later stage (store order, etc.). `Filter(multi eq)` |
-| [ParentDocument](Crm.Sales.SalesOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Crm.Sales.SalesOrderLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [Product](Crm.Sales.SalesOrderLines.md#product) | [Products](General.Products.Products.md) | The product sold. `Required` `Filter(multi eq)` |
 | [ProductCode](Crm.Sales.SalesOrderLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Used to set the Product_Id thru the coding systems. `Filter(multi eq)` |
 | [ProductPrice](Crm.Sales.SalesOrderLines.md#productprice) | [ProductPrices](Crm.ProductPrices.md) (nullable) | Not null when the price has been selected from the list of valid standard prices. `Filter(multi eq)` |
@@ -682,7 +682,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

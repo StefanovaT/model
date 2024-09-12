@@ -30,9 +30,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 Aggregate Root:  
-[General.Documents](General.Documents.md)  
+[General.Documents.Documents](General.Documents.Documents.md)  
 
 ## Attributes
 
@@ -47,7 +47,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Document](General.Documents.DocumentParties.md#document) | [Documents](General.Documents.md) | The document in which the party plays a role. `Required` `Filter(multi eq)` `Owner` |
+| [Document](General.Documents.DocumentParties.md#document) | [Documents](General.Documents.Documents.md) | The document in which the party plays a role. `Required` `Filter(multi eq)` `Owner` |
 | [Party](General.Documents.DocumentParties.md#party) | [Parties](General.Contacts.Parties.md) | The party, which plays a role in the document. `Required` `Filter(multi eq)` |
 | [Role](General.Documents.DocumentParties.md#role) | [DocumentPartyRoles](Systems.Documents.DocumentPartyRoles.md) | The role of the party in the document. `Required` `Filter(multi eq)` |
 
@@ -101,7 +101,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document in which the party plays a role. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

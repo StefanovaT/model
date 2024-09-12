@@ -54,7 +54,7 @@ Aggregate Root:
 | [ExciseQuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#excisequantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Excise Quantity. Copied from the excise product type. `Required` `Filter(multi eq)` `Introduced in version 22.1.6.58` |
 | [Lot](Finance.Excise.ExciseAdministrativeDocumentLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | Warehouse lot. `Filter(multi eq)` `Introduced in version 23.1.2.68` |
 | [MeasuringTransaction](Finance.Excise.ExciseAdministrativeDocumentLines.md#measuringtransaction) | [MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable) | Transaction of product input or output, measured with specialized measuring device for excise purposes. `Filter(multi eq)` `Introduced in version 21.1.3.87` |
-| [ParentDocument](Finance.Excise.ExciseAdministrativeDocumentLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. Null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 22.1.4.9` |
+| [ParentDocument](Finance.Excise.ExciseAdministrativeDocumentLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. Null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 22.1.4.9` |
 | [Product](Finance.Excise.ExciseAdministrativeDocumentLines.md#product) | [Products](General.Products.Products.md) | The product being sold. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Finance.Excise.ExciseAdministrativeDocumentLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 
@@ -309,7 +309,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document, which the current line executes. Null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 22.1.4.9`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

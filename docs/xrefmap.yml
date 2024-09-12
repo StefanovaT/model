@@ -1067,8 +1067,11 @@ references:
   name: General.DocumentVersions Entity
   href: entities/General.DocumentVersions.html
 - uid: General.Documents
-  name: General.Documents Entity
+  name: General.Documents Namespace
   href: entities/General.Documents.html
+- uid: General.Documents.DocumentAmountReferencedDocuments
+  name: General.Documents.DocumentAmountReferencedDocuments Entity
+  href: entities/General.Documents.DocumentAmountReferencedDocuments.html
 - uid: General.Documents.DocumentAmounts
   name: General.Documents.DocumentAmounts Entity
   href: entities/General.Documents.DocumentAmounts.html
@@ -1105,6 +1108,9 @@ references:
 - uid: General.Documents.DocumentStateChanges
   name: General.Documents.DocumentStateChanges Entity
   href: entities/General.Documents.DocumentStateChanges.html
+- uid: General.Documents.Documents
+  name: General.Documents.Documents Entity
+  href: entities/General.Documents.Documents.html
 - uid: General.EnterpriseCompanies
   name: General.EnterpriseCompanies Entity
   href: entities/General.EnterpriseCompanies.html

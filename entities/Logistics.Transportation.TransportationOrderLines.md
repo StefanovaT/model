@@ -53,7 +53,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [CargoType](Logistics.Transportation.TransportationOrderLines.md#cargotype) | [CargoTypes](Logistics.Shipment.CargoTypes.md) | The type of the transported cargo. `Required` `Filter(multi eq)` |
 | [Document](Logistics.Transportation.TransportationOrderLines.md#document) | [TransportationOrders](Logistics.Transportation.TransportationOrders.md) | The <see cref="Transportation<br />Order"/> to which this TransportationOrderLine belongs. `Required` `Filter(multi eq)` |
-| [ParentDocument](Logistics.Transportation.TransportationOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Logistics.Transportation.TransportationOrderLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [TransportationOrder](Logistics.Transportation.TransportationOrderLines.md#transportationorder) | [TransportationOrders](Logistics.Transportation.TransportationOrders.md) | The <see cref="Transportation<br />Order"/> to which this TransportationOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -191,7 +191,7 @@ _Show in UI_: **ShownByDefault**
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

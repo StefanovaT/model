@@ -88,7 +88,7 @@
 <h1 id="logisticstransportationtransportationrequisitions-entity">Logistics.Transportation.TransportationRequisitions Entity</h1>
 
 <p><strong>Namespace:</strong> <a href="Logistics.Transportation.html">Logistics.Transportation</a><br>
-<strong>Inherited From:</strong> <a href="General.Documents.html">General.Documents</a></p>
+<strong>Inherited From:</strong> <a href="General.Documents.Documents.html">General.Documents.Documents</a></p>
 <p>Client requisition for transportation. Entity: Log_Transportation_Requisitions</p>
 <h2 id="renames">Renames</h2>
 <p>Old name: <strong>Logistics.Shipment.TransportationRequisitions</strong><br>
@@ -114,7 +114,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <li><a href="Logistics.Transportation.TransportationRequisitionLines.html">Logistics.Transportation.TransportationRequisitionLines</a></li>
 <li><a href="General.Documents.DocumentAmounts.html">General.Documents.DocumentAmounts</a>
 <ul>
-<li><a href="General.DocumentAmountReferencedDocuments.html">General.DocumentAmountReferencedDocuments</a></li>
+<li><a href="General.Documents.DocumentAmountReferencedDocuments.html">General.Documents.DocumentAmountReferencedDocuments</a></li>
 </ul>
 </li>
 <li><a href="General.Documents.DocumentComments.html">General.Documents.DocumentComments</a></li>
@@ -141,32 +141,32 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#adjustmentnumber">AdjustmentNumber</a></td>
 <td>int32</td>
-<td>Consecutive number of the correction that this document is applying to the adjusted document. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Consecutive number of the correction that this document is applying to the adjusted document. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#adjustmenttime">AdjustmentTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#adjustmentuser">AdjustmentUser</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>The user who adjusted the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The user who adjusted the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#completetime">CompleteTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the document was completed (State set to Completed). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date and time when the document was completed (State set to Completed). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#creationtime">CreationTime</a></td>
 <td>datetime</td>
-<td>Date/Time when the document was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/Time when the document was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#creationuser">CreationUser</a></td>
 <td>string (64)</td>
-<td>The login name of the user, who created the document. <code>Required</code> <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The login name of the user, who created the document. <code>Required</code> <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#displaytext">DisplayText</a></td>
@@ -176,27 +176,27 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#documentdate">DocumentDate</a></td>
 <td>date</td>
-<td>The date on which the document was issued. <code>Required</code> <code>Default(Today)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The date on which the document was issued. <code>Required</code> <code>Default(Today)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#documentno">DocumentNo</a></td>
 <td>string (20)</td>
-<td>Document number, unique within Document_Type_Id. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Document number, unique within Document_Type_Id. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#documentnotes">DocumentNotes</a></td>
 <td>string (max) <strong>nullable</strong></td>
-<td>Notes for this Document. (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Notes for this Document. (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#documentversion">DocumentVersion</a></td>
 <td>int32</td>
-<td>Consecutive version number, starting with 1. Each update produces a new version of the document. <code>Required</code> <code>Default(1)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Consecutive version number, starting with 1. Each update produces a new version of the document. <code>Required</code> <code>Default(1)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#entityname">EntityName</a></td>
 <td>string (64)</td>
-<td>The entity name of the document header. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The entity name of the document header. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#id">Id</a></td>
@@ -211,32 +211,32 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#parentdocumentrelationshiptype">ParentDocument<br>RelationshipType</a></td>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#parentdocumentrelationshiptype">ParentDocument<br>RelationshipType</a> <strong>nullable</strong></td>
-<td>Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#planningonly">PlanningOnly</a></td>
 <td>boolean</td>
-<td>Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#readonly">ReadOnly</a></td>
 <td>boolean</td>
-<td>True - the document is read only; false - the document is not read only. <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>True - the document is read only; false - the document is not read only. <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#referencedate">ReferenceDate</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#referencedocumentno">ReferenceDocumentNo</a></td>
 <td>string (20) <strong>nullable</strong></td>
-<td>The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. <code>Filter(eq;like)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. <code>Filter(eq;like)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#releasetime">ReleaseTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date and time when the document was released (State set to Released). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date and time when the document was released (State set to Released). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#requestedarrivaldate">RequestedArrivalDate</a></td>
@@ -261,7 +261,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#state">State</a></td>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#state">DocumentState</a></td>
-<td>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#statetagsattribute">StateTagsAttribute</a></td>
@@ -271,22 +271,22 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#void">Void</a></td>
 <td>boolean</td>
-<td>True if the document is null and void. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>True if the document is null and void. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#voidreason">VoidReason</a></td>
 <td>string (254) <strong>nullable</strong></td>
-<td>Reason for voiding the document, entered by the user. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Reason for voiding the document, entered by the user. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#voidtime">VoidTime</a></td>
 <td>datetime <strong>nullable</strong></td>
-<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#voiduser">VoidUser</a></td>
 <td>string (64) <strong>nullable</strong></td>
-<td>The user who voided the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The user who voided the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -303,87 +303,87 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#accesskey">AccessKey</a></td>
 <td><a href="Systems.Security.AccessKeys.html">AccessKeys</a> (nullable)</td>
-<td>The access key, containing the user permissions for this document. null means that all users have unlimited permissions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The access key, containing the user permissions for this document. null means that all users have unlimited permissions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#adjusteddocument">AdjustedDocument</a></td>
-<td><a href="General.Documents.html">Documents</a> (nullable)</td>
-<td>The primary document, which the current document adjusts. null when this is not an adjustment document. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td><a href="General.Documents.Documents.html">Documents</a> (nullable)</td>
+<td>The primary document, which the current document adjusts. null when this is not an adjustment document. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#assignedtouser">AssignedToUser</a></td>
 <td><a href="Systems.Security.Users.html">Users</a> (nullable)</td>
-<td>The user to which this document is assigned for handling. null means that the document is not assigned to specific user. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The user to which this document is assigned for handling. null means that the document is not assigned to specific user. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#currencydirectory">CurrencyDirectory</a></td>
 <td><a href="General.Currencies.CurrencyDirectories.html">CurrencyDirectories</a> (nullable)</td>
-<td>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#documenttype">DocumentType</a></td>
 <td><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></td>
-<td>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#enterprisecompany">EnterpriseCompany</a></td>
 <td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></td>
-<td>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#enterprisecompanylocation">EnterpriseCompanyLocation</a></td>
 <td><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</td>
-<td>The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#fromcompanydivision">FromCompanyDivision</a></td>
 <td><a href="General.Contacts.CompanyDivisions.html">CompanyDivisions</a> (nullable)</td>
-<td>The division of the company, issuing the document. null when the document is not issued by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The division of the company, issuing the document. null when the document is not issued by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#fromparty">FromParty</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a></td>
-<td>The party which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The party which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#masterdocument">MasterDocument</a></td>
-<td><a href="General.Documents.html">Documents</a></td>
-<td>In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td><a href="General.Documents.Documents.html">Documents</a></td>
+<td>In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#parent">Parent</a></td>
-<td><a href="General.Documents.html">Documents</a> (nullable)</td>
-<td>In a multi-document tree, this is the direct parent document. If this is the root it is null. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td><a href="General.Documents.Documents.html">Documents</a> (nullable)</td>
+<td>In a multi-document tree, this is the direct parent document. If this is the root it is null. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#primecausedocument">PrimeCauseDocument</a></td>
-<td><a href="General.Documents.html">Documents</a> (nullable)</td>
-<td>The document that is the prime cause for creation of the current document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td><a href="General.Documents.Documents.html">Documents</a> (nullable)</td>
+<td>The document that is the prime cause for creation of the current document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#responsibleperson">ResponsiblePerson</a></td>
 <td><a href="General.Contacts.Persons.html">Persons</a> (nullable)</td>
-<td>The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#reverseofdocument">ReverseOfDocument</a></td>
-<td><a href="General.Documents.html">Documents</a> (nullable)</td>
-<td>The document which the current document is reverse of. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td><a href="General.Documents.Documents.html">Documents</a> (nullable)</td>
+<td>The document which the current document is reverse of. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#sequence">Sequence</a></td>
 <td><a href="Systems.Documents.Sequences.html">Sequences</a> (nullable)</td>
-<td>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#tocompanydivision">ToCompanyDivision</a></td>
 <td><a href="General.Contacts.CompanyDivisions.html">CompanyDivisions</a> (nullable)</td>
-<td>The division of the company, receiving the document. null when the document is not received by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The division of the company, receiving the document. null when the document is not received by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#toparty">ToParty</a></td>
 <td><a href="General.Contacts.Parties.html">Parties</a> (nullable)</td>
-<td>The party which should receive the document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The party which should receive the document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#transportfromgeopoint">TransportFromGeoPoint</a></td>
@@ -418,7 +418,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td><a href="Logistics.Transportation.TransportationRequisitions.html#userstatus">UserStatus</a></td>
 <td><a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</td>
-<td>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -435,32 +435,32 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td>Comments</td>
 <td><a href="General.Documents.DocumentComments.html">DocumentComments</a></td>
-<td>List of <code>DocumentComment</code>(General.Documents.DocumentComments.md) child objects, based on the <code>General.Documents.DocumentComment.Document</code>(General.Documents.DocumentComments.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentComment</code>(General.Documents.DocumentComments.md) child objects, based on the <code>General.Documents.DocumentComment.Document</code>(General.Documents.DocumentComments.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>DistributedAmounts</td>
 <td><a href="General.Documents.DocumentDistributedAmounts.html">DocumentDistributedAmounts</a></td>
-<td>List of <code>DocumentDistributed&lt;br /&gt;Amount</code>(General.Documents.DocumentDistributedAmounts.md) child objects, based on the <code>General.Documents.DocumentDistributedAmount.Document</code>(General.Documents.DocumentDistributedAmounts.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentDistributed&lt;br /&gt;Amount</code>(General.Documents.DocumentDistributedAmounts.md) child objects, based on the <code>General.Documents.DocumentDistributedAmount.Document</code>(General.Documents.DocumentDistributedAmounts.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>DocumentAmounts</td>
 <td><a href="General.Documents.DocumentAmounts.html">DocumentAmounts</a></td>
-<td>List of <code>DocumentAmount</code>(General.Documents.DocumentAmounts.md) child objects, based on the <code>General.Documents.DocumentAmount.Document</code>(General.Documents.DocumentAmounts.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentAmount</code>(General.Documents.DocumentAmounts.md) child objects, based on the <code>General.Documents.DocumentAmount.Document</code>(General.Documents.DocumentAmounts.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>FileAttachments</td>
 <td><a href="General.Documents.DocumentFileAttachments.html">DocumentFileAttachments</a></td>
-<td>List of <code>DocumentFileAttachment</code>(General.Documents.DocumentFileAttachments.md) child objects, based on the <code>General.Documents.DocumentFileAttachment.Document</code>(General.Documents.DocumentFileAttachments.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentFileAttachment</code>(General.Documents.DocumentFileAttachments.md) child objects, based on the <code>General.Documents.DocumentFileAttachment.Document</code>(General.Documents.DocumentFileAttachments.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>Fulfillments</td>
 <td><a href="General.Documents.DocumentFulfillments.html">DocumentFulfillments</a></td>
-<td>List of <code>DocumentFulfillment</code>(General.Documents.DocumentFulfillments.md) child objects, based on the <code>General.Documents.DocumentFulfillment.Document</code>(General.Documents.DocumentFulfillments.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentFulfillment</code>(General.Documents.DocumentFulfillments.md) child objects, based on the <code>General.Documents.DocumentFulfillment.Document</code>(General.Documents.DocumentFulfillments.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>LineAmounts</td>
 <td><a href="General.Documents.DocumentLineAmounts.html">DocumentLineAmounts</a></td>
-<td>List of <code>DocumentLineAmount</code>(General.Documents.DocumentLineAmounts.md) child objects, based on the <code>General.Documents.DocumentLineAmount.Document</code>(General.Documents.DocumentLineAmounts.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentLineAmount</code>(General.Documents.DocumentLineAmounts.md) child objects, based on the <code>General.Documents.DocumentLineAmount.Document</code>(General.Documents.DocumentLineAmounts.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>Lines</td>
@@ -470,23 +470,23 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <tr>
 <td>Parties</td>
 <td><a href="General.Documents.DocumentParties.html">DocumentParties</a></td>
-<td>List of <code>DocumentParty</code>(General.Documents.DocumentParties.md) child objects, based on the <code>General.Documents.DocumentParty.Document</code>(General.Documents.DocumentParties.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentParty</code>(General.Documents.DocumentParties.md) child objects, based on the <code>General.Documents.DocumentParty.Document</code>(General.Documents.DocumentParties.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>Prints</td>
 <td><a href="General.Documents.DocumentPrints.html">DocumentPrints</a></td>
-<td>List of <code>DocumentPrint</code>(General.Documents.DocumentPrints.md) child objects, based on the <code>General.Documents.DocumentPrint.Document</code>(General.Documents.DocumentPrints.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentPrint</code>(General.Documents.DocumentPrints.md) child objects, based on the <code>General.Documents.DocumentPrint.Document</code>(General.Documents.DocumentPrints.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 <tr>
 <td>StateChanges</td>
 <td><a href="General.Documents.DocumentStateChanges.html">DocumentStateChanges</a></td>
-<td>List of <code>DocumentStateChange</code>(General.Documents.DocumentStateChanges.md) child objects, based on the <code>General.Documents.DocumentStateChange.Document</code>(General.Documents.DocumentStateChanges.md#document) back reference (Inherited from <a href="General.Documents.html">Documents</a>)</td>
+<td>List of <code>DocumentStateChange</code>(General.Documents.DocumentStateChanges.md) child objects, based on the <code>General.Documents.DocumentStateChange.Document</code>(General.Documents.DocumentStateChanges.md#document) back reference (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
 <h3 id="adjustmentnumber">AdjustmentNumber</h3>
-<p>Consecutive number of the correction that this document is applying to the adjusted document. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Consecutive number of the correction that this document is applying to the adjusted document. <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -494,14 +494,14 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>0</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmenttime">AdjustmentTime</h3>
-<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document last has been adjusted by corrective document. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="adjustmentuser">AdjustmentUser</h3>
-<p>The user who adjusted the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The user who adjusted the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -509,14 +509,14 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Maximum Length</em>: <strong>64</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="completetime">CompleteTime</h3>
-<p>Date and time when the document was completed (State set to Completed). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date and time when the document was completed (State set to Completed). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creationtime">CreationTime</h3>
-<p>Date/Time when the document was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/Time when the document was created. <code>Required</code> <code>Default(Now)</code> <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -524,7 +524,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>CurrentDateTime</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="creationuser">CreationUser</h3>
-<p>The login name of the user, who created the document. <code>Required</code> <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The login name of the user, who created the document. <code>Required</code> <code>Filter(like)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Like</strong><br>
@@ -539,7 +539,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="documentdate">DocumentDate</h3>
-<p>The date on which the document was issued. <code>Required</code> <code>Default(Today)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The date on which the document was issued. <code>Required</code> <code>Default(Today)</code> <code>Filter(eq;ge;le)</code> <code>ORD</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>date</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
@@ -548,7 +548,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>CurrentDate</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="documentno">DocumentNo</h3>
-<p>Document number, unique within Document_Type_Id. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Document number, unique within Document_Type_Id. <code>Required</code> <code>Filter(eq;like)</code> <code>ORD</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (20)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
@@ -557,7 +557,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Maximum Length</em>: <strong>20</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="documentnotes">DocumentNotes</h3>
-<p>Notes for this Document. (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Notes for this Document. (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -565,7 +565,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="documentversion">DocumentVersion</h3>
-<p>Consecutive version number, starting with 1. Each update produces a new version of the document. <code>Required</code> <code>Default(1)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Consecutive version number, starting with 1. Each update produces a new version of the document. <code>Required</code> <code>Default(1)</code> <code>Filter(eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
@@ -573,7 +573,7 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Default Value</em>: <strong>1</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="entityname">EntityName</h3>
-<p>The entity name of the document header. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The entity name of the document header. <code>Required</code> <code>Filter(eq)</code> <code>ORD</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (64)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
@@ -596,11 +596,11 @@ Object category attribute:  <em>DocumentTypeId</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="parentdocumentrelationshiptype">ParentDocumentRelationshipType</h3>
-<p>Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Type of relationship between the current document and the parent document(s). Affects the constraints for execution/completion for the documents. Possible values: 'S' = 'Subtask', 'N' = 'Next task'. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Logistics.Transportation.TransportationRequisitions.html#parentdocumentrelationshiptype">ParentDocument<br>RelationshipType</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Relationship between parent and child documents<br>
-<em>Allowed Values (General.ParentDocumentRelationshipType Enum Members)</em></p>
+<em>Allowed Values (General.Documents.ParentDocumentRelationshipType Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -627,7 +627,7 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="planningonly">PlanningOnly</h3>
-<p>Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Indicates that the document is used only for planning (and as consequence its state cannot be greater than Planned). <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -635,7 +635,7 @@ Relationship between parent and child documents<br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="readonly">ReadOnly</h3>
-<p>True - the document is read only; false - the document is not read only. <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>True - the document is read only; false - the document is not read only. <code>Required</code> <code>Default(false)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -643,7 +643,7 @@ Relationship between parent and child documents<br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="referencedate">ReferenceDate</h3>
-<p>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Indicates the date, when the event, described by the document, actually occurred. Generally, the document should be created at the date of the event. However, if the document is created later than the event, this field contains the date of the actual event. If the field is empty, this means that the document was created at the date of the actual event and Document Date is indicative of the date of the event. Contrast this with CreationTime, which indicates when the document was entered into the system. So, generally: Reference Date &lt;= DocumentDate &lt;= CreationTime. <code>Default(Today)</code> <code>Filter(ge;le)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -651,7 +651,7 @@ Relationship between parent and child documents<br>
 <em>Default Value</em>: <strong>CurrentDate</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="referencedocumentno">ReferenceDocumentNo</h3>
-<p>The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. <code>Filter(eq;like)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The number of the document (issued by the other party), which was the reason for the creation of the current document. The numebr should be unique within the party documents. <code>Filter(eq;like)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (20) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
@@ -659,7 +659,7 @@ Relationship between parent and child documents<br>
 <em>Maximum Length</em>: <strong>20</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="releasetime">ReleaseTime</h3>
-<p>Date and time when the document was released (State set to Released). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date and time when the document was released (State set to Released). <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
@@ -694,11 +694,11 @@ Relationship between parent and child documents<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="state">State</h3>
-<p>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The current system state of the document. Allowed values: 0=New;5=Corrective;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. <code>Required</code> <code>Default(0)</code> <code>Filter(multi eq;ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Logistics.Transportation.TransportationRequisitions.html#state">DocumentState</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Enumeration of document system states<br>
-<em>Allowed Values (General.DocumentState Enum Members)</em></p>
+<em>Allowed Values (General.Documents.DocumentState Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -749,7 +749,7 @@ Enumeration of document system states<br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="void">Void</h3>
-<p>True if the document is null and void. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>True if the document is null and void. <code>Required</code> <code>Default(false)</code> <code>Filter(eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>boolean</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
@@ -758,7 +758,7 @@ Enumeration of document system states<br>
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidreason">VoidReason</h3>
-<p>Reason for voiding the document, entered by the user. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Reason for voiding the document, entered by the user. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (254) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -766,14 +766,14 @@ Enumeration of document system states<br>
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voidtime">VoidTime</h3>
-<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>Date/time when the document has become void. <code>Filter(ge;le)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="voiduser">VoidUser</h3>
-<p>The user who voided the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The user who voided the document. <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong>string (64) <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -782,110 +782,110 @@ Enumeration of document system states<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="accesskey">AccessKey</h3>
-<p>The access key, containing the user permissions for this document. null means that all users have unlimited permissions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The access key, containing the user permissions for this document. null means that all users have unlimited permissions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Systems.Security.AccessKeys.html">AccessKeys</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="adjusteddocument">AdjustedDocument</h3>
-<p>The primary document, which the current document adjusts. null when this is not an adjustment document. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
+<p>The primary document, which the current document adjusts. null when this is not an adjustment document. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="assignedtouser">AssignedToUser</h3>
-<p>The user to which this document is assigned for handling. null means that the document is not assigned to specific user. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The user to which this document is assigned for handling. null means that the document is not assigned to specific user. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Systems.Security.Users.html">Users</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="currencydirectory">CurrencyDirectory</h3>
-<p>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The currency directory, containing all the convertion rates, used by the document. null means that the document does not need currency convertions. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Currencies.CurrencyDirectories.html">CurrencyDirectories</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="documenttype">DocumentType</h3>
-<p>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The user defined type of the document. Determines document behaviour, properties, additional amounts, validation, generations, etc. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypes.html">DocumentTypes</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="enterprisecompany">EnterpriseCompany</h3>
-<p>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The enterprise company which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="enterprisecompanylocation">EnterpriseCompanyLocation</h3>
-<p>The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The enterprise company location which issued the document. null means that there is only one location within the enterprise company and locations are not used. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="fromcompanydivision">FromCompanyDivision</h3>
-<p>The division of the company, issuing the document. null when the document is not issued by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The division of the company, issuing the document. null when the document is not issued by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyDivisions.html">CompanyDivisions</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="fromparty">FromParty</h3>
-<p>The party which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The party which issued the document. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="masterdocument">MasterDocument</h3>
-<p>In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<p>In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. <code>Required</code> <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="parent">Parent</h3>
-<p>In a multi-document tree, this is the direct parent document. If this is the root it is null. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
+<p>In a multi-document tree, this is the direct parent document. If this is the root it is null. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="primecausedocument">PrimeCauseDocument</h3>
-<p>The document that is the prime cause for creation of the current document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
+<p>The document that is the prime cause for creation of the current document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="responsibleperson">ResponsiblePerson</h3>
-<p>The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="reverseofdocument">ReverseOfDocument</h3>
-<p>The document which the current document is reverse of. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
-<p><em>Type</em>: <strong><a href="General.Documents.html">Documents</a> (nullable)</strong><br>
+<p>The document which the current document is reverse of. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
+<p><em>Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="sequence">Sequence</h3>
-<p>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The sequence that will be used to give new numbers to the documents of this type. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Systems.Documents.Sequences.html">Sequences</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="tocompanydivision">ToCompanyDivision</h3>
-<p>The division of the company, receiving the document. null when the document is not received by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The division of the company, receiving the document. null when the document is not received by any specific division. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.CompanyDivisions.html">CompanyDivisions</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="toparty">ToParty</h3>
-<p>The party which should receive the document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The party which should receive the document. <code>Filter(multi eq)</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -929,7 +929,7 @@ Enumeration of document system states<br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="userstatus">UserStatus</h3>
-<p>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.html">Documents</a>)</p>
+<p>The user status of this document if applicable for this document type. null means unknown or not yet set. <code>Filter(multi eq)</code> <code>ReadOnly</code> (Inherited from <a href="General.Documents.Documents.html">Documents</a>)</p>
 <p><em>Type</em>: <strong><a href="Systems.Documents.DocumentTypeUserStatuses.html">DocumentTypeUserStatuses</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
@@ -937,17 +937,17 @@ Enumeration of document system states<br>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="changestate">ChangeState</h3>
-<p>Changes the document state to the specified new state              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>Changes the document state to the specified new state              (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>void</strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><p><strong>newState</strong><br>
 The desired new state of the document<br>
-<em>Type</em>: General.DocumentState<br>
+<em>Type</em>: General.Documents.DocumentState<br>
 Enumeration of document system states<br>
-<em>Allowed Values (General.DocumentState Enum Members)</em></p>
+<em>Allowed Values (General.Documents.DocumentState Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -996,9 +996,9 @@ The desired new user status of the document. Can be null.<br>
 </ul>
 <p>The process of changing the document state is very labor intensive and includes              validation, generation of sub-documents and some other document-specific tasks.                          The state changing process might be very time-consuming, usually ranging              from 500 to 5000 milliseconds.                          Document states usually can only be advanced to higher states, but there are              exceptions from this rule. Database settings and configuration options might affect             the allowed state changes.                          Numerous kinds of document-specific and generic exceptions can be thrown during the             process.</p>
 <h3 id="processsingleroute">ProcessSingleRoute</h3>
-<p>Processes the document route.               (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>Processes the document route.               (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>void</strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1010,17 +1010,17 @@ The desired new user status of the document. Can be null.<br>
 </li>
 </ul>
 <h3 id="complete">Complete</h3>
-<p>Changes the document state to Completed with all Release-ed sub-documents              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>Changes the document state to Completed with all Release-ed sub-documents              (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>void</strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <p><strong>Parameters</strong></p>
 <ul>
 <li><p><strong>completion</strong><br>
 How the sub-documents will be completed, if at all<br>
-<em>Type</em>: General.DocumentCompletion<br>
+<em>Type</em>: General.Documents.DocumentCompletion<br>
 Determines how Document will be completed<br>
-<em>Allowed Values (General.DocumentCompletion Enum Members)</em></p>
+<em>Allowed Values (General.Documents.DocumentCompletion Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -1047,9 +1047,9 @@ Determines how Document will be completed<br>
 </ul>
 <p>The process of changing the document state is very labor intensive and includes              validation, generation of sub-documents and some other document-specific tasks.                          The state changing process might be very time-consuming, usually ranging              from 500 to 5000 milliseconds.                          Document states usually can only be advanced to higher states, but there are              exceptions from this rule. Database settings and configuration options might affect             the allowed state changes.                          Numerous kinds of document-specific and generic exceptions can be thrown during the             process.</p>
 <h3 id="makevoid">MakeVoid</h3>
-<p>Makes the document void. The operation is irreversible.              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>Makes the document void. The operation is irreversible.              (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>void</strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1059,9 +1059,9 @@ The reason for voiding the document.<br>
 </li>
 <li><p><strong>voidType</strong><br>
 The type of void operation to execute.<br>
-<em>Type</em>: General.DocumentsRepositoryBase.VoidType<br>
+<em>Type</em>: General.Documents.DocumentsRepositoryBase.VoidType<br>
 Specifies the type of void operation<br>
-<em>Allowed Values (General.DocumentsRepositoryBase.VoidType Enum Members)</em></p>
+<em>Allowed Values (General.Documents.DocumentsRepositoryBase.VoidType Enum Members)</em></p>
 <table>
 <thead>
 <tr>
@@ -1095,9 +1095,9 @@ Resets the parent state of document.<br>
 </li>
 </ul>
 <h3 id="getprintout">GetPrintout</h3>
-<p>Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates <code>DocumentPrint</code>(General.Documents.DocumentPrints.md).              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>Gets a document printout as a file. The returned value is Base64 string representation of the file contents.             This method creates <code>DocumentPrint</code>(General.Documents.DocumentPrints.md).              (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>string</strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <p><strong>Parameters</strong></p>
 <ul>
@@ -1115,15 +1115,15 @@ The printout defined for the document type of the document. If null the default 
 </li>
 </ul>
 <h3 id="recalculate">Recalculate</h3>
-<p>The document and all of its owned objects will be altered to become valid.              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
+<p>The document and all of its owned objects will be altered to become valid.              (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
 <em>Return Type</em>: <strong>void</strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>POST</strong></p>
 <p>In some cases the objects in child collection of the document depend on values from other child objects.             This method ensures that all child objects are properly validated.             The changes are only in memory and are not committed to the server.</p>
 <h3 id="getallparentdocuments">GetAllParentDocuments</h3>
-<p>Gets all parent documents, traversing the parent document chain by using the Parent property.              (Inherited from <a href="General.Documents.html">Documents</a>)<br>
-<em>Return Type</em>: <strong>Collection Of <a href="General.Documents.html">Documents</a></strong><br>
-<em>Declaring Type</em>: <strong><a href="General.Documents.html">Documents</a></strong><br>
+<p>Gets all parent documents, traversing the parent document chain by using the Parent property.              (Inherited from <a href="General.Documents.Documents.html">Documents</a>)<br>
+<em>Return Type</em>: <strong>Collection Of <a href="General.Documents.Documents.html">Documents</a></strong><br>
+<em>Declaring Type</em>: <strong><a href="General.Documents.Documents.html">Documents</a></strong><br>
 <em>Domain API Request</em>: <strong>GET</strong></p>
 <p><strong>Parameters</strong></p>
 <ul>

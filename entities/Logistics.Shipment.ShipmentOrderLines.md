@@ -55,7 +55,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Document](Logistics.Shipment.ShipmentOrderLines.md#document) | [ShipmentOrders](Logistics.Shipment.ShipmentOrders.md) | The <see cref="ShipmentOrder"/> to which this ShipmentOrderLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Shipment.ShipmentOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The store lot from which to take the goods. `Filter(multi eq)` |
-| [ParentDocument](Logistics.Shipment.ShipmentOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Logistics.Shipment.ShipmentOrderLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [ParentSalesOrderLine](Logistics.Shipment.ShipmentOrderLines.md#parentsalesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) | Sales order line which is shipped. `Required` `Filter(multi eq)` |
 | [QuantityUnit](Logistics.Shipment.ShipmentOrderLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [SerialNumber](Logistics.Shipment.ShipmentOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | The serial number of the shipped product. null means that serial number is unknown or not applicable. `Filter(multi eq)` |
@@ -325,7 +325,7 @@ _Front-End Recalc Expressions:_
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

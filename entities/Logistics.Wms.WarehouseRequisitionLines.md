@@ -44,7 +44,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Document](Logistics.Wms.WarehouseRequisitionLines.md#document) | [WarehouseRequisitions](Logistics.Wms.WarehouseRequisitions.md) | The <see cref="Warehouse<br />Requisition"/> to which this WarehouseRequisitionLine belongs. `Required` `Filter(multi eq)` |
 | [Lot](Logistics.Wms.WarehouseRequisitionLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The requested lot. null means that any lot can be used or the product does not use lots at all. `Filter(multi eq)` |
-| [ParentDocument](Logistics.Wms.WarehouseRequisitionLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Logistics.Wms.WarehouseRequisitionLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [Product](Logistics.Wms.WarehouseRequisitionLines.md#product) | [Products](General.Products.Products.md) | The requested product. `Required` `Filter(multi eq)` |
 | [ProductVariant](Logistics.Wms.WarehouseRequisitionLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | The requested product variant. `Filter(multi eq)` `Introduced in version 22.1.4.56` |
 | [QuantityUnit](Logistics.Wms.WarehouseRequisitionLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
@@ -195,7 +195,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
