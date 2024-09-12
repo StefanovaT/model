@@ -99,7 +99,7 @@
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>Planned +</td>
+<td>Planning +</td>
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
@@ -112,18 +112,28 @@ needed</a></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Validate that:
-<br><br></td>
+<td>IF
+Work Order.EntitySettings.ProductionMode = Production
+<br><br>
+Validate that for all Work Order Items lines:
+<br><br>
+WorkOrder.WorkOrderItems.ProducedQuantity != NULL
+AND
+WorkOrder.WorkOrderItems.ProducedQuantity &gt; 0</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>On any document state change, the system checks that the Produced Quantity is greater
-than zero. If the Produced Quantity is zero or negative, the system will trigger
-an error, preventing the state change until the issue is resolved.</td>
+<td>When the document state is changed to 'Planned' or higher,
+the system checks that the Produced Quantity is greater than zero.
+If the Produced Quantity is zero or negative, the system will trigger an error,
+preventing the state change until the issue is resolved.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td></td>
+<td>The value in the 'Produced Quantity' field for row [WorkOrderItems.LineOrd]
+is invalid. The value must be greater than zero due to the 'Production' setting
+selected in the Work Order definition.
+Please correct it in accordance with the requirements.</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>

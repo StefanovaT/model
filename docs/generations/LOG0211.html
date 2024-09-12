@@ -185,7 +185,7 @@ StoreOrder.ToParty = TransferOrder.FromStore
 <tbody>
 <tr>
 <td style="text-align: left;">Parent Entity</td>
-<td>StoreTransactionLines (where &quot;StoreTransactionLine.ParentLine =  Id of any TransferOrderLine of the generating TransferOrder&quot; AND &quot;StoreTransactionLine.StoreTransaction.MovementType = Issue&quot; AND &quot;StoreTransactionLine.Document.State = RELEASE&quot; AND &quot;StoreTransactionLine.Document.Void = False&quot;)</td>
+<td>StoreTransactionLines (where &quot;StoreTransactionLine.ParentStoreOrderLine.ParentLineId =  Id of any TransferOrderLine of the generating TransferOrder&quot; AND &quot;StoreTransactionLine.StoreTransaction.MovementType = Issue&quot; AND &quot;StoreTransactionLine.Document.State = RELEASE&quot; AND &quot;StoreTransactionLine.Document.Void = False&quot;)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Child Entity</td>
@@ -251,7 +251,7 @@ StoreOrderLine.Product = StoreTransactionLine.Product
 
 StoreOrderLine.ProductVariant = StoreTransactionLine.ProductVariant
 
-StoreOrderLine.StoreBin = CAST(StoreTransactionLine.ParentLineId, TransferOrderLines).ToStoreBin
+StoreOrderLine.StoreBin = CAST(StoreTransactionLine.ParentStoreOrderLine.ParentLineId, TransferOrderLines).ToStoreBin
 
 StoreOrderLine.SerialNumber = StoreTransactionLine.SerialNumber
 
@@ -279,7 +279,7 @@ StoreOrderLine.GuaranteePeriodDays =
 
 StoreOrderLine.SalesOrderLine = null
 
-StoreOrderLine.Notes = CAST(StoreTransactionLine.ParentLineId, TransferOrderLines).Notes
+StoreOrderLine.Notes = CAST(StoreTransactionLine.ParentStoreOrderLine.ParentLineId, TransferOrderLines).Notes
 
 StoreOrderLine.PersistLot = false
 
@@ -287,7 +287,7 @@ StoreOrderLine.ParentDocument = StoreTransaction
 
 StoreOrderLine.ParentLineNo = StoreTransactionLine.LineNo
 
-StoreOrderLine.ParentLineId = StoreTransactionLine.ParentLineId
+StoreOrderLine.ParentLineId = StoreTransactionLine.ParentStoreOrderLine.ParentLineId 
 
 StoreOrderLine.TransactionTimestamp = null
 
