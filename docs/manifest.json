@@ -10442,6 +10442,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R37423.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R37423.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "data-types.md",
       "output": {
         ".html": {
