@@ -74,56 +74,65 @@
 <h1 id="r33691-serviceagreement---services-quantity-old-value">R33691 ServiceAgreement - Services Quantity Old Value</h1>
 
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
+<col style="width:25%">
+<col style="width:75%">
 <tbody>
 <tr>
-<td>Code</td>
+<td><strong>Code</strong></td>
 <td>R33691</td>
 </tr>
 <tr>
-<td>Entity</td>
+<td><strong>Entity</strong></td>
 <td><a class="xref" href="../entities/Applications.Service.ServiceAgreements.html">Applications.Service.ServiceAgreements Entity</a></td>
 </tr>
 <tr>
-<td>Name</td>
+<td><strong>Name</strong></td>
 <td>ServicesQuantityOldValue</td>
 </tr>
 <tr>
-<td>Attribute</td>
+<td><strong>Attribute</strong></td>
 <td>ServicesLine.Quantity</td>
 </tr>
 <tr>
-<td>Layer</td>
+<td><strong>Layer</strong></td>
 <td>Back-End</td>
 </tr>
 <tr>
-<td>Events</td>
+<td><strong>Events</strong></td>
 <td>Released+</td>
 </tr>
 <tr>
-<td>Priority</td>
+<td><strong>Priority</strong></td>
 <td>Normal</td>
 </tr>
 <tr>
-<td>Modify</td>
+<td><strong>Modify</strong></td>
 <td>NO</td>
 </tr>
 <tr>
-<td>Action</td>
-<td>For each Release on the ServiceAgreement validate that the old value in <br> <br> ServiceAgreementServices.Quantity &lt; <br> ServiceActivity.DistributedServiceAgreementServicess.AgreedQuantity</td>
+<td><strong>Action</strong></td>
+<td>For each Release of the ServiceAgreement: <br>
+IF the old value in ServiceAgreementServices.Quantity != 0 <br>
+AND <br>
+ServiceAgreementServices.Quantity == ServiceActivity.DistributedServiceAgreementServices.AgreedQuantity <br> |
+THEN throw an error</td>
 </tr>
 <tr>
-<td>Description</td>
-<td>For each Release on the current Service Agreement the old value in the field Quantity in panel Service Agreement Services, must be less than the value of Distributed Quantity in the Service Activity. <br><br> Distributed Quantity is defined, as sum of all values of the field Agreed Quantity from all records in Distributed service agreement services, which are for the current services line of the Service Agreement.</td>
+<td><strong>Description</strong></td>
+<td>For each Release on the current Service Agreement the old value in the field Quantity
+in panel Service Agreement Services, must be less than the value of
+Distributed Quantity in the Service Activity. <br><br>
+Distributed Quantity is defined, as sum of all values of the field Agreed Quantity
+from all records in Distributed service agreement services,
+which are for the current services line of the Service Agreement.</td>
 </tr>
 <tr>
-<td>Message</td>
-<td>In line with number {LineNo} in table 'Service Agreement Services' in service agreement '{DocumentType} {DocumentNo}'  the old value in the field Quantity must be less than the distributed agreed quantities for the service agreement line in the service activities.<br><br> <em>Sort Messages By Attribute: LineNo</em></td>
+<td><strong>Message</strong></td>
+<td>In line with number {LineNo} in table 'Service Agreement Services'
+in service agreement '{DocumentType} {DocumentNo}'
+the old value in the field Quantity must be less than the distributed agreed quantities|
+for the service agreement line in the service activities.<br><br>
+<em>Sort Messages By Attribute: LineNo</em></td>
 </tr>
 <tr>
 <td>Version</td>
