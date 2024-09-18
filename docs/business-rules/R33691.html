@@ -114,32 +114,34 @@
 <td>For each Release of the ServiceAgreement: <br>
 IF the old value in ServiceAgreementServices.Quantity != 0 <br>
 AND <br>
-ServiceAgreementServices.Quantity == ServiceActivity.DistributedServiceAgreementServices.AgreedQuantity <br> |
+ServiceAgreementServices.Quantity == ServiceActivity.DistributedServiceAgreementServices.AgreedQuantity <br>
 THEN throw an error</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>For each Release on the current Service Agreement the old value in the field Quantity
-in panel Service Agreement Services, must be less than the value of
-Distributed Quantity in the Service Activity. <br><br>
-Distributed Quantity is defined, as sum of all values of the field Agreed Quantity
-from all records in Distributed service agreement services,
-which are for the current services line of the Service Agreement.</td>
+<td>For each Release (including after Adjustment) of the current Service Agreement,
+the rule validates that no Quantity adjustments are made for lines that were
+fully distributed. <br>
+A line is considered fully distributed when the Quantity prior to the Adjustment
+is equal to the sum of the Agreed Quantity field from all records in
+Distributed Service Agreement Services, which are related to the current service line
+of the Service Agreement. <br>
+The rule is not triggered if the Quantity prior to the Adjustment is zero.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>In line with number {LineNo} in table 'Service Agreement Services'
-in service agreement '{DocumentType} {DocumentNo}'
-the old value in the field Quantity must be less than the distributed agreed quantities|
-for the service agreement line in the service activities.<br><br>
-<em>Sort Messages By Attribute: LineNo</em></td>
+<td>Invalid Quantity аdjustment. <br>
+Тhe Quantity in line {LineNo} of service agreement '{DocumentType} {DocumentNo}'
+is being adjusted, but this is not allowed because it is equal to the
+distributed agreed quantities, meaning the line is fully distributed.<br>
+Please reset the Quantity adjustment for this line.</td>
 </tr>
 <tr>
-<td>Version</td>
+<td><strong>Version</strong></td>
 <td>Introduced: 2023</td>
 </tr>
 <tr>
-<td>Revocable</td>
+<td><strong>Revocable</strong></td>
 <td>NO</td>
 </tr>
 </tbody>
