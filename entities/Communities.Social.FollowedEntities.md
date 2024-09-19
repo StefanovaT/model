@@ -43,6 +43,7 @@ Aggregate Tree
 The followed entity item. `Required` `Filter(multi eq)`
 
 _Type_: **guid**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
