@@ -15,19 +15,25 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Case_Category_Id](#case_category_id)|`uniqueidentifier` |The category of the case. This also determines the workflow for the case.|
 |[Case_Id](#case_id)|`uniqueidentifier` `PK`||
 |[Case_Number](#case_number)|`int` Readonly||
+|[Closed_Time_UTC](#closed_time_utc)|`datetime` Readonly|Indicates the time (in UTC) when the case was closed.|
+|[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact date and time (in UTC) when the case was created.|
 |[Description](#description)|`nvarchar(max)` |Description of the required work.|
 |[Due_Date](#due_date)|`date` |Specified when the case has specific due date.|
 |[Due_Time](#due_time)|`time` |Specified when the case has specific due time.|
 |[Estimated_Time_Hours](#estimated_time_hours)|`decimal(8, 2)` |Estimation of the required work effort in hours.|
+|[In_Progress_Time_UTC](#in_progress_time_utc)|`datetime` Readonly|Indicates the time (in UTC) when the case has changed to in-progress state.|
 |[Parent_Case_Id](#parent_case_id)|`uniqueidentifier` |Specified when this is a sub-case to another case.|
 |[Priority](#priority)|`tinyint` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`|Priority of the case, on a scale from 1 (highest) to 7 (lowest).|
 |[Project_Area_Id](#project_area_id)|`uniqueidentifier` |The are to which the case is assigned.|
 |[Project_Id](#project_id)|`uniqueidentifier` |The project to which the case is assigned.|
 |[Project_Milestone_Id](#project_milestone_id)|`uniqueidentifier` |Determines the milestone for which the case must be resolved.|
+|[Ready_Time_UTC](#ready_time_utc)|`datetime` Readonly|Indicates the time (in UTC) when the case has become ready for execution.|
+|[Resolved_Time_UTC](#resolved_time_utc)|`datetime` Readonly|Indicates the time (in UTC) when the case was resolved.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |Specified, when the case is assigned to a group of users.|
 |[System_State](#system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, Readonly|The base state of the case.|
 |[Title](#title)|`nvarchar(128)` |Case short title.|
+|[Waiting_Time_UTC](#waiting_time_utc)|`datetime` Readonly|Indicates the time (in UTC) when the case has changed to waiting state.|
 
 ## Columns
 
@@ -149,7 +155,7 @@ The category of the case. This also determines the workflow for the case.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|16|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -170,6 +176,78 @@ The category of the case. This also determines the workflow for the case.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Closed_Time_UTC
+
+
+Indicates the time (in UTC) when the case was closed.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|22|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Closed_Time_UTC - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
+### Creation_Time_Utc
+
+
+The exact date and time (in UTC) when the case was created.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|CurrentDateTimeUtc|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|17|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Creation_Time_Utc - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Description
 
@@ -308,6 +386,42 @@ Estimation of the required work effort in hours.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+### In_Progress_Time_UTC
+
+
+Indicates the time (in UTC) when the case has changed to in-progress state.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|19|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### In_Progress_Time_UTC - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 ### Parent_Case_Id
 
@@ -494,6 +608,78 @@ Determines the milestone for which the case must be resolved.
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 
+### Ready_Time_UTC
+
+
+Indicates the time (in UTC) when the case has become ready for execution.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|18|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Ready_Time_UTC - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
+### Resolved_Time_UTC
+
+
+Indicates the time (in UTC) when the case was resolved.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|21|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Resolved_Time_UTC - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
+
 ### Row_Version
 
 | Property | Value |
@@ -630,5 +816,41 @@ Case short title.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Like|None|no|no|
+
+### Waiting_Time_UTC
+
+
+Indicates the time (in UTC) when the case has changed to waiting state.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|20|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|datetime (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Waiting_Time_UTC - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|GreaterThanOrLessThan|None|no|no|
 
 
