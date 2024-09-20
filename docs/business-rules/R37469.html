@@ -91,7 +91,7 @@
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
-<td>CreationTimeUtc, ReadyTimeUTC, InProgressTimeUTC, WaitingTimeUTC, ResolvedTimeUTC, ClosedTimeUTC |</td>
+<td>CreationTimeUtc, ReadyTimeUTC, InProgressTimeUTC, WaitingTimeUTC, ResolvedTimeUTC, ClosedTimeUTC</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
@@ -119,13 +119,13 @@
 If a new Case has been recorded,<br>
 , then set: CreationTimeUtc = Now (in UTC)
 <br><br>
-Оn Update:
+Оn Update:<br>
 If the System State field has been changed<br>
 , then set the current time in UTC in the corresponding field: ReadyTimeUTC, InProgressTimeUTC, WaitingTimeUTC, ResolvedTimeUTC or ClosedTimeUTC</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule ensures that when a new Case is created, the current time in UTC is set in the CreationTimeUtc field,
+<td>The rule ensures that when a new case is created, the current time in UTC is set in the CreationTimeUtc field,
 and after a change in the system state of the case - the current time of this change (in UTC) is recorded in the corresponding field.</td>
 </tr>
 <tr>
