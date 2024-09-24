@@ -1026,6 +1026,8 @@
       href: Projects.Agile.Projects.md
     - name: ProjectTypes
       href: Projects.Agile.ProjectTypes.md
+    - name: UserStates
+      href: Projects.Agile.UserStates.md
   - name: AI
     href: Projects.AI.md
     items:

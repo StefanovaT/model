@@ -11,4 +11,5 @@ uid: Projects.Agile
 - [ProjectMilestones](Projects.Agile.ProjectMilestones.md)  
 - [Projects](Projects.Agile.Projects.md)  
 - [ProjectTypes](Projects.Agile.ProjectTypes.md)  
+- [UserStates](Projects.Agile.UserStates.md)  
 

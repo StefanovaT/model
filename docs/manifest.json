@@ -16362,6 +16362,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Projects.Agile.UserStates.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Projects.Agile.UserStates.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Projects.Agile.md",
       "output": {
         ".html": {
@@ -19405,6 +19415,16 @@
       "output": {
         ".html": {
           "relative_path": "tables/Apm_Projects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Apm_User_States.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Apm_User_States.html"
         }
       },
       "version": ""
