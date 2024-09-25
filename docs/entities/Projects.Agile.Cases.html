@@ -245,6 +245,11 @@ Object category attribute:  <em>CaseCategoryId</em></p>
 <td><a href="Communities.Social.Groups.html">Groups</a> (nullable)</td>
 <td>Specified, when the case is assigned to a group of users. <code>Filter(multi eq)</code></td>
 </tr>
+<tr>
+<td><a href="Projects.Agile.Cases.html#userstate">UserState</a></td>
+<td><a href="Projects.Agile.UserStates.html">UserStates</a> (nullable)</td>
+<td>The user-defined sub-state of the case. <code>Filter(multi eq)</code> <code>Introduced in version 25.1.0.97</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
@@ -498,6 +503,12 @@ Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemst
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="userstate">UserState</h3>
+<p>The user-defined sub-state of the case. <code>Filter(multi eq)</code> <code>Introduced in version 25.1.0.97</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Agile.UserStates.html">UserStates</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>

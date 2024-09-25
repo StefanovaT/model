@@ -212,6 +212,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>obj.SetUserStateOrd( obj.SystemState)</code></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>obj.SetUserStateOrd( obj.SystemState)</code></p>
 <h3 id="systemstate">SystemState</h3>
 <p>The system state, which this state extends. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Agile.UserStates.html#systemstate">SystemState</a></strong><br>
@@ -228,27 +232,27 @@ Allowed values for the <code>SystemState</code>(Projects.Agile.Cases.md#systemst
 <tbody>
 <tr>
 <td>BACKLOG</td>
-<td>BACKLOG. Stored as '1'. <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'BACKLOG'</td>
+<td>BACKLOG. Stored as '1'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'BACKLOG'</td>
 </tr>
 <tr>
 <td>READY</td>
-<td>READY. Stored as '2'. <br> <em>Database Value:</em> '1' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'READY'</td>
+<td>READY. Stored as '2'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'READY'</td>
 </tr>
 <tr>
 <td>INPROGRESS</td>
-<td>IN PROGRESS. Stored as '3'. <br> <em>Database Value:</em> '2' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'INPROGRESS'</td>
+<td>IN PROGRESS. Stored as '3'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'INPROGRESS'</td>
 </tr>
 <tr>
 <td>WAITING</td>
-<td>WAITING. Stored as '4'. <br> <em>Database Value:</em> '3' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'WAITING'</td>
+<td>WAITING. Stored as '4'. <br> <em>Database Value:</em> '4' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'WAITING'</td>
 </tr>
 <tr>
 <td>RESOLVED</td>
-<td>RESOLVED. Stored as '5'. <br> <em>Database Value:</em> '4' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'RESOLVED'</td>
+<td>RESOLVED. Stored as '5'. <br> <em>Database Value:</em> '5' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'RESOLVED'</td>
 </tr>
 <tr>
 <td>CLOSED</td>
-<td>CLOSED. Stored as '6'. <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'CLOSED'</td>
+<td>CLOSED. Stored as '6'. <br> <em>Database Value:</em> '6' <br> <em>Model Value:</em> 5 <br> <em>Domain API Value:</em> 'CLOSED'</td>
 </tr>
 </tbody>
 </table>
@@ -334,7 +338,9 @@ The notification subject.<br>
 <h2 id="business-rules">Business Rules</h2>
 <p>None</p>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
-<p>None</p>
+<ul>
+<li><a href="../business-rules/R37449.html">R37449 User State - Set Ord (Recalc)</a></li>
+</ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:
 <a href="https://demodb.my.erp.net/api/domain/odata/Projects_Agile_UserStates?$top=10">https://demodb.my.erp.net/api/domain/odata/Projects_Agile_UserStates?$top=10</a></p>

@@ -104,6 +104,11 @@ _Supported Filters_: **Equals, GreaterThanOrLessThan**
 _Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`obj.SetUserStateOrd( obj.SystemState)`
+
+_Front-End Recalc Expressions:_  
+`obj.SetUserStateOrd( obj.SystemState)`
 ### SystemState
 
 The system state, which this state extends. `Required` `Filter(multi eq)`
@@ -115,12 +120,12 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 
 | Value | Description |
 | ---- | --- |
-| BACKLOG | BACKLOG. Stored as '1'. <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'BACKLOG' |
-| READY | READY. Stored as '2'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'READY' |
-| INPROGRESS | IN PROGRESS. Stored as '3'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'INPROGRESS' |
-| WAITING | WAITING. Stored as '4'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'WAITING' |
-| RESOLVED | RESOLVED. Stored as '5'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'RESOLVED' |
-| CLOSED | CLOSED. Stored as '6'. <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'CLOSED' |
+| BACKLOG | BACKLOG. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'BACKLOG' |
+| READY | READY. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'READY' |
+| INPROGRESS | IN PROGRESS. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'INPROGRESS' |
+| WAITING | WAITING. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'WAITING' |
+| RESOLVED | RESOLVED. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'RESOLVED' |
+| CLOSED | CLOSED. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'CLOSED' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

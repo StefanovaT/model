@@ -33,6 +33,7 @@ Case in a project. Used to track work progress. Entity: Apm_Cases (Introduced in
 |[Social_Group_Id](#social_group_id)|`uniqueidentifier` |Specified, when the case is assigned to a group of users.|
 |[System_State](#system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, Readonly|The base state of the case.|
 |[Title](#title)|`nvarchar(128)` |Case short title.|
+|[User_State_Id](#user_state_id)|`uniqueidentifier` |The user-defined sub-state of the case.|
 |[Waiting_Time_UTC](#waiting_time_utc)|`datetime` Readonly|Indicates the time (in UTC) when the case has changed to waiting state.|
 
 ## Columns
@@ -816,6 +817,43 @@ Case short title.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Like|None|no|no|
+
+### User_State_Id
+
+
+The user-defined sub-state of the case.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|23|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Apm_User_States](Apm_User_States.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### User_State_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Waiting_Time_UTC
 
