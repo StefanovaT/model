@@ -114,7 +114,7 @@
 <td>For each Release of the ServiceAgreement: <br>
 IF the old value in ServiceAgreementServices.Quantity != 0 <br>
 AND <br>
-ServiceAgreementServices.Quantity == ServiceActivity.DistributedServiceAgreementServices.AgreedQuantity <br>
+the old value in ServiceAgreementServices.Quantity == ServiceActivity.DistributedServiceAgreementServices.AgreedQuantity<br>
 THEN throw an error</td>
 </tr>
 <tr>
@@ -131,14 +131,16 @@ The rule is not triggered if the Quantity prior to the Adjustment is zero.</td>
 <tr>
 <td><strong>Message</strong></td>
 <td>Invalid Quantity аdjustment. <br>
-Тhe Quantity in line {LineNo} of service agreement '{DocumentType} {DocumentNo}'
+Тhe Quantity in line {LineNo} in the panel
+'{Srv_Service_Agreement_Services.Display_Text}'
+of the service agreement '{DocumentType} {DocumentNo}'
 is being adjusted, but this is not allowed because it is equal to the
 distributed agreed quantities, meaning the line is fully distributed.<br>
 Please reset the Quantity adjustment for this line.</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
-<td>Introduced: 2023</td>
+<td>Introduced:                                                                   |</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
