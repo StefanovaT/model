@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>R37410 Work Orders - Negative Produced Quantity Not Allowed For Production | ERP.net Domain Model </title>
+      <title>R37504 Deal - Assign Sales Person | ERP.net Domain Model </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="R37410 Work Orders - Negative Produced Quantity Not Allowed For Production | ERP.net Domain Model ">
+      <meta name="title" content="R37504 Deal - Assign Sales Person | ERP.net Domain Model ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37410.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37504.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -71,7 +71,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="r37410-work-orders---negative-produced-quantity-not-allowed-for-production">R37410 Work Orders - Negative Produced Quantity Not Allowed For Production</h1>
+<h1 id="r37504-deal---assign-sales-person">R37504 Deal - Assign Sales Person</h1>
 
 <table>
 <col style="width:25%">
@@ -79,64 +79,71 @@
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
-<td>R37410</td>
+<td>R37504</td>
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Production.ShopFloor.WorkOrders.html">Production.ShopFloor.WorkOrders Entity</a>                                                  |</td>
+<td><a class="xref" href="../entities/Crm.Presales.Deals.html">Crm.Presales.Deals Entity</a></td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>NegativeProducedQuantityNotAllowedForProduction</td>
+<td>AssignSalesPerson</td>
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
-<td>ProducedQuantity</td>
+<td>LeadingSalesPerson</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
-<td>Back-End</td>
+<td>Front-End</td>
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>Planning +</td>
+<td>AttributeChanged(EnterpriseCompany, Party, FromCompanyDivision)</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>Normal</td>
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
-<td>NO</td>
-</tr>
-<tr>
-<td><strong>Applicable Legislations</strong></td>
-<td><a class="xref" href="https://erpnetdocs.github.io/tech/reference/country-specific-functionality.html">ALL // no condition
-needed</a></td>
+<td>YES</td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>IF
-Work Order.EntitySettings.ProductionMode = Production
+<td>If the current user is associated with an active Sales Person for the Deal’s Enterprise Company<br>
+, then the rule sets that Sales Person in the Leading Sales Person field.
 <br><br>
-Validate that for all Work Order Items lines:
+If the above condition is not met and the Party (when the Party field it is not empty) is a Customer of the Deal's Enterprise Company<br>
+, then the rule sets the Customer’s SalesPerson in the Leading Sales Person field.
 <br><br>
-WorkOrder.WorkOrderItems.ProducedQuantity &gt;= 0</td>
+If there is no Sales Person defined for the Party’s Customer and if among the Sales Person Assignment Rules there is a rule which meets the following conditions:<br>
+- Is Active is true<br>
+- From Date is empty or &lt;= Deal’s Document Date<br>
+- To Date is empty or &gt;= Deal’s Document Date<br>
+- Enterprise Company is equal to Deal’s Enterprise Company<br>
+- Company Division is empty or equal to Deal’s From Company Division<br>
+- Customer Type is empty or equal to Customer’s Customer Type<br>
+- Sales Area is empty or equal to Customer’s Area<br>
+, then the rule sets the Sales Person of the selected Sales Person Assignment Rule in the Leading Sales Person field.<br>
+*If more than one rule meets the conditions -&gt; the one with the highest priority is selected.<br>
+*If there is more than one rule within the same highest priority –&gt; the one with the highest Rule № is selected.
+<br><br>
+If none of the above conditions are met – the Leading Sales Person field remains empty.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>When the document state is changed to 'Planned' or higher,
-the system checks that the Produced Quantity is greater or equal to zero.
-If the Produced Quantity is zero or negative, the system will trigger an error,
-preventing the state change until the issue is resolved.</td>
+<td>The rule facilitates the assignment of a sales person responsible for the deal/opportunity by following a specific algorithm.
+<br><br>
+The assignment algorithm gives priority to the sales person associated with the current user, followed by the sales person of the identified Customer, and finally – the sales person determined by a Sales Person Assignment Rule.<br></td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>The value of the 'Produced Quantity' field in work order item line
-'[WorkOrderItems.LineOrd]' is invalid.
-The value must be greater than or equal to zero due to the 'Production' setting
-specified in the document type.
-Please specify a valid quantity or use a document type that allows decomposition.</td>
+<td>-</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
-<td>Introduced:</td>
+<td>Introduced: v.25</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
@@ -150,7 +157,7 @@ topic <a href="../templates/template-description-system-business-rules.html">Sy
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37410.md/#L1" class="edit-link">Suggest improvement to this page</a>
+          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37504.md/#L1" class="edit-link">Suggest improvement to this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
