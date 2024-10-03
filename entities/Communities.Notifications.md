@@ -25,6 +25,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [Anchor](Communities.Notifications.md#anchor) | string (128) __nullable__ | A custom reference (most commonly a relative URL) pointing to an additional resource related to the DataObject. `Introduced in version 25.1.1.3` 
 | [CreationTimeUtc](Communities.Notifications.md#creationtimeutc) | datetime | The exact server time (in UTC), when the notification was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `ReadOnly` 
 | [DisplayText](Communities.Notifications.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.Notifications.md#id) | guid |  
@@ -42,6 +43,17 @@ Aggregate Tree
 
 
 ## Attribute Details
+
+### Anchor
+
+A custom reference (most commonly a relative URL) pointing to an additional resource related to the DataObject. `Introduced in version 25.1.1.3`
+
+_Type_: **string (128) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **128**  
+_Show in UI_: **ShownByDefault**  
 
 ### CreationTimeUtc
 

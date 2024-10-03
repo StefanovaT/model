@@ -10,6 +10,7 @@ Contains the documents which are referenced by each document amount. Entity: Gen
 ## Owner Tables Hierarchy
 
 * [Gen_Document_Amounts](Gen_Document_Amounts.md)
+* [Gen_Documents](Gen_Documents.md)
 
 ## Summary
 

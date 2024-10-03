@@ -33,7 +33,7 @@ Aggregate Root:
 | [DisplayText](General.Products.ProductCodes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](General.Products.ProductCodes.md#id) | guid |  
 | [ObjectVersion](General.Products.ProductCodes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ProductCodeField](General.Products.ProductCodes.md#productcodefield) | string (32) | The code of the product in the specified coding system. `Required` `Filter(eq;like)` 
+| [ProductCodeField](General.Products.ProductCodes.md#productcodefield) | string (32) | The code of the product in the specified coding system. `Required` `Filter(eq;like)` `ORD` 
 
 ## References
 
@@ -87,12 +87,13 @@ _Show in UI_: **HiddenByDefault**
 
 ### ProductCodeField
 
-The code of the product in the specified coding system. `Required` `Filter(eq;like)`
+The code of the product in the specified coding system. `Required` `Filter(eq;like)` `ORD`
 
 _Type_: **string (32)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, Like**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Maximum Length_: **32**  
 _Show in UI_: **ShownByDefault**  
 
