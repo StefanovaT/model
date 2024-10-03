@@ -111,17 +111,18 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>If the System State field is filled in, the rule validates that the selected System State is BACKLOG, READY, INPROGRESS, WAITING or RESOLVED.</td>
+<td>If the System State field is filled in, the rule validates that the selected System State differs from CLOSED.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule prevents setting a system state that is not among the allowed values.</td>
+<td>When defining a user state, the rule prevents the system state from being set to 'CLOSED'.
+User states are not specified for the CLOSED system state, as it adopts those defined for the RESOLVED system state. |</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
 <td>The 'System State' field contains an invalid value.
 <br><br>
-A user state can only be defined for one of the following system states: BACKLOG, READY, INPROGRESS, WAITING, or RESOLVED.
+A user state cannot be defined for system state - CLOSED.
 <br><br>
 Please select a valid system state and try again.</td>
 </tr>
