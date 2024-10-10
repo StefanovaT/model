@@ -130,6 +130,11 @@ Aggregate Root:<br>
 <td>The exact server time (in UTC), when the user joined the group. <code>Required</code> <code>Default(NowUtc)</code> <code>Filter(ge;le)</code></td>
 </tr>
 <tr>
+<td><a href="Communities.Social.GroupMembers.html#lastseentimeutc">LastSeenTimeUtc</a></td>
+<td>datetime <strong>nullable</strong></td>
+<td>The time (in UTC) until the group member caught up with the content in the corresponding group. null indicates that the group has no content or the member has never interacted with it. <code>Filter(ge;le)</code> <code>Introduced in version 25.1.1.12</code></td>
+</tr>
+<tr>
 <td><a href="Communities.Social.GroupMembers.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
@@ -186,6 +191,13 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>CurrentDateTimeUtc</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="lastseentimeutc">LastSeenTimeUtc</h3>
+<p>The time (in UTC) until the group member caught up with the content in the corresponding group. null indicates that the group has no content or the member has never interacted with it. <code>Filter(ge;le)</code> <code>Introduced in version 25.1.1.12</code></p>
+<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
