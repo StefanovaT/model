@@ -54,7 +54,7 @@ The amount is represented by value and currency.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Currency | String | The currency of the amount represented by it's sign. |
+| Currency | String | The currency of the amount represented by its sign. |
 | Value | Decimal | The value of the amount. |
 
 Domain API Example:  
