@@ -105,6 +105,15 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **CannotBeShown**  
 
 
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
+
 ## API Methods
 
 Methods that can be invoked in public APIs.

@@ -142,6 +142,13 @@ _Supported Filters_: **Equals, EqualsIn**
 _Show in UI_: **HiddenByDefault**  
 
 
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Access | - |
+
 ## API Methods
 
 Methods that can be invoked in public APIs.

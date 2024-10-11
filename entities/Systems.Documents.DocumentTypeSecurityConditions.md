@@ -139,6 +139,15 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
 ### DocumentType
 
 The document type, whose documents will be secured by the current rule. `Required` `Filter(multi eq)` `Owner`

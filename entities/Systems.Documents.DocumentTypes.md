@@ -319,6 +319,23 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **CannotBeShown**  
 
+
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
+| Release Documents | Permission1 |
+| Complete Documents | Permission2 |
+| Return to Released State | Permission3 |
+| Release Documents On Different Date | Permission4 |
+| Correct Documents | Permission5 |
+| Void Documents | Permission6 |
+| Set To Exit User State For Firm Planned Documents | Permission7 |
+| Set To Exit User State For Released Documents | Permission8 |
 ### Sequence
 
 The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)`
