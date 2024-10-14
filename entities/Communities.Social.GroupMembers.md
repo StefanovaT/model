@@ -32,7 +32,7 @@ Aggregate Root:
 | [DisplayText](Communities.Social.GroupMembers.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Communities.Social.GroupMembers.md#id) | guid |  
 | [JoinTimeUtc](Communities.Social.GroupMembers.md#jointimeutc) | datetime | The exact server time (in UTC), when the user joined the group. `Required` `Default(NowUtc)` `Filter(ge;le)` 
-| [LastSeenTimeUtc](Communities.Social.GroupMembers.md#lastseentimeutc) | datetime __nullable__ | The time (in UTC) until the group member caught up with the content in the corresponding group. null indicates that the group has no content or the member has never interacted with it. `Filter(ge;le)` `Introduced in version 25.1.1.12` 
+| [LastSeenTimeUtc](Communities.Social.GroupMembers.md#lastseentimeutc) | datetime __nullable__ | The time (in UTC) until the group member caught up with the content in the corresponding group. null indicates that the group has no content or the member has never interacted with it. `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.1.12` 
 | [ObjectVersion](Communities.Social.GroupMembers.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Role](Communities.Social.GroupMembers.md#role) | [Role](Communities.Social.GroupMembers.md#role) | Member role in a group. Defaults to member. `Required` `Default("M")` `Filter(eq)` `Introduced in version 23.1.1.95` 
 
@@ -78,7 +78,7 @@ _Show in UI_: **ShownByDefault**
 
 ### LastSeenTimeUtc
 
-The time (in UTC) until the group member caught up with the content in the corresponding group. null indicates that the group has no content or the member has never interacted with it. `Filter(ge;le)` `Introduced in version 25.1.1.12`
+The time (in UTC) until the group member caught up with the content in the corresponding group. null indicates that the group has no content or the member has never interacted with it. `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.1.12`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  

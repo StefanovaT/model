@@ -160,6 +160,7 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | AssignedToOthers<br />SectionVisibility | Show or hide the Assign to Others section in the warehouse orders list.. Stored as 'AOS'. <br /> _Database Value:_ 'AOS' <br /> _Model Value:_ 16 <br /> _Domain API Value:_ 'AssignedToOthers<br />SectionVisibility' |
 | LogisticUnitScreen<br />Visibility | Always show, hide, or use the default behavior on the logistic unit screen when executing warehouse order lines.. Stored as 'LUS'. <br /> _Database Value:_ 'LUS' <br /> _Model Value:_ 17 <br /> _Domain API Value:_ 'LogisticUnitScreen<br />Visibility' |
 | BarcodeScanEnters<br />QuantityOfOnePce | If no quantity is entered, scanning a barcode in the SCAN field enters 1 PCE.. Stored as 'QOP'. <br /> _Database Value:_ 'QOP' <br /> _Model Value:_ 18 <br /> _Domain API Value:_ 'BarcodeScanEnters<br />QuantityOfOnePce' |
+| RoutingAlgorithm | RoutingAlgorithm value. Stored as 'RAL'. <br /> _Database Value:_ 'RAL' <br /> _Model Value:_ 19 <br /> _Domain API Value:_ 'RoutingAlgorithm' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
