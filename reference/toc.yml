@@ -7,4 +7,6 @@
   href: metrics.md
 - name: Standard-document-attributes
   href: standard-document-attributes.md
+- name: Entity Type Renames
+  href: ../docs/entities/renames.md
   
