@@ -78,7 +78,7 @@ The quantity is represented by value and measurement unit.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Unit | String | TThe measurement unit of the quantity represented by it's code. |
+| Unit | String | The measurement unit of the quantity represented by it's code. |
 | Value | Decimal | The value of the quantity. |
 
 Domain API Example:  
