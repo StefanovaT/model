@@ -83,7 +83,7 @@
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Crm.Sales.SalesOrders.html">Crm.Sales.SalesOrders Entity</a></td>
+<td><a class="xref" href="../entities/Crm.Sales.SalesOrderLines.html">Crm.Sales.SalesOrderLines Entity</a></td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
@@ -103,11 +103,11 @@
 </tr>
 <tr>
 <td><strong>Events</strong></td>
-<td>State Changing</td>
+<td>Commit</td>
 </tr>
 <tr>
 <td><strong>Priority</strong></td>
-<td>Normal</td>
+<td>Early</td>
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
@@ -121,21 +121,18 @@ needed</a></td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>
-<pre><code>                                |
-                                                                                |
-                                 |
-</code></pre>
-</td>
+<td>Get all Level1Discount.DocumentAmountType, Level2Discount.DocumentAmountType and
+CLevel3Discount.DocumentAmountType.
+For each distinct value, create new records in DocumentAmounts, but only for those
+DocumentAmountTypes that do not already have a corresponding record.
+The new records should have InputAmount = NULL and InputPercent = 100%.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>
-<pre><code>|
-   |
-  |
-</code></pre>
-</td>
+<td>The rule creates records in DocumentAmounts for all Document Amount Types that are specified
+in the definitions of the level discounts applied to the Sales Order Line.
+This will trigger the calculation of the Discount Level amounts and their recording in the
+Document Distributed Amounts. Those records can be used for reporting and posting purposes.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
@@ -153,7 +150,7 @@ Updated: -</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 </tbody>
 </table>
