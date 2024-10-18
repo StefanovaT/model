@@ -8,7 +8,7 @@
 - name: Standard document attributes
   href: standard-document-attributes.md
 - name: Entity type renames
-  href: ../entities/renames.md
+  href: renames.md
 - name: Entity type track changes restrictions
-  href: ../entities/tracking-levels.md
+  href: tracking-levels.md
   
