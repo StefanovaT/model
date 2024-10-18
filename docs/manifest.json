@@ -11542,6 +11542,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Communities.Social.NotificationsSummary.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Communities.Social.NotificationsSummary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Communities.Social.Posts.md",
       "output": {
         ".html": {
@@ -19238,6 +19248,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "reference/renames.md",
+      "output": {
+        ".html": {
+          "relative_path": "reference/renames.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "reference/standard-document-attributes.md",
       "output": {
         ".html": {
@@ -19255,6 +19275,16 @@
         },
         ".json": {
           "relative_path": "reference/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "reference/tracking-levels.md",
+      "output": {
+        ".html": {
+          "relative_path": "reference/tracking-levels.html"
         }
       },
       "version": ""
@@ -20175,6 +20205,16 @@
       "output": {
         ".html": {
           "relative_path": "tables/Cmm_Notifications.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Cmm_Notifications_Summary_View.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Cmm_Notifications_Summary_View.html"
         }
       },
       "version": ""

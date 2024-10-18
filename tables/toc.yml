@@ -191,6 +191,8 @@
     href: Cmm_Notification_Settings.md
   - name: Cmm_Notifications
     href: Cmm_Notifications.md
+  - name: Cmm_Notifications_Summary_View
+    href: Cmm_Notifications_Summary_View.md
   - name: Cmm_Social_Comments
     href: Cmm_Social_Comments.md
   - name: Cmm_Social_Followed_Entities_Indexed_View

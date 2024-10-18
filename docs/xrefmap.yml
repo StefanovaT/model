@@ -295,6 +295,9 @@ references:
 - uid: Communities.Social.Groups
   name: Communities.Social.Groups Entity
   href: entities/Communities.Social.Groups.html
+- uid: Communities.Social.NotificationsSummary
+  name: Communities.Social.NotificationsSummary View
+  href: entities/Communities.Social.NotificationsSummary.html
 - uid: Communities.Social.Posts
   name: Communities.Social.Posts Entity
   href: entities/Communities.Social.Posts.html

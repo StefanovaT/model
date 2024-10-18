@@ -9,6 +9,7 @@ uid: Communities.Social
 - [Follows](Communities.Social.Follows.md)  
 - [GroupMembers](Communities.Social.GroupMembers.md)  
 - [Groups](Communities.Social.Groups.md)  
+- [NotificationsSummary](Communities.Social.NotificationsSummary.md)  
 - [Posts](Communities.Social.Posts.md)  
 - [Reactions](Communities.Social.Reactions.md)  
 - [ReactionsSummary](Communities.Social.ReactionsSummary.md)  

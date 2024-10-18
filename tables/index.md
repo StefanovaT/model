@@ -105,6 +105,7 @@
 
 * [Cmm_Notification_Settings](Cmm_Notification_Settings.md)
 * [Cmm_Notifications](Cmm_Notifications.md)
+* [Cmm_Notifications_Summary_View](Cmm_Notifications_Summary_View.md)
 * [Cmm_Social_Comments](Cmm_Social_Comments.md)
 * [Cmm_Social_Followed_Entities_Indexed_View](Cmm_Social_Followed_Entities_Indexed_View.md)
 * [Cmm_Social_Follows](Cmm_Social_Follows.md)

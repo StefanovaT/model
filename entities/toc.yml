@@ -208,6 +208,8 @@
       href: Communities.Social.GroupMembers.md
     - name: Groups
       href: Communities.Social.Groups.md
+    - name: NotificationsSummary
+      href: Communities.Social.NotificationsSummary.md
     - name: Posts
       href: Communities.Social.Posts.md
     - name: Reactions
