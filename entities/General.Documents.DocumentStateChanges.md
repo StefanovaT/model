@@ -27,8 +27,8 @@ Category:  _Definitions_
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  
-_Min level_:  **0 - Do not track changes**  
-_Max level_:  **0 - Do not track changes**  
+Min level:  _0 - Do not track changes_  
+Max level:  _0 - Do not track changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  

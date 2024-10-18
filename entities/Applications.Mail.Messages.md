@@ -16,8 +16,8 @@ Category:  _Definitions_
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  
-_Min level_:  **1 - Track last changes only**  
-_Max level_:  **4 - Track object attribute and blob changes**  
+Min level:  _1 - Track last changes only_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
