@@ -4,7 +4,8 @@ param(
     [switch]$debug,
     [string]$entities,
     [string]$tables,
-    [string]$br         # business rules
+    [string]$br,         # business rules
+    [string]$reference
 )
 
 if ($debug -eq $true) {
@@ -59,6 +60,15 @@ catch {
 Write-Host "Copy generated business rules (.md files)"
 try {
     Copy-Item -Path $br -Destination "." -Force -Recurse
+}
+catch {  
+    Write-Error $_
+    Exit 400
+}
+
+Write-Host "Copy generated reference topics (.md files)"
+try {
+    Copy-Item -Path $reference -Destination "." -Force -Recurse
 }
 catch {  
     Write-Error $_
