@@ -138,7 +138,8 @@
 </table>
 <h2 id="business-logic">Business Logic</h2>
 <p>This generation procedure is used to create receipt <strong>Store Orders (SO)</strong> from <strong>Transfer Orders (TO)</strong>.</p>
-<p>It specifically creates receipt SOs only for products that <strong>have already been issued from the other store</strong>, meaning there are created, released, and non-voided Store Transactions for these lines.</p>
+<p>It is used in <strong>sequential execution flows</strong>, meaning that it waits for the actual stock to be issued from the originating Store before proceeding with the creation of the receipt SOs. This ensures that no receiving SO is generated until the goods have physically left the sending warehouse, ensuring accurate stock movement and synchronization between the warehouses.</p>
+<p>In other words, this generation procedure specifically creates receipt SOs only for products that <strong>have already been issued from the other store</strong>, meaning there are created, released, and non-voided Store Transactions for these lines.</p>
 <p>The SO lines contain detailed information about the execution of the issued lines, including the actual issued quantity, lot number, serial number, cost, and other relevant data.</p>
 <p>This generation procedure is typically configured in <strong>combination with a second procedure, <a href="LOG0212.html">LOG0212</a></strong>, which creates SOs for products that have not yet been issued. While <strong>LOG0211</strong> provides details about what has already been issued and is currently expected, <strong>LOG0212</strong> indicates what remains to be issued and is planned to be received in the future.</p>
 <div class="NOTE">
@@ -146,7 +147,7 @@
 <p><strong>IMPORTANT:</strong> Note that document routes for both generation procedures <strong>must be set up to create different Document Types</strong> otherwise, they won’t function correctly.</p>
 </div>
 <p><strong>The new SO's header is created as follows:</strong></p>
-<pre><code>StoreOrder.DocumentDate = TransferOrder.DocumentDate
+<pre><code>StoreOrder.DocumentDate = Today
 
 StoreOrder.PlanningOnly = False
 
