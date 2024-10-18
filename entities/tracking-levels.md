@@ -1,6 +1,8 @@
 ﻿# Entity Tracking Levels
 
-The minimum and maximum tracking level is system-configured and cannot be exceeded.  
+The minimum and maximum tracking level are system-configured and cannot be exceeded.  
+
+For more information on track changes, please check out **[Track Changes](https://docs.erp.net/tech/advanced/data-objects/track-changes.html)**.  
 
 The following table contains default system-specified tracking levels:  
 
