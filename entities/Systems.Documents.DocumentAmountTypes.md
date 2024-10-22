@@ -66,6 +66,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [AccessKey](Systems.Documents.DocumentAmountTypes.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this DocumentAmountType. Null means that all users have unlimited permissions. `Filter(multi eq)` `Introduced in version 25.1.1.24` |
 | [DistributeByMeasurement<br />Category](Systems.Documents.DocumentAmountTypes.md#distributebymeasurementcategory) | [MeasurementCategories](General.Products.MeasurementCategories.md) (nullable) | Specifies the measurement category to be used for distribution, when the Distribute_By = 'MEASUREMENT'. `Filter(multi eq)` |
 
 ## Child Collections
@@ -287,6 +288,25 @@ _Show in UI_: **ShownByDefault**
 
 ## Reference Details
 
+### AccessKey
+
+The access key, containing the user permissions for this DocumentAmountType. Null means that all users have unlimited permissions. `Filter(multi eq)` `Introduced in version 25.1.1.24`
+
+_Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
+
+
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
 ### DistributeByMeasurementCategory
 
 Specifies the measurement category to be used for distribution, when the Distribute_By = 'MEASUREMENT'. `Filter(multi eq)`

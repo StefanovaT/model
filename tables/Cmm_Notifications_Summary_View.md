@@ -14,8 +14,8 @@ Summary info for notifications, grouped by user and data object. Entity: Cmm_Not
 |[Data_Object_Id](#data_object_id)|`uniqueidentifier` ||
 |[Last_Notification_Subject](#last_notification_subject)|`nvarchar(256)` ||
 |[Last_Notification_Time](#last_notification_time)|`datetime` ||
-|[Not_Read_Count](#not_read_count)|`int` ||
-|[Notifications_Count](#notifications_count)|`int` ||
+|[Not_Read_Count](#not_read_count)|`int` |Not Read Count|
+|[Notifications_Count](#notifications_count)|`int` |Notifications Count|
 |[User_Id](#user_id)|`uniqueidentifier` ||
 
 ## Columns
@@ -125,6 +125,9 @@ Summary info for notifications, grouped by user and data object. Entity: Cmm_Not
 
 ### Not_Read_Count
 
+
+Not Read Count
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -151,6 +154,9 @@ Summary info for notifications, grouped by user and data object. Entity: Cmm_Not
 |Visible|yes|
 
 ### Notifications_Count
+
+
+Notifications Count
 
 | Property | Value |
 | - | - |

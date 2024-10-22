@@ -11,6 +11,7 @@ Represents the different types of additional amounts which are calculated for th
 
 | Name | Type | Description |
 | - | - | --- |
+|[Access_Key_Id](#access_key_id)|`uniqueidentifier` ||
 |[Add_To_Customer](#add_to_customer)|`bit` |1 means that the amount will be charged to the primary customer of the document|
 |[Add_To_Line](#add_to_line)|`bit` |1 means that the resulting amount will be added to the amount of each respective line|
 |[Allowed_Directions](#allowed_directions)|`int` Allowed: `-1`, `0`, `1`|Specifies condition for the sign of the allowed values for input percent or amount ​​that can be set in the documents.|
@@ -30,6 +31,40 @@ Represents the different types of additional amounts which are calculated for th
 |[Unit_Amount_Input_Allowed](#unit_amount_input_allowed)|`bit` |Specifies whether the user is allowed to input fixed unit amount for the calculation of the amount.|
 
 ## Columns
+
+### Access_Key_Id
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Sec_Access_Keys](Sec_Access_Keys.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Access_Key_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Add_To_Customer
 

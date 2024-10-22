@@ -227,6 +227,11 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 </thead>
 <tbody>
 <tr>
+<td><a href="Systems.Documents.DocumentAmountTypes.html#accesskey">AccessKey</a></td>
+<td><a href="Systems.Security.AccessKeys.html">AccessKeys</a> (nullable)</td>
+<td>The access key, containing the user permissions for this DocumentAmountType. Null means that all users have unlimited permissions. <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.24</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Documents.DocumentAmountTypes.html#distributebymeasurementcategory">DistributeByMeasurement<br>Category</a></td>
 <td><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a> (nullable)</td>
 <td>Specifies the measurement category to be used for distribution, when the Distribute_By = 'MEASUREMENT'. <code>Filter(multi eq)</code></td>
@@ -445,6 +450,37 @@ Allowed values for the <code>DistributeBy</code>(Systems.Documents.DocumentAmoun
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
+<h3 id="accesskey">AccessKey</h3>
+<p>The access key, containing the user permissions for this DocumentAmountType. Null means that all users have unlimited permissions. <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.24</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.AccessKeys.html">AccessKeys</a> (nullable)</strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<p><em>Remarks</em><br>
+Supported permissions</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Update</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>-</td>
+</tr>
+<tr>
+<td>Administer (manage security)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 <h3 id="distributebymeasurementcategory">DistributeByMeasurementCategory</h3>
 <p>Specifies the measurement category to be used for distribution, when the Distribute_By = 'MEASUREMENT'. <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.MeasurementCategories.html">MeasurementCategories</a> (nullable)</strong><br>
