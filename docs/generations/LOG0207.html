@@ -255,7 +255,9 @@ StoreTransactionLine.TransactionTimestamp = null
 
 StoreTransactionLine.Notes = StoreOrderLine.Notes
 
-StoreTransactionLine.AllowOverExecution = If (DocumentFullfimenLineId == StoreOrder.DocumentFullfilmentId ) AND (StoreOrderLine.StandardQuantityBase &lt; All(DocumentFullfillmentLine.StandardQuantityBase)) {AllowOverExecution = True}, else {AllowOverExecution = False}
+StoreTransactionLine.AllowOverExecution = If (DocumentFullfiment.ParentFullfilment == StoreOrder.DocumentFullfilment) AND
+(StoreOrderLine.StandardQuantityBase &lt; All(DocumentFullfillment.StandardQuantityBase)) {AllowOverExecution = True},
+else {AllowOverExecution = False}
 </code></pre>
 <p><strong>The new (Child) Document Fulfillment is created as follows:</strong></p>
 <pre><code>DocumentFulfillment.Document = StoreOrder
