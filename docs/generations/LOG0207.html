@@ -241,7 +241,11 @@ StoreTransactionLine.QuantityBase = REMAINING(MQuantityBase)
 
 StoreTransactionLine.StandardQuantityBase = REMAINING(MStandardQuantity)
 
-StoreTransactionLine.UnitCost = if (StoreOrderLine.UnitCost != null), then StoreTransactionLine.UnitCost = StoreOrderLine.UnitCost, else StoreTransactionLine.UnitCost = 0.00
+StoreTransactionLine.UnitCost = if (StoreOrderLine.UnitCost != null),
+
+                                then StoreTransactionLine.UnitCost = StoreOrderLine.UnitCost,
+
+                                else StoreTransactionLine.UnitCost = 0.00
 
 StoreTransactionLine.LineCost = if (StoreOrder.MovementType == Receipt) {StoreTransactionLine.LineCost = (StoreOrderLine.LineCost/StoreOrderLine.StandardQuantityBase)* StoreTransactionLine.StandardQuantityBase}, else {StoreTransactionLine.LineCost = 0.00}
 
@@ -255,8 +259,15 @@ StoreTransactionLine.TransactionTimestamp = null
 
 StoreTransactionLine.Notes = StoreOrderLine.Notes
 
-StoreTransactionLine.AllowOverExecution = If (StoreOrderLine.StandardQuantityBase &lt; All(DocumentFulfillments.StandartQuantity(where 'DocumentLineId = StoreOrderLineId' AND 'FulfillmentType = Completed' AND 'DestinationEntityName = Wms_Warehouse_Requisition_Lines')) {AllowOverExecution = True},
-else {AllowOverExecution = False}
+StoreTransactionLine.AllowOverExecution = If (StoreOrderLine.StandardQuantityBase &lt; All(DocumentFulfillments.StandartQuantity
+
+                                          (where 'DocumentLineId = StoreOrderLineId' AND
+
+                                          'FulfillmentType = Completed' AND
+
+                                          'DestinationEntityName = Wms_Warehouse_Requisition_Lines')) {AllowOverExecution = True},
+
+                                           else {AllowOverExecution = False}
 </code></pre>
 <p><strong>The new (Child) Document Fulfillment is created as follows:</strong></p>
 <pre><code>DocumentFulfillment.Document = StoreOrder
