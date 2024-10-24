@@ -18,7 +18,7 @@ Name Data Member:
 _Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _AssetCategoryId_  
+Layout category attribute:  _AssetCategoryId_  
 
 ## Track Changes  
 Min level:  _0 - Do not track changes_  

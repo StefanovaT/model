@@ -18,7 +18,7 @@ Name Data Member:
 _Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _ProductTypeId_  
+Layout category attribute:  _ProductTypeId_  
 
 ## Track Changes  
 Min level:  _2 - Track object changes_  

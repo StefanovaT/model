@@ -18,7 +18,7 @@ Name Data Member:
 _RentalAssetName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _RentalAssetTypeId_  
+Layout category attribute:  _RentalAssetTypeId_  
 
 ## Track Changes  
 Min level:  _0 - Do not track changes_  

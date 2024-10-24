@@ -25,7 +25,7 @@ Code Data Member:
 _DocumentNo_  
 Category:  _Definitions_  
 Show in UI:  _HiddenByDefault_  
-Object category attribute:  _DocumentTypeId_  
+Layout category attribute:  _DocumentTypeId_  
 
 ## Track Changes  
 Min level:  _0 - Do not track changes_  

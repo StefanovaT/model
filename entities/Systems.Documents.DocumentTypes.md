@@ -27,6 +27,7 @@ Name Data Member:
 _TypeName_  
 Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
+Layout category attribute:  _EntityName_  
 
 ## Track Changes  
 Min level:  _4 - Track object attribute and blob changes_  

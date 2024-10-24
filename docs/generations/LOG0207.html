@@ -259,15 +259,17 @@ StoreTransactionLine.TransactionTimestamp = null
 
 StoreTransactionLine.Notes = StoreOrderLine.Notes
 
-StoreTransactionLine.AllowOverExecution = If (StoreOrderLine.StandardQuantityBase &lt; All(DocumentFulfillments.StandartQuantity
+StoreTransactionLine.AllowOverExecution = If (StoreOrderLine.StandardQuantityBase &lt; SUM(DocumentFulfillments.StandartQuantityBase, where
 
-                                          (where 'DocumentLineId = StoreOrderLineId' AND
+                                          'DocumentLineId = StoreOrderLineId' AND
 
                                           'FulfillmentType = Completed' AND
 
-                                          'DestinationEntityName = Wms_Warehouse_Requisition_Lines')) {AllowOverExecution = True},
+                                          'DestinationEntityName = Wms_Warehouse_Requisition_Lines')),
 
-                                           else {AllowOverExecution = False}
+                                           then AllowOverExecution = True,
+
+                                           else AllowOverExecution = False
 </code></pre>
 <p><strong>The new (Child) Document Fulfillment is created as follows:</strong></p>
 <pre><code>DocumentFulfillment.Document = StoreOrder

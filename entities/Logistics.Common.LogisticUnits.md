@@ -25,7 +25,7 @@ Code Data Member:
 _SerialCode_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _LogisticUnitTypeId_  
+Layout category attribute:  _LogisticUnitTypeId_  
 
 ## Track Changes  
 Min level:  _0 - Do not track changes_  

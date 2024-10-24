@@ -18,7 +18,7 @@ Name Data Member:
 _Party.PartyName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _SupplierTypeId_  
+Layout category attribute:  _SupplierTypeId_  
 
 ## Track Changes  
 Min level:  _1 - Track last changes only_  

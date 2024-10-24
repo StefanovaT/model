@@ -18,7 +18,7 @@ Name Data Member:
 _PartyName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _PartyType_  
+Layout category attribute:  _PartyType_  
 
 ## Track Changes  
 Min level:  _4 - Track object attribute and blob changes_  
