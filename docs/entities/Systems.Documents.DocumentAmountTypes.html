@@ -182,7 +182,7 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Systems.Documents.DocumentAmountTypes.html#distributeby">DistributeBy</a></td>
 <td><a href="Systems.Documents.DocumentAmountTypes.html#distributeby">DistributeBy</a></td>
-<td>Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE'). <code>Required</code> <code>Default(&quot;AMOUNT&quot;)</code> <code>Filter(eq)</code></td>
+<td>Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE','LINE DISCOUNT'). <code>Required</code> <code>Default(&quot;AMOUNT&quot;)</code> <code>Filter(eq)</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Documents.DocumentAmountTypes.html#id">Id</a></td>
@@ -369,7 +369,7 @@ Allowed values for the <code>AllowedDirections</code>(Systems.Documents.Document
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="distributeby">DistributeBy</h3>
-<p>Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE'). <code>Required</code> <code>Default(&quot;AMOUNT&quot;)</code> <code>Filter(eq)</code></p>
+<p>Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE','LINE DISCOUNT'). <code>Required</code> <code>Default(&quot;AMOUNT&quot;)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong><a href="Systems.Documents.DocumentAmountTypes.html#distributeby">DistributeBy</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 Allowed values for the <code>DistributeBy</code>(Systems.Documents.DocumentAmountTypes.md#distributeby) data attribute<br>
@@ -397,6 +397,10 @@ Allowed values for the <code>DistributeBy</code>(Systems.Documents.DocumentAmoun
 <tr>
 <td>DealType</td>
 <td>DealType value. Stored as 'DEAL TYPE'. <br> <em>Database Value:</em> 'DEAL TYPE' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'DealType'</td>
+</tr>
+<tr>
+<td>LineDiscount</td>
+<td>Distributes the amount of the applied line discounts from this category to the corresponding line.. Stored as 'LINE DISCOUNT'. <br> <em>Database Value:</em> 'LINE DISCOUNT' <br> <em>Model Value:</em> 4 <br> <em>Domain API Value:</em> 'LineDiscount'</td>
 </tr>
 </tbody>
 </table>

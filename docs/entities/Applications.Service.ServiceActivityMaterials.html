@@ -188,6 +188,11 @@ Aggregate Root:<br>
 <td>The measurement unit of Quantity. Initially is set to the default unit for the product. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Applications.Service.ServiceActivityMaterials.html#serialnumber">SerialNumber</a></td>
+<td><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</td>
+<td>The serial number of the product used as material. null means that the number is unknown or will be specified at a later stage (in a store order, etc.). <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.26</code></td>
+</tr>
+<tr>
 <td><a href="Applications.Service.ServiceActivityMaterials.html#serviceactivity">ServiceActivity</a></td>
 <td><a href="Applications.Service.ServiceActivities.html">ServiceActivities</a></td>
 <td>The <see cref="ServiceActivity"></see> to which this ServiceActivityMaterial belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
@@ -318,6 +323,12 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.Product.MeasurementUnit</code></p>
+<h3 id="serialnumber">SerialNumber</h3>
+<p>The serial number of the product used as material. null means that the number is unknown or will be specified at a later stage (in a store order, etc.). <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.26</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.SerialNumbers.html">SerialNumbers</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="serviceactivity">ServiceActivity</h3>
 <p>The <see cref="ServiceActivity"></see> to which this ServiceActivityMaterial belongs. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Applications.Service.ServiceActivities.html">ServiceActivities</a></strong><br>
