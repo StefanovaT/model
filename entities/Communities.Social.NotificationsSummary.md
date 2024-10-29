@@ -26,7 +26,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [LastNotificationSubject](Communities.Social.NotificationsSummary.md#lastnotificationsubject) | string (256) __nullable__ | The short subject of the notification (in the Default Culture of the user). `Filter(eq;like)` `Inherited from Cmm_Notifications_Table.Subject` 
-| [LastNotificationTime](Communities.Social.NotificationsSummary.md#lastnotificationtime) | datetime | The exact server time (in UTC), when the notification was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `Inherited from Cmm_Notifications_Table.Creation_Time_Utc` 
+| [LastNotificationTime](Communities.Social.NotificationsSummary.md#lastnotificationtime) | datetime | The exact server time (in UTC), when the notification was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `Inherited from Cmm_Notifications_Table.Creation_Time_Utc` 
 | [NotificationsCount](Communities.Social.NotificationsSummary.md#notificationscount) | int32 | Notifications Count. `Required` 
 | [NotReadCount](Communities.Social.NotificationsSummary.md#notreadcount) | int32 | Not Read Count. `Required` 
 
@@ -54,13 +54,13 @@ _Show in UI_: **ShownByDefault**
 
 ### LastNotificationTime
 
-The exact server time (in UTC), when the notification was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `Inherited from Cmm_Notifications_Table.Creation_Time_Utc`
+The exact server time (in UTC), when the notification was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `Inherited from Cmm_Notifications_Table.Creation_Time_Utc`
 
 _Type_: **datetime**  
 _Category_: **System**  
 _Inherited From_: **Cmm_Notifications_Table.Creation_Time_Utc**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Default Value_: **CurrentDateTimeUtc**  
 _Show in UI_: **ShownByDefault**  
 

@@ -166,14 +166,29 @@ Aggregate Root:<br>
 <td>Transport mode; used for Intrastat reporting.</td>
 </tr>
 <tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level1discountamount">Level1DiscountAmount</a></td>
+<td><a href="../data-types.html#amount">Amount</a></td>
+<td>The amount of the level 1 discount.</td>
+</tr>
+<tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level1discountpercent">Level1DiscountPercent</a></td>
 <td>decimal (7, 6) <strong>nullable</strong></td>
 <td>The percent of the level 1 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.56</code></td>
 </tr>
 <tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level2discountamount">Level2DiscountAmount</a></td>
+<td><a href="../data-types.html#amount">Amount</a></td>
+<td>The cumulative amount of the level 2 discount.</td>
+</tr>
+<tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level2discountpercent">Level2DiscountPercent</a></td>
 <td>decimal (7, 6) <strong>nullable</strong></td>
 <td>The percent of the level 2 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></td>
+</tr>
+<tr>
+<td><a href="Crm.Sales.SalesOrderLines.html#level3discountamount">Level3DiscountAmount</a></td>
+<td><a href="../data-types.html#amount">Amount</a></td>
+<td>The cumulative amount of the level 3 discount.</td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level3discountpercent">Level3DiscountPercent</a></td>
@@ -677,6 +692,13 @@ Generic enum type for TransportMode properties<br>
 <code>obj.SalesOrder.IntrastatTransportModeCode</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.IntrastatTransportModeCode</code></p>
+<h3 id="level1discountamount">Level1DiscountAmount</h3>
+<p>The amount of the level 1 discount.</p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount</a></strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="level1discountpercent">Level1DiscountPercent</h3>
 <p>The percent of the level 1 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.56</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
@@ -686,6 +708,13 @@ Generic enum type for TransportMode properties<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.Level1Discount != null), Convert( obj.Level1Discount.DiscountPercent, Object), null)</code></p>
+<h3 id="level2discountamount">Level2DiscountAmount</h3>
+<p>The cumulative amount of the level 2 discount.</p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount</a></strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="level2discountpercent">Level2DiscountPercent</h3>
 <p>The percent of the level 2 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
@@ -695,6 +724,13 @@ Generic enum type for TransportMode properties<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)</code></p>
+<h3 id="level3discountamount">Level3DiscountAmount</h3>
+<p>The cumulative amount of the level 3 discount.</p>
+<p><em>Type</em>: <strong><a href="../data-types.html#amount">Amount</a></strong><br>
+<em>Category</em>: <strong>Calculated Attributes</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="level3discountpercent">Level3DiscountPercent</h3>
 <p>The percent of the level 3 discount. <code>ReadOnly</code> <code>Introduced in version 23.1.2.8</code></p>
 <p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>

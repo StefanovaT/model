@@ -41,8 +41,11 @@ Aggregate Root:
 | [IntrastatApplyDate](Crm.Sales.SalesOrderLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Filter(ge;le)` `Introduced in version 21.1.3.83` 
 | [IntrastatTransaction<br />NatureCode](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
 | [IntrastatTransportModeCode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) | [TransportMode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) __nullable__ | Transport mode; used for Intrastat reporting. 
+| [Level1DiscountAmount](Crm.Sales.SalesOrderLines.md#level1discountamount) | [Amount](../data-types.md#amount) | The amount of the level 1 discount. 
 | [Level1DiscountPercent](Crm.Sales.SalesOrderLines.md#level1discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56` 
+| [Level2DiscountAmount](Crm.Sales.SalesOrderLines.md#level2discountamount) | [Amount](../data-types.md#amount) | The cumulative amount of the level 2 discount. 
 | [Level2DiscountPercent](Crm.Sales.SalesOrderLines.md#level2discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 2 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
+| [Level3DiscountAmount](Crm.Sales.SalesOrderLines.md#level3discountamount) | [Amount](../data-types.md#amount) | The cumulative amount of the level 3 discount. 
 | [Level3DiscountPercent](Crm.Sales.SalesOrderLines.md#level3discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
 | [LineAmount](Crm.Sales.SalesOrderLines.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)` 
 | [LineCustomDiscountPercent](Crm.Sales.SalesOrderLines.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)` 
@@ -268,6 +271,16 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.IntrastatTransportModeCode`
+### Level1DiscountAmount
+
+The amount of the level 1 discount.
+
+_Type_: **[Amount](../data-types.md#amount)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### Level1DiscountPercent
 
 The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56`
@@ -280,6 +293,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.Level1Discount != null), Convert( obj.Level1Discount.DiscountPercent, Object), null)`
+### Level2DiscountAmount
+
+The cumulative amount of the level 2 discount.
+
+_Type_: **[Amount](../data-types.md#amount)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### Level2DiscountPercent
 
 The percent of the level 2 discount. `ReadOnly` `Introduced in version 23.1.2.8`
@@ -292,6 +315,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)`
+### Level3DiscountAmount
+
+The cumulative amount of the level 3 discount.
+
+_Type_: **[Amount](../data-types.md#amount)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### Level3DiscountPercent
 
 The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8`
