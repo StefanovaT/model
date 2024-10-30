@@ -130,6 +130,11 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
 </tr>
 <tr>
+<td><a href="Systems.Security.AccessKeys.html#entityid">EntityId</a></td>
+<td>guid</td>
+<td>The field stores the Id of the entity that the key was created from. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.32</code></td>
+</tr>
+<tr>
 <td><a href="Systems.Security.AccessKeys.html#entityname">EntityName</a></td>
 <td>string (64) <strong>nullable</strong></td>
 <td>What entitity the key secures. Can be null for private, legacy keys. <code>Filter(eq;like)</code> <code>ORD</code></td>
@@ -148,6 +153,11 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <td><a href="Systems.Security.AccessKeys.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
+</tr>
+<tr>
+<td><a href="Systems.Security.AccessKeys.html#sharelevel">ShareLevel</a></td>
+<td><a href="Systems.Security.AccessKeys.html#sharelevel">ShareLevel</a></td>
+<td>Specifies the extent to which the key can be shared among multiple entities. <code>Required</code> <code>Default(&quot;PRI&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 25.1.1.32</code></td>
 </tr>
 </tbody>
 </table>
@@ -168,6 +178,13 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Category</em>: <strong>Calculated Attributes</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="entityid">EntityId</h3>
+<p>The field stores the Id of the entity that the key was created from. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.32</code></p>
+<p><em>Type</em>: <strong>guid</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="entityname">EntityName</h3>
 <p>What entitity the key secures. Can be null for private, legacy keys. <code>Filter(eq;like)</code> <code>ORD</code></p>
@@ -199,6 +216,42 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="sharelevel">ShareLevel</h3>
+<p>Specifies the extent to which the key can be shared among multiple entities. <code>Required</code> <code>Default(&quot;PRI&quot;)</code> <code>Filter(eq)</code> <code>Introduced in version 25.1.1.32</code></p>
+<p><em>Type</em>: <strong><a href="Systems.Security.AccessKeys.html#sharelevel">ShareLevel</a></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+Allowed values for the <code>ShareLevel</code>(Systems.Security.AccessKeys.md#sharelevel) data attribute<br>
+<em>Allowed Values (Systems.Security.AccessKeysRepository.ShareLevel Enum Members)</em></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Private</td>
+<td>The key is private to the entity.. Stored as 'PRI'. <br> <em>Database Value:</em> 'PRI' <br> <em>Model Value:</em> 0 <br> <em>Domain API Value:</em> 'Private'</td>
+</tr>
+<tr>
+<td>Referenceable</td>
+<td>The key can be referenced from other entities.. Stored as 'REF'. <br> <em>Database Value:</em> 'REF' <br> <em>Model Value:</em> 1 <br> <em>Domain API Value:</em> 'Referenceable'</td>
+</tr>
+<tr>
+<td>Inheritable</td>
+<td>The key can be inherited from child entities.. Stored as 'INH'. <br> <em>Database Value:</em> 'INH' <br> <em>Model Value:</em> 2 <br> <em>Domain API Value:</em> 'Inheritable'</td>
+</tr>
+<tr>
+<td>Public</td>
+<td>The key is public and is not specific to any entity.. Stored as 'PUB'. <br> <em>Database Value:</em> 'PUB' <br> <em>Model Value:</em> 3 <br> <em>Domain API Value:</em> 'Public'</td>
+</tr>
+</tbody>
+</table>
+<p><em>Supported Filters</em>: <strong>Equals</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Default Value</em>: <strong>Private</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
 <h3 id="getallowedcustompropertyvalues">GetAllowedCustomPropertyValues</h3>
