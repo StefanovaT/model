@@ -45,7 +45,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AllowedValuesEntityName](Systems.Bpm.CustomProperties.md#allowedvaluesentityname) | string (64) __nullable__ | When not null, specifies that the allowed values are retrieved from the specified entity. `Filter(eq)` 
-| [AllowedValuesFilterXML](Systems.Bpm.CustomProperties.md#allowedvaluesfilterxml) | dataaccessfilter __nullable__ | When not null specifies the filter to apply when extracting allowed values from entity. 
+| [AllowedValuesFilterXML](Systems.Bpm.CustomProperties.md#allowedvaluesfilterxml) | dataaccessfilter __nullable__ | When not null specifies the filter to apply when extracting allowed values from entity. `Unit: obj.AllowedValuesEntityName` 
 | [Code](Systems.Bpm.CustomProperties.md#code) | string (40) | Unique property code. `Required` `Filter(multi eq;like)` `ORD` 
 | [DisplayText](Systems.Bpm.CustomProperties.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityName](Systems.Bpm.CustomProperties.md#entityname) | string (64) | The entity for which the property is applicable. `Required` `Filter(eq)` `ORD` 
@@ -91,7 +91,7 @@ _Show in UI_: **ShownByDefault**
 
 ### AllowedValuesFilterXML
 
-When not null specifies the filter to apply when extracting allowed values from entity.
+When not null specifies the filter to apply when extracting allowed values from entity. `Unit: obj.AllowedValuesEntityName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  

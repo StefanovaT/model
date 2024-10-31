@@ -55,7 +55,7 @@ Aggregate Root:
 | [Notes](Systems.Documents.Printouts.md#notes) | string (512) __nullable__ | Notes for this Printout. 
 | [ObjectVersion](Systems.Documents.Printouts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Ord](Systems.Documents.Printouts.md#ord) | int32 | Order in the list of printouts when using direct printing. `Required` `Default(0)` 
-| [OrdFilterXml](Systems.Documents.Printouts.md#ordfilterxml) | dataaccessfilter __nullable__ | The condition, required to be matched in order for the printout to be executed upon "Print All" command. 
+| [OrdFilterXml](Systems.Documents.Printouts.md#ordfilterxml) | dataaccessfilter __nullable__ | The condition, required to be matched in order for the printout to be executed upon "Print All" command. `Unit: obj.DocumentType.EntityName` 
 | [OrdPriority](Systems.Documents.Printouts.md#ordpriority) | int32 __nullable__ | Ordinal position and priority of the printout, in regard to other printouts within the current document type. Used for sorting, when executing printouts with "Print All" command. `Default(0)` 
 
 ## References
@@ -228,7 +228,7 @@ _Show in UI_: **ShownByDefault**
 
 ### OrdFilterXml
 
-The condition, required to be matched in order for the printout to be executed upon "Print All" command.
+The condition, required to be matched in order for the printout to be executed upon "Print All" command. `Unit: obj.DocumentType.EntityName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  

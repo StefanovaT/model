@@ -37,10 +37,10 @@ Aggregate Root:
 | [AmountCondition](Finance.Accounting.TemplateLines.md#amountcondition) | [AmountCondition](Finance.Accounting.TemplateLines.md#amountcondition) __nullable__ | Condition for the amount. The line is accounted only when the condition is matched. The condition can be one of: null - no condition, the line should be accounted unconditionally; '+' - The amount should be positive; '-' - The amount should be negative. The amount is matched as returned from the source, before applying the Multiplier. 
 | [AmountRowId](Finance.Accounting.TemplateLines.md#amountrowid) | guid __nullable__ | The id of the row from the amount rowset where the amount is located. null means to account one by one for all rows within the rowset. `Filter(multi eq)` 
 | [AmountRowName](Finance.Accounting.TemplateLines.md#amountrowname) | string (254) __nullable__ | The name of definition, specified in Amount_Row_Id. null means that no Amount_Row_Id is specified or there is no name. 
-| [AmountSourceFilter](Finance.Accounting.TemplateLines.md#amountsourcefilter) | dataaccessfilter __nullable__ | Filter that further specifies which rows from the amount rowset determine the amount. 
+| [AmountSourceFilter](Finance.Accounting.TemplateLines.md#amountsourcefilter) | dataaccessfilter __nullable__ | Filter that further specifies which rows from the amount rowset determine the amount. `Unit: obj.GetAmountSource<br />FilterEntityName()` 
 | [AmountSourceName](Finance.Accounting.TemplateLines.md#amountsourcename) | string (64) | The source rowset for the amount. For example: DocLines, DocHeader, Additional Amounts, Stock Types, etc. `Required` 
 | [DisplayText](Finance.Accounting.TemplateLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FilterXML](Finance.Accounting.TemplateLines.md#filterxml) | dataaccessfilter __nullable__ | The line is accounted only when the filter is satisfied compared with the source document header. 
+| [FilterXML](Finance.Accounting.TemplateLines.md#filterxml) | dataaccessfilter __nullable__ | The line is accounted only when the filter is satisfied compared with the source document header. `Unit: obj.Template.Route.DocumentType.EntityName` 
 | [Id](Finance.Accounting.TemplateLines.md#id) | guid |  
 | [LineNo](Finance.Accounting.TemplateLines.md#lineno) | int32 | Consecutive number of the line within the template. Determines the order of execution of the template lines. `Required` 
 | [Multiplier](Finance.Accounting.TemplateLines.md#multiplier) | decimal (18, 6) | Factor by which the amount from the source will be multiplied. `Required` `Default(1)` 
@@ -117,7 +117,7 @@ _Show in UI_: **ShownByDefault**
 
 ### AmountSourceFilter
 
-Filter that further specifies which rows from the amount rowset determine the amount.
+Filter that further specifies which rows from the amount rowset determine the amount. `Unit: obj.GetAmountSourceFilterEntityName()`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  
@@ -148,7 +148,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### FilterXML
 
-The line is accounted only when the filter is satisfied compared with the source document header.
+The line is accounted only when the filter is satisfied compared with the source document header. `Unit: obj.Template.Route.DocumentType.EntityName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  

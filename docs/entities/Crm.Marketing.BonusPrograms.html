@@ -154,12 +154,12 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#conditioncustomerfilterxml">ConditionCustomerFilterXML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>When not null, specifies that the bonus should be applied only to customers who meet the specified criteria. The criteria could include custom properties.</td>
+<td>When not null, specifies that the bonus should be applied only to customers who meet the specified criteria. The criteria could include custom properties. <code>Unit: CustomersRepository.TableName</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#conditiondistributionchannelfilterxml">ConditionDistribution<br>ChannelFilterX<br>ML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>When not null, specifies that the bonus should be applied only when the distribution channel of the sales order has the specified characteristics.</td>
+<td>When not null, specifies that the bonus should be applied only when the distribution channel of the sales order has the specified characteristics. <code>Unit: Marketing.DistributionChannels&lt;br /&gt;Repository.TableName</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#conditionfromdate">ConditionFromDate</a></td>
@@ -189,7 +189,7 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#conditionshiptocustomerfilterxml">ConditionShipTo<br>CustomerFilter<br>XML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>When not null, specifies that the bonus should be applied only when shipping to customer with the specified characteristics.</td>
+<td>When not null, specifies that the bonus should be applied only when shipping to customer with the specified characteristics. <code>Unit: CustomersRepository.TableName</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Marketing.BonusPrograms.html#conditiontodate">ConditionToDate</a></td>
@@ -393,14 +393,14 @@ Allowed values for the <code>BonusAction</code>(Crm.Marketing.BonusPrograms.md#b
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditioncustomerfilterxml">ConditionCustomerFilterXML</h3>
-<p>When not null, specifies that the bonus should be applied only to customers who meet the specified criteria. The criteria could include custom properties.</p>
+<p>When not null, specifies that the bonus should be applied only to customers who meet the specified criteria. The criteria could include custom properties. <code>Unit: CustomersRepository.TableName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditiondistributionchannelfilterxml">ConditionDistributionChannelFilterXML</h3>
-<p>When not null, specifies that the bonus should be applied only when the distribution channel of the sales order has the specified characteristics.</p>
+<p>When not null, specifies that the bonus should be applied only when the distribution channel of the sales order has the specified characteristics. <code>Unit: Marketing.DistributionChannelsRepository.TableName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -442,7 +442,7 @@ Allowed values for the <code>BonusAction</code>(Crm.Marketing.BonusPrograms.md#b
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditionshiptocustomerfilterxml">ConditionShipToCustomerFilterXML</h3>
-<p>When not null, specifies that the bonus should be applied only when shipping to customer with the specified characteristics.</p>
+<p>When not null, specifies that the bonus should be applied only when shipping to customer with the specified characteristics. <code>Unit: CustomersRepository.TableName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>

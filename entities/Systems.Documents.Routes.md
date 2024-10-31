@@ -46,14 +46,14 @@ Aggregate Root:
 | [Active](Systems.Documents.Routes.md#active) | boolean | True if the route is active, otherwise 0. `Required` `Default(true)` `Filter(eq)` 
 | [AllowedGenerationTypes](Systems.Documents.Routes.md#allowedgenerationtypes) | [AllowedGenerationTypes](Systems.Documents.Routes.md#allowedgenerationtypes) | Determines the possible types of the generation of the destination document: A=Auto, M=Manual, B=Both (Auto and Manual). `Required` `Default("B")` `Filter(multi eq)` 
 | [AllowObsoleteGeneration](Systems.Documents.Routes.md#allowobsoletegeneration) | boolean | Allows the usage of unsupported generation procedures (marked as obsolete). This is a user override of the system prohibition of the usage of obsolete procedures. `Required` `Default(false)` 
-| [ConditionFilterXML](Systems.Documents.Routes.md#conditionfilterxml) | dataaccessfilter __nullable__ | Contains filter condition, which the document must match in order to execute the route. 
+| [ConditionFilterXML](Systems.Documents.Routes.md#conditionfilterxml) | dataaccessfilter __nullable__ | Contains filter condition, which the document must match in order to execute the route. `Unit: obj.DocumentType.EntityName` 
 | [ConditionStatesBitMask](Systems.Documents.Routes.md#conditionstatesbitmask) | [DocumentStateFlags](Systems.Documents.Routes.md#conditionstatesbitmask) | The system states for which to execute the specified route. `Required` `Default(0)` `Filter(like)` 
 | [ConnectedPartyCondition](Systems.Documents.Routes.md#connectedpartycondition) | [ConnectedPartyCondition](Systems.Documents.Routes.md#connectedpartycondition) | A - any party; C - connected party: to_party is enterprise company; U - unconnected party - not enterprise company;. `Required` `Default("A")` 
 | [DeactivationDate](Systems.Documents.Routes.md#deactivationdate) | date __nullable__ | The date until (including) the route is active. The date is matched against the document date of the generating document. Null means the route does not have a deactivation date. `Filter(ge;le)` 
 | [DestinationState](Systems.Documents.Routes.md#destinationstate) | [DocumentState](Systems.Documents.Routes.md#destinationstate) | 0=New;10=Computer Planned;20=Human Planned;30=Released;40=Completed;50=Closed. `Required` 
 | [DisplayText](Systems.Documents.Routes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Documents.Routes.md#id) | guid |  
-| [NegativeConditionFilterXml](Systems.Documents.Routes.md#negativeconditionfilterxml) | dataaccessfilter __nullable__ | The negative condition should NOT be matched by the document in order to execute the route. 
+| [NegativeConditionFilterXml](Systems.Documents.Routes.md#negativeconditionfilterxml) | dataaccessfilter __nullable__ | The negative condition should NOT be matched by the document in order to execute the route. `Unit: obj.DocumentType.EntityName` 
 | [Notes](Systems.Documents.Routes.md#notes) | string (254) __nullable__ | Notes for this Route. 
 | [ObjectVersion](Systems.Documents.Routes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ParentDocument<br />RelationshipType](Systems.Documents.Routes.md#parentdocumentrelationshiptype) | [ParentDocument<br />RelationshipType](Systems.Documents.Routes.md#parentdocumentrelationshiptype) | Determines the default relationship type between the generated document and the parent document. `Required` `Default("S")` 
@@ -142,7 +142,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ConditionFilterXML
 
-Contains filter condition, which the document must match in order to execute the route.
+Contains filter condition, which the document must match in order to execute the route. `Unit: obj.DocumentType.EntityName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  
@@ -248,7 +248,7 @@ _Show in UI_: **CannotBeShown**
 
 ### NegativeConditionFilterXml
 
-The negative condition should NOT be matched by the document in order to execute the route.
+The negative condition should NOT be matched by the document in order to execute the route. `Unit: obj.DocumentType.EntityName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  

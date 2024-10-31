@@ -42,7 +42,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](Systems.Core.DocumentJobs.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FilterXml](Systems.Core.DocumentJobs.md#filterxml) | dataaccessfilter | Specifies the documents, whose state will be changed. `Required` 
+| [FilterXml](Systems.Core.DocumentJobs.md#filterxml) | dataaccessfilter | Specifies the documents, whose state will be changed. `Unit: obj.DocumentType.EntityName` `Required` 
 | [Id](Systems.Core.DocumentJobs.md#id) | guid |  
 | [IsActive](Systems.Core.DocumentJobs.md#isactive) | boolean | Specifies whether the job is active and ready for running. `Required` `Default(true)` `Filter(eq)` (Inherited from [Jobs](Systems.Config.Jobs.md)) 
 | [JobType](Systems.Core.DocumentJobs.md#jobtype) | [JobType](Systems.Core.DocumentJobs.md#jobtype) | The system type of the job. DOC=Document Change State, POS=Run Postponed Events, DNT=Delete Old Notifications, DPI=Delete Old Print Images, DDV=Delete Old Document Versions, DIM=Delete Old Information Messages. `Required` `Filter(multi eq)` (Inherited from [Jobs](Systems.Config.Jobs.md)) 
@@ -74,7 +74,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### FilterXml
 
-Specifies the documents, whose state will be changed. `Required`
+Specifies the documents, whose state will be changed. `Unit: obj.DocumentType.EntityName` `Required`
 
 _Type_: **dataaccessfilter**  
 _Category_: **System**  

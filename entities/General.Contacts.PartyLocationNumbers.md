@@ -92,8 +92,8 @@ _Allowed Values (General.Contacts.PartyLocationNumbersRepository.LocationCodingS
 
 | Value | Description |
 | ---- | --- |
-| GLN | GLN value. Stored as 'GLN'. <br /> _Database Value:_ 'GLN' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'GLN' |
-| Internal | Internal value. Stored as 'INT'. <br /> _Database Value:_ 'INT' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
+| GLN | GS1 Global Location Number (GLN). Stored as 'GLN'. <br /> _Database Value:_ 'GLN' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'GLN' |
+| Internal | Internal coding system. Stored as 'INT'. <br /> _Database Value:_ 'INT' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  

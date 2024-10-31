@@ -45,7 +45,7 @@ Aggregate Root:
 | [DependsOnChildRows](Systems.Documents.DataSourceQueries.md#dependsonchildrows) | [DependsOnChildRows](Systems.Documents.DataSourceQueries.md#dependsonchildrows) | Determines the visibility of rows in this table. 0 - allways visible; 1 - the row is visible if there is at least one child row; 2 - the row is visible if all sub-tables contain child rows. `Required` `Default(0)` 
 | [DisplayText](Systems.Documents.DataSourceQueries.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExtensionsList](Systems.Documents.DataSourceQueries.md#extensionslist) | string (max) __nullable__ | A comma separated list of report extension names. An extension is set of additional fields that participate in the query. 
-| [FilterXml](Systems.Documents.DataSourceQueries.md#filterxml) | dataaccessfilter __nullable__ | Filter for the loaded table. 
+| [FilterXml](Systems.Documents.DataSourceQueries.md#filterxml) | dataaccessfilter __nullable__ | Filter for the loaded table. `Unit: obj.GetTableName()` 
 | [FirstRow](Systems.Documents.DataSourceQueries.md#firstrow) | boolean | Specifies, that only the first row of the current query will be retrieved. Used and applied only when the data source type is not multitable. `Required` `Default(false)` 
 | [Id](Systems.Documents.DataSourceQueries.md#id) | guid |  
 | [ObjectVersion](Systems.Documents.DataSourceQueries.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -105,7 +105,7 @@ _Show in UI_: **ShownByDefault**
 
 ### FilterXml
 
-Filter for the loaded table.
+Filter for the loaded table. `Unit: obj.GetTableName()`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  

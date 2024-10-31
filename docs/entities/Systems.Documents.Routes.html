@@ -145,7 +145,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Documents.Routes.html#conditionfilterxml">ConditionFilterXML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>Contains filter condition, which the document must match in order to execute the route.</td>
+<td>Contains filter condition, which the document must match in order to execute the route. <code>Unit: obj.DocumentType.EntityName</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Documents.Routes.html#conditionstatesbitmask">ConditionStatesBitMask</a></td>
@@ -180,7 +180,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Systems.Documents.Routes.html#negativeconditionfilterxml">NegativeConditionFilterXml</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>The negative condition should NOT be matched by the document in order to execute the route.</td>
+<td>The negative condition should NOT be matched by the document in order to execute the route. <code>Unit: obj.DocumentType.EntityName</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Documents.Routes.html#notes">Notes</a></td>
@@ -361,7 +361,7 @@ Allowed values for the <code>AllowedGenerationTypes</code>(Systems.Documents.Rou
 <em>Default Value</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="conditionfilterxml">ConditionFilterXML</h3>
-<p>Contains filter condition, which the document must match in order to execute the route.</p>
+<p>Contains filter condition, which the document must match in order to execute the route. <code>Unit: obj.DocumentType.EntityName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -516,7 +516,7 @@ Enumeration of document system states<br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="negativeconditionfilterxml">NegativeConditionFilterXml</h3>
-<p>The negative condition should NOT be matched by the document in order to execute the route.</p>
+<p>The negative condition should NOT be matched by the document in order to execute the route. <code>Unit: obj.DocumentType.EntityName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>

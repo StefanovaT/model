@@ -45,7 +45,7 @@ Aggregate Root:
 | [DependsOnChildRows](Systems.Core.ReportQueries.md#dependsonchildrows) | boolean | If True the data in the current report table contains only the rows that have child rows in sub-tables. `Required` `Default(false)` 
 | [DisplayText](Systems.Core.ReportQueries.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [ExtensionsList](Systems.Core.ReportQueries.md#extensionslist) | string (max) __nullable__ | A comma separated list of report extension names. An extension is set of additional fields that participate in the query. 
-| [FilterXml](Systems.Core.ReportQueries.md#filterxml) | dataaccessfilter __nullable__ | Filter for the loaded table. 
+| [FilterXml](Systems.Core.ReportQueries.md#filterxml) | dataaccessfilter __nullable__ | Filter for the loaded table. `Unit: obj.Report.QueryName` 
 | [Id](Systems.Core.ReportQueries.md#id) | guid |  
 | [ObjectVersion](Systems.Core.ReportQueries.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [ReferencePath](Systems.Core.ReportQueries.md#referencepath) | string (512) | A sequence of table names and foreign key columns that define how the data will be loaded by this query. For example - Gen_Documents/<br />Enterprise_Company_<br />Id/Company_Id - will load the definition of the company for the enterprise company of a document. `Required` 
@@ -58,7 +58,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>Report</s>](Systems.Core.ReportQueries.md#report) | [Reports](General.Reports.md) | **OBSOLETE! Do not use!** The <see cref="General.Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 25.1.0.86` `Obsolete` `Owner` |
+| [<s>Report</s>](Systems.Core.ReportQueries.md#report) | [Reports](General.Reports.md) | **OBSOLETE! Do not use!** The <see cref="General.Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 25.1.1.33` `Obsolete` `Owner` |
 
 
 ## Attribute Details
@@ -97,7 +97,7 @@ _Show in UI_: **ShownByDefault**
 
 ### FilterXml
 
-Filter for the loaded table.
+Filter for the loaded table. `Unit: obj.Report.QueryName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  
@@ -184,7 +184,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Report
 
-**OBSOLETE! Do not use!** The <see cref="General.Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 25.1.0.86` `Obsolete` `Owner`
+**OBSOLETE! Do not use!** The <see cref="General.Report"/> to which this ReportQuery belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 25.1.1.33` `Obsolete` `Owner`
 
 _Type_: **[Reports](General.Reports.md)**  
 _Category_: **System**  

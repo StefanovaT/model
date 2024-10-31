@@ -140,7 +140,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Accounting.TemplateLines.html#amountsourcefilter">AmountSourceFilter</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>Filter that further specifies which rows from the amount rowset determine the amount.</td>
+<td>Filter that further specifies which rows from the amount rowset determine the amount. <code>Unit: obj.GetAmountSource&lt;br /&gt;FilterEntityName()</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Accounting.TemplateLines.html#amountsourcename">AmountSourceName</a></td>
@@ -155,7 +155,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Finance.Accounting.TemplateLines.html#filterxml">FilterXML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>The line is accounted only when the filter is satisfied compared with the source document header.</td>
+<td>The line is accounted only when the filter is satisfied compared with the source document header. <code>Unit: obj.Template.Route.DocumentType.EntityName</code></td>
 </tr>
 <tr>
 <td><a href="Finance.Accounting.TemplateLines.html#id">Id</a></td>
@@ -289,7 +289,7 @@ Allowed values for the <code>AmountCondition</code>(Finance.Accounting.TemplateL
 <em>Maximum Length</em>: <strong>254</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="amountsourcefilter">AmountSourceFilter</h3>
-<p>Filter that further specifies which rows from the amount rowset determine the amount.</p>
+<p>Filter that further specifies which rows from the amount rowset determine the amount. <code>Unit: obj.GetAmountSourceFilterEntityName()</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
@@ -311,7 +311,7 @@ Allowed values for the <code>AmountCondition</code>(Finance.Accounting.TemplateL
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="filterxml">FilterXML</h3>
-<p>The line is accounted only when the filter is satisfied compared with the source document header.</p>
+<p>The line is accounted only when the filter is satisfied compared with the source document header. <code>Unit: obj.Template.Route.DocumentType.EntityName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>

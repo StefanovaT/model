@@ -156,17 +156,17 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Crm.PromotionalPackages.html#validforcustomerfilterxml">ValidForCustomerFilterXML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>When not null, the package is valid only for the customers, that match the filter.</td>
+<td>When not null, the package is valid only for the customers, that match the filter. <code>Unit: CustomersRepository.TableName</code></td>
 </tr>
 <tr>
 <td><a href="Crm.PromotionalPackages.html#validfordistributionchannelfilterxml">ValidForDistribution<br>ChannelFilterX<br>ML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria.</td>
+<td>When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria. <code>Unit: Marketing.DistributionChannels&lt;br /&gt;Repository.TableName</code></td>
 </tr>
 <tr>
 <td><a href="Crm.PromotionalPackages.html#validforshiptocustomerfilterxml">ValidForShipTo<br>CustomerFilter<br>XML</a></td>
 <td>dataaccessfilter <strong>nullable</strong></td>
-<td>When not null, specifies validity condition for the Ship To Customer of the sales document.</td>
+<td>When not null, specifies validity condition for the Ship To Customer of the sales document. <code>Unit: CustomersRepository.TableName</code></td>
 </tr>
 <tr>
 <td><a href="Crm.PromotionalPackages.html#validfromdate">ValidFromDate</a></td>
@@ -300,21 +300,21 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="validforcustomerfilterxml">ValidForCustomerFilterXML</h3>
-<p>When not null, the package is valid only for the customers, that match the filter.</p>
+<p>When not null, the package is valid only for the customers, that match the filter. <code>Unit: CustomersRepository.TableName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="validfordistributionchannelfilterxml">ValidForDistributionChannelFilterXML</h3>
-<p>When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria.</p>
+<p>When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria. <code>Unit: Marketing.DistributionChannelsRepository.TableName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="validforshiptocustomerfilterxml">ValidForShipToCustomerFilterXML</h3>
-<p>When not null, specifies validity condition for the Ship To Customer of the sales document.</p>
+<p>When not null, specifies validity condition for the Ship To Customer of the sales document. <code>Unit: CustomersRepository.TableName</code></p>
 <p><em>Type</em>: <strong>dataaccessfilter <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
