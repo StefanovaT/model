@@ -35,7 +35,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [Code](Systems.Security.AccessKeys.md#code) | string (16) __nullable__ | Unique code for the access key. The codes can be null for legacy keys or entities that do not support codes. The codes are unique only among non-null entries. `Filter(eq;like)` `ORD` 
 | [DisplayText](Systems.Security.AccessKeys.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [EntityId](Systems.Security.AccessKeys.md#entityid) | guid | The field stores the Id of the entity that the key was created from. `Required` `Default(New Guid)` `Filter(multi eq)` `Introduced in version 25.1.1.32` 
+| [EntityId](Systems.Security.AccessKeys.md#entityid) | guid | The field stores the Id of the entity that the key was created from. `Required` `Filter(multi eq)` `Introduced in version 25.1.1.32` 
 | [EntityName](Systems.Security.AccessKeys.md#entityname) | string (64) __nullable__ | What entitity the key secures. Can be null for private, legacy keys. `Filter(eq;like)` `ORD` 
 | [Id](Systems.Security.AccessKeys.md#id) | guid |  
 | [Name](Systems.Security.AccessKeys.md#name) | [MultilanguageString (1024)](../data-types.md#multilanguagestring) __nullable__ | Multilanguage descriptive name of the security key. Can be null for legacy keys. `Filter(eq;like)` 
@@ -71,12 +71,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### EntityId
 
-The field stores the Id of the entity that the key was created from. `Required` `Default(New Guid)` `Filter(multi eq)` `Introduced in version 25.1.1.32`
+The field stores the Id of the entity that the key was created from. `Required` `Filter(multi eq)` `Introduced in version 25.1.1.32`
 
 _Type_: **guid**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Default Value_: **NewGuid**  
 _Show in UI_: **HiddenByDefault**  
 
 ### EntityName

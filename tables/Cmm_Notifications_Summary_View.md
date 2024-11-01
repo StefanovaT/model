@@ -12,6 +12,7 @@ Summary info for notifications, grouped by user and data object. Entity: Cmm_Not
 | Name | Type | Description |
 | - | - | --- |
 |[Data_Object_Id](#data_object_id)|`uniqueidentifier` ||
+|[Last_Notification_Class](#last_notification_class)|`nvarchar(64)` |Last Notification Class|
 |[Last_Notification_Subject](#last_notification_subject)|`nvarchar(256)` ||
 |[Last_Notification_Time](#last_notification_time)|`datetime` ||
 |[Not_Read_Count](#not_read_count)|`int` |Not Read Count|
@@ -53,6 +54,36 @@ Summary info for notifications, grouped by user and data object. Entity: Cmm_Not
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Last_Notification_Class
+
+
+Last Notification Class
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|64|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(64)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Last_Notification_Subject
 
@@ -152,6 +183,13 @@ Not Read Count
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Not_Read_Count - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+|GreaterThanOrLessThan|None|no|no|
 
 ### Notifications_Count
 

@@ -132,7 +132,7 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Systems.Security.AccessKeys.html#entityid">EntityId</a></td>
 <td>guid</td>
-<td>The field stores the Id of the entity that the key was created from. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.32</code></td>
+<td>The field stores the Id of the entity that the key was created from. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.32</code></td>
 </tr>
 <tr>
 <td><a href="Systems.Security.AccessKeys.html#entityname">EntityName</a></td>
@@ -180,11 +180,10 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="entityid">EntityId</h3>
-<p>The field stores the Id of the entity that the key was created from. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.32</code></p>
+<p>The field stores the Id of the entity that the key was created from. <code>Required</code> <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.32</code></p>
 <p><em>Type</em>: <strong>guid</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="entityname">EntityName</h3>
 <p>What entitity the key secures. Can be null for private, legacy keys. <code>Filter(eq;like)</code> <code>ORD</code></p>

@@ -113,6 +113,11 @@ Show in UI:  <em>ShownByDefault</em></p>
 </thead>
 <tbody>
 <tr>
+<td><a href="Communities.Social.NotificationsSummary.html#lastnotificationclass">LastNotificationClass</a></td>
+<td>string (64)</td>
+<td>Last Notification Class. <code>Required</code> <code>Introduced in version 25.1.1.34</code></td>
+</tr>
+<tr>
 <td><a href="Communities.Social.NotificationsSummary.html#lastnotificationsubject">LastNotificationSubject</a></td>
 <td>string (256) <strong>nullable</strong></td>
 <td>The short subject of the notification (in the Default Culture of the user). <code>Filter(eq;like)</code> <code>Inherited from Cmm_Notifications_Table.Subject</code></td>
@@ -130,7 +135,7 @@ Show in UI:  <em>ShownByDefault</em></p>
 <tr>
 <td><a href="Communities.Social.NotificationsSummary.html#notreadcount">NotReadCount</a></td>
 <td>int32</td>
-<td>Not Read Count. <code>Required</code></td>
+<td>Not Read Count. <code>Required</code> <code>Filter(eq;ge;le)</code></td>
 </tr>
 </tbody>
 </table>
@@ -157,6 +162,14 @@ Show in UI:  <em>ShownByDefault</em></p>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
+<h3 id="lastnotificationclass">LastNotificationClass</h3>
+<p>Last Notification Class. <code>Required</code> <code>Introduced in version 25.1.1.34</code></p>
+<p><em>Type</em>: <strong>string (64)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Maximum Length</em>: <strong>64</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="lastnotificationsubject">LastNotificationSubject</h3>
 <p>The short subject of the notification (in the Default Culture of the user). <code>Filter(eq;like)</code> <code>Inherited from Cmm_Notifications_Table.Subject</code></p>
 <p><em>Type</em>: <strong>string (256) <strong>nullable</strong></strong><br>
@@ -183,10 +196,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="notreadcount">NotReadCount</h3>
-<p>Not Read Count. <code>Required</code></p>
+<p>Not Read Count. <code>Required</code> <code>Filter(eq;ge;le)</code></p>
 <p><em>Type</em>: <strong>int32</strong><br>
 <em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>

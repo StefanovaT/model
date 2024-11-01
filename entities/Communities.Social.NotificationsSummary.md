@@ -25,10 +25,11 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [LastNotificationClass](Communities.Social.NotificationsSummary.md#lastnotificationclass) | string (64) | Last Notification Class. `Required` `Introduced in version 25.1.1.34` 
 | [LastNotificationSubject](Communities.Social.NotificationsSummary.md#lastnotificationsubject) | string (256) __nullable__ | The short subject of the notification (in the Default Culture of the user). `Filter(eq;like)` `Inherited from Cmm_Notifications_Table.Subject` 
 | [LastNotificationTime](Communities.Social.NotificationsSummary.md#lastnotificationtime) | datetime | The exact server time (in UTC), when the notification was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ORD` `Inherited from Cmm_Notifications_Table.Creation_Time_Utc` 
 | [NotificationsCount](Communities.Social.NotificationsSummary.md#notificationscount) | int32 | Notifications Count. `Required` 
-| [NotReadCount](Communities.Social.NotificationsSummary.md#notreadcount) | int32 | Not Read Count. `Required` 
+| [NotReadCount](Communities.Social.NotificationsSummary.md#notreadcount) | int32 | Not Read Count. `Required` `Filter(eq;ge;le)` 
 
 ## References
 
@@ -39,6 +40,17 @@ Aggregate Tree
 
 
 ## Attribute Details
+
+### LastNotificationClass
+
+Last Notification Class. `Required` `Introduced in version 25.1.1.34`
+
+_Type_: **string (64)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
+_Show in UI_: **ShownByDefault**  
 
 ### LastNotificationSubject
 
@@ -76,11 +88,11 @@ _Show in UI_: **ShownByDefault**
 
 ### NotReadCount
 
-Not Read Count. `Required`
+Not Read Count. `Required` `Filter(eq;ge;le)`
 
 _Type_: **int32**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
