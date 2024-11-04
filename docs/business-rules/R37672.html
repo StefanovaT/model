@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>R37672 Case - Exceed Project Wip Limit Not Allowed | ERP.net Domain Model </title>
+      <title>R37672 Case - Exceed Project In Progress Wip Limit Not Allowed | ERP.net Domain Model </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="R37672 Case - Exceed Project Wip Limit Not Allowed | ERP.net Domain Model ">
+      <meta name="title" content="R37672 Case - Exceed Project In Progress Wip Limit Not Allowed | ERP.net Domain Model ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -71,7 +71,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="r37672-case---exceed-project-wip-limit-not-allowed">R37672 Case - Exceed Project Wip Limit Not Allowed</h1>
+<h1 id="r37672-case---exceed-project-in-progress-wip-limit-not-allowed">R37672 Case - Exceed Project In Progress Wip Limit Not Allowed</h1>
 
 <table>
 <col style="width:25%">
@@ -87,7 +87,7 @@
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>ExceedProjectWipLimitNotAllowed</td>
+<td>ExceedProjectInProgressWipLimitNotAllowed</td>
 </tr>
 <tr>
 <td><strong>Attribute</strong></td>
@@ -111,14 +111,14 @@
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>If System State is changed to 'INPROGRESS', Project Area is null and a WIP limit is set for the Project of the current Case
+<td>If System State is changed to 'INPROGRESS', Project Area is null and In Progress WIP limit is set for the Project of the current Case
 <br><br>
 Validate that:<br>
-The number of Cases with state 'INPROGRESS' within the Case's Project are less than the WIP limit.</td>
+The number of Cases with state 'INPROGRESS' within the Case's Project is less than the In Progress WIP limit.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule ensures that the in-progress cases will not exceed the project's WIP limit.</td>
+<td>The rule ensures that the cases with state 'INPROGRESS' will not exceed the project's WIP limit.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
@@ -126,7 +126,7 @@ The number of Cases with state 'INPROGRESS' within the Case's Project are less t
 <br><br>
 The state of case '{DisplayText}' cannot be changed to 'IN PROGRESS', because
 the number of cases with state 'IN PROGRESS' in project '{Project}' will exceed
-the set WIP limit – '{Project.WipLimit}'.
+the set WIP limit – '{Project.InProgressWIPLimit}'.
 <br><br>
 Please resolve any of the active cases before starting a new one.</td>
 </tr>
