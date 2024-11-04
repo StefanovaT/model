@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.Notifications](~/entities/Communities.Notifications.md)
+Entity: [Systems.Core.Notifications](~/entities/Systems.Core.Notifications.md)
 
 A single notification of a user. Entity: Cmm_Notifications (Introduced in version 20.1)
 

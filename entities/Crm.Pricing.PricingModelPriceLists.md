@@ -43,7 +43,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [PriceList](Crm.Pricing.PricingModelPriceLists.md#pricelist) | [PriceLists](Crm.PriceLists.md) | The price list, which is included in the pricing model. `Required` `Filter(multi eq)` |
+| [PriceList](Crm.Pricing.PricingModelPriceLists.md#pricelist) | [PriceLists](Crm.Pricing.PriceLists.md) | The price list, which is included in the pricing model. `Required` `Filter(multi eq)` |
 | [PricingModel](Crm.Pricing.PricingModelPriceLists.md#pricingmodel) | [PricingModels](Crm.Pricing.PricingModels.md) | The pricing model, for which the price list is listed. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -110,7 +110,7 @@ _Show in UI_: **HiddenByDefault**
 
 The price list, which is included in the pricing model. `Required` `Filter(multi eq)`
 
-_Type_: **[PriceLists](Crm.PriceLists.md)**  
+_Type_: **[PriceLists](Crm.Pricing.PriceLists.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

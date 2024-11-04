@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.SalesPersons](~/entities/Crm.SalesPersons.md)
+Entity: [Crm.SalesForce.SalesPersons](~/entities/Crm.SalesForce.SalesPersons.md)
 
 Sales persons (or representatives) are sellers inside the enterprise company who sell the products to customers. Entity: Crm_Sales_Persons
 

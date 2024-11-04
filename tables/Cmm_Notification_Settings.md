@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.NotificationSettings](~/entities/Communities.NotificationSettings.md)
+Entity: [Systems.Core.NotificationSettings](~/entities/Systems.Core.NotificationSettings.md)
 
 User notification settings for the different notification classes. Entity: Cmm_Notification_Settings (Introduced in version 20.1)
 

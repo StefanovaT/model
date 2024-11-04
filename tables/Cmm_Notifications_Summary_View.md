@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.Social.NotificationsSummary](~/entities/Communities.Social.NotificationsSummary.md)
+Entity: [Systems.Core.NotificationsSummary](~/entities/Systems.Core.NotificationsSummary.md)
 
 Summary info for notifications, grouped by user and data object. Entity: Cmm_Notifications_Summary_View (Introduced in version 25.1.1.20)
 

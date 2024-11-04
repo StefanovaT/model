@@ -299,7 +299,7 @@ Aggregate Root:<br>
 <tbody>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#bonusprogram">BonusProgram</a></td>
-<td><a href="Crm.Marketing.BonusPrograms.html">BonusPrograms</a> (nullable)</td>
+<td><a href="Crm.Pricing.BonusPrograms.html">BonusPrograms</a> (nullable)</td>
 <td>The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -314,17 +314,17 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level1discount">Level1Discount</a></td>
-<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
 <td>Indicates the level 1 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.56</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level2discount">Level2Discount</a></td>
-<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
 <td>Indicates the level 2 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#level3discount">Level3Discount</a></td>
-<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
 <td>Indicates the level 3 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></td>
 </tr>
 <tr>
@@ -334,7 +334,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#linediscount">LineDiscount</a></td>
-<td><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
+<td><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
 <td>The line discount type used to form the Line_Standard_<br>Discount_Percent. <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
@@ -369,7 +369,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#productprice">ProductPrice</a></td>
-<td><a href="Crm.ProductPrices.html">ProductPrices</a> (nullable)</td>
+<td><a href="Crm.Pricing.ProductPrices.html">ProductPrices</a> (nullable)</td>
 <td>Not null when the price has been selected from the list of valid standard prices. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
@@ -379,7 +379,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#promotionalpackage">PromotionalPackage</a></td>
-<td><a href="Crm.PromotionalPackages.html">PromotionalPackages</a> (nullable)</td>
+<td><a href="Crm.Pricing.PromotionalPackages.html">PromotionalPackages</a> (nullable)</td>
 <td>The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
 </tr>
 <tr>
@@ -924,7 +924,7 @@ Generic enum type for TransportMode properties<br>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="bonusprogram">BonusProgram</h3>
 <p>The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="Crm.Marketing.BonusPrograms.html">BonusPrograms</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.BonusPrograms.html">BonusPrograms</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -949,7 +949,7 @@ Generic enum type for TransportMode properties<br>
 <code>obj.SalesOrder.IntrastatTransportCountry</code></p>
 <h3 id="level1discount">Level1Discount</h3>
 <p>Indicates the level 1 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.56</code></p>
-<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -957,7 +957,7 @@ Generic enum type for TransportMode properties<br>
 <code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, null, obj.PromotionalPackage, obj.Level1Discount, 0)</code></p>
 <h3 id="level2discount">Level2Discount</h3>
 <p>Indicates the level 2 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
-<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -965,7 +965,7 @@ Generic enum type for TransportMode properties<br>
 <code>obj.DetermineLineDiscount( obj.SalesOrder.EnterpriseCompany, obj.SalesOrder.EnterpriseCompanyLocation, obj.RequiredDeliveryDate, obj.SalesOrder.Customer, obj.SalesOrder.ShipToCustomer, obj.SalesOrder.DistributionChannel, obj.SalesOrder.PriceList, obj.Product, obj.Quantity, obj.QuantityUnit, obj.ReturnForSalesOrderLine, null, obj.PromotionalPackage, obj.Level2Discount, 1)</code></p>
 <h3 id="level3discount">Level3Discount</h3>
 <p>Indicates the level 3 discount. <code>Filter(multi eq)</code> <code>Introduced in version 23.1.2.8</code></p>
-<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
@@ -983,7 +983,7 @@ Generic enum type for TransportMode properties<br>
 <code>obj.SalesOrder.DealType</code></p>
 <h3 id="linediscount">LineDiscount</h3>
 <p>The line discount type used to form the Line_Standard_Discount_Percent. <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
-<p><em>Type</em>: <strong><a href="Crm.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -1039,7 +1039,7 @@ Generic enum type for TransportMode properties<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="productprice">ProductPrice</h3>
 <p>Not null when the price has been selected from the list of valid standard prices. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="Crm.ProductPrices.html">ProductPrices</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.ProductPrices.html">ProductPrices</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
@@ -1053,7 +1053,7 @@ Generic enum type for TransportMode properties<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="promotionalpackage">PromotionalPackage</h3>
 <p>The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
-<p><em>Type</em>: <strong><a href="Crm.PromotionalPackages.html">PromotionalPackages</a> (nullable)</strong><br>
+<p><em>Type</em>: <strong><a href="Crm.Pricing.PromotionalPackages.html">PromotionalPackages</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>

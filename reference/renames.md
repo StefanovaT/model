@@ -5,6 +5,91 @@ In various versions of ERP.net, different entities have been renamed.
 Here is a list of entity renames in chronological order.  
 
 
+Old name: **Communities.NotificationSettings**  
+New name: **Systems.Core.NotificationSettings**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Communities.Notifications**  
+New name: **Systems.Core.Notifications**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.Marketing.BonusProgramProducts**  
+New name: **Crm.Pricing.BonusProgramProducts**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.Marketing.BonusPrograms**  
+New name: **Crm.Pricing.BonusPrograms**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Systems.Documents.DocumentAmountTypeDependencies**  
+New name: **Crm.Pricing.DocumentAmountTypeDependencies**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Systems.Documents.DocumentAmountTypes**  
+New name: **Crm.Pricing.DocumentAmountTypes**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.PromotionalPackages**  
+New name: **Crm.Pricing.PromotionalPackages**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.PromotionalPackageLines**  
+New name: **Crm.Pricing.PromotionalPackageLines**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.ProductPrices**  
+New name: **Crm.Pricing.ProductPrices**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.PriceTypes**  
+New name: **Crm.Pricing.PriceTypes**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.PriceLists **  
+New name: **Crm.Pricing.PriceLists**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.LineDiscounts **  
+New name: **Crm.Pricing.LineDiscounts**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.SalesPersonAssignmentRules**  
+New name: **Crm.SalesForce.SalesPersonAssignmentRules**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.SalesPersons**  
+New name: **Crm.SalesForce.SalesPersons**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.Distribution.SalesPersonTargets**  
+New name: **Crm.SalesForce.SalesPersonTargets**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.Distribution.SalesPersonTargetLines**  
+New name: **Crm.SalesForce.SalesPersonTargetLines**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
+Old name: **Crm.Distribution.SalesPersonGroups**  
+New name: **Crm.SalesForce.SalesPersonGroups**  
+Version: **25.1.1.36**  
+Case: **37717**  
+
 Old name: **Prodution.WorkOrderDocumentTypesOptions**  
 New name: **Production.ShopFloor.WorkOrderDocumentTypesOptions**  
 Version: **25.1.0.64**  

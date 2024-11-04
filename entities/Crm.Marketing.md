@@ -4,8 +4,6 @@ uid: Crm.Marketing
 # Crm.Marketing Namespace
 
 ## Entities
-- [BonusProgramProducts](Crm.Marketing.BonusProgramProducts.md)  
-- [BonusPrograms](Crm.Marketing.BonusPrograms.md)  
 - [Campaigns](Crm.Marketing.Campaigns.md)  
 - [CompanySizeClasses](Crm.Marketing.CompanySizeClasses.md)  
 - [Competitors](Crm.Marketing.Competitors.md)  

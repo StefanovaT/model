@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.PriceTypes](~/entities/Crm.PriceTypes.md)
+Entity: [Crm.Pricing.PriceTypes](~/entities/Crm.Pricing.PriceTypes.md)
 
 Price types. Entity: Crm_Price_Types
 

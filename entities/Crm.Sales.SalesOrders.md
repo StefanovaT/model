@@ -118,13 +118,13 @@ Aggregate Tree
 | [PosLocation](Crm.Sales.SalesOrders.md#poslocation) | [Locations](Crm.Pos.Locations.md) (nullable) | For POS sales, specifies the POS location, in which the sale is performed. null when the sales is not a POS sale. `Filter(multi eq)` `Introduced in version 19.1` |
 | [PosOperator](Crm.Sales.SalesOrders.md#posoperator) | [Operators](Crm.Pos.Operators.md) (nullable) | For POS sales, specifies the POS operator, who created the sale. null when the sale is not a POS sale. `Filter(multi eq)` `Introduced in version 19.1` |
 | [PosTerminal](Crm.Sales.SalesOrders.md#posterminal) | [Terminals](Crm.Pos.Terminals.md) (nullable) | For POS sales, specifies the POS terminal, on which the sale is entered. null when the sales is not a POS sale. `Filter(multi eq)` `Introduced in version 19.1` |
-| [PriceList](Crm.Sales.SalesOrders.md#pricelist) | [PriceLists](Crm.PriceLists.md) (nullable) | The price list to be used for determining product prices in the lines. `Filter(multi eq)` |
+| [PriceList](Crm.Sales.SalesOrders.md#pricelist) | [PriceLists](Crm.Pricing.PriceLists.md) (nullable) | The price list to be used for determining product prices in the lines. `Filter(multi eq)` |
 | [PrimeCauseDocument](Crm.Sales.SalesOrders.md#primecausedocument) | [Documents](General.Documents.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [ResponsiblePerson](Crm.Sales.SalesOrders.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [ReturnForInvoice](Crm.Sales.SalesOrders.md#returnforinvoice) | [Invoices](Crm.Invoicing.Invoices.md) (nullable) | When specified indicates that some of the goods sold in the sales orders invoiced with Return_For_Invoice_Id are returned with the current document. `Filter(multi eq)` |
 | [ReturnForSalesOrder](Crm.Sales.SalesOrders.md#returnforsalesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) (nullable) | When specified indicates that some of the goods sold in Return_For_Sales_Order_Id are returned with the current document. `Filter(multi eq;like)` |
 | [ReverseOfDocument](Crm.Sales.SalesOrders.md#reverseofdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
-| [SalesPerson](Crm.Sales.SalesOrders.md#salesperson) | [SalesPersons](Crm.SalesPersons.md) (nullable) | Internal company sales person. `Filter(multi eq)` |
+| [SalesPerson](Crm.Sales.SalesOrders.md#salesperson) | [SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable) | Internal company sales person. `Filter(multi eq)` |
 | [Sequence](Crm.Sales.SalesOrders.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [ShipToCustomer](Crm.Sales.SalesOrders.md#shiptocustomer) | [Customers](Crm.Customers.md) (nullable) | The customer to whom to ship the sales order. Usually it is a customer entry for a sub-party of the primary customer. `Filter(multi eq)` |
 | [ShipToPartyContact<br />Mechanism](Crm.Sales.SalesOrders.md#shiptopartycontactmechanism) | [PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md) (nullable) | The contact mechanism (address) to whih to ship the sales order. `Filter(multi eq)` |
@@ -964,7 +964,7 @@ _Show in UI_: **ShownByDefault**
 
 The price list to be used for determining product prices in the lines. `Filter(multi eq)`
 
-_Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
+_Type_: **[PriceLists](Crm.Pricing.PriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -1021,7 +1021,7 @@ _Show in UI_: **HiddenByDefault**
 
 Internal company sales person. `Filter(multi eq)`
 
-_Type_: **[SalesPersons](Crm.SalesPersons.md) (nullable)**  
+_Type_: **[SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

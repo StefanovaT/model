@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.Distribution.SalesPersonTargets](~/entities/Crm.Distribution.SalesPersonTargets.md)
+Entity: [Crm.SalesForce.SalesPersonTargets](~/entities/Crm.SalesForce.SalesPersonTargets.md)
 
 Sales person targets document header. Targets are expressed in amount or other numeric objectives and are tracked in achieved percentages. Entity: Crm_Sales_Person_Targets
 

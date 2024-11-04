@@ -30,7 +30,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 
 Aggregate Tree  
 * [General.Contacts.Persons](General.Contacts.Persons.md)  
-  * [Crm.SalesPersons](Crm.SalesPersons.md)  
+  * [Crm.SalesForce.SalesPersons](Crm.SalesForce.SalesPersons.md)  
   * [General.Contacts.CompanyEmployees](General.Contacts.CompanyEmployees.md)  
   * [Crm.Distributors](Crm.Distributors.md)  
   * [General.Contacts.PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md)  
@@ -96,7 +96,7 @@ Aggregate Tree
 | LocationNumbers | [PartyLocationNumbers](General.Contacts.PartyLocationNumbers.md) | List of `PartyLocationNumber`(General.Contacts.PartyLocationNumbers.md) child objects, based on the `General.Contacts.PartyLocationNumber.Party`(General.Contacts.PartyLocationNumbers.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Pictures | [PartyPictures](General.Contacts.PartyPictures.md) | List of `PartyPicture`(General.Contacts.PartyPictures.md) child objects, based on the `General.Contacts.PartyPicture.Party`(General.Contacts.PartyPictures.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Relationships | [PartyRelationships](General.Contacts.PartyRelationships.md) | List of `PartyRelationship`(General.Contacts.PartyRelationships.md) child objects, based on the `General.Contacts.PartyRelationship.FromParty`(General.Contacts.PartyRelationships.md#fromparty) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
-| SalesPersons | [SalesPersons](Crm.SalesPersons.md) | List of `SalesPerson`(Crm.SalesPersons.md) child objects, based on the `Crm.SalesPerson.Person`(Crm.SalesPersons.md#person) back reference 
+| SalesPersons | [SalesPersons](Crm.SalesForce.SalesPersons.md) | List of `SalesPerson`(Crm.SalesForce.SalesPersons.md) child objects, based on the `Crm.SalesForce.SalesPerson.Person`(Crm.SalesForce.SalesPersons.md#person) back reference 
 
 
 ## Attribute Details

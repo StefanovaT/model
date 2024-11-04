@@ -98,12 +98,12 @@ Aggregate Tree
 | [MasterDocument](Crm.Presales.Offers.md#masterdocument) | [Documents](General.Documents.Documents.md) | In a multi-document tree, this is the root document, that created the whole tree. If this is the root it is equal to Id. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [Parent](Crm.Presales.Offers.md#parent) | [Documents](General.Documents.Documents.md) (nullable) | In a multi-document tree, this is the direct parent document. If this is the root it is null. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [PaymentType](Crm.Presales.Offers.md#paymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | Way of payment. null means that no specific way of payment was offered. `Filter(multi eq)` |
-| [PriceList](Crm.Presales.Offers.md#pricelist) | [PriceLists](Crm.PriceLists.md) (nullable) | The price list, based on which the prices are selected. Initially copied from the definition of the Customer. `Filter(multi eq)` |
+| [PriceList](Crm.Presales.Offers.md#pricelist) | [PriceLists](Crm.Pricing.PriceLists.md) (nullable) | The price list, based on which the prices are selected. Initially copied from the definition of the Customer. `Filter(multi eq)` |
 | [PrimeCauseDocument](Crm.Presales.Offers.md#primecausedocument) | [Documents](General.Documents.Documents.md) (nullable) | The document that is the prime cause for creation of the current document. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [RecipientPerson](Crm.Presales.Offers.md#recipientperson) | [Persons](General.Contacts.Persons.md) (nullable) | The offer recipient. It should be employee of the customer. null means that there is no default recipient or he/she is unknown. `Filter(multi eq)` |
 | [ResponsiblePerson](Crm.Presales.Offers.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person that is responsible for this order or transaction. It could be the sales person, the orderer, etc. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [ReverseOfDocument](Crm.Presales.Offers.md#reverseofdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document which the current document is reverse of. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
-| [SalesPerson](Crm.Presales.Offers.md#salesperson) | [SalesPersons](Crm.SalesPersons.md) (nullable) | Responsible sales person. null when no sales person was assigned. `Filter(multi eq)` |
+| [SalesPerson](Crm.Presales.Offers.md#salesperson) | [SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable) | Responsible sales person. null when no sales person was assigned. `Filter(multi eq)` |
 | [Sequence](Crm.Presales.Offers.md#sequence) | [Sequences](Systems.Documents.Sequences.md) (nullable) | The sequence that will be used to give new numbers to the documents of this type. `Filter(multi eq)` `ReadOnly` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [ShipToCustomer](Crm.Presales.Offers.md#shiptocustomer) | [Customers](Crm.Customers.md) (nullable) | The customer to whom to ship the sales order. Usually it is a customer entry for a sub-party of the primary customer. `Filter(multi eq)` |
 | [Store](Crm.Presales.Offers.md#store) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store, from which the products will be sold. When null, the store is unknown or N/A. `Filter(multi eq)` |
@@ -684,7 +684,7 @@ _Front-End Recalc Expressions:_
 
 The price list, based on which the prices are selected. Initially copied from the definition of the Customer. `Filter(multi eq)`
 
-_Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
+_Type_: **[PriceLists](Crm.Pricing.PriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -730,7 +730,7 @@ _Show in UI_: **HiddenByDefault**
 
 Responsible sales person. null when no sales person was assigned. `Filter(multi eq)`
 
-_Type_: **[SalesPersons](Crm.SalesPersons.md) (nullable)**  
+_Type_: **[SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

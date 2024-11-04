@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.PriceLists](~/entities/Crm.PriceLists.md)
+Entity: [Crm.Pricing.PriceLists](~/entities/Crm.Pricing.PriceLists.md)
 
 Price Lists are used to manage multiple price records, assign to customers, etc. Entity: Crm_Price_Lists
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.ProductPrices](~/entities/Crm.ProductPrices.md)
+Entity: [Crm.Pricing.ProductPrices](~/entities/Crm.Pricing.ProductPrices.md)
 
 Specific prices of products. A price is applied after matching the specified criteria. Entity: Crm_Product_Prices
 

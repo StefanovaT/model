@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.SalesPersonAssignmentRules](~/entities/Crm.SalesPersonAssignmentRules.md)
+Entity: [Crm.SalesForce.SalesPersonAssignmentRules](~/entities/Crm.SalesForce.SalesPersonAssignmentRules.md)
 
 Contains rules for automated assignment of sales persons for customers, sales orders, leads, etc. Entity: Crm_Sales_Person_Assignment_Rules (Introduced in version 25.1.0.17)
 

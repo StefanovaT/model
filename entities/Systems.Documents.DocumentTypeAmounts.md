@@ -54,7 +54,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentAmountType](Systems.Documents.DocumentTypeAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The amount type that should be automatically added to the documents of the specified type. `Required` `Filter(multi eq)` |
+| [DocumentAmountType](Systems.Documents.DocumentTypeAmounts.md#documentamounttype) | [DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md) | The amount type that should be automatically added to the documents of the specified type. `Required` `Filter(multi eq)` |
 | [DocumentType](Systems.Documents.DocumentTypeAmounts.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The document type for which the amount type is specified. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -137,7 +137,7 @@ _Show in UI_: **ShownByDefault**
 
 The amount type that should be automatically added to the documents of the specified type. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)**  
+_Type_: **[DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

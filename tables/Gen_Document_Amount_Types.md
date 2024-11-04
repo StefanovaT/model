@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Documents.DocumentAmountTypes](~/entities/Systems.Documents.DocumentAmountTypes.md)
+Entity: [Crm.Pricing.DocumentAmountTypes](~/entities/Crm.Pricing.DocumentAmountTypes.md)
 
 Represents the different types of additional amounts which are calculated for the documents. Entity: Gen_Document_Amount_Types
 

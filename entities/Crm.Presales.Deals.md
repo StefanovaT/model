@@ -94,7 +94,7 @@ Aggregate Tree
 | [ExpectedRevenueCurrency](Crm.Presales.Deals.md#expectedrevenuecurrency) | [Currencies](General.Currencies.Currencies.md) | The currency of Expected Revenue. `Required` `Filter(multi eq)` |
 | [FromCompanyDivision](Crm.Presales.Deals.md#fromcompanydivision) | [CompanyDivisions](General.Contacts.CompanyDivisions.md) (nullable) | The division of the company, issuing the document. null when the document is not issued by any specific division. `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
 | [FromParty](Crm.Presales.Deals.md#fromparty) | [Parties](General.Contacts.Parties.md) | The party which issued the document. `Required` `Filter(multi eq)` (Inherited from [Documents](General.Documents.Documents.md)) |
-| [LeadingSalesPerson](Crm.Presales.Deals.md#leadingsalesperson) | [SalesPersons](Crm.SalesPersons.md) | The sales person, responsible for the opportunity. `Required` `Filter(multi eq)` |
+| [LeadingSalesPerson](Crm.Presales.Deals.md#leadingsalesperson) | [SalesPersons](Crm.SalesForce.SalesPersons.md) | The sales person, responsible for the opportunity. `Required` `Filter(multi eq)` |
 | [LostToCompetitor](Crm.Presales.Deals.md#losttocompetitor) | [Competitors](Crm.Marketing.Competitors.md) (nullable) | When not null, specifies the competitor to which we lost the deal. `Filter(multi eq)` `Introduced in version 22.1.4.72` |
 | [LostToCompetitorSolution](Crm.Presales.Deals.md#losttocompetitorsolution) | [CompetitorSolutions](Crm.Marketing.CompetitorSolutions.md) (nullable) | When not null, specifies the competitor solution to which we lost the deal. `Filter(multi eq)` `Introduced in version 22.1.4.72` |
 | [MarketingSolution](Crm.Presales.Deals.md#marketingsolution) | [MarketingSolutions](Crm.Marketing.MarketingSolutions.md) (nullable) | The marketing solution, in which the potential client is interested. `Filter(multi eq)` `Introduced in version 22.1.4.42` |
@@ -650,7 +650,7 @@ _Show in UI_: **HiddenByDefault**
 
 The sales person, responsible for the opportunity. `Required` `Filter(multi eq)`
 
-_Type_: **[SalesPersons](Crm.SalesPersons.md)**  
+_Type_: **[SalesPersons](Crm.SalesForce.SalesPersons.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

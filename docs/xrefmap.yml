@@ -502,6 +502,27 @@ references:
 - uid: Crm.Pricing
   name: Crm.Pricing Namespace
   href: entities/Crm.Pricing.html
+- uid: Crm.Pricing.BonusProgramProducts
+  name: Crm.Pricing.BonusProgramProducts Entity
+  href: entities/Crm.Pricing.BonusProgramProducts.html
+- uid: Crm.Pricing.BonusPrograms
+  name: Crm.Pricing.BonusPrograms Entity
+  href: entities/Crm.Pricing.BonusPrograms.html
+- uid: Crm.Pricing.DocumentAmountTypeDependencies
+  name: Crm.Pricing.DocumentAmountTypeDependencies Entity
+  href: entities/Crm.Pricing.DocumentAmountTypeDependencies.html
+- uid: Crm.Pricing.DocumentAmountTypes
+  name: Crm.Pricing.DocumentAmountTypes Entity
+  href: entities/Crm.Pricing.DocumentAmountTypes.html
+- uid: Crm.Pricing.LineDiscounts
+  name: Crm.Pricing.LineDiscounts Entity
+  href: entities/Crm.Pricing.LineDiscounts.html
+- uid: Crm.Pricing.PriceLists
+  name: Crm.Pricing.PriceLists Entity
+  href: entities/Crm.Pricing.PriceLists.html
+- uid: Crm.Pricing.PriceTypes
+  name: Crm.Pricing.PriceTypes Entity
+  href: entities/Crm.Pricing.PriceTypes.html
 - uid: Crm.Pricing.PricingModelCosts
   name: Crm.Pricing.PricingModelCosts Entity
   href: entities/Crm.Pricing.PricingModelCosts.html
@@ -511,6 +532,15 @@ references:
 - uid: Crm.Pricing.PricingModels
   name: Crm.Pricing.PricingModels Entity
   href: entities/Crm.Pricing.PricingModels.html
+- uid: Crm.Pricing.ProductPrices
+  name: Crm.Pricing.ProductPrices Entity
+  href: entities/Crm.Pricing.ProductPrices.html
+- uid: Crm.Pricing.PromotionalPackageLines
+  name: Crm.Pricing.PromotionalPackageLines Entity
+  href: entities/Crm.Pricing.PromotionalPackageLines.html
+- uid: Crm.Pricing.PromotionalPackages
+  name: Crm.Pricing.PromotionalPackages Entity
+  href: entities/Crm.Pricing.PromotionalPackages.html
 - uid: Crm.ProductPrices
   name: Crm.ProductPrices Entity
   href: entities/Crm.ProductPrices.html
@@ -550,6 +580,24 @@ references:
 - uid: Crm.Sales.SalesOrdersOptions
   name: Crm.Sales.SalesOrdersOptions Entity
   href: entities/Crm.Sales.SalesOrdersOptions.html
+- uid: Crm.SalesForce
+  name: Crm.SalesForce Namespace
+  href: entities/Crm.SalesForce.html
+- uid: Crm.SalesForce.SalesPersonAssignmentRules
+  name: Crm.SalesForce.SalesPersonAssignmentRules Entity
+  href: entities/Crm.SalesForce.SalesPersonAssignmentRules.html
+- uid: Crm.SalesForce.SalesPersonGroups
+  name: Crm.SalesForce.SalesPersonGroups Entity
+  href: entities/Crm.SalesForce.SalesPersonGroups.html
+- uid: Crm.SalesForce.SalesPersonTargetLines
+  name: Crm.SalesForce.SalesPersonTargetLines Entity
+  href: entities/Crm.SalesForce.SalesPersonTargetLines.html
+- uid: Crm.SalesForce.SalesPersonTargets
+  name: Crm.SalesForce.SalesPersonTargets Entity
+  href: entities/Crm.SalesForce.SalesPersonTargets.html
+- uid: Crm.SalesForce.SalesPersons
+  name: Crm.SalesForce.SalesPersons Entity
+  href: entities/Crm.SalesForce.SalesPersons.html
 - uid: Crm.SalesPersonAssignmentRules
   name: Crm.SalesPersonAssignmentRules Entity
   href: entities/Crm.SalesPersonAssignmentRules.html
@@ -2080,6 +2128,15 @@ references:
 - uid: Systems.Core.Jobs
   name: Systems.Core.Jobs Entity
   href: entities/Systems.Core.Jobs.html
+- uid: Systems.Core.NotificationSettings
+  name: Systems.Core.NotificationSettings Entity
+  href: entities/Systems.Core.NotificationSettings.html
+- uid: Systems.Core.Notifications
+  name: Systems.Core.Notifications Entity
+  href: entities/Systems.Core.Notifications.html
+- uid: Systems.Core.NotificationsSummary
+  name: Systems.Core.NotificationsSummary View
+  href: entities/Systems.Core.NotificationsSummary.html
 - uid: Systems.Core.ObjectChanges
   name: Systems.Core.ObjectChanges Entity
   href: entities/Systems.Core.ObjectChanges.html

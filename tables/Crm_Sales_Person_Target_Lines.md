@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.Distribution.SalesPersonTargetLines](~/entities/Crm.Distribution.SalesPersonTargetLines.md)
+Entity: [Crm.SalesForce.SalesPersonTargetLines](~/entities/Crm.SalesForce.SalesPersonTargetLines.md)
 
 Detail records (lines) of targets for sales persons. Entity: Crm_Sales_Person_Target_Lines
 

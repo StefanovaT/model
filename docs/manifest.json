@@ -12252,6 +12252,76 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.BonusProgramProducts.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.BonusProgramProducts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.BonusPrograms.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.BonusPrograms.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.DocumentAmountTypeDependencies.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.DocumentAmountTypeDependencies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.DocumentAmountTypes.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.DocumentAmountTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.LineDiscounts.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.LineDiscounts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.PriceLists.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.PriceLists.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.PriceTypes.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.PriceTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Crm.Pricing.PricingModelCosts.md",
       "output": {
         ".html": {
@@ -12276,6 +12346,36 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Pricing.PricingModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.ProductPrices.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.ProductPrices.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.PromotionalPackageLines.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.PromotionalPackageLines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Pricing.PromotionalPackages.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Pricing.PromotionalPackages.html"
         }
       },
       "version": ""
@@ -12416,6 +12516,66 @@
       "output": {
         ".html": {
           "relative_path": "entities/Crm.Sales.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesForce.SalesPersonAssignmentRules.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesForce.SalesPersonAssignmentRules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesForce.SalesPersonGroups.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesForce.SalesPersonGroups.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesForce.SalesPersonTargetLines.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesForce.SalesPersonTargetLines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesForce.SalesPersonTargets.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesForce.SalesPersonTargets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesForce.SalesPersons.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesForce.SalesPersons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Crm.SalesForce.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.SalesForce.html"
         }
       },
       "version": ""
@@ -17456,6 +17616,36 @@
       "output": {
         ".html": {
           "relative_path": "entities/Systems.Core.Jobs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Core.NotificationSettings.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Core.NotificationSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Core.Notifications.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Core.Notifications.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Systems.Core.NotificationsSummary.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Systems.Core.NotificationsSummary.html"
         }
       },
       "version": ""

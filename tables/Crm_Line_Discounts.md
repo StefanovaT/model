@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.LineDiscounts](~/entities/Crm.LineDiscounts.md)
+Entity: [Crm.Pricing.LineDiscounts](~/entities/Crm.Pricing.LineDiscounts.md)
 
 Discount policies for sales documents. Entity: Crm_Line_Discounts
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Documents.DocumentAmountTypeDependencies](~/entities/Systems.Documents.DocumentAmountTypeDependencies.md)
+Entity: [Crm.Pricing.DocumentAmountTypeDependencies](~/entities/Crm.Pricing.DocumentAmountTypeDependencies.md)
 
 Specifies the base amounts on which an amount depends. . Entity: Gen_Document_Amount_Type_Dependencies
 

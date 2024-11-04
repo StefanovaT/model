@@ -191,10 +191,6 @@
 - name: Communities
   href: Communities.md
   items:
-  - name: Notifications
-    href: Communities.Notifications.md
-  - name: NotificationSettings
-    href: Communities.NotificationSettings.md
   - name: Social
     href: Communities.Social.md
     items:
@@ -208,8 +204,6 @@
       href: Communities.Social.GroupMembers.md
     - name: Groups
       href: Communities.Social.Groups.md
-    - name: NotificationsSummary
-      href: Communities.Social.NotificationsSummary.md
     - name: Posts
       href: Communities.Social.Posts.md
     - name: Reactions
@@ -229,15 +223,6 @@
     href: Crm.Dealers.md
   - name: DiscountTypes
     href: Crm.DiscountTypes.md
-  - name: Distribution
-    href: Crm.Distribution.md
-    items:
-    - name: SalesPersonGroups
-      href: Crm.Distribution.SalesPersonGroups.md
-    - name: SalesPersonTargetLines
-      href: Crm.Distribution.SalesPersonTargetLines.md
-    - name: SalesPersonTargets
-      href: Crm.Distribution.SalesPersonTargets.md
   - name: Distributors
     href: Crm.Distributors.md
   - name: Invoicing
@@ -255,15 +240,9 @@
       href: Crm.Invoicing.Invoices.md
     - name: InvoicesOptions
       href: Crm.Invoicing.InvoicesOptions.md
-  - name: LineDiscounts
-    href: Crm.LineDiscounts.md
   - name: Marketing
     href: Crm.Marketing.md
     items:
-    - name: BonusProgramProducts
-      href: Crm.Marketing.BonusProgramProducts.md
-    - name: BonusPrograms
-      href: Crm.Marketing.BonusPrograms.md
     - name: Campaigns
       href: Crm.Marketing.Campaigns.md
     - name: CompanySizeClasses
@@ -328,25 +307,35 @@
       href: Crm.Presales.Offers.md
     - name: OffersOptions
       href: Crm.Presales.OffersOptions.md
-  - name: PriceLists
-    href: Crm.PriceLists.md
-  - name: PriceTypes
-    href: Crm.PriceTypes.md
   - name: Pricing
     href: Crm.Pricing.md
     items:
+    - name: BonusProgramProducts
+      href: Crm.Pricing.BonusProgramProducts.md
+    - name: BonusPrograms
+      href: Crm.Pricing.BonusPrograms.md
+    - name: DocumentAmountTypeDependencies
+      href: Crm.Pricing.DocumentAmountTypeDependencies.md
+    - name: DocumentAmountTypes
+      href: Crm.Pricing.DocumentAmountTypes.md
+    - name: LineDiscounts
+      href: Crm.Pricing.LineDiscounts.md
+    - name: PriceLists
+      href: Crm.Pricing.PriceLists.md
+    - name: PriceTypes
+      href: Crm.Pricing.PriceTypes.md
     - name: PricingModelCosts
       href: Crm.Pricing.PricingModelCosts.md
     - name: PricingModelPriceLists
       href: Crm.Pricing.PricingModelPriceLists.md
     - name: PricingModels
       href: Crm.Pricing.PricingModels.md
-  - name: ProductPrices
-    href: Crm.ProductPrices.md
-  - name: PromotionalPackageLines
-    href: Crm.PromotionalPackageLines.md
-  - name: PromotionalPackages
-    href: Crm.PromotionalPackages.md
+    - name: ProductPrices
+      href: Crm.Pricing.ProductPrices.md
+    - name: PromotionalPackageLines
+      href: Crm.Pricing.PromotionalPackageLines.md
+    - name: PromotionalPackages
+      href: Crm.Pricing.PromotionalPackages.md
   - name: Sales
     href: Crm.Sales.md
     items:
@@ -368,10 +357,19 @@
       href: Crm.Sales.SalesOrders.md
     - name: SalesOrdersOptions
       href: Crm.Sales.SalesOrdersOptions.md
-  - name: SalesPersonAssignmentRules
-    href: Crm.SalesPersonAssignmentRules.md
-  - name: SalesPersons
-    href: Crm.SalesPersons.md
+  - name: SalesForce
+    href: Crm.SalesForce.md
+    items:
+    - name: SalesPersonAssignmentRules
+      href: Crm.SalesForce.SalesPersonAssignmentRules.md
+    - name: SalesPersonGroups
+      href: Crm.SalesForce.SalesPersonGroups.md
+    - name: SalesPersons
+      href: Crm.SalesForce.SalesPersons.md
+    - name: SalesPersonTargetLines
+      href: Crm.SalesForce.SalesPersonTargetLines.md
+    - name: SalesPersonTargets
+      href: Crm.SalesForce.SalesPersonTargets.md
   - name: Subscriptions
     href: Crm.Subscriptions.md
     items:
@@ -1172,6 +1170,12 @@
       href: Systems.Core.ExtensibleDataObjects.md
     - name: FormLayouts
       href: Systems.Core.FormLayouts.md
+    - name: Notifications
+      href: Systems.Core.Notifications.md
+    - name: NotificationSettings
+      href: Systems.Core.NotificationSettings.md
+    - name: NotificationsSummary
+      href: Systems.Core.NotificationsSummary.md
     - name: ObjectChanges
       href: Systems.Core.ObjectChanges.md
     - name: ObjectChangesets
@@ -1191,10 +1195,6 @@
       href: Systems.Documents.DataSourceQueries.md
     - name: DataSources
       href: Systems.Documents.DataSources.md
-    - name: DocumentAmountTypeDependencies
-      href: Systems.Documents.DocumentAmountTypeDependencies.md
-    - name: DocumentAmountTypes
-      href: Systems.Documents.DocumentAmountTypes.md
     - name: DocumentPartyRoles
       href: Systems.Documents.DocumentPartyRoles.md
     - name: DocumentTypeAmounts
