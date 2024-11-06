@@ -333,9 +333,9 @@ Aggregate Root:<br>
 <td>Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
-<td><a href="Crm.Sales.SalesOrderLines.html#linediscount">LineDiscount</a></td>
+<td><a href="Crm.Sales.SalesOrderLines.html#linediscount"><s>LineDiscount</s></a></td>
 <td><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</td>
-<td>The line discount type used to form the Line_Standard_<br>Discount_Percent. <code>Filter(multi eq)</code> <code>ReadOnly</code></td>
+<td><strong>OBSOLETE! Do not use!</strong> The line discount type used to form the Line_Standard_<br>Discount_Percent. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>ReadOnly</code> <code>Obsoleted in version 25.1.1.38</code> <code>Obsolete</code></td>
 </tr>
 <tr>
 <td><a href="Crm.Sales.SalesOrderLines.html#lineendcustomerparty">LineEndCustomerParty</a></td>
@@ -982,11 +982,11 @@ Generic enum type for TransportMode properties<br>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.SalesOrder.DealType</code></p>
 <h3 id="linediscount">LineDiscount</h3>
-<p>The line discount type used to form the Line_Standard_Discount_Percent. <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> The line discount type used to form the Line_Standard_Discount_Percent. <code>Obsolete</code> <code>Filter(multi eq)</code> <code>ReadOnly</code> <code>Obsoleted in version 25.1.1.38</code> <code>Obsolete</code></p>
 <p><em>Type</em>: <strong><a href="Crm.Pricing.LineDiscounts.html">LineDiscounts</a> (nullable)</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="lineendcustomerparty">LineEndCustomerParty</h3>
 <p>The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. <code>Filter(multi eq)</code> <code>Introduced in version 20.1</code></p>
 <p><em>Type</em>: <strong><a href="General.Contacts.Parties.html">Parties</a> (nullable)</strong><br>

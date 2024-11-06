@@ -34,7 +34,7 @@ Sales Orders detail records. Entity: Crm_Sales_Order_Lines
 |[Line_Amount](#line_amount)|`decimal(14, 2)` |The total amount for the line. Equals to Quantity * Unit_Price, less the discounts|
 |[Line_Custom_Discount_Percent](#line_custom_discount_percent)|`decimal(7, 6)` |User-defined discount for the line|
 |[Line_Deal_Type_Id](#line_deal_type_id)|`uniqueidentifier` |Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type.|
-|[Line_Discount_Id](#line_discount_id)|`uniqueidentifier` Readonly|The line discount type used to form the Line_Standard_Discount_Percent|
+|[Line_Discount_Id](#line_discount_id)|`uniqueidentifier` |The line discount type used to form the Line_Standard_Discount_Percent|
 |[Line_End_Customer_Party_Id](#line_end_customer_party_id)|`uniqueidentifier` |The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party.|
 |[Line_From_Date](#line_from_date)|`date` |When selling a service valid only for a period, denotes the beginning of the period. NULL means that it is unknown or N/A.|
 |[Line_No](#line_no)|`int` |Consecutive number of the line within the sales order|
@@ -690,7 +690,7 @@ The line discount type used to form the Line_Standard_Discount_Percent
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
-|Enter Stop|no|
+|Enter Stop|yes|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
@@ -699,7 +699,7 @@ The line discount type used to form the Line_Standard_Discount_Percent
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|yes|
+|Readonly|no|
 |Referenced Table|[Crm_Line_Discounts](Crm_Line_Discounts.md)|
 |RTF|no|
 |Sortable|no|

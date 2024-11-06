@@ -118,6 +118,11 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 </thead>
 <tbody>
 <tr>
+<td><a href="Projects.Agile.Projects.html#considerwiplimit">ConsiderWipLimit</a></td>
+<td>int32 <strong>nullable</strong></td>
+<td>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></td>
+</tr>
+<tr>
 <td><a href="Projects.Agile.Projects.html#displaytext">DisplayText</a></td>
 <td>string</td>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
@@ -126,6 +131,11 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <td><a href="Projects.Agile.Projects.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
+</tr>
+<tr>
+<td><a href="Projects.Agile.Projects.html#inprogresswiplimit">InProgressWipLimit</a></td>
+<td>int32 <strong>nullable</strong></td>
+<td>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.Projects.html#isactive">IsActive</a></td>
@@ -148,9 +158,14 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
 <tr>
-<td><a href="Projects.Agile.Projects.html#wiplimit">WipLimit</a></td>
+<td><a href="Projects.Agile.Projects.html#readywiplimit">ReadyWipLimit</a></td>
 <td>int32 <strong>nullable</strong></td>
-<td>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to Active state. <code>Filter(eq)</code></td>
+<td>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to READY state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></td>
+</tr>
+<tr>
+<td><a href="Projects.Agile.Projects.html#wiplimit"><s>WipLimit</s></a></td>
+<td>int32 <strong>nullable</strong></td>
+<td><strong>OBSOLETE! Do not use!</strong> When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to Active state. <code>Obsolete</code> <code>Filter(eq)</code> <code>Obsoleted in version 25.1.1.38</code></td>
 </tr>
 </tbody>
 </table>
@@ -182,6 +197,13 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
+<h3 id="considerwiplimit">ConsiderWipLimit</h3>
+<p>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></p>
+<p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
@@ -196,6 +218,13 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
+<h3 id="inprogresswiplimit">InProgressWipLimit</h3>
+<p>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></p>
+<p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="isactive">IsActive</h3>
 <p>Is the project active for new cases?. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
 <p><em>Type</em>: <strong>boolean</strong><br>
@@ -226,13 +255,20 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
+<h3 id="readywiplimit">ReadyWipLimit</h3>
+<p>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to READY state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></p>
+<p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="wiplimit">WipLimit</h3>
-<p>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to Active state. <code>Filter(eq)</code></p>
+<p><strong>OBSOLETE! Do not use!</strong> When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to Active state. <code>Obsolete</code> <code>Filter(eq)</code> <code>Obsoleted in version 25.1.1.38</code></p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="customer">Customer</h3>
 <p>Specified, when the project is for a customer. <code>Filter(multi eq)</code></p>

@@ -31,11 +31,14 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
+| [ConsiderWipLimit](Projects.Agile.ProjectAreas.md#considerwiplimit) | int32 __nullable__ | When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38` 
 | [DisplayText](Projects.Agile.ProjectAreas.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Agile.ProjectAreas.md#id) | guid |  
+| [InProgressWipLimit](Projects.Agile.ProjectAreas.md#inprogresswiplimit) | int32 __nullable__ | When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38` 
 | [IsActive](Projects.Agile.ProjectAreas.md#isactive) | boolean | Specifies whether the project area is active for new projects. `Required` `Default(true)` `Filter(eq)` 
 | [Name](Projects.Agile.ProjectAreas.md#name) | [MultilanguageString (256)](../data-types.md#multilanguagestring) | Multi-language name of the project area. `Required` `Filter(like)` 
 | [ObjectVersion](Projects.Agile.ProjectAreas.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [ReadyWipLimit](Projects.Agile.ProjectAreas.md#readywiplimit) | int32 __nullable__ | When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to READY state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38` 
 
 ## References
 
@@ -46,6 +49,16 @@ Aggregate Tree
 
 
 ## Attribute Details
+
+### ConsiderWipLimit
+
+When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38`
+
+_Type_: **int32 __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### DisplayText
 
@@ -65,6 +78,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
+
+### InProgressWipLimit
+
+When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38`
+
+_Type_: **int32 __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 ### IsActive
 
@@ -96,6 +119,16 @@ _Category_: **Extensible Data Object**
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
+
+### ReadyWipLimit
+
+When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to READY state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38`
+
+_Type_: **int32 __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
 
 
 ## Reference Details

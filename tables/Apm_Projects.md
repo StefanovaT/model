@@ -11,17 +11,57 @@ Agile project, used to logically group cases. Entity: Apm_Projects (Introduced i
 
 | Name | Type | Description |
 | - | - | --- |
+|[Consider_Wip_Limit](#consider_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state.|
 |[Customer_Id](#customer_id)|`uniqueidentifier` |Specified, when the project is for a customer.|
+|[In_Progress_Wip_Limit](#in_progress_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state.|
 |[Is_Active](#is_active)|`bit` |Is the project active for new cases?|
 |[Is_Template](#is_template)|`bit` |Specifies whether the project is template for new projects of the same type. Template projects can be managed as normal projects. Only one project can be template for any given project type. Cases and other data are copied from the template project when creating a new project.|
 |[Primary_User_Id](#primary_user_id)|`uniqueidentifier` |The primary responsible user for the project.|
 |[Project_Id](#project_id)|`uniqueidentifier` `PK`||
 |[Project_Name](#project_name)|`nvarchar(256)` `ML`|Multi-language name of the project|
 |[Project_Type_Id](#project_type_id)|`uniqueidentifier` |Specifies what kind of project is this.|
+|[Ready_Wip_Limit](#ready_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to READY state.|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Wip_Limit](#wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to Active state|
 
 ## Columns
+
+### Consider_Wip_Limit
+
+
+When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Consider_Wip_Limit - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
 
 ### Customer_Id
 
@@ -59,6 +99,43 @@ Specified, when the project is for a customer.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### In_Progress_Wip_Limit
+
+
+When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|11|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### In_Progress_Wip_Limit - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
 
 ### Is_Active
 
@@ -275,6 +352,43 @@ Specifies what kind of project is this.
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Ready_Wip_Limit
+
+
+When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to READY state.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|10|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Ready_Wip_Limit - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|yes|no|
+
 ### Row_Version
 
 | Property | Value |
@@ -330,7 +444,7 @@ When set, specifies the work-in-progress (WIP) limit. The limit is for number of
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Wip_Limit - Supported Filters
 
