@@ -20,6 +20,7 @@ Contains the materials, which were actually used during the service activity (re
 |[Covered_By_Guarantee](#covered_by_guarantee)|`bit` |True when the used material is covered by the guarantee.|
 |[Line_No](#line_no)|`int` |Consecutive line number, unique within the document. Usually is increasing in steps of 10, like in 10, 20, 30, etc.|
 |[Line_Store_Id](#line_store_id)|`uniqueidentifier` |The store from which the product was taken. NULL = use the store from the header|
+|[Lot_Id](#lot_id)|`uniqueidentifier` |The lot of the product used as material. NULL means that the lot is unknown or will be specified at a later stage (in a store order. etc.)|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product, which was used as material.|
 |[Quantity](#quantity)|`decimal(18, 3)` |Quantity of the product, that was used|
 |[Quantity_Base](#quantity_base)|`decimal(18, 3)` Readonly|The equivalence of Quantity in the base measurement category of the product.|
@@ -126,6 +127,43 @@ The store from which the product was taken. NULL = use the store from the header
 |Visible|yes|
 
 #### Line_Store_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Lot_Id
+
+
+The lot of the product used as material. NULL means that the lot is unknown or will be specified at a later stage (in a store order. etc.)
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|13|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Lots](Inv_Lots.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Lot_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

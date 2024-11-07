@@ -178,6 +178,11 @@ Aggregate Root:<br>
 <td>The store from which the product was taken. null = use the store from the header. <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
+<td><a href="Applications.Service.ServiceActivityMaterials.html#lot">Lot</a></td>
+<td><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</td>
+<td>The lot of the product used as material. null means that the lot is unknown or will be specified at a later stage (in a store order. etc.). <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.39</code></td>
+</tr>
+<tr>
 <td><a href="Applications.Service.ServiceActivityMaterials.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
 <td>The product, which was used as material. <code>Required</code> <code>Filter(multi eq)</code></td>
@@ -309,6 +314,12 @@ Aggregate Root:<br>
 <code>obj.ServiceActivity.Store</code></p>
 <p><em>Front-End Recalc Expressions:</em><br>
 <code>obj.ServiceActivity.Store</code></p>
+<h3 id="lot">Lot</h3>
+<p>The lot of the product used as material. null means that the lot is unknown or will be specified at a later stage (in a store order. etc.). <code>Filter(multi eq)</code> <code>Introduced in version 25.1.1.39</code></p>
+<p><em>Type</em>: <strong><a href="Logistics.Inventory.Lots.html">Lots</a> (nullable)</strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h3 id="product">Product</h3>
 <p>The product, which was used as material. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>

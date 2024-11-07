@@ -31,6 +31,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ClosedTimeUTC](Projects.Agile.Cases.md#closedtimeutc) | datetime __nullable__ | Indicates the time (in UTC) when the case was closed. `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.0.93` 
+| [ConsiderTimeUTC](Projects.Agile.Cases.md#considertimeutc) | datetime __nullable__ | Indicates the time (in UTC) when the case has changed to consider state. `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.1.39` 
 | [CreationTimeUtc](Projects.Agile.Cases.md#creationtimeutc) | datetime | The exact date and time (in UTC) when the case was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.0.93` 
 | [Description](Projects.Agile.Cases.md#description) | string (max) __nullable__ | Description of the required work. `Filter(like)` 
 | [DisplayText](Projects.Agile.Cases.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
@@ -68,6 +69,16 @@ Aggregate Tree
 ### ClosedTimeUTC
 
 Indicates the time (in UTC) when the case was closed. `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.0.93`
+
+_Type_: **datetime __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
+
+### ConsiderTimeUTC
+
+Indicates the time (in UTC) when the case has changed to consider state. `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.1.39`
 
 _Type_: **datetime __nullable__**  
 _Category_: **System**  
@@ -242,11 +253,12 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 | Value | Description |
 | ---- | --- |
 | BACKLOG | BACKLOG. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'BACKLOG' |
-| READY | READY. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'READY' |
-| INPROGRESS | IN PROGRESS. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'INPROGRESS' |
-| WAITING | WAITING. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'WAITING' |
-| RESOLVED | RESOLVED. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'RESOLVED' |
-| CLOSED | CLOSED. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'CLOSED' |
+| CONSIDER | CONSIDER. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'CONSIDER' |
+| READY | READY. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'READY' |
+| INPROGRESS | IN PROGRESS. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'INPROGRESS' |
+| WAITING | WAITING. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'WAITING' |
+| RESOLVED | RESOLVED. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'RESOLVED' |
+| CLOSED | CLOSED. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'CLOSED' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
