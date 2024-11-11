@@ -38,7 +38,9 @@ Aggregate Root:
 | [Id](Logistics.Inventory.ReconciliationCounts.md#id) | guid |  
 | [Notes](Logistics.Inventory.ReconciliationCounts.md#notes) | string (max) __nullable__ | Additional information for the Count. `Introduced in version 24.1.5.37` 
 | [ObjectVersion](Logistics.Inventory.ReconciliationCounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Quantity](Logistics.Inventory.ReconciliationCounts.md#quantity) | decimal (12, 3) | The counted quantity in the default measurement unit of the product. `Required` `Filter(ge;le)` 
+| [Quantity](Logistics.Inventory.ReconciliationCounts.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The counted quantity in the default measurement unit of the product. `Unit: QuantityUnit` `Required` `Filter(ge;le)` 
+| [QuantityBase](Logistics.Inventory.ReconciliationCounts.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42` 
+| [StandardQuantityBase](Logistics.Inventory.ReconciliationCounts.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42` 
 
 ## References
 
@@ -106,12 +108,34 @@ _Show in UI_: **HiddenByDefault**
 
 ### Quantity
 
-The counted quantity in the default measurement unit of the product. `Required` `Filter(ge;le)`
+The counted quantity in the default measurement unit of the product. `Unit: QuantityUnit` `Required` `Filter(ge;le)`
 
-_Type_: **decimal (12, 3)**  
+_Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
+### QuantityBase
+
+Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42`
+
+_Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
+
+### StandardQuantityBase
+
+The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42`
+
+_Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
 
 
