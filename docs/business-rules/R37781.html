@@ -102,28 +102,20 @@
 <td>Commit</td>
 </tr>
 <tr>
-<td><strong>Record State</strong></td>
-<td>/-</td>
-</tr>
-<tr>
 <td><strong>Priority</strong></td>
 <td>Normal</td>
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>If Payment Type has value, or equal to NULL, PaymentTypeDescription will be set.</td>
+<td>If the Payment Type Description field has no value, it will be set with the Name of Payment Type specified in the Payment Type field.|</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule ensures that when a new InvoiceOrder is generated the field will obtain the Name of the Payment Type or NULL.</td>
-</tr>
-<tr>
-<td><strong>Message</strong></td>
-<td>/-</td>
+<td>The rule ensures that the Payment Type Description will obtain the name of the specified Payment Type.|</td>
 </tr>
 <tr>
 <td><strong>Version</strong></td>
