@@ -48,7 +48,7 @@ Bonus program Id when the target type is BONUS, NULL otherwise
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|11|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -85,7 +85,7 @@ Calculated date representation of the target period (used for grouping, filterin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|14|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -121,7 +121,7 @@ Month of the period in which the target must be fulfilled (the period is determi
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -157,7 +157,7 @@ Year of the period in which the target must be fulfilled (the period is determin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -193,7 +193,7 @@ Product group for which the target is defined
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -230,7 +230,7 @@ Promotional Package Id when the target type is PROMO, NULL otherwise
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|12|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -264,7 +264,7 @@ Promotional Package Id when the target type is PROMO, NULL otherwise
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|13|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -294,7 +294,7 @@ Sales person to whom the target is assigned
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -328,7 +328,7 @@ Sales person to whom the target is assigned
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -362,7 +362,7 @@ Sales person to whom the target is assigned
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -398,7 +398,7 @@ Target amount to be fulfilled by the specified sales person. Deprecated - use Ta
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -428,7 +428,7 @@ Deprecated - use currency in document header
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -466,7 +466,7 @@ Type of target. Defines the meaning of Target_Value. SALES-sales amount, BONUS-c
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|5|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -502,7 +502,7 @@ Value of target. Meaning depends on target type
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|9|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -532,7 +532,7 @@ Relative weight of target, comparatively to other targets
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|10|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
