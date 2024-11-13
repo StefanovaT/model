@@ -45,7 +45,7 @@ Aggregate Root:
 | [DisplayText](Crm.SalesForce.SalesPersonTargetLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.SalesForce.SalesPersonTargetLines.md#id) | guid |  
 | [ObjectVersion](Crm.SalesForce.SalesPersonTargetLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [PeriodDate](Crm.SalesForce.SalesPersonTargetLines.md#perioddate) | datetime | Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `Filter(ge;le)` `ReadOnly` 
+| [PeriodDate](Crm.SalesForce.SalesPersonTargetLines.md#perioddate) | datetime | Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.1.43` 
 | [PeriodMonth](Crm.SalesForce.SalesPersonTargetLines.md#periodmonth) | byte | Month of the period in which the target must be fulfilled (the period is determined by specifying a month and an year). `Required` `Filter(ge;le)` 
 | [PeriodYear](Crm.SalesForce.SalesPersonTargetLines.md#periodyear) | int16 | Year of the period in which the target must be fulfilled (the period is determined by specifying a month and an year). `Required` `Filter(ge;le)` 
 | [TargetAmount](Crm.SalesForce.SalesPersonTargetLines.md#targetamount) | [Amount (18, 2)](../data-types.md#amount) __nullable__ | Target amount to be fulfilled by the specified sales person. Deprecated - use Target_Value. `Currency: TargetAmountCurrency` 
@@ -99,7 +99,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### PeriodDate
 
-Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `Filter(ge;le)` `ReadOnly`
+Calculated date representation of the target period (used for grouping, filtering and other auxiliary purposes). `Required` `Filter(ge;le)` `ReadOnly` `Introduced in version 25.1.1.43`
 
 _Type_: **datetime**  
 _Category_: **System**  
