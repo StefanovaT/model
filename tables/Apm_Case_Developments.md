@@ -18,7 +18,7 @@ Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` Readonly|The user, who created the development.|
 |[Description](#description)|`nvarchar(max)` |Detailed description of the development.|
 |[Development_Type](#development_type)|`nvarchar(3)` Allowed: `EDT`, `ASN`, `STA`, `ASH`, `STH`, Readonly|Type of the development - Edit, Assignment, Resolve, etc.|
-|[New_System_State](#new_system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`|When the development incurred changing the state of the case, contains the new state.|
+|[New_System_State](#new_system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`|When the development incurred changing the state of the case, contains the new state.|
 |[Row_Version](#row_version)|`timestamp` ||
 
 ## Columns
@@ -286,7 +286,7 @@ When the development incurred changing the state of the case, contains the new s
 
 | Property | Value |
 | - | - |
-|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
