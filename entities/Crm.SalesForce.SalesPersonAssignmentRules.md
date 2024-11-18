@@ -21,7 +21,7 @@ Default Display Text Format:
 _{EnterpriseCompany} : {RuleNo} - {SalesPerson}_  
 Default Search Members:  
 __  
-Category:  _Settings_  
+Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  
@@ -73,8 +73,8 @@ _Allowed Values (Crm.SalesForce.SalesPersonAssignmentRulesRepository.ApplyTo Enu
 
 | Value | Description |
 | ---- | --- |
-| Customers | Customers value. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Customers' |
-| Documents | Documents value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Documents' |
+| Customers | Customers . Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Customers' |
+| Documents | Documents . Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Documents' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
@@ -153,11 +153,11 @@ _Allowed Values (Crm.SalesForce.SalesPersonAssignmentRulesRepository.Priority En
 
 | Value | Description |
 | ---- | --- |
-| Highest | Highest value. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Highest' |
-| High | High value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'High' |
-| Medium | Medium value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Medium' |
-| Low | Low value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Low' |
-| Lowest | Lowest value. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Lowest' |
+| Highest | Highest. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Highest' |
+| High | High. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'High' |
+| Medium | Medium. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Medium' |
+| Low | Low. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Low' |
+| Lowest | Lowest. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'Lowest' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  

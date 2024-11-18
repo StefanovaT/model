@@ -12,7 +12,7 @@ Default Display Text Format:
 _{TaskType} {CreationTimeUtc:yyyy-MM-dd HH:mm:ss.fff}_  
 Default Search Members:  
 __  
-Category:  _Definitions_  
+Category:  _Views_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  

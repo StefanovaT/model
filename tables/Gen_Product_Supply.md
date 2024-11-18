@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Products.ProductSupply](~/entities/General.Products.ProductSupply.md)
+Entity: [Logistics.Procurement.ProductSupply](~/entities/Logistics.Procurement.ProductSupply.md)
 
 Contains supply rules, which are used by the procurement planning system. Entity: Gen_Product_Supply
 

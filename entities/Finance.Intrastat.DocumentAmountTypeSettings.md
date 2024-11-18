@@ -25,9 +25,9 @@ Max level:  _4 - Track object attribute and blob changes_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[Crm.Pricing.DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md)  
+[Systems.Documents.DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)  
 Aggregate Root:  
-[Crm.Pricing.DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md)  
+[Systems.Documents.DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)  
 
 ## Attributes
 
@@ -43,7 +43,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentAmountType](Finance.Intrastat.DocumentAmountTypeSettings.md#documentamounttype) | [DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md) | The amount type which will be added to the invoiced or the statistical value. `Required` `Filter(multi eq)` `Owner` |
+| [DocumentAmountType](Finance.Intrastat.DocumentAmountTypeSettings.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The amount type which will be added to the invoiced or the statistical value. `Required` `Filter(multi eq)` `Owner` |
 | [EnterpriseCompany](Finance.Intrastat.DocumentAmountTypeSettings.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company for which the setting is valid. `Required` `Filter(multi eq)` |
 
 
@@ -107,7 +107,7 @@ _Show in UI_: **HiddenByDefault**
 
 The amount type which will be added to the invoiced or the statistical value. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  

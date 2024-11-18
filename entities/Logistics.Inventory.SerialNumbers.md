@@ -12,7 +12,7 @@ Default Display Text Format:
 _{SerialNumberField}_  
 Default Search Members:  
 _SerialNumberField_  
-Category:  _Definitions_  
+Category:  _Views_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  

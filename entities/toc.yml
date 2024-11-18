@@ -253,8 +253,6 @@
       href: Crm.Marketing.CompetitorSolutions.md
     - name: DistributionChannels
       href: Crm.Marketing.DistributionChannels.md
-    - name: ForecastItems
-      href: Crm.Marketing.ForecastItems.md
     - name: Industries
       href: Crm.Marketing.Industries.md
     - name: MarketingActivities
@@ -314,10 +312,6 @@
       href: Crm.Pricing.BonusProgramProducts.md
     - name: BonusPrograms
       href: Crm.Pricing.BonusPrograms.md
-    - name: DocumentAmountTypeDependencies
-      href: Crm.Pricing.DocumentAmountTypeDependencies.md
-    - name: DocumentAmountTypes
-      href: Crm.Pricing.DocumentAmountTypes.md
     - name: LineDiscounts
       href: Crm.Pricing.LineDiscounts.md
     - name: PriceLists
@@ -345,6 +339,8 @@
       href: Crm.Sales.DefaultSalesOrderPaymentPlans.md
     - name: DocumentTypePaymentOptions
       href: Crm.Sales.DocumentTypePaymentOptions.md
+    - name: ForecastItems
+      href: Crm.Sales.ForecastItems.md
     - name: SalesOrderLines
       href: Crm.Sales.SalesOrderLines.md
     - name: SalesOrderPaymentOrdersTemplates
@@ -723,8 +719,6 @@
       href: General.Products.ProductPictures.md
     - name: Products
       href: General.Products.Products.md
-    - name: ProductSupply
-      href: General.Products.ProductSupply.md
     - name: ProductTypePurchaseInvoiceLineProperties
       href: General.Products.ProductTypePurchaseInvoiceLineProperties.md
     - name: ProductTypes
@@ -843,6 +837,8 @@
   - name: Procurement
     href: Logistics.Procurement.md
     items:
+    - name: ProductSupply
+      href: Logistics.Procurement.ProductSupply.md
     - name: PurchaseControlDocumentLines
       href: Logistics.Procurement.PurchaseControlDocumentLines.md
     - name: PurchaseControlDocuments
@@ -1195,6 +1191,10 @@
       href: Systems.Documents.DataSourceQueries.md
     - name: DataSources
       href: Systems.Documents.DataSources.md
+    - name: DocumentAmountTypeDependencies
+      href: Systems.Documents.DocumentAmountTypeDependencies.md
+    - name: DocumentAmountTypes
+      href: Systems.Documents.DocumentAmountTypes.md
     - name: DocumentPartyRoles
       href: Systems.Documents.DocumentPartyRoles.md
     - name: DocumentTypeAmounts

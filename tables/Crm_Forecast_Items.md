@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.Marketing.ForecastItems](~/entities/Crm.Marketing.ForecastItems.md)
+Entity: [Crm.Sales.ForecastItems](~/entities/Crm.Sales.ForecastItems.md)
 
 Forecast items form demand in MRP calculations. Entity: Crm_Forecast_Items
 

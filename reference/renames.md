@@ -5,6 +5,16 @@ In various versions of ERP.net, different entities have been renamed.
 Here is a list of entity renames in chronological order.  
 
 
+Old name: **General.Products.ProductSupply**  
+New name: **Logistics.Procurement.ProductSupply**  
+Version: **25.1.1.48**  
+Case: **37717**  
+
+Old name: **Crm.Marketing.ForecastItems**  
+New name: **Crm.Sales.ForecastItems**  
+Version: **25.1.1.48**  
+Case: **37717**  
+
 Old name: **Communities.NotificationSettings**  
 New name: **Systems.Core.NotificationSettings**  
 Version: **25.1.1.36**  
@@ -22,16 +32,6 @@ Case: **37717**
 
 Old name: **Crm.Marketing.BonusPrograms**  
 New name: **Crm.Pricing.BonusPrograms**  
-Version: **25.1.1.36**  
-Case: **37717**  
-
-Old name: **Systems.Documents.DocumentAmountTypeDependencies**  
-New name: **Crm.Pricing.DocumentAmountTypeDependencies**  
-Version: **25.1.1.36**  
-Case: **37717**  
-
-Old name: **Systems.Documents.DocumentAmountTypes**  
-New name: **Crm.Pricing.DocumentAmountTypes**  
 Version: **25.1.1.36**  
 Case: **37717**  
 

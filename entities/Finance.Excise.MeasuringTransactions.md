@@ -14,7 +14,7 @@ Default Search Members:
 _MeasuringDeviceCode_  
 Code Data Member:  
 _MeasuringDeviceCode_  
-Category:  _Definitions_  
+Category:  _Views_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  

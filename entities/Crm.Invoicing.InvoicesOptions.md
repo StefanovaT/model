@@ -46,7 +46,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [DefaultDealType](Crm.Invoicing.InvoicesOptions.md#defaultdealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | When not null, specifies default VAT deal type. `Filter(multi eq)` |
 | [DocumentType](Crm.Invoicing.InvoicesOptions.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The document type for which the invoice option applies. `Required` `Filter(multi eq)` `Owner` |
-| [VATDeviationDocument<br />AmountType](Crm.Invoicing.InvoicesOptions.md#vatdeviationdocumentamounttype) | [DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md) (nullable) | Document amount that contains the difference between the total amount of the invoice formed by unit prices with VAT and the amount formed by unit prices without VAT. `Filter(multi eq)` |
+| [VATDeviationDocument<br />AmountType](Crm.Invoicing.InvoicesOptions.md#vatdeviationdocumentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) (nullable) | Document amount that contains the difference between the total amount of the invoice formed by unit prices with VAT and the amount formed by unit prices without VAT. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -157,7 +157,7 @@ _Show in UI_: **ShownByDefault**
 
 Document amount that contains the difference between the total amount of the invoice formed by unit prices with VAT and the amount formed by unit prices without VAT. `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md) (nullable)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

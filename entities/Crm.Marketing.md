@@ -9,7 +9,6 @@ uid: Crm.Marketing
 - [Competitors](Crm.Marketing.Competitors.md)  
 - [CompetitorSolutions](Crm.Marketing.CompetitorSolutions.md)  
 - [DistributionChannels](Crm.Marketing.DistributionChannels.md)  
-- [ForecastItems](Crm.Marketing.ForecastItems.md)  
 - [Industries](Crm.Marketing.Industries.md)  
 - [MarketingActivities](Crm.Marketing.MarketingActivities.md)  
 - [MarketingActivityLines](Crm.Marketing.MarketingActivityLines.md)  

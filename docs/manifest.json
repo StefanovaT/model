@@ -12512,6 +12512,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Crm.Sales.ForecastItems.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Crm.Sales.ForecastItems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Crm.Sales.SalesOrderLines.md",
       "output": {
         ".html": {
@@ -15556,6 +15566,16 @@
       "output": {
         ".html": {
           "relative_path": "entities/Logistics.LogisticUnits.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "entities/Logistics.Procurement.ProductSupply.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Logistics.Procurement.ProductSupply.html"
         }
       },
       "version": ""

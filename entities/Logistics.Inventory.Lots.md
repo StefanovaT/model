@@ -14,7 +14,7 @@ Default Search Members:
 _Number_  
 Code Data Member:  
 _Number_  
-Category:  _Definitions_  
+Category:  _Views_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  

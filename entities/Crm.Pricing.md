@@ -6,8 +6,6 @@ uid: Crm.Pricing
 ## Entities
 - [BonusProgramProducts](Crm.Pricing.BonusProgramProducts.md)  
 - [BonusPrograms](Crm.Pricing.BonusPrograms.md)  
-- [DocumentAmountTypeDependencies](Crm.Pricing.DocumentAmountTypeDependencies.md)  
-- [DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md)  
 - [LineDiscounts](Crm.Pricing.LineDiscounts.md)  
 - [PriceLists](Crm.Pricing.PriceLists.md)  
 - [PriceTypes](Crm.Pricing.PriceTypes.md)  

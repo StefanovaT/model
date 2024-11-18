@@ -14,7 +14,7 @@ Default Search Members:
 _CompanyName_  
 Name Data Member:  
 _CompanyName_  
-Category:  _Definitions_  
+Category:  _Documents_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  

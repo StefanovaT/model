@@ -562,6 +562,9 @@ references:
 - uid: Crm.Sales.DocumentTypePaymentOptions
   name: Crm.Sales.DocumentTypePaymentOptions Entity
   href: entities/Crm.Sales.DocumentTypePaymentOptions.html
+- uid: Crm.Sales.ForecastItems
+  name: Crm.Sales.ForecastItems Entity
+  href: entities/Crm.Sales.ForecastItems.html
 - uid: Crm.Sales.SalesOrderLines
   name: Crm.Sales.SalesOrderLines Entity
   href: entities/Crm.Sales.SalesOrderLines.html
@@ -1492,6 +1495,9 @@ references:
 - uid: Logistics.Procurement
   name: Logistics.Procurement Namespace
   href: entities/Logistics.Procurement.html
+- uid: Logistics.Procurement.ProductSupply
+  name: Logistics.Procurement.ProductSupply Entity
+  href: entities/Logistics.Procurement.ProductSupply.html
 - uid: Logistics.Procurement.PurchaseControlDocumentLines
   name: Logistics.Procurement.PurchaseControlDocumentLines Entity
   href: entities/Logistics.Procurement.PurchaseControlDocumentLines.html

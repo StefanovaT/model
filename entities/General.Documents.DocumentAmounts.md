@@ -57,7 +57,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Document](General.Documents.DocumentAmounts.md#document) | [Documents](General.Documents.Documents.md) | The <see cref="Document"/> to which this DocumentAmount belongs. `Required` `Filter(multi eq)` `Owner` |
-| [DocumentAmountType](General.Documents.DocumentAmounts.md#documentamounttype) | [DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md) | The type of the amount. `Required` `Filter(multi eq)` |
+| [DocumentAmountType](General.Documents.DocumentAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The type of the amount. `Required` `Filter(multi eq)` |
 | [InputAmountCurrency](General.Documents.DocumentAmounts.md#inputamountcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | When specifying the amount directly in Input Amount, this contains the currency of the amount. Used and required when Input Amount is not null. `Filter(multi eq)` |
 | [InputUnit](General.Documents.DocumentAmounts.md#inputunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | Measurement unit of the input unit amount. `Filter(multi eq)` |
 
@@ -187,7 +187,7 @@ _Show in UI_: **CannotBeShown**
 
 The type of the amount. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](Crm.Pricing.DocumentAmountTypes.md)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  

@@ -6,6 +6,8 @@ uid: Systems.Documents
 ## Entities
 - [DataSourceQueries](Systems.Documents.DataSourceQueries.md)  
 - [DataSources](Systems.Documents.DataSources.md)  
+- [DocumentAmountTypeDependencies](Systems.Documents.DocumentAmountTypeDependencies.md)  
+- [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)  
 - [DocumentPartyRoles](Systems.Documents.DocumentPartyRoles.md)  
 - [DocumentTypeAmounts](Systems.Documents.DocumentTypeAmounts.md)  
 - [DocumentTypeEnterpriseCompanies](Systems.Documents.DocumentTypeEnterpriseCompanies.md)  

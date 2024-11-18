@@ -96,7 +96,7 @@ Version: <strong>24.1.5.35</strong><br>
 Case: <strong>35911</strong></p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{UserStatusName}</em><br>
+<em>{UserStatusName:T}</em><br>
 Default Search Members:<br>
 <em>UserStatusName</em><br>
 Name Data Member:<br>
@@ -144,7 +144,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Systems.Documents.DocumentTypeUserStatuses.html#instructions">Instructions</a></td>
-<td>string (max) <strong>nullable</strong></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (max)</a> <strong>nullable</strong></td>
 <td>Instructions what should be done when this user status is active (Rich Text).</td>
 </tr>
 <tr>
@@ -164,7 +164,7 @@ Aggregate Root:<br>
 </tr>
 <tr>
 <td><a href="Systems.Documents.DocumentTypeUserStatuses.html#userstatusname">UserStatusName</a></td>
-<td>string (128)</td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a></td>
 <td>Multi-language name of the user status. <code>Required</code> <code>Filter(eq;like)</code></td>
 </tr>
 </tbody>
@@ -222,11 +222,10 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="instructions">Instructions</h3>
 <p>Instructions what should be done when this user status is active (Rich Text).</p>
-<p><em>Type</em>: <strong>string (max) <strong>nullable</strong></strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (max)</a> <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>NotFilterable</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>2147483647</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="isexitstatus">IsExitStatus</h3>
 <p>True when the status allows going to the next system status, false otherwise. For example for system status Firm Planned, only user status Approved might allow going to Released. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
@@ -292,11 +291,10 @@ Enumeration of document system states<br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="userstatusname">UserStatusName</h3>
 <p>Multi-language name of the user status. <code>Required</code> <code>Filter(eq;like)</code></p>
-<p><em>Type</em>: <strong>string (128)</strong><br>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (128)</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
-<em>Maximum Length</em>: <strong>128</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="documenttype">DocumentType</h3>
