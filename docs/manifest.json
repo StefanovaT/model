@@ -10572,6 +10572,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "business-rules/R37725-1.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R37725-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "business-rules/R37725-2.md",
+      "output": {
+        ".html": {
+          "relative_path": "business-rules/R37725-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "business-rules/R37727.md",
       "output": {
         ".html": {

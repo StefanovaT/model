@@ -32,6 +32,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [ConsiderWipLimit](Projects.Agile.ProjectAreas.md#considerwiplimit) | int32 __nullable__ | When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38` 
+| [Description](Projects.Agile.ProjectAreas.md#description) | [MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__ | Description of the project area. `Filter(like)` `Introduced in version 25.1.1.48` 
 | [DisplayText](Projects.Agile.ProjectAreas.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.Agile.ProjectAreas.md#id) | guid |  
 | [InProgressWipLimit](Projects.Agile.ProjectAreas.md#inprogresswiplimit) | int32 __nullable__ | When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state. `Filter(eq;ge;le)` `Introduced in version 25.1.1.38` 
@@ -57,6 +58,16 @@ When set, specifies the work-in-progress (WIP) limit. The limit is for number of
 _Type_: **int32 __nullable__**  
 _Category_: **System**  
 _Supported Filters_: **Equals, GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
+### Description
+
+Description of the project area. `Filter(like)` `Introduced in version 25.1.1.48`
+
+_Type_: **[MultilanguageString (254)](../data-types.md#multilanguagestring) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Like**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 

@@ -123,6 +123,11 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <td>When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state. <code>Filter(eq;ge;le)</code> <code>Introduced in version 25.1.1.38</code></td>
 </tr>
 <tr>
+<td><a href="Projects.Agile.ProjectAreas.html#description">Description</a></td>
+<td><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a> <strong>nullable</strong></td>
+<td>Description of the project area. <code>Filter(like)</code> <code>Introduced in version 25.1.1.48</code></td>
+</tr>
+<tr>
 <td><a href="Projects.Agile.ProjectAreas.html#displaytext">DisplayText</a></td>
 <td>string</td>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
@@ -187,6 +192,13 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <p><em>Type</em>: <strong>int32 <strong>nullable</strong></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, GreaterThanOrLessThan</strong><br>
+<em>Supports Order By</em>: <strong>False</strong><br>
+<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<h3 id="description">Description</h3>
+<p>Description of the project area. <code>Filter(like)</code> <code>Introduced in version 25.1.1.48</code></p>
+<p><em>Type</em>: <strong><a href="../data-types.html#multilanguagestring">MultilanguageString (254)</a> <strong>nullable</strong></strong><br>
+<em>Category</em>: <strong>System</strong><br>
+<em>Supported Filters</em>: <strong>Like</strong><br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>

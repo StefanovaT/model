@@ -12,6 +12,7 @@ Area of a project. Can be applicable to a single project or all projects. Entity
 | Name | Type | Description |
 | - | - | --- |
 |[Consider_Wip_Limit](#consider_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state.|
+|[Description](#description)|`nvarchar(254)` `ML`|Description of the project area.|
 |[In_Progress_Wip_Limit](#in_progress_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state.|
 |[Is_Active](#is_active)|`bit` |Specifies whether the project area is active for new projects|
 |[Primary_User_Id](#primary_user_id)|`uniqueidentifier` |Specified, when there is a primary user for the area|
@@ -59,6 +60,42 @@ When set, specifies the work-in-progress (WIP) limit. The limit is for number of
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
 |GreaterThanOrLessThan|None|yes|no|
+
+### Description
+
+
+Description of the project area.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(254) (MultiLanguage) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Description - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### In_Progress_Wip_Limit
 

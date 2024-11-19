@@ -249,6 +249,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h3 id="standardquantitybase">StandardQuantityBase</h3>
 <p>The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. <code>Unit: Product.BaseMeasurementCategory.BaseUnit</code> <code>Required</code> <code>Default(0)</code> <code>ReadOnly</code> <code>Introduced in version 25.1.1.42</code></p>
 <p><em>Type</em>: <strong><a href="../data-types.html#quantity">Quantity (18, 3)</a></strong><br>
@@ -257,6 +261,10 @@ Aggregate Root:<br>
 <em>Supports Order By</em>: <strong>False</strong><br>
 <em>Default Value</em>: <strong>Constant</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
+<p><em>Back-End Default Expression:</em><br>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, IIF( obj.Product.AllowVariableMeasurementRatios, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.QuantityBase))</code></p>
+<p><em>Front-End Recalc Expressions:</em><br>
+<code>IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))</code></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="creationuser">CreationUser</h3>
 <p>The user who performed the count. <code>Required</code> <code>Filter(multi eq)</code> <code>ReadOnly</code></p>
@@ -365,6 +373,8 @@ The notification subject.<br>
 <h2 id="front-end-business-rules">Front-End Business Rules</h2>
 <ul>
 <li><a href="../business-rules/R35917.html">R35917 ReconciliationCounts – Set Creation User</a></li>
+<li><a href="../business-rules/R37725-1.html">R37725-1 Reconciliation Count - Set Standard Quantity Base (Recalc)</a></li>
+<li><a href="../business-rules/R37725-2.html">R37725-2 Reconciliation Count - Set Quantity Base (Recalc)</a></li>
 </ul>
 <h2 id="api">API</h2>
 <p>Domain API Query:

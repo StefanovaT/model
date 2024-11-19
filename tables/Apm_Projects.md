@@ -13,6 +13,7 @@ Agile project, used to logically group cases. Entity: Apm_Projects (Introduced i
 | - | - | --- |
 |[Consider_Wip_Limit](#consider_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to CONSIDER state.|
 |[Customer_Id](#customer_id)|`uniqueidentifier` |Specified, when the project is for a customer.|
+|[Description](#description)|`nvarchar(254)` `ML`|Description of the project.|
 |[In_Progress_Wip_Limit](#in_progress_wip_limit)|`int` |When set, specifies the work-in-progress (WIP) limit. The limit is for number of cases, which can progress to IN PROGRESS state.|
 |[Is_Active](#is_active)|`bit` |Is the project active for new cases?|
 |[Is_Template](#is_template)|`bit` |Specifies whether the project is template for new projects of the same type. Template projects can be managed as normal projects. Only one project can be template for any given project type. Cases and other data are copied from the template project when creating a new project.|
@@ -99,6 +100,42 @@ Specified, when the project is for a customer.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Description
+
+
+Description of the project.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|12|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(254) (MultiLanguage) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Description - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### In_Progress_Wip_Limit
 

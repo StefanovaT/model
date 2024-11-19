@@ -127,6 +127,11 @@ _Supports Order By_: **False**
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+
+_Front-End Recalc Expressions:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
 ### StandardQuantityBase
 
 The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42`
@@ -138,6 +143,11 @@ _Supports Order By_: **False**
 _Default Value_: **Constant**  
 _Show in UI_: **ShownByDefault**  
 
+_Back-End Default Expression:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, IIF( obj.Product.AllowVariableMeasurementRatios, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.QuantityBase))`
+
+_Front-End Recalc Expressions:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
 
 ## Reference Details
 
