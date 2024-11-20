@@ -90,6 +90,7 @@ _Allowed Values (Systems.Security.GroupsRepository.GroupType Enum Members)_
 | SystemGroupForOneUser | SystemGroupForOneUser value. Stored as 'U'. <br /> _Database Value:_ 'U' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'SystemGroupForOneUser' |
 | Administrators | Administrators value. Stored as 'A'. <br /> _Database Value:_ 'A' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Administrators' |
 | Everybody | Everybody value. Stored as 'E'. <br /> _Database Value:_ 'E' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'Everybody' |
+| PowerUsers | PowerUsers value. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'PowerUsers' |
 
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  

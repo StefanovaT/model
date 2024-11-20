@@ -18,11 +18,9 @@ Case: **37717**
 
 ## Default Visualization
 Default Display Text Format:  
-_{Person.PartyName:T}_  
+_{Id}: {PersonId}_  
 Default Search Members:  
-_Person.PartyName_  
-Name Data Member:  
-_Person.PartyName_  
+__  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
@@ -33,10 +31,8 @@ Max level:  _4 - Track object attribute and blob changes_
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[General.Contacts.Persons](General.Contacts.Persons.md)  
-Aggregate Root:  
-[General.Contacts.Persons](General.Contacts.Persons.md)  
+Aggregate Tree  
+* [Crm.SalesForce.SalesPersons](Crm.SalesForce.SalesPersons.md)  
 
 ## Attributes
 
@@ -57,7 +53,7 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [EnterpriseCompany](Crm.SalesForce.SalesPersons.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this SalesPerson applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Crm.SalesForce.SalesPersons.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location, to which the sales person is assigned. The sales person is allowed to sell to other locations, but this is the default location. null means that the sales person is not assigned to any enterprise location. `Filter(multi eq)` |
-| [Person](Crm.SalesForce.SalesPersons.md#person) | [Persons](General.Contacts.Persons.md) | Base personal record. `Required` `Filter(multi eq)` `Owner` |
+| [Person](Crm.SalesForce.SalesPersons.md#person) | [Persons](General.Contacts.Persons.md) | Base personal record. `Required` `Filter(multi eq)` |
 | [SalesPersonGroup](Crm.SalesForce.SalesPersons.md#salespersongroup) | [SalesPersonGroups](Crm.SalesForce.SalesPersonGroups.md) | The sales person group to which this sales person is assigned. `Required` `Filter(multi eq)` |
 
 
@@ -165,13 +161,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Person
 
-Base personal record. `Required` `Filter(multi eq)` `Owner`
+Base personal record. `Required` `Filter(multi eq)`
 
 _Type_: **[Persons](General.Contacts.Persons.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### SalesPersonGroup

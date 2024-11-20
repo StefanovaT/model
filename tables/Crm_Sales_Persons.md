@@ -7,11 +7,6 @@ Entity: [Crm.SalesForce.SalesPersons](~/entities/Crm.SalesForce.SalesPersons.md)
 
 Sales persons (or representatives) are sellers inside the enterprise company who sell the products to customers. Entity: Crm_Sales_Persons
 
-## Owner Tables Hierarchy
-
-* [Cm_Persons](Cm_Persons.md)
-* [Gen_Parties](Gen_Parties.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -291,7 +286,7 @@ Base personal record
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
