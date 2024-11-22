@@ -36,7 +36,9 @@ Aggregate Tree
   * [General.Products.ProductPictures](General.Products.ProductPictures.md)  
   * [General.Products.ProductVariants](General.Products.ProductVariants.md)  
   * [General.Products.CompositeProductComponents](General.Products.CompositeProductComponents.md)  
+  * [Logistics.Inventory.Lots](Logistics.Inventory.Lots.md)  
   * [Logistics.Inventory.ProductDefaultStoreBins](Logistics.Inventory.ProductDefaultStoreBins.md)  
+  * [Logistics.Inventory.SerialNumbers](Logistics.Inventory.SerialNumbers.md)  
 
 ## Attributes
 

@@ -1,31 +1,31 @@
-# Table Inv_Serial_Numbers
+# Table Apm_Project_Type_Case_Categories
 
 
 ## Entity
 
-Entity: [Logistics.Inventory.SerialNumbers](~/entities/Logistics.Inventory.SerialNumbers.md)
+Entity: [Projects.Agile.ProjectTypeCaseCategories](~/entities/Projects.Agile.ProjectTypeCaseCategories.md)
 
-Serial numbers, used by the items. Rows are created on first occurrence of the serial number in a document. Rows can be deleted after deleting the last occurence of the serial number in a document. Entity: Inv_Serial_Numbers
+Indicates for each project type what case categories are allowed. Entity: Apm_Project_Type_Case_Categories (Introduced in version 25.1.1.51)
 
 ## Owner Tables Hierarchy
 
-* [Gen_Products](Gen_Products.md)
+* [Apm_Project_Types](Apm_Project_Types.md)
 
 ## Summary
 
 | Name | Type | Description |
 | - | - | --- |
-|[Id](#id)|`uniqueidentifier` `PK`|Unique serial number Id|
-|[Product_Id](#product_id)|`uniqueidentifier` |The product, to which the serial number is bound|
+|[Case_Category_Id](#case_category_id)|`uniqueidentifier` |The case category that а project with this type can have.|
+|[Project_Type_Case_Category_Id](#project_type_case_category_id)|`uniqueidentifier` `PK`||
+|[Project_Type_Id](#project_type_id)|`uniqueidentifier` |The project type for which we specify the case category.|
 |[Row_Version](#row_version)|`timestamp` ||
-|[Serial_Number](#serial_number)|`nvarchar(40)` |The serial number text|
 
 ## Columns
 
-### Id
+### Case_Category_Id
 
 
-Unique serial number Id
+The case category that а project with this type can have.
 
 | Property | Value |
 | - | - |
@@ -36,7 +36,41 @@ Unique serial number Id
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Apm_Case_Categories](Apm_Case_Categories.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Case_Category_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Project_Type_Case_Category_Id
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -52,16 +86,16 @@ Unique serial number Id
 |User Login|no|
 |Visible|no|
 
-#### Id - Supported Filters
+#### Project_Type_Case_Category_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
-### Product_Id
+### Project_Type_Id
 
 
-The product, to which the serial number is bound
+The project type for which we specify the case category.
 
 | Property | Value |
 | - | - |
@@ -72,13 +106,13 @@ The product, to which the serial number is bound
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
-|Referenced Table|[Gen_Products](Gen_Products.md)|
+|Referenced Table|[Apm_Project_Types](Apm_Project_Types.md)|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -89,7 +123,7 @@ The product, to which the serial number is bound
 |User Login|no|
 |Visible|yes|
 
-#### Product_Id - Supported Filters
+#### Project_Type_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
@@ -106,7 +140,7 @@ The product, to which the serial number is bound
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -121,42 +155,5 @@ The product, to which the serial number is bound
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
-
-### Serial_Number
-
-
-The serial number text
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|40|
-|Order|2147483647|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|nvarchar(40)|
-|UI Memo Editor|no|
-|UI Width|100|
-|User Login|no|
-|Visible|yes|
-
-#### Serial_Number - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Equals|`NULL`|no|no|
-|Like|None|no|no|
 
 

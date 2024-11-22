@@ -16722,6 +16722,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "entities/Projects.Agile.ProjectTypeCaseCategories.md",
+      "output": {
+        ".html": {
+          "relative_path": "entities/Projects.Agile.ProjectTypeCaseCategories.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "entities/Projects.Agile.ProjectTypes.md",
       "output": {
         ".html": {
@@ -19835,6 +19845,16 @@
       "output": {
         ".html": {
           "relative_path": "tables/Apm_Project_Milestones.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "tables/Apm_Project_Type_Case_Categories.md",
+      "output": {
+        ".html": {
+          "relative_path": "tables/Apm_Project_Type_Case_Categories.html"
         }
       },
       "version": ""

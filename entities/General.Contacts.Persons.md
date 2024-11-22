@@ -31,7 +31,6 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 Aggregate Tree  
 * [General.Contacts.Persons](General.Contacts.Persons.md)  
   * [General.Contacts.CompanyEmployees](General.Contacts.CompanyEmployees.md)  
-  * [Crm.Distributors](Crm.Distributors.md)  
   * [General.Contacts.PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md)  
   * [General.Contacts.PartyRelationships](General.Contacts.PartyRelationships.md)  
   * [General.Contacts.PartyApplicableLegislations](General.Contacts.PartyApplicableLegislations.md)  
@@ -91,7 +90,6 @@ Aggregate Tree
 | BankAccounts | [PartyBankAccounts](General.Contacts.PartyBankAccounts.md) | List of `PartyBankAccount`(General.Contacts.PartyBankAccounts.md) child objects, based on the `General.Contacts.PartyBankAccount.Party`(General.Contacts.PartyBankAccounts.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | CompanyEmployees | [CompanyEmployees](General.Contacts.CompanyEmployees.md) | List of `CompanyEmployee`(General.Contacts.CompanyEmployees.md) child objects, based on the `General.Contacts.CompanyEmployee.Person`(General.Contacts.CompanyEmployees.md#person) back reference 
 | ContactMechanisms | [PartyContactMechanisms](General.Contacts.PartyContactMechanisms.md) | List of `PartyContactMechanism`(General.Contacts.PartyContactMechanisms.md) child objects, based on the `General.Contacts.PartyContactMechanism.Party`(General.Contacts.PartyContactMechanisms.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
-| Distributors | [Distributors](Crm.Distributors.md) | List of `Distributor`(Crm.Distributors.md) child objects, based on the `Crm.Distributor.Party`(Crm.Distributors.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | LocationNumbers | [PartyLocationNumbers](General.Contacts.PartyLocationNumbers.md) | List of `PartyLocationNumber`(General.Contacts.PartyLocationNumbers.md) child objects, based on the `General.Contacts.PartyLocationNumber.Party`(General.Contacts.PartyLocationNumbers.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Pictures | [PartyPictures](General.Contacts.PartyPictures.md) | List of `PartyPicture`(General.Contacts.PartyPictures.md) child objects, based on the `General.Contacts.PartyPicture.Party`(General.Contacts.PartyPictures.md#party) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 
 | Relationships | [PartyRelationships](General.Contacts.PartyRelationships.md) | List of `PartyRelationship`(General.Contacts.PartyRelationships.md) child objects, based on the `General.Contacts.PartyRelationship.FromParty`(General.Contacts.PartyRelationships.md#fromparty) back reference (Inherited from [Parties](General.Contacts.Parties.md)) 

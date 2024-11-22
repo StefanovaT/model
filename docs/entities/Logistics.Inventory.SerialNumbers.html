@@ -94,6 +94,8 @@
 <em>{SerialNumberField}</em><br>
 Default Search Members:<br>
 <em>SerialNumberField</em><br>
+Name Data Member:<br>
+<em>Product.Name</em><br>
 Category:  <em>Views</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="track-changes">Track Changes</h2>
@@ -101,10 +103,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Tree</p>
-<ul>
-<li><a href="Logistics.Inventory.SerialNumbers.html">Logistics.Inventory.SerialNumbers</a></li>
-</ul>
+<p>Aggregate Parent:<br>
+<a href="General.Products.Products.html">General.Products.Products</a><br>
+Aggregate Root:<br>
+<a href="General.Products.Products.html">General.Products.Products</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -150,7 +152,7 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Logistics.Inventory.SerialNumbers.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The product, to which the serial number is bound. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The product, to which the serial number is bound. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
@@ -186,11 +188,12 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="product">Product</h3>
-<p>The product, to which the serial number is bound. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The product, to which the serial number is bound. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>

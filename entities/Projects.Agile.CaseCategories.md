@@ -40,12 +40,6 @@ Aggregate Tree
 | [ObjectVersion](Projects.Agile.CaseCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Ord](Projects.Agile.CaseCategories.md#ord) | int32 | Display order of the category relative to other categories within the project type. `Required` `Default(1)` `Filter(eq)` 
 
-## References
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| [ProjectType](Projects.Agile.CaseCategories.md#projecttype) | [ProjectTypes](Projects.Agile.ProjectTypes.md) (nullable) | Specified, when only projects of certain type can have cases with this category. `Filter(multi eq)` |
-
 
 ## Attribute Details
 
@@ -130,19 +124,6 @@ _Category_: **System**
 _Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **1**  
-_Show in UI_: **ShownByDefault**  
-
-
-## Reference Details
-
-### ProjectType
-
-Specified, when only projects of certain type can have cases with this category. `Filter(multi eq)`
-
-_Type_: **[ProjectTypes](Projects.Agile.ProjectTypes.md) (nullable)**  
-_Indexed_: **True**  
-_Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
 

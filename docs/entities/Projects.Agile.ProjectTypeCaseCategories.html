@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Crm.SalesForce.SalesPersons Entity | ERP.net Domain Model </title>
+      <title>Projects.Agile.ProjectTypeCaseCategories Entity | ERP.net Domain Model </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Crm.SalesForce.SalesPersons Entity | ERP.net Domain Model ">
+      <meta name="title" content="Projects.Agile.ProjectTypeCaseCategories Entity | ERP.net Domain Model ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/entities/Crm.SalesForce.SalesPersons.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/entities/Projects.Agile.ProjectTypeCaseCategories.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -84,21 +84,18 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="Crm.SalesForce.SalesPersons">
-<h1 id="crmsalesforcesalespersons-entity">Crm.SalesForce.SalesPersons Entity</h1>
+        <article data-uid="Projects.Agile.ProjectTypeCaseCategories">
+<h1 id="projectsagileprojecttypecasecategories-entity">Projects.Agile.ProjectTypeCaseCategories Entity</h1>
 
-<p><strong>Namespace:</strong> <a href="Crm.SalesForce.html">Crm.SalesForce</a></p>
-<p>Sales persons (or representatives) are sellers inside the enterprise company who sell the products to customers. Entity: Crm_Sales_Persons</p>
-<h2 id="renames">Renames</h2>
-<p>Old name: <strong>Crm.SalesPersons</strong><br>
-New name: <strong>Crm.SalesForce.SalesPersons</strong><br>
-Version: <strong>25.1.1.36</strong><br>
-Case: <strong>37717</strong></p>
+<p><strong>Namespace:</strong> <a href="Projects.Agile.html">Projects.Agile</a></p>
+<p>Indicates for each project type what case categories are allowed. Entity: Apm_Project_Type_Case_Categories (Introduced in version 25.1.1.51)</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-_{Person.PartyName:T} _<br>
+<em>{ProjectType.Name:T}</em><br>
 Default Search Members:<br>
-__<br>
+<em>ProjectType.Name</em><br>
+Name Data Member:<br>
+<em>ProjectType.Name</em><br>
 Category:  <em>Definitions</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="track-changes">Track Changes</h2>
@@ -106,10 +103,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Tree</p>
-<ul>
-<li><a href="Crm.SalesForce.SalesPersons.html">Crm.SalesForce.SalesPersons</a></li>
-</ul>
+<p>Aggregate Parent:<br>
+<a href="Projects.Agile.ProjectTypes.html">Projects.Agile.ProjectTypes</a><br>
+Aggregate Root:<br>
+<a href="Projects.Agile.ProjectTypes.html">Projects.Agile.ProjectTypes</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -121,42 +118,17 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 </thead>
 <tbody>
 <tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#commissionpercent">CommissionPercent</a></td>
-<td>decimal (7, 6) <strong>nullable</strong></td>
-<td>The percentage (0..1) of commission percent. null means that there is no commission percent.</td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#commissionpolicyid">CommissionPolicyId</a></td>
-<td>guid <strong>nullable</strong></td>
-<td>Current commission policy for the sales person. null means there is no commission policy. <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#contractenddate">ContractEndDate</a></td>
-<td>datetime <strong>nullable</strong></td>
-<td>The ending date of the contract with the sales person. null when the sales person is still active. <code>Filter(ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#contractstartdate">ContractStartDate</a></td>
-<td>datetime <strong>nullable</strong></td>
-<td>The starting date of the contract with the sales person. null when it is unknown. <code>Filter(ge;le)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#displaytext">DisplayText</a></td>
+<td><a href="Projects.Agile.ProjectTypeCaseCategories.html#displaytext">DisplayText</a></td>
 <td>string</td>
 <td>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</td>
 </tr>
 <tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#id">Id</a></td>
+<td><a href="Projects.Agile.ProjectTypeCaseCategories.html#id">Id</a></td>
 <td>guid</td>
 <td></td>
 </tr>
 <tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#isactive">IsActive</a></td>
-<td>boolean</td>
-<td>Specifies whether the sales person is active and should be included in the list when choosing sales person through drop-downs, lists, etc. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#objectversion">ObjectVersion</a></td>
+<td><a href="Projects.Agile.ProjectTypeCaseCategories.html#objectversion">ObjectVersion</a></td>
 <td>int32</td>
 <td>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</td>
 </tr>
@@ -173,55 +145,18 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 </thead>
 <tbody>
 <tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#enterprisecompany">EnterpriseCompany</a></td>
-<td><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</td>
-<td>The Enterprise Company to which this SalesPerson applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></td>
+<td><a href="Projects.Agile.ProjectTypeCaseCategories.html#casecategory">CaseCategory</a></td>
+<td><a href="Projects.Agile.CaseCategories.html">CaseCategories</a></td>
+<td>The case category that а project with this type can have. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#enterprisecompanylocation">EnterpriseCompanyLocation</a></td>
-<td><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</td>
-<td>The enterprise company location, to which the sales person is assigned. The sales person is allowed to sell to other locations, but this is the default location. null means that the sales person is not assigned to any enterprise location. <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#person">Person</a></td>
-<td><a href="General.Contacts.Persons.html">Persons</a></td>
-<td>Base personal record. <code>Required</code> <code>Filter(multi eq)</code></td>
-</tr>
-<tr>
-<td><a href="Crm.SalesForce.SalesPersons.html#salespersongroup">SalesPersonGroup</a></td>
-<td><a href="Crm.SalesForce.SalesPersonGroups.html">SalesPersonGroups</a></td>
-<td>The sales person group to which this sales person is assigned. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td><a href="Projects.Agile.ProjectTypeCaseCategories.html#projecttype">ProjectType</a></td>
+<td><a href="Projects.Agile.ProjectTypes.html">ProjectTypes</a></td>
+<td>The project type for which we specify the case category. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="attribute-details">Attribute Details</h2>
-<h3 id="commissionpercent">CommissionPercent</h3>
-<p>The percentage (0..1) of commission percent. null means that there is no commission percent.</p>
-<p><em>Type</em>: <strong>decimal (7, 6) <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>NotFilterable</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="commissionpolicyid">CommissionPolicyId</h3>
-<p>Current commission policy for the sales person. null means there is no commission policy. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong>guid <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>CannotBeShown</strong></p>
-<h3 id="contractenddate">ContractEndDate</h3>
-<p>The ending date of the contract with the sales person. null when the sales person is still active. <code>Filter(ge;le)</code></p>
-<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="contractstartdate">ContractStartDate</h3>
-<p>The starting date of the contract with the sales person. null when it is unknown. <code>Filter(ge;le)</code></p>
-<p><em>Type</em>: <strong>datetime <strong>nullable</strong></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>GreaterThanOrLessThan</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="displaytext">DisplayText</h3>
 <p>Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.</p>
 <p><em>Type</em>: <strong>string</strong><br>
@@ -234,16 +169,7 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
-<h3 id="isactive">IsActive</h3>
-<p>Specifies whether the sales person is active and should be included in the list when choosing sales person through drop-downs, lists, etc. <code>Required</code> <code>Default(true)</code> <code>Filter(eq)</code></p>
-<p><em>Type</em>: <strong>boolean</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals</strong><br>
-<em>Supports Order By</em>: <strong>False</strong><br>
-<em>Default Value</em>: <strong>True</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
 <p><em>Type</em>: <strong>int32</strong><br>
@@ -252,30 +178,19 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <em>Supports Order By</em>: ****<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
-<h3 id="enterprisecompany">EnterpriseCompany</h3>
-<p>The Enterprise Company to which this SalesPerson applies, or null if it is for all enterprise companies. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.EnterpriseCompanies.html">EnterpriseCompanies</a> (nullable)</strong><br>
+<h3 id="casecategory">CaseCategory</h3>
+<p>The case category that а project with this type can have. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Agile.CaseCategories.html">CaseCategories</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
-<h3 id="enterprisecompanylocation">EnterpriseCompanyLocation</h3>
-<p>The enterprise company location, to which the sales person is assigned. The sales person is allowed to sell to other locations, but this is the default location. null means that the sales person is not assigned to any enterprise location. <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Contacts.CompanyLocations.html">CompanyLocations</a> (nullable)</strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="person">Person</h3>
-<p>Base personal record. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="General.Contacts.Persons.html">Persons</a></strong><br>
-<em>Indexed</em>: <strong>True</strong><br>
+<h3 id="projecttype">ProjectType</h3>
+<p>The project type for which we specify the case category. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
+<p><em>Type</em>: <strong><a href="Projects.Agile.ProjectTypes.html">ProjectTypes</a></strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Show in UI</em>: <strong>ShownByDefault</strong></p>
-<h3 id="salespersongroup">SalesPersonGroup</h3>
-<p>The sales person group to which this sales person is assigned. <code>Required</code> <code>Filter(multi eq)</code></p>
-<p><em>Type</em>: <strong><a href="Crm.SalesForce.SalesPersonGroups.html">SalesPersonGroups</a></strong><br>
-<em>Category</em>: <strong>System</strong><br>
-<em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h2 id="api-methods">API Methods</h2>
 <p>Methods that can be invoked in public APIs.</p>
@@ -352,14 +267,14 @@ The notification subject.<br>
 <p>None</p>
 <h2 id="api">API</h2>
 <p>Domain API Query:
-<a href="https://demodb.my.erp.net/api/domain/odata/Crm_SalesForce_SalesPersons?$top=10">https://demodb.my.erp.net/api/domain/odata/Crm_SalesForce_SalesPersons?$top=10</a></p>
+<a href="https://demodb.my.erp.net/api/domain/odata/Projects_Agile_ProjectTypeCaseCategories?$top=10">https://demodb.my.erp.net/api/domain/odata/Projects_Agile_ProjectTypeCaseCategories?$top=10</a></p>
 <p>Domain API Query Builder:
-<a href="https://demodb.my.erp.net/api/domain/querybuilder#Crm_SalesForce_SalesPersons?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Crm_SalesForce_SalesPersons?$top=10</a></p>
+<a href="https://demodb.my.erp.net/api/domain/querybuilder#Projects_Agile_ProjectTypeCaseCategories?$top=10">https://demodb.my.erp.net/api/domain/querybuilder#Projects_Agile_ProjectTypeCaseCategories?$top=10</a></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Crm.SalesForce.SalesPersons.md/#L1" class="edit-link">Suggest improvement to this page</a>
+          <a href="https://github.com/ErpNetDocs/model/blob/master/entities/Projects.Agile.ProjectTypeCaseCategories.md/#L1" class="edit-link">Suggest improvement to this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

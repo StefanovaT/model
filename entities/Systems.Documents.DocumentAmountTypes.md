@@ -27,6 +27,7 @@ Name Data Member:
 _AmountTypeName_  
 Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
+Layout category attribute:  _DistributeBy_  
 
 ## Track Changes  
 Min level:  _0 - Do not track changes_  
@@ -54,7 +55,7 @@ Aggregate Tree
 | [DefaultPercent](Systems.Documents.DocumentAmountTypes.md#defaultpercent) | decimal (7, 6) __nullable__ | Default percent for amounts for which percent input is allowed; null otherwise. 
 | [Description](Systems.Documents.DocumentAmountTypes.md#description) | string (254) __nullable__ | The description of this DocumentAmountType. 
 | [DisplayText](Systems.Documents.DocumentAmountTypes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [DistributeBy](Systems.Documents.DocumentAmountTypes.md#distributeby) | [DistributeBy](Systems.Documents.DocumentAmountTypes.md#distributeby) | Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE','LINE DISCOUNT'). `Required` `Default("AMOUNT")` `Filter(eq)` 
+| [DistributeBy](Systems.Documents.DocumentAmountTypes.md#distributeby) | [DistributeBy](Systems.Documents.DocumentAmountTypes.md#distributeby) | Determines how the amount will be distributed among the document lines. `Required` `Default("AMOUNT")` `Filter(eq)` 
 | [Id](Systems.Documents.DocumentAmountTypes.md#id) | guid |  
 | [IsActive](Systems.Documents.DocumentAmountTypes.md#isactive) | boolean | True when the amount type is active for new records; false - otherwise. `Required` `Default(true)` `Filter(eq)` 
 | [ObjectVersion](Systems.Documents.DocumentAmountTypes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -204,7 +205,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### DistributeBy
 
-Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE','LINE DISCOUNT'). `Required` `Default("AMOUNT")` `Filter(eq)`
+Determines how the amount will be distributed among the document lines. `Required` `Default("AMOUNT")` `Filter(eq)`
 
 _Type_: **[DistributeBy](Systems.Documents.DocumentAmountTypes.md#distributeby)**  
 _Category_: **System**  

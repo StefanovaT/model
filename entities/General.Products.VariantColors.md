@@ -16,7 +16,7 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
-Category:  _Definitions_  
+Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
 
 ## Track Changes  

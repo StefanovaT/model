@@ -1020,6 +1020,8 @@
       href: Projects.Agile.ProjectMilestones.md
     - name: Projects
       href: Projects.Agile.Projects.md
+    - name: ProjectTypeCaseCategories
+      href: Projects.Agile.ProjectTypeCaseCategories.md
     - name: ProjectTypes
       href: Projects.Agile.ProjectTypes.md
     - name: UserStates

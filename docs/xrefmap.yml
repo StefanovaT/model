@@ -1831,6 +1831,9 @@ references:
 - uid: Projects.Agile.ProjectMilestones
   name: Projects.Agile.ProjectMilestones Entity
   href: entities/Projects.Agile.ProjectMilestones.html
+- uid: Projects.Agile.ProjectTypeCaseCategories
+  name: Projects.Agile.ProjectTypeCaseCategories Entity
+  href: entities/Projects.Agile.ProjectTypeCaseCategories.html
 - uid: Projects.Agile.ProjectTypes
   name: Projects.Agile.ProjectTypes Entity
   href: entities/Projects.Agile.ProjectTypes.html

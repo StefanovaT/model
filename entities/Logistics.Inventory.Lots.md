@@ -9,11 +9,13 @@ Warehouse lots. They contain one row for each specific product, status, producti
 
 ## Default Visualization
 Default Display Text Format:  
-_{Number}_  
+_{Product.Name:T}_  
 Default Search Members:  
-_Number_  
+_Number; Product.Name_  
 Code Data Member:  
 _Number_  
+Name Data Member:  
+_Product.Name_  
 Category:  _Views_  
 Show in UI:  _ShownByDefault_  
 
@@ -24,8 +26,10 @@ Max level:  _4 - Track object attribute and blob changes_
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Tree  
-* [Logistics.Inventory.Lots](Logistics.Inventory.Lots.md)  
+Aggregate Parent:  
+[General.Products.Products](General.Products.Products.md)  
+Aggregate Root:  
+[General.Products.Products](General.Products.Products.md)  
 
 ## Attributes
 
@@ -52,7 +56,7 @@ Aggregate Tree
 | [BlockedForParty](Logistics.Inventory.Lots.md#blockedforparty) | [Parties](General.Contacts.Parties.md) (nullable) | Non-null when the warehouse lot is blocked specifically for some party. `Filter(multi eq)` |
 | [CertificateDocument](Logistics.Inventory.Lots.md#certificatedocument) | [Documents](General.Documents.Documents.md) (nullable) | Document, containing the certificate for this lot. `Filter(multi eq)` |
 | [ExciseMeasuringTransaction](Logistics.Inventory.Lots.md#excisemeasuringtransaction) | [MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable) | When the lot was created in an excise controlled environment, specifies the measuring transaction which was used to create the lot. `Filter(multi eq)` `Introduced in version 21.1.1.59` |
-| [Product](Logistics.Inventory.Lots.md#product) | [Products](General.Products.Products.md) | The product to which the lot is bound. `Required` `Filter(multi eq)` |
+| [Product](Logistics.Inventory.Lots.md#product) | [Products](General.Products.Products.md) | The product to which the lot is bound. `Required` `Filter(multi eq)` `Owner` |
 | [ReceiptStoreTransaction](Logistics.Inventory.Lots.md#receiptstoretransaction) | [StoreTransactions](Logistics.Inventory.StoreTransactions.md) (nullable) | The store receipt transaction, which created the lot. null if the lot is manually created. `Filter(multi eq)` |
 
 
@@ -236,12 +240,13 @@ _Show in UI_: **ShownByDefault**
 
 ### Product
 
-The product to which the lot is bound. `Required` `Filter(multi eq)`
+The product to which the lot is bound. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### ReceiptStoreTransaction

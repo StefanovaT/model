@@ -91,11 +91,13 @@
 <p>Warehouse lots. They contain one row for each specific product, status, production batch and other specific warehousing conditions. Lot status can block certain operations. Entity: Inv_Lots</p>
 <h2 id="default-visualization">Default Visualization</h2>
 <p>Default Display Text Format:<br>
-<em>{Number}</em><br>
+<em>{Product.Name:T}</em><br>
 Default Search Members:<br>
-<em>Number</em><br>
+<em>Number; Product.Name</em><br>
 Code Data Member:<br>
 <em>Number</em><br>
+Name Data Member:<br>
+<em>Product.Name</em><br>
 Category:  <em>Views</em><br>
 Show in UI:  <em>ShownByDefault</em></p>
 <h2 id="track-changes">Track Changes</h2>
@@ -103,10 +105,10 @@ Show in UI:  <em>ShownByDefault</em></p>
 Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <h2 id="aggregate">Aggregate</h2>
 <p>An <a href="https://docs.erp.net/tech/advanced/concepts/aggregates.html">aggregate</a> is a cluster of domain objects that can be treated as a single unit.</p>
-<p>Aggregate Tree</p>
-<ul>
-<li><a href="Logistics.Inventory.Lots.html">Logistics.Inventory.Lots</a></li>
-</ul>
+<p>Aggregate Parent:<br>
+<a href="General.Products.Products.html">General.Products.Products</a><br>
+Aggregate Root:<br>
+<a href="General.Products.Products.html">General.Products.Products</a></p>
 <h2 id="attributes">Attributes</h2>
 <table>
 <thead>
@@ -212,7 +214,7 @@ Max level:  <em>4 - Track object attribute and blob changes</em></p>
 <tr>
 <td><a href="Logistics.Inventory.Lots.html#product">Product</a></td>
 <td><a href="General.Products.Products.html">Products</a></td>
-<td>The product to which the lot is bound. <code>Required</code> <code>Filter(multi eq)</code></td>
+<td>The product to which the lot is bound. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></td>
 </tr>
 <tr>
 <td><a href="Logistics.Inventory.Lots.html#receiptstoretransaction">ReceiptStoreTransaction</a></td>
@@ -367,11 +369,12 @@ Allowed values for the <code>Status</code>(Logistics.Inventory.Lots.md#status) d
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="product">Product</h3>
-<p>The product to which the lot is bound. <code>Required</code> <code>Filter(multi eq)</code></p>
+<p>The product to which the lot is bound. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="General.Products.Products.html">Products</a></strong><br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="receiptstoretransaction">ReceiptStoreTransaction</h3>
 <p>The store receipt transaction, which created the lot. null if the lot is manually created. <code>Filter(multi eq)</code></p>

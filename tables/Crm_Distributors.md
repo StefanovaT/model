@@ -7,10 +7,6 @@ Entity: [Crm.Distributors](~/entities/Crm.Distributors.md)
 
 Distributors are external for the enterprise persons or companies who obtain sales orders from end-customers in benefit of the enterprise. Entity: Crm_Distributors
 
-## Owner Tables Hierarchy
-
-* [Gen_Parties](Gen_Parties.md)
-
 ## Summary
 
 | Name | Type | Description |
@@ -103,7 +99,7 @@ Base party Id
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|yes|
+|Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

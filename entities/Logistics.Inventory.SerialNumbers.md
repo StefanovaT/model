@@ -12,6 +12,8 @@ Default Display Text Format:
 _{SerialNumberField}_  
 Default Search Members:  
 _SerialNumberField_  
+Name Data Member:  
+_Product.Name_  
 Category:  _Views_  
 Show in UI:  _ShownByDefault_  
 
@@ -22,8 +24,10 @@ Max level:  _4 - Track object attribute and blob changes_
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Tree  
-* [Logistics.Inventory.SerialNumbers](Logistics.Inventory.SerialNumbers.md)  
+Aggregate Parent:  
+[General.Products.Products](General.Products.Products.md)  
+Aggregate Root:  
+[General.Products.Products](General.Products.Products.md)  
 
 ## Attributes
 
@@ -38,7 +42,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Product](Logistics.Inventory.SerialNumbers.md#product) | [Products](General.Products.Products.md) | The product, to which the serial number is bound. `Required` `Filter(multi eq)` |
+| [Product](Logistics.Inventory.SerialNumbers.md#product) | [Products](General.Products.Products.md) | The product, to which the serial number is bound. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -88,12 +92,13 @@ _Show in UI_: **ShownByDefault**
 
 ### Product
 
-The product, to which the serial number is bound. `Required` `Filter(multi eq)`
+The product, to which the serial number is bound. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 
