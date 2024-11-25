@@ -19,6 +19,10 @@ _Warehouse.Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -147,7 +151,7 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | AllowProductChange | Allow executing with а different product than the ordered.. Stored as 'APC'. <br /> _Database Value:_ 'APC' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AllowProductChange' |
 | AllowUnitChange | Allow executing of a quantity in a different measurement unit than the ordered.. Stored as 'AUC'. <br /> _Database Value:_ 'AUC' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'AllowUnitChange' |
 | DekittingControllingLevel | Specifies the level of control during the dekitting of the composite product.. Stored as 'DCL'. <br /> _Database Value:_ 'DCL' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'DekittingControllingLevel' |
-| GS1SSCCCompanyPrefix | Specifies the GS1 company prefix issued by the national SG1 organization. A digit number used when generating SSCC codes.. Stored as 'GCP'. <br /> _Database Value:_ 'GCP' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'GS1SSCCCompanyPrefix' |
+| GS1SSCCCompanyPrefix | Specifies the GS1 company prefix issued by the national GS1 organization. A digit number used when generating SSCC codes.. Stored as 'GCP'. <br /> _Database Value:_ 'GCP' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'GS1SSCCCompanyPrefix' |
 | GS1SSCCNextSerial | Specifies the next reference serial number used when generating SSCC codes. А digit number acting as a counter: e.g. 0000001, 0000002… .. Stored as 'GNS'. <br /> _Database Value:_ 'GNS' <br /> _Model Value:_ 7 <br /> _Domain API Value:_ 'GS1SSCCNextSerial' |
 | KittingControllingLevel | Specifies the level of control during the kitting of the composite product’s components.. Stored as 'KCL'. <br /> _Database Value:_ 'KCL' <br /> _Model Value:_ 8 <br /> _Domain API Value:_ 'KittingControllingLevel' |
 | RequireDestinationScan | Require scanning of the destination location when moving/receiving. Stored as 'RDS'. <br /> _Database Value:_ 'RDS' <br /> _Model Value:_ 9 <br /> _Domain API Value:_ 'RequireDestinationScan' |
@@ -155,6 +159,12 @@ _Allowed Values (Logistics.Wms.WarehousePoliciesRepository.PolicyKind Enum Membe
 | RequireSourceScan | Require scanning of the source location when moving/dispatching. Stored as 'RSS'. <br /> _Database Value:_ 'RSS' <br /> _Model Value:_ 11 <br /> _Domain API Value:_ 'RequireSourceScan' |
 | ZoneType | Specifies the type of zone. Eg for receiving, shipping, packing, etc.. Stored as 'ZTY'. <br /> _Database Value:_ 'ZTY' <br /> _Model Value:_ 12 <br /> _Domain API Value:_ 'ZoneType' |
 | CustomRouting | Specifies a custom routing, based on a user-defined attribute of the locations. The policy specifies the code of the user-defined attribute, whose values contain the sequence of the route. The custom routing is employed by the Suggest Routing function and can be defined only at warehouse level.. Stored as 'CRO'. <br /> _Database Value:_ 'CRO' <br /> _Model Value:_ 13 <br /> _Domain API Value:_ 'CustomRouting' |
+| UnassignedOrders<br />SectionVisibility | Show or hide the Unassigned Orders section in the warehouse orders list.. Stored as 'UOS'. <br /> _Database Value:_ 'UOS' <br /> _Model Value:_ 14 <br /> _Domain API Value:_ 'UnassignedOrders<br />SectionVisibility' |
+| StartedByOthers<br />SectionVisibility | Show or hide the Started by Others section in the warehouse orders list.. Stored as 'SOS'. <br /> _Database Value:_ 'SOS' <br /> _Model Value:_ 15 <br /> _Domain API Value:_ 'StartedByOthers<br />SectionVisibility' |
+| AssignedToOthers<br />SectionVisibility | Show or hide the Assign to Others section in the warehouse orders list.. Stored as 'AOS'. <br /> _Database Value:_ 'AOS' <br /> _Model Value:_ 16 <br /> _Domain API Value:_ 'AssignedToOthers<br />SectionVisibility' |
+| LogisticUnitScreen<br />Visibility | Always show, hide, or use the default behavior on the logistic unit screen when executing warehouse order lines.. Stored as 'LUS'. <br /> _Database Value:_ 'LUS' <br /> _Model Value:_ 17 <br /> _Domain API Value:_ 'LogisticUnitScreen<br />Visibility' |
+| BarcodeScanEnters<br />QuantityOfOnePce | If no quantity is entered, scanning a barcode in the SCAN field enters 1 PCE.. Stored as 'QOP'. <br /> _Database Value:_ 'QOP' <br /> _Model Value:_ 18 <br /> _Domain API Value:_ 'BarcodeScanEnters<br />QuantityOfOnePce' |
+| RoutingAlgorithm | RoutingAlgorithm value. Stored as 'RAL'. <br /> _Database Value:_ 'RAL' <br /> _Model Value:_ 19 <br /> _Domain API Value:_ 'RoutingAlgorithm' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
@@ -239,7 +249,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -281,7 +291,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -296,7 +306,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

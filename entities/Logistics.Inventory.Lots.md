@@ -9,19 +9,27 @@ Warehouse lots. They contain one row for each specific product, status, producti
 
 ## Default Visualization
 Default Display Text Format:  
-_{Number}_  
+_{Product.Name:T}_  
 Default Search Members:  
-_Number_  
+_Number; Product.Name_  
 Code Data Member:  
 _Number_  
-Category:  _Definitions_  
+Name Data Member:  
+_Product.Name_  
+Category:  _Views_  
 Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Tree  
-* [Logistics.Inventory.Lots](Logistics.Inventory.Lots.md)  
+Aggregate Parent:  
+[General.Products.Products](General.Products.Products.md)  
+Aggregate Root:  
+[General.Products.Products](General.Products.Products.md)  
 
 ## Attributes
 
@@ -44,11 +52,11 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BlockedForDocument](Logistics.Inventory.Lots.md#blockedfordocument) | [Documents](General.Documents.md) (nullable) | If non-null, contains the document for which the lot is blocked. `Filter(multi eq)` |
+| [BlockedForDocument](Logistics.Inventory.Lots.md#blockedfordocument) | [Documents](General.Documents.Documents.md) (nullable) | If non-null, contains the document for which the lot is blocked. `Filter(multi eq)` |
 | [BlockedForParty](Logistics.Inventory.Lots.md#blockedforparty) | [Parties](General.Contacts.Parties.md) (nullable) | Non-null when the warehouse lot is blocked specifically for some party. `Filter(multi eq)` |
-| [CertificateDocument](Logistics.Inventory.Lots.md#certificatedocument) | [Documents](General.Documents.md) (nullable) | Document, containing the certificate for this lot. `Filter(multi eq)` |
+| [CertificateDocument](Logistics.Inventory.Lots.md#certificatedocument) | [Documents](General.Documents.Documents.md) (nullable) | Document, containing the certificate for this lot. `Filter(multi eq)` |
 | [ExciseMeasuringTransaction](Logistics.Inventory.Lots.md#excisemeasuringtransaction) | [MeasuringTransactions](Finance.Excise.MeasuringTransactions.md) (nullable) | When the lot was created in an excise controlled environment, specifies the measuring transaction which was used to create the lot. `Filter(multi eq)` `Introduced in version 21.1.1.59` |
-| [Product](Logistics.Inventory.Lots.md#product) | [Products](General.Products.Products.md) | The product to which the lot is bound. `Required` `Filter(multi eq)` |
+| [Product](Logistics.Inventory.Lots.md#product) | [Products](General.Products.Products.md) | The product to which the lot is bound. `Required` `Filter(multi eq)` `Owner` |
 | [ReceiptStoreTransaction](Logistics.Inventory.Lots.md#receiptstoretransaction) | [StoreTransactions](Logistics.Inventory.StoreTransactions.md) (nullable) | The store receipt transaction, which created the lot. null if the lot is manually created. `Filter(multi eq)` |
 
 
@@ -198,7 +206,7 @@ _Show in UI_: **ShownByDefault**
 
 If non-null, contains the document for which the lot is blocked. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -216,7 +224,7 @@ _Show in UI_: **ShownByDefault**
 
 Document, containing the certificate for this lot. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -232,12 +240,13 @@ _Show in UI_: **ShownByDefault**
 
 ### Product
 
-The product to which the lot is bound. `Required` `Filter(multi eq)`
+The product to which the lot is bound. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[Products](General.Products.Products.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### ReceiptStoreTransaction
@@ -257,7 +266,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -299,7 +308,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -314,7 +323,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

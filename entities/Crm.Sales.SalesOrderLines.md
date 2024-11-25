@@ -15,6 +15,10 @@ _SalesOrder.DocumentNo_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -37,8 +41,11 @@ Aggregate Root:
 | [IntrastatApplyDate](Crm.Sales.SalesOrderLines.md#intrastatapplydate) | datetime __nullable__ | Specifies in which period for Intrastat declaration must be included the current operation. Used only when the invoice is issued in different period than the one, that the operation must be included. If not set the document date is used. `Filter(ge;le)` `Introduced in version 21.1.3.83` 
 | [IntrastatTransaction<br />NatureCode](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) | [TransactionNature](Crm.Sales.SalesOrderLines.md#intrastattransactionnaturecode) __nullable__ | Transaction nature; used for Intrastat reporting. 
 | [IntrastatTransportModeCode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) | [TransportMode](Crm.Sales.SalesOrderLines.md#intrastattransportmodecode) __nullable__ | Transport mode; used for Intrastat reporting. 
+| [Level1DiscountAmount](Crm.Sales.SalesOrderLines.md#level1discountamount) | [Amount](../data-types.md#amount) | The amount of the level 1 discount. 
 | [Level1DiscountPercent](Crm.Sales.SalesOrderLines.md#level1discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56` 
+| [Level2DiscountAmount](Crm.Sales.SalesOrderLines.md#level2discountamount) | [Amount](../data-types.md#amount) | The cumulative amount of the level 2 discount. 
 | [Level2DiscountPercent](Crm.Sales.SalesOrderLines.md#level2discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 2 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
+| [Level3DiscountAmount](Crm.Sales.SalesOrderLines.md#level3discountamount) | [Amount](../data-types.md#amount) | The cumulative amount of the level 3 discount. 
 | [Level3DiscountPercent](Crm.Sales.SalesOrderLines.md#level3discountpercent) | decimal (7, 6) __nullable__ | The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8` 
 | [LineAmount](Crm.Sales.SalesOrderLines.md#lineamount) | [Amount (14, 2)](../data-types.md#amount) | The total amount for the line. Equals to Quantity * Unit_Price, less the discounts. `Currency: SalesOrder.DocumentCurrency` `Required` `Default(0)` 
 | [LineCustomDiscountPercent](Crm.Sales.SalesOrderLines.md#linecustomdiscountpercent) | decimal (7, 6) | User-defined discount for the line. `Required` `Default(0)` `Filter(ge;le)` 
@@ -63,24 +70,24 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [BonusProgram](Crm.Sales.SalesOrderLines.md#bonusprogram) | [BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable) | The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)` |
+| [BonusProgram](Crm.Sales.SalesOrderLines.md#bonusprogram) | [BonusPrograms](Crm.Pricing.BonusPrograms.md) (nullable) | The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)` |
 | [Document](Crm.Sales.SalesOrderLines.md#document) | [SalesOrders](Crm.Sales.SalesOrders.md) | The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` |
 | [IntrastatTransportCountry](Crm.Sales.SalesOrderLines.md#intrastattransportcountry) | [Countries](General.Geography.Countries.md) (nullable) | Country of origin of the transport company; used for Intrastat reporting. `Filter(multi eq)` |
-| [Level1Discount](Crm.Sales.SalesOrderLines.md#level1discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 1 discount. `Filter(multi eq)` `Introduced in version 23.1.2.56` |
-| [Level2Discount](Crm.Sales.SalesOrderLines.md#level2discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 2 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
-| [Level3Discount](Crm.Sales.SalesOrderLines.md#level3discount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
+| [Level1Discount](Crm.Sales.SalesOrderLines.md#level1discount) | [LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable) | Indicates the level 1 discount. `Filter(multi eq)` `Introduced in version 23.1.2.56` |
+| [Level2Discount](Crm.Sales.SalesOrderLines.md#level2discount) | [LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable) | Indicates the level 2 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
+| [Level3Discount](Crm.Sales.SalesOrderLines.md#level3discount) | [LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable) | Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8` |
 | [LineDealType](Crm.Sales.SalesOrderLines.md#linedealtype) | [DealTypes](Finance.Vat.DealTypes.md) (nullable) | Deal type to be passed to the invoice line. If deal type in entered then the invoice creates VAT entry for this deal type. `Filter(multi eq)` |
-| [LineDiscount](Crm.Sales.SalesOrderLines.md#linediscount) | [LineDiscounts](Crm.LineDiscounts.md) (nullable) | The line discount type used to form the Line_Standard_<br />Discount_Percent. `Filter(multi eq)` `ReadOnly` |
+| [<s>LineDiscount</s>](Crm.Sales.SalesOrderLines.md#linediscount) | [LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable) | **OBSOLETE! Do not use!** The line discount type used to form the Line_Standard_<br />Discount_Percent. `Obsolete` `Filter(multi eq)` `ReadOnly` `Obsoleted in version 25.1.1.38` `Obsolete` |
 | [LineEndCustomerParty](Crm.Sales.SalesOrderLines.md#lineendcustomerparty) | [Parties](General.Contacts.Parties.md) (nullable) | The end customer is the customer of the dealer. It is stored for information purposes only. The end customer may not have customer definition, just party. `Filter(multi eq)` `Introduced in version 20.1` |
 | [LineStore](Crm.Sales.SalesOrderLines.md#linestore) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store which should be used to issue the goods for the line. null means to use the store from the header. `Filter(multi eq;like)` |
 | [Lot](Crm.Sales.SalesOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | Specifies the lot from which the goods should be issued. null means that the lot will be specified at a later stage (store order, etc.). `Filter(multi eq)` |
-| [ParentDocument](Crm.Sales.SalesOrderLines.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ParentDocument](Crm.Sales.SalesOrderLines.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
 | [Product](Crm.Sales.SalesOrderLines.md#product) | [Products](General.Products.Products.md) | The product sold. `Required` `Filter(multi eq)` |
 | [ProductCode](Crm.Sales.SalesOrderLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Used to set the Product_Id thru the coding systems. `Filter(multi eq)` |
-| [ProductPrice](Crm.Sales.SalesOrderLines.md#productprice) | [ProductPrices](Crm.ProductPrices.md) (nullable) | Not null when the price has been selected from the list of valid standard prices. `Filter(multi eq)` |
+| [ProductPrice](Crm.Sales.SalesOrderLines.md#productprice) | [ProductPrices](Crm.Pricing.ProductPrices.md) (nullable) | Not null when the price has been selected from the list of valid standard prices. `Filter(multi eq)` |
 | [ProductVariant](Crm.Sales.SalesOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | If specified determines which product variant of the current product in this line is used. `Filter(multi eq)` |
-| [PromotionalPackage](Crm.Sales.SalesOrderLines.md#promotionalpackage) | [PromotionalPackages](Crm.PromotionalPackages.md) (nullable) | The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. `Filter(multi eq)` `ReadOnly` |
-| [QuantityUnit](Crm.Sales.SalesOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
+| [PromotionalPackage](Crm.Sales.SalesOrderLines.md#promotionalpackage) | [PromotionalPackages](Crm.Pricing.PromotionalPackages.md) (nullable) | The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. `Filter(multi eq)` `ReadOnly` |
+| [QuantityUnit](Crm.Sales.SalesOrderLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. `Required` `Filter(multi eq)` |
 | [ReturnForInvoiceLine](Crm.Sales.SalesOrderLines.md#returnforinvoiceline) | [InvoiceLines](Crm.Invoicing.InvoiceLines.md) (nullable) | When specified, indicates that the current line is a return for products, invoiced with the specified invoice line. `Filter(multi eq)` |
 | [ReturnForSalesOrderLine](Crm.Sales.SalesOrderLines.md#returnforsalesorderline) | [SalesOrderLines](Crm.Sales.SalesOrderLines.md) (nullable) | When specified indicates that the goods sold in Return_For_Sales_<br />Order_Line_Id are returned with the current line. `Filter(multi eq)` |
 | [SalesOrder](Crm.Sales.SalesOrderLines.md#salesorder) | [SalesOrders](Crm.Sales.SalesOrders.md) | The <see cref="SalesOrder"/> to which this SalesOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
@@ -264,6 +271,16 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.SalesOrder.IntrastatTransportModeCode`
+### Level1DiscountAmount
+
+The amount of the level 1 discount.
+
+_Type_: **[Amount](../data-types.md#amount)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### Level1DiscountPercent
 
 The percent of the level 1 discount. `ReadOnly` `Introduced in version 23.1.2.56`
@@ -276,6 +293,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.Level1Discount != null), Convert( obj.Level1Discount.DiscountPercent, Object), null)`
+### Level2DiscountAmount
+
+The cumulative amount of the level 2 discount.
+
+_Type_: **[Amount](../data-types.md#amount)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### Level2DiscountPercent
 
 The percent of the level 2 discount. `ReadOnly` `Introduced in version 23.1.2.8`
@@ -288,6 +315,16 @@ _Show in UI_: **ShownByDefault**
 
 _Front-End Recalc Expressions:_  
 `IIF( ( obj.Level2Discount != null), Convert( obj.Level2Discount.DiscountPercent, Object), null)`
+### Level3DiscountAmount
+
+The cumulative amount of the level 3 discount.
+
+_Type_: **[Amount](../data-types.md#amount)**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
 ### Level3DiscountPercent
 
 The percent of the level 3 discount. `ReadOnly` `Introduced in version 23.1.2.8`
@@ -554,7 +591,7 @@ _Front-End Recalc Expressions:_
 
 The bonus program, based on which the line was automatically added. null when the line was not added for bonus program. `Filter(multi eq)`
 
-_Type_: **[BonusPrograms](Crm.Marketing.BonusPrograms.md) (nullable)**  
+_Type_: **[BonusPrograms](Crm.Pricing.BonusPrograms.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -589,7 +626,7 @@ _Front-End Recalc Expressions:_
 
 Indicates the level 1 discount. `Filter(multi eq)` `Introduced in version 23.1.2.56`
 
-_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Type_: **[LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -600,7 +637,7 @@ _Front-End Recalc Expressions:_
 
 Indicates the level 2 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8`
 
-_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Type_: **[LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -611,7 +648,7 @@ _Front-End Recalc Expressions:_
 
 Indicates the level 3 discount. `Filter(multi eq)` `Introduced in version 23.1.2.8`
 
-_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Type_: **[LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -634,12 +671,12 @@ _Front-End Recalc Expressions:_
 `obj.SalesOrder.DealType`
 ### LineDiscount
 
-The line discount type used to form the Line_Standard_Discount_Percent. `Filter(multi eq)` `ReadOnly`
+**OBSOLETE! Do not use!** The line discount type used to form the Line_Standard_Discount_Percent. `Obsolete` `Filter(multi eq)` `ReadOnly` `Obsoleted in version 25.1.1.38` `Obsolete`
 
-_Type_: **[LineDiscounts](Crm.LineDiscounts.md) (nullable)**  
+_Type_: **[LineDiscounts](Crm.Pricing.LineDiscounts.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **HiddenByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### LineEndCustomerParty
 
@@ -682,7 +719,7 @@ _Show in UI_: **HiddenByDefault**
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -716,7 +753,7 @@ _Show in UI_: **HiddenByDefault**
 
 Not null when the price has been selected from the list of valid standard prices. `Filter(multi eq)`
 
-_Type_: **[ProductPrices](Crm.ProductPrices.md) (nullable)**  
+_Type_: **[ProductPrices](Crm.Pricing.ProductPrices.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -736,7 +773,7 @@ _Show in UI_: **HiddenByDefault**
 
 The promotional package, based on which the line was added. null when the line was not added as part of a promotional package. `Filter(multi eq)` `ReadOnly`
 
-_Type_: **[PromotionalPackages](Crm.PromotionalPackages.md) (nullable)**  
+_Type_: **[PromotionalPackages](Crm.Pricing.PromotionalPackages.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -747,7 +784,7 @@ _Front-End Recalc Expressions:_
 
 The measurement unit of Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -814,7 +851,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -856,7 +893,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -871,7 +908,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

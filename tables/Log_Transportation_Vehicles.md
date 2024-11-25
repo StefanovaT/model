@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationVehicles](~/entities/Logistics.Shipment.TransportationVehicles.md)
+Entity: [Logistics.Transportation.TransportationVehicles](~/entities/Logistics.Transportation.TransportationVehicles.md)
 
 A vehicle, which is used for transportation. One actual vehicle might be defined multiple times as transportation vehicle - for different modes of transportation or cargo types. Entity: Log_Transportation_Vehicles
 

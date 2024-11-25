@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentAmountTypes](~/entities/General.DocumentAmountTypes.md)
+Entity: [Systems.Documents.DocumentAmountTypes](~/entities/Systems.Documents.DocumentAmountTypes.md)
 
 Represents the different types of additional amounts which are calculated for the documents. Entity: Gen_Document_Amount_Types
 
@@ -11,6 +11,7 @@ Represents the different types of additional amounts which are calculated for th
 
 | Name | Type | Description |
 | - | - | --- |
+|[Access_Key_Id](#access_key_id)|`uniqueidentifier` ||
 |[Add_To_Customer](#add_to_customer)|`bit` |1 means that the amount will be charged to the primary customer of the document|
 |[Add_To_Line](#add_to_line)|`bit` |1 means that the resulting amount will be added to the amount of each respective line|
 |[Allowed_Directions](#allowed_directions)|`int` Allowed: `-1`, `0`, `1`|Specifies condition for the sign of the allowed values for input percent or amount ​​that can be set in the documents.|
@@ -20,7 +21,7 @@ Represents the different types of additional amounts which are calculated for th
 |[Base_On_Lines](#base_on_lines)|`bit` |1 means that the percentages will be applied over lines plus dependant amounts; 0 means only dependant amounts|
 |[Default_Percent](#default_percent)|`decimal(7, 6)` |Default percent for amounts for which percent input is allowed; NULL otherwise|
 |[Description](#description)|`nvarchar(254)` ||
-|[Distribute_By](#distribute_by)|`nvarchar(20)` Allowed: `AMOUNT`, `MEASUREMENT`, `PRODUCT DEFINITION`, `DEAL TYPE`|Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE')|
+|[Distribute_By](#distribute_by)|`nvarchar(20)` Allowed: `AMOUNT`, `MEASUREMENT`, `PRODUCT DEFINITION`, `DEAL TYPE`, `LINE DISCOUNT`|Determines how the amount will be distributed among the document lines.|
 |[Distribute_By_Measurement_Category_Id](#distribute_by_measurement_category_id)|`uniqueidentifier` |Specifies the measurement category to be used for distribution, when the Distribute_By = 'MEASUREMENT'|
 |[Document_Amount_Type_Id](#document_amount_type_id)|`uniqueidentifier` `PK`||
 |[Is_Active](#is_active)|`bit` |1 when the amount type is active for new records; 0 - otherwise|
@@ -30,6 +31,40 @@ Represents the different types of additional amounts which are calculated for th
 |[Unit_Amount_Input_Allowed](#unit_amount_input_allowed)|`bit` |Specifies whether the user is allowed to input fixed unit amount for the calculation of the amount.|
 
 ## Columns
+
+### Access_Key_Id
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Sec_Access_Keys](Sec_Access_Keys.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Access_Key_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Add_To_Customer
 
@@ -323,11 +358,11 @@ Default percent for amounts for which percent input is allowed; NULL otherwise
 ### Distribute_By
 
 
-Specifies how the amount will be distributed among the document lines. Valid values are: ('AMOUNT','MEASUREMENT','PRODUCT DEFINITION','DEAL TYPE')
+Determines how the amount will be distributed among the document lines.
 
 | Property | Value |
 | - | - |
-|Allowed Values|`AMOUNT`, `MEASUREMENT`, `PRODUCT DEFINITION`, `DEAL TYPE`|
+|Allowed Values|`AMOUNT`, `MEASUREMENT`, `PRODUCT DEFINITION`, `DEAL TYPE`, `LINE DISCOUNT`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|AMOUNT|

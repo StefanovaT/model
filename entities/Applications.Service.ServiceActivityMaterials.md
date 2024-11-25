@@ -15,6 +15,10 @@ _ServiceActivity.DocumentNo_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -42,8 +46,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Document](Applications.Service.ServiceActivityMaterials.md#document) | [ServiceActivities](Applications.Service.ServiceActivities.md) | The <see cref="ServiceActivity"/> to which this ServiceActivityMaterial belongs. `Required` `Filter(multi eq)` |
 | [LineStore](Applications.Service.ServiceActivityMaterials.md#linestore) | [Stores](Logistics.Inventory.Stores.md) (nullable) | The store from which the product was taken. null = use the store from the header. `Filter(multi eq)` |
+| [Lot](Applications.Service.ServiceActivityMaterials.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot of the product used as material. null means that the lot is unknown or will be specified at a later stage (in a store order. etc.). `Filter(multi eq)` `Introduced in version 25.1.1.39` |
 | [Product](Applications.Service.ServiceActivityMaterials.md#product) | [Products](General.Products.Products.md) | The product, which was used as material. `Required` `Filter(multi eq)` |
-| [QuantityUnit](Applications.Service.ServiceActivityMaterials.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Quantity. Initially is set to the default unit for the product. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Applications.Service.ServiceActivityMaterials.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Quantity. Initially is set to the default unit for the product. `Required` `Filter(multi eq)` |
+| [SerialNumber](Applications.Service.ServiceActivityMaterials.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | The serial number of the product used as material. null means that the number is unknown or will be specified at a later stage (in a store order, etc.). `Filter(multi eq)` `Introduced in version 25.1.1.26` |
 | [ServiceActivity](Applications.Service.ServiceActivityMaterials.md#serviceactivity) | [ServiceActivities](Applications.Service.ServiceActivities.md) | The <see cref="ServiceActivity"/> to which this ServiceActivityMaterial belongs. `Required` `Filter(multi eq)` `Owner` |
 | [ServiceObject](Applications.Service.ServiceActivityMaterials.md#serviceobject) | [ServiceObjects](Applications.Service.ServiceObjects.md) (nullable) | The service object for which the material is used. null means unkown object or N/A. `Filter(multi eq)` |
 
@@ -178,6 +184,15 @@ _Back-End Default Expression:_
 
 _Front-End Recalc Expressions:_  
 `obj.ServiceActivity.Store`
+### Lot
+
+The lot of the product used as material. null means that the lot is unknown or will be specified at a later stage (in a store order. etc.). `Filter(multi eq)` `Introduced in version 25.1.1.39`
+
+_Type_: **[Lots](Logistics.Inventory.Lots.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **HiddenByDefault**  
+
 ### Product
 
 The product, which was used as material. `Required` `Filter(multi eq)`
@@ -191,13 +206,22 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Quantity. Initially is set to the default unit for the product. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
 _Front-End Recalc Expressions:_  
 `obj.Product.MeasurementUnit`
+### SerialNumber
+
+The serial number of the product used as material. null means that the number is unknown or will be specified at a later stage (in a store order, etc.). `Filter(multi eq)` `Introduced in version 25.1.1.26`
+
+_Type_: **[SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### ServiceActivity
 
 The <see cref="ServiceActivity"/> to which this ServiceActivityMaterial belongs. `Required` `Filter(multi eq)` `Owner`
@@ -231,7 +255,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -273,7 +297,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -288,7 +312,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

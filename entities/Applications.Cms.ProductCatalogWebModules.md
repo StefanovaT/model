@@ -22,6 +22,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -47,9 +51,9 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [<s>Parent</s>](Applications.Cms.ProductCatalogWebModules.md#parent) | [WebModules](Applications.Cms.WebModules.md) (nullable) | **OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.4.50` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
+| [<s>Parent</s>](Applications.Cms.ProductCatalogWebModules.md#parent) | [WebModules](Applications.Cms.WebModules.md) (nullable) | **OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 25.1.1.47` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
 | [ProductCatalog](Applications.Cms.ProductCatalogWebModules.md#productcatalog) | [ProductCatalogs](General.Products.ProductCatalogs.md) | The product catalog, which is represented by this web module. `Required` `Filter(multi eq)` |
-| [<s>WebSite</s>](Applications.Cms.ProductCatalogWebModules.md#website) | [WebSites](Applications.Cms.WebSites.md) | **OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.4.50` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
+| [<s>WebSite</s>](Applications.Cms.ProductCatalogWebModules.md#website) | [WebSites](Applications.Cms.WebSites.md) | **OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 25.1.1.47` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md)) |
 
 
 ## Attribute Details
@@ -150,7 +154,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### Parent
 
-**OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 24.1.4.50` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md))
+**OBSOLETE! Do not use!** The parent web Module. It can only be a module with Module Type = Category. Null means that the web Module is root web Module. `Obsolete` `Filter(multi eq)` `Obsoleted in version 25.1.1.47` `Obsolete` (Inherited from [WebModules](Applications.Cms.WebModules.md))
 
 _Type_: **[WebModules](Applications.Cms.WebModules.md) (nullable)**  
 _Category_: **System**  
@@ -168,7 +172,7 @@ _Show in UI_: **ShownByDefault**
 
 ### WebSite
 
-**OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 24.1.4.50` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md))
+**OBSOLETE! Do not use!** The web site to which the module belongs. `Obsolete` `Required` `Filter(multi eq)` `Obsoleted in version 25.1.1.47` `Obsolete` `Owner` (Inherited from [WebModules](Applications.Cms.WebModules.md))
 
 _Type_: **[WebSites](Applications.Cms.WebSites.md)**  
 _Category_: **System**  
@@ -184,7 +188,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -226,7 +230,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -241,7 +245,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

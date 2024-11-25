@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.ActivityTemplates](~/entities/General.Contacts.ActivityTemplates.md)
+Entity: [General.Activities.ActivityTemplates](~/entities/General.Activities.ActivityTemplates.md)
 
 Templates for automatical generation of activity from any document. Entity: Cm_Activity_Templates
 
@@ -14,9 +14,9 @@ Templates for automatical generation of activity from any document. Entity: Cm_A
 |[Activity_Subject_Mask](#activity_subject_mask)|`nvarchar(max)` |A mask that uses fields from the header table of the source document in the specified route and is used to fill the Subject of the generated activity.|
 |[Activity_Template_Id](#activity_template_id)|`uniqueidentifier` `PK`||
 |[Additional_Days](#additional_days)|`int` |The number of days that will be added to the date in the Header_Date_Field. The result value is set to Start_Time of the activity.|
-|[Reminder_Time](#reminder_time)|`time` ||
+|[Reminder_Time](#reminder_time)|`time` |The time of the day for the reminder|
 |[Responsible_Party_Id](#responsible_party_id)|`uniqueidentifier` |If Null the user that starts the generation route is responsible party of the activity.|
-|[Route_Id](#route_id)|`uniqueidentifier` ||
+|[Route_Id](#route_id)|`uniqueidentifier` |The route that uses this template|
 |[Row_Version](#row_version)|`timestamp` ||
 |[Source_Date_Field](#source_date_field)|`nvarchar(64)` |A name of a field from the header or the document table of the source document in the specified route, that will be used along with Additional_Days to set the Start_Time of the generated activity.|
 |[Start_Time](#start_time)|`time` |The time of the day when the activity starts|
@@ -118,6 +118,9 @@ The number of days that will be added to the date in the Header_Date_Field. The 
 
 ### Reminder_Time
 
+
+The time of the day for the reminder
+
 | Property | Value |
 | - | - |
 |Auto Complete|no|
@@ -187,6 +190,9 @@ If Null the user that starts the generation route is responsible party of the ac
 |Equals|`NULL`|yes|no|
 
 ### Route_Id
+
+
+The route that uses this template
 
 | Property | Value |
 | - | - |

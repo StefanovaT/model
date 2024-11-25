@@ -5,145 +5,300 @@ uid: Systems.Bpm.Processes
 
 **Namespace:** [Systems.Bpm](Systems.Bpm.md)  
 
-Represents one business process version. All process model elements and execution instances are bound to specfic process version. Entity: Bpm_Processes
+Contains the business process diagrams. Entity: Wf_Processes
+
+## Renames
+
+Old name: **Systems.Workflow.Processes**  
+New name: **Systems.Bpm.Processes**  
+Version: **24.1.5.35**  
+Case: **35911**  
+
+
 
 ## Default Visualization
 Default Display Text Format:  
-_{Code}: {Name:T}_  
-Default Search Member:  
-_Code_  
+_{Name:T}_  
+Default Search Members:  
+_Name_  
+Name Data Member:  
+_Name_  
+Category:  _SystemData_  
+Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Tree  
 * [Systems.Bpm.Processes](Systems.Bpm.Processes.md)  
-  * [Systems.Bpm.ProcessConnections](Systems.Bpm.ProcessConnections.md)  
-  * [Systems.Bpm.ProcessElements](Systems.Bpm.ProcessElements.md)  
-  * [Systems.Bpm.ProcessLanes](Systems.Bpm.ProcessLanes.md)  
-  * [Systems.Bpm.ProcessNodes](Systems.Bpm.ProcessNodes.md)  
 
 ## Attributes
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Code](Systems.Bpm.Processes.md#code) | string (16) | Unique process code. `Required` `Filter(multi eq)` `ORD` 
-| [Description](Systems.Bpm.Processes.md#description) | string (max) __nullable__ | The description of this Process. `Filter(eq;like)` 
+| [CreationTime](Systems.Bpm.Processes.md#creationtime) | datetime __nullable__ | Date and time when the Process was created. `Filter(ge;le)` `ReadOnly` 
+| [CreationUser](Systems.Bpm.Processes.md#creationuser) | string (64) __nullable__ | Login name of the user, who created the Process. `ReadOnly` 
+| [DisplayText](Systems.Bpm.Processes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Systems.Bpm.Processes.md#id) | guid |  
-| [IsExecutable](Systems.Bpm.Processes.md#isexecutable) | boolean | Specifies whether the process is executable. In order to be executable, a process must contain enough execution details. Note, that some processes are only for documentation purposes and are not intended to be executed. `Required` `Default(false)` `Filter(eq)` 
-| [IsPublished](Systems.Bpm.Processes.md#ispublished) | boolean | Specifies whether the process is currently published for new instances. `Required` `Default(false)` `Filter(eq)` 
-| [Locality](Systems.Bpm.Processes.md#locality) | [Locality](Systems.Bpm.Processes.md#locality) | Process execution locality. Represents where the execution takes place and influences the selection of possible executors. For example, when L, the execution is private to the location, where the process originated. P=Same as parent; L=Location; C=Company; I=Intra-company. `Required` `Default("L")` `Filter(like)` 
-| [Name](Systems.Bpm.Processes.md#name) | string (254) | The name of this Process. `Required` `Filter(eq;like)` 
-
-## References
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| [ProcessGroup](Systems.Bpm.Processes.md#processgroup) | [ProcessGroups](Systems.Bpm.ProcessGroups.md) | The process group, to which this process belongs. `Required` `Filter(multi eq)` |
-
-## Child Collections
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| Connections | [ProcessConnections](Systems.Bpm.ProcessConnections.md) | List of `ProcessConnection`(Systems.Bpm.ProcessConnections.md) child objects, based on the `Systems.Bpm.ProcessConnection.Process`(Systems.Bpm.ProcessConnections.md#process) back reference 
-| Elements | [ProcessElements](Systems.Bpm.ProcessElements.md) | List of `ProcessElement`(Systems.Bpm.ProcessElements.md) child objects, based on the `Systems.Bpm.ProcessElement.Process`(Systems.Bpm.ProcessElements.md#process) back reference 
-| Lanes | [ProcessLanes](Systems.Bpm.ProcessLanes.md) | List of `ProcessLane`(Systems.Bpm.ProcessLanes.md) child objects, based on the `Systems.Bpm.ProcessLane.Process`(Systems.Bpm.ProcessLanes.md#process) back reference 
-| Nodes | [ProcessNodes](Systems.Bpm.ProcessNodes.md) | List of `ProcessNode`(Systems.Bpm.ProcessNodes.md) child objects, based on the `Systems.Bpm.ProcessNode.Process`(Systems.Bpm.ProcessNodes.md#process) back reference 
+| [IsLandscape](Systems.Bpm.Processes.md#islandscape) | boolean | Specifies whether the process diagram is intended to be viewed in landscape mode. `Required` `Default(true)` 
+| [Name](Systems.Bpm.Processes.md#name) | [MultilanguageString (128)](../data-types.md#multilanguagestring) | The name of this Process. `Required` `Filter(eq;like)` 
+| [Notes](Systems.Bpm.Processes.md#notes) | string (2000) __nullable__ | Notes for this Process. 
+| [ObjectVersion](Systems.Bpm.Processes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
+| [SchemaFormat](Systems.Bpm.Processes.md#schemaformat) | string (1) | Application specific format of the Schema Layout. `Required` `Default("D")` 
+| [SchemaLayout](Systems.Bpm.Processes.md#schemalayout) | string (max) | Contains the actual presentation layout of the business process. The layout is stored in the format, specified by Schema Format. `Required` 
+| [StartEvent](Systems.Bpm.Processes.md#startevent) | string (3) __nullable__ | USR=User created; EML=Email receive (still not supported). null means that there is no starting event for this process. 
+| [StartRoleId](Systems.Bpm.Processes.md#startroleid) | guid __nullable__ | When Start_Event='USR' then specifies the role which the user must play in order to start the process. null when Start_Event&lt;&gt;'USR'. `Filter(multi eq)` 
+| [Thumbnail](Systems.Bpm.Processes.md#thumbnail) | byte[] __nullable__ | Contains the visual thumbnail of the presentation of the business process. It is stored in bitmap (BMP) format. 
+| [UpdateTime](Systems.Bpm.Processes.md#updatetime) | datetime __nullable__ | Date and time when the Process was last updated. `Filter(ge;le)` `ReadOnly` 
+| [UpdateUser](Systems.Bpm.Processes.md#updateuser) | string (64) __nullable__ | Login name of the user, who last updated the Process. `ReadOnly` 
 
 
 ## Attribute Details
 
-### Code
+### CreationTime
 
-Unique process code. `Required` `Filter(multi eq)` `ORD`
+Date and time when the Process was created. `Filter(ge;le)` `ReadOnly`
 
-_Type_: **string (16)**  
-_Indexed_: **True**  
-_Supported Filters_: **Equals, EqualsIn**  
-_Supports Order By_: **True**  
-_Maximum Length_: **16**  
-
-### Description
-
-The description of this Process. `Filter(eq;like)`
-
-_Type_: **string (max) __nullable__**  
-_Supported Filters_: **Equals, Like**  
+_Type_: **datetime __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
-_Maximum Length_: **2147483647**  
+_Show in UI_: **HiddenByDefault**  
+
+### CreationUser
+
+Login name of the user, who created the Process. `ReadOnly`
+
+_Type_: **string (64) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
+
+### DisplayText
+
+Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object.
+
+_Type_: **string**  
+_Category_: **Calculated Attributes**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
 
 ### Id
 
 _Type_: **guid**  
 _Indexed_: **True**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
+_Show in UI_: **CannotBeShown**  
 
-### IsExecutable
+### IsLandscape
 
-Specifies whether the process is executable. In order to be executable, a process must contain enough execution details. Note, that some processes are only for documentation purposes and are not intended to be executed. `Required` `Default(false)` `Filter(eq)`
-
-_Type_: **boolean**  
-_Supported Filters_: **Equals**  
-_Supports Order By_: **False**  
-_Default Value_: **False**  
-
-### IsPublished
-
-Specifies whether the process is currently published for new instances. `Required` `Default(false)` `Filter(eq)`
+Specifies whether the process diagram is intended to be viewed in landscape mode. `Required` `Default(true)`
 
 _Type_: **boolean**  
-_Supported Filters_: **Equals**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
-_Default Value_: **False**  
-
-### Locality
-
-Process execution locality. Represents where the execution takes place and influences the selection of possible executors. For example, when L, the execution is private to the location, where the process originated. P=Same as parent; L=Location; C=Company; I=Intra-company. `Required` `Default("L")` `Filter(like)`
-
-_Type_: **[Locality](Systems.Bpm.Processes.md#locality)**  
-Generic enum type for Locality properties  
-_Allowed Values (Systems.Bpm.Locality Enum Members)_  
-
-| Value | Description |
-| ---- | --- |
-| Parent | Parent value. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Parent' |
-| Location | Location value. Stored as 'L'. <br /> _Database Value:_ 'L' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Location' |
-| Company | Company value. Stored as 'C'. <br /> _Database Value:_ 'C' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Company' |
-| IntraCompany | IntraCompany value. Stored as 'I'. <br /> _Database Value:_ 'I' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'IntraCompany' |
-
-_Supported Filters_: **Like**  
-_Supports Order By_: **False**  
-_Default Value_: **Location**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
 
 ### Name
 
 The name of this Process. `Required` `Filter(eq;like)`
 
-_Type_: **string (254)**  
+_Type_: **[MultilanguageString (128)](../data-types.md#multilanguagestring)**  
+_Category_: **System**  
 _Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
-_Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
 
+### Notes
 
-## Reference Details
+Notes for this Process.
 
-### ProcessGroup
+_Type_: **string (2000) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **2000**  
+_Show in UI_: **ShownByDefault**  
 
-The process group, to which this process belongs. `Required` `Filter(multi eq)`
+### ObjectVersion
 
-_Type_: **[ProcessGroups](Systems.Bpm.ProcessGroups.md)**  
+The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
+
+_Type_: **int32**  
+_Category_: **Extensible Data Object**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: ****  
+_Show in UI_: **HiddenByDefault**  
+
+### SchemaFormat
+
+Application specific format of the Schema Layout. `Required` `Default("D")`
+
+_Type_: **string (1)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **1**  
+_Default Value_: **D**  
+_Show in UI_: **ShownByDefault**  
+
+### SchemaLayout
+
+Contains the actual presentation layout of the business process. The layout is stored in the format, specified by Schema Format. `Required`
+
+_Type_: **string (max)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
+
+### StartEvent
+
+USR=User created; EML=Email receive (still not supported). null means that there is no starting event for this process.
+
+_Type_: **string (3) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **3**  
+_Show in UI_: **ShownByDefault**  
+
+### StartRoleId
+
+When Start_Event='USR' then specifies the role which the user must play in order to start the process. null when Start_Event&lt;&gt;'USR'. `Filter(multi eq)`
+
+_Type_: **guid __nullable__**  
+_Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
 
+### Thumbnail
+
+Contains the visual thumbnail of the presentation of the business process. It is stored in bitmap (BMP) format.
+
+_Type_: **byte[] __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Show in UI_: **CannotBeShown**  
+
+### UpdateTime
+
+Date and time when the Process was last updated. `Filter(ge;le)` `ReadOnly`
+
+_Type_: **datetime __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **HiddenByDefault**  
+
+### UpdateUser
+
+Login name of the user, who last updated the Process. `ReadOnly`
+
+_Type_: **string (64) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **64**  
+_Show in UI_: **HiddenByDefault**  
+
+
+## API Methods
+
+Methods that can be invoked in public APIs.
+
+### GetAllowedCustomPropertyValues
+
+Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **GET**  
+
+**Parameters**  
+  * **customPropertyCode**  
+    The code of the custom property  
+    _Type_: string  
+
+  * **search**  
+    The search text - searches by value or description. Can contain wildcard character %.  
+    _Type_: string  
+     _Optional_: True  
+    _Default Value_: null  
+
+  * **exactMatch**  
+    If true the search text should be equal to the property value  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **orderByDescription**  
+    If true the result is ordered by Description instead of Value. Note that ordering is not always possible.  
+    _Type_: boolean  
+     _Optional_: True  
+    _Default Value_: False  
+
+  * **top**  
+    The top clause - default is 10  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 10  
+
+  * **skip**  
+    The skip clause - default is 0  
+    _Type_: int32  
+     _Optional_: True  
+    _Default Value_: 0  
+
+
+### CreateNotification
+
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
+_Return Type_: **void**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
+
+**Parameters**  
+  * **user**  
+    The user.  
+    _Type_: [Users](Systems.Security.Users.md)  
+
+  * **notificationClass**  
+    The notification class.  
+    _Type_: string  
+
+  * **subject**  
+    The notification subject.  
+    _Type_: string  
+
+
+### CreateCopy
+
+Duplicates the object and its child objects belonging to the same aggregate.              The duplicated objects are not saved to the data source but remain in the same transaction as the original object.  
+_Return Type_: **EntityObject**  
+_Declaring Type_: **EntityObject**  
+_Domain API Request_: **POST**  
 
 
 ## Business Rules
 
-[!list erp.entity=Systems.Bpm.Processes erp.type=business-rule default-text="None"]
+[!list limit=1000 erp.entity=Systems.Bpm.Processes erp.type=business-rule default-text="None"]
 
 ## Front-End Business Rules
 
-[!list erp.entity=Systems.Bpm.Processes erp.type=front-end-business-rule default-text="None"]
+[!list limit=1000 erp.entity=Systems.Bpm.Processes erp.type=front-end-business-rule default-text="None"]
 
 ## API
 

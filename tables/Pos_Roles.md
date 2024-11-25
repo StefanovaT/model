@@ -13,6 +13,7 @@ Represents a role, which can be assigned to POS operators (like Cashier, Manager
 | - | - | --- |
 |[Can_Process_Minus_Sales](#can_process_minus_sales)|`bit` |Indicates whether the role is allowed to process minus (qty and/or value) sales.|
 |[Can_Void_Sales](#can_void_sales)|`bit` |Indicates whether this role can void sales orders.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Pos role is active.|
 |[Pos_Role_Code](#pos_role_code)|`nvarchar(16)` |Unique role code.|
 |[Pos_Role_Id](#pos_role_id)|`uniqueidentifier` `PK`||
 |[Pos_Role_Name](#pos_role_name)|`nvarchar(254)` `ML`|Multi-language name of the POS role.|
@@ -87,6 +88,42 @@ Indicates whether this role can void sales orders.
 |Visible|yes|
 
 #### Can_Void_Sales - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
+### Is_Active
+
+
+Indicates whether the current Pos role is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

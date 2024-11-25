@@ -17,13 +17,17 @@ _DocumentType.EntityName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 Aggregate Root:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
 ## Attributes
 
@@ -42,7 +46,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DocumentType](Crm.Sales.DefaultSalesOrderPaymentPlans.md#documenttype) | [DocumentTypes](General.DocumentTypes.md) | The <see cref="General.DocumentType"/> to which this DefaultSalesOrder<br />PaymentPlan belongs. `Required` `Filter(multi eq)` `Owner` |
+| [DocumentType](Crm.Sales.DefaultSalesOrderPaymentPlans.md#documenttype) | [DocumentTypes](Systems.Documents.DocumentTypes.md) | The <see cref="Systems.Documents.DocumentType"/> to which this DefaultSalesOrder<br />PaymentPlan belongs. `Required` `Filter(multi eq)` `Owner` |
 | [EnterpriseCompany](Crm.Sales.DefaultSalesOrderPaymentPlans.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | Enterprise company for which the current default installment template is valid. If enterprise company is not set then the installment template is valid for all enterprise companies. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Crm.Sales.DefaultSalesOrderPaymentPlans.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | Enterprise company location (within the chosen enterprise company) for which the current default installment template is valid. If enterprise company location is not set then the installment template is valid for all enterprise company locations. `Filter(multi eq)` |
 | [PaymentAccount](Crm.Sales.DefaultSalesOrderPaymentPlans.md#paymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | Default payment account for the current installment. null means that there is no default account. `Filter(multi eq)` |
@@ -162,9 +166,9 @@ _Front-End Recalc Expressions:_
 
 ### DocumentType
 
-The <see cref="General.DocumentType"/> to which this DefaultSalesOrderPaymentPlan belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Systems.Documents.DocumentType"/> to which this DefaultSalesOrderPaymentPlan belongs. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[DocumentTypes](General.DocumentTypes.md)**  
+_Type_: **[DocumentTypes](Systems.Documents.DocumentTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
@@ -218,7 +222,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -260,7 +264,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -275,7 +279,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

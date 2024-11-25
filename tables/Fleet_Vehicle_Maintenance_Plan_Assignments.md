@@ -52,6 +52,12 @@ Specifies whether the plan is active.
 |User Login|no|
 |Visible|yes|
 
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Last_Maintenance_Mileage_Km
 
 

@@ -19,6 +19,7 @@ Templates for customizing the printouts of fiscal receipts. Entity: Pos_Fiscal_R
 |[Print_System_Header](#print_system_header)|`bit` |Denotes whether to print the system-defined header for the document.|
 |[Print_System_Row_Header](#print_system_row_header)|`bit` |Denotes whether to print the system-defined header for each row.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Template_Kind](#template_kind)|`nvarchar(1)` Allowed: `S`, `I`, `P`|Specifies the entity type, for which the template can be used. Template strings can refer to the attributes of the specified entity type.|
 |[Template_Name](#template_name)|`nvarchar(64)` |The unique name of the printing template.|
 
 ## Columns
@@ -38,7 +39,7 @@ User-defined footer printed at the end of the document (interpolated string).
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|256|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -69,7 +70,7 @@ User-defined header printed at the beginning of the document (interpolated strin
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|256|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -100,7 +101,7 @@ User-defined footer printed after each row (interpolated string).
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|256|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -131,7 +132,7 @@ User-defined header printed before each row (interpolated string).
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|256|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -158,7 +159,7 @@ User-defined header printed before each row (interpolated string).
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -194,7 +195,7 @@ Denotes whether to print the system-defined header for the document.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -230,7 +231,7 @@ Denotes whether to print the system-defined header for each row.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -263,7 +264,7 @@ Denotes whether to print the system-defined header for each row.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -279,6 +280,43 @@ Denotes whether to print the system-defined header for each row.
 |User Login|no|
 |Visible|no|
 
+### Template_Kind
+
+
+Specifies the entity type, for which the template can be used. Template strings can refer to the attributes of the specified entity type.
+
+| Property | Value |
+| - | - |
+|Allowed Values|`S`, `I`, `P`|
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|S|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|nvarchar(1)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Template_Kind - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
+
 ### Template_Name
 
 
@@ -293,7 +331,7 @@ The unique name of the printing template.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|64|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

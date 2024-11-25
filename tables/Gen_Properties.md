@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.CustomProperties](~/entities/General.CustomProperties.md)
+Entity: [Systems.Bpm.CustomProperties](~/entities/Systems.Bpm.CustomProperties.md)
 
 User-defined properties, which can supplement the system properties of almost all entities in the system. Entity: Gen_Properties
 

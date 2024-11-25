@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentStateChanges](~/entities/General.DocumentStateChanges.md)
+Entity: [General.Documents.DocumentStateChanges](~/entities/General.Documents.DocumentStateChanges.md)
 
 History of document state changes. Entity: Gen_Document_State_Changes
 
@@ -19,7 +19,7 @@ History of document state changes. Entity: Gen_Document_State_Changes
 |[Document_State_Change_Id](#document_state_change_id)|`uniqueidentifier` `PK`||
 |[New_State](#new_state)|`smallint` Allowed: `0`, `10`, `20`, `30`, `40`, `50`, `5`|The new state after the change.|
 |[Row_Version](#row_version)|`timestamp` ||
-|[System_Initiated](#system_initiated)|`bit` Readonly||
+|[System_Initiated](#system_initiated)|`bit` Readonly|Specifies whether the state change was caused by system process or from user action.|
 |[Update_Time](#update_time)|`datetime` |The time when the change took effect.|
 |[Update_User](#update_user)|`nvarchar(64)` |The login name of the user, who made the status change|
 |[User_Status_Id](#user_status_id)|`uniqueidentifier` |The new user status after the change.|
@@ -162,6 +162,9 @@ The new state after the change.
 |Visible|no|
 
 ### System_Initiated
+
+
+Specifies whether the state change was caused by system process or from user action.
 
 | Property | Value |
 | - | - |

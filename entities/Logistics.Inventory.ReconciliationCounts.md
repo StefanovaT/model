@@ -17,6 +17,10 @@ _Reconciliation.EntityName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -32,8 +36,11 @@ Aggregate Root:
 | [CreationTimeUtc](Logistics.Inventory.ReconciliationCounts.md#creationtimeutc) | datetime | The exact time (UTC) the product was counted. `Required` `Default(NowUtc)` `Filter(ge;le)` `ReadOnly` 
 | [DisplayText](Logistics.Inventory.ReconciliationCounts.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Logistics.Inventory.ReconciliationCounts.md#id) | guid |  
+| [Notes](Logistics.Inventory.ReconciliationCounts.md#notes) | string (max) __nullable__ | Additional information for the Count. `Introduced in version 24.1.5.37` 
 | [ObjectVersion](Logistics.Inventory.ReconciliationCounts.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Quantity](Logistics.Inventory.ReconciliationCounts.md#quantity) | decimal (12, 3) | The counted quantity in the default measurement unit of the product. `Required` `Filter(ge;le)` 
+| [Quantity](Logistics.Inventory.ReconciliationCounts.md#quantity) | [Quantity (18, 3)](../data-types.md#quantity) | The counted quantity in the default measurement unit of the product. `Unit: QuantityUnit` `Required` `Filter(ge;le)` 
+| [QuantityBase](Logistics.Inventory.ReconciliationCounts.md#quantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42` 
+| [StandardQuantityBase](Logistics.Inventory.ReconciliationCounts.md#standardquantitybase) | [Quantity (18, 3)](../data-types.md#quantity) | The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42` 
 
 ## References
 
@@ -41,8 +48,9 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [CreationUser](Logistics.Inventory.ReconciliationCounts.md#creationuser) | [Users](Systems.Security.Users.md) | The user who performed the count. `Required` `Filter(multi eq)` `ReadOnly` |
 | [Product](Logistics.Inventory.ReconciliationCounts.md#product) | [Products](General.Products.Products.md) | The product which is currently counted. `Required` `Filter(multi eq)` |
-| [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
+| [QuantityUnit](Logistics.Inventory.ReconciliationCounts.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit from the definition of the product. `Required` `Filter(multi eq)` |
 | [Reconciliation](Logistics.Inventory.ReconciliationCounts.md#reconciliation) | [Reconciliations](Logistics.Inventory.Reconciliations.md) | The planned reconciliation for which to execute the current counting. `Required` `Filter(multi eq)` `Introduced in version 24.1.4.51` `Owner` |
+| [WarehouseTransaction](Logistics.Inventory.ReconciliationCounts.md#warehousetransaction) | [WarehouseTransactions](Logistics.Wms.WarehouseTransactions.md) (nullable) | The warehouse transaction with which the count has been recorded. Filled if the count information is loaded from the WMS module. `Filter(multi eq)` `ReadOnly` `Introduced in version 24.1.5.37` |
 
 
 ## Attribute Details
@@ -77,6 +85,17 @@ _Supported Filters_: **Equals, EqualsIn**
 _Default Value_: **NewGuid**  
 _Show in UI_: **ShownByDefault**  
 
+### Notes
+
+Additional information for the Count. `Introduced in version 24.1.5.37`
+
+_Type_: **string (max) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Maximum Length_: **2147483647**  
+_Show in UI_: **ShownByDefault**  
+
 ### ObjectVersion
 
 The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
@@ -89,14 +108,46 @@ _Show in UI_: **HiddenByDefault**
 
 ### Quantity
 
-The counted quantity in the default measurement unit of the product. `Required` `Filter(ge;le)`
+The counted quantity in the default measurement unit of the product. `Unit: QuantityUnit` `Required` `Filter(ge;le)`
 
-_Type_: **decimal (12, 3)**  
+_Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
+### QuantityBase
+
+Quantity in the base measurement unit of the product. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42`
+
+_Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+
+_Front-End Recalc Expressions:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.QuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
+### StandardQuantityBase
+
+The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution. `Unit: Product.BaseMeasurementCategory.BaseUnit` `Required` `Default(0)` `ReadOnly` `Introduced in version 25.1.1.42`
+
+_Type_: **[Quantity (18, 3)](../data-types.md#quantity)**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **Constant**  
+_Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, IIF( obj.Product.AllowVariableMeasurementRatios, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product), obj.QuantityBase))`
+
+_Front-End Recalc Expressions:_  
+`IIF( ( ( ( obj.Quantity == null) OrElse ( obj.QuantityUnit == null)) OrElse ( obj.Product == null)), obj.StandardQuantityBase, obj.Quantity.ConvertTo( obj.Product.BaseUnit, obj.Product))`
 
 ## Reference Details
 
@@ -122,7 +173,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit from the definition of the product. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -137,6 +188,15 @@ _Supported Filters_: **Equals, EqualsIn**
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
+### WarehouseTransaction
+
+The warehouse transaction with which the count has been recorded. Filled if the count information is loaded from the WMS module. `Filter(multi eq)` `ReadOnly` `Introduced in version 24.1.5.37`
+
+_Type_: **[WarehouseTransactions](Logistics.Wms.WarehouseTransactions.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 
 ## API Methods
 
@@ -145,7 +205,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -187,7 +247,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -202,7 +262,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

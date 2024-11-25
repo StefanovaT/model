@@ -19,6 +19,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _2 - Track object changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -42,7 +46,7 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [AccessKey](Finance.Payments.PaymentAccounts.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this PaymentAccount. Null means that all users have unlimited permissions. `Filter(multi eq)` |
 | [BankAccount](Finance.Payments.PaymentAccounts.md#bankaccount) | [PartyBankAccounts](General.Contacts.PartyBankAccounts.md) (nullable) | The bank account, which is represented by this payment account. `Filter(multi eq)` |
-| [Currency](Finance.Payments.PaymentAccounts.md#currency) | [Currencies](General.Currencies.md) | The currency in which the movements for this payment account will be recorded. `Required` `Filter(multi eq)` |
+| [Currency](Finance.Payments.PaymentAccounts.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency in which the movements for this payment account will be recorded. `Required` `Filter(multi eq)` |
 | [EnterpriseCompany](Finance.Payments.PaymentAccounts.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company to which this PaymentAccount applies, or null if it is for all enterprise companies. `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](Finance.Payments.PaymentAccounts.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The Enterprise Company Location to which this PaymentAccount applies, or null if it is for all enterprise company locations. `Filter(multi eq)` |
 | [PaymentType](Finance.Payments.PaymentAccounts.md#paymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | Specifies the payment type used to pay, when using this payment account. null when the payment type is unknown or unspecified. `Filter(multi eq)` |
@@ -127,6 +131,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **CannotBeShown**  
 
+
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
+| Release Payment Transactions | Permission1 |
 ### BankAccount
 
 The bank account, which is represented by this payment account. `Filter(multi eq)`
@@ -140,7 +154,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency in which the movements for this payment account will be recorded. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -180,7 +194,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -222,7 +236,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -237,7 +251,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentJobs](~/entities/General.DocumentJobs.md)
+Entity: [Systems.Core.DocumentJobs](~/entities/Systems.Core.DocumentJobs.md)
 
 Represents jobs, which change state of documents. Entity: Gen_Document_Jobs (Introduced in version 20.1)
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentParties](~/entities/General.DocumentParties.md)
+Entity: [General.Documents.DocumentParties](~/entities/General.Documents.DocumentParties.md)
 
 Represents a party associated to a document. Entity: Gen_Document_Parties (Introduced in version 22.1.4.46)
 

@@ -7,7 +7,7 @@
 
 ## Entity
 
-Entity: [General.LinkTypes](~/entities/General.LinkTypes.md)
+Entity: [Systems.Documents.LinkTypes](~/entities/Systems.Documents.LinkTypes.md)
 
 Obsolete. Not used. Entity: Gen_Link_Types (Obsoleted in version 22.1.6.60)
 

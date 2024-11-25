@@ -18,7 +18,11 @@ Name Data Member:
 _Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _AssetCategoryId_  
+Layout category attribute:  _AssetCategoryId_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -50,7 +54,7 @@ Aggregate Tree
 | [EnterpriseCompany](Finance.Assets.Assets.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The Enterprise Company to which this Asset applies. `Required` `Filter(multi eq)` |
 | [ManagedAsset](Finance.Assets.Assets.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
 | [PrimaryValuationModel](Finance.Assets.Assets.md#primaryvaluationmodel) | [ValuationModels](Finance.Assets.ValuationModels.md) | Obsolete. Not used. `Required` `Filter(multi eq)` |
-| [ValuationCurrency](Finance.Assets.Assets.md#valuationcurrency) | [Currencies](General.Currencies.md) | Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)` |
+| [ValuationCurrency](Finance.Assets.Assets.md#valuationcurrency) | [Currencies](General.Currencies.Currencies.md) | Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -212,7 +216,7 @@ _Show in UI_: **ShownByDefault**
 
 Currency in which changes of the asset values (purchase value, depreciation value and etc.) are stored. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -225,7 +229,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -267,7 +271,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -282,7 +286,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

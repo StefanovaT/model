@@ -12,6 +12,7 @@ Describes what the purpose of the marketing activity is. Entity: Crm_Marketing_A
 | Name | Type | Description |
 | - | - | --- |
 |[Code](#code)|`nvarchar(32)` ||
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Marketing Activity Line Type is active.|
 |[Marketing_Activity_Line_Type_Id](#marketing_activity_line_type_id)|`uniqueidentifier` `PK`||
 |[Name](#name)|`nvarchar(254)` `ML`|Multi-language field|
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -52,6 +53,42 @@ Describes what the purpose of the marketing activity is. Entity: Crm_Marketing_A
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 |Like|None|no|no|
+
+### Is_Active
+
+
+Indicates whether the current Marketing Activity Line Type is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|5|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Marketing_Activity_Line_Type_Id
 
@@ -161,7 +198,7 @@ Multi-language field
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

@@ -17,7 +17,6 @@ Determines the type and workflow of the cases. Entity: Apm_Case_Categories (Intr
 |[Is_Active](#is_active)|`bit` |Specifies whether the category is active for new cases.|
 |[Notes](#notes)|`nvarchar(max)` ||
 |[Ord](#ord)|`int` |Display order of the category relative to other categories within the project type.|
-|[Project_Type_Id](#project_type_id)|`uniqueidentifier` |Specified, when only projects of certain type can have cases with this category.|
 |[Row_Version](#row_version)|`timestamp` ||
 
 ## Columns
@@ -219,43 +218,6 @@ Display order of the category relative to other categories within the project ty
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
-
-### Project_Type_Id
-
-
-Specified, when only projects of certain type can have cases with this category.
-
-| Property | Value |
-| - | - |
-|Auto Complete|no|
-|Data Filter|no|
-|Default Value|None|
-|Enter Stop|yes|
-|Ignore for Insert Order|no|
-|Is Entity Name|no|
-|Max Length|-1|
-|Order|2|
-|Ownership Reference|no|
-|Pasword|no|
-|Picture|no|
-|Primary Key|no|
-|Readonly|no|
-|Referenced Table|[Apm_Project_Types](Apm_Project_Types.md)|
-|RTF|no|
-|Sortable|no|
-|Summary Type|None|
-|Supports EQUALS_IN|yes|
-|Type|uniqueidentifier (Allows NULL)|
-|UI Memo Editor|no|
-|UI Width|Medium|
-|User Login|no|
-|Visible|yes|
-
-#### Project_Type_Id - Supported Filters
-
-| Filter Type | Default | Include Nulls | Hidden by Default |
-| - | - | - | - |
-|Equals|`NULL`|yes|no|
 
 ### Row_Version
 

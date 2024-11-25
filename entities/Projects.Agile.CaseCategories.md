@@ -17,6 +17,10 @@ _Name_
 Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -35,12 +39,6 @@ Aggregate Tree
 | [Notes](Projects.Agile.CaseCategories.md#notes) | string (max) __nullable__ | Notes for this CaseCategory. 
 | [ObjectVersion](Projects.Agile.CaseCategories.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [Ord](Projects.Agile.CaseCategories.md#ord) | int32 | Display order of the category relative to other categories within the project type. `Required` `Default(1)` `Filter(eq)` 
-
-## References
-
-| Name | Type | Description |
-| ---- | ---- | --- |
-| [ProjectType](Projects.Agile.CaseCategories.md#projecttype) | [ProjectTypes](Projects.Agile.ProjectTypes.md) (nullable) | Specified, when only projects of certain type can have cases with this category. `Filter(multi eq)` |
 
 
 ## Attribute Details
@@ -129,19 +127,6 @@ _Default Value_: **1**
 _Show in UI_: **ShownByDefault**  
 
 
-## Reference Details
-
-### ProjectType
-
-Specified, when only projects of certain type can have cases with this category. `Filter(multi eq)`
-
-_Type_: **[ProjectTypes](Projects.Agile.ProjectTypes.md) (nullable)**  
-_Indexed_: **True**  
-_Category_: **System**  
-_Supported Filters_: **Equals, EqualsIn**  
-_Show in UI_: **ShownByDefault**  
-
-
 ## API Methods
 
 Methods that can be invoked in public APIs.
@@ -149,7 +134,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -191,7 +176,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -206,7 +191,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

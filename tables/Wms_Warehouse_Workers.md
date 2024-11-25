@@ -19,8 +19,9 @@ Human or robot worker, which can execute warehouse tasks. Entity: Wms_Warehouse_
 |[Active_To](#active_to)|`date` |The date of termination of the activity of the worker in the warehouse. Can be NULL for workers, which are still active and do not have previous terminations.|
 |[Is_Active](#is_active)|`bit` |Specifies whether the worker is active and can execute new warehouse tasks.|
 |[Notes](#notes)|`nvarchar(max)` ||
-|[Person_Id](#person_id)|`uniqueidentifier` |The definition of the person, when the worker is human worker. NULL means that the person is unknown or the worker is non-person.|
+|[Person_Id](#person_id)|`uniqueidentifier` Readonly|The definition of the person, when the worker is human worker. NULL means that the person is unknown or the worker is non-person.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[User_Id](#user_id)|`uniqueidentifier` |The user who is going to work in the selected warehouse|
 |[Warehouse_Id](#warehouse_id)|`uniqueidentifier` |The warehouse, where the worker works.|
 |[Warehouse_Worker_Id](#warehouse_worker_id)|`uniqueidentifier` `PK`||
 |[Warehouse_Worker_Name](#warehouse_worker_name)|`nvarchar(254)` `ML`|Name of the worker (multi-language).|
@@ -41,7 +42,7 @@ The date, from which the worker record has become active in the warehouse.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -78,7 +79,7 @@ The date of termination of the activity of the worker in the warehouse. Can be N
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -115,7 +116,7 @@ Specifies whether the worker is active and can execute new warehouse tasks.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -148,7 +149,7 @@ Specifies whether the worker is active and can execute new warehouse tasks.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -178,12 +179,12 @@ The definition of the person, when the worker is human worker. NULL means that t
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[Cm_Persons](Cm_Persons.md)|
 |RTF|no|
 |Sortable|no|
@@ -212,7 +213,7 @@ The definition of the person, when the worker is human worker. NULL means that t
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -228,6 +229,43 @@ The definition of the person, when the worker is human worker. NULL means that t
 |User Login|no|
 |Visible|no|
 
+### User_Id
+
+
+The user who is going to work in the selected warehouse
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Sec_Users](Sec_Users.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### User_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
 ### Warehouse_Id
 
 
@@ -242,7 +280,7 @@ The warehouse, where the worker works.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -276,7 +314,7 @@ The warehouse, where the worker works.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -312,7 +350,7 @@ Name of the worker (multi-language).
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|254|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

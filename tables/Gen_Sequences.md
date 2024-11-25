@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.Sequences](~/entities/Systems.Core.Sequences.md)
+Entity: [Systems.Documents.Sequences](~/entities/Systems.Documents.Sequences.md)
 
 Provides numbering sequences, applicable for use in a multi-threaded environment. Entity: Gen_Sequences
 

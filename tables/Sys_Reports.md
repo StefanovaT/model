@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Reporting.Reports](~/entities/Systems.Reporting.Reports.md)
+Entity: [Systems.Core.Reports](~/entities/Systems.Core.Reports.md)
 
 User-defined reports. Reports retrieve data from data sources and present it in a user-defined layout. Entity: Sys_Reports
 

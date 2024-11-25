@@ -17,6 +17,10 @@ _RentTransaction.EntityName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -32,9 +36,10 @@ Aggregate Root:
 | [DisplayText](Applications.Rental.TransactionLines.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Rental.TransactionLines.md#id) | guid |  
 | [Notes](Applications.Rental.TransactionLines.md#notes) | string (max) __nullable__ | Notes. 
+| [NumberOfPeriods](Applications.Rental.TransactionLines.md#numberofperiods) | int32 __nullable__ | Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset. `Filter(eq;ge;le)` `Introduced in version 24.1.5.21` 
 | [ObjectVersion](Applications.Rental.TransactionLines.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [TransactionTimestamp](Applications.Rental.TransactionLines.md#transactiontimestamp) | datetime | Transaction Timestamp. `Required` `Filter(multi eq;ge;le)` 
-| [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | Transaction Type. `Required` `Filter(eq;like)` 
+| [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | [TransactionType](Applications.Rental.TransactionLines.md#transactiontype) | Transaction Type. `Required` `Filter(multi eq;like)` 
 
 ## References
 
@@ -78,6 +83,18 @@ _Supports Order By_: **False**
 _Maximum Length_: **2147483647**  
 _Show in UI_: **ShownByDefault**  
 
+### NumberOfPeriods
+
+Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset. `Filter(eq;ge;le)` `Introduced in version 24.1.5.21`
+
+_Type_: **int32 __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, GreaterThanOrLessThan**  
+_Supports Order By_: **False**  
+_Show in UI_: **ShownByDefault**  
+
+_Front-End Recalc Expressions:_  
+`obj.CalculateNumberOfPeriods( obj.RentalAsset, obj.TransactionTimestamp, obj.TransactionType, obj.LeaseContract)`
 ### ObjectVersion
 
 The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.
@@ -100,7 +117,7 @@ _Show in UI_: **ShownByDefault**
 
 ### TransactionType
 
-Transaction Type. `Required` `Filter(eq;like)`
+Transaction Type. `Required` `Filter(multi eq;like)`
 
 _Type_: **[TransactionType](Applications.Rental.TransactionLines.md#transactiontype)**  
 _Category_: **System**  
@@ -114,7 +131,7 @@ _Allowed Values (Applications.Rental.TransactionLinesRepository.TransactionType 
 | WriteOffNotReturned | WriteOffNotReturned value. Stored as 'W'. <br /> _Database Value:_ 'W' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'WriteOffNotReturned' |
 | StatusReport | StatusReport value. Stored as 'S'. <br /> _Database Value:_ 'S' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'StatusReport' |
 
-_Supported Filters_: **Equals, Like**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
 _Supports Order By_: **False**  
 _Show in UI_: **ShownByDefault**  
 
@@ -166,7 +183,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -208,7 +225,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -223,7 +240,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

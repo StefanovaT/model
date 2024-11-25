@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.PromotionalPackages](~/entities/Crm.PromotionalPackages.md)
+Entity: [Crm.Pricing.PromotionalPackages](~/entities/Crm.Pricing.PromotionalPackages.md)
 
 Promotional packages are packages of products, which are sold together at a special pricing and discount conditions. Entity: Crm_Promotional_Packages
 

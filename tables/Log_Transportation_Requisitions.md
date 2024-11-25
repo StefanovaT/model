@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationRequisitions](~/entities/Logistics.Shipment.TransportationRequisitions.md)
+Entity: [Logistics.Transportation.TransportationRequisitions](~/entities/Logistics.Transportation.TransportationRequisitions.md)
 
 Client requisition for transportation. Entity: Log_Transportation_Requisitions
 

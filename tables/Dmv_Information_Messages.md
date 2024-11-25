@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.InformationMessages](~/entities/Systems.Dmv.InformationMessages.md)
+Entity: [Systems.Monitoring.InformationMessagesSummary](~/entities/Systems.Monitoring.InformationMessagesSummary.md)
 
 Information abount types of information messages. Entity: Dmv_Information_Messages (Introduced in version 24.1.1.68)
 

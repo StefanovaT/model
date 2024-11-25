@@ -18,7 +18,11 @@ Name Data Member:
 _Party.PartyName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _SupplierTypeId_  
+Layout category attribute:  _SupplierTypeId_  
+
+## Track Changes  
+Min level:  _1 - Track last changes only_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,7 +53,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [DefaultCurrency](Logistics.Procurement.Suppliers.md#defaultcurrency) | [Currencies](General.Currencies.md) (nullable) | The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)` |
+| [DefaultCurrency](Logistics.Procurement.Suppliers.md#defaultcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)` |
 | [DefaultPaymentAccount](Logistics.Procurement.Suppliers.md#defaultpaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | When not null, specifies the default payment account which should be used for new purchase document for this supplier. `Filter(multi eq)` |
 | [DefaultPaymentType](Logistics.Procurement.Suppliers.md#defaultpaymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | When not null, specifies the default payment type which should be used for new purchase document for this supplier. `Filter(multi eq)` |
 | [DefaultPurchasePriceList](Logistics.Procurement.Suppliers.md#defaultpurchasepricelist) | [PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) (nullable) | The default purchase price list, which shall be used for new purchase documents for this supplier. `Filter(multi eq)` |
@@ -217,7 +221,7 @@ _Show in UI_: **HiddenByDefault**
 
 The default currency for purchases from this supplier. null means there is no default. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -286,7 +290,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -328,7 +332,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -343,7 +347,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

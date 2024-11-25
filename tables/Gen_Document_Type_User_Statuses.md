@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeUserStatuses](~/entities/General.DocumentTypeUserStatuses.md)
+Entity: [Systems.Documents.DocumentTypeUserStatuses](~/entities/Systems.Documents.DocumentTypeUserStatuses.md)
 
 User-defined document statuses. Entity: Gen_Document_Type_User_Statuses
 
@@ -18,12 +18,12 @@ User-defined document statuses. Entity: Gen_Document_Type_User_Statuses
 |[Active](#active)|`bit` |Is the user status active for applying to documents|
 |[Display_Order](#display_order)|`int` |Consecutive display order of the status, with regard to other statuses within the same document type|
 |[Document_Type_Id](#document_type_id)|`uniqueidentifier` |The document type, to which this user status is bound|
-|[Instructions](#instructions)|`nvarchar(max)` |Instructions what should be done when this user status is active (Rich Text)|
+|[Instructions](#instructions)|`nvarchar(max)` `ML`|Instructions what should be done when this user status is active (Rich Text)|
 |[Is_Exit_Status](#is_exit_status)|`bit` |1 when the status allows going to the next system status, 0 otherwise. For example for system status Firm Planned, only user status Approved might allow going to Released|
 |[Row_Version](#row_version)|`timestamp` ||
 |[State](#state)|`smallint` Allowed: `10`, `20`, `30`, `40`, `50`|The system state to which this user status is bound|
 |[User_Status_Id](#user_status_id)|`uniqueidentifier` `PK`||
-|[User_Status_Name](#user_status_name)|`nvarchar(128)` |Multi-language name of the user status|
+|[User_Status_Name](#user_status_name)|`nvarchar(128)` `ML`|Multi-language name of the user status|
 
 ## Columns
 
@@ -157,11 +157,11 @@ Instructions what should be done when this user status is active (Rich Text)
 |Picture|no|
 |Primary Key|no|
 |Readonly|no|
-|RTF|yes|
+|RTF|no|
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(max) (Allows NULL)|
+|Type|nvarchar(max) (MultiLanguage) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -324,7 +324,7 @@ Multi-language name of the user status
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(128)|
+|Type|nvarchar(128) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

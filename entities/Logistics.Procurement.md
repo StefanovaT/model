@@ -4,6 +4,7 @@ uid: Logistics.Procurement
 # Logistics.Procurement Namespace
 
 ## Entities
+- [ProductSupply](Logistics.Procurement.ProductSupply.md)  
 - [PurchaseControlDocumentLines](Logistics.Procurement.PurchaseControlDocumentLines.md)  
 - [PurchaseControlDocuments](Logistics.Procurement.PurchaseControlDocuments.md)  
 - [PurchaseInvoiceLines](Logistics.Procurement.PurchaseInvoiceLines.md)  

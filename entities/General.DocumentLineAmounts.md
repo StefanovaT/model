@@ -40,7 +40,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Document](General.DocumentLineAmounts.md#document) | [Documents](General.Documents.md) | The <see cref="Document"/> to which this DocumentLineAmount belongs. `Required` `Filter(multi eq)` `Owner` |
-| [DocumentAmountType](General.DocumentLineAmounts.md#documentamounttype) | [DocumentAmountTypes](General.DocumentAmountTypes.md) | The type of amount for which the distribution pattern is specified. `Required` `Filter(multi eq)` |
+| [DocumentAmountType](General.DocumentLineAmounts.md#documentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) | The type of amount for which the distribution pattern is specified. `Required` `Filter(multi eq)` |
 | [Product](General.DocumentLineAmounts.md#product) | [Products](General.Products.Products.md) | The product for which the distribution is specified. It is also the product, specified in the document line, but is duplicated here for integrity purposes. `Required` `Filter(multi eq)` |
 | [ReferencedDocument](General.DocumentLineAmounts.md#referenceddocument) | [Documents](General.Documents.md) (nullable) | When not null, specifies that this distribution is specified for a referenced document (not the document for which the amount is calculated). `Filter(multi eq)` |
 
@@ -114,7 +114,7 @@ _Show in UI_: **CannotBeShown**
 
 The type of amount for which the distribution pattern is specified. `Required` `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -146,7 +146,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -188,7 +188,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -203,7 +203,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -18,7 +18,11 @@ Name Data Member:
 _RentalAssetName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _RentalAssetTypeId_  
+Layout category attribute:  _RentalAssetTypeId_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -39,7 +43,7 @@ Aggregate Tree
 | [RentalAssetCode](Applications.Rental.Assets.md#rentalassetcode) | string (20) | Unique rental asset code. `Required` `Filter(eq;like)` `ORD` 
 | [RentalAssetName](Applications.Rental.Assets.md#rentalassetname) | string (254) | The name of the rental asset. `Required` `Filter(like)` 
 | [StandardGuaranteeAmount](Applications.Rental.Assets.md#standardguaranteeamount) | [Amount (14, 2)](../data-types.md#amount) __nullable__ | Standard default amount of the guarantee that is set for this asset when leased. `Currency: StandardGuarantee<br />AmountCurrency` `Filter(multi eq)` 
-| [TimePeriodType](Applications.Rental.Assets.md#timeperiodtype) | [TimePeriodType](Applications.Rental.Assets.md#timeperiodtype) __nullable__ | Specifies the unit by which the periods of renting of this asset are measured. Possible values are: 'by days' or 'by months'. `Filter(multi eq)` 
+| [TimePeriodType](Applications.Rental.Assets.md#timeperiodtype) | [TimePeriodType](Applications.Rental.Assets.md#timeperiodtype) __nullable__ | Specifies the unit by which the periods of renting of this asset are measured. `Filter(multi eq)` 
 
 ## References
 
@@ -53,7 +57,7 @@ Aggregate Tree
 | [RentalAssetType](Applications.Rental.Assets.md#rentalassettype) | [AssetTypes](Applications.Rental.AssetTypes.md) | The type of the asset. `Required` `Filter(multi eq)` |
 | [SalesProduct](Applications.Rental.Assets.md#salesproduct) | [Products](General.Products.Products.md) (nullable) | Product which is used in the creation of Sales Orders to form the price of the service of renting this asset. `Filter(multi eq)` |
 | [SerialNumber](Applications.Rental.Assets.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | Serial number which in conjunction with the product for store operations allows for more accurate identification of the asset. `Filter(multi eq)` |
-| [StandardGuarantee<br />AmountCurrency](Applications.Rental.Assets.md#standardguaranteeamountcurrency) | [Currencies](General.Currencies.md) (nullable) | Currency of the standard guarantee amount. `Filter(multi eq)` |
+| [StandardGuarantee<br />AmountCurrency](Applications.Rental.Assets.md#standardguaranteeamountcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | Currency of the standard guarantee amount. `Filter(multi eq)` |
 | [WorkSchedule](Applications.Rental.Assets.md#workschedule) | [WorkSchedules](General.Resources.WorkSchedules.md) (nullable) | Work schedule, which is used to calculate how many days this assets has been rented for (used only when the asset's lease by mode is by days). `Filter(multi eq)` |
 
 ## Child Collections
@@ -151,7 +155,7 @@ _Show in UI_: **ShownByDefault**
 
 ### TimePeriodType
 
-Specifies the unit by which the periods of renting of this asset are measured. Possible values are: 'by days' or 'by months'. `Filter(multi eq)`
+Specifies the unit by which the periods of renting of this asset are measured. `Filter(multi eq)`
 
 _Type_: **[TimePeriodType](Applications.Rental.Assets.md#timeperiodtype) __nullable__**  
 _Category_: **System**  
@@ -160,8 +164,10 @@ _Allowed Values (Applications.Rental.AssetsRepository.TimePeriodType Enum Member
 
 | Value | Description |
 | ---- | --- |
-| Days | Days value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Days' |
+| OvernightStays | OvernightStays value. Stored as 'D'. <br /> _Database Value:_ 'D' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'OvernightStays' |
 | Months | Months value. Stored as 'M'. <br /> _Database Value:_ 'M' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Months' |
+| FullDays | Total count of complete days.. Stored as 'F'. <br /> _Database Value:_ 'F' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'FullDays' |
+| v_24HourPeriods | Started 24-hour periods.. Stored as 'H'. <br /> _Database Value:_ 'H' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'v_24HourPeriods' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
@@ -251,7 +257,7 @@ _Front-End Recalc Expressions:_
 
 Currency of the standard guarantee amount. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -273,7 +279,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -315,7 +321,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -330,7 +336,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

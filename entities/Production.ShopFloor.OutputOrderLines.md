@@ -15,6 +15,10 @@ _OutputOrder.DocumentNo_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -50,7 +54,7 @@ Aggregate Root:
 | [LineWorkOrder](Production.ShopFloor.OutputOrderLines.md#lineworkorder) | [WorkOrders](Production.ShopFloor.WorkOrders.md) | The work order for which work is being accounted. `Required` `Filter(multi eq)` |
 | [Lot](Production.ShopFloor.OutputOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot of the produced product. `Filter(multi eq)` |
 | [OutputOrder](Production.ShopFloor.OutputOrderLines.md#outputorder) | [OutputOrders](Production.ShopFloor.OutputOrders.md) | The <see cref="OutputOrder"/> to which this OutputOrderLine belongs. `Required` `Filter(multi eq)` `Owner` |
-| [ProducedQuantityUnit](Production.ShopFloor.OutputOrderLines.md#producedquantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of Produced Quantity. `Required` `Filter(multi eq)` |
+| [ProducedQuantityUnit](Production.ShopFloor.OutputOrderLines.md#producedquantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of Produced Quantity. `Required` `Filter(multi eq)` |
 | [Product](Production.ShopFloor.OutputOrderLines.md#product) | [Products](General.Products.Products.md) | The actually produced product. `Required` `Filter(multi eq)` |
 | [ProductCode](Production.ShopFloor.OutputOrderLines.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Selects the product thru some of the product codes. `Filter(multi eq)` |
 | [SerialNumber](Production.ShopFloor.OutputOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | If not null, specifies that the product was (has to be) stored with specific serial number. `Filter(multi eq)` |
@@ -282,7 +286,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit of Produced Quantity. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -387,7 +391,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -429,7 +433,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -444,7 +448,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -15,6 +15,10 @@ _WorkOrder.DocumentNo_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -52,8 +56,8 @@ Aggregate Root:
 | [Document](Production.ShopFloor.WorkOrderItems.md#document) | [WorkOrders](Production.ShopFloor.WorkOrders.md) | The Id of the work order, containing the item. `Required` `Filter(multi eq)` |
 | [Lot](Production.ShopFloor.WorkOrderItems.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot of the produced product. `Filter(multi eq)` |
 | [OutputStore](Production.ShopFloor.WorkOrderItems.md#outputstore) | [Stores](Logistics.Inventory.Stores.md) (nullable) | Output store for the production. `Filter(multi eq)` |
-| [ParentDocument](Production.ShopFloor.WorkOrderItems.md#parentdocument) | [Documents](General.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
-| [ProducedQuantityUnit](Production.ShopFloor.WorkOrderItems.md#producedquantityunit) | [MeasurementUnits](General.MeasurementUnits.md) | The measurement unit of the quantity produced in the operation. `Required` `Filter(multi eq)` |
+| [ParentDocument](Production.ShopFloor.WorkOrderItems.md#parentdocument) | [Documents](General.Documents.Documents.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` |
+| [ProducedQuantityUnit](Production.ShopFloor.WorkOrderItems.md#producedquantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) | The measurement unit of the quantity produced in the operation. `Required` `Filter(multi eq)` |
 | [Product](Production.ShopFloor.WorkOrderItems.md#product) | [Products](General.Products.Products.md) | The Id of the produced product. `Required` `Filter(multi eq)` |
 | [ProductCode](Production.ShopFloor.WorkOrderItems.md#productcode) | [ProductCodes](General.Products.ProductCodes.md) (nullable) | Selects the product thru some of the product codes. `Filter(multi eq)` |
 | [Recipe](Production.ShopFloor.WorkOrderItems.md#recipe) | [Recipes](Production.Technologies.Recipes.md) (nullable) | The base recipe. null means that the item is produced without recipe. `Filter(multi eq)` |
@@ -327,7 +331,7 @@ _Front-End Recalc Expressions:_
 
 The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md) (nullable)**  
+_Type_: **[Documents](General.Documents.Documents.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -337,7 +341,7 @@ _Show in UI_: **HiddenByDefault**
 
 The measurement unit of the quantity produced in the operation. `Required` `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -424,7 +428,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -466,7 +470,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -481,7 +485,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

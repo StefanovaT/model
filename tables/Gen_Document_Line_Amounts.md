@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentLineAmounts](~/entities/General.DocumentLineAmounts.md)
+Entity: [General.Documents.DocumentLineAmounts](~/entities/General.Documents.DocumentLineAmounts.md)
 
 Specifies user-defined input percentages by lines for the document amounts. Entity: Gen_Document_Line_Amounts
 

@@ -17,7 +17,7 @@ Contains the serviceable objects. The service objects can be covered by service 
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Product_Id](#product_id)|`uniqueidentifier` |When not-NULL identifies the product, from which the service object was created|
 |[Row_Version](#row_version)|`timestamp` ||
-|[Serial_Number](#serial_number)|`nvarchar(32)` |The serial number of the item, that is being serviced|
+|[Serial_Number](#serial_number)|`nvarchar(32)` |The serial number of the item, that is being serviced.|
 |[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` |Serial number for the product, that corresponds to this service object. If there is no product, then the other field for 'Serial number' is used to specify this data.|
 |[Service_Object_Id](#service_object_id)|`uniqueidentifier` `PK`||
 |[Service_Object_Name](#service_object_name)|`nvarchar(254)` ||
@@ -228,7 +228,7 @@ When not-NULL identifies the product, from which the service object was created
 ### Serial_Number
 
 
-The serial number of the item, that is being serviced
+The serial number of the item, that is being serviced.
 
 | Property | Value |
 | - | - |

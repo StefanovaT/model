@@ -9,13 +9,17 @@ Contains vehicle definitions. Entity: Fleet_Vehicles
 
 ## Default Visualization
 Default Display Text Format:  
-_{EngineIdentificationNumber}_  
+_{VehicleRegistrationNumber}_  
 Default Search Members:  
-_EngineIdentificationNumber_  
+_VehicleRegistrationNumber_  
 Code Data Member:  
-_EngineIdentificationNumber_  
+_VehicleRegistrationNumber_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -23,7 +27,7 @@ An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a
 Aggregate Tree  
 * [Applications.Fleet.Vehicles](Applications.Fleet.Vehicles.md)  
   * [Applications.Fleet.VehicleEquipment](Applications.Fleet.VehicleEquipment.md)  
-  * [Logistics.Shipment.TransportationVehicles](Logistics.Shipment.TransportationVehicles.md)  
+  * [Logistics.Transportation.TransportationVehicles](Logistics.Transportation.TransportationVehicles.md)  
 
 ## Attributes
 
@@ -64,10 +68,10 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [EnterpriseCompany](Applications.Fleet.Vehicles.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company that manages thе Vehicle. `Filter(multi eq)` `Introduced in version 24.1.4.79` |
-| [FuelMeasurementUnit](Applications.Fleet.Vehicles.md#fuelmeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. `Filter(multi eq)` |
+| [FuelMeasurementUnit](Applications.Fleet.Vehicles.md#fuelmeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. `Filter(multi eq)` |
 | [MaintenanceProfile](Applications.Fleet.Vehicles.md#maintenanceprofile) | [MaintenanceProfiles](Applications.Fleet.MaintenanceProfiles.md) (nullable) | When not null, specifies, that the vehicle should be maintained according to the specified profile. Assigning a profile creates plan assignments for the vehicle. Ultimately, the specific plan assignments are taken into consideration, when planning vehicle maintenance. The profile is only for conveniently assigning multiple plans. `Filter(multi eq)` |
 | [ManagedAsset](Applications.Fleet.Vehicles.md#managedasset) | [ManagedAssets](Applications.AssetManagement.ManagedAssets.md) (nullable) | Link to a managed asset definition from the asset management module. It is used to manage, track and maintain the asset. `Filter(multi eq)` `Introduced in version 24.1.4.74` |
-| [OperationalMeasurementUnit](Applications.Fleet.Vehicles.md#operationalmeasurementunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit in which the operation of the vehicle is measured. E.g. km for automobiles, hrs for airplanes, etc. null means that the unit is unknown. `Filter(multi eq)` |
+| [OperationalMeasurementUnit](Applications.Fleet.Vehicles.md#operationalmeasurementunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | The measurement unit in which the operation of the vehicle is measured. E.g. km for automobiles, hrs for airplanes, etc. null means that the unit is unknown. `Filter(multi eq)` |
 | [OwnerParty](Applications.Fleet.Vehicles.md#ownerparty) | [Parties](General.Contacts.Parties.md) (nullable) | Vehicle owner. `Filter(multi eq)` |
 
 ## Child Collections
@@ -75,7 +79,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | Equipment | [VehicleEquipment](Applications.Fleet.VehicleEquipment.md) | List of `VehicleEquipment`(Applications.Fleet.VehicleEquipment.md) child objects, based on the `Applications.Fleet.VehicleEquipment.Vehicle`(Applications.Fleet.VehicleEquipment.md#vehicle) back reference 
-| TransportationVehicles | [TransportationVehicles](Logistics.Shipment.TransportationVehicles.md) | List of `TransportationVehicle`(Logistics.Shipment.TransportationVehicles.md) child objects, based on the `Logistics.Shipment.TransportationVehicle.Vehicle`(Logistics.Shipment.TransportationVehicles.md#vehicle) back reference 
+| TransportationVehicles | [TransportationVehicles](Logistics.Transportation.TransportationVehicles.md) | List of `TransportationVehicle`(Logistics.Transportation.TransportationVehicles.md) child objects, based on the `Logistics.Transportation.TransportationVehicle.Vehicle`(Logistics.Transportation.TransportationVehicles.md#vehicle) back reference 
 
 
 ## Attribute Details
@@ -392,7 +396,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit in which the fuel is measured. E.g. liters for automobiles, Watt-hours for electrics, etc. null means unknown. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -420,7 +424,7 @@ _Show in UI_: **ShownByDefault**
 
 The measurement unit in which the operation of the vehicle is measured. E.g. km for automobiles, hrs for airplanes, etc. null means that the unit is unknown. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -442,7 +446,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -484,7 +488,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -499,7 +503,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

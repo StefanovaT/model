@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Workflow.Routes](~/entities/Systems.Workflow.Routes.md)
+Entity: [Systems.Documents.Routes](~/entities/Systems.Documents.Routes.md)
 
 Contains document routes, which specify which document generation procedures will be run upon document events. Entity: Wf_Routes
 
@@ -280,6 +280,12 @@ The system states for which to execute the specified route.
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Condition_States_Bit_Mask - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Like|None|no|no|
 
 ### Condition_User_Status_Id
 
@@ -609,6 +615,7 @@ The negative condition should NOT be matched by the document in order to execute
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|yes|
 |Default Value|None|
@@ -750,6 +757,12 @@ Event which triggers the route. Usually the event is change of state. Every docu
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Process_Event - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Read_Only
 

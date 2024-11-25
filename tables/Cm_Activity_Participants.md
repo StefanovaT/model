@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.ActivityParticipants](~/entities/General.Contacts.ActivityParticipants.md)
+Entity: [General.Activities.ActivityParticipants](~/entities/General.Activities.ActivityParticipants.md)
 
 Contains the additional participants in the activities. These are the participating users, besides the user to which the activitiy is assigned. Entity: Cm_Activity_Participants
 
@@ -18,9 +18,11 @@ Contains the additional participants in the activities. These are the participat
 | - | - | --- |
 |[Activity_Id](#activity_id)|`uniqueidentifier` ||
 |[Activity_Participant_Id](#activity_participant_id)|`uniqueidentifier` `PK`||
+|[Email](#email)|`nvarchar(254)` |Participant email. Used to identify the participant and is required when syncing with external services.|
 |[Notes](#notes)|`nvarchar(255)` ||
 |[Participant_Person_Id](#participant_person_id)|`uniqueidentifier` |The person, participating in an activity|
 |[Row_Version](#row_version)|`timestamp` ||
+|[User_Id](#user_id)|`uniqueidentifier` |The user associated with the Person participating in the activity.|
 |[Work_Load_Percent](#work_load_percent)|`decimal(3, 2)` |The planned work load of the participant for this activity.|
 
 ## Columns
@@ -36,7 +38,7 @@ Contains the additional participants in the activities. These are the participat
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -70,7 +72,7 @@ Contains the additional participants in the activities. These are the participat
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -92,6 +94,43 @@ Contains the additional participants in the activities. These are the participat
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 
+### Email
+
+
+Participant email. Used to identify the participant and is required when syncing with external services.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|254|
+|Order|6|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|nvarchar(254) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Email - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|Like|None|no|no|
+
 ### Notes
 
 | Property | Value |
@@ -104,7 +143,7 @@ Contains the additional participants in the activities. These are the participat
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|255|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -134,7 +173,7 @@ The person, participating in an activity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -145,7 +184,7 @@ The person, participating in an activity
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|yes|
-|Type|uniqueidentifier|
+|Type|uniqueidentifier (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -155,7 +194,7 @@ The person, participating in an activity
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
-|Equals|`NULL`|no|no|
+|Equals|`NULL`|yes|no|
 
 ### Row_Version
 
@@ -168,7 +207,7 @@ The person, participating in an activity
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -183,6 +222,43 @@ The person, participating in an activity
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### User_Id
+
+
+The user associated with the Person participating in the activity.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|7|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Sec_Users](Sec_Users.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### User_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Work_Load_Percent
 
@@ -199,7 +275,7 @@ The planned work load of the participant for this activity.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.PromotionalPackageLines](~/entities/Crm.PromotionalPackageLines.md)
+Entity: [Crm.Pricing.PromotionalPackageLines](~/entities/Crm.Pricing.PromotionalPackageLines.md)
 
 Detail records (lines) of promotional package definition. Entity: Crm_Promotional_Package_Lines
 

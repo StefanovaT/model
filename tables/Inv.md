@@ -3,6 +3,7 @@
 * [Inv_Cost_Correction_Lines](Inv_Cost_Correction_Lines.md)
 * [Inv_Cost_Corrections](Inv_Cost_Corrections.md)
 * [Inv_Cost_Corrections_Options](Inv_Cost_Corrections_Options.md)
+* [Inv_Current_Balance_Adjusted_Costs](Inv_Current_Balance_Adjusted_Costs.md)
 * [Inv_Current_Balances](Inv_Current_Balances.md)
 * [Inv_Demand_Management_ATP](Inv_Demand_Management_ATP.md)
 * [Inv_Demand_Management_ATP_By_Lots](Inv_Demand_Management_ATP_By_Lots.md)

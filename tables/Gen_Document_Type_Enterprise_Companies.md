@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeEnterpriseCompanies](~/entities/General.DocumentTypeEnterpriseCompanies.md)
+Entity: [Systems.Documents.DocumentTypeEnterpriseCompanies](~/entities/Systems.Documents.DocumentTypeEnterpriseCompanies.md)
 
 Specifies the visibility (availability) of the document type for the different enterprise companies. Entity: Gen_Document_Type_Enterprise_Companies
 

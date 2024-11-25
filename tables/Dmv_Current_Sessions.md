@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.CurrentSessions](~/entities/Systems.Dmv.CurrentSessions.md)
+Entity: [Systems.Monitoring.CurrentSessions](~/entities/Systems.Monitoring.CurrentSessions.md)
 
 Sessions dynamic management view. Entity: Dmv_Current_Sessions (Introduced in version 23.1.1.52)
 

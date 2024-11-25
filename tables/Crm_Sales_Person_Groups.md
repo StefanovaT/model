@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.Distribution.SalesPersonGroups](~/entities/Crm.Distribution.SalesPersonGroups.md)
+Entity: [Crm.SalesForce.SalesPersonGroups](~/entities/Crm.SalesForce.SalesPersonGroups.md)
 
 Hierarchical sales person grouping. Entity: Crm_Sales_Person_Groups
 

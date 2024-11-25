@@ -16,9 +16,9 @@ Case Development. Entity: Apm_Case_Developments (Introduced in version 24.1.3.81
 |[Case_Id](#case_id)|`uniqueidentifier` |The case of the case development|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact date and time (in UTC) when the development was created|
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` Readonly|The user, who created the development.|
-|[Description](#description)|`nvarchar(max)` `ML`|Detailed description of the development.|
-|[Development_Type](#development_type)|`nvarchar(3)` Allowed: `EDT`, `ASN`, `STA`, Readonly|Type of the development - Edit, Assignment, Resolve, etc.|
-|[New_System_State](#new_system_state)|`nvarchar(1)` Allowed: `0`, `1`, `2`, `3`, `4`|When the development incurred changing the state of the case, contains the new state.|
+|[Description](#description)|`nvarchar(max)` |Detailed description of the development.|
+|[Development_Type](#development_type)|`nvarchar(3)` Allowed: `EDT`, `ASN`, `STA`, `ASH`, `STH`, Readonly|Type of the development - Edit, Assignment, Resolve, etc.|
+|[New_System_State](#new_system_state)|`nvarchar(1)` Allowed: `1`, `2`, `3`, `4`, `5`, `6`, `7`|When the development incurred changing the state of the case, contains the new state.|
 |[Row_Version](#row_version)|`timestamp` ||
 
 ## Columns
@@ -230,8 +230,8 @@ Detailed description of the development.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(max) (MultiLanguage) (Allows NULL)|
-|UI Memo Editor|no|
+|Type|nvarchar(max) (Allows NULL)|
+|UI Memo Editor|yes|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
@@ -249,7 +249,7 @@ Type of the development - Edit, Assignment, Resolve, etc.
 
 | Property | Value |
 | - | - |
-|Allowed Values|`EDT`, `ASN`, `STA`|
+|Allowed Values|`EDT`, `ASN`, `STA`, `ASH`, `STH`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|EDT|
@@ -286,7 +286,7 @@ When the development incurred changing the state of the case, contains the new s
 
 | Property | Value |
 | - | - |
-|Allowed Values|`0`, `1`, `2`, `3`, `4`|
+|Allowed Values|`1`, `2`, `3`, `4`, `5`, `6`, `7`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

@@ -15,6 +15,10 @@ __
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -92,6 +96,8 @@ _Allowed Values (Projects.Agile.CaseDevelopmentsRepository.DevelopmentType Enum 
 | Edit | Edit. Stored as 'EDT'. <br /> _Database Value:_ 'EDT' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'Edit' |
 | Assignment | Assignment . Stored as 'ASN'. <br /> _Database Value:_ 'ASN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Assignment' |
 | ChangeState | Change state. Stored as 'STA'. <br /> _Database Value:_ 'STA' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'ChangeState' |
+| AssignmentH | Assignment. Stored as 'ASH'. <br /> _Database Value:_ 'ASH' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'AssignmentH' |
+| ChangeStateH | Change state. Stored as 'STH'. <br /> _Database Value:_ 'STH' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'ChangeStateH' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
@@ -128,11 +134,13 @@ _Allowed Values (Projects.Agile.CasesRepository.SystemState Enum Members)_
 
 | Value | Description |
 | ---- | --- |
-| QUEUED | QUEUED value. Stored as '0'. <br /> _Database Value:_ '0' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'QUEUED' |
-| ACTIVE | ACTIVE value. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'ACTIVE' |
-| WAITING | WAITING value. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'WAITING' |
-| RESOLVED | RESOLVED value. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'RESOLVED' |
-| CLOSED | CLOSED value. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'CLOSED' |
+| BACKLOG | BACKLOG. Stored as '1'. <br /> _Database Value:_ '1' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'BACKLOG' |
+| CONSIDER | CONSIDER. Stored as '2'. <br /> _Database Value:_ '2' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'CONSIDER' |
+| READY | READY. Stored as '3'. <br /> _Database Value:_ '3' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'READY' |
+| INPROGRESS | IN PROGRESS. Stored as '4'. <br /> _Database Value:_ '4' <br /> _Model Value:_ 3 <br /> _Domain API Value:_ 'INPROGRESS' |
+| WAITING | WAITING. Stored as '5'. <br /> _Database Value:_ '5' <br /> _Model Value:_ 4 <br /> _Domain API Value:_ 'WAITING' |
+| RESOLVED | RESOLVED. Stored as '6'. <br /> _Database Value:_ '6' <br /> _Model Value:_ 5 <br /> _Domain API Value:_ 'RESOLVED' |
+| CLOSED | CLOSED. Stored as '7'. <br /> _Database Value:_ '7' <br /> _Model Value:_ 6 <br /> _Domain API Value:_ 'CLOSED' |
 
 _Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
@@ -189,7 +197,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -231,7 +239,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -246,7 +254,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

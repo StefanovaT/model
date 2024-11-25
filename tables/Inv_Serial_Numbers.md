@@ -7,6 +7,10 @@ Entity: [Logistics.Inventory.SerialNumbers](~/entities/Logistics.Inventory.Seria
 
 Serial numbers, used by the items. Rows are created on first occurrence of the serial number in a document. Rows can be deleted after deleting the last occurence of the serial number in a document. Entity: Inv_Serial_Numbers
 
+## Owner Tables Hierarchy
+
+* [Gen_Products](Gen_Products.md)
+
 ## Summary
 
 | Name | Type | Description |
@@ -69,7 +73,7 @@ The product, to which the serial number is bound
 |Is Entity Name|no|
 |Max Length|-1|
 |Order|2147483647|
-|Ownership Reference|no|
+|Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|

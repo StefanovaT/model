@@ -17,6 +17,10 @@ _TaskName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -46,7 +50,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Activity](Projects.Classic.ProjectTasks.md#activity) | [Activities](General.Contacts.Activities.md) (nullable) | The Id of the Cm_Activity created for this task. null means that activity is still not created. `Filter(multi eq)` |
+| [Activity](Projects.Classic.ProjectTasks.md#activity) | [Activities](General.Activities.Activities.md) (nullable) | The Id of the Cm_Activity created for this task. null means that activity is still not created. `Filter(multi eq)` |
 | [Project](Projects.Classic.ProjectTasks.md#project) | [Projects](Projects.Classic.Projects.md) | The project, to which this task belongs. `Required` `Filter(multi eq)` |
 | [ProjectWorkElement](Projects.Classic.ProjectTasks.md#projectworkelement) | [ProjectWorkElements](Projects.Classic.ProjectWorkElements.md) | The work element under which the task is filed. `Required` `Filter(multi eq)` |
 | [Resource](Projects.Classic.ProjectTasks.md#resource) | [Resources](Projects.Classic.Resources.md) (nullable) | The resource, which is required for the task. null means - do not plan any resource. `Filter(multi eq)` |
@@ -179,7 +183,7 @@ _Show in UI_: **ShownByDefault**
 
 The Id of the Cm_Activity created for this task. null means that activity is still not created. `Filter(multi eq)`
 
-_Type_: **[Activities](General.Contacts.Activities.md) (nullable)**  
+_Type_: **[Activities](General.Activities.Activities.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **CannotBeShown**  
@@ -247,7 +251,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -289,7 +293,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -304,7 +308,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -36,7 +36,7 @@ Invoices issued by the enterprise companies. Entity: Crm_Invoices
 |[Payment_Account_Id](#payment_account_id)|`uniqueidentifier` |When not NULL, specifies the default payment account for the payment order|
 |[Payment_Due_Date](#payment_due_date)|`datetime` |When not NULL specifies due date for the payment|
 |[Payment_Due_Start_Date](#payment_due_start_date)|`datetime` ||
-|[Payment_Type_Description](#payment_type_description)|`nvarchar(20)` `ML`|Description of the payment type. Initially copied from the name of the Payment Type|
+|[Payment_Type_Description](#payment_type_description)|`nvarchar(254)` `ML`|Description of the payment type. Initially copied from the name of the Payment Type|
 |[Payment_Type_Id](#payment_type_id)|`uniqueidentifier` |When not NULL specifies the payment type for the invoice|
 |[Row_Version](#row_version)|`timestamp` ||
 |[VAT_Cash_Reporting_Mode](#vat_cash_reporting_mode)|`bit` |When true, specifies, that the special cash reporting mode should be used for VAT reporting. When false, the normal (classic) VAT reporting is used.|
@@ -771,7 +771,7 @@ Description of the payment type. Initially copied from the name of the Payment T
 |Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|20|
+|Max Length|254|
 |Order|4|
 |Ownership Reference|no|
 |Pasword|no|
@@ -782,7 +782,7 @@ Description of the payment type. Initially copied from the name of the Payment T
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(20) (MultiLanguage)|
+|Type|nvarchar(254) (MultiLanguage)|
 |UI Memo Editor|no|
 |UI Width|100|
 |User Login|no|

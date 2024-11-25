@@ -18,7 +18,11 @@ Name Data Member:
 _Party.PartyName_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
-Object category attribute:  _CustomerTypeId_  
+Layout category attribute:  _CustomerTypeId_  
+
+## Track Changes  
+Min level:  _1 - Track last changes only_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -57,14 +61,14 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [CollectionsResponsible<br />Employee](Crm.Customers.md#collectionsresponsibleemployee) | [CompanyEmployees](General.Contacts.CompanyEmployees.md) (nullable) | The employee, who is responsible for the collections from the customer. `Filter(multi eq)` |
 | [CustomerType](Crm.Customers.md#customertype) | [CustomerTypes](Crm.CustomerTypes.md) (nullable) | The user-defined type of this customer. null when there is no specific type. Record-level security from the customer type is applied to the individual customers and can be used for security purposes. `Filter(multi eq)` |
-| [DefaultCurrency](Crm.Customers.md#defaultcurrency) | [Currencies](General.Currencies.md) (nullable) | The default currency to use when creating new documents for this customer. `Filter(multi eq)` |
+| [DefaultCurrency](Crm.Customers.md#defaultcurrency) | [Currencies](General.Currencies.Currencies.md) (nullable) | The default currency to use when creating new documents for this customer. `Filter(multi eq)` |
 | [DefaultDistributionChannel](Crm.Customers.md#defaultdistributionchannel) | [DistributionChannels](Crm.Marketing.DistributionChannels.md) (nullable) | The default distribution channel used when selling to the customer. `Filter(multi eq)` |
 | [DefaultPaymentAccount](Crm.Customers.md#defaultpaymentaccount) | [PaymentAccounts](Finance.Payments.PaymentAccounts.md) (nullable) | The default payment account to use when creating new documents for this customer. `Filter(multi eq)` |
 | [DefaultPaymentType](Crm.Customers.md#defaultpaymenttype) | [PaymentTypes](Finance.Payments.PaymentTypes.md) (nullable) | If not null, specifies default payment type for the sales, offers and invoices for this customer. `Filter(multi eq)` |
-| [DefaultPriceList](Crm.Customers.md#defaultpricelist) | [PriceLists](Crm.PriceLists.md) (nullable) | If not null, specifies default price list when selling to this customer. `Filter(multi eq)` |
+| [DefaultPriceList](Crm.Customers.md#defaultpricelist) | [PriceLists](Crm.Pricing.PriceLists.md) (nullable) | If not null, specifies default price list when selling to this customer. `Filter(multi eq)` |
 | [EnterpriseCompany](Crm.Customers.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) (nullable) | The Enterprise Company for which this customer is recorded. The same external party can be listed with different conditions for the different enterprise companies. `Filter(multi eq)` |
 | [Party](Crm.Customers.md#party) | [Parties](General.Contacts.Parties.md) | Base party Id. `Required` `Filter(multi eq)` `FilterableReference` |
-| [SalesPerson](Crm.Customers.md#salesperson) | [SalesPersons](Crm.SalesPersons.md) (nullable) | The default sales person for new sales documents for this customer. `Filter(multi eq)` |
+| [SalesPerson](Crm.Customers.md#salesperson) | [SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable) | The default sales person for new sales documents for this customer. `Filter(multi eq)` |
 | [ServicedByEnterprise<br />CompanyLocation](Crm.Customers.md#servicedbyenterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location, which sells to this client by default. `Filter(multi eq)` |
 
 ## Child Collections
@@ -312,7 +316,7 @@ _Show in UI_: **ShownByDefault**
 
 The default currency to use when creating new documents for this customer. `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md) (nullable)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -352,7 +356,7 @@ _Show in UI_: **ShownByDefault**
 
 If not null, specifies default price list when selling to this customer. `Filter(multi eq)`
 
-_Type_: **[PriceLists](Crm.PriceLists.md) (nullable)**  
+_Type_: **[PriceLists](Crm.Pricing.PriceLists.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -384,7 +388,7 @@ _Show in UI_: **ShownByDefault**
 
 The default sales person for new sales documents for this customer. `Filter(multi eq)`
 
-_Type_: **[SalesPersons](Crm.SalesPersons.md) (nullable)**  
+_Type_: **[SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -407,7 +411,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -449,7 +453,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -464,7 +468,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

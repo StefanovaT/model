@@ -16,13 +16,14 @@ User logins. Entity: Sec_Users
 |[Basic_Authentication_Allowed](#basic_authentication_allowed)|`bit` |If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!|
 |[Company_Name](#company_name)|`nvarchar(64)` |Name of the company in which the user claims they are working.|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The date and time (in UTC), when the user was created.|
-|[Default_Culture](#default_culture)|`nvarchar(15)` |The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".|
+|[Default_Language](#default_language)|`nvarchar(15)` |The preferred default language of the user for UI, notifications, etc. Null means "en=English"|
 |[Domain_Id](#domain_id)|`uniqueidentifier` |The domain, to which the user belongs.|
 |[Email](#email)|`nvarchar(254)` |Unique email of the user. Can be NULL because there may be login providers that don't use emails.|
-|[Email_Confirmed](#email_confirmed)|`bit` |Indicates whether the email address for the specified user has been verified.|
+|[Email_Confirmed](#email_confirmed)|`bit` Readonly|Indicates whether the email address for the specified user has been verified.|
 |[Is_Admin](#is_admin)|`bit` |1 if the user is administrator, otherwise 0.|
 |[Lockout_End_Utc](#lockout_end_utc)|`datetime` |Contains the date and time (in UTC) until the user is locked. NULL when the user is not locked.|
 |[Login](#login)|`nvarchar(64)` |The login name of the user, which is usually the email|
+|[Model_Id](#model_id)|`uniqueidentifier` |The AI model associated with the user for their interactions. NULL means that this user has no AI model associated.|
 |[Notes](#notes)|`nvarchar(254)` ||
 |[Password](#password)|`nvarchar(64)` Readonly|The password hash of the user, stored in the format, specified in Password Format.|
 |[Password_Format](#password_format)|`nvarchar(3)` Allowed: `MD5`, `AN3`|The format of the Password. MD5=MD5 format; AN3 = ASP.NET Core Identity v3.|
@@ -215,10 +216,10 @@ The date and time (in UTC), when the user was created.
 | - | - | - | - |
 |GreaterThanOrLessThan|None|no|no|
 
-### Default_Culture
+### Default_Language
 
 
-The preferred default culture of the user for UI, notifications, etc. NULL means "en-US".
+The preferred default language of the user for UI, notifications, etc. Null means "en=English"
 
 | Property | Value |
 | - | - |
@@ -244,6 +245,12 @@ The preferred default culture of the user for UI, notifications, etc. NULL means
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
+
+#### Default_Language - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Domain_Id
 
@@ -338,7 +345,7 @@ Indicates whether the email address for the specified user has been verified.
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
@@ -465,6 +472,43 @@ The login name of the user, which is usually the email
 | - | - | - | - |
 |Equals|`NULL`|no|no|
 |Like|None|no|no|
+
+### Model_Id
+
+
+The AI model associated with the user for their interactions. NULL means that this user has no AI model associated.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Llm_Models](Llm_Models.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Model_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Notes
 

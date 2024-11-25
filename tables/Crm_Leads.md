@@ -21,7 +21,7 @@ Leads are potential customers for your products. Because leads are usually proce
 |[Identified_Company_Id](#identified_company_id)|`uniqueidentifier` |Filled when the company is identified within our database.|
 |[Identified_Person_Id](#identified_person_id)|`uniqueidentifier` |Filled when the person is identified and recorded in our master records.|
 |[Lead_Id](#lead_id)|`uniqueidentifier` `PK`||
-|[Lead_User_Stage_Id](#lead_user_stage_id)|`uniqueidentifier` |The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. NULL when the user stage is undefined (the pure System Stage defines the stage).|
+|[Lead_User_Stage_Id](#lead_user_stage_id)|`uniqueidentifier` Readonly|The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. NULL when the user stage is undefined (the pure System Stage defines the stage).|
 |[Marketing_Company_Size_Id](#marketing_company_size_id)|`uniqueidentifier` |The size class of the company.|
 |[Marketing_Industry_Id](#marketing_industry_id)|`uniqueidentifier` |The industry (for marketing purposes) of the lead.|
 |[Marketing_Solution_Id](#marketing_solution_id)|`uniqueidentifier` |The marketing solution, in which the lead is interested or which generated the lead.|
@@ -38,7 +38,7 @@ Leads are potential customers for your products. Because leads are usually proce
 |[Row_Version](#row_version)|`timestamp` ||
 |[Sales_Area_Id](#sales_area_id)|`uniqueidentifier` |The sales area, where the lead is located, when it is identified. This should also indicate the Time Zone.|
 |[SQL_Timestamp_Utc](#sql_timestamp_utc)|`datetime` Readonly|System assigned date and time (in UTC), when the lead was first promoted to Sales Qualified Lead.|
-|[System_Stage](#system_stage)|`nvarchar(3)` Allowed: `NEW`, `QUA`, `MQL`, `SQL`, `CLO`|The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO)|
+|[System_Stage](#system_stage)|`nvarchar(3)` Allowed: `NEW`, `QUA`, `MQL`, `SQL`, `CLO`, Readonly|The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO)|
 
 ## Columns
 
@@ -426,7 +426,7 @@ The user-defined sub-stage of the lead. This also defines the step in the sales 
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |Referenced Table|[Crm_Lead_User_Stages](Crm_Lead_User_Stages.md)|
 |RTF|no|
 |Sortable|no|
@@ -1041,7 +1041,7 @@ The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales 
 |Pasword|no|
 |Picture|no|
 |Primary Key|no|
-|Readonly|no|
+|Readonly|yes|
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|

@@ -21,9 +21,9 @@ Show in UI:  _ShownByDefault_
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[Systems.Core.Sequences](Systems.Core.Sequences.md)  
+[Systems.Documents.Sequences](Systems.Documents.Sequences.md)  
 Aggregate Root:  
-[Systems.Core.Sequences](Systems.Core.Sequences.md)  
+[Systems.Documents.Sequences](Systems.Documents.Sequences.md)  
 
 ## Attributes
 
@@ -43,7 +43,7 @@ Aggregate Root:
 | [EnterpriseCompany](General.SequenceGenerators.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The Enterprise Company to which this SequenceGenerator applies. `Required` `Filter(multi eq)` |
 | [EnterpriseCompanyLocation](General.SequenceGenerators.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The Enterprise Company Location to which this SequenceGenerator applies, or null if it is for all enterprise company locations. `Filter(multi eq)` |
 | [ResponsiblePerson](General.SequenceGenerators.md#responsibleperson) | [Persons](General.Contacts.Persons.md) (nullable) | If specified then the generator is designated for use only in documents with that Responsible_Person_Id. `Filter(multi eq)` |
-| [Sequence](General.SequenceGenerators.md#sequence) | [Sequences](Systems.Core.Sequences.md) | The <see cref="Systems.Core.Sequence"/> to which this SequenceGenerator belongs. `Required` `Filter(multi eq)` `Owner` |
+| [Sequence](General.SequenceGenerators.md#sequence) | [Sequences](Systems.Documents.Sequences.md) | The <see cref="Systems.Documents.Sequence"/> to which this SequenceGenerator belongs. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -143,9 +143,9 @@ _Show in UI_: **ShownByDefault**
 
 ### Sequence
 
-The <see cref="Systems.Core.Sequence"/> to which this SequenceGenerator belongs. `Required` `Filter(multi eq)` `Owner`
+The <see cref="Systems.Documents.Sequence"/> to which this SequenceGenerator belongs. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Sequences](Systems.Core.Sequences.md)**  
+_Type_: **[Sequences](Systems.Documents.Sequences.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -160,7 +160,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 

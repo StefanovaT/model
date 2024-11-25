@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.LineDiscounts](~/entities/Crm.LineDiscounts.md)
+Entity: [Crm.Pricing.LineDiscounts](~/entities/Crm.Pricing.LineDiscounts.md)
 
 Discount policies for sales documents. Entity: Crm_Line_Discounts
 
@@ -18,6 +18,7 @@ Discount policies for sales documents. Entity: Crm_Line_Discounts
 |[Discount_Level](#discount_level)|`nvarchar(1)` Allowed: `1`, `2`, `3`|Specifies the cascade level (1..3), on which the discount is applied. The discounts from level 1,2 and 3 are applied to three different discount fields in the sales order. The discount for each level is determined separately, by applying the same algorithm.|
 |[Discount_Percent](#discount_percent)|`decimal(7, 6)` |The discount percent that should be applied if all the matching criteria are met.|
 |[Distribution_Channel_Id](#distribution_channel_id)|`uniqueidentifier` |Apply the discount only when the sales document is on the specified channel|
+|[Document_Amount_Type_Id](#document_amount_type_id)|`uniqueidentifier` |The document amount type that is used as category for this discount. When specified, triggers the recording of the applied discount amount in the Document Distributed Amounts panel in sales orders.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |When not NULL, the policy is applied only for documents of the specified enterprise company |
 |[Enterprise_Company_Location_Id](#enterprise_company_location_id)|`uniqueidentifier` |When set, the policy is applied only for documents of the specified enterprise company location.|
 |[From_Date](#from_date)|`datetime` |Starting date of validity of the discount. NULL means no from date restriction|
@@ -288,6 +289,43 @@ Apply the discount only when the sales document is on the specified channel
 |Visible|yes|
 
 #### Distribution_Channel_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Document_Amount_Type_Id
+
+
+The document amount type that is used as category for this discount. When specified, triggers the recording of the applied discount amount in the Document Distributed Amounts panel in sales orders.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Gen_Document_Amount_Types](Gen_Document_Amount_Types.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Document_Amount_Type_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |

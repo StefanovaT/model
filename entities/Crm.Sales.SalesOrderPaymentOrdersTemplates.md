@@ -17,13 +17,17 @@ _Route.ProcedureName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Parent:  
-[Systems.Workflow.Routes](Systems.Workflow.Routes.md)  
+[Systems.Documents.Routes](Systems.Documents.Routes.md)  
 Aggregate Root:  
-[General.DocumentTypes](General.DocumentTypes.md)  
+[Systems.Documents.DocumentTypes](Systems.Documents.DocumentTypes.md)  
 
 ## Attributes
 
@@ -33,7 +37,7 @@ Aggregate Root:
 | [CreateForNotInvoiced<br />Amounts](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#createfornotinvoicedamounts) | boolean | True to add to the payment order, the part of the amount of the sales order, which is not included in any invoice. `Required` 
 | [DisplayText](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#id) | guid |  
-| [IsAmountWithVAT](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#isamountwithvat) | boolean | True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = true. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. `Required` 
+| [IsAmountWithVAT](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#isamountwithvat) | boolean | True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = 1. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. `Required` 
 | [ObjectVersion](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [UpdateForInvoices](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#updateforinvoices) | boolean | Update the payment order when invoices are issued for any of the sales orders lines. `Required` 
 
@@ -41,7 +45,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Route](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#route) | [Routes](Systems.Workflow.Routes.md) | The route to which the current option set is assigned. `Required` `Filter(multi eq)` `Owner` |
+| [Route](Crm.Sales.SalesOrderPaymentOrdersTemplates.md#route) | [Routes](Systems.Documents.Routes.md) | The route to which the current option set is assigned. `Required` `Filter(multi eq)` `Owner` |
 
 
 ## Attribute Details
@@ -87,7 +91,7 @@ _Show in UI_: **CannotBeShown**
 
 ### IsAmountWithVAT
 
-True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = true. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. `Required`
+True to indicate that the parent document includes VAT and the generated the payment order should be with Is Amount With VAT = 1. This setting DOES NOT affect whether the generated amount should include VAT or not, it simply sets the flag in the generated order. `Required`
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -122,7 +126,7 @@ _Show in UI_: **ShownByDefault**
 
 The route to which the current option set is assigned. `Required` `Filter(multi eq)` `Owner`
 
-_Type_: **[Routes](Systems.Workflow.Routes.md)**  
+_Type_: **[Routes](Systems.Documents.Routes.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
@@ -136,7 +140,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -178,7 +182,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -193,7 +197,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

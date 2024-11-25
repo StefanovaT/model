@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.ReportQueries](~/entities/General.ReportQueries.md)
+Entity: [Systems.Core.ReportQueries](~/entities/Systems.Core.ReportQueries.md)
 
 Contains the sub-queries, which a report contains. Entity: Gen_Report_Queries
 

@@ -16,8 +16,12 @@ Code Data Member:
 _Code_  
 Name Data Member:  
 _Name_  
-Category:  _Definitions_  
+Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -49,7 +53,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [RootProductGroup](General.Products.ProductCatalogs.md#rootproductgroup) | [ProductGroups](General.Products.ProductGroups.md) | The root (starting) product group of the catalog. Each catalog starts from a root product group and includes the products in the sub-groups. `Required` `Filter(multi eq)` |
-| [WebSite](General.Products.ProductCatalogs.md#website) | [WebSites](Systems.Core.WebSites.md) (nullable) | The ECommerce web site, which will be used to host the product catalog. When null, the product catalog would not be hosted with internal ECommerce site. `Filter(multi eq)` `Introduced in version 19.1` |
+| [WebSite](General.Products.ProductCatalogs.md#website) | [WebSites](Systems.Config.WebSites.md) (nullable) | The ECommerce web site, which will be used to host the product catalog. When null, the product catalog would not be hosted with internal ECommerce site. `Filter(multi eq)` `Introduced in version 19.1` |
 
 
 ## Attribute Details
@@ -244,7 +248,7 @@ _Show in UI_: **ShownByDefault**
 
 The ECommerce web site, which will be used to host the product catalog. When null, the product catalog would not be hosted with internal ECommerce site. `Filter(multi eq)` `Introduced in version 19.1`
 
-_Type_: **[WebSites](Systems.Core.WebSites.md) (nullable)**  
+_Type_: **[WebSites](Systems.Config.WebSites.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -258,7 +262,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -300,7 +304,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -315,7 +319,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

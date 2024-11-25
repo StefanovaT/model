@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.LogisticUnitTypes](~/entities/Logistics.LogisticUnitTypes.md)
+Entity: [Logistics.Common.LogisticUnitTypes](~/entities/Logistics.Common.LogisticUnitTypes.md)
 
 Types of logistic units, like EU-PALLET, 40x40 pallet, ISO container, etc. Entity: Log_Logistic_Unit_Types (Introduced in version 21.1.0.77)
 

@@ -54,7 +54,7 @@ The amount is represented by value and currency.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Currency | String | The currency of the amount represented by it's sign. |
+| Currency | String | The currency of the amount represented by its sign. |
 | Value | Decimal | The value of the amount. |
 
 Domain API Example:  
@@ -78,7 +78,7 @@ The quantity is represented by value and measurement unit.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| Unit | String | TThe measurement unit of the quantity represented by it's code. |
+| Unit | String | The measurement unit of the quantity represented by it's code. |
 | Value | Decimal | The value of the quantity. |
 
 Domain API Example:  

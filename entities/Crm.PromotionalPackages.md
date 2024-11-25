@@ -19,6 +19,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -36,9 +40,9 @@ Aggregate Tree
 | [Id](Crm.PromotionalPackages.md#id) | guid |  
 | [Name](Crm.PromotionalPackages.md#name) | string (254) | The name of this PromotionalPackage. `Required` `Filter(eq;like)` `ORD` 
 | [ObjectVersion](Crm.PromotionalPackages.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ValidForCustomerFilterXML](Crm.PromotionalPackages.md#validforcustomerfilterxml) | dataaccessfilter __nullable__ | When not null, the package is valid only for the customers, that match the filter. 
-| [ValidForDistribution<br />ChannelFilterX<br />ML](Crm.PromotionalPackages.md#validfordistributionchannelfilterxml) | dataaccessfilter __nullable__ | When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria. 
-| [ValidForShipTo<br />CustomerFilter<br />XML](Crm.PromotionalPackages.md#validforshiptocustomerfilterxml) | dataaccessfilter __nullable__ | When not null, specifies validity condition for the Ship To Customer of the sales document. 
+| [ValidForCustomerFilterXML](Crm.PromotionalPackages.md#validforcustomerfilterxml) | dataaccessfilter __nullable__ | When not null, the package is valid only for the customers, that match the filter. `Unit: CustomersRepository.TableName` 
+| [ValidForDistribution<br />ChannelFilterX<br />ML](Crm.PromotionalPackages.md#validfordistributionchannelfilterxml) | dataaccessfilter __nullable__ | When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria. `Unit: Marketing.DistributionChannels<br />Repository.TableName` 
+| [ValidForShipTo<br />CustomerFilter<br />XML](Crm.PromotionalPackages.md#validforshiptocustomerfilterxml) | dataaccessfilter __nullable__ | When not null, specifies validity condition for the Ship To Customer of the sales document. `Unit: CustomersRepository.TableName` 
 | [ValidFromDate](Crm.PromotionalPackages.md#validfromdate) | date __nullable__ | When not null specifies the first date when the package is valid for offering. The date is compared against the document date. `Filter(eq;ge;le)` 
 | [ValidToDate](Crm.PromotionalPackages.md#validtodate) | date __nullable__ | When not null specifies the last date (inclusive) when the package is valid. The date is compared against the document date. `Filter(eq;ge;le)` 
 
@@ -133,7 +137,7 @@ _Show in UI_: **HiddenByDefault**
 
 ### ValidForCustomerFilterXML
 
-When not null, the package is valid only for the customers, that match the filter.
+When not null, the package is valid only for the customers, that match the filter. `Unit: CustomersRepository.TableName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  
@@ -143,7 +147,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ValidForDistributionChannelFilterXML
 
-When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria.
+When not null, the package is valid only if the specified distribution channel of the sales order fits in the filter criteria. `Unit: Marketing.DistributionChannelsRepository.TableName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  
@@ -153,7 +157,7 @@ _Show in UI_: **ShownByDefault**
 
 ### ValidForShipToCustomerFilterXML
 
-When not null, specifies validity condition for the Ship To Customer of the sales document.
+When not null, specifies validity condition for the Ship To Customer of the sales document. `Unit: CustomersRepository.TableName`
 
 _Type_: **dataaccessfilter __nullable__**  
 _Category_: **System**  
@@ -264,7 +268,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -306,7 +310,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -321,7 +325,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

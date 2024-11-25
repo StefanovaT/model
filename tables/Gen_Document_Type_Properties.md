@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentTypeProperties](~/entities/General.DocumentTypeProperties.md)
+Entity: [Systems.Documents.DocumentTypeProperties](~/entities/Systems.Documents.DocumentTypeProperties.md)
 
 Default user-defined properties, which should be added to new documents. Entity: Gen_Document_Type_Properties
 

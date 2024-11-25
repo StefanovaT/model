@@ -15,6 +15,10 @@ _Voucher.DocumentNo_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -47,10 +51,10 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Account](Finance.Accounting.AccountingVoucherLines.md#account) | [Accounts](Finance.Accounting.Accounts.md) | The account being debited or credited. `Required` `Filter(multi eq)` |
 | [CostCenter](Finance.Accounting.AccountingVoucherLines.md#costcenter) | [CostCenters](Finance.Accounting.CostCenters.md) (nullable) | The cost center to which this cost is related. `Filter(multi eq)` |
-| [Currency](Finance.Accounting.AccountingVoucherLines.md#currency) | [Currencies](General.Currencies.md) | The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)` |
+| [Currency](Finance.Accounting.AccountingVoucherLines.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)` |
 | [Document](Finance.Accounting.AccountingVoucherLines.md#document) | [AccountingVouchers](Finance.Accounting.AccountingVouchers.md) | The voucher to which this line is attached. `Required` `Filter(multi eq)` |
 | [ProfitCenter](Finance.Accounting.AccountingVoucherLines.md#profitcenter) | [ProfitCenters](Finance.Accounting.ProfitCenters.md) (nullable) | The profit center to which this revenue is related. `Filter(multi eq)` |
-| [ReferencedDocument](Finance.Accounting.AccountingVoucherLines.md#referenceddocument) | [Documents](General.Documents.md) | The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)` |
+| [ReferencedDocument](Finance.Accounting.AccountingVoucherLines.md#referenceddocument) | [Documents](General.Documents.Documents.md) | The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)` |
 | [Voucher](Finance.Accounting.AccountingVoucherLines.md#voucher) | [AccountingVouchers](Finance.Accounting.AccountingVouchers.md) | The voucher to which this line is attached. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -224,7 +228,7 @@ _Show in UI_: **ShownByDefault**
 
 The currency of the movement in this line. If there is defined currency for the account in the line that it should be equal to the value in this field. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -252,7 +256,7 @@ _Show in UI_: **ShownByDefault**
 
 The document which is referenced by the line. By default, this is the document of the voucher. `Required` `Filter(multi eq)`
 
-_Type_: **[Documents](General.Documents.md)**  
+_Type_: **[Documents](General.Documents.Documents.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
@@ -280,7 +284,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -322,7 +326,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -337,7 +341,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

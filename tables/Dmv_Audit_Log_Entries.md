@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.AuditLogEntries](~/entities/Systems.Dmv.AuditLogEntries.md)
+Entity: [Systems.Monitoring.AuditLogSummary](~/entities/Systems.Monitoring.AuditLogSummary.md)
 
 Information about the count and the size of audit log entries, grouped by application name, event class, entity name and event time. Entity: Dmv_Audit_Log_Entries (Introduced in version 24.1.3.48)
 

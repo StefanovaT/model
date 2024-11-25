@@ -17,6 +17,10 @@ _CalculatedAttribute.Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -165,6 +169,7 @@ _Allowed Values (Systems.Bpm.ExpressionOperator Enum Members)_
 | INTERPOLATE | INTERPOLATE(Object?, InterpolatedString) => Performs string interpolation, according to the context of the passed object.. Stored as 'INTERPOLATE'. <br /> _Database Value:_ 'INTERPOLATE' <br /> _Model Value:_ 45 <br /> _Domain API Value:_ 'INTERPOLATE' |
 | DATEDIFF | DATEDIFF(DateTime, DateTime, Interval?) => Returns the difference between dates as the date difference for the specified interval type.. Stored as 'DATEDIFF'. <br /> _Database Value:_ 'DATEDIFF' <br /> _Model Value:_ 46 <br /> _Domain API Value:_ 'DATEDIFF' |
 | DATESPAN | DATESPAN(DateTime, DateTime, Interval?) => Returns the difference between dates as a duration in the specified interval type. The interval is fulfilled when the same date and time is reached in the next interval.. Stored as 'DATESPAN'. <br /> _Database Value:_ 'DATESPAN' <br /> _Model Value:_ 47 <br /> _Domain API Value:_ 'DATESPAN' |
+| IFERROR | IFERROR(Value, ValueIfError) => Evaluates an expression and returns the value specified in the second parameter, if the expression returns an error. Otherwise returns the value of the expression itself.. Stored as 'IFERROR'. <br /> _Database Value:_ 'IFERROR' <br /> _Model Value:_ 48 <br /> _Domain API Value:_ 'IFERROR' |
 
 _Supported Filters_: **NotFilterable**  
 _Supports Order By_: **False**  
@@ -297,7 +302,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -339,7 +344,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -354,7 +359,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -289,7 +289,7 @@ A brief description of the task item.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Todo_Task_Item_Id - Supported Filters
 

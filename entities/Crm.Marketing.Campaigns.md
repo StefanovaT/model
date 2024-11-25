@@ -17,6 +17,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -32,9 +36,16 @@ Aggregate Tree
 | [EndDate](Crm.Marketing.Campaigns.md#enddate) | datetime __nullable__ | End date of the campaign. null means that the end date is still unknown. `Filter(ge;le)` 
 | [ForecastedCost](Crm.Marketing.Campaigns.md#forecastedcost) | decimal (18, 0) | Forecasted total cost of the campaign. `Required` `Default(0)` 
 | [Id](Crm.Marketing.Campaigns.md#id) | guid |  
+| [IsActive](Crm.Marketing.Campaigns.md#isactive) | boolean | Indicates whether the current Campaign is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.5.19` 
 | [Name](Crm.Marketing.Campaigns.md#name) | string (64) | Short name of the campaign. `Required` `Filter(like)` `ORD` 
 | [ObjectVersion](Crm.Marketing.Campaigns.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [StartDate](Crm.Marketing.Campaigns.md#startdate) | datetime | Starting date of the campaign. `Required` `Default(Today)` `Filter(ge;le)` 
+
+## References
+
+| Name | Type | Description |
+| ---- | ---- | --- |
+| [AccessKey](Crm.Marketing.Campaigns.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this Campaign. Null means that all users have unlimited permissions. `Filter(multi eq)` `Introduced in version 24.1.5.30` |
 
 
 ## Attribute Details
@@ -90,6 +101,17 @@ _Supported Filters_: **Equals, EqualsIn**
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
 
+### IsActive
+
+Indicates whether the current Campaign is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 24.1.5.19`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
+
 ### Name
 
 Short name of the campaign. `Required` `Filter(like)` `ORD`
@@ -124,6 +146,27 @@ _Default Value_: **CurrentDate**
 _Show in UI_: **ShownByDefault**  
 
 
+## Reference Details
+
+### AccessKey
+
+The access key, containing the user permissions for this Campaign. Null means that all users have unlimited permissions. `Filter(multi eq)` `Introduced in version 24.1.5.30`
+
+_Type_: **[AccessKeys](Systems.Security.AccessKeys.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **CannotBeShown**  
+
+
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
+
 ## API Methods
 
 Methods that can be invoked in public APIs.
@@ -131,7 +174,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -173,7 +216,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -188,7 +231,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

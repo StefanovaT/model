@@ -30,6 +30,7 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [DisplayText](General.Contacts.ActivityParticipants.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
+| [Email](General.Contacts.ActivityParticipants.md#email) | string (254) __nullable__ | Participant email. Used to identify the participant and is required when syncing with external services. `Filter(multi eq;like)` `Introduced in version 24.1.4.87` 
 | [Id](General.Contacts.ActivityParticipants.md#id) | guid |  
 | [Notes](General.Contacts.ActivityParticipants.md#notes) | string (255) __nullable__ | Notes for this ActivityParticipant. 
 | [ObjectVersion](General.Contacts.ActivityParticipants.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
@@ -40,7 +41,8 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Activity](General.Contacts.ActivityParticipants.md#activity) | [Activities](General.Contacts.Activities.md) | The <see cref="Activity"/> to which this ActivityParticipant belongs. `Required` `Filter(multi eq)` `Owner` |
-| [ParticipantPerson](General.Contacts.ActivityParticipants.md#participantperson) | [Persons](General.Contacts.Persons.md) | The person, participating in an activity. `Required` `Filter(multi eq)` |
+| [ParticipantPerson](General.Contacts.ActivityParticipants.md#participantperson) | [Persons](General.Contacts.Persons.md) (nullable) | The person, participating in an activity. `Filter(multi eq)` |
+| [User](General.Contacts.ActivityParticipants.md#user) | [Users](Systems.Security.Users.md) (nullable) | The user associated with the Person participating in the activity. `Filter(multi eq)` `Introduced in version 24.1.5.15` |
 
 
 ## Attribute Details
@@ -55,6 +57,22 @@ _Supported Filters_: **NotFilterable**
 _Supports Order By_: ****  
 _Show in UI_: **HiddenByDefault**  
 
+### Email
+
+Participant email. Used to identify the participant and is required when syncing with external services. `Filter(multi eq;like)` `Introduced in version 24.1.4.87`
+
+_Type_: **string (254) __nullable__**  
+_Category_: **System**  
+_Supported Filters_: **Equals, Like, EqualsIn**  
+_Supports Order By_: **False**  
+_Maximum Length_: **254**  
+_Show in UI_: **ShownByDefault**  
+
+_Back-End Default Expression:_  
+`GetRelatedUserEmailAddress( obj.ParticipantPerson)`
+
+_Front-End Recalc Expressions:_  
+`GetRelatedUserEmailAddress( obj.ParticipantPerson)`
 ### Id
 
 _Type_: **guid**  
@@ -112,9 +130,19 @@ _Show in UI_: **ShownByDefault**
 
 ### ParticipantPerson
 
-The person, participating in an activity. `Required` `Filter(multi eq)`
+The person, participating in an activity. `Filter(multi eq)`
 
-_Type_: **[Persons](General.Contacts.Persons.md)**  
+_Type_: **[Persons](General.Contacts.Persons.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
+### User
+
+The user associated with the Person participating in the activity. `Filter(multi eq)` `Introduced in version 24.1.5.15`
+
+_Type_: **[Users](Systems.Security.Users.md) (nullable)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  

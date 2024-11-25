@@ -19,6 +19,7 @@ Contains all transactions of Record of Handover / Handing-Over Record lines. Ent
 |[Lease_Contract_Id](#lease_contract_id)|`uniqueidentifier` |Lease Contract|
 |[Lessee_Customer_Id](#lessee_customer_id)|`uniqueidentifier` |Lessee Customer|
 |[Notes](#notes)|`nvarchar(max)` |Notes|
+|[Number_Of_Periods](#number_of_periods)|`int` |Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset.|
 |[Rent_Transaction_Id](#rent_transaction_id)|`uniqueidentifier` ||
 |[Rent_Transaction_Line_Id](#rent_transaction_line_id)|`uniqueidentifier` `PK`||
 |[Rental_Asset_Id](#rental_asset_id)|`uniqueidentifier` |Rental asset|
@@ -42,7 +43,7 @@ Lease Contract
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -79,7 +80,7 @@ Lessee Customer
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -116,7 +117,7 @@ Notes
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -132,6 +133,43 @@ Notes
 |User Login|no|
 |Visible|yes|
 
+### Number_Of_Periods
+
+
+Number of periods calculated based on the Transaction Timestamps of the deliver and receive Transactions, and the Time Period Type defined for the asset.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|int (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Number_Of_Periods - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+|GreaterThanOrLessThan|None|no|no|
+
 ### Rent_Transaction_Id
 
 | Property | Value |
@@ -143,7 +181,7 @@ Notes
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -177,7 +215,7 @@ Notes
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -213,7 +251,7 @@ Rental asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -247,7 +285,7 @@ Rental asset
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -277,7 +315,7 @@ Transaction Timestamp
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -315,7 +353,7 @@ Transaction Type
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|1|
-|Order|2147483647|
+|Order|3|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -324,7 +362,7 @@ Transaction Type
 |RTF|no|
 |Sortable|no|
 |Summary Type|None|
-|Supports EQUALS_IN|no|
+|Supports EQUALS_IN|yes|
 |Type|nvarchar(1)|
 |UI Memo Editor|no|
 |UI Width|Medium|

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Logistics.Shipment.TransportationOrderLines](~/entities/Logistics.Shipment.TransportationOrderLines.md)
+Entity: [Logistics.Transportation.TransportationOrderLines](~/entities/Logistics.Transportation.TransportationOrderLines.md)
 
 Different cargoes of a transportation order. Entity: Log_Transportation_Order_Lines
 

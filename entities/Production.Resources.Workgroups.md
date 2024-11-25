@@ -17,6 +17,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -33,12 +37,12 @@ Aggregate Tree
 | [Active](Production.Resources.Workgroups.md#active) | boolean | Indicates whether the current workgroup is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 22.1.5.26` 
 | [<s>CostCurrency</s>](Production.Resources.Workgroups.md#costcurrency) | string (3) __nullable__ | **OBSOLETE! Do not use!** Not used. `Obsolete` `Obsoleted in version 22.1.6.61` 
 | [DisplayText](Production.Resources.Workgroups.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FullPath](Production.Resources.Workgroups.md#fullpath) | string (254) __nullable__ | The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. `Default("")` 
+| [FullPath](Production.Resources.Workgroups.md#fullpath) | string (254) __nullable__ | The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. `Default("")` `Filter(eq)` 
 | [Id](Production.Resources.Workgroups.md#id) | guid |  
 | [Name](Production.Resources.Workgroups.md#name) | string (64) | Name of the workgroup. `Required` `Filter(like)` 
 | [Notes](Production.Resources.Workgroups.md#notes) | string (254) __nullable__ | User notes for the workgroup. 
 | [ObjectVersion](Production.Resources.Workgroups.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [Parent](Production.Resources.Workgroups.md#parent) | string (255) | Path-like parent workgroup name. `Required` `Default("/")` `Filter(like)` `ORD` 
+| [Parent](Production.Resources.Workgroups.md#parent) | string (255) | Path-like parent workgroup name. `Required` `Default("/")` `Filter(eq;like)` `ORD` 
 
 ## Child Collections
 
@@ -84,11 +88,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### FullPath
 
-The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. `Default("")`
+The full path to the current node, represented with slash ('/') as leading, trailing and separator character. Example: '/rootnode/subnode/'. `Default("")` `Filter(eq)`
 
 _Type_: **string (254) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **254**  
 _Default Value_: ****  
@@ -137,12 +141,12 @@ _Show in UI_: **HiddenByDefault**
 
 ### Parent
 
-Path-like parent workgroup name. `Required` `Default("/")` `Filter(like)` `ORD`
+Path-like parent workgroup name. `Required` `Default("/")` `Filter(eq;like)` `ORD`
 
 _Type_: **string (255)**  
 _Indexed_: **True**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **True**  
 _Maximum Length_: **255**  
 _Default Value_: **/**  
@@ -156,7 +160,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -198,7 +202,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -213,7 +217,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

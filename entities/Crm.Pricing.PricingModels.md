@@ -14,8 +14,12 @@ Default Search Members:
 _Name_  
 Name Data Member:  
 _Name_  
-Category:  _Definitions_  
+Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -32,6 +36,7 @@ Aggregate Tree
 | [DefaultMarginPercent](Crm.Pricing.PricingModels.md#defaultmarginpercent) | decimal (6, 5) | Default margin between standard cost and standard price. The margin is applied to the products when calculating standard price. `Required` `Default(0)` 
 | [DisplayText](Crm.Pricing.PricingModels.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Crm.Pricing.PricingModels.md#id) | guid |  
+| [IsActive](Crm.Pricing.PricingModels.md#isactive) | boolean | Indicates whether the current Pricing model is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18` 
 | [Name](Crm.Pricing.PricingModels.md#name) | string (254) | The name of the pricing model. `Required` `Filter(eq;like)` 
 | [ObjectVersion](Crm.Pricing.PricingModels.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
@@ -39,7 +44,7 @@ Aggregate Tree
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [Currency](Crm.Pricing.PricingModels.md#currency) | [Currencies](General.Currencies.md) | The currency in which the prices will be calculated. `Required` `Filter(multi eq)` |
+| [Currency](Crm.Pricing.PricingModels.md#currency) | [Currencies](General.Currencies.Currencies.md) | The currency in which the prices will be calculated. `Required` `Filter(multi eq)` |
 | [PurchasePriceList](Crm.Pricing.PricingModels.md#purchasepricelist) | [PurchasePriceLists](Logistics.Procurement.PurchasePriceLists.md) | Purchase price list Id, which will be used to get the purchase price of the products. `Required` `Filter(multi eq)` |
 
 ## Child Collections
@@ -82,6 +87,17 @@ _Supported Filters_: **Equals, EqualsIn**
 _Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
 
+### IsActive
+
+Indicates whether the current Pricing model is active. `Required` `Default(true)` `Filter(eq)` `Introduced in version 25.1.0.18`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **Equals**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
+
 ### Name
 
 The name of the pricing model. `Required` `Filter(eq;like)`
@@ -110,7 +126,7 @@ _Show in UI_: **HiddenByDefault**
 
 The currency in which the prices will be calculated. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -132,7 +148,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -174,7 +190,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -189,7 +205,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

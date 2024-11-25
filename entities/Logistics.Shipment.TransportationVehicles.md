@@ -11,11 +11,11 @@ A vehicle, which is used for transportation. One actual vehicle might be defined
 Default Display Text Format:  
 _{Code}: {Vehicle.VehicleType:T}, {Vehicle.VehicleRegistrationNumber:T}_  
 Default Search Members:  
-_Code; Vehicle.EngineIdentificationNumber_  
+_Code; Vehicle.VehicleRegistrationNumber_  
 Code Data Member:  
 _Code_  
 Name Data Member:  
-_Vehicle.EngineIdentificationNumber_  
+_Vehicle.VehicleRegistrationNumber_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
@@ -181,7 +181,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -223,7 +223,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -238,7 +238,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

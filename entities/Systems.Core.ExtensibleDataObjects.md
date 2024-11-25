@@ -15,27 +15,30 @@ __
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
 Aggregate Tree  
 * [Systems.Core.ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)  
-  * [Systems.Core.ObjectFiles](Systems.Core.ObjectFiles.md)  
   * [Systems.Core.ObjectVersions](Systems.Core.ObjectVersions.md)  
 
 ## Attributes
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CreationTimeUtc](Systems.Core.ExtensibleDataObjects.md#creationtimeutc) | datetime __nullable__ | The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. `Filter(ge;le)` `Introduced in version 19.1` 
+| [CreationTimeUtc](Systems.Core.ExtensibleDataObjects.md#creationtimeutc) | datetime __nullable__ | The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. `Filter(ge;le)` `ORD` `Introduced in version 19.1` 
 | [DisplayText](Systems.Core.ExtensibleDataObjects.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [EntityItemId](Systems.Core.ExtensibleDataObjects.md#entityitemid) | guid | The Id of the primary row to which the object is bound. `Required` `Filter(multi eq)` 
-| [EntityType](Systems.Core.ExtensibleDataObjects.md#entitytype) | string (64) | The entity type of the row to which the object is bound. `Required` `Default(" ")` `Filter(eq)` `ORD` 
+| [EntityType](Systems.Core.ExtensibleDataObjects.md#entitytype) | string (64) | The entity type of the row to which the object is bound. `Required` `Default(" ")` `Filter(eq)` 
 | [ExternalId](Systems.Core.ExtensibleDataObjects.md#externalid) | string (254) __nullable__ | The id of the object, when it is imported/synchronized with external system. Used by sync apps to identify the object in external systems. `Filter(multi eq)` `ORD` `Introduced in version 24.1.0.89` 
 | [ExternalSystem](Systems.Core.ExtensibleDataObjects.md#externalsystem) | string (64) __nullable__ | The name of the external system from which the object is imported/synchronized. `Filter(multi eq)` `Introduced in version 24.1.0.89` 
 | [Id](Systems.Core.ExtensibleDataObjects.md#id) | guid |  
 | [IsDeleted](Systems.Core.ExtensibleDataObjects.md#isdeleted) | boolean | Specifies whether the object represented by this system object is deleted. After deletion of the original object, the system object remains in the system, but can be purged later by some cleanup processes. `Required` `Default(false)` `Filter(eq)` `Introduced in version 19.1` 
-| [LastUpdateTimeUtc](Systems.Core.ExtensibleDataObjects.md#lastupdatetimeutc) | datetime __nullable__ | The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. `Filter(ge;le)` `Introduced in version 19.1` 
+| [LastUpdateTimeUtc](Systems.Core.ExtensibleDataObjects.md#lastupdatetimeutc) | datetime __nullable__ | The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. `Filter(ge;le)` `ORD` `Introduced in version 19.1` 
 | [LatestVersion](Systems.Core.ExtensibleDataObjects.md#latestversion) | int32 | The latest saved version of the object. Starts from 1 and increments with 1 for each new version. `Required` `Default(1)` 
 | [ObjectVersion](Systems.Core.ExtensibleDataObjects.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 
@@ -44,13 +47,13 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [CreationUser](Systems.Core.ExtensibleDataObjects.md#creationuser) | [Users](Systems.Security.Users.md) (nullable) | The user, who created the object represented by this system object . null means that it is unknown. `Filter(multi eq)` `Introduced in version 19.1` |
+| [Folder](Systems.Core.ExtensibleDataObjects.md#folder) | [Folders](General.Files.Folders.md) (nullable) | The owner folder of the object. `Filter(multi eq)` |
 | [LastUpdateUser](Systems.Core.ExtensibleDataObjects.md#lastupdateuser) | [Users](Systems.Security.Users.md) (nullable) | The user, who made the last modification of the object represented by this system object . null means that it is unknown. `Filter(multi eq)` `Introduced in version 19.1` |
 
 ## Child Collections
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| Files | [ObjectFiles](Systems.Core.ObjectFiles.md) | List of `ObjectFile`(Systems.Core.ObjectFiles.md) child objects, based on the `Systems.Core.ObjectFile.Object`(Systems.Core.ObjectFiles.md#object) back reference 
 | Versions | [ObjectVersions](Systems.Core.ObjectVersions.md) | List of `ObjectVersion`(Systems.Core.ObjectVersions.md) child objects, based on the `Systems.Core.ObjectVersion.Object`(Systems.Core.ObjectVersions.md#object) back reference 
 
 
@@ -58,12 +61,13 @@ Aggregate Tree
 
 ### CreationTimeUtc
 
-The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. `Filter(ge;le)` `Introduced in version 19.1`
+The exact server time (in UTC) when the object represented by this system object was created. null means that it is unknown. `Filter(ge;le)` `ORD` `Introduced in version 19.1`
 
 _Type_: **datetime __nullable__**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### DisplayText
@@ -81,19 +85,19 @@ _Show in UI_: **HiddenByDefault**
 The Id of the primary row to which the object is bound. `Required` `Filter(multi eq)`
 
 _Type_: **guid**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
 ### EntityType
 
-The entity type of the row to which the object is bound. `Required` `Default(" ")` `Filter(eq)` `ORD`
+The entity type of the row to which the object is bound. `Required` `Default(" ")` `Filter(eq)`
 
 _Type_: **string (64)**  
-_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals**  
-_Supports Order By_: **True**  
+_Supports Order By_: **False**  
 _Maximum Length_: **64**  
 _Default Value_: ** **  
 _Show in UI_: **ShownByDefault**  
@@ -143,12 +147,13 @@ _Show in UI_: **ShownByDefault**
 
 ### LastUpdateTimeUtc
 
-The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. `Filter(ge;le)` `Introduced in version 19.1`
+The exact server time (in UTC) of the last modification of the object represented by this system object. null means that it is unknown. `Filter(ge;le)` `ORD` `Introduced in version 19.1`
 
 _Type_: **datetime __nullable__**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **GreaterThanOrLessThan**  
-_Supports Order By_: **False**  
+_Supports Order By_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 ### LatestVersion
@@ -184,6 +189,16 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+### Folder
+
+The owner folder of the object. `Filter(multi eq)`
+
+_Type_: **[Folders](General.Files.Folders.md) (nullable)**  
+_Indexed_: **True**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### LastUpdateUser
 
 The user, who made the last modification of the object represented by this system object . null means that it is unknown. `Filter(multi eq)` `Introduced in version 19.1`
@@ -201,7 +216,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -243,7 +258,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -258,7 +273,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

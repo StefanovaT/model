@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Contacts.Activities](~/entities/General.Contacts.Activities.md)
+Entity: [General.Activities.Activities](~/entities/General.Activities.Activities.md)
 
 Generic activity. Provides task management functionality. Activity can be one of Task, Communication or Meeting. Entity: Cm_Activities
 
@@ -22,7 +22,7 @@ Generic activity. Provides task management functionality. Activity can be one of
 |[End_Time](#end_time)|`datetime` |Currently planned ending time of the task|
 |[Is_Released](#is_released)|`bit` Readonly|True if the document is not void and its state is released or greater. Deprecated|
 |[Is_Single_Execution](#is_single_execution)|`bit` Readonly|Specifies whether the document is a single execution of its order document.|
-|[Notes](#notes)|`nvarchar(254)` ||
+|[Notes](#notes)|`nvarchar(max)` ||
 |[Owner_Party_Id](#owner_party_id)|`uniqueidentifier` |The party that owns the task. Initially this is the party that has created the task|
 |[Planned_Duration_Minutes](#planned_duration_minutes)|`int` |Total planned duration of the activity, regardless of the current execution status|
 |[Priority](#priority)|`tinyint` Allowed: `1`, `2`, `3`, `4`, `5`|Priority on the scale from 1 (least important) to 5 (very important)|
@@ -303,7 +303,7 @@ Specifies whether the document is a single execution of its order document.
 |Enter Stop|no|
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
-|Max Length|254|
+|Max Length|2147483647|
 |Order|2|
 |Ownership Reference|no|
 |Pasword|no|
@@ -314,7 +314,7 @@ Specifies whether the document is a single execution of its order document.
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|nvarchar(254) (Allows NULL)|
+|Type|nvarchar(max) (Allows NULL)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|

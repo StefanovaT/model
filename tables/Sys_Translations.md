@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.Translations](~/entities/Systems.Core.Translations.md)
+Entity: [Systems.Config.Translations](~/entities/Systems.Config.Translations.md)
 
 Contains user-defined translations for non-english languages of the user interface and program messages. Entity: Sys_Translations
 
@@ -14,7 +14,7 @@ Contains user-defined translations for non-english languages of the user interfa
 |[Active](#active)|`bit` |True when the translation is verified and activated.|
 |[Application_Name](#application_name)|`nvarchar(50)` |The application, containing the resource. For base resource types (T,C,H), this is NULL|
 |[Creation_Time](#creation_time)|`datetime` Readonly|Timestamp when the translation was first created|
-|[Language](#language)|`nvarchar(8)` |The code of the language or language-culture pair. Standard Windows codes are used. English="en"; US English = "en-us"|
+|[Language](#language)|`nvarchar(8)` |The code of the language by the ISO639-1 two letter language coding: "en"=English, "bg"=Bulgarian.|
 |[Resource_Id](#resource_id)|`nvarchar(800)` |The unique identifier of the translated resource. Should use ASCII/English chars only. Shorter strings are suggested. Depending on Text_Type: T:TableName; C:ColumnName; H:TableName.ColumnName; E,M,S: Application specific code|
 |[Resource_Type](#resource_type)|`nvarchar(1)` Allowed: `T`, `C`, `H`, `R`, `E`, `M`, `S`|T=Table (entity) Name; C=Column Name; H=Column Hint; R=Meta Resource; E=Error; M=Message; S=Other application specific String|
 |[Row_Version](#row_version)|`timestamp` ||
@@ -135,7 +135,7 @@ Timestamp when the translation was first created
 ### Language
 
 
-The code of the language or language-culture pair. Standard Windows codes are used. English="en"; US English = "en-us"
+The code of the language by the ISO639-1 two letter language coding: "en"=English, "bg"=Bulgarian.
 
 | Property | Value |
 | - | - |

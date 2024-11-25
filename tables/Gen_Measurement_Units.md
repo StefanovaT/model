@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.MeasurementUnits](~/entities/General.MeasurementUnits.md)
+Entity: [General.Products.MeasurementUnits](~/entities/General.Products.MeasurementUnits.md)
 
 Contains all measurement units, grouped in categories. Each category has one base unit (with ratio 1/1) and unlimited number of derived units with fixed ratio to the base unit. Entity: Gen_Measurement_Units
 

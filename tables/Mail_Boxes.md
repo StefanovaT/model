@@ -23,7 +23,7 @@ Represents user mailboxes. Entity: Mail_Boxes
 |[Sent_Items_Folder_Name](#sent_items_folder_name)|`nvarchar(254)` |The name of the SentItems folder. It is left empty, EnterpriseOne won't save the sent mail in any folder (but it is still possible that the actual mail server would nevertheless save the mail in a sent items folder, independently from EnterpriseOne).|
 |[Signature_Html](#signature_html)|`nvarchar(max)` |Html text of the default signature, when creating new emails from this mailbox. When is NULL, a default generic signature is attached|
 |[Sync_Password](#sync_password)|`nvarchar(512)` |The password to supply to the server when retrieving email. NULL when the connection is not setup or the server does not require user name|
-|[Sync_Protocol](#sync_protocol)|`nvarchar(4)` Allowed: `IMAP`, `POP3`, `MEWS`|Synchronization protocol, 'POP3' or 'IMAP'. NULL means that syncrhonization is not setup|
+|[Sync_Protocol](#sync_protocol)|`nvarchar(4)` Allowed: `IMAP`, `POP3`, `MEWS`, `NSNC`|Synchronization protocol, 'POP3' or 'IMAP'. NULL means that syncrhonization is not setup|
 |[Sync_Server_Address](#sync_server_address)|`nvarchar(254)` |Incoming and outgoing mail server internet address. NULL when synchronization is not setup|
 |[Sync_User_Name](#sync_user_name)|`nvarchar(64)` |User name to supply to the server, when retrieving email. NULL when the connection is not setup or the server does not require user name|
 
@@ -433,7 +433,7 @@ Synchronization protocol, 'POP3' or 'IMAP'. NULL means that syncrhonization is n
 
 | Property | Value |
 | - | - |
-|Allowed Values|`IMAP`, `POP3`, `MEWS`|
+|Allowed Values|`IMAP`, `POP3`, `MEWS`, `NSNC`|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|

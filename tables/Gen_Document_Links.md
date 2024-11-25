@@ -7,7 +7,7 @@
 
 ## Entity
 
-Entity: [General.DocumentLinks](~/entities/General.DocumentLinks.md)
+Entity: [General.Documents.DocumentLinks](~/entities/General.Documents.DocumentLinks.md)
 
 Obsolete. Not used. Entity: Gen_Document_Links (Obsoleted in version 22.1.6.60)
 

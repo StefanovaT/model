@@ -74,6 +74,7 @@ Desired answer.
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -92,7 +93,7 @@ Desired answer.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(max)|
-|UI Memo Editor|yes|
+|UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|
@@ -354,6 +355,7 @@ User question.
 
 | Property | Value |
 | - | - |
+|Attributes|IsLongString|
 |Auto Complete|no|
 |Data Filter|no|
 |Default Value|None|
@@ -372,7 +374,7 @@ User question.
 |Summary Type|None|
 |Supports EQUALS_IN|no|
 |Type|nvarchar(max)|
-|UI Memo Editor|yes|
+|UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
 |Visible|yes|

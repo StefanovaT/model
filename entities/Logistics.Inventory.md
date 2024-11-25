@@ -9,6 +9,7 @@ uid: Logistics.Inventory
 - [CostCorrectionLines](Logistics.Inventory.CostCorrectionLines.md)  
 - [CostCorrections](Logistics.Inventory.CostCorrections.md)  
 - [CostCorrectionsOptions](Logistics.Inventory.CostCorrectionsOptions.md)  
+- [CurrentBalanceAdjustedCosts](Logistics.Inventory.CurrentBalanceAdjustedCosts.md)  
 - [CurrentBalances](Logistics.Inventory.CurrentBalances.md)  
 - [Lots](Logistics.Inventory.Lots.md)  
 - [ProductDefaultStoreBins](Logistics.Inventory.ProductDefaultStoreBins.md)  

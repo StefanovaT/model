@@ -15,19 +15,21 @@ _FileName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
-Aggregate Parent:  
-[Systems.Core.ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)  
-Aggregate Root:  
-[Systems.Core.ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)  
+Aggregate Tree  
+* [Systems.Core.ObjectFiles](Systems.Core.ObjectFiles.md)  
 
 ## Attributes
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AccessPermission](Systems.Core.ObjectFiles.md#accesspermission) | [AccessPermission](Systems.Core.ObjectFiles.md#accesspermission) | Indicates who has permission to access this file. `Required` `Default("IN")` `Introduced in version 24.1.4.56` 
+| [AccessPermission](Systems.Core.ObjectFiles.md#accesspermission) | [AccessPermission](Systems.Core.ObjectFiles.md#accesspermission) | Indicates who has permission to access this file. `Required` `Default("IN")` `Filter(multi eq)` `Introduced in version 24.1.4.56` 
 | [ContentLocation](Systems.Core.ObjectFiles.md#contentlocation) | [ContentLocation](Systems.Core.ObjectFiles.md#contentlocation) | The location of the file contents. EMB=Embedded in the database; URL=Internet URL; FSL=File system link. `Required` `Default("EMB")` `Filter(multi eq)` `Introduced in version 20.1` 
 | [CreationTimeUtc](Systems.Core.ObjectFiles.md#creationtimeutc) | datetime | Time (in UTC), when the file was created. `Required` `Default(NowUtc)` `Filter(ge;le)` `Introduced in version 20.1` 
 | [DisplayText](Systems.Core.ObjectFiles.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
@@ -52,14 +54,14 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [CreationUser](Systems.Core.ObjectFiles.md#creationuser) | [Users](Systems.Security.Users.md) (nullable) | The user, who created the file record. null if it is unknown. `Filter(multi eq)` `Introduced in version 20.1` |
 | [LastUpdateUser](Systems.Core.ObjectFiles.md#lastupdateuser) | [Users](Systems.Security.Users.md) (nullable) | The user, who performed the last update to the file record. null if it is unknown. `Filter(multi eq)` `Introduced in version 20.1` |
-| [Object](Systems.Core.ObjectFiles.md#object) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The object to which the file is attached. `Required` `Filter(multi eq)` `Owner` |
+| [Object](Systems.Core.ObjectFiles.md#object) | [ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md) | The object to which the file is attached. `Required` `Filter(multi eq)` |
 
 
 ## Attribute Details
 
 ### AccessPermission
 
-Indicates who has permission to access this file. `Required` `Default("IN")` `Introduced in version 24.1.4.56`
+Indicates who has permission to access this file. `Required` `Default("IN")` `Filter(multi eq)` `Introduced in version 24.1.4.56`
 
 _Type_: **[AccessPermission](Systems.Core.ObjectFiles.md#accesspermission)**  
 _Category_: **System**  
@@ -72,7 +74,7 @@ _Allowed Values (Systems.Core.ObjectFilesRepository.AccessPermission Enum Member
 | Internal | Only internal users have access.. Stored as 'IN'. <br /> _Database Value:_ 'IN' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Internal' |
 | External | External and internal users have access.. Stored as 'EX'. <br /> _Database Value:_ 'EX' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'External' |
 
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals, EqualsIn**  
 _Supports Order By_: **False**  
 _Default Value_: **Internal**  
 _Show in UI_: **ShownByDefault**  
@@ -287,13 +289,12 @@ _Show in UI_: **ShownByDefault**
 
 ### Object
 
-The object to which the file is attached. `Required` `Filter(multi eq)` `Owner`
+The object to which the file is attached. `Required` `Filter(multi eq)`
 
 _Type_: **[ExtensibleDataObjects](Systems.Core.ExtensibleDataObjects.md)**  
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
 _Show in UI_: **ShownByDefault**  
 
 
@@ -304,7 +305,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -346,7 +347,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -361,7 +362,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

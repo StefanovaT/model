@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.ExternalApplications](~/entities/Systems.Core.ExternalApplications.md)
+Entity: [Systems.Security.ExternalApplications](~/entities/Systems.Security.ExternalApplications.md)
 
 List of external applications. Used to run external applications. Entity: Sys_External_Applications
 

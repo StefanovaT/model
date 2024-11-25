@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Dmv.WebSites](~/entities/Systems.Dmv.WebSites.md)
+Entity: [Systems.Monitoring.WebSites](~/entities/Systems.Monitoring.WebSites.md)
 
 Web sites dynamic management view. Entity: Dmv_Web_Sites (Introduced in version 23.1.1.43)
 

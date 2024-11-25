@@ -19,6 +19,10 @@ _Company.PartyName_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _3 - Track object and attribute changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -54,11 +58,11 @@ Aggregate Tree
 | ---- | ---- | --- |
 | [AccessKey](General.EnterpriseCompanies.md#accesskey) | [AccessKeys](Systems.Security.AccessKeys.md) (nullable) | The access key, containing the user permissions for this EnterpriseCompany. Null means that all users have unlimited permissions. `Filter(multi eq)` |
 | [AdvanceProduct](General.EnterpriseCompanies.md#advanceproduct) | [Products](General.Products.Products.md) (nullable) | Product that is used for handling advances in trade documents. `Filter(multi eq)` |
-| [BaseCurrency](General.EnterpriseCompanies.md#basecurrency) | [Currencies](General.Currencies.md) | The base currency for summary reporting for this company. `Required` `Filter(multi eq)` |
+| [BaseCurrency](General.EnterpriseCompanies.md#basecurrency) | [Currencies](General.Currencies.Currencies.md) | The base currency for summary reporting for this company. `Required` `Filter(multi eq)` |
 | [Company](General.EnterpriseCompanies.md#company) | [Companies](General.Contacts.Companies.md) | Contains the base company data on which this enterprise company is based. `Required` `Filter(multi eq)` |
 | [ExchangeDifference<br />CreditAccount](General.EnterpriseCompanies.md#exchangedifferencecreditaccount) | [Accounts](Finance.Accounting.Accounts.md) (nullable) | Account for balancing accounting vouchers with credit difference due to currency exchanges. `Filter(multi eq)` |
 | [ExchangeDifference<br />DebitAccount](General.EnterpriseCompanies.md#exchangedifferencedebitaccount) | [Accounts](Finance.Accounting.Accounts.md) (nullable) | Account for balancing accounting vouchers with debit difference due to currency exchanges. `Filter(multi eq)` |
-| [VATDocumentAmountType](General.EnterpriseCompanies.md#vatdocumentamounttype) | [DocumentAmountTypes](General.DocumentAmountTypes.md) (nullable) | The document amount that is used to determine the amount of the VAT entries when they are generated. `Filter(multi eq)` |
+| [VATDocumentAmountType](General.EnterpriseCompanies.md#vatdocumentamounttype) | [DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) (nullable) | The document amount that is used to determine the amount of the VAT entries when they are generated. `Filter(multi eq)` |
 
 ## Child Collections
 
@@ -215,6 +219,15 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **CannotBeShown**  
 
+
+_Remarks_  
+Supported permissions
+
+| Permission | Type |
+| --- | --- |
+| Update | - |
+| Delete | - |
+| Administer (manage security)| - |
 ### AdvanceProduct
 
 Product that is used for handling advances in trade documents. `Filter(multi eq)`
@@ -228,7 +241,7 @@ _Show in UI_: **ShownByDefault**
 
 The base currency for summary reporting for this company. `Required` `Filter(multi eq)`
 
-_Type_: **[Currencies](General.Currencies.md)**  
+_Type_: **[Currencies](General.Currencies.Currencies.md)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -265,7 +278,7 @@ _Show in UI_: **ShownByDefault**
 
 The document amount that is used to determine the amount of the VAT entries when they are generated. `Filter(multi eq)`
 
-_Type_: **[DocumentAmountTypes](General.DocumentAmountTypes.md) (nullable)**  
+_Type_: **[DocumentAmountTypes](Systems.Documents.DocumentAmountTypes.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -278,7 +291,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -320,7 +333,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -335,7 +348,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.PropertiesCategories](~/entities/General.PropertiesCategories.md)
+Entity: [Systems.Bpm.PropertiesCategories](~/entities/Systems.Bpm.PropertiesCategories.md)
 
 Categories of properties. Entity: Gen_Properties_Categories
 

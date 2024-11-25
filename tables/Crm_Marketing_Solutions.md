@@ -15,6 +15,7 @@ The solutions which we are offering to our clients. The solutions usually depend
 |[Company_Size_Class_Id](#company_size_class_id)|`uniqueidentifier` |The company size class, for which this solution is appropriate. NULL if not applicable.|
 |[Enterprise_Company_Id](#enterprise_company_id)|`uniqueidentifier` |The enterprise company offering this marketing solution.|
 |[Industry_Id](#industry_id)|`uniqueidentifier` |The industry, for which this solution is appropriate. NULL if not applicable.|
+|[Is_Active](#is_active)|`bit` |Indicates whether the current Marketing solution is active.|
 |[Marketing_Solution_Id](#marketing_solution_id)|`uniqueidentifier` `PK`||
 |[Name](#name)|`nvarchar(254)` `ML`||
 |[Notes](#notes)|`nvarchar(max)` ||
@@ -166,6 +167,42 @@ The industry, for which this solution is appropriate. NULL if not applicable.
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|yes|no|
+
+### Is_Active
+
+
+Indicates whether the current Marketing solution is active.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Is_Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Marketing_Solution_Id
 

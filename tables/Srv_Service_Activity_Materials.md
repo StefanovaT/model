@@ -20,11 +20,13 @@ Contains the materials, which were actually used during the service activity (re
 |[Covered_By_Guarantee](#covered_by_guarantee)|`bit` |True when the used material is covered by the guarantee.|
 |[Line_No](#line_no)|`int` |Consecutive line number, unique within the document. Usually is increasing in steps of 10, like in 10, 20, 30, etc.|
 |[Line_Store_Id](#line_store_id)|`uniqueidentifier` |The store from which the product was taken. NULL = use the store from the header|
+|[Lot_Id](#lot_id)|`uniqueidentifier` |The lot of the product used as material. NULL means that the lot is unknown or will be specified at a later stage (in a store order. etc.)|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product, which was used as material.|
 |[Quantity](#quantity)|`decimal(18, 3)` |Quantity of the product, that was used|
 |[Quantity_Base](#quantity_base)|`decimal(18, 3)` Readonly|The equivalence of Quantity in the base measurement category of the product.|
 |[Quantity_Unit_Id](#quantity_unit_id)|`uniqueidentifier` |The measurement unit of Quantity. Initially is set to the default unit for the product|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Serial_Number_Id](#serial_number_id)|`uniqueidentifier` |The serial number of the product used as material. NULL means that the number is unknown or will be specified at a later stage (in a store order, etc.)|
 |[Service_Activity_Id](#service_activity_id)|`uniqueidentifier` ||
 |[Service_Activity_Material_Id](#service_activity_material_id)|`uniqueidentifier` `PK`||
 |[Service_Object_Id](#service_object_id)|`uniqueidentifier` |The service object for which the material is used. NULL means unkown object or N/A|
@@ -125,6 +127,43 @@ The store from which the product was taken. NULL = use the store from the header
 |Visible|yes|
 
 #### Line_Store_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
+
+### Lot_Id
+
+
+The lot of the product used as material. NULL means that the lot is unknown or will be specified at a later stage (in a store order. etc.)
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|13|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Lots](Inv_Lots.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|no|
+
+#### Lot_Id - Supported Filters
 
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
@@ -290,6 +329,43 @@ The measurement unit of Quantity. Initially is set to the default unit for the p
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### Serial_Number_Id
+
+
+The serial number of the product used as material. NULL means that the number is unknown or will be specified at a later stage (in a store order, etc.)
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|12|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|Referenced Table|[Inv_Serial_Numbers](Inv_Serial_Numbers.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Serial_Number_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 ### Service_Activity_Id
 

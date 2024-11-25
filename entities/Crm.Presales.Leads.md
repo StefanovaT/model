@@ -14,8 +14,12 @@ Default Search Members:
 _CompanyName_  
 Name Data Member:  
 _CompanyName_  
-Category:  _Definitions_  
+Category:  _Documents_  
 Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -42,20 +46,20 @@ Aggregate Tree
 | [PersonWorkPhone](Crm.Presales.Leads.md#personworkphone) | string (32) __nullable__ | The work phone of the sales lead person. `Filter(like)` 
 | [RoleInCompany](Crm.Presales.Leads.md#roleincompany) | string (32) __nullable__ | The role of the person in the company. `Filter(eq;like)` 
 | [SQLTimestampUtc](Crm.Presales.Leads.md#sqltimestamputc) | datetime __nullable__ | System assigned date and time (in UTC), when the lead was first promoted to Sales Qualified Lead. `Filter(ge;le)` `ReadOnly` 
-| [SystemStage](Crm.Presales.Leads.md#systemstage) | [SystemStage](Crm.Presales.Leads.md#systemstage) | The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). `Required` `Default("NEW")` `Filter(multi eq)` 
+| [SystemStage](Crm.Presales.Leads.md#systemstage) | [SystemStage](Crm.Presales.Leads.md#systemstage) | The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). `Required` `Default("NEW")` `Filter(multi eq)` `ReadOnly` 
 
 ## References
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [AssignedToSalesPerson](Crm.Presales.Leads.md#assignedtosalesperson) | [SalesPersons](Crm.SalesPersons.md) (nullable) | Sales rep to whom this lead is assigned for further processing. null - not yet assigned. `Filter(multi eq)` |
+| [AssignedToSalesPerson](Crm.Presales.Leads.md#assignedtosalesperson) | [SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable) | Sales rep to whom this lead is assigned for further processing. null - not yet assigned. `Filter(multi eq)` |
 | [Campaign](Crm.Presales.Leads.md#campaign) | [Campaigns](Crm.Marketing.Campaigns.md) | The marketing campaign under which the lead was generated. `Required` `Filter(multi eq)` |
 | [ConvertedToDeal](Crm.Presales.Leads.md#convertedtodeal) | [Deals](Crm.Presales.Deals.md) (nullable) | Filled when the lead is converted to opportunity (deal). `Filter(multi eq)` |
 | [EnterpriseCompany](Crm.Presales.Leads.md#enterprisecompany) | [EnterpriseCompanies](General.EnterpriseCompanies.md) | The enterprise company to which this lead belongs. `Required` `Filter(multi eq)` `Introduced in version 22.1.5.23` |
 | [EnterpriseCompanyLocation](Crm.Presales.Leads.md#enterprisecompanylocation) | [CompanyLocations](General.Contacts.CompanyLocations.md) (nullable) | The enterprise company location to which this lead belongs. `Filter(multi eq)` `Introduced in version 22.1.6.41` |
 | [IdentifiedCompany](Crm.Presales.Leads.md#identifiedcompany) | [Companies](General.Contacts.Companies.md) (nullable) | Filled when the company is identified within our database. `Filter(multi eq)` |
 | [IdentifiedPerson](Crm.Presales.Leads.md#identifiedperson) | [Persons](General.Contacts.Persons.md) (nullable) | Filled when the person is identified and recorded in our master records. `Filter(multi eq)` |
-| [LeadUserStage](Crm.Presales.Leads.md#leaduserstage) | [LeadUserStages](Crm.Presales.LeadUserStages.md) (nullable) | The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). `Filter(multi eq)` |
+| [LeadUserStage](Crm.Presales.Leads.md#leaduserstage) | [LeadUserStages](Crm.Presales.LeadUserStages.md) (nullable) | The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). `Filter(multi eq)` `ReadOnly` |
 | [MarketingCompanySize](Crm.Presales.Leads.md#marketingcompanysize) | [CompanySizeClasses](Crm.Marketing.CompanySizeClasses.md) (nullable) | The size class of the company. `Filter(multi eq)` |
 | [MarketingIndustry](Crm.Presales.Leads.md#marketingindustry) | [Industries](Crm.Marketing.Industries.md) (nullable) | The industry (for marketing purposes) of the lead. `Filter(multi eq)` |
 | [MarketingSolution](Crm.Presales.Leads.md#marketingsolution) | [MarketingSolutions](Crm.Marketing.MarketingSolutions.md) (nullable) | The marketing solution, in which the lead is interested or which generated the lead. `Filter(multi eq)` |
@@ -228,7 +232,7 @@ _Show in UI_: **ShownByDefault**
 
 ### SystemStage
 
-The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). `Required` `Default("NEW")` `Filter(multi eq)`
+The system stage of the lead - New, Qualifying, Marketing Qualified Lead, Sales Qualified Lead, Closed. (NEW, QUA, MQL, SQL, CLO). `Required` `Default("NEW")` `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[SystemStage](Crm.Presales.Leads.md#systemstage)**  
 _Category_: **System**  
@@ -255,7 +259,7 @@ _Show in UI_: **ShownByDefault**
 
 Sales rep to whom this lead is assigned for further processing. null - not yet assigned. `Filter(multi eq)`
 
-_Type_: **[SalesPersons](Crm.SalesPersons.md) (nullable)**  
+_Type_: **[SalesPersons](Crm.SalesForce.SalesPersons.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -317,7 +321,7 @@ _Show in UI_: **ShownByDefault**
 
 ### LeadUserStage
 
-The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). `Filter(multi eq)`
+The user-defined sub-stage of the lead. This also defines the step in the sales sequence and the next appropriate activity to engage the lead. null when the user stage is undefined (the pure System Stage defines the stage). `Filter(multi eq)` `ReadOnly`
 
 _Type_: **[LeadUserStages](Crm.Presales.LeadUserStages.md) (nullable)**  
 _Indexed_: **True**  
@@ -378,7 +382,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -420,7 +424,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -435,7 +439,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

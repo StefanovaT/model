@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.DocumentPartyRoles](~/entities/General.DocumentPartyRoles.md)
+Entity: [Systems.Documents.DocumentPartyRoles](~/entities/Systems.Documents.DocumentPartyRoles.md)
 
 Represents the different possible roles of a party associated to a document. Entity: Gen_Document_Party_Roles (Introduced in version 22.1.4.45)
 

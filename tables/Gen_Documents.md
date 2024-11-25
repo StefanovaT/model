@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [General.Documents](~/entities/General.Documents.md)
+Entity: [General.Documents.Documents](~/entities/General.Documents.Documents.md)
 
 Contains all documents issued by and to the enterprise. Entity: Gen_Documents
 

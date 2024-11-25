@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.EntitySettings](~/entities/Systems.Core.EntitySettings.md)
+Entity: [Systems.Security.EntitySettings](~/entities/Systems.Security.EntitySettings.md)
 
 Contains entities, which have secured access. Entity: Sys_Entities
 

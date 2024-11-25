@@ -17,6 +17,10 @@ _TemplateName_
 Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -36,6 +40,7 @@ Aggregate Tree
 | [ObjectVersion](Crm.Pos.FiscalReceiptTemplates.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
 | [PrintSystemHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemheader) | boolean | Denotes whether to print the system-defined header for the document. `Required` `Default(true)` `Filter(eq)` 
 | [PrintSystemRowHeader](Crm.Pos.FiscalReceiptTemplates.md#printsystemrowheader) | boolean | Denotes whether to print the system-defined header for each row. `Required` `Default(true)` `Filter(eq)` 
+| [TemplateKind](Crm.Pos.FiscalReceiptTemplates.md#templatekind) | [TemplateKind](Crm.Pos.FiscalReceiptTemplates.md#templatekind) | Specifies the entity type, for which the template can be used. Template strings can refer to the attributes of the specified entity type. `Required` `Default("S")` `Filter(multi eq)` `Introduced in version 24.1.5.7` 
 | [TemplateName](Crm.Pos.FiscalReceiptTemplates.md#templatename) | string (64) | The unique name of the printing template. `Required` `Filter(eq;like)` `ORD` 
 
 
@@ -135,6 +140,26 @@ _Supports Order By_: **False**
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
 
+### TemplateKind
+
+Specifies the entity type, for which the template can be used. Template strings can refer to the attributes of the specified entity type. `Required` `Default("S")` `Filter(multi eq)` `Introduced in version 24.1.5.7`
+
+_Type_: **[TemplateKind](Crm.Pos.FiscalReceiptTemplates.md#templatekind)**  
+_Category_: **System**  
+Allowed values for the `TemplateKind`(Crm.Pos.FiscalReceiptTemplates.md#templatekind) data attribute  
+_Allowed Values (Crm.Pos.FiscalReceiptTemplatesRepository.TemplateKind Enum Members)_  
+
+| Value | Description |
+| ---- | --- |
+| SalesOrders | Sales Orders entity type. Stored as 'S'. <br /> _Database Value:_ 'S' <br /> _Model Value:_ 0 <br /> _Domain API Value:_ 'SalesOrders' |
+| Invoices | Invoices entity type. Stored as 'I'. <br /> _Database Value:_ 'I' <br /> _Model Value:_ 1 <br /> _Domain API Value:_ 'Invoices' |
+| Payments | Payments entity type. Stored as 'P'. <br /> _Database Value:_ 'P' <br /> _Model Value:_ 2 <br /> _Domain API Value:_ 'Payments' |
+
+_Supported Filters_: **Equals, EqualsIn**  
+_Supports Order By_: **False**  
+_Default Value_: **SalesOrders**  
+_Show in UI_: **ShownByDefault**  
+
 ### TemplateName
 
 The unique name of the printing template. `Required` `Filter(eq;like)` `ORD`
@@ -155,7 +180,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -197,7 +222,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -212,7 +237,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

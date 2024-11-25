@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Crm.Marketing.BonusPrograms](~/entities/Crm.Marketing.BonusPrograms.md)
+Entity: [Crm.Pricing.BonusPrograms](~/entities/Crm.Pricing.BonusPrograms.md)
 
 Bonus programs allow automatic adding of new line with bonus product or automatic application of discount in a sales document. Entity: Crm_Bonus_Programs
 

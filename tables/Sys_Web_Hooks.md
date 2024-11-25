@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Core.WebHooks](~/entities/Systems.Core.WebHooks.md)
+Entity: [Systems.Config.WebHooks](~/entities/Systems.Config.WebHooks.md)
 
 Webhook templates. Activated by business rules or other means. Entity: Sys_Web_Hooks (Introduced in version 22.1.5.8)
 

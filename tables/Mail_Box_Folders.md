@@ -15,6 +15,7 @@ Contains the folders inside the mailboxes. Entity: Mail_Box_Folders
 
 | Name | Type | Description |
 | - | - | --- |
+|[Active](#active)|`bit` |1 when the mail box folder is active|
 |[Folder_Name](#folder_name)|`nvarchar(254)` `ML`|Multi-language folder name|
 |[Mail_Box_Folder_Id](#mail_box_folder_id)|`uniqueidentifier` `PK`||
 |[Mail_Box_Id](#mail_box_id)|`uniqueidentifier` Readonly||
@@ -25,6 +26,42 @@ Contains the folders inside the mailboxes. Entity: Mail_Box_Folders
 |[System_Purpose](#system_purpose)|`nvarchar(1)` Allowed: `M`, `I`, `D`, `O`, `S`, `T`, Readonly|When not NULL means that the folder has special system designation. Designations are: M=Mailbox(root folder), I=Inbox, D=Drafts, O=Outbox, S=Sent, T=Trash.|
 
 ## Columns
+
+### Active
+
+
+1 when the mail box folder is active
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|True|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|bit|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Active - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|no|no|
 
 ### Folder_Name
 

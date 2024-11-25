@@ -104,7 +104,7 @@ Name of the folder. Unique within its parent folder.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|128|
-|Order|2147483647|
+|Order|0|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -138,7 +138,7 @@ Name of the folder. Unique within its parent folder.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|2147483647|
-|Order|2147483647|
+|Order|2|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -168,7 +168,7 @@ Parent folder. NULL if this is root folder.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|1|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -183,7 +183,7 @@ Parent folder. NULL if this is root folder.
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
-|Visible|yes|
+|Visible|no|
 
 #### Parent_Folder_Id - Supported Filters
 

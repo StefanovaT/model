@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Communities.Notifications](~/entities/Communities.Notifications.md)
+Entity: [Systems.Core.Notifications](~/entities/Systems.Core.Notifications.md)
 
 A single notification of a user. Entity: Cmm_Notifications (Introduced in version 20.1)
 
@@ -11,6 +11,7 @@ A single notification of a user. Entity: Cmm_Notifications (Introduced in versio
 
 | Name | Type | Description |
 | - | - | --- |
+|[Anchor](#anchor)|`nvarchar(128)` |A custom reference (most commonly a relative URL) pointing to an additional resource related to the DataObject.|
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact server time (in UTC), when the notification was created.|
 |[Data_Object_Id](#data_object_id)|`uniqueidentifier` |The data object about which the notification is created. Null means that the notification is not about any specific data object.|
 |[Is_Read](#is_read)|`bit` |Specifies whether the user has read the notification. If the system changes the notification after first reading, the flag is reset to unread again.|
@@ -21,6 +22,36 @@ A single notification of a user. Entity: Cmm_Notifications (Introduced in versio
 |[User_Id](#user_id)|`uniqueidentifier` |The user, who is notified.|
 
 ## Columns
+
+### Anchor
+
+
+A custom reference (most commonly a relative URL) pointing to an additional resource related to the DataObject.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|128|
+|Order|2147483647|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(128) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Creation_Time_Utc
 

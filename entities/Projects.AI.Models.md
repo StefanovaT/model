@@ -17,6 +17,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -29,6 +33,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [AutoUpdateToLatestBuild](Projects.AI.Models.md#autoupdatetolatestbuild) | boolean | Indicates whether to automatically update Conversation Build to the latest successful build. `Required` `Default(true)` 
+| [BuildAssistant](Projects.AI.Models.md#buildassistant) | boolean | Specifies whether the model should produce an AI assistant. `Required` `Default(true)` `Introduced in version 24.1.5.31` 
 | [DisplayText](Projects.AI.Models.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Projects.AI.Models.md#id) | guid |  
 | [IsDefault](Projects.AI.Models.md#isdefault) | boolean | Specifies whether this is the default model which will handle AI prompts. `Required` `Default(false)` `Filter(eq)` `Introduced in version 24.1.3.23` 
@@ -58,6 +63,17 @@ Aggregate Tree
 ### AutoUpdateToLatestBuild
 
 Indicates whether to automatically update Conversation Build to the latest successful build. `Required` `Default(true)`
+
+_Type_: **boolean**  
+_Category_: **System**  
+_Supported Filters_: **NotFilterable**  
+_Supports Order By_: **False**  
+_Default Value_: **True**  
+_Show in UI_: **ShownByDefault**  
+
+### BuildAssistant
+
+Specifies whether the model should produce an AI assistant. `Required` `Default(true)` `Introduced in version 24.1.5.31`
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -190,7 +206,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -232,7 +248,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -247,7 +263,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

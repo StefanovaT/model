@@ -3,7 +3,7 @@
 
 ## Entity
 
-Entity: [Systems.Workflow.Processes](~/entities/Systems.Workflow.Processes.md)
+Entity: [Systems.Bpm.Processes](~/entities/Systems.Bpm.Processes.md)
 
 Contains the business process diagrams. Entity: Wf_Processes
 

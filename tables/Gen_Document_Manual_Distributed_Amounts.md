@@ -7,7 +7,7 @@
 
 ## Entity
 
-Entity: [General.DocumentManualDistributedAmounts](~/entities/General.DocumentManualDistributedAmounts.md)
+Entity: [General.Documents.DocumentManualDistributedAmounts](~/entities/General.Documents.DocumentManualDistributedAmounts.md)
 
 Obsolete. Not used. Entity: Gen_Document_Manual_Distributed_Amounts (Obsoleted in version 22.1.6.60)
 

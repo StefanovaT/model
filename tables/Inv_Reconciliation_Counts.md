@@ -18,12 +18,16 @@ Used for planned reconciliations to count product quantities from multiple devic
 | - | - | --- |
 |[Creation_Time_Utc](#creation_time_utc)|`datetime` Readonly|The exact time (UTC) the product was counted|
 |[Creation_User_Id](#creation_user_id)|`uniqueidentifier` Readonly|The user who performed the count|
+|[Notes](#notes)|`nvarchar(max)` |Additional information for the Count.|
 |[Product_Id](#product_id)|`uniqueidentifier` |The product which is currently counted|
-|[Quantity](#quantity)|`decimal(12, 3)` |The counted quantity in the default measurement unit of the product|
+|[Quantity](#quantity)|`decimal(18, 3)` |The counted quantity in the default measurement unit of the product|
+|[Quantity_Base](#quantity_base)|`decimal(18, 3)` Readonly|Quantity in the base measurement unit of the product.|
 |[Quantity_Unit_Id](#quantity_unit_id)|`uniqueidentifier` |The measurement unit from the definition of the product|
 |[Reconciliation_Count_Id](#reconciliation_count_id)|`uniqueidentifier` `PK`||
 |[Reconciliation_Id](#reconciliation_id)|`uniqueidentifier` |The planned reconciliation for which to execute the current counting.|
 |[Row_Version](#row_version)|`timestamp` ||
+|[Standard_Quantity_Base](#standard_quantity_base)|`decimal(18, 3)` Readonly|The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.|
+|[Warehouse_Transaction_Id](#warehouse_transaction_id)|`uniqueidentifier` Readonly|The warehouse transaction with which the count has been recorded. Filled if the count information is loaded from the WMS module.|
 
 ## Columns
 
@@ -41,7 +45,7 @@ The exact time (UTC) the product was counted
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|6|
+|Order|5|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -77,7 +81,7 @@ The user who performed the count
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|5|
+|Order|4|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -99,6 +103,36 @@ The user who performed the count
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |Equals|`NULL`|no|no|
+
+### Notes
+
+
+Additional information for the Count.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|2147483647|
+|Order|9|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|no|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|nvarchar(max) (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Product_Id
 
@@ -161,7 +195,7 @@ The counted quantity in the default measurement unit of the product
 |Sortable|no|
 |Summary Type|None|
 |Supports EQUALS_IN|no|
-|Type|decimal(12, 3)|
+|Type|decimal(18, 3)|
 |UI Memo Editor|no|
 |UI Width|Medium|
 |User Login|no|
@@ -172,6 +206,36 @@ The counted quantity in the default measurement unit of the product
 | Filter Type | Default | Include Nulls | Hidden by Default |
 | - | - | - | - |
 |GreaterThanOrLessThan|None|no|no|
+
+### Quantity_Base
+
+
+Quantity in the base measurement unit of the product.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|0|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|12|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(18, 3)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
 
 ### Quantity_Unit_Id
 
@@ -221,7 +285,7 @@ The measurement unit from the definition of the product
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|7|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -257,7 +321,7 @@ The planned reconciliation for which to execute the current counting.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|2147483647|
+|Order|8|
 |Ownership Reference|yes|
 |Pasword|no|
 |Picture|no|
@@ -291,7 +355,7 @@ The planned reconciliation for which to execute the current counting.
 |Ignore for Insert Order|no|
 |Is Entity Name|no|
 |Max Length|-1|
-|Order|7|
+|Order|6|
 |Ownership Reference|no|
 |Pasword|no|
 |Picture|no|
@@ -306,5 +370,72 @@ The planned reconciliation for which to execute the current counting.
 |UI Width|Medium|
 |User Login|no|
 |Visible|no|
+
+### Standard_Quantity_Base
+
+
+The theoretical quantity in base measurement unit according to the current measurement dimensions for the product. Used to measure the execution.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|0|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|11|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|no|
+|Type|decimal(18, 3)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+### Warehouse_Transaction_Id
+
+
+The warehouse transaction with which the count has been recorded. Filled if the count information is loaded from the WMS module.
+
+| Property | Value |
+| - | - |
+|Auto Complete|no|
+|Data Filter|no|
+|Default Value|None|
+|Enter Stop|yes|
+|Ignore for Insert Order|no|
+|Is Entity Name|no|
+|Max Length|-1|
+|Order|10|
+|Ownership Reference|no|
+|Pasword|no|
+|Picture|no|
+|Primary Key|no|
+|Readonly|yes|
+|Referenced Table|[Wms_Warehouse_Transactions](Wms_Warehouse_Transactions.md)|
+|RTF|no|
+|Sortable|no|
+|Summary Type|None|
+|Supports EQUALS_IN|yes|
+|Type|uniqueidentifier (Allows NULL)|
+|UI Memo Editor|no|
+|UI Width|Medium|
+|User Login|no|
+|Visible|yes|
+
+#### Warehouse_Transaction_Id - Supported Filters
+
+| Filter Type | Default | Include Nulls | Hidden by Default |
+| - | - | - | - |
+|Equals|`NULL`|yes|no|
 
 

@@ -15,6 +15,10 @@ _WarehouseOrder.DocumentNo_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -45,12 +49,12 @@ Aggregate Root:
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Document](Logistics.Wms.WarehouseOrderLines.md#document) | [WarehouseOrders](Logistics.Wms.WarehouseOrders.md) | The <see cref="WarehouseOrder"/> to which this WarehouseOrderLine belongs. `Required` `Filter(multi eq)` |
-| [LogisticUnit](Logistics.Wms.WarehouseOrderLines.md#logisticunit) | [LogisticUnits](Logistics.LogisticUnits.md) (nullable) | Logistic unit, which should be used in the operation. `Filter(multi eq)` `Introduced in version 21.1.1.18` |
+| [LogisticUnit](Logistics.Wms.WarehouseOrderLines.md#logisticunit) | [LogisticUnits](Logistics.Common.LogisticUnits.md) (nullable) | Logistic unit, which should be used in the operation. `Filter(multi eq)` `Introduced in version 21.1.1.18` |
 | [Lot](Logistics.Wms.WarehouseOrderLines.md#lot) | [Lots](Logistics.Inventory.Lots.md) (nullable) | The lot of the product, which should be used. null for operations, which are not lot-specific, or when any lot can be used. `Filter(multi eq)` |
 | [ParentDocument](Logistics.Wms.WarehouseOrderLines.md#parentdocument) | [WarehouseRequisitions](Logistics.Wms.WarehouseRequisitions.md) (nullable) | The document, which the current line executes. null when the current line does not execute another line. `Filter(multi eq)` `Introduced in version 22.1.4.26` |
 | [Product](Logistics.Wms.WarehouseOrderLines.md#product) | [Products](General.Products.Products.md) (nullable) | The product, which should be used for the operation. `Filter(multi eq)` |
 | [ProductVariant](Logistics.Wms.WarehouseOrderLines.md#productvariant) | [ProductVariants](General.Products.ProductVariants.md) (nullable) | The product variant, which should be used. `Filter(multi eq)` `Introduced in version 21.1.1.18` |
-| [QuantityUnit](Logistics.Wms.WarehouseOrderLines.md#quantityunit) | [MeasurementUnits](General.MeasurementUnits.md) (nullable) | The measurement unit of Quantity. null for operations, which are not quantity-related. `Filter(multi eq)` |
+| [QuantityUnit](Logistics.Wms.WarehouseOrderLines.md#quantityunit) | [MeasurementUnits](General.Products.MeasurementUnits.md) (nullable) | The measurement unit of Quantity. null for operations, which are not quantity-related. `Filter(multi eq)` |
 | [SerialNumber](Logistics.Wms.WarehouseOrderLines.md#serialnumber) | [SerialNumbers](Logistics.Inventory.SerialNumbers.md) (nullable) | The serial number of the product, which should be used. null for operations, which are not serial number-specific, or when any serial number can be used. `Filter(multi eq)` |
 | [ToWarehouseLocation](Logistics.Wms.WarehouseOrderLines.md#towarehouselocation) | [WarehouseLocations](Logistics.Wms.WarehouseLocations.md) (nullable) | Destination warehouse location. null for operations, which do not specify destination location. `Filter(multi eq)` |
 | [WarehouseLocation](Logistics.Wms.WarehouseOrderLines.md#warehouselocation) | [WarehouseLocations](Logistics.Wms.WarehouseLocations.md) (nullable) | Location, where the opeartion should be performed. null for operations, which do not require location. `Filter(multi eq)` |
@@ -236,7 +240,7 @@ _Show in UI_: **ShownByDefault**
 
 Logistic unit, which should be used in the operation. `Filter(multi eq)` `Introduced in version 21.1.1.18`
 
-_Type_: **[LogisticUnits](Logistics.LogisticUnits.md) (nullable)**  
+_Type_: **[LogisticUnits](Logistics.Common.LogisticUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **HiddenByDefault**  
@@ -281,7 +285,7 @@ _Show in UI_: **HiddenByDefault**
 
 The measurement unit of Quantity. null for operations, which are not quantity-related. `Filter(multi eq)`
 
-_Type_: **[MeasurementUnits](General.MeasurementUnits.md) (nullable)**  
+_Type_: **[MeasurementUnits](General.Products.MeasurementUnits.md) (nullable)**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
@@ -359,7 +363,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -401,7 +405,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -416,7 +420,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

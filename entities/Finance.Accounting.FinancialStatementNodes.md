@@ -19,6 +19,10 @@ _Name_
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -33,11 +37,11 @@ Aggregate Root:
 | ---- | ---- | --- |
 | [Code](Finance.Accounting.FinancialStatementNodes.md#code) | string (3) | Identifying code of the financial statement node. Unique within the parent financial statement node. `Required` `Filter(eq;like)` 
 | [DisplayText](Finance.Accounting.FinancialStatementNodes.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
-| [FullPath](Finance.Accounting.FinancialStatementNodes.md#fullpath) | string (25) __nullable__ | Full identification path of the financial statement node. `Filter(like)` `ReadOnly` 
+| [FullPath](Finance.Accounting.FinancialStatementNodes.md#fullpath) | string (25) __nullable__ | Full identification path of the financial statement node. `Filter(eq;like)` `ReadOnly` 
 | [Id](Finance.Accounting.FinancialStatementNodes.md#id) | guid |  
 | [Name](Finance.Accounting.FinancialStatementNodes.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | Name of the financial statement node. `Required` `Filter(like)` 
 | [ObjectVersion](Finance.Accounting.FinancialStatementNodes.md#objectversion) | int32 | The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking. 
-| [ParentFullPath](Finance.Accounting.FinancialStatementNodes.md#parentfullpath) | string (25) __nullable__ | Parent financial statement node specified through its full identification path. `Filter(like)` 
+| [ParentFullPath](Finance.Accounting.FinancialStatementNodes.md#parentfullpath) | string (25) __nullable__ | Parent financial statement node specified through its full identification path. `Filter(eq;like)` 
 
 ## References
 
@@ -77,11 +81,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### FullPath
 
-Full identification path of the financial statement node. `Filter(like)` `ReadOnly`
+Full identification path of the financial statement node. `Filter(eq;like)` `ReadOnly`
 
 _Type_: **string (25) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
 _Show in UI_: **HiddenByDefault**  
@@ -117,11 +121,11 @@ _Show in UI_: **HiddenByDefault**
 
 ### ParentFullPath
 
-Parent financial statement node specified through its full identification path. `Filter(like)`
+Parent financial statement node specified through its full identification path. `Filter(eq;like)`
 
 _Type_: **string (25) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **Like**  
+_Supported Filters_: **Equals, Like**  
 _Supports Order By_: **False**  
 _Maximum Length_: **25**  
 _Show in UI_: **ShownByDefault**  
@@ -148,7 +152,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -190,7 +194,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -205,7 +209,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

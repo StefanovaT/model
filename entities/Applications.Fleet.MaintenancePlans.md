@@ -19,6 +19,10 @@ _Name_
 Category:  _Settings_  
 Show in UI:  _ShownByDefault_  
 
+## Track Changes  
+Min level:  _0 - Do not track changes_  
+Max level:  _4 - Track object attribute and blob changes_  
+
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
 
@@ -34,7 +38,7 @@ Aggregate Tree
 | [Code](Applications.Fleet.MaintenancePlans.md#code) | string (16) | The unique code of the MaintenancePlan. `Required` 
 | [DisplayText](Applications.Fleet.MaintenancePlans.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Id](Applications.Fleet.MaintenancePlans.md#id) | guid |  
-| [IsActive](Applications.Fleet.MaintenancePlans.md#isactive) | boolean | True if the plan is active and can be selected from drop-downs. `Required` `Default(true)` `Introduced in version 18.2` 
+| [IsActive](Applications.Fleet.MaintenancePlans.md#isactive) | boolean | True if the plan is active and can be selected from drop-downs. `Required` `Default(true)` `Filter(eq)` `Introduced in version 18.2` 
 | [MileageKm](Applications.Fleet.MaintenancePlans.md#mileagekm) | int32 __nullable__ | When not null, specifies the number of kilometers that must have passed since the last maintenance, for the next maintenance to occur. 
 | [Name](Applications.Fleet.MaintenancePlans.md#name) | string (254) | Maintenance plan name (Multilanguage). `Required` 
 | [Notes](Applications.Fleet.MaintenancePlans.md#notes) | string (max) __nullable__ | Notes for this MaintenancePlan. 
@@ -92,15 +96,15 @@ _Indexed_: **True**
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _Default Value_: **NewGuid**  
-_Show in UI_: **ShownByDefault**  
+_Show in UI_: **CannotBeShown**  
 
 ### IsActive
 
-True if the plan is active and can be selected from drop-downs. `Required` `Default(true)` `Introduced in version 18.2`
+True if the plan is active and can be selected from drop-downs. `Required` `Default(true)` `Filter(eq)` `Introduced in version 18.2`
 
 _Type_: **boolean**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Default Value_: **True**  
 _Show in UI_: **ShownByDefault**  
@@ -165,7 +169,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -207,7 +211,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -222,7 +226,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 

@@ -9,7 +9,7 @@ User logins. Entity: Sec_Users
 
 ## Default Visualization
 Default Display Text Format:  
-_{Login}_  
+_{Name}_  
 Default Search Members:  
 _Login; Name_  
 Code Data Member:  
@@ -18,6 +18,10 @@ Name Data Member:
 _Name_  
 Category:  _Definitions_  
 Show in UI:  _ShownByDefault_  
+
+## Track Changes  
+Min level:  _3 - Track object and attribute changes_  
+Max level:  _4 - Track object attribute and blob changes_  
 
 ## Aggregate
 An [aggregate](https://docs.erp.net/tech/advanced/concepts/aggregates.html) is a cluster of domain objects that can be treated as a single unit.  
@@ -28,7 +32,7 @@ Aggregate Tree
   * [Systems.Security.UserGroups](Systems.Security.UserGroups.md)  
   * [Systems.Security.UserProviderLogins](Systems.Security.UserProviderLogins.md)  
   * [Systems.Security.UserProviderTokens](Systems.Security.UserProviderTokens.md)  
-  * [Systems.Workflow.RoleUsers](Systems.Workflow.RoleUsers.md)  
+  * [Systems.Security.RoleUsers](Systems.Security.RoleUsers.md)  
 
 ## Attributes
 
@@ -39,12 +43,12 @@ Aggregate Tree
 | [BasicAuthenticationAllowed](Systems.Security.Users.md#basicauthenticationallowed) | boolean | If true, this user is allowed to use basic authentication. Use with caution, because basic authentication is less secure than oauth!. `Required` `Default(false)` `Filter(eq)` `Introduced in version 23.1.1.35` 
 | [CompanyName](Systems.Security.Users.md#companyname) | string (64) __nullable__ | Name of the company in which the user claims they are working. `Introduced in version 22.1.6.61` 
 | [CreationTimeUtc](Systems.Security.Users.md#creationtimeutc) | datetime | The date and time (in UTC), when the user was created. `Required` `Default(Now)` `Filter(ge;le)` `ReadOnly` `Introduced in version 18.2` 
-| [DefaultCulture](Systems.Security.Users.md#defaultculture) | string (15) __nullable__ | The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1` 
+| [DefaultLanguage](Systems.Security.Users.md#defaultlanguage) | string (15) __nullable__ | The preferred default language of the user for UI, notifications, etc. Null means "en=English". `Filter(eq)` `Introduced in version 25.1.0.34` 
 | [DisplayText](Systems.Security.Users.md#displaytext) | string | Uses the repository DisplayTextFormat to build the display text from the attributes and references of current object. 
 | [Email](Systems.Security.Users.md#email) | string (254) __nullable__ | Unique email of the user. Can be null because there may be login providers that don't use emails. `Filter(multi eq;like)` `ORD` `Introduced in version 18.2` 
-| [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2` 
+| [EmailConfirmed](Systems.Security.Users.md#emailconfirmed) | boolean | Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Introduced in version 18.2` 
 | [Id](Systems.Security.Users.md#id) | guid |  
-| [IsAdmin](Systems.Security.Users.md#isadmin) | boolean | True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)` 
+| [IsAdmin](Systems.Security.Users.md#isadmin) | boolean | True if the user is administrator, otherwise 0. `Required` `Default(false)` `Filter(eq)` 
 | [LockoutEndUtc](Systems.Security.Users.md#lockoutendutc) | datetime __nullable__ | Contains the date and time (in UTC) until the user is locked. null when the user is not locked. `Filter(eq;ge;le;like)` `Introduced in version 18.2` 
 | [Login](Systems.Security.Users.md#login) | string (64) | The login name of the user, which is usually the email. `Required` `Filter(multi eq;like)` `ORD` 
 | [Name](Systems.Security.Users.md#name) | [MultilanguageString (254)](../data-types.md#multilanguagestring) | The full name of the user. `Required` `Filter(like)` 
@@ -65,6 +69,7 @@ Aggregate Tree
 | Name | Type | Description |
 | ---- | ---- | --- |
 | [Domain](Systems.Security.Users.md#domain) | [Domains](Systems.Security.Domains.md) (nullable) | The domain, to which the user belongs. `Filter(multi eq)` `Introduced in version 20.1` |
+| [Model](Systems.Security.Users.md#model) | [Models](Projects.AI.Models.md) (nullable) | The AI model associated with the user for their interactions. null means that this user has no AI model associated. `Filter(multi eq)` `Introduced in version 24.1.5.34` |
 | [Person](Systems.Security.Users.md#person) | [Persons](General.Contacts.Persons.md) (nullable) | The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. `Filter(multi eq)` |
 
 ## Child Collections
@@ -75,7 +80,7 @@ Aggregate Tree
 | Groups | [UserGroups](Systems.Security.UserGroups.md) | List of `UserGroup`(Systems.Security.UserGroups.md) child objects, based on the `Systems.Security.UserGroup.User`(Systems.Security.UserGroups.md#user) back reference 
 | ProviderLogins | [UserProviderLogins](Systems.Security.UserProviderLogins.md) | List of `UserProviderLogin`(Systems.Security.UserProviderLogins.md) child objects, based on the `Systems.Security.UserProviderLogin.User`(Systems.Security.UserProviderLogins.md#user) back reference 
 | ProviderTokens | [UserProviderTokens](Systems.Security.UserProviderTokens.md) | List of `UserProviderToken`(Systems.Security.UserProviderTokens.md) child objects, based on the `Systems.Security.UserProviderToken.User`(Systems.Security.UserProviderTokens.md#user) back reference 
-| RoleUsers | [RoleUsers](Systems.Workflow.RoleUsers.md) | List of `RoleUser`(Systems.Workflow.RoleUsers.md) child objects, based on the `Systems.Workflow.RoleUser.User`(Systems.Workflow.RoleUsers.md#user) back reference 
+| RoleUsers | [RoleUsers](Systems.Security.RoleUsers.md) | List of `RoleUser`(Systems.Security.RoleUsers.md) child objects, based on the `Systems.Security.RoleUser.User`(Systems.Security.RoleUsers.md#user) back reference 
 
 
 ## Attribute Details
@@ -135,13 +140,13 @@ _Supports Order By_: **False**
 _Default Value_: **CurrentDateTime**  
 _Show in UI_: **ShownByDefault**  
 
-### DefaultCulture
+### DefaultLanguage
 
-The preferred default culture of the user for UI, notifications, etc. null means "en-US". `Introduced in version 20.1`
+The preferred default language of the user for UI, notifications, etc. Null means "en=English". `Filter(eq)` `Introduced in version 25.1.0.34`
 
 _Type_: **string (15) __nullable__**  
 _Category_: **System**  
-_Supported Filters_: **NotFilterable**  
+_Supported Filters_: **Equals**  
 _Supports Order By_: **False**  
 _Maximum Length_: **15**  
 _Show in UI_: **ShownByDefault**  
@@ -170,7 +175,7 @@ _Show in UI_: **ShownByDefault**
 
 ### EmailConfirmed
 
-Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `Introduced in version 18.2`
+Indicates whether the email address for the specified user has been verified. `Required` `Default(false)` `Filter(eq)` `ReadOnly` `Introduced in version 18.2`
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -190,7 +195,7 @@ _Show in UI_: **CannotBeShown**
 
 ### IsAdmin
 
-True if the user is administrator, otherwise false. `Required` `Default(false)` `Filter(eq)`
+True if the user is administrator, otherwise 0. `Required` `Default(false)` `Filter(eq)`
 
 _Type_: **boolean**  
 _Category_: **System**  
@@ -384,6 +389,15 @@ _Category_: **System**
 _Supported Filters_: **Equals, EqualsIn**  
 _Show in UI_: **ShownByDefault**  
 
+### Model
+
+The AI model associated with the user for their interactions. null means that this user has no AI model associated. `Filter(multi eq)` `Introduced in version 24.1.5.34`
+
+_Type_: **[Models](Projects.AI.Models.md) (nullable)**  
+_Category_: **System**  
+_Supported Filters_: **Equals, EqualsIn**  
+_Show in UI_: **ShownByDefault**  
+
 ### Person
 
 The person from within the system, which is authenticated with this login. null means that this user is not associated with a person record in the database. `Filter(multi eq)`
@@ -401,7 +415,7 @@ Methods that can be invoked in public APIs.
 ### GetAllowedCustomPropertyValues
 
 Gets the allowed values for the specified custom property for this entity object.              If supported the result is ordered by property value. Some property value sources do not support ordering - in that case the result is not ordered.  
-_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#general.custompropertyvalue)**  
+_Return Type_: **Collection Of [CustomPropertyValue](../data-types.md#systems.bpm.custompropertyvalue)**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **GET**  
 
@@ -443,7 +457,7 @@ _Domain API Request_: **GET**
 
 ### CreateNotification
 
-Creates a notification and sends a real time event to the user.  
+Create a notification immediately in a separate transaction, and send a real-time event to the user.  
 _Return Type_: **void**  
 _Declaring Type_: **EntityObject**  
 _Domain API Request_: **POST**  
@@ -458,7 +472,7 @@ _Domain API Request_: **POST**
     _Type_: string  
 
   * **subject**  
-    The subject.  
+    The notification subject.  
     _Type_: string  
 
 
