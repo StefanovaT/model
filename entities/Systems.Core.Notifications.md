@@ -20,7 +20,7 @@ Case: **37717**
 Default Display Text Format:  
 _{Id}: {UserId}_  
 Default Search Members:  
-__  
+_Subject_  
 Category:  _Definitions_  
 Show in UI:  _CannotBeShown_  
 

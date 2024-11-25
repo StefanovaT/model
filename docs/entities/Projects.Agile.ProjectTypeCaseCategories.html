@@ -147,7 +147,7 @@ Aggregate Root:<br>
 <tr>
 <td><a href="Projects.Agile.ProjectTypeCaseCategories.html#casecategory">CaseCategory</a></td>
 <td><a href="Projects.Agile.CaseCategories.html">CaseCategories</a></td>
-<td>The case category that а project with this type can have. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code></td>
+<td>The case category that а project with this type can have. <code>Required</code> <code>Filter(multi eq)</code></td>
 </tr>
 <tr>
 <td><a href="Projects.Agile.ProjectTypeCaseCategories.html#projecttype">ProjectType</a></td>
@@ -169,6 +169,7 @@ Aggregate Root:<br>
 <em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
+<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>CannotBeShown</strong></p>
 <h3 id="objectversion">ObjectVersion</h3>
 <p>The latest version of the extensible data object for the aggregate root for the time the object is loaded from the database. Can be used for optimistic locking.</p>
@@ -179,15 +180,16 @@ Aggregate Root:<br>
 <em>Show in UI</em>: <strong>HiddenByDefault</strong></p>
 <h2 id="reference-details">Reference Details</h2>
 <h3 id="casecategory">CaseCategory</h3>
-<p>The case category that а project with this type can have. <code>Required</code> <code>Default(New Guid)</code> <code>Filter(multi eq)</code></p>
+<p>The case category that а project with this type can have. <code>Required</code> <code>Filter(multi eq)</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Agile.CaseCategories.html">CaseCategories</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
-<em>Default Value</em>: <strong>NewGuid</strong><br>
 <em>Show in UI</em>: <strong>ShownByDefault</strong></p>
 <h3 id="projecttype">ProjectType</h3>
 <p>The project type for which we specify the case category. <code>Required</code> <code>Filter(multi eq)</code> <code>Owner</code></p>
 <p><em>Type</em>: <strong><a href="Projects.Agile.ProjectTypes.html">ProjectTypes</a></strong><br>
+<em>Indexed</em>: <strong>True</strong><br>
 <em>Category</em>: <strong>System</strong><br>
 <em>Supported Filters</em>: <strong>Equals, EqualsIn</strong><br>
 <em><a href="https://docs.erp.net/dev/domain-api/filterable-references.html">Filterable Reference</a></em>: <strong>True</strong><br>
