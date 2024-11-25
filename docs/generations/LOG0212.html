@@ -151,6 +151,14 @@ StoreOrder.PlanningOnly = True
 
 StoreOrder.Store = TransferOrder.ToStore
 
+StoreOrder.EnterpriseCompanyLocation =  
+
+​                          if (TransferOrder.ToStore.EnterpriseCompanyLocation != null)
+
+​                          , then TransferOrder.ToStore.EnterpriseCompanyLocation
+
+​                          , else TransferOrder.EnterpriseCompanyLocation
+
 StoreOrder.MovementType = Receipt
 
 StoreOrder.DueDate = TransferOrder.DefaultDueDateIn
