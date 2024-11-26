@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>R37893 ReceivingOrder - Check Supplier Enterprise Company | ERP.net Domain Model </title>
+      <title>R37895 WarehouseOrder - Set Assigned To User | ERP.net Domain Model </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="R37893 ReceivingOrder - Check Supplier Enterprise Company | ERP.net Domain Model ">
+      <meta name="title" content="R37895 WarehouseOrder - Set Assigned To User | ERP.net Domain Model ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37893.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37895.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -71,75 +71,71 @@
         </div>
 
         <article data-uid="">
-<h1 id="r37893-receivingorder---check-supplier-enterprise-company">R37893 ReceivingOrder - Check Supplier Enterprise Company</h1>
+<h1 id="r37895-warehouseorder---set-assigned-to-user">R37895 WarehouseOrder - Set Assigned To User</h1>
 
 <table>
-<col style="width:16.24%">
-<col style="width:83.76%">
+<col style="width:21.97%">
+<col style="width:78.03%">
 <tbody>
 <tr>
 <td><strong>Code</strong></td>
-<td>R37893</td>
+<td>R37895</td>
 </tr>
 <tr>
 <td><strong>Entity</strong></td>
-<td><a class="xref" href="../entities/Logistics.Procurement.ReceivingOrders.html">Logistics.Procurement.ReceivingOrders Entity</a></td>
+<td><a class="xref" href="../entities/Logistics.Wms.WarehouseOrders.html">Logistics.Wms.WarehouseOrders Entity</a></td>
 </tr>
 <tr>
 <td><strong>Name</strong></td>
-<td>CheckSupplierEnterpriseCompany</td>
+<td>SetAssignedToUser</td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>AssignedToUser</td>
 </tr>
 <tr>
 <td><strong>Layer</strong></td>
 <td>Back-End</td>
 </tr>
 <tr>
-<td><strong>Attribute</strong></td>
-<td>Supplier</td>
+<td><strong>Events</strong></td>
+<td>Commit</td>
 </tr>
 <tr>
-<td><strong>Events</strong></td>
-<td>Planning +</td>
+<td><strong>Priority</strong></td>
+<td>Early</td>
 </tr>
 <tr>
 <td><strong>Modify</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Validate that: <br>
-Supplier.EnterpriseCompany == ReceivingOrder.EnterpriseCompany                                    |
-OR Supplier.EnterpriseCompany == null</td>
+<td>Once the Warehouse Worker is set, the Document is assigned to the User associated with the Worker.</td>
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>The rule validates that the selected supplier has the same enterprise company as the document.
-A supplier without selected enterprise company is regarded as valid for all enterprise companies.</td>
+<td>The rule ensures that the User associated with the Worker will be set.</td>
 </tr>
 <tr>
 <td><strong>Message</strong></td>
-<td>Supplier's enterprise company is different than the document's enterprise company. <br>
-Please select a supplier that belongs to the same enterprise company as the receiving order       |
-document.</td>
+<td>-</td>
 </tr>
 <tr>
-<td><strong>Introduced In
-Version</strong></td>
-<td>v.25</td>
+<td><strong>Version</strong></td>
+<td>Introduced:</td>
 </tr>
 <tr>
 <td><strong>Revocable</strong></td>
-<td>NO</td>
+<td>YES</td>
 </tr>
 </tbody>
 </table>
-<p><em>* For more information about the Business Rules Documentation Template and a short explanation of each column, see
-topic <a href="../templates/template-description-system-business-rules.html">System Business Rules</a>.</em></p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37893.md/#L1" class="edit-link">Suggest improvement to this page</a>
+          <a href="https://github.com/ErpNetDocs/model/blob/master/business-rules/R37895.md/#L1" class="edit-link">Suggest improvement to this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
