@@ -41,7 +41,7 @@ Aggregate Root:
 
 | Name | Type | Description |
 | ---- | ---- | --- |
-| [CaseCategory](Projects.Agile.ProjectTypeCaseCategories.md#casecategory) | [CaseCategories](Projects.Agile.CaseCategories.md) | The case category that а project with this type can have. `Required` `Default(New Guid)` `Filter(multi eq)` |
+| [CaseCategory](Projects.Agile.ProjectTypeCaseCategories.md#casecategory) | [CaseCategories](Projects.Agile.CaseCategories.md) | The case category that а project with this type can have. `Required` `Filter(multi eq)` |
 | [ProjectType](Projects.Agile.ProjectTypeCaseCategories.md#projecttype) | [ProjectTypes](Projects.Agile.ProjectTypes.md) | The project type for which we specify the case category. `Required` `Filter(multi eq)` `Owner` |
 
 
@@ -63,6 +63,7 @@ _Type_: **guid**
 _Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
+_Default Value_: **NewGuid**  
 _Show in UI_: **CannotBeShown**  
 
 ### ObjectVersion
@@ -80,12 +81,12 @@ _Show in UI_: **HiddenByDefault**
 
 ### CaseCategory
 
-The case category that а project with this type can have. `Required` `Default(New Guid)` `Filter(multi eq)`
+The case category that а project with this type can have. `Required` `Filter(multi eq)`
 
 _Type_: **[CaseCategories](Projects.Agile.CaseCategories.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
-_Default Value_: **NewGuid**  
 _Show in UI_: **ShownByDefault**  
 
 ### ProjectType
@@ -93,6 +94,7 @@ _Show in UI_: **ShownByDefault**
 The project type for which we specify the case category. `Required` `Filter(multi eq)` `Owner`
 
 _Type_: **[ProjectTypes](Projects.Agile.ProjectTypes.md)**  
+_Indexed_: **True**  
 _Category_: **System**  
 _Supported Filters_: **Equals, EqualsIn**  
 _[Filterable Reference](https://docs.erp.net/dev/domain-api/filterable-references.html)_: **True**  
